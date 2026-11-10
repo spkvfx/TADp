@@ -1,56 +1,54 @@
 # Traceable Architecture Design Protocol (TADp)
 
 TADp is a protocol for managing software work in a Git repository. It turns
-evidence and clear human decisions into focused software initiatives that a
-team can review and verify. It keeps a record of **why the work exists**, **who
-approved it**, **what the team agreed to do**, **what changed**, and **what
-evidence shows the result**.
+evidence and explicit human decisions into focused initiatives that developers
+can review and verify. For each initiative, TADp records **why the work exists**,
+**who approved it**, **what developers agreed to do**, **what changed**, and
+**what evidence shows the result**.
 
-TADp is designed for software architecture work done with Git and Codex. It is
-most useful when a team needs to explain more than what a system does. The team
-must also be able to show how each decision gained authority and why it believes
-the work is complete.
+TADp is designed for software architecture work with Git and Codex. It is most
+useful when developers must explain what a system does, how each decision
+gained authority, and what evidence supports completion.
 
 The reference protocol and its complete documentation live in
 [`protocol/`](protocol/README.md).
 
 ## The problem TADp is trying to solve
 
-Software projects often lose the link between architecture decisions and
+Software projects often lose the connection between architecture decisions and
 delivered work:
 
-- requirements are no longer linked to their source evidence;
-- observations or code details are mistaken for approved decisions;
-- large initiatives combine unrelated goals, owners, and standards for
-  accepting the work;
-- open assumptions become requirements without a human decision;
-- specifications are changed later to match the code; and
-- work is marked complete without evidence for the exact result that was
+- Requirements lose their links to source evidence.
+- Observations or code details are treated as approved decisions.
+- Broad initiatives combine unrelated goals, owners, and acceptance criteria.
+- Unresolved assumptions quietly become requirements.
+- Specifications are revised after implementation to match the code.
+- Completion is claimed without evidence for the exact result that was
   promised.
 
-TADp addresses these problems by giving each record a clear purpose and level
-of authority. It links every stage of the work, requires human decisions at
-clear approval points, and requires verification before a lifecycle status can
-change.
+TADp addresses these failures by giving every record a clear purpose and level
+of authority. It links each stage of the work and pauses for human decisions at
+defined approval points. A lifecycle status can change only after verification.
 
 ### LLM-assisted development
 
-LLMs can speed up research, planning, coding, and verification. They can also
-create convincing work from incomplete information.
+LLMs can speed up research, planning, coding, and verification. However, their
+convincing output may be based on incomplete information.
 
-Without an explicit protocol, an LLM may:
+Without an explicit protocol, an LLM may create these problems:
 
-- treat observations as requirements;
-- decide an assumption without telling anyone;
-- add work outside the approved scope;
-- change a specification to match its own output; or
-- claim completion without proof that it achieved the approved result.
+- It may treat observations as requirements.
+- It may resolve assumptions without human approval.
+- It may expand the work beyond its approved scope.
+- It may revise a specification to match generated output.
+- It may claim completion without evidence that the approved result was
+  achieved.
 
-TADp keeps the scope, authority, assumptions, decisions, acceptance rules, and
-verification evidence in the repository for review. LLMs can help throughout
-the workflow, but people decide open questions and choices that may have major
-effects. Recorded evidence, not the model's confidence, determines whether a
-completion claim is justified.
+TADp makes LLM-assisted work reviewable. It records the scope, authority,
+assumptions, decisions, acceptance criteria, and verification evidence in the
+repository. LLMs may assist throughout the workflow, but people remain
+responsible for open questions and decisions that could have major effects.
+Completion depends on recorded evidence, not on the model's confidence.
 
 ## How TADp works
 
@@ -69,33 +67,33 @@ flowchart LR
     V --> S["Evidence-backed<br/>lifecycle status"]
 ```
 
-The arrows show how each stage links to the next. They do not mean that one
-record automatically becomes another. A realization is not a requirement. A
-proposal does not approve work. Code cannot rewrite the specification that
-governs it. A status label alone does not prove that work is complete.
+The arrows show traceability between stages, not automatic promotion from one
+stage to the next. A realization is not a requirement. A proposal does not
+approve work. Likewise, code cannot rewrite the specification that governs it,
+and a status label cannot prove completion on its own.
 
-Each initiative has one clear outcome, one authority boundary, and one
-acceptance claim that reviewers can judge on its own. The authority boundary
-defines which people and records can approve the work. If work can be accepted,
-verified, released, or cancelled on its own, it belongs in a separate
-initiative.
+Each initiative covers one clear outcome within one authority boundary. It also
+has one acceptance claim that reviewers can judge on its own. The authority
+boundary identifies the people and records that can approve the work. Work
+that can be accepted, verified, released, or cancelled on its own belongs in a
+separate initiative.
 
 ## Authority model
 
-TADp separates what information says from how much authority it has:
+TADp separates the content of information from its level of authority:
 
 1. **Authoritative evidence** defines binding rules called invariants.
-2. **Accepted decisions and initiative specifications** approve only the scope
-   they record. They must follow the invariants.
-3. **Verified products** show what the team delivered. They do not become
-   architecture rules just because they exist.
+2. **Accepted decisions and initiative specifications** apply only to their
+   recorded scope and must follow the invariants.
+3. **Verified products** show what developers delivered, but their existence
+   does not give them architectural authority.
 4. **Non-authoritative evidence** provides observations, research, examples,
-   and advice. It cannot override a source with more authority.
+   and advice, but it cannot override a source with more authority.
 
-When sources disagree, TADp keeps both claims and records the authority and
-scope of each one. It then routes the conflict for a decision. TADp does not
-hide a conflict by removing uncertainty or lowering the standard for
-acceptance.
+When sources disagree, TADp preserves both claims and records the authority and
+scope of each one. It then routes the conflict for resolution. TADp does not
+create the appearance of consistency by hiding uncertainty or lowering the
+standard for acceptance.
 
 ## Initiative lifecycle
 
@@ -121,13 +119,13 @@ stateDiagram-v2
     Completed --> Proposed: reopened
 ```
 
-A lifecycle status is a claim supported by evidence. If an initiative is
-reopened, TADp records the event and keeps the earlier history. Reopening does
-not erase a previous accepted or completed status.
+Every lifecycle status is a claim that must be supported by evidence. When an
+initiative is reopened, TADp records the event and preserves its history.
+Reopening does not erase an earlier acceptance or completion.
 
 ## What TADp provides
 
-- rules for ranking evidence so teams can separate binding authority from
+- rules for ranking evidence so developers can separate binding authority from
   background context;
 - templates for proposals, assumptions, decisions, specifications, plans, work
   records, and completion evidence;
@@ -136,10 +134,10 @@ not erase a previous accepted or completed status.
 - a validator that checks structure and traceability rules; and
 - a reusable project structure for adopting TADp in another repository.
 
-TADp does not replace sound architecture decisions, product tests, security
-reviews, release checks, or human approval. Passing structural validation only
-shows that the checked records follow the required structure and links. It
-does not prove that the product is correct or ready for production.
+TADp does not replace architectural judgment, product tests, security reviews,
+release checks, or human approval. Passing structural validation confirms only
+that the checked records use the required structure and links. It does not
+prove that the product is correct or ready for production.
 
 ## Repository guide
 
@@ -164,5 +162,6 @@ does not prove that the product is correct or ready for production.
    to run a small trial with one outcome and one acceptance claim.
 5. Run the validator and the project's own checks before review.
 
-TADp requires **Git** and **Codex**. Running the validator and its tests also
-requires Python 3. The validator uses only the Python standard library.
+TADp requires **Git** and **Codex**. Python 3 is also required to run the
+validator and its tests, although the validator uses only the Python standard
+library.
