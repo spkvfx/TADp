@@ -1,6 +1,6 @@
 <!--
 This directory holds reusable prompts for initiatives. It currently contains
-eleven prompts, numbered 0 through 10, that follow the initiative workflow.
+fourteen prompts, numbered 0 through 13, that follow the initiative workflow.
 Add other focused initiative prompts here as the protocol gains new review
 needs.
 -->
@@ -16,6 +16,11 @@ Every numbered prompt applies the mandatory
 shared evidence, authority, scope, human-decision, Git, lifecycle, and reporting
 rules. It does not replace or shorten a prompt's stage-specific preconditions,
 edit boundary, verification, or reporting requirements.
+
+The binding stage sequence and handoff rules are defined by the
+[authoritative initiative workflow specification](../../evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md).
+Stages 0 through 7 are the common path. An accepted initiative then follows
+exactly one type-specific delivery path before stage 13 finalization.
 
 After stage 0 prepares an initiative, run every initiative-specific prompt on
 that initiative's prepared branch. Only the preparation prompt creates or
@@ -37,20 +42,25 @@ It resolves human owner, reviewer, and approver roles as recorded by that
 project; it never removes a technical component, profile, placement,
 external-party, contract, artifact, or evidence gate.
 
-The preparation, proposal-creation, initiative-creation, initiative-execution,
-and finalization prompts are the explicit exceptions. Preparation may create or
+The preparation, proposal-creation, initiative-creation, acceptance,
+type-specific delivery, and finalization prompts are the explicit exceptions.
+Preparation may create or
 switch to an initiative branch and create only a missing directory-and-README
 skeleton; it preserves an existing initiative tree. Proposal creation may
 create only its target `proposal/proposal.md`. Initiative creation may complete
 the standard initial initiative record and its parent tracking entries.
-Initiative execution applies only to an `implementation` initiative. It may
+Acceptance may create the acceptance receipt and reconcile the accepted
+baseline and lifecycle tracking, but it creates no delivery output.
+Implementation execution applies only to an `implementation` initiative. It may
 create the accepted initiative's planned product artifacts and required
 evidence, reconcile every ledgered in-repository product dependency needed for
 authoritative-evidence-first alignment, and update execution and status records
 to the result actually verified. It uses the standard `execution-record.md` and
 `completion-evidence.md` records and may set `Completed` only when all in-scope
-gates pass. Design and planning initiatives also require the standard
-`completion-evidence.md` record before completion. Finalization verifies that already-aligned completion
+gates pass. Design delivery may change only accepted specification destinations
+and supporting initiative evidence. Planning delivery may create only accepted
+initiative-local evidence. Both use `delivery-record.md`, and every type
+requires `completion-evidence.md` before completion. Finalization verifies that already-aligned completion
 state, commits any remaining accepted work, pushes the initiative branch, and
 creates its pull request; it does not declare an incomplete execution complete.
 The implementation-readiness review prompt is read-only and applies only to an
@@ -82,8 +92,11 @@ authoritative within their respective claims and must remain mutually coherent.
 | 4 | [Initiative-to-precedent alignment](04_initiative_alignment.md) | Aligning a fully documented initiative as a whole to governing evidence and established precedent before any human confirmation or SDK/API work. |
 | 5 | [Initiative assumption confirmation review](05_initiative_assumption_review.md) | Guiding a human through every unresolved assumption one at a time and reconciling each explicit response within the initiative. |
 | 6 | [Initiative open-question resolution review](06_initiative_open_question_review.md) | Guiding a human through every active open question one at a time and reconciling each explicit answer within the initiative. |
-| 7 | [Initiative SDK/API alignment](07_initiative_sdk_api_alignment.md) | For an `implementation` initiative, aligning applicable existing SDKs and APIs to the confirmed specifications through compatible, precedent-preserving product changes, or reporting conflicts. |
-| 8 | [Initiative implementation-readiness review](08_initiative_implementation_readiness_review.md) | For an `implementation` initiative, comparing current evidence against its accepted specifications immediately before product execution, then reporting a phase-specific readiness result. |
-| 9 | [Initiative execution](09_initiative_execution.md) | For an `implementation` initiative, aligning products to accepted specifications and recording verification evidence. |
-| 10 | [Finalize initiative](10_initiative_finalization.md) | Verifying an executed initiative's aligned completion records, committing any remaining accepted work, pushing its branch, and opening its pull request. |
+| 7 | [Initiative acceptance](07_initiative_acceptance.md) | Presenting the exact coherent proposed baseline for explicit human acceptance and recording the accepted revision and lifecycle transition. |
+| 8 | [Initiative SDK/API alignment](08_initiative_sdk_api_alignment.md) | For an accepted `implementation` initiative, aligning applicable existing SDKs and APIs through compatible, precedent-preserving product changes, or reporting conflicts. |
+| 9 | [Initiative implementation-readiness review](09_initiative_implementation_readiness_review.md) | For an accepted `implementation` initiative, comparing current evidence against its specifications immediately before product execution, then reporting a phase-specific readiness result. |
+| 10 | [Implementation execution](10_initiative_execution.md) | For an `implementation` initiative, aligning products to accepted specifications and recording execution and verification evidence. |
+| 11 | [Design delivery](11_design_delivery.md) | For a `design` initiative, delivering accepted specification changes and their verification without modifying products. |
+| 12 | [Planning delivery](12_planning_delivery.md) | For a `planning` initiative, delivering accepted initiative-local evidence while preserving source classifications and limitations. |
+| 13 | [Finalize initiative](13_initiative_finalization.md) | Verifying aligned completion records, committing any remaining accepted work, pushing the branch, and opening its pull request. |
 

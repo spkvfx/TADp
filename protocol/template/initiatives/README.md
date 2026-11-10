@@ -1,7 +1,8 @@
 <!--
 Copy the standard files in this directory to docs/initiatives/{{initiative_slug}}.
 Do not copy `implementation-readiness.md`, `execution-record.md`,
-`completion-evidence.md`, or `decision-receipts/` during initiative creation.
+`delivery-record.md`, `completion-evidence.md`, or `decision-receipts/` during
+initiative creation.
 They are later-stage templates created only when their named stage begins.
 Replace every double-brace token, remove instructional comments, and keep the
 standard files. If a section does not apply, state why instead of deleting it.
@@ -160,12 +161,17 @@ phase-specific go/no-go decision, reviewed evidence, remaining inputs, and
 execution gates. It does not replace the initiative record, implementation
 report, or release evidence.
 
-## Execution and completion records
+## Delivery, execution, and completion records
 
 `execution-record.md` applies to an accepted `implementation` initiative and
 is created when product execution actually begins. Keep its step ledger,
 product destinations, verification, blockers, commits, and reconciliation
 current throughout execution.
+
+`delivery-record.md` applies to an accepted `design` or `planning` initiative
+and is created when its permitted specification or evidence work actually
+begins. Keep its output ledger, destinations, method, verification, blockers,
+commits or revisions, and reconciliation current throughout delivery.
 
 `completion-evidence.md` applies to every initiative type and is created only
 when the initiative's permitted work reaches an evidence-backed terminal
@@ -195,10 +201,13 @@ reviews and creation. It follows this sequence:
 4. [initiative-to-precedent alignment](../prompts/04_initiative_alignment.md)
 5. [initiative assumption confirmation review](../prompts/05_initiative_assumption_review.md)
 6. [initiative open-question resolution review](../prompts/06_initiative_open_question_review.md)
-7. [initiative SDK/API alignment](../prompts/07_initiative_sdk_api_alignment.md)
-8. [initiative implementation-readiness review](../prompts/08_initiative_implementation_readiness_review.md)
-9. [initiative execution](../prompts/09_initiative_execution.md)
-10. [finalize initiative](../prompts/10_initiative_finalization.md).
+7. [initiative acceptance](../prompts/07_initiative_acceptance.md)
+8. [initiative SDK/API alignment](../prompts/08_initiative_sdk_api_alignment.md), for implementation when applicable
+9. [initiative implementation-readiness review](../prompts/09_initiative_implementation_readiness_review.md), for implementation
+10. [implementation execution](../prompts/10_initiative_execution.md), for implementation
+11. [design delivery](../prompts/11_design_delivery.md), for design
+12. [planning delivery](../prompts/12_planning_delivery.md), for planning
+13. [finalize initiative](../prompts/13_initiative_finalization.md).
 
 Add future prompts to that directory and its README; prompts guide review,
 while documented source precedence and repository evidence continue to govern
@@ -253,8 +262,11 @@ Link to code, accepted architecture, and dependent initiatives where useful.
 
 - **Proposed:** proposal, assumptions, and repository design are open
   for review.
-- **Accepted:** blocking decisions and assumption corrections are reconciled
-  across every standard document.
+- **Accepted:** an identified human authority explicitly accepted the exact
+  baseline after blocking decisions, assumption corrections, and standard
+  records were reconciled. The acceptance receipt and lifecycle transition
+  must be linked; an earlier decision or instruction to continue is not
+  acceptance.
 - **In progress:** the initiative's permitted work is underway and completed
   gates carry linked evidence.
 - **Completed:** the type-specific acceptance criteria pass and durable

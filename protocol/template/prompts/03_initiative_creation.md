@@ -42,7 +42,7 @@ The adjacent
 is deliberately not an initial initiative artifact. Do not create, copy, or
 link an implementation-readiness review when creating an initiative. Gather
 readiness evidence later, immediately before execution, with the
-[implementation-readiness review prompt](08_initiative_implementation_readiness_review.md).
+[implementation-readiness review prompt](09_initiative_implementation_readiness_review.md).
 That prompt only reports evidence; create any readiness document in a separate,
 explicitly scoped documentation change.
 
@@ -148,8 +148,9 @@ comments:
 Retain {initiative_path}/proposal/proposal.md as the existing canonical proposal.
 Do not copy {initiative_template_root}/prompts into the initiative. Do not create
 implementation-readiness.md: it is created later, immediately before
-execution. Do not create optional supporting documents, implementation reports,
-decision receipts, SDKs, APIs, code, schemas, tests, migrations, or other product artifacts as
+execution. Do not create delivery-record.md, optional supporting documents,
+implementation reports, decision receipts, SDKs, APIs, code, schemas, tests,
+migrations, or other product artifacts as
 part of this prompt.
 When a standard section does not apply, state why instead of deleting it.
 

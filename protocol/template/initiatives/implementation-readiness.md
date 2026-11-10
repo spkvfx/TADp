@@ -4,7 +4,7 @@ standard initial initiative artifact.
 Do NOT copy or create it when creating an initiative. Create an initiative-local
 implementation-readiness.md later, immediately before execution begins, and
 replace every double-brace token. Remove instructional comments before review.
-Use the shared `prompts/08_initiative_implementation_readiness_review.md`
+Use the shared `prompts/09_initiative_implementation_readiness_review.md`
 to gather and report the evidence comparison before this document is created in
 a separately scoped documentation change.
 

@@ -2,13 +2,13 @@
 Replace every braced placeholder before using this prompt.
 -->
 
-# 7. Initiative SDK/API alignment
+# 8. Initiative SDK/API alignment
 
 ## Use when an implementation initiative aligns existing SDKs and APIs
 
 Use this prompt only for an `implementation` initiative, after the
-initiative-to-precedent alignment,
-assumption-confirmation, and open-question-resolution reviews have completed.
+initiative-to-precedent alignment, assumption-confirmation,
+open-question-resolution, and initiative-acceptance stages have completed.
 It is the SDK/API-to-initiative alignment effort: it aligns applicable existing
 SDKs and APIs with the initiative's confirmed scope through compatible,
 evidence-backed extensions. It does not establish initiative scope, confirm an
@@ -24,7 +24,7 @@ preconditions, edit boundary, verification, or reporting requirements.
 
 > **Reference only — do not execute this example.**
 >
-> Using the [initiative SDK/API alignment prompt](07_initiative_sdk_api_alignment.md),
+> Using the [initiative SDK/API alignment prompt](08_initiative_sdk_api_alignment.md),
 > align the existing in-scope SDKs and APIs to the attached initiative after it
 > is confirmed. Do not begin an extension while a material assumption or open
 > question remains unresolved. Report any incompatibility instead of changing
@@ -41,12 +41,12 @@ example.
 Apply {initiative_template_root}/prompts/WORKFLOW-CONTRACT.md. Its shared rules
 are mandatory and do not reduce this prompt's specific requirements.
 
-Align the applicable existing SDKs and APIs to the confirmed {initiative} at
+Align the applicable existing SDKs and APIs to the accepted {initiative} at
 {initiative_path}.
 
 This is the SDK/API-to-initiative alignment effort. It follows the
-initiative-to-precedent alignment, human assumption-confirmation review, and
-human open-question-resolution review. Treat the confirmed initiative as the
+initiative-to-precedent alignment, human assumption-confirmation review, human
+open-question-resolution review, and explicit acceptance. Treat the accepted initiative as the
 target contract for this work, while established SDK/API precedent remains a
 compatibility constraint. Do not use a current SDK or API limitation to reopen,
 narrow, reinterpret, or silently change the confirmed initiative.
@@ -55,6 +55,10 @@ Verify that the target's declared type is `implementation`. A `design`
 initiative changes specifications, not SDKs or APIs; a `planning` initiative
 creates evidence only. If the type is not `implementation`, stop and route the
 work to the appropriate initiative.
+
+Verify that the initiative is `Accepted` or `In progress`, links an explicit
+acceptance receipt, and identifies the accepted baseline revision. Resolved
+assumptions and questions without the acceptance stage are not sufficient.
 
 Apply the ownership and approval convention at {project_profile_path}. Human
 owner, reviewer, and approver roles resolve as recorded for the target project.

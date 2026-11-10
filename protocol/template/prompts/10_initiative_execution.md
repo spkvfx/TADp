@@ -2,7 +2,7 @@
 Replace every braced placeholder before using this prompt.
 -->
 
-# 9. Initiative execution
+# 10. Implementation execution
 
 ## Use when an implementation initiative aligns products to specifications
 
@@ -15,7 +15,7 @@ implementation initiative does not modify an existing specification when
 product evidence exposes a conflict.
 Run it on the initiative
 branch prepared by [00_initiative_preparation.md](00_initiative_preparation.md);
-use [10_initiative_finalization.md](10_initiative_finalization.md) only after
+use [13_initiative_finalization.md](13_initiative_finalization.md) only after
 successful execution to update tracking and open the pull request.
 
 ## Shared workflow contract
@@ -28,7 +28,7 @@ preconditions, edit boundary, verification, or reporting requirements.
 
 > **Reference only — do not execute this example.**
 >
-> Using the [initiative execution prompt](09_initiative_execution.md), execute
+> Using the [implementation execution prompt](10_initiative_execution.md), execute
 > the fully aligned attached initiative. Implement only its
 > accepted roadmap and implementation steps, create the planned products and
 > verification evidence in place, then reconcile the work product, initiative,
@@ -36,10 +36,10 @@ preconditions, edit boundary, verification, or reporting requirements.
 > `../../evidence/authoritative` and existing work.
 
 This example shows how to invoke the template. When using this file, execute
-only the instructions in the **Initiative execution prompt** block below. Do
+only the instructions in the **Implementation execution prompt** block below. Do
 not execute, recurse into, or derive additional work from the example.
 
-## Initiative execution prompt
+## Implementation execution prompt
 
 ```text
 Apply {initiative_template_root}/prompts/WORKFLOW-CONTRACT.md. Its shared rules
@@ -50,6 +50,10 @@ Execute the fully aligned {initiative} at {initiative_path} in place.
 Verify that the target's declared type is `implementation`. A `design`
 initiative modifies specifications and a `planning` initiative creates evidence
 only; neither may use this prompt.
+
+Verify that the initiative is `Accepted` or `In progress`, links its explicit
+acceptance receipt, and identifies the accepted baseline revision. Do not infer
+acceptance from resolved source records or an instruction to implement.
 
 This is the implementation step. Deliver the products, product documentation,
 configuration, migrations, tests, operational material, and verification
@@ -255,7 +259,7 @@ dependent tracking records when needed to reflect that evidence; retain every
 deferred production, release, deployment, risk, and blocker statement. These
 execution-stage updates do not perform branch finalization, merge, release, or
 pull-request work. When all required work and gates pass, hand the aligned
-initiative to the [finalize-initiative prompt](10_initiative_finalization.md),
+initiative to the [finalize-initiative prompt](13_initiative_finalization.md),
 which owns final branch tracking, push, and pull-request creation. Do not
 finalize a partial or blocked execution.
 

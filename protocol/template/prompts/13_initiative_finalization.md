@@ -2,16 +2,17 @@
 Replace every braced placeholder before using this prompt.
 -->
 
-# 10. Finalize initiative
+# 13. Finalize initiative
 
 ## Use after an initiative completes its permitted work
 
 Use this prompt after the initiative has completed its accepted type-specific
 work and recorded the required verification evidence. For an
 `implementation` initiative, that follows the
-[initiative-execution prompt](09_initiative_execution.md). A `design`
-initiative finalizes accepted specification changes; a `planning` initiative
-finalizes evidence that other initiatives can use. The prompt verifies the
+[implementation-execution prompt](10_initiative_execution.md). A `design`
+initiative follows the [design delivery prompt](11_design_delivery.md), and a
+`planning` initiative follows the
+[planning delivery prompt](12_planning_delivery.md). The prompt verifies the
 completion state, commits any remaining accepted work, pushes the initiative
 branch, and opens its pull request. It does not declare incomplete work
 complete, merge the pull request, delete the branch, deploy a product, or waive
@@ -32,7 +33,7 @@ preconditions, edit boundary, verification, or reporting requirements.
 
 > **Reference only — do not execute this example.**
 >
-> Using the [finalize initiative prompt](10_initiative_finalization.md), finalize
+> Using the [finalize initiative prompt](13_initiative_finalization.md), finalize
 > the attached initiative after its accepted work is complete. Verify its
 > aligned completion records, commit any remaining accepted initiative work,
 > push the prepared branch, and create the pull request.
@@ -82,9 +83,14 @@ Before changing tracking or Git state, verify that:
   explicit and does not contradict the completed claim;
 - `{initiative_path}/completion-evidence.md` states the exact completed claim
   and provides evidence for every applicable acceptance and verification gate;
+- the linked acceptance receipt names the same accepted baseline and exact
+  bounded claim, and no later delivery record silently revises that baseline;
 - an `implementation` initiative also has an
   `{initiative_path}/execution-record.md` whose ledger, changed paths,
   commands, and results agree with the complete branch diff;
+- a `design` or `planning` initiative also has an
+  `{initiative_path}/delivery-record.md` whose ledger, outputs, methods,
+  verification, and results agree with the complete branch diff;
 - every uncommitted or untracked artifact traces to this initiative's permitted
   output or an already-aligned completion record. Identify the exact paths
   and do not stage unrelated work;
@@ -110,7 +116,9 @@ finalization:
 2. Confirm that `{initiative_path}/completion-evidence.md` states the same
    completed claim and supplies evidence for every applicable gate. For an
    `implementation` initiative, confirm that `execution-record.md` agrees with
-   the complete branch diff and verification results.
+   the complete branch diff and verification results. For a `design` or
+   `planning` initiative, confirm that `delivery-record.md` agrees with the
+   complete branch diff and verification results.
 3. Confirm that the matching {initiative_status_path} row and any applicable
    parent or dependent record state the same verified result, next
    responsibility, and intentionally deferred or unavailable follow-up scope.

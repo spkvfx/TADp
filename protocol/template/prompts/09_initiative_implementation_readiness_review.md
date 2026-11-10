@@ -2,7 +2,7 @@
 Replace every braced placeholder before using this prompt.
 -->
 
-# 8. Initiative implementation-readiness review
+# 9. Initiative implementation-readiness review
 
 ## Use when reviewing an existing initiative immediately before execution
 
@@ -24,7 +24,7 @@ preconditions, edit boundary, verification, or reporting requirements.
 
 > **Reference only — do not execute this example.**
 >
-> Using the [initiative implementation-readiness review prompt](08_initiative_implementation_readiness_review.md),
+> Using the [initiative implementation-readiness review prompt](09_initiative_implementation_readiness_review.md),
 > perform the pre-execution review for the attached initiative's requested
 > phase or execution scope.
 
@@ -52,6 +52,10 @@ evidence fit.
 Verify that the target's declared type is `implementation`. A `design`
 initiative changes specifications and a `planning` initiative creates evidence;
 neither is eligible for this product-execution readiness review.
+
+Verify that the initiative is `Accepted` or `In progress`, links an explicit
+acceptance receipt, and identifies the accepted baseline revision. A coherent
+proposal or completed human reviews do not substitute for acceptance.
 
 Apply the ownership and approval convention at {project_profile_path}. Human
 owner, reviewer, and approver roles resolve as recorded for the target project.

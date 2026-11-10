@@ -196,10 +196,11 @@ documents. Update the initiative index's Last updated field and every
 applicable parent status record, such as {initiative_status_path}, to record
 the completed review and its current result. Change the initiative's lifecycle
 status or next milestone only when the human outcomes support that change.
-Keep the lifecycle truthful: an open blocking question or an unconfirmed
-derived assumption prevents an Accepted outcome. Make the final status updates
-before committing the final resolved source question, and include them in that
-source question's commit scope.
+Leave the initiative lifecycle `Proposed`; this review does not accept the
+initiative. An open blocking question or an unconfirmed derived assumption
+prevents handoff to the separate initiative acceptance stage. Make the final
+tracking updates before committing the final resolved source question, and
+include them in that source question's commit scope.
 
 Verify that the coverage inventory is complete, every changed record has a
 linked decision receipt and traceable human answer, and no unrelated files are staged. Push the new review
@@ -208,9 +209,10 @@ committed. Use a normal push; do not force-push, guess an upstream, or push
 pre-existing unrelated commits. If the branch has no configured upstream or
 the push fails, report the exact blocker.
 
-After every question material to an in-scope SDK/API surface has an explicit
-human outcome, use the initiative SDK/API alignment prompt for that separate
-alignment effort when it is needed. Do not edit an SDK or API in this prompt.
+After every question and derived assumption has its required human outcome, use
+the initiative acceptance prompt. Only an accepted implementation initiative
+may later use the SDK/API alignment prompt. Do not edit an SDK or API in this
+prompt.
 
 At the end, report the source questions reviewed in precedence order, each
 explicit human answer, documents changed, commit hashes and messages, status

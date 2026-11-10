@@ -60,6 +60,10 @@ must have a truthful disposition and owner.
 
 ## Cross-record reconciliation
 
+- [ ] The acceptance receipt identifies the same accepted baseline and bounded
+      claim proved here.
+- [ ] The type-specific `execution-record.md` or `delivery-record.md` agrees
+      with the outputs, methods, verification, and revisions recorded here.
 - [ ] Initiative README states the same bounded result.
 - [ ] Source mapping links every completed normative claim to verification.
 - [ ] Roadmap and steps show actual, not planned, completion.

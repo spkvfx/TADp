@@ -16,12 +16,14 @@ This directory groups reusable initiative material by purpose.
   because it is a document.
 
 - [Initiative templates](initiatives/README.md) define the standard initiative
-  record: proposal sources, assumptions, specifications, evidence mapping,
-  decisions, delivery roadmap, and delivery steps.
+  record: proposal sources, assumptions, scope, specifications, evidence
+  mapping, decisions, delivery roadmap, delivery steps, type-specific work
+  records, and completion evidence.
 - [Initiative prompts](prompts/README.md) provide focused workflows for
   preparing an initiative branch, proposal creation and alignment, initiative
-  creation and alignment, human-led assumption and decision reviews, product
-  alignment, implementation readiness, execution, and finalization.
+  creation and alignment, human-led assumption and decision reviews, explicit
+  acceptance, type-specific delivery, implementation readiness, and
+  finalization.
 
 Use the initiative templates to structure a new initiative. Use a prompt only
 for its named workflow; the initiative type, evidence classification, and

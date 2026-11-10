@@ -19,13 +19,16 @@ evidence, read the applicable documents in
   use a subinitiative only inside a real parent specification.
 - Require explicit human decisions for assumptions, questions, lifecycle
   authority, and exceptions, and preserve each result in a decision receipt.
+- Treat initiative acceptance as a separate explicit human-authority stage.
+  Alignment and resolved assumptions or questions do not imply acceptance.
 - Record only legal lifecycle transitions. Preserve prior claims and document
   every reopening or revision.
 - Require Git, a captured base branch, and a dedicated initiative branch.
   Preserve unrelated work and keep commits traceable. Never rewrite shared
   history or merge without explicit authority.
 - Require standard execution and completion evidence before making the
-  corresponding lifecycle claim.
+  corresponding lifecycle claim. Use the delivery record for design or
+  planning and follow exactly one delivery path for the declared type.
 
 Preserve source identity, distinguish observed evidence from accepted
 authority, and report only outcomes supported by verification.

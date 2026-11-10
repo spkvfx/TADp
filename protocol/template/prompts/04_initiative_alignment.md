@@ -15,8 +15,10 @@ alignment effort; it does not align or extend an SDK or API.
 
 After this prompt, use the [initiative assumption confirmation review](05_initiative_assumption_review.md)
 and [initiative open-question resolution review](06_initiative_open_question_review.md)
-to obtain the required human outcomes. Only then use the separate
-[initiative SDK/API alignment prompt](07_initiative_sdk_api_alignment.md).
+to obtain the required human outcomes. Then use the
+[initiative acceptance prompt](07_initiative_acceptance.md). Only an accepted
+implementation initiative may use the separate
+[initiative SDK/API alignment prompt](08_initiative_sdk_api_alignment.md).
 Do not use an SDK or API limitation to confirm an unvalidated initiative
 assumption.
 
@@ -164,9 +166,10 @@ Work in this order:
 6. Hand off unresolved human decisions. Use the initiative assumption
    confirmation review for every unconfirmed assumption and the
    initiative open-question resolution review for every active open question.
-   Do not begin SDK/API alignment until the applicable human reviews have
-   recorded their required outcomes. The separate initiative SDK/API alignment
-   prompt owns any later SDK/API changes.
+   Do not begin acceptance until the applicable human reviews have recorded
+   their required outcomes. Acceptance remains a separate explicit human gate;
+   it owns the transition to `Accepted`. Only after acceptance may the SDK/API
+   alignment prompt own applicable implementation changes.
 
 For every conclusion, cite the supporting source. Distinguish evidence-backed
 and corrected initiative claims, unconfirmed assumptions, active open

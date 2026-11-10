@@ -191,11 +191,12 @@ applicable, and every resulting initiative change is reconciled, update the
 applicable status documents. Update the initiative index's Last updated field
 and every applicable parent status record, such as {initiative_status_path}, to
 record the completed review and its current result. Change the initiative's
-lifecycle status or next milestone only when the human outcomes support that
-change. Keep the lifecycle truthful: an unresolved or blocking question
-prevents an Accepted outcome. Make the final status updates before committing
-the final resolved source assumption, and include them in that source
-assumption's commit scope.
+next milestone only when the human outcomes support that change. Leave the
+initiative lifecycle `Proposed`; this review does not accept the initiative.
+An unresolved or blocking question prevents handoff to the separate initiative
+acceptance stage. Make the final tracking updates before committing the final
+resolved source assumption, and include them in that source assumption's commit
+scope.
 
 Verify that the review coverage inventory is complete, every changed record
 has a linked decision receipt and traceable human response, and no unrelated files are staged. Push the
@@ -207,7 +208,8 @@ or the push fails, report the exact blocker.
 At the end, report the source assumptions reviewed in precedence order, each
 explicit human response, documents changed, commit hashes and messages, status
 updates, push result, every deferred or newly opened question, and every
-remaining blocker.
+remaining blocker. When all applicable human reviews are complete, identify the
+initiative acceptance prompt as the next stage.
 Do not create a separate report file.
 ~~~
 

@@ -5,6 +5,12 @@ rules shared by all stages. A numbered prompt remains responsible for its
 specific target, preconditions, edit boundary, verification, and reporting.
 The contract never expands a prompt's permission.
 
+The authoritative stage map, handoffs, record ownership, acceptance gate, and
+recovery semantics are defined by the
+[initiative workflow specification](../../evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md).
+A stage is an activity, not a lifecycle state, and finishing a prompt never
+creates a transition without its required evidence.
+
 ## Target and placeholders
 
 - Replace every braced placeholder before execution. In an executable prompt,
@@ -51,6 +57,9 @@ The contract never expands a prompt's permission.
 - Never infer a human decision from evidence, recommendation, silence, urgency,
   or likely intent.
 - Create and link a decision receipt before recording a human disposition.
+- Treat acceptance as its own human-authority stage. Alignment, resolved
+  assumptions or questions, and permission to continue do not imply
+  acceptance.
 
 ## Git and lifecycle
 
@@ -62,8 +71,11 @@ The contract never expands a prompt's permission.
 - Record only legal lifecycle transitions. Append transition evidence and
   preserve prior truthful claims when reopening or revising.
 - Use the standard execution record for implementation and the standard
-  completion evidence for every completed initiative. A status never substitutes
-  for its required evidence.
+  delivery record for design or planning. Use standard completion evidence for
+  every completed initiative. A status never substitutes for its required
+  evidence.
+- Follow exactly one delivery path for the declared type: implementation,
+  design, or planning.
 
 ## Truthful completion and reporting
 
