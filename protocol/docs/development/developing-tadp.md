@@ -61,6 +61,31 @@ apparently related consumer is unaffected.
   to a reusable template.
 - Keep subinitiatives supported without reintroducing umbrella initiatives.
 
+## Protected-source changes
+
+`template/**` and `evidence/authoritative/LLM/**` are protected source trees.
+Their scoped `AGENTS.md` files and SHA-256 locks apply even when the intended
+change is otherwise authorized. Before editing either tree:
+
+1. Confirm an explicit human instruction identifies the exact reusable
+   template or invariant change. A request to use the source is not permission
+   to revise it.
+2. Capture the prior lock, Git revision, affected consumers, compatibility and
+   migration effects, and required verification.
+3. Make the coherent source and consumer changes without weakening unrelated
+   rules or overwriting historical authority.
+4. Run regression tests and full validation except for the expected stale-lock
+   findings.
+5. Refresh only the affected lock with `tadp_protect.py refresh`, using the
+   human instruction or decision record as its `--authority` value.
+6. Re-run the protected-source check, validator, and regression tests.
+7. Commit through the staged guard using the same authority value. Do not leave
+   the override environment variables set for later work.
+
+The lock refresh is the final recording step, not a way to decide whether a
+change was authorized. Existing adopters use the protected-source migration
+guide; do not silently rewrite their baseline.
+
 ## Prompt rules
 
 Every numbered prompt must:
@@ -105,6 +130,9 @@ initiative originally used the current workflow.
 - [ ] No umbrella or multi-purpose initiative construct was introduced.
 - [ ] Git and Codex requirements remain explicit.
 - [ ] Non-Codex compatibility is not claimed without an adapter review.
+- [ ] Protected-source locks match the reviewed template and invariant suite.
+- [ ] Any protected-source change cites its explicit authority and migration
+      consequence.
 - [ ] Validator regression tests pass.
 - [ ] Full repository validation reports zero errors.
 - [ ] Documentation indexes reflect added, renamed, or removed documents.

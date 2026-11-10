@@ -136,7 +136,10 @@ Reopening does not erase an earlier acceptance or completion.
   records, and completion evidence;
 - a step-by-step Codex workflow with clear human decision points;
 - Git branch and history rules that make work easier to review;
-- a validator that checks structure and traceability rules; and
+- directory-scoped Codex guards, SHA-256 locks, and a pre-commit gate that
+  protect reusable templates and the authoritative LLM invariant suite;
+- a validator that checks structure, traceability, and protected-source
+  integrity; and
 - a reusable project structure for adopting TADp in another repository.
 
 TADp does not replace architectural judgment, product tests, security reviews,
@@ -163,9 +166,11 @@ prove that the product is correct or ready for production.
    to learn which records can govern a decision.
 3. Follow [getting started](protocol/docs/development/getting-started.md) to
    set up TADp in a Git repository.
-4. Use the [initiative workflow](protocol/docs/development/initiative-workflow.md)
+4. Enable the tracked hook and verify the template and invariant locks before
+   specializing any copied records.
+5. Use the [initiative workflow](protocol/docs/development/initiative-workflow.md)
    to run a small trial with one outcome and one acceptance claim.
-5. Run the validator and the project's own checks before review.
+6. Run the validator and the project's own checks before review.
 
 TADp requires **Git** and **Codex**. Python 3 is also required to run the
 validator and its tests, although the validator uses only the Python standard

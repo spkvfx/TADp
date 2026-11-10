@@ -11,6 +11,8 @@ an explanatory guide; its role and accepted authority determine its placement.
 
 ```text
 .
+|-- .gitattributes
+|-- .githooks/
 |-- AGENTS.md
 |-- README.md
 |-- docs/
@@ -20,11 +22,15 @@ an explanatory guide; its role and accepted authority determine its placement.
 |-- evidence/
 |   |-- authoritative/
 |   |   `-- LLM/
+|   |       |-- .tadp-lock.json
+|   |       `-- AGENTS.md
 |   `-- non-authoritative/
 |-- initiatives/
 |-- products/
 |-- realizations/
 |-- template/
+|   |-- .tadp-lock.json
+|   |-- AGENTS.md
 |   |-- initiatives/
 |   |-- project/
 |   `-- prompts/
@@ -34,6 +40,12 @@ an explanatory guide; its role and accepted authority determine its placement.
 
 ## Root files
 
+### `../../.gitattributes`
+
+The copied attributes keep protected UTF-8 text and executable hook scripts on
+LF line endings across Git clients. Integrity hashing also normalizes UTF-8
+line endings, so platform conversion does not create false drift.
+
 ### `../../AGENTS.md`
 
 `../../AGENTS.md` is the persistent Codex entry point. It tells Codex to read the
@@ -42,6 +54,16 @@ pause for human decisions, use Git safely, and require lifecycle evidence.
 
 Keep it concise enough to be loaded for every task. Put detailed explanations
 in developer documentation and binding rules in authoritative evidence.
+
+It also declares `template/**` and `evidence/authoritative/LLM/**` protected.
+Directory-scoped `AGENTS.md` files repeat that boundary where Codex loads the
+most local instructions.
+
+### `../../.githooks/pre-commit`
+
+The tracked hook runs validation and the staged protected-source guard. Git
+does not activate tracked hooks automatically; every clone or worktree must set
+`core.hooksPath` to `.githooks`.
 
 ### `../../../README.md`
 
@@ -55,7 +77,9 @@ must not become a second invariant suite.
 
 This is the single repository authority hierarchy. It contains accepted
 architecture, binding rules, and other invariant evidence. The `LLM/` child
-contains the Codex protocol suite.
+contains the Codex protocol suite. Its scoped `AGENTS.md` makes ordinary work
+read-only, while `.tadp-lock.json` records the authorized file set and SHA-256
+digests.
 
 Do not place exploratory alternatives here. Do not overwrite an earlier source
 to make a later initiative appear aligned. Authorized revisions preserve their
@@ -122,6 +146,11 @@ or invariant that governed it.
 
 ## Templates
 
+The entire `../../template` tree is protected reusable source. Its scoped
+`AGENTS.md` prohibits in-place specialization, and `.tadp-lock.json` makes
+unexpected additions, removals, and byte changes validator errors. Copy a
+record to its declared destination outside this tree before editing it.
+
 ### `../../template/initiatives`
 
 This is the single canonical initiative template suite for implementation,
@@ -151,6 +180,8 @@ target's `../../evidence/authoritative/LLM` path.
 - `` explains adoption and maintenance.
 - `../guides` contains focused non-authoritative procedures.
 - `../../tools/tadp_validate.py` enforces machine-checkable protocol contracts.
+- `../../tools/tadp_protect.py` checks and deliberately maintains the two
+  protected-source locks and provides the staged-change guard.
 - `../../tests/test_tadp_validate.py` protects validator behavior.
 
 Do not move binding rules into `..` merely because prose is easier to edit.

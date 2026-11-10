@@ -32,6 +32,20 @@ tracking changes, inspect staged, unstaged, and untracked paths. TADp does not
 authorize discarding, stashing, moving, absorbing, or committing unrelated
 user work.
 
+### Protected-source commit gate
+
+Every adopted repository tracks `.githooks/pre-commit` and configures
+`core.hooksPath=.githooks` in each clone or worktree. The hook runs structural
+and SHA-256 integrity validation, then blocks staged changes under `template/`
+or `evidence/authoritative/LLM/` by default.
+
+An intentional protected-source commit requires an explicit human instruction
+for the exact reusable template or invariant change, a refreshed lock carrying
+that authority reference, and the matching one-commit environment gate. The
+environment gate does not create authority and must never be used to bypass an
+unexpected integrity finding. Hosting-side review ownership should cover the
+same paths because local hook configuration is not transferred by Git.
+
 ### Commit evidence
 
 Commits should represent coherent initiative outcomes or workflow events. Do
@@ -51,6 +65,13 @@ Codex reads it before repository work and is directed to the authoritative LLM
 suite. Official OpenAI guidance describes `../../AGENTS.md` as repository guidance
 that Codex discovers and merges by directory scope; see the
 [Codex prompting guide](https://developers.openai.com/cookbook/examples/gpt-5/codex_prompting_guide).
+
+TADp uses that directory scope as a second protection layer. `template/AGENTS.md`
+prohibits in-place template edits, and
+`evidence/authoritative/LLM/AGENTS.md` prohibits invariant-suite edits without
+specific human authority. A request to instantiate a template or implement an
+initiative authorizes editing the destination copy, not either protected
+source tree.
 
 TADp assumes that Codex can:
 

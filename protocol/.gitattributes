@@ -1,0 +1,4 @@
+# Keep protected sources and executable hooks portable across Git clients.
+/.githooks/* text eol=lf
+/template/** text eol=lf
+/evidence/authoritative/LLM/** text eol=lf

@@ -14,6 +14,7 @@ From the protocol root (`protocol/` in the reference repository and normally
 the project root in an adopted repository):
 
 ```powershell
+python tools/tadp_protect.py check .
 python tools/tadp_validate.py .
 ```
 
@@ -41,6 +42,9 @@ python -m unittest discover -s tests -v
 
 The current validator checks:
 
+- SHA-256 integrity locks for every file under `template/` and
+  `evidence/authoritative/LLM/`, including detection of missing locks,
+  unexpected files, removed files, content drift, and symbolic links;
 - containment in a valid TADp Git repository and a repository-root
   `AGENTS.md` entry point;
 - required repository, authoritative-suite, template, prompt, and developer
@@ -65,6 +69,51 @@ The current validator checks:
 The validator ignores `.git` contents when walking Markdown and treats files
 under template paths as reusable, so their placeholders are permitted.
 
+## Protected-source workflow
+
+`template/` and `evidence/authoritative/LLM/` are read-only during ordinary
+project and initiative work. Each root contains a `.tadp-lock.json` whose file
+set and SHA-256 digests are checked by both `tadp_protect.py check` and the full
+validator.
+
+An exact copy of a TADp distribution already includes valid locks. A legacy
+adoption with no locks may initialize them only after a human identifies the
+baseline being accepted:
+
+```powershell
+python tools/tadp_protect.py initialize . --authority "initial TADp adoption from <revision or decision>"
+```
+
+For an explicitly authorized change, refresh only the affected protected root
+after completing its compatibility, migration, consumer, and verification
+work:
+
+```powershell
+python tools/tadp_protect.py refresh . --protected-root template --authority "<human instruction or decision record>"
+python tools/tadp_protect.py refresh . --protected-root evidence/authoritative/LLM --authority "<human instruction or decision record>"
+```
+
+Never initialize or refresh a lock merely to make an unexplained difference
+pass. A lock states the authorized canonical-content baseline; it does not
+authorize the underlying template or invariant change. UTF-8 text is normalized
+to LF line endings before hashing so a Git checkout's line-ending conversion
+does not create false drift; binary content is hashed as stored.
+
+The tracked `.githooks/pre-commit` first runs full validation and then blocks
+staged changes to either protected root. Enable it once in every clone or
+worktree:
+
+```powershell
+git config core.hooksPath .githooks
+```
+
+An authorized protected-source commit must set
+`TADP_ALLOW_PROTECTED_UPDATE=1` and set
+`TADP_PROTECTED_UPDATE_AUTHORITY` to the exact authority string stored in the
+affected refreshed lock. These variables are an intentional commit gate, not a
+general bypass. Directory-scoped and root `AGENTS.md` instructions prohibit
+Codex from using them without the same explicit human authority.
+
 ## What validation does not prove
 
 A zero-error result does not prove:
@@ -77,6 +126,10 @@ A zero-error result does not prove:
 - that local verification generalizes to release or production;
 - that a pull request was reviewed or merged; or
 - that an external system is available or correctly configured.
+
+It also does not prove that the person named by a protected lock had authority.
+Git review ownership and the recorded human decision remain responsible for
+that claim.
 
 Those claims remain owned by evidence, human review, product verification, and
 the appropriate lifecycle gate.
@@ -109,6 +162,11 @@ root using an explicitly supported Python version.
 CI should fail on validator errors. It must not automatically accept an
 initiative, resolve a question, or promote a lifecycle state merely because the
 structural checks pass.
+
+CI and host-side branch protection should also require owner review whenever a
+diff touches `template/**`, `evidence/authoritative/LLM/**`, or either lock
+file. This server-side review complements the local hook, which Git does not
+enable automatically in a new clone.
 
 ## Documentation quality
 

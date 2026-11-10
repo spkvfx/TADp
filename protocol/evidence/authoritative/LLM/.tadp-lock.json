@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "algorithm": "sha256-canonical-v1",
+  "protected_root": "evidence/authoritative/LLM",
+  "authority": "User instruction 2026-11-10: protect reusable templates and the Codex LLM invariant suite",
+  "files": {
+    "00_Codex_Invariant_Suite_Index.md": "531de865e8caefc54931b364635f49bc5e2aa37ed349557c3097f8b8c312ccb7",
+    "01_Codex_Evidence_Authority_Specification.md": "dac66ad627c4fa78c2269cba3a8b75f680b636306bbe2d3cb37dd5a127370494",
+    "02_Codex_Initiative_Governance_Specification.md": "00ffe06dc45e993761c121c1545b88a7469de49787bb6d2f39213741b583704d",
+    "03_Codex_Invariant_Conflict_Register.md": "d32e2d558e691911d81345793e46f420a82c96f8f605fcb56927a70a3d1269c8",
+    "04_Codex_Initiative_Lifecycle_Specification.md": "34ff9ab9c81048249071045d1de9086a34c90a8776acc31ff26505a462754777",
+    "05_Codex_Git_Workflow_Specification.md": "ced984d845e0acf92d66d541ee640141aa695dc8f809490113a2a885461dd25c",
+    "06_Codex_Initiative_Scope_Specification.md": "4fdea4ae1de3731cffd75c9a8ff77db491b33d7bcb0e16a763827595a4601c13",
+    "07_Codex_Human_Decision_Receipt_Specification.md": "101101e685c79bde9e0a07b0445e2830867c5e5ed06dca213a3cc4433ff67000",
+    "08_Codex_Initiative_Workflow_Specification.md": "f150e4653750ddb064a1cc037238e7e5c8913a21b460f41a8ce4d1006d57ed01",
+    "AGENTS.md": "0f4995562ec74054f02ccce453ee2458b283eb13210816599f11156f98eb95ee"
+  }
+}

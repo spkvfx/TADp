@@ -2,6 +2,19 @@
 
 This directory groups reusable initiative material by purpose.
 
+## Protected source boundary
+
+This complete tree is protected reusable source. Read or copy it during
+ordinary work; do not edit, fill, rename, move, or delete files in place.
+`AGENTS.md` carries that boundary into Codex's directory-scoped instructions,
+and `.tadp-lock.json` lets the validator detect content or file-set drift.
+
+Instantiate a record outside `template/` and edit the copy. A change to this
+tree requires an explicit human request for the exact reusable-source change,
+compatibility and migration review, affected-consumer updates, verification,
+and a governed lock refresh. A lock refresh is not a repair for an unintended
+template edit.
+
 ## Protocol vocabulary
 
 - `../evidence/authoritative` replaces the former `invariants` label. It identifies

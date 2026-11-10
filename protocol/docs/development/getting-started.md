@@ -45,23 +45,34 @@ Use this path when maintaining the protocol itself:
 Use this path when TADp will govern work in another repository:
 
 1. Confirm that the target directory is its own Git repository root.
-2. Copy the contents of `../../template/project` into the target root without
-   overwriting established project files blindly.
-3. Copy `../../template/initiatives` and `../../template/prompts` into a stable target
-   template root, or configure the project profile to use a pinned external
-   TADp distribution. Do not depend on an unversioned moving template.
-4. Copy the authoritative `../../evidence/authoritative/LLM` suite to the same path
-   in the target.
+2. Copy the complete `../../template` tree to `template/` in the target. Keep
+   its scoped `AGENTS.md` and `.tadp-lock.json` intact. If the project instead
+   uses an external template distribution, pin an immutable revision and
+   record it in the project profile.
+3. Copy the contents of `../../template/project`, including `.gitattributes`
+   and `.githooks/`, into the target root without overwriting established
+   project files blindly. The root copies are working scaffold files; the
+   copies under `template/` remain protected reusable sources.
+4. Copy the authoritative `../../evidence/authoritative/LLM` suite, including
+   its scoped `AGENTS.md` and `.tadp-lock.json`, to the same path in the target.
 5. Merge the provided `../../AGENTS.md` requirements with existing repository
    instructions. More local instructions may be stricter, but they must not
    weaken the authoritative TADp rules.
-6. Create `project-profile.md` from its template and record owners, boundaries,
+6. Copy `../../docs`, `../../tools`, and `../../tests`. This preserves the
+   protection utility, validator, migration guidance, and regression coverage.
+7. Run `python tools/tadp_protect.py check .`, then activate the tracked hook
+   with `git config core.hooksPath .githooks`. The hook is local Git
+   configuration and therefore must be enabled in every clone or worktree.
+8. Create `project-profile.md` from its template and record owners, boundaries,
    Git conventions, evidence locations, and approval authority.
-7. Establish the evidence register, initiative index, and status view before
+9. Establish the evidence register, initiative index, and status view before
    accepting the first initiative.
-8. Copy `..`, `../../tools`, and `../../tests` when the complete reference validator
-   and developer guidance will be maintained in the target.
-9. Run a narrow pilot initiative before migrating a large body of work.
+10. Run a narrow pilot initiative before migrating a large body of work.
+
+An existing adoption without locks must use the
+[protected-source integrity migration](../guides/protected-source-integrity-migration.md).
+Do not initialize a lock until a human has identified the exact template and
+invariant baseline being accepted.
 
 ### Start a new repository
 
@@ -76,6 +87,7 @@ From the protocol root (`protocol/` in the reference repository and normally
 the project root in an adopted repository), run:
 
 ```powershell
+python tools/tadp_protect.py check .
 python tools/tadp_validate.py .
 python -m unittest discover -s tests -v
 ```
@@ -87,6 +99,11 @@ The validator should report zero errors before an initiative is prepared. If it
 reports missing protocol files, complete the adoption structure rather than
 disabling the check. A passing result establishes structural conformance only;
 it does not accept evidence or an initiative.
+
+Protected-source findings are not fixed by automatically refreshing a lock.
+Unexpected changes under `template/` or `evidence/authoritative/LLM/` must be
+reverted or investigated. Refresh is reserved for an explicitly authorized
+change to the named reusable source or invariant.
 
 ## First initiative
 
@@ -108,6 +125,11 @@ weaken the invariant baseline.
   integration branch are documented.
 - Confirm who may accept initiatives and resolve human decision gates.
 - Confirm which paths are authoritative and who may revise them.
+- Require review ownership or branch rules for `template/**`,
+  `evidence/authoritative/LLM/**`, and their `.tadp-lock.json` files on the
+  chosen Git host.
+- Confirm that every clone or worktree has configured
+  `core.hooksPath=.githooks`.
 - Ensure contributors can run the validator and product-specific checks.
 - Explain that `..` is explanatory while `../../evidence/authoritative` is
   binding.

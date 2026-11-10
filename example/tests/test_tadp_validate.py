@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import sys
 import tempfile
 import unittest
@@ -9,7 +10,12 @@ from pathlib import Path
 TOOLS = Path(__file__).resolve().parents[1] / "tools"
 sys.path.insert(0, str(TOOLS))
 
-from tadp_validate import validate  # noqa: E402
+from tadp_validate import (  # noqa: E402
+    PROTECTED_ROOTS,
+    build_protected_lock,
+    protected_lock_path,
+    validate,
+)
 
 
 class ValidatorTests(unittest.TestCase):
@@ -19,6 +25,7 @@ class ValidatorTests(unittest.TestCase):
         (git_directory / "HEAD").write_text("ref: refs/heads/main\n", encoding="utf-8")
         (git_directory / "config").write_text("[core]\n\trepositoryformatversion = 0\n", encoding="utf-8")
         files = {
+            ".gitattributes": "/template/** text eol=lf\n",
             "README.md": "# Project\n",
             "AGENTS.md": "# Instructions\n",
             "docs/README.md": "# Documentation\n",
@@ -30,16 +37,23 @@ class ValidatorTests(unittest.TestCase):
             "docs/development/validation-and-quality.md": "# Validation\n",
             "docs/development/developing-tadp.md": "# Development\n",
             "docs/development/adapting-other-tools.md": "# Adapting tools\n",
+            "docs/guides/protected-source-integrity-migration.md": "# Protection migration\n",
             "docs/guides/workflow-stage-0-13-migration.md": "# Workflow migration\n",
             "evidence/README.md": "# Evidence\n",
             "evidence/authoritative/README.md": "# Authoritative\n",
             "evidence/authoritative/LLM/00_Codex_Invariant_Suite_Index.md": "# Suite\n",
+            "evidence/authoritative/LLM/AGENTS.md": "# Protected invariants\n",
             "evidence/non-authoritative/README.md": "# Context\n",
             "initiatives/README.md": "# Initiatives\n",
+            "template/AGENTS.md": "# Protected templates\n",
             "template/initiatives/README.md": "# Initiative template\n",
             "template/project/AGENTS.md": "# Instructions\n",
+            "template/project/.gitattributes": "/template/** text eol=lf\n",
+            "template/project/.githooks/pre-commit": "#!/bin/sh\n",
             "template/prompts/README.md": "# Prompts\n",
             "template/prompts/WORKFLOW-CONTRACT.md": "# Contract\n",
+            ".githooks/pre-commit": "#!/bin/sh\n",
+            "tools/tadp_protect.py": "# Protection tool\n",
         }
         for number, name in enumerate(
             (
@@ -81,6 +95,16 @@ class ValidatorTests(unittest.TestCase):
             path = root / name
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(content, encoding="utf-8")
+        for protected_root in PROTECTED_ROOTS:
+            lock = protected_lock_path(root, protected_root)
+            lock.write_text(
+                json.dumps(
+                    build_protected_lock(root, protected_root, "test fixture"),
+                    indent=2,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
 
     def make_initiative(
         self,
@@ -136,6 +160,61 @@ class ValidatorTests(unittest.TestCase):
             self.make_repository(root)
             (root / "README.md").write_text("{{project_name}}\n", encoding="utf-8")
             self.assertIn("TADP003", {item.code for item in validate(root)})
+
+    def test_modified_template_source_is_reported(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_repository(root)
+            (root / "template" / "AGENTS.md").write_text(
+                "# Unexpected template edit\n", encoding="utf-8"
+            )
+            self.assertIn("TADP024", {item.code for item in validate(root)})
+
+    def test_protected_text_hash_ignores_line_ending_conversion(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_repository(root)
+            (root / "template" / "AGENTS.md").write_bytes(
+                b"# Protected templates\r\n"
+            )
+            self.assertNotIn("TADP024", {item.code for item in validate(root)})
+
+    def test_modified_llm_invariant_is_reported(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_repository(root)
+            invariant = (
+                root
+                / "evidence"
+                / "authoritative"
+                / "LLM"
+                / "01_Codex_Evidence_Authority_Specification.md"
+            )
+            invariant.write_text("# Unauthorized invariant edit\n", encoding="utf-8")
+            self.assertIn("TADP024", {item.code for item in validate(root)})
+
+    def test_new_protected_source_is_reported(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_repository(root)
+            (root / "template" / "unexpected.md").write_text(
+                "# Unexpected\n", encoding="utf-8"
+            )
+            self.assertIn("TADP025", {item.code for item in validate(root)})
+
+    def test_missing_locked_source_is_reported(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_repository(root)
+            (root / "template" / "AGENTS.md").unlink()
+            self.assertIn("TADP026", {item.code for item in validate(root)})
+
+    def test_missing_protected_source_lock_is_reported(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_repository(root)
+            protected_lock_path(root, "template").unlink()
+            self.assertIn("TADP023", {item.code for item in validate(root)})
 
     def test_incomplete_initiative_is_reported(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

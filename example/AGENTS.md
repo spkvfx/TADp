@@ -4,6 +4,14 @@ Before changing architecture, specifications, initiatives, products, or
 evidence, read the applicable documents in
 `evidence/authoritative/LLM`, beginning with the suite index.
 
+`template/**` and `evidence/authoritative/LLM/**` are protected source trees.
+Ordinary project and initiative work may read or copy them but must not edit,
+fill, rename, move, or delete them. Instantiate a template by copying it to its
+declared destination outside `template/`, then edit the copy. A protected
+source may change only when the user explicitly requests that exact reusable
+template or invariant change. Never refresh its `.tadp-lock.json` or use the
+protected-update commit override without the same explicit authority.
+
 - Treat every artifact under `evidence/authoritative` and every source
   explicitly classified as authoritative evidence as binding baseline
   authority.

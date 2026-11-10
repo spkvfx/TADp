@@ -16,9 +16,10 @@ change the evidence or specification it was expected to follow.
 ## Requirements
 
 This project structure requires Git and Codex. Git supplies repository,
-branch, diff, and history evidence. Codex consumes `../../AGENTS.md` and the
-Codex-specific workflow prompts. Another coding agent or automation system may
-be usable only after its instruction loading, interaction model, editing,
+branch, diff, and history evidence. Codex consumes the project-root
+`AGENTS.md` and the Codex-specific workflow prompts. Another coding agent or
+automation system may be usable only after its instruction loading,
+interaction model, editing,
 Git safety, and verification behavior have been assessed and the project has
 made any required adaptations.
 
@@ -29,27 +30,32 @@ chain before there is enough material for the directories to become confusing.
 
 1. Create or select the project root and initialize Git there. Confirm that the
    root has its own `.git` entry; a parent repository is not a substitute.
-2. Copy the `project/` directory to the location that will hold the project's
-   protocol records. Keep the README and `*.template.md` files until the team
-   has adopted equivalent local guidance.
-3. Copy the TADp distribution's authoritative `../../evidence/authoritative/LLM`
-   suite into the same path in the new project. Keep the copied root
-   `../../AGENTS.md`; it directs Codex to that suite.
-4. Copy the distribution's canonical `../initiatives` and
-   `../prompts` directories into a stable target template root, or
-   record a pinned external template root in the project profile.
-5. Copy [project-profile.template.md](project-profile.template.md) to
+2. Copy the distribution's complete `template/` tree to `template/` in the
+   target repository. Preserve `template/AGENTS.md` and
+   `template/.tadp-lock.json`; do not specialize any file in that source tree.
+3. Copy the contents of `template/project/`, including `.gitattributes` and
+   `.githooks/`, to the target repository root without overwriting established
+   files blindly. The root copies are the working project scaffold;
+   `template/project/` remains protected reusable source.
+4. Copy the distribution's authoritative `evidence/authoritative/LLM/` suite,
+   including its `AGENTS.md` and `.tadp-lock.json`, to the same path in the new
+   project. Keep the copied root `AGENTS.md`; it directs Codex to that suite.
+5. Copy the distribution's `docs/`, `tools/`, and `tests/` trees when using the
+   complete reference workflow. Run `python tools/tadp_protect.py check .`,
+   then enable the tracked guard with
+   `git config core.hooksPath .githooks`.
+6. Copy [project-profile.template.md](project-profile.template.md) to
    `project-profile.md`. Replace every `{{double_brace_token}}`, remove the
    instructional HTML comment, and record the project owner, boundary, and
    review cadence.
-6. Establish the binding sources in
+7. Establish the binding sources in
    [evidence/authoritative/](evidence/authoritative/README.md) before accepting
    work that depends on them. Record contextual sources separately in
    [evidence/non-authoritative/](evidence/non-authoritative/README.md).
-7. Create an [evidence register](evidence/evidence-register.template.md) once
+8. Create an [evidence register](evidence/evidence-register.template.md) once
    there is more than a small number of sources. Assign stable evidence IDs and
    cite a section or claim, not merely a directory.
-8. Register each proposed effort in
+9. Register each proposed effort in
    [initiatives/](initiatives/README.md), then create its type-specific record.
    An initiative cannot use a product change to silently revise its governing
    specification or evidence.
@@ -57,10 +63,10 @@ chain before there is enough material for the directories to become confusing.
    and [the portfolio status record](initiatives/status.template.md) before
    accepting the first initiative. The index answers what exists; the status
    record answers what is active, blocked, or gated next.
-9. Add a product record when an output has a declared destination, even if the
-   output itself lives outside `../../products`. Link its governing initiative,
+10. Add a product record when an output has a declared destination, even if the
+   output itself lives outside `products/`. Link its governing initiative,
    specification, binding evidence, and verification.
-10. At each review, reconcile changed evidence, initiative status, product
+11. At each review, reconcile changed evidence, initiative status, product
    verification, unresolved conflicts, and ownership in the records that they
    affect.
 
@@ -114,8 +120,29 @@ and status evidence coherent without merging their acceptance claims.
 
 ## How template files work
 
-Every `*.template.md` file is a copy-and-specialize starting point. Do not fill
-in the template in place if it is meant to remain reusable.
+The complete `template/` tree is protected reusable source, including numbered
+prompts, scaffold files, and every `*.template.md` file. The authoritative
+Codex suite at `evidence/authoritative/LLM/` is protected separately. Ordinary
+work must not edit, fill, rename, move, or delete either tree.
+
+The protection is layered:
+
+- root and directory-scoped `AGENTS.md` files establish the Codex edit
+  boundary;
+- each protected root carries a `.tadp-lock.json` with SHA-256 digests for
+  every other file in that root;
+- the validator rejects missing locks, unrecorded files, missing files, and
+  content drift; and
+- the tracked pre-commit hook rejects staged protected-source changes unless a
+  deliberate update uses an authority reference matching the refreshed lock.
+
+To use a template, copy it to its declared destination outside `template/` and
+specialize only that copy. For example, copy `rule.template.md` to
+`RULE-003-data-retention.md`, then edit the new record. An intentional reusable
+source or invariant revision requires an explicit human instruction naming the
+change, compatibility and migration review, affected-consumer updates,
+verification, and a governed lock refresh. Do not refresh a lock simply to
+make validation pass.
 
 1. Copy it to a descriptive, stable filename. For example,
    `rule.template.md` becomes `RULE-003-data-retention.md`.
@@ -160,7 +187,7 @@ places without a source of truth.
 
 ## Conflict and change discipline
 
-Treat artifacts in `../../evidence/authoritative` as binding until their named
+Treat artifacts in `evidence/authoritative/` as binding until their named
 authority revises them. Preserve the original source and record the replacement
 or correction relationship; never overwrite history merely to make a later
 initiative appear aligned. Contextual evidence may explain ambiguity or support
@@ -174,6 +201,10 @@ the assumption that the conflict has been resolved.
 
 ## Initial adoption checklist
 
+- [ ] The complete template and LLM invariant trees retain their scoped
+      `AGENTS.md` instructions and valid `.tadp-lock.json` files.
+- [ ] `.githooks/pre-commit` is tracked and `core.hooksPath` points to
+      `.githooks`.
 - [ ] `project-profile.md` names the project boundary and owners.
 - [ ] Binding evidence has a named owner, source, status, and precise claims.
 - [ ] Contextual evidence and realization notes retain their original context.

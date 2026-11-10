@@ -1,16 +1,25 @@
 # TADp instructions for Codex
 
 Before changing architecture, specifications, initiatives, products, or
-evidence, read the applicable documents in
-`../../evidence/authoritative/LLM`, beginning with the suite index.
+evidence, read the applicable documents in the TADp project root's
+`evidence/authoritative/LLM`, beginning with the suite index.
 
-- Treat every artifact under `../../evidence/authoritative` as binding invariant
+The project root's `template/**` and
+`evidence/authoritative/LLM/**` trees are protected sources. Ordinary project
+and initiative work may read or copy them but must not edit, fill, rename,
+move, or delete them. Copy a reusable source to its declared destination
+outside `template/` before specializing it. A protected source may change only
+when the user explicitly requests that exact reusable template or invariant
+change. Never refresh its `.tadp-lock.json` or use the protected-update commit
+override without the same explicit authority.
+
+- Treat every artifact under `evidence/authoritative` as binding invariant
   authority. Do not modify it unless the user explicitly instructs the specific
   invariant change.
 - Never make an initiative, product, test, implementation, or status claim
   conflict with an invariant. Correct lower-standing work or record an
   invariant conflict.
-- Use `../../evidence/non-authoritative` only as clues for invariant-compatible
+- Use `evidence/non-authoritative` only as clues for invariant-compatible
   interpretation. It cannot resolve a contradiction with authoritative
   evidence.
 - Treat realizations as broad inputs and initiatives as the coherent, bounded

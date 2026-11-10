@@ -34,6 +34,9 @@ Read these documents in order when first adopting or maintaining TADp:
 
 ## Operating guides
 
+- [Protected-source integrity migration](guides/protected-source-integrity-migration.md)
+  explains how an existing adoption establishes reviewed template and Codex
+  invariant locks without treating unexplained local drift as authority.
 - [Legacy initiative decomposition](guides/legacy-initiative-decomposition.md)
   explains how to split a broad historical initiative without rewriting its
   evidence or losing ownership.

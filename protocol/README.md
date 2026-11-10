@@ -88,6 +88,8 @@ quietly weakening a specification or completion claim.
 
 | Path | Role |
 |---|---|
+| [`.gitattributes`](.gitattributes) | Portable LF handling for protected text and hook scripts |
+| [`.githooks/pre-commit`](.githooks/pre-commit) | Tracked validation and protected-source commit guard |
 | [`AGENTS.md`](AGENTS.md) | Repository-wide Codex instructions |
 | [`evidence/`](evidence/README.md) | Evidence and the authority level of each source |
 | [`evidence/authoritative/`](evidence/authoritative/README.md) | Binding invariants and Codex protocol rules |
@@ -155,17 +157,17 @@ For the full sequence and the ownership of each record, see
 ### Adopt TADp in another repository
 
 1. Start with a repository root that has its own Git history.
-2. Copy the reusable [`template/project/`](template/project/README.md)
-   structure into that repository.
-3. Either copy `template/initiatives/` and `template/prompts/` into a stable
-   template folder in the target or record a pinned external TADp template
-   root.
-4. Copy the authoritative `evidence/authoritative/LLM/` suite into the same
-   path in the target, and keep the project-level `AGENTS.md`.
-5. Complete `project-profile.md`, assign ownership for each source of evidence,
+2. Copy the complete protected [`template/`](template/README.md) tree into the
+   target, preserving its `AGENTS.md` and `.tadp-lock.json`.
+3. Copy the contents of [`template/project/`](template/project/README.md),
+   including `.gitattributes` and `.githooks/`, into the repository root.
+   Specialize only these destination copies, never the reusable source tree.
+4. Copy the protected authoritative `evidence/authoritative/LLM/` suite into
+   the same path in the target, preserving its scoped instructions and lock.
+5. Copy the developer documentation, tools, and tests; run the protection check
+   and configure `core.hooksPath=.githooks` in each clone or worktree.
+6. Complete `project-profile.md`, assign ownership for each source of evidence,
    and create the initiative index and status record.
-6. Copy the developer documentation, validator, and tests when the target
-   project needs to enforce the full TADp structure.
 
 See [Getting started](docs/development/getting-started.md) for prerequisites,
 setup options, and the first validation run.
@@ -177,6 +179,7 @@ The validator uses only the Python standard library. From the protocol root
 adopted repository):
 
 ```powershell
+python tools/tadp_protect.py check .
 python tools/tadp_validate.py .
 python -m unittest discover -s tests -v
 ```
@@ -207,6 +210,7 @@ The complete documentation index is at [`docs/README.md`](docs/README.md).
 | [Validation and quality](docs/development/validation-and-quality.md) | Validator behavior, tests, limits, and continuous integration (CI) |
 | [Developing TADp](docs/development/developing-tadp.md) | How to change TADp and its supporting files |
 | [Adapting other tools](docs/development/adapting-other-tools.md) | How to check and adapt a tool other than Codex |
+| [Protected-source integrity migration](docs/guides/protected-source-integrity-migration.md) | How existing adopters establish reviewed template and invariant locks |
 | [Legacy initiative decomposition](docs/guides/legacy-initiative-decomposition.md) | How to split an older, overly broad initiative safely |
 | [Workflow stage 0–13 migration](docs/guides/workflow-stage-0-13-migration.md) | How to migrate an active initiative to explicit acceptance and type-specific delivery paths |
 

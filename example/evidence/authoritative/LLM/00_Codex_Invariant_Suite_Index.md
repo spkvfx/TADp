@@ -16,6 +16,43 @@ change.
 Authoritative evidence belongs under the single `..`
 hierarchy.
 
+## Protected baseline
+
+This suite is a protected source tree. During ordinary work, Codex may read and
+cite it but must not edit, replace, rename, move, or delete it. A change is
+permitted only when an explicit human instruction identifies the particular
+invariant revision or addition being authorized; general implementation,
+alignment, repair, completion, or validation instructions are insufficient.
+
+The directory-scoped `AGENTS.md` repeats that edit boundary at the point of
+use. `.tadp-lock.json` records canonical-content SHA-256 digests for every other
+file in this directory, and repository validation rejects missing, added,
+removed, or changed files that do not match that lock. The lock is integrity
+evidence, not authority to revise an invariant. It may be refreshed only after
+the authorized revision has satisfied the preservation, impact, compatibility,
+migration, and consumer-reconciliation requirements of this suite.
+
+### Protection revision record
+
+- **Authority:** Explicit human instruction on 2026-11-10 to protect reusable
+  templates and the authoritative LLM invariant suite from inadvertent LLM
+  edits.
+- **Reason:** A copied TADp project needs a durable distinction between
+  read-only reusable sources and editable instantiated records.
+- **Affected scope:** Codex edit instructions, template and invariant integrity
+  locks, validation, the local commit gate, adoption guidance, and migration
+  guidance. The substantive meaning of specifications 01 through 08 is
+  unchanged.
+- **Effective point:** The Git commit that introduces the complete
+  protected-source control set.
+- **Compatibility and migration:** Existing initiatives and accepted claims do
+  not change. Existing adopters must use the protected-source integrity
+  migration guide before claiming the new controls are active; initializing a
+  lock does not accept unexplained drift.
+- **Successor relationship:** This protection revision succeeds the prior
+  suite-index revision only for source-integrity handling. Git history
+  preserves the predecessor and every earlier substantive invariant.
+
 ## Documents
 
 1. [Codex evidence authority specification](01_Codex_Evidence_Authority_Specification.md)

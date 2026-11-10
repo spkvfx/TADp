@@ -4,11 +4,12 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 import sys
 from dataclasses import asdict, dataclass
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 from typing import Iterable
 from urllib.parse import unquote
 
@@ -44,7 +45,17 @@ LEGAL_TRANSITIONS = {
     "Superseded": {"Proposed", "Accepted"},
 }
 
+PROTECTED_ROOTS = (
+    "template",
+    "evidence/authoritative/LLM",
+)
+PROTECTED_LOCK_NAME = ".tadp-lock.json"
+PROTECTED_LOCK_SCHEMA_VERSION = 1
+PROTECTED_HASH_ALGORITHM = "sha256-canonical-v1"
+SHA256_DIGEST = re.compile(r"^[0-9a-f]{64}$")
+
 BASE_REQUIRED_PATHS = (
+    ".gitattributes",
     "README.md",
     "AGENTS.md",
     "docs/README.md",
@@ -56,10 +67,12 @@ BASE_REQUIRED_PATHS = (
     "docs/development/validation-and-quality.md",
     "docs/development/developing-tadp.md",
     "docs/development/adapting-other-tools.md",
+    "docs/guides/protected-source-integrity-migration.md",
     "docs/guides/workflow-stage-0-13-migration.md",
     "evidence/README.md",
     "evidence/authoritative/README.md",
     "evidence/authoritative/LLM/00_Codex_Invariant_Suite_Index.md",
+    "evidence/authoritative/LLM/AGENTS.md",
     "evidence/authoritative/LLM/01_Codex_Evidence_Authority_Specification.md",
     "evidence/authoritative/LLM/02_Codex_Initiative_Governance_Specification.md",
     "evidence/authoritative/LLM/03_Codex_Invariant_Conflict_Register.md",
@@ -70,10 +83,15 @@ BASE_REQUIRED_PATHS = (
     "evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md",
     "evidence/non-authoritative/README.md",
     "initiatives/README.md",
+    "template/AGENTS.md",
     "template/initiatives/README.md",
     "template/project/AGENTS.md",
+    "template/project/.gitattributes",
+    "template/project/.githooks/pre-commit",
     "template/prompts/README.md",
     "template/prompts/WORKFLOW-CONTRACT.md",
+    ".githooks/pre-commit",
+    "tools/tadp_protect.py",
 )
 
 INITIAL_INITIATIVE_FILES = (
@@ -114,6 +132,224 @@ def markdown_files(root: Path) -> Iterable[Path]:
 def is_template(path: Path, root: Path) -> bool:
     rel = path.relative_to(root)
     return "template" in rel.parts or path.name.endswith(".template.md")
+
+
+def sha256_file(path: Path) -> str:
+    content = path.read_bytes()
+    if b"\0" not in content:
+        try:
+            text = content.decode("utf-8")
+        except UnicodeDecodeError:
+            pass
+        else:
+            content = text.replace("\r\n", "\n").replace("\r", "\n").encode("utf-8")
+    return hashlib.sha256(content).hexdigest()
+
+
+def protected_lock_path(root: Path, protected_root: str) -> Path:
+    return root / protected_root / PROTECTED_LOCK_NAME
+
+
+def protected_source_files(root: Path, protected_root: str) -> list[Path]:
+    source_root = root / protected_root
+    lock_path = protected_lock_path(root, protected_root)
+    if not source_root.is_dir():
+        return []
+    return sorted(
+        path
+        for path in source_root.rglob("*")
+        if path.is_file() and path != lock_path and ".git" not in path.parts
+    )
+
+
+def protected_source_symlinks(root: Path, protected_root: str) -> list[Path]:
+    source_root = root / protected_root
+    if not source_root.is_dir():
+        return []
+    return sorted(path for path in source_root.rglob("*") if path.is_symlink())
+
+
+def build_protected_lock(
+    root: Path, protected_root: str, authority: str
+) -> dict[str, object]:
+    root = root.resolve()
+    if protected_root not in PROTECTED_ROOTS:
+        raise ValueError(f"unsupported protected root: {protected_root}")
+    source_root = root / protected_root
+    if not source_root.is_dir():
+        raise ValueError(f"protected root does not exist: {protected_root}")
+    authority = authority.strip()
+    if not authority:
+        raise ValueError("authority reference must not be empty")
+
+    symlinks = protected_source_symlinks(root, protected_root)
+    if symlinks:
+        raise ValueError(
+            "protected source must not be a symbolic link: "
+            f"{relative(symlinks[0], root)}"
+        )
+
+    files: dict[str, str] = {}
+    for path in protected_source_files(root, protected_root):
+        files[path.relative_to(source_root).as_posix()] = sha256_file(path)
+
+    return {
+        "schema_version": PROTECTED_LOCK_SCHEMA_VERSION,
+        "algorithm": PROTECTED_HASH_ALGORITHM,
+        "protected_root": protected_root,
+        "authority": authority,
+        "files": files,
+    }
+
+
+def validate_protected_sources(root: Path) -> list[Finding]:
+    findings: list[Finding] = []
+    for protected_root in PROTECTED_ROOTS:
+        source_root = root / protected_root
+        lock_path = protected_lock_path(root, protected_root)
+        lock_display = relative(lock_path, root)
+
+        if not lock_path.is_file():
+            findings.append(
+                Finding(
+                    "error",
+                    "TADP023",
+                    lock_display,
+                    "protected-source lock is missing; initialize it through the governed protection workflow",
+                )
+            )
+            continue
+
+        try:
+            payload = json.loads(lock_path.read_text(encoding="utf-8"))
+        except (OSError, UnicodeError, json.JSONDecodeError) as error:
+            findings.append(
+                Finding(
+                    "error",
+                    "TADP023",
+                    lock_display,
+                    f"protected-source lock is unreadable or invalid JSON: {error}",
+                )
+            )
+            continue
+
+        if not isinstance(payload, dict):
+            findings.append(
+                Finding(
+                    "error",
+                    "TADP023",
+                    lock_display,
+                    "protected-source lock must be a JSON object",
+                )
+            )
+            continue
+
+        authority = payload.get("authority")
+        files = payload.get("files")
+        config_valid = (
+            payload.get("schema_version") == PROTECTED_LOCK_SCHEMA_VERSION
+            and payload.get("algorithm") == PROTECTED_HASH_ALGORITHM
+            and payload.get("protected_root") == protected_root
+            and isinstance(authority, str)
+            and bool(authority.strip())
+            and isinstance(files, dict)
+        )
+        if not config_valid:
+            findings.append(
+                Finding(
+                    "error",
+                    "TADP023",
+                    lock_display,
+                    "protected-source lock metadata does not match the required schema, root, algorithm, or authority",
+                )
+            )
+            continue
+
+        locked_files: dict[str, str] = {}
+        invalid_entry: str | None = None
+        for name, digest in files.items():
+            if not isinstance(name, str) or not isinstance(digest, str):
+                invalid_entry = "file paths and digests must be strings"
+                break
+            pure_path = PurePosixPath(name)
+            if (
+                pure_path.is_absolute()
+                or not pure_path.parts
+                or ".." in pure_path.parts
+                or name == PROTECTED_LOCK_NAME
+                or not SHA256_DIGEST.fullmatch(digest)
+            ):
+                invalid_entry = f"invalid protected file entry: {name}"
+                break
+            locked_files[name] = digest
+        if invalid_entry:
+            findings.append(Finding("error", "TADP023", lock_display, invalid_entry))
+            continue
+
+        symlink_names: set[str] = set()
+        for path in protected_source_symlinks(root, protected_root):
+            try:
+                symlink_names.add(path.relative_to(source_root).as_posix())
+            except ValueError:
+                pass
+            findings.append(
+                Finding(
+                    "error",
+                    "TADP027",
+                    relative(path, root),
+                    "protected sources must not be symbolic links",
+                )
+            )
+
+        current_files: dict[str, Path] = {
+            path.relative_to(source_root).as_posix(): path
+            for path in protected_source_files(root, protected_root)
+        }
+
+        for name in sorted(current_files.keys() - locked_files.keys()):
+            findings.append(
+                Finding(
+                    "error",
+                    "TADP025",
+                    relative(current_files[name], root),
+                    "protected source is not recorded in its lock",
+                )
+            )
+        for name in sorted(locked_files.keys() - current_files.keys()):
+            findings.append(
+                Finding(
+                    "error",
+                    "TADP026",
+                    f"{protected_root}/{name}",
+                    "locked protected source is missing",
+                )
+            )
+        for name in sorted(current_files.keys() & locked_files.keys()):
+            if name in symlink_names:
+                continue
+            try:
+                actual_digest = sha256_file(current_files[name])
+            except OSError as error:
+                findings.append(
+                    Finding(
+                        "error",
+                        "TADP024",
+                        relative(current_files[name], root),
+                        f"protected source cannot be hashed: {error}",
+                    )
+                )
+                continue
+            if actual_digest != locked_files[name]:
+                findings.append(
+                    Finding(
+                        "error",
+                        "TADP024",
+                        relative(current_files[name], root),
+                        "protected source content differs from its authorized lock",
+                    )
+                )
+
+    return findings
 
 
 def validate_required_paths(root: Path) -> list[Finding]:
@@ -467,6 +703,7 @@ def validate(root: Path) -> list[Finding]:
     root = root.resolve()
     findings: list[Finding] = []
     findings.extend(validate_required_paths(root))
+    findings.extend(validate_protected_sources(root))
     findings.extend(validate_links(root))
     findings.extend(validate_tokens(root))
     findings.extend(validate_initiatives(root))
