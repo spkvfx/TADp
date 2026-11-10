@@ -1,14 +1,19 @@
 # Traceable Architecture Design Protocol (TADp)
 
-TADp is a protocol for managing software work in a Git repository. It turns
-evidence and explicit human decisions into focused initiatives that developers
-can review and verify. For each initiative, TADp records **why the work exists**,
-**who approved it**, **what developers agreed to do**, **what changed**, and
-**what evidence shows the result**.
+TADp is a protocol for rigorous LLM-assisted software development in a Git
+repository. It turns evidence and explicit human decisions into focused
+initiatives that an LLM can help deliver and that people can review and verify.
+For each initiative, TADp records **why the work exists**, **who approved it**,
+**what developers agreed to do**, **what changed**, and **what evidence shows
+the result**.
 
-TADp is designed for software architecture work with Git and Codex. It is most
-useful when developers must explain what a system does, how each decision
-gained authority, and what evidence supports completion.
+LLM collaboration is an intended part of TADp, not an optional layer added
+afterward. Git and Codex are required parts of the reference workflow. Codex
+helps maintain the detailed specifications, cross-record reconciliation, and
+evidence trail; people retain the decision and acceptance authority assigned
+to them by the protocol. TADp is most useful when developers must explain what a
+system does, how each decision gained authority, and what evidence supports
+completion.
 
 The reference protocol and its complete documentation live in
 [`protocol/`](protocol/README.md).
@@ -32,8 +37,14 @@ defined approval points. A lifecycle status can change only after verification.
 
 ### LLM-assisted development
 
-LLMs can speed up research, planning, coding, and verification. However, their
-convincing output may be based on incomplete information.
+LLM assistance is TADp's intended operating model. The protocol asks for enough
+structured specification, traceability, and reconciliation that running it
+entirely by hand is theoretically possible but usually impractical for a
+substantial project. The LLM carries much of that organizational and drafting
+load; it does not gain authority to decide what is true, approved, or complete.
+
+That distinction matters because convincing LLM output may be based on
+incomplete information.
 
 Without an explicit protocol, an LLM may create these problems:
 
@@ -47,8 +58,21 @@ Without an explicit protocol, an LLM may create these problems:
 TADp makes LLM-assisted work reviewable. It records the scope, authority,
 assumptions, decisions, acceptance criteria, and verification evidence in the
 repository. LLMs may assist throughout the workflow, but people remain
-responsible for open questions and decisions that could have major effects.
+responsible for the decisions and acceptance gates assigned to human authority.
 Completion depends on recorded evidence, not on the model's confidence.
+
+## Project fit
+
+TADp is best suited to larger, long-lived, or architecturally significant
+projects, especially when work crosses many dependencies, contributors,
+authority boundaries, or release gates. Its detailed records and workflow
+stages are deliberate overhead that pays off when traceability and controlled
+change matter.
+
+For a small prototype, short-lived script, or low-risk application, TADp will
+usually be overkill. A lighter process is generally a better fit unless even a
+small project has unusually strong assurance, regulatory, audit, or handoff
+requirements.
 
 ## How TADp works
 
@@ -62,8 +86,14 @@ flowchart LR
     I --> G{"Assumptions and<br/>questions settled?"}
     G -->|Decision needed| D["Human decision<br/>and receipt"]
     D --> I
-    G -->|Ready| X["Execute accepted work"]
-    X --> V["Verify work and record<br/>completion evidence"]
+    G -->|Ready| H["Human acceptance<br/>and receipt"]
+    H --> T{"Initiative type"}
+    T -->|Implementation| X["Implement accepted<br/>product work"]
+    T -->|Design| Y["Deliver accepted<br/>specification work"]
+    T -->|Planning| Z["Deliver accepted<br/>evidence work"]
+    X --> V["Verify delivery and record<br/>completion evidence"]
+    Y --> V
+    Z --> V
     V --> S["Evidence-backed<br/>lifecycle status"]
 ```
 
@@ -130,6 +160,8 @@ Reopening does not erase an earlier acceptance or completion.
 - templates for proposals, assumptions, decisions, specifications, plans, work
   records, and completion evidence;
 - a step-by-step Codex workflow with clear human decision points;
+- an explicit acceptance stage followed by separate implementation, design,
+  and planning delivery paths;
 - Git branch and history rules that make work easier to review;
 - a validator that checks structure and traceability rules; and
 - a reusable project structure for adopting TADp in another repository.
@@ -161,6 +193,13 @@ prove that the product is correct or ready for production.
 4. Use the [initiative workflow](protocol/docs/development/initiative-workflow.md)
    to run a small trial with one outcome and one acceptance claim.
 5. Run the validator and the project's own checks before review.
+
+From this reference repository's root, run:
+
+```powershell
+python protocol/tools/tadp_validate.py protocol
+python -m unittest discover -s protocol/tests -v
+```
 
 TADp requires **Git** and **Codex**. Python 3 is also required to run the
 validator and its tests, although the validator uses only the Python standard
