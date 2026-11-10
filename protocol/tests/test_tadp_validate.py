@@ -30,6 +30,7 @@ class ValidatorTests(unittest.TestCase):
             "docs/development/validation-and-quality.md": "# Validation\n",
             "docs/development/developing-tadp.md": "# Development\n",
             "docs/development/adapting-other-tools.md": "# Adapting tools\n",
+            "docs/guides/workflow-stage-0-13-migration.md": "# Workflow migration\n",
             "evidence/README.md": "# Evidence\n",
             "evidence/authoritative/README.md": "# Authoritative\n",
             "evidence/authoritative/LLM/00_Codex_Invariant_Suite_Index.md": "# Suite\n",
@@ -49,9 +50,12 @@ class ValidatorTests(unittest.TestCase):
                 "initiative_alignment",
                 "initiative_assumption_review",
                 "initiative_open_question_review",
+                "initiative_acceptance",
                 "initiative_sdk_api_alignment",
                 "initiative_implementation_readiness_review",
                 "initiative_execution",
+                "design_delivery",
+                "planning_delivery",
                 "initiative_finalization",
             )
         ):
@@ -68,6 +72,7 @@ class ValidatorTests(unittest.TestCase):
                 "Git_Workflow_Specification",
                 "Initiative_Scope_Specification",
                 "Human_Decision_Receipt_Specification",
+                "Initiative_Workflow_Specification",
             ),
             start=1,
         ):
@@ -150,6 +155,47 @@ class ValidatorTests(unittest.TestCase):
             (root / ".git").rmdir()
             self.assertIn("TADP012", {item.code for item in validate(root)})
 
+    def test_protocol_root_may_be_contained_in_parent_git_repository(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            repository = Path(directory)
+            protocol = repository / "protocol"
+            protocol.mkdir()
+            self.make_repository(protocol)
+            for path in (protocol / ".git").iterdir():
+                path.unlink()
+            (protocol / ".git").rmdir()
+            git_directory = repository / ".git"
+            git_directory.mkdir()
+            (git_directory / "HEAD").write_text(
+                "ref: refs/heads/main\n", encoding="utf-8"
+            )
+            (git_directory / "config").write_text(
+                "[core]\n\trepositoryformatversion = 0\n", encoding="utf-8"
+            )
+            (repository / "AGENTS.md").write_text(
+                "# Repository instructions\n", encoding="utf-8"
+            )
+            self.assertEqual([], validate(protocol))
+
+    def test_parent_git_repository_requires_root_agents_entry_point(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            repository = Path(directory)
+            protocol = repository / "protocol"
+            protocol.mkdir()
+            self.make_repository(protocol)
+            for path in (protocol / ".git").iterdir():
+                path.unlink()
+            (protocol / ".git").rmdir()
+            git_directory = repository / ".git"
+            git_directory.mkdir()
+            (git_directory / "HEAD").write_text(
+                "ref: refs/heads/main\n", encoding="utf-8"
+            )
+            (git_directory / "config").write_text(
+                "[core]\n\trepositoryformatversion = 0\n", encoding="utf-8"
+            )
+            self.assertIn("TADP022", {item.code for item in validate(protocol)})
+
     def test_illegal_lifecycle_transition_is_reported(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -191,6 +237,72 @@ class ValidatorTests(unittest.TestCase):
                 encoding="utf-8",
             )
             self.assertIn("TADP016", {item.code for item in validate(root)})
+
+    def test_accepted_initiative_requires_acceptance_receipt(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_repository(root)
+            self.make_initiative(
+                root,
+                status="Accepted",
+                history=(
+                    "| 2026-11-10 | Initial | Proposed | proposal | initial | start | c1 |\n"
+                    "| 2026-11-11 | Proposed | Accepted | decision | v1 | accepted | c2 |"
+                ),
+            )
+            self.assertIn("TADP020", {item.code for item in validate(root)})
+
+    def test_accepted_initiative_with_linked_acceptance_receipt_passes_gate(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_repository(root)
+            initiative = self.make_initiative(
+                root,
+                status="Accepted",
+                history=(
+                    "| 2026-11-10 | Initial | Proposed | proposal | initial | start | c1 |\n"
+                    "| 2026-11-11 | Proposed | Accepted | "
+                    "[receipt](decision-receipts/acceptance.md) | v1 | accepted | c2 |"
+                ),
+            )
+            receipts = initiative / "decision-receipts"
+            receipts.mkdir()
+            (receipts / "acceptance.md").write_text(
+                "# Acceptance\n\n**Disposition:** Accepted\n", encoding="utf-8"
+            )
+            codes = {item.code for item in validate(root)}
+            self.assertNotIn("TADP020", codes)
+            self.assertNotIn("TADP021", codes)
+
+    def test_in_progress_design_requires_delivery_record(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_repository(root)
+            initiative = self.make_initiative(
+                root,
+                status="In progress",
+                initiative_type="design",
+                history=(
+                    "| 2026-11-10 | Initial | Proposed | proposal | initial | start | c1 |\n"
+                    "| 2026-11-11 | Proposed | Accepted | decision | v1 | accepted | c2 |\n"
+                    "| 2026-11-12 | Accepted | In progress | delivery | v1 | began | c3 |"
+                ),
+            )
+            receipts = initiative / "decision-receipts"
+            receipts.mkdir()
+            (receipts / "acceptance.md").write_text(
+                "# Acceptance\n\n**Disposition:** Accepted\n", encoding="utf-8"
+            )
+            readme = initiative / "README.md"
+            readme.write_text(
+                readme.read_text(encoding="utf-8")
+                + "\n[Acceptance receipt](decision-receipts/acceptance.md)\n",
+                encoding="utf-8",
+            )
+            findings = validate(root)
+            self.assertIn("TADP019", {item.code for item in findings})
+            self.assertNotIn("TADP020", {item.code for item in findings})
+            self.assertNotIn("TADP021", {item.code for item in findings})
 
 
 if __name__ == "__main__":

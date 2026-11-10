@@ -21,6 +21,7 @@ TYPE_LINE = re.compile(r"(?im)^\*\*Initiative type:\*\*\s*`?([^`\r\n]+)`?")
 RESOLVED_TABLE_ROW = re.compile(
     r"(?im)^\|(?=[^\n]*\b(?:Confirmed|Corrected|Not applicable|Accepted(?:\s+\d{4}-\d{2}-\d{2})?|Deferred)\b)[^\n]*\|\s*$"
 )
+ACCEPTANCE_DISPOSITION = re.compile(r"(?im)^\*\*Disposition:\*\*\s*Accepted\b")
 LIFECYCLE_SECTION = re.compile(
     r"(?ims)^#{2,3}\s+Lifecycle history\s*$\n(.*?)(?=^#{1,3}\s|\Z)"
 )
@@ -55,6 +56,7 @@ BASE_REQUIRED_PATHS = (
     "docs/development/validation-and-quality.md",
     "docs/development/developing-tadp.md",
     "docs/development/adapting-other-tools.md",
+    "docs/guides/workflow-stage-0-13-migration.md",
     "evidence/README.md",
     "evidence/authoritative/README.md",
     "evidence/authoritative/LLM/00_Codex_Invariant_Suite_Index.md",
@@ -65,6 +67,7 @@ BASE_REQUIRED_PATHS = (
     "evidence/authoritative/LLM/05_Codex_Git_Workflow_Specification.md",
     "evidence/authoritative/LLM/06_Codex_Initiative_Scope_Specification.md",
     "evidence/authoritative/LLM/07_Codex_Human_Decision_Receipt_Specification.md",
+    "evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md",
     "evidence/non-authoritative/README.md",
     "initiatives/README.md",
     "template/initiatives/README.md",
@@ -115,17 +118,36 @@ def is_template(path: Path, root: Path) -> bool:
 
 def validate_required_paths(root: Path) -> list[Finding]:
     findings: list[Finding] = []
-    git_entry = root / ".git"
-    valid_git_entry = False
-    if git_entry.is_dir():
-        valid_git_entry = (git_entry / "HEAD").is_file() and (git_entry / "config").is_file()
-    elif git_entry.is_file():
-        valid_git_entry = git_entry.read_text(encoding="utf-8", errors="replace").lstrip().startswith(
-            "gitdir:"
-        )
-    if not valid_git_entry:
+    valid_git_root: Path | None = None
+    for candidate in (root, *root.parents):
+        git_entry = candidate / ".git"
+        if git_entry.is_dir() and (git_entry / "HEAD").is_file() and (
+            git_entry / "config"
+        ).is_file():
+            valid_git_root = candidate
+            break
+        if git_entry.is_file() and git_entry.read_text(
+            encoding="utf-8", errors="replace"
+        ).lstrip().startswith("gitdir:"):
+            valid_git_root = candidate
+            break
+    if valid_git_root is None:
         findings.append(
-            Finding("error", "TADP012", ".git", "TADp project has no valid Git metadata entry")
+            Finding(
+                "error",
+                "TADP012",
+                ".git",
+                "TADp root is not contained in a valid Git repository",
+            )
+        )
+    elif not (valid_git_root / "AGENTS.md").is_file():
+        findings.append(
+            Finding(
+                "error",
+                "TADP022",
+                relative(valid_git_root / "AGENTS.md", root),
+                "TADp Git repository root has no Codex AGENTS.md entry point",
+            )
         )
     for item in BASE_REQUIRED_PATHS:
         if not (root / item).exists():
@@ -282,7 +304,9 @@ def validate_initiatives(root: Path) -> list[Finding]:
                             )
                         )
 
-            if status and status.group(1).strip().rstrip("  ") == "Completed":
+            declared_status = status.group(1).strip().rstrip("  ") if status else None
+
+            if declared_status == "Completed":
                 if not (directory / "completion-evidence.md").exists():
                     findings.append(
                         Finding(
@@ -294,11 +318,10 @@ def validate_initiatives(root: Path) -> list[Finding]:
                     )
 
             initiative_type = TYPE_LINE.search(text)
+            initiative_type_value = initiative_type.group(1).strip() if initiative_type else None
             if (
-                status
-                and status.group(1).strip().rstrip("  ") == "In progress"
-                and initiative_type
-                and initiative_type.group(1).strip() == "implementation"
+                declared_status in {"In progress", "Completed"}
+                and initiative_type_value == "implementation"
                 and not (directory / "execution-record.md").exists()
             ):
                 findings.append(
@@ -309,6 +332,51 @@ def validate_initiatives(root: Path) -> list[Finding]:
                         "in-progress implementation initiative has no execution record",
                     )
                 )
+
+            if (
+                declared_status in {"In progress", "Completed"}
+                and initiative_type_value in {"design", "planning"}
+                and not (directory / "delivery-record.md").exists()
+            ):
+                findings.append(
+                    Finding(
+                        "error",
+                        "TADP019",
+                        relative(directory / "delivery-record.md", root),
+                        f"{declared_status.lower()} {initiative_type_value} initiative has no delivery record",
+                    )
+                )
+
+            receipts = directory / "decision-receipts"
+            receipt_files = (
+                [path for path in receipts.glob("*.md") if path.name != "README.md"]
+                if receipts.is_dir()
+                else []
+            )
+            if declared_status in {"Accepted", "In progress", "Completed"}:
+                acceptance_receipts = [
+                    path
+                    for path in receipt_files
+                    if ACCEPTANCE_DISPOSITION.search(path.read_text(encoding="utf-8"))
+                ]
+                if not acceptance_receipts:
+                    findings.append(
+                        Finding(
+                            "error",
+                            "TADP020",
+                            relative(receipts, root),
+                            f"{declared_status} initiative has no explicit acceptance receipt",
+                        )
+                    )
+                if "decision-receipts/" not in text:
+                    findings.append(
+                        Finding(
+                            "error",
+                            "TADP021",
+                            relative(readme, root),
+                            "accepted lifecycle standing does not link its decision receipt",
+                        )
+                    )
 
         source_map = directory / "source-mapping.md"
         if source_map.exists():
@@ -362,7 +430,7 @@ def validate_initiatives(root: Path) -> list[Finding]:
 def validate_prompts(root: Path) -> list[Finding]:
     findings: list[Finding] = []
     prompt_root = root / "template" / "prompts"
-    for number in range(11):
+    for number in range(14):
         matches = sorted(prompt_root.glob(f"{number:02d}_*.md"))
         if len(matches) != 1:
             findings.append(
