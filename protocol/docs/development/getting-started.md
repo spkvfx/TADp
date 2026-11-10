@@ -72,7 +72,8 @@ reconstruct the base branch or original evidence state.
 
 ## First validation
 
-From the repository root, run:
+From the protocol root (`protocol/` in the reference repository and normally
+the project root in an adopted repository), run:
 
 ```powershell
 python tools/tadp_validate.py .
@@ -90,9 +91,12 @@ it does not accept evidence or an initiative.
 ## First initiative
 
 Choose a small outcome with one owner, one authority boundary, and an
-independent acceptance claim. Use the numbered prompts in `../../template/prompts`
-in order, beginning with preparation. Do not begin with a portfolio-wide or
-multi-outcome effort.
+independent acceptance claim. Use numbered stages 0 through 7 in
+`../../template/prompts` in order, beginning with preparation. After explicit
+acceptance, use exactly one delivery path for the declared initiative type:
+stages 8 through 10 for implementation, stage 11 for design, or stage 12 for
+planning. Use stage 13 only after evidence-backed completion. Do not begin with
+a portfolio-wide or multi-outcome effort.
 
 During the pilot, record friction rather than bypassing it. A repeated friction
 point may justify a later TADp change, but a local convenience must not silently

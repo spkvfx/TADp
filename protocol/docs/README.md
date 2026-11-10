@@ -37,6 +37,9 @@ Read these documents in order when first adopting or maintaining TADp:
 - [Legacy initiative decomposition](guides/legacy-initiative-decomposition.md)
   explains how to split a broad historical initiative without rewriting its
   evidence or losing ownership.
+- [Workflow stage 0–13 migration](guides/workflow-stage-0-13-migration.md)
+  explains how to move active initiatives to the explicit acceptance gate and
+  type-specific delivery paths without rewriting their history.
 
 ## Documentation maintenance
 

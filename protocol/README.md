@@ -125,12 +125,16 @@ The standard workflow is:
    decisions.
 6. Ask a human to resolve open assumptions and questions, then record each
    response in a decision receipt.
-7. For implementation initiatives, align the affected SDKs and APIs and
-   complete the read-only readiness review before coding begins.
-8. Perform only accepted work and keep the standard execution record up to
-   date.
-9. Create evidence that supports the exact approved completion claim.
-10. Prepare the branch and pull request for review. Do not merge, deploy, or
+7. Present the complete bounded baseline for a separate explicit human
+   acceptance decision and receipt.
+8. Follow exactly one delivery path: implementation, design, or planning.
+   Implementation also performs applicable SDK/API alignment and the read-only
+   readiness review before product execution.
+9. Maintain the type-specific execution or delivery record while performing
+   only accepted work.
+10. Create completion evidence for the exact accepted claim and record
+    `Completed` only when every in-scope gate passes.
+11. Prepare the branch and pull request for review. Do not merge, deploy, or
     delete history without explicit approval.
 
 For the full sequence and the ownership of each record, see
@@ -168,7 +172,9 @@ setup options, and the first validation run.
 
 ## Validation
 
-The validator uses only the Python standard library. From the repository root:
+The validator uses only the Python standard library. From the protocol root
+(`protocol/` in the reference repository and normally the project root in an
+adopted repository):
 
 ```powershell
 python tools/tadp_validate.py .
@@ -202,6 +208,7 @@ The complete documentation index is at [`docs/README.md`](docs/README.md).
 | [Developing TADp](docs/development/developing-tadp.md) | How to change TADp and its supporting files |
 | [Adapting other tools](docs/development/adapting-other-tools.md) | How to check and adapt a tool other than Codex |
 | [Legacy initiative decomposition](docs/guides/legacy-initiative-decomposition.md) | How to split an older, overly broad initiative safely |
+| [Workflow stage 0–13 migration](docs/guides/workflow-stage-0-13-migration.md) | How to migrate an active initiative to explicit acceptance and type-specific delivery paths |
 
 ## Development and contribution
 

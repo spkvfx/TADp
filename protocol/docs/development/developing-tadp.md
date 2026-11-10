@@ -89,6 +89,12 @@ When an authoritative revision is accepted, the commit and review description
 should identify the prior rule, new rule, human authority, affected consumers,
 migration consequence, and verification.
 
+When the revision adds, removes, renumbers, or changes a workflow stage,
+publish a migration guide for active initiatives. Preserve historical prompt
+identity and require an explicit change record before an active initiative
+mixes workflow revisions. Never rewrite a prior stage number as though the
+initiative originally used the current workflow.
+
 ## Verification checklist
 
 - [ ] Applicable authoritative specifications were read.
@@ -96,7 +102,7 @@ migration consequence, and verification.
 - [ ] All affected consumers were inspected.
 - [ ] Repository-relative links resolve.
 - [ ] Prompt examples and executable placeholders remain separated.
-- [ ] No group or umbrella initiative construct was introduced.
+- [ ] No umbrella or multi-purpose initiative construct was introduced.
 - [ ] Git and Codex requirements remain explicit.
 - [ ] Non-Codex compatibility is not claimed without an adapter review.
 - [ ] Validator regression tests pass.

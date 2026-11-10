@@ -10,7 +10,8 @@ ready for production.
 
 ## Running validation
 
-From the repository root:
+From the protocol root (`protocol/` in the reference repository and normally
+the project root in an adopted repository):
 
 ```powershell
 python tools/tadp_validate.py .
@@ -40,7 +41,8 @@ python -m unittest discover -s tests -v
 
 The current validator checks:
 
-- valid Git metadata at the project root;
+- containment in a valid TADp Git repository and a repository-root
+  `AGENTS.md` entry point;
 - required repository, authoritative-suite, template, prompt, and developer
   documentation paths;
 - local Markdown links;
@@ -51,10 +53,14 @@ The current validator checks:
   with declared status;
 - completion evidence for `Completed` initiatives;
 - execution records for in-progress implementation initiatives;
+- delivery records for in-progress or completed design and planning initiatives;
+- explicit acceptance receipts for accepted, in-progress, and completed
+  initiatives;
 - authoritative and verification evidence fields in source mappings;
 - decision receipts and source links for recorded human dispositions; and
-- one complete numbered prompt per stage with example language, shared-contract
-  reference, and executable `&#123;initiative&#125;` placeholder.
+- fourteen complete numbered prompts for stages 0 through 13, each with example
+  language, a shared-contract reference, and executable
+  `&#123;initiative&#125;` placeholder.
 
 The validator ignores `.git` contents when walking Markdown and treats files
 under template paths as reusable, so their placeholders are permitted.

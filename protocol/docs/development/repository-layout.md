@@ -105,7 +105,7 @@ The canonical initial suite contains:
 - `implementation-steps.md` for reviewable changes and verification.
 
 Later-stage records include `decision-receipts/`,
-`implementation-readiness.md`, `execution-record.md`, and
+`implementation-readiness.md`, `execution-record.md`, `delivery-record.md`, and
 `completion-evidence.md`. Do not create a later-stage record merely to make the
 initial suite look complete.
 

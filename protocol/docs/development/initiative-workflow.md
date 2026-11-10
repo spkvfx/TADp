@@ -30,6 +30,11 @@ unrelated work.
 ## Numbered workflow
 
 The prompt sequence under `../../template/prompts` is intentionally explicit.
+Its binding stage order, entry and exit contracts, record ownership, and
+recovery behavior come from the
+[authoritative workflow specification](../../evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md).
+A stage is an activity; a lifecycle state is an evidence-backed standing.
+Finishing a stage does not automatically change lifecycle state.
 
 ### 0. Prepare initiative
 
@@ -91,21 +96,34 @@ Preparation does not create the proposal or complete initiative record.
   condition.
 - Create and link a decision receipt before recording the answer.
 
-### 7. Align SDK/API surfaces
+### 7. Accept initiative
 
-This stage applies only to an implementation initiative with completed human
-reviews. Align compatible existing SDK/API surfaces to the confirmed initiative
+- Verify that the complete proposed specification is coherent and
+  invariant-compatible.
+- Present the exact bounded claim, output boundary, gates, limitations, and
+  accepted-baseline revision to the identified human authority.
+- Wait for an explicit Accept, Reject, or Revise response.
+- Create the acceptance receipt before changing lifecycle standing.
+- Only an explicit Accept response may record `Proposed` to `Accepted`.
+
+Assumption confirmation and question resolution make acceptance possible; they
+do not perform acceptance.
+
+### 8. Align SDK/API surfaces
+
+This stage applies only to an accepted implementation initiative when affected
+SDK/API surfaces exist. Align compatible existing SDK/API surfaces to the initiative
 without using an existing limitation to narrow or reinterpret the initiative.
 Route specification conflicts to design work.
 
-### 8. Review implementation readiness
+### 9. Review implementation readiness
 
 This is a read-only comparison immediately before product execution. Review the
 requested phase or work set against current authoritative evidence, accepted
 specifications, dependencies, owners, product state, and verification inputs.
 A missing or non-ready gate blocks only the affected execution.
 
-### 9. Execute initiative
+### 10. Execute implementation
 
 - Create `execution-record.md` when implementation actually begins.
 - Build the step-to-target ledger before changing products.
@@ -115,13 +133,30 @@ A missing or non-ready gate blocks only the affected execution.
 - Stop product work that would require a specification change.
 - Create `completion-evidence.md` only when every in-scope gate passes.
 
-Design and planning work also require completion evidence for their exact
-permitted output before completion.
+### 11. Deliver design
 
-### 10. Finalize initiative
+- Create `delivery-record.md` when accepted specification work begins.
+- Change only accepted specification destinations and supporting initiative
+  evidence.
+- Treat observed products as evidence, not edit targets.
+- Record consumer, compatibility, migration, and verification effects.
+- Route required product work to an implementation initiative.
+- Create completion evidence only for the exact delivered design claim.
+
+### 12. Deliver planning evidence
+
+- Create `delivery-record.md` when accepted evidence work begins.
+- Create only the accepted initiative-local evidence outputs.
+- Preserve source classifications, methods, limitations, and missing evidence.
+- Keep observations, inferences, recommendations, and human decisions distinct.
+- Do not edit a product, specification, authoritative source, or another
+  initiative.
+- Create completion evidence only for the exact delivered evidence claim.
+
+### 13. Finalize initiative
 
 - Verify that lifecycle history, completion evidence, status, branch diff, and
-  execution record when applicable describe the same claim.
+  the type-specific execution or delivery record describe the same claim.
 - Stage and commit only traceable initiative work.
 - Push and open one pull request when the repository is configured and the
   stage is authorized.
@@ -145,6 +180,18 @@ accepted or completed claim, records human authority and impact, and returns to
 
 Every transition is appended to lifecycle history. Shared status views mirror
 the initiative; they do not create its state.
+
+## Returning to an earlier stage
+
+- A failed entry gate returns to the stage that owns the missing evidence.
+- A human review resumes at the next unresolved stable ID without duplicating
+  prior receipts.
+- New authoritative evidence or a changed accepted premise returns to alignment
+  and requires new acceptance before delivery resumes.
+- Material base-branch or dependency drift requires comparison with the
+  accepted baseline; drift that changes the claim returns to alignment.
+- Partial delivery remains in progress, blocked, cancelled, or superseded. It
+  is not completed by narrowing the claim after the fact.
 
 ## Completion rule
 
