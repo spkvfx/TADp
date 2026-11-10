@@ -206,7 +206,7 @@ be waived through an addressable-specification rationale.
 
 ### RZN-001 standing
 
-[`RZN-001`](../../../non-authoritative/realizations/v0/RZN-001-example-record-application.md)
+[`RZN-001`](../../../non-authoritative/realizations/v0.0/RZN-001-example-record-application.md)
 preserves requested intent and historical questions only. It is not a legal or
 security source and cannot override this policy, its permitted data profile,
 or `SEC-HIPAA-GATE-001`. Architecture `2.0.1` is likewise constrained by those

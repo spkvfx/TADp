@@ -18,7 +18,7 @@ the SDK, CLI, and browser obtain record capabilities?
 | Source | Precise claim or constraint | Effect on this decision |
 |---|---|---|
 | [`AUTH-EX-001.1`](01-accepted-architecture-baseline.md) | The API container is the normal live-store owner; offline maintenance is mutually exclusive | Requires one mediated runtime authority plus a bounded recovery exception |
-| [`RZN-001`](../../non-authoritative/realizations/v0/RZN-001-example-record-application.md), system boundary and Q10-Q11 | Direct versus API access was unresolved; all surfaces should share capabilities | Context only; requires an accepted path |
+| [`RZN-001`](../../non-authoritative/realizations/v0.0/RZN-001-example-record-application.md), system boundary and Q10-Q11 | Direct versus API access was unresolved; all surfaces should share capabilities | Context only; requires an accepted path |
 | [`ARC-AUT-001`](02-authority-and-source-disposition.md) | Best judgment and the later Docker-only revision are explicitly authorized | Authorizes the selected v2 topology |
 
 ## Decision

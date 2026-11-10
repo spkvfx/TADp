@@ -19,7 +19,7 @@ web outputs be decomposed and dependency-ordered for delivery/verification?
 |---|---|---|
 | [`AUTH-EX-001.7`](01-accepted-architecture-baseline.md) | Outputs are distinct independently verifiable delivery units | Prohibits one undifferentiated completion claim |
 | [`AUTH-EX-001.11`](01-accepted-architecture-baseline.md) | Compose-only runtime and no host application toolchain | Adds an independently verifiable container-platform output |
-| [`RZN-001`](../../non-authoritative/realizations/v0/RZN-001-example-record-application.md), candidate product sequence and Q17 | Requests docs, SDK/API, CLI, web in order; SDK/API cohesion unresolved | Supplies dependency intent, not initiative authority |
+| [`RZN-001`](../../non-authoritative/realizations/v0.0/RZN-001-example-record-application.md), candidate product sequence and Q17 | Requests docs, SDK/API, CLI, web in order; SDK/API cohesion unresolved | Supplies dependency intent, not initiative authority |
 | [Initiative scope specification](../LLM/06_Codex_Initiative_Scope_Specification.md) | Different outputs/verification/lifecycles trigger separate scopes | Requires narrow future initiatives |
 
 ## Decision

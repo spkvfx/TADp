@@ -95,7 +95,7 @@ The NIST suite remains binding for its scope; the cross-suite mapping in
 [`SEC-HIPAA-MAP-001`](03-control-rationale-and-traceability.md#cross-suite-compatibility)
 shows how the requirements are intended to operate together.
 
-[`RZN-001`](../../../non-authoritative/realizations/v0/RZN-001-example-record-application.md)
+[`RZN-001`](../../../non-authoritative/realizations/v0.0/RZN-001-example-record-application.md)
 is non-authoritative intent history. Architecture `2.0.1` owns its system and
 delivery dispositions; this suite and NIST `1.0.1` own the applicable security,
 data-use, review, and evidence gates. The realization's generic text fields or

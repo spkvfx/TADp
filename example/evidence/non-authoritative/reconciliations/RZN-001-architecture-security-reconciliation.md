@@ -25,7 +25,7 @@ This assessment addresses three comparisons:
 3. the v0 realization note against both security policy invariants.
 
 The original request and historical candidate wording in
-[`RZN-001`](../realizations/v0/RZN-001-example-record-application.md) remain
+[`RZN-001`](../realizations/v0.0/RZN-001-example-record-application.md) remain
 preserved. The User later explicitly authorized source-preserving in-place
 annotations, so that note now points readers to the authoritative dispositions
 without becoming an accepted specification.
@@ -38,7 +38,7 @@ without becoming an accepted specification.
 | [`ARC-SUITE-001@2.0.1`](../../authoritative/architecture/00-architecture-suite-index.md) | Accepted project architecture invariant constrained by the security policies | Owns technical system shape, contracts, exclusions, delivery units, and conformance vectors inside the policy boundary |
 | [`SEC-NIST-SUITE-001@1.0.1`](../../authoritative/security/NIST/00-nist-security-policy-suite-index.md) | Primary future-development security invariant for its scope | Governs the limited NIST-aligned security requirements and evidence gates applicable to the architecture and realization |
 | [`SEC-HIPAA-SUITE-001@1.0.1`](../../authoritative/security/HIPPA/00-hipaa-security-policy-suite-index.md) | Primary prospective security invariant for its scope | Governs the limited HIPAA-aligned data-use, safeguard, documentation, and successor-architecture gates applicable to the architecture and realization |
-| [`RZN-001`](../realizations/v0/RZN-001-example-record-application.md) | Non-authoritative realization input, now annotated with current owners | Preserves requested outcomes, candidate sequencing, risks, assumptions, and questions; cannot override any invariant |
+| [`RZN-001`](../realizations/v0.0/RZN-001-example-record-application.md) | Non-authoritative realization input, now annotated with current owners | Preserves requested outcomes, candidate sequencing, risks, assumptions, and questions; cannot override any invariant |
 
 The two security suites together are the primary security invariants within
 their stated scopes and guide both the architecture and realization. They are

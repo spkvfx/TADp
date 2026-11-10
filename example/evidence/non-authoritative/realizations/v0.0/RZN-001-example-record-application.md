@@ -65,7 +65,7 @@ remains immutable throughout those interactions.
 | Source ID | Source | Standing | Use in this note |
 |---|---|---|---|
 | `SRC-RZN-001-USER-REQUEST` | User requests and clarifications received 2026-11-10 | Direct request and realization source; not an accepted initiative | Preserves the requested application behavior, product order, stated technology choices, and documentation-to-implementation feedback loop. |
-| `SRC-RZN-001-PRODUCT-CONTEXT` | [`example/products/README.md`](../../../../products/README.md) | Repository guidance | Establishes what may count as a product and that each product's actual destination belongs in its governing initiative. It supplies no app-specific requirement. |
+| `SRC-RZN-001-PRODUCT-CONTEXT` | [`../../../../products/README.md`](../../../../products/README.md) | Repository guidance | Establishes what may count as a product and that each product's actual destination belongs in its governing initiative. It supplies no app-specific requirement. |
 | `SRC-RZN-001-PROTOCOL` | [Codex invariant suite](../../../authoritative/LLM/00_Codex_Invariant_Suite_Index.md) | Authoritative protocol | Governs the standing and later use of this note. It does not accept or prescribe the candidate application design. |
 | `SRC-RZN-001-ARCH-DISPOSITION` | [`ARC-SUITE-001@2.0.1`](../../../authoritative/architecture/00-architecture-suite-index.md) | Subsequent authoritative architecture | Owns the accepted system decisions, question dispositions, delivery units, and conformance requirements. |
 | `SRC-RZN-001-NIST-DISPOSITION` | [`SEC-NIST-SUITE-001@1.0.1`](../../../authoritative/security/NIST/00-nist-security-policy-suite-index.md) | Subsequent authoritative security policy | Owns applicable NIST-aligned security and assurance requirements. |

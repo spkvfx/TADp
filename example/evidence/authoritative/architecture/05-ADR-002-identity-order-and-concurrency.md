@@ -19,7 +19,7 @@ and prevent concurrent edits from silently overwriting one another?
 |---|---|---|
 | [`AUTH-EX-001.2`](01-accepted-architecture-baseline.md) | Public `id` is immutable and service-generated | Requires a canonical server identity policy |
 | [`AUTH-EX-001.5`](01-accepted-architecture-baseline.md) | Updates require the current strong revision ETag | Requires internal revision metadata |
-| [`RZN-001`](../../non-authoritative/realizations/v0/RZN-001-example-record-application.md), Q03-Q05 | UUID form, navigation order, boundaries, and concurrency were unresolved | Context only; requires coherent choices |
+| [`RZN-001`](../../non-authoritative/realizations/v0.0/RZN-001-example-record-application.md), Q03-Q05 | UUID form, navigation order, boundaries, and concurrency were unresolved | Context only; requires coherent choices |
 | [`ARC-AUT-001`](02-authority-and-source-disposition.md) | Best judgment authorized for all listed questions | Authorizes selected metadata model |
 
 ## Decision

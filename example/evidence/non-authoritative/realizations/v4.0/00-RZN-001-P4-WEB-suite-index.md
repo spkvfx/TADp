@@ -5,7 +5,7 @@
 **Status:** Recorded; non-authoritative proposal input  
 **Recorded by:** Codex on behalf of the User  
 **Recorded date:** 2026-11-10  
-**Source realization:** [`RZN-001`](../v0/RZN-001-example-record-application.md)  
+**Source realization:** [`RZN-001`](../v0.0/RZN-001-example-record-application.md)  
 **Historical product label:** `RZN-001-P4-WEB`  
 **Accepted delivery-unit alignment:** `D6 Web application bundle`  
 **Intended future initiative boundary:** One D6 web-application-bundle initiative  

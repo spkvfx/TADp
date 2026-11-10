@@ -6,7 +6,7 @@
 **Decision method:** Codex best judgment, expressly authorized for this suite  
 **Effective date:** 2026-11-10  
 **Architecture revision:** `2.0.1`  
-**Related records:** [`AUTH-EX-001`](01-accepted-architecture-baseline.md), [`RZN-001`](../../non-authoritative/realizations/v0/RZN-001-example-record-application.md)  
+**Related records:** [`AUTH-EX-001`](01-accepted-architecture-baseline.md), [`RZN-001`](../../non-authoritative/realizations/v0.0/RZN-001-example-record-application.md)  
 
 ## Purpose
 

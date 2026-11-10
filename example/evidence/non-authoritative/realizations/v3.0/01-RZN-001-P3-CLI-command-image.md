@@ -6,7 +6,7 @@
 **Status:** Recorded; invariant-bounded proposal input  
 **Recorded by:** Codex on behalf of the User  
 **Recorded date:** 2026-11-10  
-**Source:** User request in the current Codex conversation and [`RZN-001`](../v0/RZN-001-example-record-application.md)  
+**Source:** User request in the current Codex conversation and [`RZN-001`](../v0.0/RZN-001-example-record-application.md)  
 **Historical product lineage:** `RZN-001-P3-CLI`  
 **Accepted delivery-unit alignment:** `D5 Standalone CLI image`  
 **Related initiative or proposal:** None created  

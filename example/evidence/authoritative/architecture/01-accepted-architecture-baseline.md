@@ -41,7 +41,7 @@ architecture supplies technical shape only within their limits; neither it nor
 
 ## Source standing and acceptance
 
-[`RZN-001`](../../non-authoritative/realizations/v0/RZN-001-example-record-application.md)
+[`RZN-001`](../../non-authoritative/realizations/v0.0/RZN-001-example-record-application.md)
 is preserved as non-authoritative proposal input. It supplied the requested
 outcome, candidate products, risks, and unresolved questions; it did not
 accept its own proposed behavior.

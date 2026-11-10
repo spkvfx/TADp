@@ -18,7 +18,7 @@ surface returns the same safe, deterministic membership and order?
 | Source | Precise claim or constraint | Effect on this decision |
 |---|---|---|
 | [`AUTH-EX-001.4`](01-accepted-architecture-baseline.md) | Search meaning and order are API-owned and consistent | Prohibits independent client/SQLite semantics |
-| [`RZN-001`](../../non-authoritative/realizations/v0/RZN-001-example-record-application.md), search behavior and Q06-Q07 | All fields/modes including regex requested; dialect/case/safety unresolved | Requires explicit semantics and resource bounds |
+| [`RZN-001`](../../non-authoritative/realizations/v0.0/RZN-001-example-record-application.md), search behavior and Q06-Q07 | All fields/modes including regex requested; dialect/case/safety unresolved | Requires explicit semantics and resource bounds |
 | [`ARC-CTR-001`](11-record-domain-contract.md) | Stored text is bounded NFC Unicode | Supplies canonical comparison input |
 
 ## Decision

@@ -154,7 +154,7 @@ in `SEC-NIST-MAP-001`.
 
 ## Relationship to RZN-001 and the HIPAA suite
 
-[`RZN-001`](../../../non-authoritative/realizations/v0/RZN-001-example-record-application.md)
+[`RZN-001`](../../../non-authoritative/realizations/v0.0/RZN-001-example-record-application.md)
 is historical, non-authoritative intent evidence. Its generic record model and
 previously open security/deployment question do not authorize credentials,
 confidential or production data, regulated data, actual or possible ePHI, or a

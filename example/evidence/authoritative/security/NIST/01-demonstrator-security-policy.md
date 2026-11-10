@@ -15,7 +15,7 @@ This revision applies together with architecture `2.0.1` and HIPAA policy
 `1.0.1`. This policy remains the primary invariant for its NIST-aligned
 security outcomes and guides the architecture; the HIPAA suite independently
 owns its additional data-use, safeguard, and successor gates.
-[`RZN-001`](../../../non-authoritative/realizations/v0/RZN-001-example-record-application.md)
+[`RZN-001`](../../../non-authoritative/realizations/v0.0/RZN-001-example-record-application.md)
 is intent history only and cannot relax any requirement. When HIPAA policy is
 applicable, only purpose-created synthetic data or externally documented
 de-identified data is permitted, and the independent NIST prohibitions on

@@ -6,7 +6,7 @@
 **Status:** Recorded; invariant-bounded proposal input  
 **Recorded by:** Codex on behalf of the User  
 **Recorded date:** 2026-11-10  
-**Source:** User request in the current Codex conversation and [`RZN-001`](../v0/RZN-001-example-record-application.md)  
+**Source:** User request in the current Codex conversation and [`RZN-001`](../v0.0/RZN-001-example-record-application.md)  
 **Historical product lineage:** `RZN-001-P1-DOCS`  
 **Accepted delivery-unit alignment:** `D1 Architecture and contract documentation`  
 **Related initiative or proposal:** None created  
@@ -55,7 +55,7 @@ any future behavior has been observed.
 
 | Source | Standing | Permitted use in a future documentation product |
 |---|---|---|
-| [`RZN-001`](../v0/RZN-001-example-record-application.md) | Non-authoritative historical realization | Explain the requested outcome and product lineage only; do not revive resolved questions as current choices. |
+| [`RZN-001`](../v0.0/RZN-001-example-record-application.md) | Non-authoritative historical realization | Explain the requested outcome and product lineage only; do not revive resolved questions as current choices. |
 | [`ARC-AUT-001`](../../../authoritative/architecture/02-authority-and-source-disposition.md) | Accepted architecture authority record | Identify the authoritative dispositions of `RZN-001-Q01` through `Q17`. |
 | [`ARC-SUITE-001@2.0.1`](../../../authoritative/architecture/00-architecture-suite-index.md) and records `01`-`24` | Accepted invariant architecture | Own all technical boundaries, contracts, decisions, exclusions, delivery units, and conformance meaning. |
 | [`SEC-NIST-SUITE-001@1.0.1`](../../../authoritative/security/NIST/00-nist-security-policy-suite-index.md) | Accepted future-development security invariant | Own NIST-aligned security requirements, limitations, evidence methods, and claim wording. |

@@ -19,7 +19,7 @@ omission or impractical choice?
 | Source | Precise claim or constraint | Effect on this decision |
 |---|---|---|
 | [`AUTH-EX-001.8`](01-accepted-architecture-baseline.md) | Released contract meaning is versioned and never rewritten to match drift | Requires immutable historical meaning and governed successors |
-| [`RZN-001`](../../non-authoritative/realizations/v0/RZN-001-example-record-application.md), feedback loop and Q16 | Documentation guides implementation; evidence should refine it without losing identity | Requires explicit classification/reconciliation workflow |
+| [`RZN-001`](../../non-authoritative/realizations/v0.0/RZN-001-example-record-application.md), feedback loop and Q16 | Documentation guides implementation; evidence should refine it without losing identity | Requires explicit classification/reconciliation workflow |
 | [Evidence authority specification](../LLM/01_Codex_Evidence_Authority_Specification.md) | Implementation evidence cannot override architecture | Prohibits product-led silent contract changes |
 
 ## Decision

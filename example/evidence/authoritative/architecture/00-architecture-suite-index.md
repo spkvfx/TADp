@@ -6,7 +6,7 @@
 **Owner and accepting authority:** User, project authority  
 **Technical author:** Codex, using the User-authorized best-judgment method  
 **Effective date:** 2026-11-10  
-**Primary source:** [`RZN-001`](../../non-authoritative/realizations/v0/RZN-001-example-record-application.md)  
+**Primary source:** [`RZN-001`](../../non-authoritative/realizations/v0.0/RZN-001-example-record-application.md)  
 **Authority record:** [`AUTH-EX-001`](01-accepted-architecture-baseline.md)  
 **Supersedes:** `ARC-SUITE-001@2.0.0`, preserved at Git commit `5f0c325`; revision `2.0.0` superseded [`ARC-SUITE-001@1.0.0`](revisions/1.0.0/00-superseded-native-runtime-deployment-baseline.md)  
 
