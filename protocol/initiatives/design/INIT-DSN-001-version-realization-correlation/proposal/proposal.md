@@ -46,11 +46,16 @@ protocol revision from becoming an umbrella initiative.
 The current authoritative suite requires a dedicated branch for every
 initiative and narrow, self-contained initiatives, but it does not define a
 canonical TADp work-version syntax or reciprocal project-level mapping among a
-version, realization suite, initiative, and branch. Existing realization
-identities include bare and dotted forms, and the example history contains a
-v4 web suite with a separate v4.1 dot-scope reference. Without an explicit
-model, these identities can drift, collide, become orphans, or imply authority
-and lifecycle standing they do not possess.
+version, realization suite, initiative, and branch. The User's migration
+instruction identifies legacy bare and dotted identities, including a v4
+suite and v4.1 dot-scope relationship. The captured repository at
+v1@d05f334 instead contains v0.0, v1.0, v2.0, v2.1, v2.2, v3.0, and v4.0;
+reachable Git history introduces the web suite directly at v4.0 in 80c0ee0
+and contains no tracked v4 path or v4.1 reference. That source mismatch is an
+open migration-evidence question, not permission to invent the missing
+identity or silently equate it with v4.0. Without an explicit model, version
+identities can drift, collide, become orphans, or imply authority and lifecycle
+standing they do not possess.
 
 The User explicitly authorized this invariant revision and the required
 protected-source changes. The same instruction explicitly withheld initiative
@@ -228,6 +233,7 @@ will not retroactively claim conformance to the successor Stage 0 contract.
 | Bootstrap chronology differs from successor Stage 0 | False retroactive-conformance claim | Preserve preparation commit, realization timing, and compatibility note |
 | Protocol/example protected copies drift | Inconsistent adopter behavior | Byte/content parity review and separate lock verification for both trees |
 | Legacy bare and dotted identities encode separate outcomes | Incorrect migration | Ledger records both; exact human question before meaning-changing action |
+| Requested v4/v4.1 source is absent from the captured tree and reachable history | Fabricated provenance or incorrect normalization | Record the requested identity separately from observed v4.0 and require a human mapping decision |
 | Correlation fields become competing status sources | Conflicting lifecycle claims | Initiative index owns tuple; README owns lifecycle; copies link rather than redefine |
 | Design/implementation split delays executable enforcement | Temporary gap after design | Name a v1.1 implementation consumer and keep delivery/effectiveness claims precise |
 
