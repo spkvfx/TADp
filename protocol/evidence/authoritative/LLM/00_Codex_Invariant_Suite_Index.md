@@ -35,6 +35,9 @@ hierarchy.
    defines narrow scope, mandatory split triggers, and legacy decomposition.
 7. [Codex human decision receipt specification](07_Codex_Human_Decision_Receipt_Specification.md)
    makes explicit human authority durable and traceable to reconciled records.
+8. [Codex initiative workflow specification](08_Codex_Initiative_Workflow_Specification.md)
+   defines authoritative stage order, acceptance, type-specific delivery,
+   record ownership, handoffs, and recovery behavior.
 
 The repository-root `../../../AGENTS.md` is the Codex entry point because Codex loads
 repository guidance from that standard location. It summarizes this suite but

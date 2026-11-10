@@ -47,6 +47,10 @@ A proposed initiative may describe intended work but does not authorize
 execution. An accepted initiative authorizes only its declared type, scope,
 products or evidence, and accepted gates.
 
+The authoritative workflow specification defines the stages that create,
+align, accept, deliver, complete, and finalize an initiative. A workflow stage
+does not create a lifecycle state merely by finishing.
+
 ## Narrow scope and subinitiatives
 
 Every initiative must own one narrowly bounded outcome, one coherent authority
@@ -144,6 +148,12 @@ contradictory state.
 Codex may execute work only when the initiative type permits that output and
 all required human decisions and entry gates are satisfied. It must implement
 the accepted specification rather than a convenient approximation.
+
+Acceptance is a distinct human-authority stage. Assumption confirmation,
+open-question resolution, alignment, or a general instruction to continue does
+not by itself accept an initiative. Delivery follows exactly one type-specific
+path: implementation creates or changes products, design creates or changes
+initiative specifications, and planning creates initiative-local evidence.
 
 Codex must not claim completion until:
 

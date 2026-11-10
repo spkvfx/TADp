@@ -30,11 +30,14 @@ evidence, read the applicable documents in
   expressly authorizes another decision method for the stated scope.
 - Preserve each human disposition in a linked decision receipt before changing
   its source assumption, question, lifecycle event, or exception record.
+- Treat initiative acceptance as a separate explicit human-authority stage.
+  Alignment and resolved assumptions or questions do not imply acceptance.
 - Reopen or revise an initiative only with a documented reason, authority,
   change record, impact analysis, and cross-record reconciliation.
 - Record only legal lifecycle transitions. Require the standard execution
-  record for in-progress implementation and standard completion evidence before
-  any initiative is marked `Completed`.
+  record for implementation, the standard delivery record for design or
+  planning, and standard completion evidence before any initiative is marked
+  `Completed`. Follow exactly one delivery path for the declared type.
 - Require Git for every TADp project. Use a dedicated initiative branch from a
   captured base, preserve unrelated work, and keep commits and branch history
   traceable to the initiative. Never rewrite shared history or merge without

@@ -21,6 +21,10 @@ status does not create the facts required by that status.
 `Proposed` unless an explicit human decision states that the prior accepted
 claim remains unchanged and authorizes return to `Accepted`.
 
+Workflow stages and lifecycle states are distinct. The authoritative workflow
+specification defines which stages may produce transition evidence; completion
+of a stage does not itself cause a transition.
+
 ## Legal transitions
 
 | From | May transition to | Required evidence |
