@@ -4,7 +4,7 @@
 
 **Proposal status:** Draft
 
-**Revision:** 0.1
+**Revision:** 0.2
 
 **Last updated:** 2026-11-10
 
@@ -19,6 +19,11 @@
 Define and govern one canonical project-local identity correlation:
 
 work version <-> realization suite <-> initiative <-> dedicated Git branch.
+
+Every realization and realization-suite artifact remains non-authoritative and
+has one canonical project-local placement:
+`evidence/non-authoritative/realizations/**`. No top-level `realizations/`
+alias or in-place promotion to authoritative evidence is permitted.
 
 The requested decision is to accept a narrowly bounded design that adds the
 authoritative correlation model, synchronizes its protected reusable protocol
@@ -57,6 +62,14 @@ identity or silently equate it with v4.0. Without an explicit model, version
 identities can drift, collide, become orphans, or imply authority and lifecycle
 standing they do not possess.
 
+The current tree also retains top-level `protocol/realizations/` and
+`example/realizations/` README aliases while its actual realization records
+and reusable scaffold use `evidence/non-authoritative/realizations/`. The
+protocol overview, protocol/example repository-layout guides, and protected
+template overview still advertise the obsolete top-level placement, and the
+proposal-source template still permits a realization to be reclassified in
+place.
+
 The User explicitly authorized this invariant revision and the required
 protected-source changes. The same instruction explicitly withheld initiative
 acceptance and completion, preserved all evidence and lifecycle distinctions,
@@ -71,7 +84,9 @@ human decision before any legacy mapping changes meaning.
    the distinction from every other version class.
 2. Protected protocol and example invariant/template sources express the same
    correlation and workflow semantics, including reciprocal metadata and
-   Stage 0 preflight/preparation.
+   Stage 0 preflight/preparation. They classify realization artifacts as
+   permanently non-authoritative and use only the project-local
+   `evidence/non-authoritative/realizations/**` placement.
 3. A durable migration ledger inventories legacy v0, v1, v2, v2.1, v2.2,
    v3/v3.1, and v4/v4.1 identities without fabricating initiatives, decisions,
    acceptance, implementation, completion, or release evidence.
@@ -90,6 +105,13 @@ human decision before any legacy mapping changes meaning.
 - A reusable realization-suite-index template and correlation fields in
   realization, initiative, project profile, initiative index, status,
   preparation, delivery, completion, and Git traceability sources.
+- Removal of top-level `realizations/` aliases and reconciliation of every
+  protocol, prompt, template, developer guide, and worked-example consumer to
+  `evidence/non-authoritative/realizations/**`.
+- An explicit promotion boundary: an authority may accept a claim that
+  originated in a realization only by creating or revising a separate
+  authoritative or accepted-decision record; the realization artifact itself
+  never changes classification or placement.
 - Workflow contract and Stage 0 through Stage 13 prompt changes needed to
   create and preserve the same tuple.
 - A legacy migration ledger and the v4/v4.1 analysis as design evidence.
@@ -124,7 +146,7 @@ human decision before any legacy mapping changes meaning.
 | Term | Meaning in this proposal |
 |---|---|
 | Work version | A project-local immutable identifier using canonical v<major>.<minor> syntax |
-| Realization suite | One non-authoritative suite index and any notes that share one narrow outcome and lifecycle boundary |
+| Realization suite | One permanently non-authoritative suite index and any notes under `evidence/non-authoritative/realizations/<work-version>/` that share one narrow outcome and lifecycle boundary |
 | Correlation row | The project initiative index row that canonically owns the tuple and links to initiative-local status evidence |
 | Dedicated branch | One recorded Git branch whose exact name retains the work-version token |
 | Substantive successor | A changed scope, outcome, authority boundary, output, compatibility obligation, or verification claim requiring a new tuple |
@@ -139,6 +161,12 @@ template and revise only the protected templates and prompts that consume tuple
 identity. Record the design initiative's own v1.0 bootstrap tuple without
 pretending the new Stage 0 rule existed before acceptance.
 
+The protocol stores suites only at
+`protocol/evidence/non-authoritative/realizations/**`; a copied project,
+including the worked example, stores them only at
+`evidence/non-authoritative/realizations/**` relative to that project root.
+Remove the obsolete top-level README aliases and update every path consumer.
+
 The project initiative index owns canonical project-level correlation.
 Initiative README, suite index, status, delivery, completion, and Git records
 link to that row and remain authoritative only for their existing declared
@@ -147,7 +175,11 @@ subjects.
 ### Domain and authority model
 
 The correlation specification is authoritative after its accepted design
-delivery and effective commit. Realization suites remain non-authoritative.
+delivery and effective commit. Realization suites and notes remain
+non-authoritative for their entire lifetime. If an owning authority accepts a
+claim first recorded in a realization, the accepted claim is recorded in a
+separate authoritative evidence, decision, or accepted initiative record; the
+source realization remains unchanged and non-authoritative.
 The initiative README remains lifecycle authority for its initiative.
 Acceptance and completion require their existing decision and verification
 evidence. A work version or branch proves identity only.
@@ -212,6 +244,12 @@ decision resolves the mapping. Historical realization evidence and links are
 preserved through migration or compatibility records rather than rewritten to
 imply the new invariant always applied.
 
+The two obsolete top-level README aliases may be removed because the canonical
+directories already own the records. The example canonical directory receives
+its own placement/standing README if one is absent. Existing links are changed
+only to the canonical project-local path; realization contents and source
+identities are not moved again or reclassified.
+
 The design initiative is a bootstrap case: current Stage 0 created only the
 branch and two-README skeleton, and its durable source realization was recorded
 immediately afterward. The accepted design will record this chronology and
@@ -225,6 +263,7 @@ will not retroactively claim conformance to the successor Stage 0 contract.
 | Use one umbrella version for several initiatives | Fewer identifiers | Violates narrow scope, independent lifecycle, and the authorized bijection |
 | Put validators and specifications in one design initiative | One branch | Violates current type-specific output boundaries and the proposed mandatory split rule |
 | Rewrite legacy paths into canonical form | Superficially uniform tree | Erases provenance and can silently change meaning |
+| Keep a top-level `realizations/` compatibility alias | Avoids immediate link updates | Preserves two apparent homes and weakens the single non-authoritative evidence classification |
 
 ## Risks and tradeoffs
 
@@ -232,6 +271,8 @@ will not retroactively claim conformance to the successor Stage 0 contract.
 |---|---|---|
 | Bootstrap chronology differs from successor Stage 0 | False retroactive-conformance claim | Preserve preparation commit, realization timing, and compatibility note |
 | Protocol/example protected copies drift | Inconsistent adopter behavior | Byte/content parity review and separate lock verification for both trees |
+| A realization-originated claim is mistaken for promotion of its source artifact | Evidence authority drift | Require a separate accepted record and keep the realization permanently non-authoritative |
+| A stale top-level link recreates a second realization home | Ambiguous placement and broken automation | Exhaustive consumer search, local-link validation, and a validator implementation handoff |
 | Legacy bare and dotted identities encode separate outcomes | Incorrect migration | Ledger records both; exact human question before meaning-changing action |
 | Requested v4/v4.1 source is absent from the captured tree and reachable history | Fabricated provenance or incorrect normalization | Record the requested identity separately from observed v4.0 and require a human mapping decision |
 | Correlation fields become competing status sources | Conflicting lifecycle claims | Initiative index owns tuple; README owns lifecycle; copies link rather than redefine |
@@ -263,6 +304,9 @@ will not retroactively claim conformance to the successor Stage 0 contract.
 - The exact protected protocol/example design baseline and its validator
   implementation handoff are coherent enough for an explicit Stage 7 human
   acceptance decision.
+- All specified consumers use only
+  `evidence/non-authoritative/realizations/**`, and the baseline states that a
+  realization artifact cannot be promoted or reclassified in place.
 
 ## References
 
@@ -275,8 +319,14 @@ will not retroactively claim conformance to the successor Stage 0 contract.
 - [Workflow specification](../../../../evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md) — current Stage 0 through Stage 13 contracts.
 - User instruction dated 2026-11-10 — explicit authority for the exact invariant and protected-source revision, with acceptance and lifecycle limits.
 
+- User clarification dated 2026-11-10 — realizations are non-authoritative
+  evidence and all protocol, template, prompt-template, and example consumers
+  must use only the canonical
+  `evidence/non-authoritative/realizations/**` placement.
+
 ## Revision history
 
 | Revision | Date | Owner | Change |
 |---|---|---|---|
 | 0.1 | 2026-11-10 | User | Initial working proposal |
+| 0.2 | 2026-11-10 | User | Made realization standing permanent and its non-authoritative evidence location canonical across every consumer |

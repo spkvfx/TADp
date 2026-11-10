@@ -24,12 +24,14 @@
 
 **Canonical project correlation:** [TADp protocol initiative index](../../../../initiatives/initiative-index.md#initiative-and-correlation-register)
 
-**Lifecycle status and evidence:** Proposed; [working proposal](../../../../initiatives/design/INIT-DSN-001-version-realization-correlation/proposal/proposal.md) and Stage 0 commit e2677f2
+**Lifecycle status and evidence:** Proposed; [initiative lifecycle history](../../../../initiatives/design/INIT-DSN-001-version-realization-correlation/README.md#initiative-lifecycle), [working proposal](../../../../initiatives/design/INIT-DSN-001-version-realization-correlation/proposal/proposal.md), and Stage 0 commit e2677f2
 
 > **Evidence standing:** This suite is non-authoritative proposal input. Its
 > identity and links do not accept the initiative, make the proposed
 > correlation invariant effective, prove delivery, or establish release
-> status.
+> status. The suite remains non-authoritative for its entire lifetime at the
+> canonical project-local `evidence/non-authoritative/realizations/**` path;
+> any accepted derivative claim is recorded separately.
 
 ## Purpose
 
@@ -58,6 +60,7 @@ separate future work version, suite, initiative, and branch.
 |---|---|
 | [Codex invariant suite](../../../authoritative/LLM/00_Codex_Invariant_Suite_Index.md) | Current authoritative evidence, initiative, lifecycle, Git, scope, decision, and workflow baseline |
 | User instruction dated 2026-11-10 | Explicit authority for the exact correlation invariant and protected-source revision; explicitly not initiative acceptance or completion |
+| User realization-placement clarification dated 2026-11-10 | Explicit direction that realization artifacts remain non-authoritative and all consumers use only `evidence/non-authoritative/realizations/**`; explicitly not initiative acceptance or delivery |
 
 ## Bootstrap chronology
 

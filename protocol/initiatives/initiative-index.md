@@ -16,7 +16,7 @@ delivery, or replace the initiative README's lifecycle authority.
 
 | Work version | Realization suite | Initiative ID | Name | Type | Status | Dedicated branch | Captured base | Predecessor or successor | Record location | Lifecycle evidence | Owner | Next gate |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| v1.0 | [RZN-TADP-001-VERSION-CORRELATION-SUITE](../evidence/non-authoritative/realizations/v1.0/00-RZN-TADP-001-VERSION-CORRELATION-suite-index.md) | INIT-DSN-001 | Version-realization-suite-initiative correlation | design | Proposed | initiative/v1.0-version-realization-correlation | v1 at d05f334e854431716275a59c980f0c909d88d002 | None; first protocol work-version allocation | [Initiative README](design/INIT-DSN-001-version-realization-correlation/README.md) | [Draft proposal](design/INIT-DSN-001-version-realization-correlation/proposal/proposal.md); Stage 0 commit e2677f2 | User | Complete aligned baseline, resolve human gates, and request Stage 7 acceptance |
+| v1.0 | [RZN-TADP-001-VERSION-CORRELATION-SUITE](../evidence/non-authoritative/realizations/v1.0/00-RZN-TADP-001-VERSION-CORRELATION-suite-index.md) | INIT-DSN-001 | Version-realization-suite-initiative correlation | design | Proposed | initiative/v1.0-version-realization-correlation | v1 at d05f334e854431716275a59c980f0c909d88d002 | None; first protocol work-version allocation | [Initiative README](design/INIT-DSN-001-version-realization-correlation/README.md) | [Lifecycle history](design/INIT-DSN-001-version-realization-correlation/README.md#initiative-lifecycle); Stage 0 commit e2677f2 | User | Stage 5 assumption review beginning with VRC-A01, then open questions and explicit Stage 7 acceptance |
 
 ## Cross-initiative dependencies
 

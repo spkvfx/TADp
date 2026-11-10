@@ -18,7 +18,7 @@ release standing.
 
 | Work version | Initiative ID | Suite | Type | Status | Current milestone | Next gate | Blockers or holds | Status evidence | Owner | Last updated |
 |---|---|---|---|---|---|---|---|---|---|---|
-| v1.0 | INIT-DSN-001 | [RZN-TADP-001-VERSION-CORRELATION-SUITE](../evidence/non-authoritative/realizations/v1.0/00-RZN-TADP-001-VERSION-CORRELATION-suite-index.md) | design | Proposed | Proposal aligned; initial initiative suite pending | Complete Stages 3-6, then request exact Stage 7 acceptance | Meaning-changing legacy mappings require explicit decisions; executable validator work requires a separate initiative | [Proposal revision 0.1](design/INIT-DSN-001-version-realization-correlation/proposal/proposal.md); [canonical correlation row](initiative-index.md#initiative-and-correlation-register) | User | 2026-11-10 |
+| v1.0 | INIT-DSN-001 | [RZN-TADP-001-VERSION-CORRELATION-SUITE](../evidence/non-authoritative/realizations/v1.0/00-RZN-TADP-001-VERSION-CORRELATION-suite-index.md) | design | Proposed | Whole suite aligned to proposal revision 0.2, including permanent non-authoritative realization standing and canonical placement | Stage 5 assumption review beginning with VRC-A01 | VRC-A01 through VRC-A06 require receipts; VRC-01 blocks the final v4 mapping; executable validator work requires a separate initiative | [Lifecycle history](design/INIT-DSN-001-version-realization-correlation/README.md#initiative-lifecycle); [canonical correlation row](initiative-index.md#initiative-and-correlation-register) | User | 2026-11-10 |
 
 ## Portfolio gates
 
