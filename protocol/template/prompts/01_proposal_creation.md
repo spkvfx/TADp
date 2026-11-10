@@ -1,0 +1,99 @@
+<!--
+Replace every braced placeholder before using this prompt.
+-->
+
+# 1. Proposal creation
+
+## Use when starting a proposal-only initiative record
+
+Use this prompt after [preparing the initiative](00_initiative_preparation.md)
+to turn an existing realization note into the first working proposal for a new
+initiative. It creates only the proposal inside the prepared README skeleton;
+it does not create a branch or scaffold the initiative's full record.
+
+**Proposal template:**
+the shared [`proposal/proposal.md`](../initiatives/proposal/proposal.md) template
+
+## Shared workflow contract
+
+Apply [WORKFLOW-CONTRACT.md](WORKFLOW-CONTRACT.md) together with this prompt.
+The contract is mandatory and does not replace this prompt's specific
+preconditions, edit boundary, verification, or reporting requirements.
+
+## Example usage
+
+> **Reference only — do not execute this example.**
+>
+> Using the [proposal creation prompt](01_proposal_creation.md), create the
+> proposal for the attached initiative from its realization note after
+> preparation. Create only the canonical proposal document.
+
+This example shows how to invoke the template. When using this file, execute
+only the instructions in the **Proposal creation prompt** block below. Do not
+execute, recurse into, or derive additional work from the example.
+
+## Proposal creation prompt
+
+```text
+Apply {initiative_template_root}/prompts/WORKFLOW-CONTRACT.md. Its shared rules
+are mandatory and do not reduce this prompt's specific requirements.
+
+Using the existing realization note at {realization_note_path}, create a new
+{initiative_type} initiative proposal for {initiative} at {initiative_path}. The type must be
+exactly `implementation`, `design`, or `planning`. State its permitted output:
+products only for implementation, specifications only for design, and evidence
+only for planning.
+
+Before writing, verify that:
+- the initiative was prepared with 00_initiative_preparation.md and the active
+  branch is exactly {initiative_branch};
+- {initiative_path}/README.md and {initiative_path}/proposal/README.md exist
+  as the prepared README skeleton;
+- {realization_note_path} exists, is readable, and is the intended realization
+  note;
+- {initiative_path}/proposal/proposal.md does not already exist or contain a
+  proposal that could be overwritten; and
+- {initiative_template_root}/initiatives/proposal/proposal.md exists and is the applicable
+  proposal template.
+
+If any precondition fails or the target path is ambiguous, stop and report the
+blocker. Do not invent, move, overwrite, or repair any missing source,
+template, initiative, or directory. Do not create or switch branches, alter
+the prepared README files, or change a status or parent index.
+
+Create only {initiative_path}/proposal/proposal.md in the prepared directory.
+Base that file on
+{initiative_template_root}/initiatives/proposal/proposal.md.
+Do not copy the complete initiative template or create any other initiative
+document, including an initiative README, proposal-source README, assumption,
+architecture, source mapping, open-question register, roadmap, implementation
+steps, status entry, or supporting report. Do not modify the realization note
+or the template.
+
+Do not infer a realization note's authority from its directory, filename, or
+wording. Identify its exact path and any stated evidence label in the proposal's
+references, and treat it as an input to a working proposal rather than an
+accepted decision, architecture, or implementation claim.
+
+Write a clear working proposal that:
+1. Preserves the realization note's intended outcome and scope without adding
+   capabilities or treating an assumption as an accepted decision.
+2. Names the requested {initiative_type} initiative and explains why the
+   realization is needed now.
+3. Distinguishes included work, excluded work, assumptions, open decisions,
+   risks, dependencies, and future acceptance outcomes.
+4. Uses all available evidence. Prioritize `evidence/authoritative`,
+   accepted repository decisions and specifications, implemented behavior and
+   its verification, and completed initiatives. Use in-progress initiative
+   material according to its documented evidence label and precedence.
+5. Cites {realization_note_path} and every material repository source used,
+   distinguishing the realization note from `evidence/authoritative` when both
+   inform the proposal.
+6. Labels the result as a working proposal only; it does not claim accepted
+   architecture, implementation, qualification, or release readiness.
+
+After creating the proposal, report its exact path, the realization note used,
+the active initiative branch, and any assumptions or open decisions that need
+review. Do not create a separate report or any additional document.
+```
+
