@@ -1,14 +1,19 @@
 # Traceable Architecture Design Protocol (TADp)
 
-TADp is a protocol for managing software work in a Git repository. It turns
+TADp is a protocol for managing LLM-assisted software development work. It turns
 evidence and explicit human decisions into focused initiatives that developers
 can review and verify. For each initiative, TADp records **why the work exists**,
 **who approved it**, **what developers agreed to do**, **what changed**, and
 **what evidence shows the result**.
 
-TADp is designed for software architecture work with Git and Codex. It is most
-useful when developers must explain what a system does, how each decision
-gained authority, and what evidence supports completion.
+TADp is designed for software architecture work with Git using Codex. It is most
+useful when developers need explain what a system does, how each decision
+gained authority, and what evidence supports completion. It is most useful 
+describing large, complex systems consisting of multiple components or services.
+It is less useful for smaller, monolithic projects where the rigid structured planning
+may become costly.
+
+
 
 The reference protocol and its complete documentation live in
 [`protocol/`](protocol/README.md).
