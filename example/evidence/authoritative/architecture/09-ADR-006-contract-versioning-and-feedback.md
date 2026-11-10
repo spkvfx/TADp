@@ -2,7 +2,7 @@
 
 **Decision ID:** `ADR-006`  
 **Status:** Accepted  
-**Architecture revision:** `2.0.0`  
+**Architecture revision:** `2.0.1`  
 **Decision owner:** User, project authority  
 **Decision date:** 2026-11-10  
 **Supersedes / superseded by:** Not applicable  
@@ -28,7 +28,7 @@ omission or impractical choice?
 
 | Artifact | Active identity | Version rule |
 |---|---|---|
-| Architecture suite | `ARC-SUITE-001` revision `2.0.0`; predecessor `1.0.0` in `ARC-REV-001` | Semantic revision recorded in index, affected records, and preserved predecessor/successor link |
+| Architecture suite | `ARC-SUITE-001` revision `2.0.1`; predecessor `2.0.0` at Git commit `5f0c325`, with `1.0.0` in `ARC-REV-001` | Semantic revision recorded in index, affected records, and preserved predecessor/successor link |
 | Compose application | Project/release semantic version plus normalized effective-config hash | Any service/network/volume/port/security/default change is reviewed for architecture/compatibility effect |
 | API OCI image | API product semantic version plus immutable multi-platform manifest digest | Labels declare architecture, API, schema, source commit, and dependency/SBOM identity |
 | HTTP API | `/api/v1` | Major path identifies compatibility family; accepted schema/semantics form one baseline |
@@ -73,6 +73,11 @@ architecture authority explicitly decides otherwise with evidence.
    migration/volume procedures, docs, and conformance claims; do not mark any
    product compatible until its containerized tests pass the new baseline.
 
+When a change affects security standing, permitted data/use, inherited
+controls, or a security claim, the same workflow must reconcile the applicable
+NIST and HIPAA suite revisions. A policy cannot be treated as implementation
+evidence, and an architecture patch cannot silently lower a policy gate.
+
 Git history and revision tables preserve earlier meaning. Editing an accepted
 record in place is permitted only as the explicit recorded revision operation;
 the prior accepted content must remain recoverable and linked.
@@ -94,7 +99,7 @@ the prior accepted content must remain recoverable and linked.
 - Architecture, conformance fixtures, and product version metadata must be
   maintained together.
 - Parallel old/new major versions require an explicit support and migration
-  plan; revision `2.0.0` does not support the superseded native runtime.
+  plan; revision `2.0.1` does not support the superseded native runtime.
 - Image tags, base tags, local build caches, Compose overrides, and generated
   effective configuration can drift unless immutable digests/hashes are
   recorded and tested.
@@ -126,4 +131,5 @@ the prior accepted content must remain recoverable and linked.
 |---|---|---|
 | 2026-11-10 | Accepted semantic change classes and governed implementation-feedback workflow | User-authorized best-judgment architecture method recorded in `ARC-AUT-001` |
 | 2026-11-10 | Applied the workflow to preserve `1.0.0` and establish container-only `2.0.0`; added Compose/image/artifact identities | User's explicit Dockerization/no-host-services authority preserved in `ARC-REV-001` |
+| 2026-11-10 | Established patch `2.0.1` and coordinated security-policy patches `1.0.1` to make cross-suite standing and `RZN-001` consumption explicit without product-semantic change | User's explicit in-place reconciliation instruction recorded in `ARC-AUT-001`; predecessor preserved at Git commit `5f0c325` |
 

@@ -2,7 +2,7 @@
 
 **Decision ID:** `ADR-004`  
 **Status:** Accepted  
-**Architecture revision:** `2.0.0`  
+**Architecture revision:** `2.0.1`  
 **Decision owner:** User, project authority  
 **Decision date:** 2026-11-10  
 **Supersedes / superseded by:** Supersedes `ADR-004@1.0.0`, preserved in [`ARC-REV-001`](revisions/1.0.0/00-superseded-native-runtime-deployment-baseline.md); no successor  
@@ -25,8 +25,9 @@ the host?
 
 ## Decision
 
-Revision `2.0.0` has exactly one supported deployment path: a Docker Compose
-application assembled from pinned Linux OCI images. The host installs only:
+Revision `2.0.1` preserves the deployment decision introduced in `2.0.0` and
+has exactly one supported path: a Docker Compose application assembled from
+pinned Linux OCI images. The host installs only:
 
 - Docker Engine with Docker Compose v2, or Docker Desktop including Compose;
 - a supported browser for the web interface; and

@@ -2,7 +2,7 @@
 
 **Architecture ID:** `ARC-BND-006`  
 **Status:** Accepted  
-**Architecture revision:** `2.0.0`  
+**Architecture revision:** `2.0.1`  
 **Owner:** Web component owner under a future accepted initiative  
 **Last reviewed:** 2026-11-10  
 **Related records:** [`ADR-001`](04-ADR-001-api-exclusive-persistence.md), [`ADR-004`](07-ADR-004-container-only-deployment-trust-model.md), [`ARC-CTR-003`](14-search-navigation-contract.md), [`ARC-CTR-007`](22-web-interaction-contract.md), [`ARC-CTR-008`](23-operations-security-contract.md)  

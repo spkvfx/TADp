@@ -2,7 +2,7 @@
 
 **Decision ID:** `ADR-007`  
 **Status:** Accepted  
-**Architecture revision:** `2.0.0`  
+**Architecture revision:** `2.0.1`  
 **Decision owner:** User, project authority  
 **Decision date:** 2026-11-10  
 **Supersedes / superseded by:** Not applicable  

@@ -1,12 +1,13 @@
 # Future development assurance and evidence standard
 
 **Standard ID:** `SEC-NIST-VER-001`  
-**Revision:** `1.0.0`  
+**Revision:** `1.0.1`  
 **Status:** Accepted prospective standard  
 **Owner and accepting authority:** User, project authority  
 **Effective date:** 2026-11-10  
 **Governing suite:** [`SEC-NIST-SUITE-001`](00-nist-security-policy-suite-index.md)  
-**Primary design evidence:** [`ARC-SUITE-001@2.0.0`](../../architecture/00-architecture-suite-index.md)  
+**Architecture input:** [`ARC-SUITE-001@2.0.1`](../../architecture/00-architecture-suite-index.md)  
+**Applicable peer evidence standard:** [`SEC-HIPAA-DEV-001@1.0.1`](../HIPPA/04-future-development-and-evidence-standard.md)  
 
 ## Purpose and non-assessment statement
 
@@ -101,7 +102,7 @@ Each future assessment record must preserve the fields required by
 | Field | Required future content |
 |---|---|
 | Evidence ID | Stable initiative- or product-scoped identifier |
-| Architecture and policy | `ARC-SUITE-001@2.0.0`, `SEC-NIST-SUITE-001@1.0.0`, and exact policy/vector IDs |
+| Architecture and policy | `ARC-SUITE-001@2.0.1`, `SEC-NIST-SUITE-001@1.0.1`, `SEC-HIPAA-SUITE-001@1.0.1` when applicable, and exact policy/vector IDs |
 | Product | D1-D6 unit, semantic version, source Git commit, and OCI/wheel/bundle/Compose artifact hashes |
 | Environment | Host OS/architecture; Docker, Desktop, Compose, and BuildKit versions; platform/image digests; rendered Compose hash; relevant runtime/browser/database/dependency versions; test-volume identities; schema/migrations |
 | Method | `EXAMINE`, `TEST`, or `INTERVIEW`; exact containerized command, target, profile, configuration, fixture seed, and static/mock/live/end-to-end/native-or-qualified-platform classification |
@@ -124,12 +125,22 @@ A future release may use the narrow conformance wording in
    effective `Exception accepted` record that does not contradict architecture;
 2. all applicable architecture delivery gates and mandatory matrix entries are
    satisfied by evidence for the exact released artifacts;
-3. every non-satisfied, skipped, stale, missing, substituted, and limited item
+3. every applicable HIPAA policy and evidence gate is independently satisfied
+   for those same artifacts and claims; neither evidence family substitutes
+   for another;
+4. every non-satisfied, skipped, stale, missing, substituted, and limited item
    remains visible and is resolved or prevents the dependent claim;
-4. a named reviewer confirms that the evidence supports only the stated local,
+5. a named reviewer confirms that the evidence supports only the stated local,
    single-user demonstrator scope; and
-5. the release avoids all certification, authorization, FISMA, full-control,
+6. the release avoids all certification, authorization, FISMA, full-control,
    or general NIST-compliance language prohibited by the governing policy.
 
 Publishing this prospective gate does not open or close any gate for the
 existing application. Current implementation status remains **Not assessed**.
+
+## Revision record
+
+| Date | Revision | Change | Authority |
+|---|---|---|---|
+| 2026-11-10 | `1.0.0` | Established prospective NIST assurance requirements | User's NIST policy instruction and clarification |
+| 2026-11-10 | `1.0.1` | Required additive architecture, NIST, and applicable HIPAA evidence for one exact claim | User's explicit instruction to apply the reconciliation findings in place |

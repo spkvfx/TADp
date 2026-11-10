@@ -1,10 +1,10 @@
 # Regulated-use successor architecture gate
 
 **Gate ID:** `SEC-HIPAA-GATE-001`  
-**Revision:** `1.0.0`  
+**Revision:** `1.0.1`  
 **Status:** Active prospective gate  
 **Governing policy:** [`HSP-015`](02-prospective-security-policy.md#hsp-015--successor-architecture-and-exception-gate)  
-**Primary evidence:** [`ARC-SUITE-001@2.0.0`](../../architecture/00-architecture-suite-index.md)  
+**Architecture input:** [`ARC-SUITE-001@2.0.1`](../../architecture/00-architecture-suite-index.md)  
 **Applicable peer gate:** [`SEC-NIST-POL-001`, `SEC-POL-14`](../NIST/01-demonstrator-security-policy.md#sec-pol-14---exceptions-risk-decisions-and-expansion-triggers)  
 
 ## Purpose
@@ -127,6 +127,8 @@ None of the following closes this gate:
 - describing an addressable implementation specification as optional;
 - accepting risk without the authority to revise the architecture or satisfy
   applicable law;
+- relying on `RZN-001`, its generic data model, or a formerly open question as
+  authority to bypass this gate;
 - narrowing a claim after implementation to hide an unmet control; or
 - treating a successful demo as regulated-use evidence.
 
@@ -137,4 +139,11 @@ Official HHS material reviewed for this revision is cataloged in
 [`SEC-HIPAA-AUT-001`](01-authority-scope-and-source-basis.md). Future successor
 work must verify the then-current law and guidance rather than assuming this
 2026-11-10 source snapshot remains current.
+
+## Revision record
+
+| Date | Revision | Change | Authority |
+|---|---|---|---|
+| 2026-11-10 | `1.0.0` | Established the regulated-use successor gate | User's HIPAA policy instruction and future-development clarification |
+| 2026-11-10 | `1.0.1` | Bound the gate to architecture 2.0.1 and prohibited RZN-001 as bypass authority | User's explicit instruction to apply the reconciliation findings in place |
 

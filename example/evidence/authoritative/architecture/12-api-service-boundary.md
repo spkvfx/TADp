@@ -2,7 +2,7 @@
 
 **Architecture ID:** `ARC-BND-002`  
 **Status:** Accepted  
-**Architecture revision:** `2.0.0`  
+**Architecture revision:** `2.0.1`  
 **Owner:** API component owner under a future accepted initiative  
 **Last reviewed:** 2026-11-10  
 **Related records:** [`ARC-CTR-001`](11-record-domain-contract.md), [`ARC-CTR-002`](13-record-http-contract.md), [`ARC-CTR-003`](14-search-navigation-contract.md), [`ARC-CTR-004`](16-sqlite-persistence-contract.md), [`ARC-CTR-008`](23-operations-security-contract.md)  

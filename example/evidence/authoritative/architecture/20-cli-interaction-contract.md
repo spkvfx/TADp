@@ -2,7 +2,7 @@
 
 **Architecture ID:** `ARC-CTR-006`  
 **Status:** Accepted  
-**Architecture revision:** `2.0.0`  
+**Architecture revision:** `2.0.1`  
 **Contract owner:** CLI component owner and project architecture authority  
 **Producer:** `record-cli` one-shot Compose service / `recordctl` image entrypoint  
 **Consumer:** Local shell user or invoking process  

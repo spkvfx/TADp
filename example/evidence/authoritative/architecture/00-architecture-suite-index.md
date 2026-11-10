@@ -1,14 +1,14 @@
 # Example record application architecture
 
 **Suite ID:** `ARC-SUITE-001`  
-**Revision:** `2.0.0`  
+**Revision:** `2.0.1`  
 **Status:** Accepted  
 **Owner and accepting authority:** User, project authority  
 **Technical author:** Codex, using the User-authorized best-judgment method  
 **Effective date:** 2026-11-10  
 **Primary source:** [`RZN-001`](../../non-authoritative/realizations/v0/RZN-001-example-record-application.md)  
 **Authority record:** [`AUTH-EX-001`](01-accepted-architecture-baseline.md)  
-**Supersedes:** [`ARC-SUITE-001@1.0.0`](revisions/1.0.0/00-superseded-native-runtime-deployment-baseline.md)  
+**Supersedes:** `ARC-SUITE-001@2.0.0`, preserved at Git commit `5f0c325`; revision `2.0.0` superseded [`ARC-SUITE-001@1.0.0`](revisions/1.0.0/00-superseded-native-runtime-deployment-baseline.md)  
 
 ## Purpose and standing
 
@@ -28,6 +28,13 @@ prohibited installing application services and toolchains on the host. That
 instruction creates revision `2.0.0`; the superseded native-runtime deployment
 claims are retained in [`ARC-REV-001`](revisions/1.0.0/00-superseded-native-runtime-deployment-baseline.md).
 
+The User then explicitly instructed Codex to reconcile the architecture,
+security-policy, and `RZN-001` files in place according to the recorded
+reconciliation findings. That instruction creates patch revision `2.0.1`.
+The patch makes the already-binding NIST and HIPAA security policies and their
+data/use limits explicit in this suite; it does not change the v2 component
+graph, public contracts, runtime behavior, or product-completion status.
+
 This suite specifies what future products must do. It does **not** claim that
 the API, SDK, CLI, web application, database, tests, release, or operational
 environment already exists. It does not accept an initiative or authorize
@@ -38,21 +45,45 @@ scoped initiatives under the
 ## Normative language
 
 `Must`, `must not`, `required`, and `may only` are binding. `Should` identifies
-the expected design unless a later accepted architecture revision records a
-compatible reason to differ. `May` grants permission only within the stated
+the expected design unless a later accepted architecture revision, still
+conforming to every applicable security policy, records a compatible reason to
+differ. `May` grants permission only within the stated
 boundary. Examples are non-normative unless a record labels them as a required
 conformance vector.
 
 When records appear to disagree, apply them in this order:
 
 1. the project evidence protocol and any explicit accepted revision;
-2. [`AUTH-EX-001`](01-accepted-architecture-baseline.md);
-3. the most narrowly applicable accepted contract or decision in this suite;
-4. a broader boundary record; and
-5. explanatory text and examples.
+2. the applicable accepted NIST and HIPAA security-policy invariants for
+   security, permitted data/use, safeguards, review, and evidence;
+3. [`AUTH-EX-001`](01-accepted-architecture-baseline.md) for technical system
+   shape inside those policy limits;
+4. the most narrowly applicable accepted contract or decision in this suite;
+5. a broader boundary record; and
+6. explanatory text and examples.
 
 An apparent contradiction is not resolved by this order alone. It must be
 recorded and reconciled through the invariant-conflict process.
+
+## Applicable security invariants
+
+The following accepted suites are the primary security invariants that guide
+this architecture and every future product under it:
+
+- [`SEC-NIST-SUITE-001@1.0.1`](../security/NIST/00-nist-security-policy-suite-index.md)
+  defines the limited NIST-aligned future-development security baseline; and
+- [`SEC-HIPAA-SUITE-001@1.0.1`](../security/HIPPA/00-hipaa-security-policy-suite-index.md)
+  defines the limited HIPAA-aligned prospective policy and regulated-use gate.
+
+This architecture owns the technical description of system shape, components,
+interfaces, and state behavior only inside the security-policy boundary. The
+security suites remain primary for security, permitted data/use, safeguards,
+review, and evidence, and this architecture must conform to them—not the other
+way around. Neither peer security suite silently weakens the other; future
+work must satisfy both, and the stricter compatible gate controls the bounded
+claim. If a technical architecture statement cannot satisfy an applicable
+policy, affected work stops and the architecture requires an explicitly
+accepted successor; the policy is not edited to fit the architecture.
 
 ## Architectural shape
 
@@ -143,18 +174,40 @@ operations and conformance. The sequence is continuous from `00` through `24`.
 
 The v2 architecture excludes deletion, undelete, bulk mutation, record-level
 import/export, history/audit timelines, user accounts, roles, remote multi-user
-access, offline writes, synchronization between databases, plug-in fields,
-binary values, arbitrary query composition, native-host application services,
-host-installed SDK/CLI/database/build toolchains, host bind-mounted live
-SQLite, and non-Compose runtime orchestration. Their absence is intentional;
-an implementation must not add them as undocumented convenience features.
+access, actual or possible ePHI, regulated production or clinical use, shared
+workstation identities, third-party record processing, offline writes,
+synchronization between databases, plug-in fields, binary values, arbitrary
+query composition, native-host application services, host-installed
+SDK/CLI/database/build toolchains, host bind-mounted live SQLite, and
+non-Compose runtime orchestration. Their absence is intentional; an
+implementation must not add them as undocumented convenience features.
 Streaming an opaque validated backup artifact under `ARC-CTR-008` is recovery,
 not a record import/export capability.
+
+## Reconciliation revision record
+
+- **Authority:** The User's 2026-11-10 instruction to reconcile the named
+  architecture, security-policy, and v0 realization files in place according
+  to `REC-RZN-001-001`.
+- **Reason:** Make the already-binding cross-suite ownership, permitted data
+  profile, successor triggers, and future-consumer rules explicit at every
+  source that owns them.
+- **Affected scope:** Architecture standing, `RZN-001` disposition, operations
+  and conformance gates, both security suites, and their future consumers.
+- **Effective point:** The Git commit carrying the coordinated `2.0.1`,
+  `1.0.1`, and realization-note edits.
+- **Compatibility and migration:** No API, schema, component, Compose,
+  persistence, SDK, CLI, browser, backup, or product behavior changes. No data
+  migration is required. Future specifications and claims must cite the patch
+  revisions and the already-applicable security gates.
+- **Successor relationship:** `ARC-SUITE-001@2.0.1` succeeds `2.0.0` only for
+  cross-source reconciliation. Git commit `5f0c325` preserves the complete
+  predecessor; revision `1.0.0` remains preserved by `ARC-REV-001`.
 
 ## Change control
 
 Every active root record in this directory is accepted invariant evidence at
-revision `2.0.0`. Superseded history below `revisions/` is immutable evidence
+revision `2.0.1`. Superseded history below `revisions/` is immutable evidence
 but not active architecture. The prior deployment baseline is preserved by
 `ARC-REV-001`. A change
 requires an explicit instruction from the User or a later

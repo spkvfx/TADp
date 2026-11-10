@@ -1,16 +1,19 @@
-# RZN-001 architecture and security reconciliation assessment
+# RZN-001 architecture and security reconciliation record
 
 - **Assessment ID:** `REC-RZN-001-001`
-- **Status:** Recorded
+- **Status:** Applied
 - **Recorded date:** 2026-11-10
 - **Classification:** Non-authoritative reconciliation evidence
-- **Compared baseline:** `ARC-SUITE-001@2.0.0`, `SEC-NIST-SUITE-001@1.0.0`, `SEC-HIPAA-SUITE-001@1.0.0`, and `RZN-001`
-- **Repository snapshot:** Git commit `95f2b01`
+- **Input baseline:** `ARC-SUITE-001@2.0.0`, `SEC-NIST-SUITE-001@1.0.0`, `SEC-HIPAA-SUITE-001@1.0.0`, and `RZN-001`
+- **Applied baseline:** `ARC-SUITE-001@2.0.1`, `SEC-NIST-SUITE-001@1.0.1`, `SEC-HIPAA-SUITE-001@1.0.1`, and annotated `RZN-001`
+- **Input repository snapshot:** Git commit `95f2b01`
+- **Initial assessment commit:** Git commit `5f0c325`
 
-> **Standing:** This assessment records a source comparison. It does not revise,
-> accept, weaken, or supersede an invariant; resolve a future initiative
-> decision; authorize implementation; or establish product conformance. The
-> cited authoritative records retain ownership of every binding claim.
+> **Standing:** This non-authoritative record preserves the comparison and
+> identifies where its findings were applied. The User's explicit in-place
+> reconciliation instruction—not this record—authorized the coordinated patch
+> revisions. The authoritative records retain ownership of every binding claim;
+> this record does not authorize implementation or establish conformance.
 
 ## Requested reconciliation
 
@@ -21,25 +24,28 @@ This assessment addresses three comparisons:
 2. the v0 realization note against the accepted architecture invariant; and
 3. the v0 realization note against both security policy invariants.
 
-The comparison preserves
-[`RZN-001`](../realizations/v0/RZN-001-example-record-application.md) unchanged,
-as its handoff instructions require. Later accepted interpretations remain in
-the records that own them.
+The original request and historical candidate wording in
+[`RZN-001`](../realizations/v0/RZN-001-example-record-application.md) remain
+preserved. The User later explicitly authorized source-preserving in-place
+annotations, so that note now points readers to the authoritative dispositions
+without becoming an accepted specification.
 
 ## Source standing and precedence
 
 | Source | Standing in this comparison | Permitted use |
 |---|---|---|
 | [Codex invariant suite](../../authoritative/LLM/00_Codex_Invariant_Suite_Index.md) | Governing evidence protocol | Controls precedence, contradiction handling, source preservation, and future initiative use |
-| [`ARC-SUITE-001@2.0.0`](../../authoritative/architecture/00-architecture-suite-index.md) | Accepted project architecture invariant | Owns system shape, contracts, trust boundaries, exclusions, delivery units, and conformance vectors |
-| [`SEC-NIST-SUITE-001@1.0.0`](../../authoritative/security/NIST/00-nist-security-policy-suite-index.md) | Accepted future-development security invariant | Adds the limited NIST-aligned security requirements and evidence gates applicable to the architecture |
-| [`SEC-HIPAA-SUITE-001@1.0.0`](../../authoritative/security/HIPPA/00-hipaa-security-policy-suite-index.md) | Accepted prospective security invariant | Adds the limited HIPAA-aligned data-use, safeguard, documentation, and successor-architecture gates |
-| [`RZN-001`](../realizations/v0/RZN-001-example-record-application.md) | Non-authoritative realization input | Preserves requested outcomes, candidate sequencing, risks, assumptions, and questions; cannot override any invariant |
+| [`ARC-SUITE-001@2.0.1`](../../authoritative/architecture/00-architecture-suite-index.md) | Accepted project architecture invariant constrained by the security policies | Owns technical system shape, contracts, exclusions, delivery units, and conformance vectors inside the policy boundary |
+| [`SEC-NIST-SUITE-001@1.0.1`](../../authoritative/security/NIST/00-nist-security-policy-suite-index.md) | Primary future-development security invariant for its scope | Governs the limited NIST-aligned security requirements and evidence gates applicable to the architecture and realization |
+| [`SEC-HIPAA-SUITE-001@1.0.1`](../../authoritative/security/HIPPA/00-hipaa-security-policy-suite-index.md) | Primary prospective security invariant for its scope | Governs the limited HIPAA-aligned data-use, safeguard, documentation, and successor-architecture gates applicable to the architecture and realization |
+| [`RZN-001`](../realizations/v0/RZN-001-example-record-application.md) | Non-authoritative realization input, now annotated with current owners | Preserves requested outcomes, candidate sequencing, risks, assumptions, and questions; cannot override any invariant |
 
-The two security suites are co-governing within their stated scopes. Neither
-security suite silently changes an architecture component. When both apply,
-future work must satisfy both; the stricter compatible gate controls the
-bounded claim.
+The two security suites together are the primary security invariants within
+their stated scopes and guide both the architecture and realization. They are
+not changed to fit either document. When both apply, future work must satisfy
+both; the stricter compatible gate controls the bounded claim. An incompatible
+technical design requires an authorized architecture successor, not a weaker
+policy.
 
 ## 1. Architecture invariant to security policy invariants
 
@@ -58,15 +64,17 @@ bounded claim.
 | Backup, recovery, and emergency handling | `ARC-CTR-004` and `ARC-CTR-008` require offline validated backup/restore, separate volumes, preserved prior state, and explicit host-loss limitations | `SEC-POL-09` and `HSP-010/011` preserve that mechanism and add criticality, custody, media, encryption-decision, and drill records | The opaque backup path remains recovery, not record import/export. Same-host backup does not prove host-loss recovery, and any off-volume copy inherits the source data restrictions |
 | Incident response | `ARC-CTR-008` defines stop, preserve, hash, recover, and reverify behavior while disclaiming remote response and per-user attribution | `SEC-POL-13` and `HSP-012` add owners, incident records, exercises, possible-PHI escalation, and organization responsibilities | The architecture owns technical containment/recovery; the security suites add governance and escalation without claiming the app decides legal notification |
 | Verification and claims | `ARC-CTR-009` owns product vectors, D1-D6 gates, exact artifact/environment identity, and truthful limitations | `SEC-NIST-VER-001`, `SEC-HIPAA-DEV-001`, `SEC-POL-11`, and `HSP-014` add policy mappings, risk/source reviews, records, and narrow claim language | A future claim must pass the architecture gate and every applicable NIST/HIPAA gate. Passing one evidence set cannot substitute for another or establish general compliance |
-| Exceptions and boundary expansion | `ADR-006`, `ADR-004`, and `ARC-CTR-008` require explicit authority and a successor for remote, multi-user, identity, TLS/proxy, audit, privacy, or materially different deployment | `SEC-POL-14` allows only invariant-compatible bounded risk dispositions; `HSP-015` provides no exception that permits actual or possible ePHI in the current profile | A security exception cannot waive architecture. HIPAA's no-ePHI gate is a stricter compatible boundary; ePHI, production clinical use, remote access, shared workstations, or third-party record processing require a separately accepted successor |
+| Exceptions and boundary expansion | `ADR-006`, `ADR-004`, and `ARC-CTR-008` require explicit authority and a successor for remote, multi-user, identity, TLS/proxy, audit, privacy, or materially different deployment | `SEC-POL-14` allows only invariant-compatible bounded risk dispositions; `HSP-015` provides no exception that permits actual or possible ePHI in the current profile | No exception can waive policy or architecture. Policy controls its security/use scope; an incompatible design requires a separately accepted architecture successor. The no-ePHI gate remains binding for ePHI, production clinical use, remote access, shared workstations, or third-party record processing |
 
 ### Architecture-security result
 
-No direct contradiction was found between `ARC-SUITE-001@2.0.0`,
-`SEC-NIST-SUITE-001@1.0.0`, and `SEC-HIPAA-SUITE-001@1.0.0` for the accepted
+No direct contradiction was found between `ARC-SUITE-001@2.0.1`,
+`SEC-NIST-SUITE-001@1.0.1`, and `SEC-HIPAA-SUITE-001@1.0.1` for the accepted
 local demonstrator profile. The security suites explicitly use the architecture
-as primary design evidence, preserve its component and trust boundaries, and
-add compatible future-development, allowed-use, review, and evidence gates.
+as technical input, but remain the primary invariants for their security and
+permitted-use scopes. They guide the architecture and `RZN-001`, preserve the
+compatible component and trust boundaries, and impose the controlling
+future-development, allowed-use, review, and evidence gates.
 
 The accepted architecture is **not** suitable for actual or possible ePHI,
 regulated production, multiple users, shared identities, or remote access.
@@ -97,8 +105,9 @@ the remaining apparent differences.
 The v0 realization is compatible as historical proposal input. Its open
 questions and candidate alternatives must not be presented as still governing
 architecture v2. `ARC-AUT-001` is the complete accepted disposition register,
-and `ADR-007` is the accepted delivery decomposition. The realization remains
-unchanged so the original request and uncertainty stay recoverable.
+and `ADR-007` is the accepted delivery decomposition. The realization now
+contains source-preserving reconciliation annotations while its original
+request and historical uncertainty remain recoverable.
 
 ## 3. V0 realization note to security policy invariants
 
@@ -122,6 +131,27 @@ expressly disclaims specification authority. Its generic data model and
 candidate flows are now usable only inside the narrower, authoritative
 non-production, local, single-user, synthetic/documented-de-identified profile.
 
+## Application record
+
+The User instructed Codex on 2026-11-10 to reconcile the files according to
+these findings and make the changes in place. The findings were applied as
+follows:
+
+The User then clarified that the security policy must remain the primary
+invariant guiding both the architecture and realization note, not be changed to
+match them. That clarification controls the applied precedence below.
+
+| Applied source | Result |
+|---|---|
+| Architecture suite | Patch revision `2.0.1`; makes the primary security-policy boundary controlling for allowed data/use, safeguards, review, and evidence; adds additive D1-D6 gates and successor triggers without changing product behavior |
+| NIST suite | Patch revision `1.0.1`; records policy primacy, architecture `2.0.1` as constrained technical input, HIPAA `1.0.1`, and RZN-001's non-authoritative role; no `SEC-POL-*` outcome changed |
+| HIPAA suite | Patch revision `1.0.1`; records policy primacy, architecture `2.0.1` as constrained technical input, NIST `1.0.1`, and RZN-001's non-authoritative role; no `HSP-*` outcome changed |
+| `RZN-001` | Historical request text retained and annotated with current authoritative owners, resolved-question groups, permitted data/use profile, and D1-D6 handoff |
+| This record | Retained at the User's request and updated from assessment status to an applied-change record |
+
+No protected template or Codex-invariant source was changed, no product
+implementation was assessed, and no policy conformance result was created.
+
 ## Conflict-register disposition
 
 No entry is added to the
@@ -139,10 +169,10 @@ this assessment must not be used to suppress that future record.
 Future proposals and initiatives consuming `RZN-001` must:
 
 1. cite `RZN-001` only for requested intent and historical context;
-2. use `ARC-SUITE-001@2.0.0` and `ARC-AUT-001` for accepted system and source
+2. use `ARC-SUITE-001@2.0.1` and `ARC-AUT-001` for accepted system and source
    dispositions;
-3. apply `SEC-NIST-SUITE-001@1.0.0` and
-   `SEC-HIPAA-SUITE-001@1.0.0` together for every applicable future claim;
+3. apply `SEC-NIST-SUITE-001@1.0.1` and
+   `SEC-HIPAA-SUITE-001@1.0.1` together for every applicable future claim;
 4. retain the local, single-user, non-production, non-ePHI boundary and the
    exact successor triggers;
 5. follow the D1-D6 decomposition and create separately governed narrow
@@ -162,6 +192,6 @@ Future proposals and initiatives consuming `RZN-001` must:
   created by this record.
 - External security and legal sources remain subject to the review rules in
   their authoritative suites.
-- This record does not authorize an edit to `RZN-001`, an architecture or
-  security invariant revision, initiative acceptance, implementation, release,
-  deployment, or merge.
+- This record does not independently authorize further edits, initiative
+  acceptance, implementation, release, deployment, or merge. The applied
+  source revisions rely on the separately recorded explicit User instruction.

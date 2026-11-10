@@ -2,7 +2,7 @@
 
 **Architecture ID:** `ARC-CTR-004`  
 **Status:** Accepted  
-**Architecture revision:** `2.0.0`  
+**Architecture revision:** `2.0.1`  
 **Contract owner:** API persistence component owner and project architecture authority  
 **Producer:** API repository/application layer  
 **Consumer:** SQLite adapter and database  

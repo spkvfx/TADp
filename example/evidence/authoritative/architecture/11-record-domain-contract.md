@@ -2,7 +2,7 @@
 
 **Architecture ID:** `ARC-CTR-001`  
 **Status:** Accepted  
-**Architecture revision:** `2.0.0`  
+**Architecture revision:** `2.0.1`  
 **Contract owner:** Project architecture authority  
 **Producer:** Record API domain layer  
 **Consumers:** API transport, SQLite adapter, Python SDK, CLI, and web application  

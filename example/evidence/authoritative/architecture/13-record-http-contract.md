@@ -2,7 +2,7 @@
 
 **Architecture ID:** `ARC-CTR-002`  
 **Status:** Accepted  
-**Architecture revision:** `2.0.0`  
+**Architecture revision:** `2.0.1`  
 **Contract owner:** API component owner and project architecture authority  
 **Producer:** Record API service  
 **Consumers:** Python SDK, CLI through SDK, and browser adapter  

@@ -2,7 +2,7 @@
 
 **Architecture ID:** `ARC-CTR-009`  
 **Status:** Accepted  
-**Architecture revision:** `2.0.0`  
+**Architecture revision:** `2.0.1`  
 **Contract owner:** Project architecture authority  
 **Producer:** This accepted architecture suite  
 **Consumers:** Future documentation, API, persistence, SDK, CLI, web, operations, and release initiatives  
@@ -11,7 +11,7 @@
 ## Purpose and scope
 
 This contract defines the minimum evidence required to claim that a product
-conforms to architecture revision `2.0.0`. It supplies stable vector IDs,
+conforms to architecture revision `2.0.1`. It supplies stable vector IDs,
 verification layers, fixture rules, delivery gates, and traceability
 expectations. It does not claim that any vector currently passes. Detailed
 architecture is a test oracle, not execution evidence.
@@ -40,10 +40,11 @@ architecture directory and observed:
 | File sequence | 25 active root Markdown records, exactly one filename for every prefix `00` through `24`; one nested immutable predecessor record under `revisions/1.0.0/` |
 | Primary identities | 26 primary IDs across active plus archived records, all unique |
 | Source decisions | 17 disposition rows covering `RZN-001-Q01` through `RZN-001-Q17` |
-| Local links | All 191 Markdown relative-link references resolve to existing targets |
+| Local links | All 202 Markdown relative-link references resolve to existing targets |
 | Template residue | No unexpanded template variable or planning residue |
 | Numbering-link integrity | No doubled numeric filename prefix |
-| Record integrity | Each record has one H1, balanced code fences, and a final newline; every active header identifies revision `2.0.0` |
+| Record integrity | Each record has one H1, balanced code fences, and a final newline; every active header identifies revision `2.0.1` |
+| Cross-suite reconciliation | Architecture `2.0.1`, NIST `1.0.1`, and HIPAA `1.0.1` identify one another, preserve their separate ownership, and require additive evidence for applicable future claims |
 
 The check returned zero structural errors. It verifies suite assembly only; it
 does not prove semantic correctness, human review beyond the recorded
@@ -53,7 +54,8 @@ instructions, initiative completion, or any D2-D6 product behavior.
 
 Every product claim must:
 
-1. name architecture suite/revision and product version/commit/artifact hash;
+1. name architecture suite/revision, applicable NIST and HIPAA suite revisions,
+   and product version/commit/artifact hash;
 2. list the applicable stable vectors below and any additional contract tests;
 3. record Docker Engine/Desktop/Compose/BuildKit versions, rendered Compose
    hash, OCI platform/image/manifest digests, wheel/bundle hashes, dependency/
@@ -66,7 +68,9 @@ Every product claim must:
 7. prove negative boundaries through inventory/static/security tests as well as
    positive behavior; and
 8. link the evidence from the governing initiative's completion record and
-   product record.
+   product record; and
+9. show that the exact same artifact and claim satisfy every applicable
+   architecture vector, `SEC-POL-*` requirement, and `HSP-*` requirement.
 
 Host-native project commands are not conformance evidence for v2. Every
 automated project check must run through a declared BuildKit target or Compose
@@ -330,6 +334,8 @@ Seed records in ordinal order unless a vector states otherwise:
 | `AUTH-EX-001.11` Compose-only/no host application tools | `CNT-001`, `CNT-007`, `CLI-001`, `SDK-001`, `WEB-012`, `E2E-009` |
 | `AUTH-EX-001.12` separate named volumes and exclusive mounts | `DB-001/003/008/009`, `CNT-004/010/011/013/015`, `OPS-011/012` |
 | `AUTH-EX-001.13` hardened traceable multi-platform images | `CNT-005`-`009`, `OPS-006/008/010`, release matrix evidence |
+| `AUTH-EX-001.14` additive architecture and security conformance | Applicable architecture vectors plus exact NIST and HIPAA policy/evidence mappings for one artifact and claim |
+| `AUTH-EX-001.15` permitted data/use profile and successor triggers | Synthetic/de-identification record, data-flow and copy inventory, inherited-control review, negative ePHI/remote/multi-user evidence, and successor-gate disposition |
 
 ## Delivery gates
 
@@ -342,6 +348,9 @@ Seed records in ordinal order unless a vector states otherwise:
 - All relative links resolve and all record-catalog IDs match their targets.
 - `RZN-001-Q01` through `Q17` each has exactly one disposition and owning
   record in `ARC-AUT-001`.
+- The current architecture, NIST, and HIPAA suite revisions cross-reference one
+  another, and `RZN-001` identifies their authoritative dispositions without
+  becoming a specification.
 - No statement claims an implementation/test/release that lacks evidence.
 - Architecture review finds no internal contradiction or unrecorded conflict.
 
@@ -359,6 +368,8 @@ documentation product still requires its governing workflow records.
 - Automated project checks use only declared containers; native application
   installation/run/test/maintenance instructions are absent.
 - D2 may prove topology/artifact behavior without claiming API/domain behavior.
+- Applicable `SEC-POL-*` and `HSP-*` mappings, data/fixture classification, and
+  inherited-control evidence exist for the exact D2 artifacts.
 
 ### D3 API/SQLite runtime-image gate
 
@@ -369,6 +380,8 @@ documentation product still requires its governing workflow records.
   security, load/fault, embedded-web hosting, and prohibited-route/path evidence
   exists. API startup proves it never initializes/migrates.
 - Product metadata names exact architecture/API/schema/image/build revision.
+- The exact D3 artifact passes every applicable NIST and HIPAA evidence gate;
+  architecture-vector results alone are insufficient.
 
 ### D4 SDK artifact gate
 
@@ -378,6 +391,8 @@ documentation product still requires its governing workflow records.
   claimed Python matrix; public API/dependency/compatibility evidence exists.
 - SDK release declares supported API major, same `/api/v1` routes, and no
   SQLite/server/host-install dependency.
+- SDK fixtures, examples, diagnostics, and release evidence satisfy the
+  applicable NIST and HIPAA data-minimization and disclosure gates.
 
 ### D5 CLI image gate
 
@@ -386,6 +401,8 @@ documentation product still requires its governing workflow records.
 - Human/JSON streams, exit codes, interruption/indeterminate behavior,
   no-mount/private-network packaging, identical `/api/v1` path, dependency
   graph, and excluded commands are evidenced.
+- CLI output, input, diagnostics, container configuration, and release evidence
+  satisfy every applicable NIST and HIPAA gate.
 
 ### D6 web bundle gate
 
@@ -394,6 +411,8 @@ documentation product still requires its governing workflow records.
 - Required browser and accessibility matrix, security headers/storage/network,
   bundle hash/provenance/runtime-content, shared `/api/v1`, conflict/race/
   indeterminate behavior, and excluded UI capability evidence exists.
+- Browser storage, presentation, accessibility, network, diagnostics, fixture,
+  and release evidence satisfy every applicable NIST and HIPAA gate.
 
 No later unit's passing evidence retroactively completes an earlier unit.
 Cross-product end-to-end failures block only claims that require the failing
@@ -406,7 +425,8 @@ For each verification run, preserve at least:
 | Field | Required content |
 |---|---|
 | Evidence ID | Stable initiative/product-scoped identifier |
-| Architecture | `ARC-SUITE-001@2.0.0` and applicable record/vector IDs |
+| Architecture | `ARC-SUITE-001@2.0.1` and applicable record/vector IDs |
+| Security policy | `SEC-NIST-SUITE-001@1.0.1`, `SEC-HIPAA-SUITE-001@1.0.1`, and every applicable `SEC-POL-*`/`HSP-*`/evidence-gate ID |
 | Product | D1-D6 unit, semantic version, OCI/wheel/bundle/Compose artifact hash, Git commit |
 | Environment | Host OS/architecture, Docker/Desktop/Compose/BuildKit, OCI platform/image digests, rendered Compose hash, Python/browser/SQLite/RE2/dependency versions, named test-volume identities, schema/migrations |
 | Method | Exact containerized command/target/profile/config/fixture seed and whether static/mock/live/end-to-end/native-or-qualified-platform |
@@ -426,6 +446,12 @@ platform/release artifact. Evidence must support the exact claim made.
   weaken, skip, or reword the vector to make a product pass.
 - If implementation behavior conflicts with this suite, record the invariant
   conflict and correct the product or obtain an explicit architecture revision.
+- If architecture and an applicable security policy appear incompatible,
+  preserve both exact claims and use the invariant-conflict process; do not
+  waive one evidence family or reinterpret `RZN-001` as higher authority. The
+  security policy remains primary for its scope; resolve the technical design
+  through an explicitly accepted architecture successor rather than changing
+  policy to fit the architecture.
 - If a vector is ambiguous or impractical, preserve the observation and use
   the `ADR-006` feedback process. The current requirement remains in force
   until a successor is accepted.
@@ -443,6 +469,7 @@ platform/release artifact. Evidence must support the exact claim made.
 - Version/change governance: [`ADR-006`](09-ADR-006-contract-versioning-and-feedback.md)
 - Governing protocol: [Codex invariant suite](../LLM/00_Codex_Invariant_Suite_Index.md)
 - Operations/security contract: [`ARC-CTR-008`](23-operations-security-contract.md)
+- Governing security suites: [`SEC-NIST-SUITE-001@1.0.1`](../security/NIST/00-nist-security-policy-suite-index.md), [`SEC-HIPAA-SUITE-001@1.0.1`](../security/HIPPA/00-hipaa-security-policy-suite-index.md)
 - Superseded native deployment baseline: [`ARC-REV-001`](revisions/1.0.0/00-superseded-native-runtime-deployment-baseline.md)
 
 ## Revision record
@@ -451,4 +478,5 @@ platform/release artifact. Evidence must support the exact claim made.
 |---|---|---|
 | 2026-11-10 | Defined revision 1.0 domain/API/persistence/SDK/CLI/web/operations conformance vectors | User-authorized best-judgment architecture completion |
 | 2026-11-10 | Added D2 container-platform gate, Docker-only vectors, six-unit mapping, named-volume/offline-maintenance proofs, and shared CLI/web `/api/v1` evidence for architecture 2.0 | User's explicit Dockerization, no-host-services, and shared-API-path instructions |
+| 2026-11-10 | Made NIST/HIPAA evidence additive at D1-D6 and recorded the permitted data/use and successor-gate proofs for architecture 2.0.1 | User's explicit instruction to apply the reconciliation findings in place |
 

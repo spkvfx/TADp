@@ -1,10 +1,11 @@
 # HIPAA control rationale and traceability
 
 **Mapping ID:** `SEC-HIPAA-MAP-001`  
-**Revision:** `1.0.0`  
+**Revision:** `1.0.1`  
 **Status:** Accepted policy rationale  
 **Policy mapped:** [`SEC-HIPAA-POL-001`](02-prospective-security-policy.md)  
-**Primary evidence family:** [`ARC-SUITE-001@2.0.0`](../../architecture/00-architecture-suite-index.md)  
+**Architecture input family:** [`ARC-SUITE-001@2.0.1`](../../architecture/00-architecture-suite-index.md)  
+**Peer security family:** [`SEC-NIST-SUITE-001@1.0.1`](../NIST/00-nist-security-policy-suite-index.md)  
 **External baseline reviewed:** 2026-11-10  
 
 ## Purpose and method
@@ -19,10 +20,13 @@ This record justifies every policy in `SEC-HIPAA-POL-001`. Each entry names:
 4. evidence a future initiative must produce; and
 5. the limitation that prevents an overbroad compliance claim.
 
-Architecture evidence is primary for system scope and design. The regulation
-and official guidance establish the HIPAA basis. NIST material is supporting
-implementation guidance only and never overrides the regulation or the
-accepted architecture.
+Architecture evidence describes the current system scope and technical design;
+it does not outrank or narrow security policy. The regulation and official
+guidance establish the HIPAA basis, and this accepted policy remains primary
+for its scope. The accepted NIST suite is an independent primary security
+invariant for its scope; external NIST publications support that suite and do
+not override the HIPAA regulation. Any incompatible technical design requires
+an architecture successor rather than a weaker policy.
 
 ## Summary crosswalk
 
@@ -46,7 +50,7 @@ accepted architecture.
 
 ## Cross-suite compatibility
 
-The existing NIST suite remains co-governing authoritative evidence. The
+The existing NIST suite remains an independent primary security invariant. The
 following mapping records the intended relationship; it does not claim that
 either suite or any product control is implemented.
 
@@ -522,4 +526,16 @@ gate, not a complete HIPAA checklist or a predetermined technical solution.
 `HSP-015`. This mapping contains one corresponding justification entry for
 each ID. Future additions require a new stable policy ID and a matching
 architecture/HIPAA/evidence/limitation entry in the same authorized revision.
+
+`RZN-001` is cited only as historical request intent. The authoritative
+architecture and the two security suites own every present disposition; no
+realization statement substitutes for a mapped architecture, HIPAA, or NIST
+requirement.
+
+## Revision record
+
+| Date | Revision | Change | Authority |
+|---|---|---|---|
+| 2026-11-10 | `1.0.0` | Established complete rationale for `HSP-001` through `HSP-015` | User's HIPAA policy instruction and future-development clarification |
+| 2026-11-10 | `1.0.1` | Made policy primacy explicit, updated architecture/NIST identities, and fixed RZN-001's non-authoritative role | User's explicit reconciliation instruction and policy-primacy clarification |
 

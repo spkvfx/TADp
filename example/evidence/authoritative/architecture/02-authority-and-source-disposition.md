@@ -5,7 +5,7 @@
 **Owner and accepting authority:** User, project authority  
 **Decision method:** Codex best judgment, expressly authorized for this suite  
 **Effective date:** 2026-11-10  
-**Architecture revision:** `2.0.0`  
+**Architecture revision:** `2.0.1`  
 **Related records:** [`AUTH-EX-001`](01-accepted-architecture-baseline.md), [`RZN-001`](../../non-authoritative/realizations/v0/RZN-001-example-record-application.md)  
 
 ## Purpose
@@ -41,6 +41,14 @@ choices.
 
 > the CLI should use the same API path as teh web app.
 
+### In-place reconciliation instruction
+
+> uhm. I need you to actually reconcile the files according to these findings.
+> I need you to make these changes to the files in place.
+
+The User then clarified that the reconciliation report must be retained and
+updated to reflect the applied changes.
+
 ### Resulting scope
 
 The instructions authorize:
@@ -60,6 +68,14 @@ not alter domain behavior or authorize implementation/completion.
 The later API-path instruction specifically resolves consumer routing: CLI and
 web must use the same versioned `/api/v1` contract and route set. It does not
 collapse their distinct host-loopback and private-container network origins.
+
+The later reconciliation instruction specifically authorizes patch revision
+`2.0.1` and coordinated NIST/HIPAA revisions `1.0.1`. It authorizes in-place
+source annotations that make the already-binding cross-suite standing,
+permitted data/use profile, security evidence, successor triggers, and
+`RZN-001` dispositions explicit. It does not authorize a component, API,
+schema, topology, data migration, implementation, release, ePHI, remote-use,
+or compliance change.
 
 They do not authorize implementation, initiative acceptance, a completion
 claim, alteration of the Codex protocol, changes to unrelated evidence, or an
@@ -83,7 +99,7 @@ supersession records.
 | `RZN-001-Q10` | "Standalone CLI" means an independently versioned OCI image invoked as `docker compose run --rm record-cli`; it requires neither the web product nor host Python/SDK/CLI installation. It calls the API through its image-installed SDK and never mounts/opens SQLite. | [`ARC-BND-005`](19-cli-boundary.md), [`ARC-CTR-006`](20-cli-interaction-contract.md) |
 | `RZN-001-Q11` | The CLI must call the API through the Python SDK. The browser app calls the same HTTP API directly through its browser adapter. Both consume the identical `/api/v1` resource paths, methods, representations, errors, search/navigation semantics, and version lifecycle; there is no CLI-only or web-only record API path. Their origins differ only because the host browser enters through Docker-published loopback while the CLI container uses private Compose DNS. Neither may share or invoke the SQLite adapter. | [`ADR-001`](04-ADR-001-api-exclusive-persistence.md), [`ARC-CTR-002`](13-record-http-contract.md) |
 | `RZN-001-Q12` | The v2 target is pinned multi-stage Linux OCI images built with Docker BuildKit and orchestrated by Compose. Images contain Python 3.12+, FastAPI, Pydantic v2, `sqlite3`, official `google-re2`, HTTPX, Uvicorn, and container-built framework-free TypeScript assets. Ordered SQL migrations and all build/test tools run in containers. | [`ADR-005`](08-ADR-005-containerized-technology-stack.md) |
-| `RZN-001-Q13` | V2 is a local single-user Compose application: host-loopback publication only, private internal network, no app auth/CORS/telemetry, non-root read-only images, named volumes, structured privacy-aware logs, WCAG 2.2 AA browser behavior, bounded resources, and offline networkless maintenance/backup/restore containers. | [`ADR-004`](07-ADR-004-container-only-deployment-trust-model.md), [`ARC-CTR-008`](23-operations-security-contract.md) |
+| `RZN-001-Q13` | V2 is a local single-user Compose application: host-loopback publication only, private internal network, no app auth/CORS/telemetry, non-root read-only images, named volumes, structured privacy-aware logs, WCAG 2.2 AA browser behavior, bounded resources, and offline networkless maintenance/backup/restore containers. Future work also applies the NIST and HIPAA suites together; only the accepted non-production synthetic/documented-de-identified data profile is permitted, actual or possible ePHI is prohibited, and remote, multi-user, shared-workstation, third-party-processing, regulated-use, identity, audit, or encryption expansion requires the recorded successor gate. | [`ADR-004`](07-ADR-004-container-only-deployment-trust-model.md), [`ARC-CTR-008`](23-operations-security-contract.md), [`SEC-NIST-SUITE-001@1.0.1`](../security/NIST/00-nist-security-policy-suite-index.md), [`SEC-HIPAA-SUITE-001@1.0.1`](../security/HIPPA/00-hipaa-security-policy-suite-index.md) |
 | `RZN-001-Q14` | Deletion, bulk operations, record-level import/export, and record history are deliberately excluded from v1. Opaque validated backup-bundle transfer is an operations/recovery mechanism and does not expose record import/export. | [`AUTH-EX-001`](01-accepted-architecture-baseline.md), [`ARC-CTR-008`](23-operations-security-contract.md) |
 | `RZN-001-Q15` | Sufficiency and conformance require record-level IDs; contract/schema tests; image/Compose/SBOM/provenance checks; containerized unit, API, persistence, SDK, CLI, web, migration and recovery tests; clean-host Compose vectors; and traceable completion evidence. | [`ARC-CTR-009`](24-conformance-contract.md) |
 | `RZN-001-Q16` | Released documentation and contracts use immutable semantic revisions. Clarifications that cannot change conforming behavior may increment the patch revision; additive behavior increments minor; breaking meaning requires a new major/API version. Implementation evidence proposes a successor and never edits history silently. | [`ADR-006`](09-ADR-006-contract-versioning-and-feedback.md) |
@@ -114,6 +130,14 @@ containerized CLI invocation, maintenance mutual exclusion, build/test
 containerization, Docker-specific recovery/conformance behavior, and the
 user-directed single `/api/v1` path shared by CLI and web consumers.
 
+Revision `2.0.1` does not reopen those dispositions. It makes their security
+and data-use envelope explicit: the NIST and HIPAA suites are the primary
+security invariants guiding both architecture and realization; architecture
+owns technical system behavior only within their future-development and
+evidence gates; and
+the realization remains historical input rather than a competing current
+specification.
+
 These choices have the same accepted standing as the source-question
 dispositions because they fall within the expressly authorized architecture
 scope. They remain subject to the suite's explicit change-control process.
@@ -126,6 +150,10 @@ scope. They remain subject to the suite's explicit change-control process.
   backup restore, or end-to-end test has yet run.
 - Future initiatives must supply that missing evidence rather than treating
   the detail of this architecture as proof of delivery.
+- The original `RZN-001` questions remain visible as source history, but their
+  current disposition is this record and the cited architecture/security
+  owners; future work must not re-open them merely because the realization
+  preserves its at-recording-time wording.
 
 ## Revision record
 
@@ -134,4 +162,5 @@ scope. They remain subject to the suite's explicit change-control process.
 | 2026-11-10 | Accepted all listed source dispositions and bounded best-judgment choices as architecture revision `1.0.0` | User's initial and decision-method instructions quoted above |
 | 2026-11-10 | Superseded native-host deployment dispositions and accepted Docker Compose-only revision `2.0.0` with no host application-service/toolchain installation | User's exact Dockerization and host-installation instructions quoted above; predecessor preserved in `ARC-REV-001` |
 | 2026-11-10 | Fixed CLI and web to the identical `/api/v1` path/semantic contract while retaining network-origin separation | User's exact shared API-path instruction quoted above |
+| 2026-11-10 | Reconciled the architecture, NIST/HIPAA policy, and `RZN-001` source files in place as architecture patch `2.0.1` and security-policy patches `1.0.1` | User's exact in-place reconciliation instruction quoted above; no product behavior or implementation authority added |
 

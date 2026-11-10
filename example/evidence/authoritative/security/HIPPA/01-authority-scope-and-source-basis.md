@@ -2,7 +2,7 @@
 
 **Policy evidence ID:** `SEC-HIPAA-AUT-001`  
 **Status:** Accepted prospective policy evidence  
-**Revision:** `1.0.0`  
+**Revision:** `1.0.1`  
 **Owner and accepting authority:** User, project authority  
 **Effective date:** 2026-11-10  
 **Related suite:** [`SEC-HIPAA-SUITE-001`](00-hipaa-security-policy-suite-index.md)  
@@ -30,6 +30,17 @@ a compliance certification.
 
 > these policies guide future development, not validate existing work
 
+### Reconciliation instruction
+
+> I need you to actually reconcile the files according to these findings. I
+> need you to make these changes to the files in place.
+
+### Policy-primacy clarification
+
+> you aren't changing the security policy to match the architecture or
+> realization note right? this must remain primary invariant that guides both
+> documents - not the other way around.
+
 ### Resulting authority
 
 These instructions authorize creation of a new project-authoritative policy
@@ -37,16 +48,25 @@ suite in this directory. They authorize Codex to select a limited set of
 architecture-relevant safeguards and to justify them with current official
 HIPAA regulation and guidance. They do not authorize changes to the accepted
 architecture, protected Codex invariant suite, reusable templates, existing
-initiatives, products, or lifecycle status. They do not authorize a current
-implementation assessment or a HIPAA compliance claim.
+initiatives, products, or lifecycle status. The later reconciliation
+instruction authorizes only the coordinated architecture `2.0.1`, NIST
+`1.0.1`, and HIPAA `1.0.1` patch annotations recorded by those suites. It does
+not authorize new product behavior, implementation, ePHI, regulated use, a
+current-state assessment, or a HIPAA compliance claim. The later clarification
+controls precedence: the security policy guides both architecture and
+realization for its scope, and no policy requirement is changed to accommodate
+either document.
 
-## Primary architecture basis
+## Architecture input and policy precedence
 
-The accepted architecture is the primary source for what the policy governs:
+The accepted architecture describes the technical system being governed and
+is input to scope selection. This HIPAA suite remains the primary invariant for
+its security, data-use, safeguard, review, and evidence scope. Architecture
+must conform to the policy; the policy is not revised to fit architecture:
 
 | Architecture evidence | Controlling scope for this policy |
 |---|---|
-| [`ARC-SUITE-001@2.0.0`](../../architecture/00-architecture-suite-index.md), Purpose and architectural shape | One local Docker Compose record system; architecture is a future-product specification, not implementation evidence |
+| [`ARC-SUITE-001@2.0.1`](../../architecture/00-architecture-suite-index.md), Purpose and architectural shape | One local Docker Compose record system; architecture is a future-product specification, not implementation evidence |
 | [`AUTH-EX-001`](../../architecture/01-accepted-architecture-baseline.md), Applicability and claims `.1`, `.5`, `.6`, `.9`-`.13` | Local single-user, application-unauthenticated profile; API-exclusive SQLite; excluded remote/accounts/history; hardened container and named-volume requirements |
 | [`ADR-004`](../../architecture/07-ADR-004-container-only-deployment-trust-model.md), Compose trust topology and application identity boundary | OS/Docker access is the human authorization boundary; administrators and Docker-daemon controllers are inside the trust boundary |
 | [`ARC-CTR-001`](../../architecture/11-record-domain-contract.md), Public model and contract rules | Generic `name` and `value` can hold sensitive text; values and full names are sensitive by default and excluded from routine logs |
@@ -64,7 +84,7 @@ describes what future work must preserve or prove.
 ## Applicable peer security authority
 
 The existing
-[`SEC-NIST-SUITE-001@1.0.0`](../NIST/00-nist-security-policy-suite-index.md)
+[`SEC-NIST-SUITE-001@1.0.1`](../NIST/00-nist-security-policy-suite-index.md)
 is binding, directly applicable future-development security evidence. Its
 [`SEC-NIST-POL-001`](../NIST/01-demonstrator-security-policy.md) defines the
 local demonstrator's NIST-aligned product controls; its
@@ -184,12 +204,28 @@ Future work must follow the assessment and documentation process in 45 CFR
 because the regulation uses that label. This suite's ePHI prohibition cannot
 be waived through an addressable-specification rationale.
 
+### RZN-001 standing
+
+[`RZN-001`](../../../non-authoritative/realizations/v0/RZN-001-example-record-application.md)
+preserves requested intent and historical questions only. It is not a legal or
+security source and cannot override this policy, its permitted data profile,
+or `SEC-HIPAA-GATE-001`. Architecture `2.0.1` is likewise constrained by those
+requirements.
+
 ## Conflict and revision rule
 
 If a future policy interpretation appears to conflict with the accepted
 architecture, preserve both claims and use the repository invariant-conflict
-process. Do not change the architecture through a policy implementation or
-weaken this policy to make a product pass. If external law changes, record the
+process. The policy remains primary for its scope: revise the architecture
+through an explicitly accepted successor when needed, and never weaken this
+policy to make an architecture or product pass. If external law changes, record the
 new source and effective date, identify the exact affected policies, and
 obtain explicit authority for a compatible successor revision.
+
+## Revision record
+
+| Date | Revision | Change | Authority |
+|---|---|---|---|
+| 2026-11-10 | `1.0.0` | Established authority, scope, and HIPAA source basis | User's HIPAA policy instruction and future-development clarification |
+| 2026-11-10 | `1.0.1` | Recorded the in-place reconciliation authority, policy primacy, and current architecture/NIST/RZN relationships; no policy outcome changed | User's explicit reconciliation instruction and policy-primacy clarification quoted above |
 

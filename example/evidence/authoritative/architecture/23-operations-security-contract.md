@@ -2,7 +2,7 @@
 
 **Architecture ID:** `ARC-CTR-008`  
 **Status:** Accepted  
-**Architecture revision:** `2.0.0`  
+**Architecture revision:** `2.0.1`  
 **Contract owner:** Container platform owner and project architecture authority  
 **Producer:** Versioned OCI images, release Compose model, and maintenance commands  
 **Consumer:** Local operator, product verification, and future release initiatives  
@@ -15,7 +15,12 @@ This contract makes the local single-user, fully Dockerized trust decision
 operationally enforceable. It defines host prerequisites, the effective
 Compose topology, image and volume identity, configuration, lifecycle,
 health, mutual exclusion, resource/security controls, logging, release
-evidence, backup/restore, and failure handling.
+evidence, backup/restore, and failure handling. It operates together with
+[`SEC-NIST-SUITE-001@1.0.1`](../security/NIST/00-nist-security-policy-suite-index.md)
+and
+[`SEC-HIPAA-SUITE-001@1.0.1`](../security/HIPPA/00-hipaa-security-policy-suite-index.md);
+those suites govern allowed data/use, security review, and additional evidence
+without changing the topology defined here.
 
 It does not define remote/public deployment, accounts, high availability,
 Kubernetes, a host-native fallback, or product-level record import/export.
@@ -36,6 +41,8 @@ a bulk record API or user-data interchange format.
 | State | Live SQLite in Compose named volume `record-data`; validated backups in separate named volume `record-backups`; no live bind mount |
 | Availability | Best-effort local service; one replica/worker, no failover/SLO/zero-downtime migration claim |
 | OCI targets | Released manifests declare and verify `linux/amd64` and `linux/arm64`; an untested manifest entry is not a supported target |
+| Data/use profile | Non-production use with purpose-created synthetic data or data whose de-identification is documented under `HSP-002`; actual or possible ePHI is prohibited |
+| Security policy | Architecture vectors and every applicable NIST and HIPAA policy/evidence gate must pass for the same exact artifact and claim |
 
 Minimum release-host verification covers Windows 11 x64 with Docker Desktop,
 Ubuntu 24.04 LTS x86_64 with Docker Engine/Compose, a native Linux arm64 runner
@@ -184,7 +191,7 @@ release claim uses immutable registry digests and the same effective topology.
 - Release references are immutable digest-qualified. Each claimed platform has
   a manifest digest and passing native or explicitly qualified evidence.
 - OCI labels identify product/version, source commit, architecture revision
-  `2.0.0`, API/schema compatibility, build identity, licenses, and
+  `2.0.1`, API/schema compatibility, build identity, licenses, and
   SBOM/provenance references. Labels are metadata, not proof by themselves.
 - Dependency inputs are locked/hashes or equivalent, license/vulnerability
   reviewed, and represented in SBOMs. Material findings require explicit human
@@ -195,6 +202,34 @@ release claim uses immutable registry digests and the same effective topology.
   security, and browser automation executes through BuildKit/Compose
   targets/profiles. CI hosts Docker; it does not establish a native project
   toolchain as the normative path.
+
+## Governing security-policy integration
+
+The supported deployment profile is valid only while all of these conditions
+remain true:
+
+- the architecture remains local, single-user, loopback/private-network, and
+  non-production;
+- records and all derived fixtures, logs, screenshots, backups, and evidence
+  contain only purpose-created synthetic data or data with the external
+  de-identification record required by `HSP-002`;
+- the independent NIST prohibitions on credentials, authentication material,
+  confidential business data, production records, regulated data, and data
+  requiring controls outside that profile remain satisfied; and
+- no actual or possible ePHI is stored, processed, transmitted, backed up, or
+  copied into collaboration or verification artifacts.
+
+This contract describes technical shape and runtime behavior only inside the
+security-policy boundary. The two security suites are the primary invariants
+for their respective security, use, review, and evidence requirements and
+guide this contract—not the other way around. Passing an architecture vector
+never substitutes for a policy gate, and passing one policy suite never
+substitutes for the other.
+Every future `D2`-`D6` initiative must map its exact artifact and claim to all
+three evidence families. Remote access, multiple users, shared workstations,
+production clinical use, third-party record processing, or actual/possible
+ePHI stops affected work and requires an explicitly accepted successor
+architecture and security-policy revision.
 
 ## Lifecycle contract
 
@@ -412,7 +447,9 @@ V2 has no remote incident responder or per-user audit attribution.
 Changing host prerequisites, orchestrator, service/network/port topology,
 shared API path, authentication, public origin, volume/mount authority,
 container user/security controls, image identity, supported OCI platform,
-maintenance mutual exclusion, or recovery guarantee is an architecture change.
+maintenance mutual exclusion, recovery guarantee, accepted data/use profile,
+or the relationship to the governing security suites is an architecture
+change.
 
 | Required proof | Scenario | Evidence location |
 |---|---|---|
@@ -424,6 +461,7 @@ maintenance mutual exclusion, or recovery guarantee is an architecture change.
 | Lifecycle/recovery | Fresh install, restart, upgrade/migrate, backup/export/import/restore/rollback, daemon/OOM/fault drills | Future operations evidence |
 | Supply chain | Locked inputs, digests, multi-platform manifests, SBOM, provenance/signature policy, licenses/vulnerabilities | Future release evidence |
 | No host fallback | Documentation/command/package inventory rejects native Python/SDK/CLI/SQLite/Node/application-service paths | Future release evidence |
+| Cross-suite security and data use | Exact `SEC-POL-*` and `HSP-*` mappings, data/fixture classification, inherited-control review, policy evidence, and successor-trigger negatives for the same artifact | Future NIST/HIPAA and architecture conformance evidence |
 
 ## Related records
 
@@ -431,6 +469,7 @@ maintenance mutual exclusion, or recovery guarantee is an architecture change.
 - Decisions: [`ADR-004`](07-ADR-004-container-only-deployment-trust-model.md), [`ADR-005`](08-ADR-005-containerized-technology-stack.md)
 - Persistence contract: [`ARC-CTR-004`](16-sqlite-persistence-contract.md)
 - Governing evidence: [`AUTH-EX-001`](01-accepted-architecture-baseline.md)
+- Governing security suites: [`SEC-NIST-SUITE-001@1.0.1`](../security/NIST/00-nist-security-policy-suite-index.md), [`SEC-HIPAA-SUITE-001@1.0.1`](../security/HIPPA/00-hipaa-security-policy-suite-index.md)
 - Superseded native deployment baseline: [`ARC-REV-001`](revisions/1.0.0/00-superseded-native-runtime-deployment-baseline.md)
 
 ## Revision record
@@ -440,3 +479,4 @@ maintenance mutual exclusion, or recovery guarantee is an architecture change.
 | 2026-11-10 | Defined native local-process operations/security contract | User-authorized best-judgment architecture completion |
 | 2026-11-10 | Replaced native operation with mandatory Compose topology, container hardening, named volumes, offline maintenance, and Docker-only lifecycle | User's explicit full-Dockerization/no-host-services instruction |
 | 2026-11-10 | Required CLI and web to consume the same `/api/v1` path while retaining their distinct Docker network origins | User's explicit shared-API-path instruction |
+| 2026-11-10 | Reconciled the operations profile with the NIST and HIPAA data/use, evidence, and successor gates; no runtime behavior was changed | User's explicit instruction to apply the reconciliation findings in place |

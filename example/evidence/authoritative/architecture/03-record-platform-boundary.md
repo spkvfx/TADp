@@ -2,7 +2,7 @@
 
 **Architecture ID:** `ARC-BND-001`  
 **Status:** Accepted  
-**Architecture revision:** `2.0.0`  
+**Architecture revision:** `2.0.1`  
 **Owner:** User, project authority  
 **Last reviewed:** 2026-11-10  
 **Supersedes:** Native-host boundary preserved in [`ARC-REV-001`](revisions/1.0.0/00-superseded-native-runtime-deployment-baseline.md)  
@@ -77,7 +77,7 @@ containers and tests cannot attach to `record-data`.
 
 | State or decision | System of record | Write authority | Recovery or reconciliation rule |
 |---|---|---|---|
-| Accepted architecture meaning | Active root records at revision `2.0.0` | User/later named authority through explicit revision | Preserve predecessor under `revisions/` and reconcile consumers |
+| Accepted architecture meaning | Active root records at revision `2.0.1` | User/later named authority through explicit revision | Preserve predecessor through Git/explicit revision records and reconcile consumers |
 | Runtime topology | Reviewed Compose model plus pinned release image digests | Governing delivery initiative/release owner | Render/inspect exact effective config; generated output cannot override source |
 | Live records/internal metadata | SQLite file in `record-data` named volume | `record-api`; `record-maintenance` only while API stopped | Validate/restore through maintenance container; never merge databases |
 | Backups | `record-backups` named volume and explicitly exported backup artifacts | Networkless maintenance command | Validate hashes/schema before restore/export; preserve prior live volume |

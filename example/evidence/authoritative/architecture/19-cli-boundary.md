@@ -2,7 +2,7 @@
 
 **Architecture ID:** `ARC-BND-005`  
 **Status:** Accepted  
-**Architecture revision:** `2.0.0`  
+**Architecture revision:** `2.0.1`  
 **Owner:** CLI component owner under a future accepted initiative  
 **Last reviewed:** 2026-11-10  
 **Related records:** [`ADR-001`](04-ADR-001-api-exclusive-persistence.md), [`ARC-CTR-005`](18-python-sdk-contract.md), [`ARC-CTR-006`](20-cli-interaction-contract.md), [`ARC-CTR-008`](23-operations-security-contract.md)  

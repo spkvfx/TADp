@@ -1,16 +1,40 @@
 # Example record application
 
 **Realization ID:** RZN-001  
-**Status:** Recorded  
+**Status:** Recorded; authoritatively dispositioned  
 **Recorded by:** Codex on behalf of the User  
 **Recorded date:** 2026-11-10  
 **Source:** User request in the current Codex conversation  
-**Related initiative or proposal:** Not yet created  
+**Related initiative or proposal:** No initiative created; authoritative dispositions are recorded below  
+**Reconciliation record:** [`REC-RZN-001-001`](../../reconciliations/RZN-001-architecture-security-reconciliation.md)  
 
 > **Evidence standing:** This realization is non-authoritative proposal input.
 > It preserves a requested outcome and candidate solution shape; it is not an
 > accepted specification, architecture decision, implementation authorization,
 > product commitment, or completion claim.
+
+## Current authoritative reconciliation
+
+The request and candidate wording below remain historical evidence of what was
+asked on 2026-11-10. Statements such as "unresolved," "not yet chosen," and
+"future decision" describe this note at recording time; they are not the
+current source of truth for system design, security policy, or delivery
+sequencing.
+
+| Concern | Current authoritative disposition |
+|---|---|
+| System shape, data model, API, persistence, search, clients, deployment, and D1-D6 delivery | [`ARC-SUITE-001@2.0.1`](../../../authoritative/architecture/00-architecture-suite-index.md), with question-by-question ownership in [`ARC-AUT-001`](../../../authoritative/architecture/02-authority-and-source-disposition.md) |
+| NIST-aligned security and future assurance | [`SEC-NIST-SUITE-001@1.0.1`](../../../authoritative/security/NIST/00-nist-security-policy-suite-index.md) |
+| HIPAA-aligned data use, safeguards, evidence, and regulated-use successor gate | [`SEC-HIPAA-SUITE-001@1.0.1`](../../../authoritative/security/HIPPA/00-hipaa-security-policy-suite-index.md) |
+| Permitted profile | Local, single-user, non-production use with purpose-created synthetic data or externally documented de-identified data; no actual or possible ePHI |
+
+Future consumers may cite this realization for requested intent and historical
+context only. The two security suites are the primary invariants for security,
+permitted data/use, safeguards, review, and evidence, and they guide both this
+note and the architecture—not the other way around. Consumers must satisfy the
+current architecture inside those policy limits and both applicable security
+suites for the same exact artifact and claim; no passing evidence set
+substitutes for another.
 
 ## Realization
 
@@ -34,7 +58,7 @@ remains immutable throughout those interactions.
 | Where and when? | Current TADp repository conversation on 2026-11-10; requested placement is this `v0` realization directory. |
 | Who is affected? | Example-application users, API and SDK consumers, CLI users, web users, implementers, reviewers, and maintainers of the SQLite data contract. |
 | What source supports it? | `SRC-RZN-001-USER-REQUEST`, the User's request in the current conversation. [The product placement guidance](../../../../products/README.md) supplies repository context but does not define application behavior. |
-| What is uncertain? | Field details, update interaction, navigation order, search and regex semantics, API shape, SDK scope, CLI deployment model, operational constraints, and acceptance criteria have not yet been decided. |
+| What was uncertain when recorded? | Field details, update interaction, navigation order, search and regex semantics, API shape, SDK scope, CLI deployment model, operational constraints, and acceptance criteria had not yet been decided. They are now dispositioned by architecture `2.0.1` and the security suites identified above. |
 
 ## Source inventory and limits
 
@@ -43,6 +67,9 @@ remains immutable throughout those interactions.
 | `SRC-RZN-001-USER-REQUEST` | User requests and clarifications received 2026-11-10 | Direct request and realization source; not an accepted initiative | Preserves the requested application behavior, product order, stated technology choices, and documentation-to-implementation feedback loop. |
 | `SRC-RZN-001-PRODUCT-CONTEXT` | [`example/products/README.md`](../../../../products/README.md) | Repository guidance | Establishes what may count as a product and that each product's actual destination belongs in its governing initiative. It supplies no app-specific requirement. |
 | `SRC-RZN-001-PROTOCOL` | [Codex invariant suite](../../../authoritative/LLM/00_Codex_Invariant_Suite_Index.md) | Authoritative protocol | Governs the standing and later use of this note. It does not accept or prescribe the candidate application design. |
+| `SRC-RZN-001-ARCH-DISPOSITION` | [`ARC-SUITE-001@2.0.1`](../../../authoritative/architecture/00-architecture-suite-index.md) | Subsequent authoritative architecture | Owns the accepted system decisions, question dispositions, delivery units, and conformance requirements. |
+| `SRC-RZN-001-NIST-DISPOSITION` | [`SEC-NIST-SUITE-001@1.0.1`](../../../authoritative/security/NIST/00-nist-security-policy-suite-index.md) | Subsequent authoritative security policy | Owns applicable NIST-aligned security and assurance requirements. |
+| `SRC-RZN-001-HIPAA-DISPOSITION` | [`SEC-HIPAA-SUITE-001@1.0.1`](../../../authoritative/security/HIPPA/00-hipaa-security-policy-suite-index.md) | Subsequent authoritative security policy | Owns the permitted data/use profile, HIPAA-aligned safeguards, evidence requirements, and successor gate. |
 
 The word **should** below records the User's requested behavior. It does not
 mean that the behavior has passed proposal alignment, human decision gates, or
@@ -57,10 +84,12 @@ in a SQLite database. The request also identifies documentation, API, and CLI
 products that precede the web application and establish or reuse the same
 capabilities.
 
-The request does not yet determine whether the web and CLI products access the
+At recording time, the request did not determine whether the web and CLI products access the
 database only through the API, whether the CLI may open SQLite directly, or
 whether a separately delivered SDK mediates either interface. Those are later
-contract and architecture decisions.
+contract and architecture decisions. `ADR-001` and the accepted client
+contracts now require API-exclusive live persistence and the identical
+`/api/v1` route set; direct client access to SQLite is rejected.
 
 ### Record model
 
@@ -196,10 +225,11 @@ The candidate outcome also includes an API that:
 - is verified against the current contracts established by Product 1.
 
 The SDK language, packaging, public surface, generated-versus-handwritten
-status, and supported consumers are not yet chosen. The API framework,
+status, and supported consumers were not chosen by this realization. The API framework,
 transport, route layout, model names, synchronous or asynchronous execution,
 database access library, migration mechanism, and deployment form are also not
-chosen by this realization.
+chosen by this realization. Architecture `2.0.1`, especially `ADR-005` and the
+SDK/API contracts, now owns those selections.
 
 #### Documentation and implementation feedback loop
 
@@ -233,11 +263,11 @@ to cover:
 - reporting validation, no-result, boundary, invalid-regex, and persistence
   failures in a usable command-line form.
 
-"Standalone" is not yet defined. It could mean a distributable executable, a
+"Standalone" was not defined by the request. It could have meant a distributable executable, a
 tool that does not require the web application, a tool that embeds direct
 SQLite access, or an API client that can be installed and run independently.
-The future product-specific realization must preserve and resolve that
-ambiguity before the architecture is accepted.
+The accepted architecture resolves it as an independently versioned, one-shot
+Compose CLI image that uses the SDK/API and mounts no application state.
 
 ### Product 4: web application
 
@@ -254,9 +284,10 @@ experience includes:
 - visible validation, empty-state, boundary, loading, success, and error
   feedback.
 
-The request does not choose a web framework, visual design system, browser
+The request did not choose a web framework, visual design system, browser
 support policy, accessibility target, API integration pattern, or deployment
-model.
+model. Architecture `2.0.1`, especially `ARC-BND-006`, `ARC-CTR-007`, and
+`ADR-005`, now owns those decisions.
 
 ## Candidate end-to-end experiences
 
@@ -320,10 +351,11 @@ The later product suites should evaluate these candidate goals:
 - **Safe failure behavior:** validation, regex, database, and concurrency
   errors do not corrupt a record or change its immutable ID.
 
-## Assumptions and open questions
+## Historical assumptions and questions
 
-These items are intentionally unresolved. They require disposition in the
-appropriate product-specific proposal or initiative workflow.
+These items were intentionally unresolved in the source request. They are kept
+to preserve source identity, but their current dispositions belong to the
+authoritative records listed after the table.
 
 | ID | Question or assumption requiring a decision | Products affected |
 |---|---|---|
@@ -345,7 +377,20 @@ appropriate product-specific proposal or initiative workflow.
 | `RZN-001-Q16` | What versioning and decision process distinguishes a documentation clarification from a contract change when Product 2 implementation evidence feeds back into Product 1? | Docs, SDK/API |
 | `RZN-001-Q17` | Do the SDK and API within Product 2 form one cohesive acceptance claim, or do their independent outputs and verification require coordinated narrow initiatives? | SDK/API |
 
+| Historical question group | Current authoritative owner |
+|---|---|
+| `Q01`-`Q04` record model, creation, update, and concurrency | `AUTH-EX-001`, `ADR-002`, `ARC-CTR-001`, and `ARC-CTR-002` |
+| `Q05`-`Q08` ordering, navigation, search, regex, and typo disposition | `ADR-002`, `ADR-003`, and `ARC-CTR-003` |
+| `Q09`-`Q12` SDK, API-only access, CLI meaning, stack, and packaging | `ADR-001`, `ADR-005`, and `ARC-BND/CTR-002` through `008` |
+| `Q13` security, privacy, logging, accessibility, performance, backup, browser, and deployment | `ADR-004`, `ARC-CTR-007`, `ARC-CTR-008`, NIST `1.0.1`, and HIPAA `1.0.1` |
+| `Q14` excluded capabilities | `AUTH-EX-001.9` and `ARC-CTR-009` |
+| `Q15`-`Q17` evidence, version feedback, cohesion, and delivery decomposition | `ADR-006`, `ADR-007`, and `ARC-CTR-009` |
+
 ## Risks and dependencies to carry forward
+
+The authoritative suites now own the mitigations and evidence gates for these
+risks. The bullets remain useful verification concerns, not open authority to
+choose a conflicting architecture or security boundary.
 
 - If the documentation product leaves data or search semantics ambiguous, each
   executable product may implement a different contract.
@@ -377,11 +422,17 @@ or regex matching. Developers and operators also have an accepted, versioned
 contract, a conforming SDK and Pydantic-modeled API, and a standalone CLI that
 exposes the same capabilities before the web product is delivered.
 
-## Suggested next step
+That outcome is permitted only inside the reconciled local, single-user,
+non-production synthetic/documented-de-identified profile. It does not
+authorize actual or possible ePHI, remote or multi-user access, a shared
+workstation, production clinical use, third-party record processing, or a
+compliance claim.
 
-The product or architecture authority should use `RZN-001` as source input for
-proposal work. As separately requested for the next prompt, create independent,
-versioned realization-note suites for these four candidate products:
+## Historical suggested next step and current handoff
+
+The original suggested next step was to use `RZN-001` as source input and
+create independent, versioned realization-note suites for these four candidate
+products:
 
 1. `RZN-001-P1-DOCS` - documentation for the hypothetical SDK and API;
 2. `RZN-001-P2-SDK-API` - implemented SDK and Pydantic-modeled API;
@@ -395,10 +446,18 @@ the narrow initiative boundary, dependency, product destination, acceptance
 claim, and verification obligations for each product. No product implementation
 is authorized by this note.
 
+Current work must instead follow the accepted `D1`-`D6` decomposition in
+`ADR-007`. Each narrow future initiative must cite architecture `2.0.1`, NIST
+`1.0.1`, and HIPAA `1.0.1`; map the exact applicable vectors and policies; and
+carry the permitted data profile and successor triggers into its specification
+and evidence plan.
+
 ## Handoff notes
 
 When this realization or a product-specific successor is used as proposal
-input, cite its realization ID and source IDs in the proposal inventory. Keep
-this note unchanged; record later interpretation, acceptance, rejection,
-correction, or supersession in linked proposal, initiative, decision, or
-realization records.
+input, cite its realization ID and source IDs in the proposal inventory.
+Preserve the original request and historical wording. The User explicitly
+authorized these in-place reconciliation annotations on 2026-11-10; future
+interpretation, acceptance, rejection, correction, or supersession belongs in
+linked authoritative or lifecycle records unless equally explicit authority
+permits another source-preserving annotation.

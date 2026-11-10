@@ -1,10 +1,10 @@
 # Future HIPAA-aligned development and evidence standard
 
 **Standard ID:** `SEC-HIPAA-DEV-001`  
-**Revision:** `1.0.0`  
+**Revision:** `1.0.1`  
 **Status:** Accepted prospective development standard  
 **Governing policy:** [`SEC-HIPAA-POL-001`](02-prospective-security-policy.md)  
-**Architecture baseline:** [`ARC-SUITE-001@2.0.0`](../../architecture/00-architecture-suite-index.md)  
+**Architecture input:** [`ARC-SUITE-001@2.0.1`](../../architecture/00-architecture-suite-index.md)  
 **Applies to:** Future delivery units `D2`-`D6` and their governing initiatives  
 
 ## Purpose
@@ -37,7 +37,7 @@ A future proposal affecting `D2`-`D6` must:
    processing premise to `SEC-HIPAA-GATE-001` before product work.
 
 It must also map the change to the applicable requirements of
-[`SEC-NIST-SUITE-001@1.0.0`](../NIST/00-nist-security-policy-suite-index.md).
+[`SEC-NIST-SUITE-001@1.0.1`](../NIST/00-nist-security-policy-suite-index.md).
 The two mappings may share evidence only when the artifact, environment,
 method, and expected outcome are exact for both claims.
 
@@ -153,7 +153,7 @@ Each verification run must preserve at least:
 |---|---|
 | Evidence ID | Stable initiative/product-scoped identifier |
 | Claim boundary | Exact `HSP-*` policies and `ARC-CTR-009` vectors being tested |
-| Authority | `SEC-HIPAA-SUITE-001@1.0.0`, `ARC-SUITE-001@2.0.0`, accepted initiative revision |
+| Authority | `SEC-HIPAA-SUITE-001@1.0.1`, `SEC-NIST-SUITE-001@1.0.1`, `ARC-SUITE-001@2.0.1`, accepted initiative revision |
 | Product identity | D2-D6 unit, version, Git commit, image/manifest/wheel/bundle/Compose hashes |
 | Data classification | Fixture manifest ID and synthetic/de-identification basis; no raw record content |
 | Environment | Host/OS/architecture, Docker/Desktop/Compose/BuildKit, browser, image digests, network and named test-volume identities |
@@ -212,4 +212,14 @@ This standard intentionally contains no completed checklist, test output,
 artifact identity, risk acceptance, release approval, or compliance result.
 Those records belong to future, separately accepted initiatives and must be
 created only when the relevant work and evidence actually exist.
+
+`RZN-001` may be cited for requested intent but never as authority for a data
+classification, security exception, delivery gate, or product claim.
+
+## Revision record
+
+| Date | Revision | Change | Authority |
+|---|---|---|---|
+| 2026-11-10 | `1.0.0` | Established prospective development and evidence requirements | User's HIPAA policy instruction and future-development clarification |
+| 2026-11-10 | `1.0.1` | Required exact architecture, NIST, and HIPAA identities for one additive evidence record | User's explicit instruction to apply the reconciliation findings in place |
 

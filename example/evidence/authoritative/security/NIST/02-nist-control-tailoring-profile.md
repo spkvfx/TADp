@@ -1,12 +1,13 @@
 # NIST control tailoring profile
 
 **Profile ID:** `SEC-NIST-MAP-001`  
-**Revision:** `1.0.0`  
+**Revision:** `1.0.1`  
 **Status:** Accepted future-development profile  
 **Owner and accepting authority:** User, project authority  
 **Effective date:** 2026-11-10  
 **Governing suite:** [`SEC-NIST-SUITE-001`](00-nist-security-policy-suite-index.md)  
-**Primary design evidence:** [`ARC-SUITE-001@2.0.0`](../../architecture/00-architecture-suite-index.md)  
+**Architecture input:** [`ARC-SUITE-001@2.0.1`](../../architecture/00-architecture-suite-index.md)  
+**Applicable peer profile:** [`SEC-HIPAA-SUITE-001@1.0.1`](../HIPPA/00-hipaa-security-policy-suite-index.md)  
 
 ## Purpose
 
@@ -26,18 +27,23 @@ enhancement is implemented.
 
 The project applied this order:
 
-1. Treat the accepted architecture as the primary evidence for system purpose,
+1. Use the accepted architecture as factual input describing system purpose,
    actors, data, deployment, trust boundaries, state ownership, lifecycle, and
-   explicit exclusions.
+   explicit exclusions; do not treat it as authority to weaken security policy.
 2. Identify security risks created by those architectural facts.
 3. Select only final NIST guidance that directly supports a proportionate
    future requirement for those risks.
-4. Convert the selected outcome into an architecture-compatible project policy
-   with a stable ID, rather than copying a federal or enterprise baseline.
+4. Convert the selected outcome into a project security policy with a stable
+   ID that guides and constrains architecture and future work, rather than
+   copying a federal or enterprise baseline.
 5. Record omitted areas, the reason for omission, and the change that would
    make each area relevant.
 6. Require future evidence at the boundary where the architecture assigns the
    behavior; do not infer implementation from the architecture or crosswalk.
+
+After acceptance, this policy is primary within its security and permitted-use
+scope. Compatibility means the architecture satisfies the policy; it does not
+mean policy is changed to preserve an architecture choice.
 
 This is an outcome-based, risk-informed tailoring exercise. It is not a NIST
 SP 800-53B baseline selection and does not perform the NIST Risk Management
@@ -98,3 +104,14 @@ profile for the affected change. The change must follow `SEC-POL-14` and the
 architecture feedback process before implementation. A scan, test, or risk
 acceptance record cannot silently add a new system boundary or waive an
 architecture invariant.
+
+The same trigger review must check the HIPAA successor gate. A tailoring
+decision cannot use `RZN-001`, a passing architecture vector, or an accepted
+NIST exception as a substitute for an applicable `HSP-*` requirement.
+
+## Revision record
+
+| Date | Revision | Change | Authority |
+|---|---|---|---|
+| 2026-11-10 | `1.0.0` | Established the limited control-tailoring profile | User's NIST policy instruction and clarification |
+| 2026-11-10 | `1.0.1` | Reconciled tailoring triggers with architecture 2.0.1 and the HIPAA successor gate | User's explicit instruction to apply the reconciliation findings in place |

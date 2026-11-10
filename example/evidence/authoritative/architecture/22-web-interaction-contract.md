@@ -2,7 +2,7 @@
 
 **Architecture ID:** `ARC-CTR-007`  
 **Status:** Accepted  
-**Architecture revision:** `2.0.0`  
+**Architecture revision:** `2.0.1`  
 **Contract owner:** Web component owner and project architecture authority  
 **Producer:** Same-origin record web application  
 **Consumer:** Local browser user  

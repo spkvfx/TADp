@@ -1,12 +1,26 @@
 # TADp demonstrator security policy
 
 **Policy ID:** `SEC-NIST-POL-001`  
-**Revision:** `1.0.0`  
+**Revision:** `1.0.1`  
 **Status:** Accepted future-development policy  
 **Owner and accepting authority:** User, project authority  
 **Effective date:** 2026-11-10  
 **Governing suite:** [`SEC-NIST-SUITE-001`](00-nist-security-policy-suite-index.md)  
-**Primary evidence:** [`ARC-SUITE-001@2.0.0`](../../architecture/00-architecture-suite-index.md)  
+**Architecture input:** [`ARC-SUITE-001@2.0.1`](../../architecture/00-architecture-suite-index.md)  
+**Applicable peer policy:** [`SEC-HIPAA-SUITE-001@1.0.1`](../HIPPA/00-hipaa-security-policy-suite-index.md)  
+
+## Reconciliation standing
+
+This revision applies together with architecture `2.0.1` and HIPAA policy
+`1.0.1`. This policy remains the primary invariant for its NIST-aligned
+security outcomes and guides the architecture; the HIPAA suite independently
+owns its additional data-use, safeguard, and successor gates.
+[`RZN-001`](../../../non-authoritative/realizations/v0/RZN-001-example-record-application.md)
+is intent history only and cannot relax any requirement. When HIPAA policy is
+applicable, only purpose-created synthetic data or externally documented
+de-identified data is permitted, and the independent NIST prohibitions on
+credentials, confidential business data, production records, regulated data,
+and data requiring omitted controls still apply.
 
 ## Purpose
 
@@ -535,8 +549,15 @@ inapplicable without following `SEC-POL-14`.
 
 Permitted wording after all required evidence passes is:
 
-> Conforms to `SEC-NIST-SUITE-001@1.0.0` for the local single-user TADp
+> Conforms to `SEC-NIST-SUITE-001@1.0.1` for the local single-user TADp
 > demonstrator profile.
 
 The release must not say "NIST certified," "NIST compliant," "FISMA compliant,"
 or "implements NIST SP 800-53" based solely on this suite.
+
+## Revision record
+
+| Date | Revision | Change | Authority |
+|---|---|---|---|
+| 2026-11-10 | `1.0.0` | Established the demonstrator security policies | User's NIST policy instruction and clarification |
+| 2026-11-10 | `1.0.1` | Made policy primacy and the architecture, HIPAA, and RZN-001 relationship explicit without changing a policy outcome | User's explicit reconciliation instruction and policy-primacy clarification |

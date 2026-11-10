@@ -2,7 +2,7 @@
 
 **Decision ID:** `ADR-005`  
 **Status:** Accepted  
-**Architecture revision:** `2.0.0`  
+**Architecture revision:** `2.0.1`  
 **Decision owner:** User, project authority  
 **Decision date:** 2026-11-10  
 **Supersedes / superseded by:** Supersedes `ADR-005@1.0.0`, preserved in [`ARC-REV-001`](revisions/1.0.0/00-superseded-native-runtime-deployment-baseline.md); no successor  
@@ -79,7 +79,7 @@ them through Docker rather than native wheels/runtime processes.
 - Runtime images copy only wheels/application/migrations/web outputs needed by
   that target, use exec-form entrypoints, and run as `10001:10001`.
 - Released images contain OCI labels for product version, Git commit,
-  architecture revision `2.0.0`, source identity, build time, licenses/SBOM
+  architecture revision `2.0.1`, source identity, build time, licenses/SBOM
   reference, and compatible API/schema versions.
 - Release manifests cover each claimed platform. Building one platform locally
   does not prove multi-platform compatibility.

@@ -1,12 +1,22 @@
 # Prospective HIPAA-aligned security policy
 
 **Policy ID:** `SEC-HIPAA-POL-001`  
-**Revision:** `1.0.0`  
+**Revision:** `1.0.1`  
 **Status:** Accepted prospective policy  
 **Owner:** User, project authority  
 **Applies to:** Future TADp example-app initiatives and delivery units `D2`-`D6`  
-**Primary evidence:** [`ARC-SUITE-001@2.0.0`](../../architecture/00-architecture-suite-index.md)  
+**Architecture input:** [`ARC-SUITE-001@2.0.1`](../../architecture/00-architecture-suite-index.md)  
 **Complete rationale:** [`SEC-HIPAA-MAP-001`](03-control-rationale-and-traceability.md)  
+**Applicable peer policy:** [`SEC-NIST-SUITE-001@1.0.1`](../NIST/00-nist-security-policy-suite-index.md)  
+
+## Reconciliation standing
+
+This policy applies together with architecture `2.0.1` and NIST policy `1.0.1`.
+This policy remains primary for its security and data-use scope and guides the
+architecture, whose technical design must stay within these requirements. The
+security suites require independent evidence. `RZN-001` supplies
+historical intent only: its free-text model and previously open questions do
+not authorize actual or possible ePHI or any successor-gate trigger.
 
 ## Policy objective
 
@@ -407,4 +417,11 @@ reasonable and appropriate. No exception may contradict an invariant, waive a
 required HIPAA standard, or turn missing evidence into a passing claim.
 
 [Rationale and required evidence](03-control-rationale-and-traceability.md#hsp-015--successor-architecture-and-exception-gate)
+
+## Revision record
+
+| Date | Revision | Change | Authority |
+|---|---|---|---|
+| 2026-11-10 | `1.0.0` | Established policies `HSP-001` through `HSP-015` | User's HIPAA policy instruction and future-development clarification |
+| 2026-11-10 | `1.0.1` | Made policy primacy and the architecture, NIST, and RZN-001 relationship explicit without changing a policy outcome | User's explicit reconciliation instruction and policy-primacy clarification |
 

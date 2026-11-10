@@ -1,7 +1,7 @@
 # NIST source register
 
 **Register ID:** `SEC-NIST-SRC-001`  
-**Revision:** `1.0.0`  
+**Revision:** `1.0.1`  
 **Status:** Accepted source register  
 **Owner and accepting authority:** User, project authority  
 **Effective date:** 2026-11-10  
@@ -13,8 +13,9 @@
 This register preserves the official NIST publication identities, versions,
 and locators used to justify the prospective TADp demonstrator security
 policies. Only final NIST publications are normative alignment sources for
-this revision. The architecture remains the primary project design evidence;
-NIST sources justify the selected security outcomes.
+this revision. The architecture is technical input describing the system;
+the accepted security policy remains primary for its scope, and these NIST
+sources justify its selected security outcomes.
 
 The summaries below are project paraphrases, not substitutes for the source
 text. NIST identifiers are kept so future reviewers can inspect the complete
@@ -125,6 +126,12 @@ project policies.
 
 ## Source maintenance and conflict handling
 
+The HIPAA source basis in
+[`SEC-HIPAA-AUT-001@1.0.1`](../HIPPA/01-authority-scope-and-source-basis.md)
+is a peer regulatory source register for its policy scope. It does not replace
+or reinterpret the NIST publications here. `RZN-001` is not an external
+security authority and supplies no basis for weakening either source family.
+
 - Review this register when NIST publishes a final revision or release that
   changes a cited outcome, at each security-suite review, and at least when the
   architecture or profile boundary changes.
@@ -138,3 +145,10 @@ project policies.
   control is fully implemented.
 - Drafts may inform planning only. A draft cannot override this final-source
   register or serve as the sole justification for a binding policy change.
+
+## Revision record
+
+| Date | Revision | Change | Authority |
+|---|---|---|---|
+| 2026-11-10 | `1.0.0` | Established the NIST source register | User's NIST policy instruction and clarification |
+| 2026-11-10 | `1.0.1` | Clarified the independent HIPAA source basis and RZN-001's non-authoritative standing | User's explicit instruction to apply the reconciliation findings in place |

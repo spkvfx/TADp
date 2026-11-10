@@ -5,8 +5,8 @@
 **Status:** Active  
 **Owner and accepting authority:** User, project authority  
 **Effective date:** 2026-11-10  
-**Source and revision:** `RZN-001` interpreted under the User's 2026-11-10 instructions; architecture revision `2.0.0`  
-**Supersedes / superseded by:** Supersedes [`ARC-SUITE-001@1.0.0`](revisions/1.0.0/00-superseded-native-runtime-deployment-baseline.md); no successor  
+**Source and revision:** `RZN-001` interpreted under the User's 2026-11-10 instructions; architecture revision `2.0.1`  
+**Supersedes / superseded by:** Supersedes revision `2.0.0` preserved at Git commit `5f0c325`; revision `2.0.0` superseded [`ARC-SUITE-001@1.0.0`](revisions/1.0.0/00-superseded-native-runtime-deployment-baseline.md); no successor  
 
 ## Binding statement
 
@@ -21,6 +21,23 @@ host installs no application runtime or service.
 The CLI and browser use the same `/api/v1` route set and wire behavior; their
 private-network and host-loopback origins are transport boundaries, not
 separate APIs.
+
+Future work under this architecture must also satisfy the applicable
+requirements of
+[`SEC-NIST-SUITE-001@1.0.1`](../security/NIST/00-nist-security-policy-suite-index.md)
+and
+[`SEC-HIPAA-SUITE-001@1.0.1`](../security/HIPPA/00-hipaa-security-policy-suite-index.md).
+The supported information profile is non-production demonstration/test data
+that is purpose-created synthetic or supported by the external documented
+de-identification basis accepted by the HIPAA suite, while also satisfying the
+NIST suite's separate prohibition on production, confidential, regulated, or
+higher-control data. Actual, possible, or insufficiently classified ePHI is
+not permitted.
+
+For security, permitted data/use, safeguards, review, and evidence, those
+security suites are the primary invariants and guide this architecture. The
+architecture supplies technical shape only within their limits; neither it nor
+`RZN-001` can narrow, waive, or cause a policy requirement to be rewritten.
 
 ## Source standing and acceptance
 
@@ -47,13 +64,21 @@ The User further instructed, "the CLI should use the same API path as teh web
 app." That instruction fixes `AUTH-EX-001.3` and is preserved verbatim in
 `ARC-AUT-001`.
 
+The User then instructed, "I need you to actually reconcile the files according
+to these findings. I need you to make these changes to the files in place."
+That instruction authorizes patch revision `2.0.1`: it incorporates the
+already-binding NIST and HIPAA suites and their `RZN-001` dispositions into
+the files that own architecture, security, and realization meaning. It does
+not authorize new product behavior, implementation, ePHI, remote access, or a
+completion/compliance claim.
+
 ## Applicability
 
 | Applies to | Does not apply to | Rationale |
 |---|---|---|
 | Architecture and future documentation for the example record application | Unrelated TADp protocol, templates, or projects | The User named the example project and target architecture directory |
 | Future record API, SQLite adapter, Python SDK, CLI, and browser application | A product implementation not governed by an accepted initiative | Architecture constrains products but does not authorize execution |
-| Local single-user v2 Docker Compose deployment | Native-host application runtime, public/remote/multi-tenant/regulated deployment, Kubernetes, or non-Compose orchestration | The User requires no host service installs; other environments require materially different deployment, identity, security, and operations decisions |
+| Local single-user v2 Docker Compose deployment with the accepted non-production synthetic/documented-de-identified data profile | Native-host application runtime, actual or possible ePHI, production clinical use, public/remote/multi-tenant/regulated deployment, shared workstation identity, third-party record processing, Kubernetes, or non-Compose orchestration | The User requires no host service installs and the accepted security suites require a successor for excluded data or use; other environments require materially different deployment, identity, security, privacy, and operations decisions |
 | Record create, retrieve, update, browse, search, and adjacent navigation | Delete, bulk operations, record-level import/export, audit history, and arbitrary queries | The source did not request the excluded capabilities, and best-judgment scope keeps the example bounded; opaque backup transfer remains an operations concern |
 
 ## Binding claims
@@ -73,6 +98,8 @@ app." That instruction fixes `AUTH-EX-001.3` and is preserved verbatim in
 | `AUTH-EX-001.11` | Docker Compose is the only supported runtime/orchestration path. Running the example must require no host installation of Python, SDK, CLI, SQLite, RE2, FastAPI, Uvicorn, Node/TypeScript, migration, maintenance, or test tooling. | Clean-host prerequisite inventory and end-to-end Compose-only run/build/test/maintenance audit |
 | `AUTH-EX-001.12` | Live SQLite and backups use distinct Docker named volumes. Host bind mounts are forbidden for the live database; only API and mutually exclusive maintenance containers may mount data. | Compose config/mount inspection, permission/locking tests, backup export/restore drill |
 | `AUTH-EX-001.13` | Released images run non-root with read-only root filesystems, dropped capabilities, no Docker socket, bounded resources, pinned/traceable inputs, and declared multi-platform targets. | Image metadata/SBOM/signature or provenance, rendered config, and runtime negative tests |
+| `AUTH-EX-001.14` | Every future D2-D6 specification, delivery, release, and conformance claim must apply `SEC-NIST-SUITE-001@1.0.1` and `SEC-HIPAA-SUITE-001@1.0.1` together for their applicable scopes. Architecture evidence cannot substitute for policy evidence, and passing one security suite cannot substitute for the other. | Initiative source mapping, policy applicability matrices, exact architecture/security evidence, and release-claim review |
+| `AUTH-EX-001.15` | The supported data/use profile permits only non-production demonstration/test records that are purpose-created synthetic or have the accepted externally documented de-identification basis and that do not violate the NIST suite's independent data restrictions. Actual, possible, or insufficiently classified ePHI and every successor-gate trigger are prohibited in v2. | Fixture/data manifest, provenance or de-identification record review, repository/image/artifact scans, operator documentation, and successor-gate review |
 
 ## Interpretation and conflicts
 
@@ -86,6 +113,14 @@ claims are now superseded by explicit User authority and preserved in
 governing Codex protocol remains higher authority for evidence handling, human
 decisions, initiative lifecycle, and Git traceability.
 
+Revision `2.0.1` makes the primary NIST and HIPAA security requirements explicit.
+Those suites already bound future work before this patch, so the reconciliation
+changes no accepted product behavior. It establishes one visible data/use and
+evidence boundary across architecture, security, and `RZN-001`. The policies
+guide both documents for their scope; neither architecture implementation
+convenience nor realization-note candidate text may be used to waive or revise
+a policy gate.
+
 If a later record or product contradicts this baseline, preserve both sources,
 stop only the affected work, and use the protocol invariant-conflict process.
 
@@ -96,4 +131,5 @@ stop only the affected work, and use the protocol invariant-conflict process.
 | 2026-11-10 | Accepted revision `1.0.0` and its focused architecture suite | User requested an authoritative architecture derived from `RZN-001` and authorized best-judgment completion | User, project authority |
 | 2026-11-10 | Accepted revision `2.0.0`; superseded native-host deployment with mandatory Docker Compose, containerized runtime/build/test/maintenance, named-volume state, and no host application-service installs | User explicitly required full Dockerization and stated that services must not be installed on the host | User, project authority; exact instructions in `ARC-REV-001` |
 | 2026-11-10 | Fixed CLI and web to one identical `/api/v1` route/semantic surface while preserving distinct Docker origins | User explicitly required the CLI to use the same API path as the web app | User, project authority; exact instruction in `ARC-AUT-001` |
+| 2026-11-10 | Accepted patch revision `2.0.1`; reconciled architecture with NIST/HIPAA policy revisions `1.0.1` and annotated `RZN-001` with its current authoritative dispositions | The three baselines were already simultaneously binding, but their ownership, data profile, successor triggers, and consumer rules needed to be explicit in the source files | User, project authority; exact in-place reconciliation instruction in `ARC-AUT-001` |
 

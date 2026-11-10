@@ -2,7 +2,7 @@
 
 **Architecture ID:** `ARC-CTR-005`  
 **Status:** Accepted  
-**Architecture revision:** `2.0.0`  
+**Architecture revision:** `2.0.1`  
 **Contract owner:** SDK component owner and project architecture authority  
 **Producer:** `example-records-sdk` distribution  
 **Consumers:** `record-cli` image and supported containerized Python integrators  

@@ -2,7 +2,7 @@
 
 **Architecture ID:** `ARC-BND-003`  
 **Status:** Accepted  
-**Architecture revision:** `2.0.0`  
+**Architecture revision:** `2.0.1`  
 **Owner:** API persistence component owner under a future accepted initiative  
 **Last reviewed:** 2026-11-10  
 **Related records:** [`ADR-001`](04-ADR-001-api-exclusive-persistence.md), [`ADR-002`](05-ADR-002-identity-order-and-concurrency.md), [`ARC-CTR-004`](16-sqlite-persistence-contract.md), [`ARC-CTR-008`](23-operations-security-contract.md)  
