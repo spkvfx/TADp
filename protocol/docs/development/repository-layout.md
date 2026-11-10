@@ -25,9 +25,9 @@ an explanatory guide; its role and accepted authority determine its placement.
 |   |       |-- .tadp-lock.json
 |   |       `-- AGENTS.md
 |   `-- non-authoritative/
+|       `-- realizations/
 |-- initiatives/
 |-- products/
-|-- realizations/
 |-- template/
 |   |-- .tadp-lock.json
 |   |-- AGENTS.md
@@ -100,10 +100,15 @@ owners, revisions, and review dates.
 
 ## Realizations
 
-`../../realizations` contains broad descriptions of opportunities, problems, or
-desired outcomes. A realization is proposal input. It is not an accepted
-requirement, a confirmed assumption, an implementation authorization, or
-completion evidence.
+`../../evidence/non-authoritative/realizations` is the only realization
+location. It contains broad descriptions of opportunities, problems, or
+desired outcomes. A realization is permanently non-authoritative proposal
+input. It is not an accepted requirement, a confirmed assumption, an
+implementation authorization, or completion evidence.
+
+When an authority accepts a claim derived from a realization, record that
+claim in a separate authoritative evidence, decision, or accepted initiative
+record. Do not promote or reclassify the source realization in place.
 
 Preserve the realization's source identity when creating a proposal. Correct
 its interpretation in initiative records rather than rewriting historical

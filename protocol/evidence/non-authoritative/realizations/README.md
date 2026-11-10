@@ -7,6 +7,11 @@ Treat each stored realization as immutable evidence of what was observed or
 proposed at that time. Preserve its source, author when known, date, and
 context. Add a linked revision or correction note instead of rewriting it.
 
-A realization is `..` unless an explicit owning
-authority separately classifies it otherwise. It does not become an accepted
-initiative requirement merely by being stored or cited.
+This directory is the only canonical location for realization artifacts. Every
+realization remains non-authoritative for its entire lifetime and does not
+become an accepted initiative requirement merely by being stored or cited.
+
+If an authority accepts a claim derived from a realization, record the accepted
+claim in a separate authoritative evidence, decision, or accepted initiative
+record that cites this source. Do not promote or reclassify the realization in
+place.

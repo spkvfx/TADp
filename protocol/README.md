@@ -94,7 +94,7 @@ quietly weakening a specification or completion claim.
 | [`evidence/`](evidence/README.md) | Evidence and the authority level of each source |
 | [`evidence/authoritative/`](evidence/authoritative/README.md) | Binding invariants and Codex protocol rules |
 | [`evidence/non-authoritative/`](evidence/non-authoritative/README.md) | Background context that cannot override authority |
-| [`realizations/`](realizations/README.md) | Broad problems or goals that may lead to proposals |
+| [`evidence/non-authoritative/realizations/`](evidence/non-authoritative/realizations/README.md) | Permanently non-authoritative problems or goals that may lead to proposals |
 | [`initiatives/`](initiatives/README.md) | Focused specifications for proposed, accepted, or completed work |
 | [`products/`](products/README.md) | Locations and records for delivered products |
 | [`template/initiatives/`](template/initiatives/README.md) | Standard templates for initiative records |

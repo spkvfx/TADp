@@ -51,7 +51,9 @@ root:
   invariant conditions that initiatives and products must meet.
 - [Non-authoritative evidence](../evidence/non-authoritative/README.md)
   provides clues and context only; it cannot supersede binding evidence.
-- [Realizations](../realizations/README.md) provide notes for proposals.
+- [Realizations](../evidence/non-authoritative/realizations/README.md) provide
+  permanently non-authoritative notes for proposals from their sole canonical
+  location.
 - [Initiatives](../initiatives/README.md) hold authoritative, conflict-resolved
   initiative records.
 - [Products](../products/README.md) identify authoritative output placements.

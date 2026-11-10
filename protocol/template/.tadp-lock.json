@@ -2,7 +2,7 @@
   "schema_version": 1,
   "algorithm": "sha256-canonical-v1",
   "protected_root": "template",
-  "authority": "User instruction 2026-11-10: protect reusable templates and the Codex LLM invariant suite",
+  "authority": "User instruction 2026-11-10: fix realization links and commit",
   "files": {
     "AGENTS.md": "abf5bacc278a8681c0bff9adf7a213eca0a1743c9dfbffbf00443e2472fe66c4",
     "initiatives/architecture.md": "a284c2dc9e66bdbdf95eb4530bad778d7aa6e678649c654b75a68b7fdc3d30af",
@@ -64,6 +64,6 @@
     "prompts/13_initiative_finalization.md": "319c7fd1aa760c22d38c0c65eb35ef1f3b2a9d346c1004fc7f559158d83892fd",
     "prompts/README.md": "5687e50e3beb575468c8bd9fe3b4c20f2a730ed474253ba9994ff61a9a1b4599",
     "prompts/WORKFLOW-CONTRACT.md": "812feaf9bd8d18b2fb8babd99ad2b7ea441dc1cfacf79a65452ace88301a208f",
-    "README.md": "7e924acdf3624a1293685c7e9f7f155400bdc92726ed53a4760839bb67d80da2"
+    "README.md": "f7c6833f358f8779b71736c70e7a80ec605eb824411b6f1e2101dd5d78c238c3"
   }
 }
