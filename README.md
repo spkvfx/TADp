@@ -1,14 +1,19 @@
 # Traceable Architecture Design Protocol (TADp)
 
-TADp is a protocol for managing software work in a Git repository. It turns
+TADp is a protocol for managing LLM-assisted software development work. It turns
 evidence and explicit human decisions into focused initiatives that developers
 can review and verify. For each initiative, TADp records **why the work exists**,
 **who approved it**, **what developers agreed to do**, **what changed**, and
 **what evidence shows the result**.
 
-TADp is designed for software architecture work with Git and Codex. It is most
-useful when developers must explain what a system does, how each decision
-gained authority, and what evidence supports completion.
+TADp is designed for software architecture work with Git using Codex. It is most
+useful when developers need explain what a system does, how each decision
+gained authority, and what evidence supports completion. It is most useful 
+describing large, complex systems consisting of multiple components or services.
+It is less useful for smaller, monolithic projects where the rigid structured planning
+may become costly.
+
+
 
 The reference protocol and its complete documentation live in
 [`protocol/`](protocol/README.md).
@@ -131,7 +136,10 @@ Reopening does not erase an earlier acceptance or completion.
   records, and completion evidence;
 - a step-by-step Codex workflow with clear human decision points;
 - Git branch and history rules that make work easier to review;
-- a validator that checks structure and traceability rules; and
+- directory-scoped Codex guards, SHA-256 locks, and a pre-commit gate that
+  protect reusable templates and the authoritative LLM invariant suite;
+- a validator that checks structure, traceability, and protected-source
+  integrity; and
 - a reusable project structure for adopting TADp in another repository.
 
 TADp does not replace architectural judgment, product tests, security reviews,
@@ -158,9 +166,11 @@ prove that the product is correct or ready for production.
    to learn which records can govern a decision.
 3. Follow [getting started](protocol/docs/development/getting-started.md) to
    set up TADp in a Git repository.
-4. Use the [initiative workflow](protocol/docs/development/initiative-workflow.md)
+4. Enable the tracked hook and verify the template and invariant locks before
+   specializing any copied records.
+5. Use the [initiative workflow](protocol/docs/development/initiative-workflow.md)
    to run a small trial with one outcome and one acceptance claim.
-5. Run the validator and the project's own checks before review.
+6. Run the validator and the project's own checks before review.
 
 TADp requires **Git** and **Codex**. Python 3 is also required to run the
 validator and its tests, although the validator uses only the Python standard
