@@ -16,11 +16,12 @@ an initiative README's lifecycle authority.
 
 | Work version | Realization suite | Initiative ID | Name | Type | Status | Dedicated branch | Captured base branch | Captured base commit | Predecessor or successor | Record location | Lifecycle evidence | Branch removal evidence | Owner | Next gate |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| `v4.0` | [`RZN-001-P4-WEB-SUITE`](../evidence/non-authoritative/realizations/v4.0/00-RZN-001-P4-WEB-suite-index.md) | [`INIT-IMP-006`](implementation/INIT-IMP-006-web-application-bundle/README.md) | Web application bundle | `implementation` | Proposed | `initiative/v4.0-web-application-bundle` | `v1` | `5a0ea0bd9f51edf97f9eddd39c6a3509c271503b` | None | [`implementation/INIT-IMP-006-web-application-bundle`](implementation/INIT-IMP-006-web-application-bundle/README.md) | [Lifecycle history](implementation/INIT-IMP-006-web-application-bundle/README.md#initiative-lifecycle), [Migrate disposition](version-correlation-migration-ledger.md#migration-ledger) — preparation commit pending | Not removed | User | Stage 1 proposal creation |
 
-No governed tuple has been allocated. Pre-effective realization identities are
-preserved in the
+The `v4.0` tuple was allocated through the pre-effective-suite migration path.
+Other pre-effective realization identities remain preserved in the
 [version-correlation migration ledger](version-correlation-migration-ledger.md)
-and must not be copied here until Stage 0 creates a complete reciprocal tuple.
+until their own Stage 0 branch allocates a complete reciprocal tuple.
 
 ## Cross-initiative dependencies
 

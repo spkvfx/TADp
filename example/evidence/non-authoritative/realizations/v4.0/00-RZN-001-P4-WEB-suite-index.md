@@ -85,3 +85,30 @@ artifact identities and D5 sequencing evidence, map all applicable web and
 security gates, and keep the acceptance claim limited to D6. This suite creates
 no initiative.
 
+## Correlation migration addendum
+
+**Effective date:** 2026-11-11
+
+**Migration action:** `Migrate`
+
+**Authority:** [six-initiative migration prompt](../../../../prompts/create-v1.0-through-v4.0-initiatives.md), [EX-GIT-DR-001](../../../../initiatives/decision-receipts/EX-GIT-DR-001-enclosing-worktree-exception.md), and [resolved `INV-CONFLICT-001`](../../../authoritative/LLM/03_Codex_Invariant_Conflict_Register.md#inv-conflict-001--embedded-example-project-root-and-git-root-invariant)
+
+This addendum applies current correlation governance without rewriting the
+pre-effective suite's header, source identity, standing, or recorded claims.
+
+| Correlation field | Migrated identity |
+|---|---|
+| Work version | `v4.0` |
+| Realization suite | `RZN-001-P4-WEB-SUITE` at this path |
+| Initiative | [`INIT-IMP-006` — Web application bundle](../../../../initiatives/implementation/INIT-IMP-006-web-application-bundle/README.md) |
+| Dedicated branch | `initiative/v4.0-web-application-bundle` |
+| Captured base | `v1` at `5a0ea0bd9f51edf97f9eddd39c6a3509c271503b` |
+| Canonical row | [Example initiative index](../../../../initiatives/initiative-index.md#initiative-and-correlation-register) |
+| Migration disposition | [Version-correlation migration ledger](../../../../initiatives/version-correlation-migration-ledger.md#migration-ledger) |
+| Predecessor or successor | None |
+
+The initiative begins `Proposed`. Migration creates identity and navigation
+only; it does not promote this suite, select artifact paths, accept web work,
+or make a delivery, conformance, accessibility, security, release, or
+deployment claim.
+
