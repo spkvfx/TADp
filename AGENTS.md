@@ -25,3 +25,10 @@ make an unintended change pass validation.
 Git and Codex are required parts of the protocol. Preserve unrelated work,
 use traceable branches and commits, and report only claims supported by the
 required records and verification.
+
+## Repository prompts
+
+When executing a prompt stored under `prompts/`, also read and apply
+`prompts/AGENTS.md`. Its protocol-first execution authority and example-sync
+rules apply only to those repository prompts and do not broaden ordinary work
+outside that directory.
