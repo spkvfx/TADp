@@ -16,11 +16,12 @@ an initiative README's lifecycle authority.
 
 | Work version | Realization suite | Initiative ID | Name | Type | Status | Dedicated branch | Captured base branch | Captured base commit | Predecessor or successor | Record location | Lifecycle evidence | Branch removal evidence | Owner | Next gate |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| `v2.0` | [`RZN-001-P2-PLATFORM-SUITE`](../evidence/non-authoritative/realizations/v2.0/00-RZN-001-P2-PLATFORM-suite-index.md) | [`INIT-IMP-002`](implementation/INIT-IMP-002-container-platform/README.md) | Container platform and runtime packaging | `implementation` | Proposed | `initiative/v2.0-container-platform` | `v1` | `5a0ea0bd9f51edf97f9eddd39c6a3509c271503b` | None | [`implementation/INIT-IMP-002-container-platform`](implementation/INIT-IMP-002-container-platform/README.md) | [Lifecycle history](implementation/INIT-IMP-002-container-platform/README.md#initiative-lifecycle) — preparation commit pending | Not removed | User | Stage 1 proposal creation |
 
-No governed tuple has been allocated. Pre-effective realization identities are
-preserved in the
+The `v2.0` tuple was allocated through the pre-effective-suite migration path.
+Other pre-effective realization identities remain preserved in the
 [version-correlation migration ledger](version-correlation-migration-ledger.md)
-and must not be copied here until Stage 0 creates a complete reciprocal tuple.
+until their own Stage 0 branch allocates a complete reciprocal tuple.
 
 ## Cross-initiative dependencies
 
