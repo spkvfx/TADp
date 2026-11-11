@@ -2,19 +2,32 @@
 
 **Initiative:** Web application bundle
 
-**Initiative ID:** `INIT-IMP-006`
-
-**Status:** Prepared; proposal not yet created
+**Status:** Frozen working proposal; initiative remains Proposed
 
 **Last updated:** 2026-11-11
 
 **Work version:** `v4.0`
 
-**Realization suite:** [`RZN-001-P4-WEB-SUITE`](../../../../evidence/non-authoritative/realizations/v4.0/00-RZN-001-P4-WEB-suite-index.md)
+## Source inventory
 
-**Canonical project correlation:** [initiative and correlation register](../../../initiative-index.md#initiative-and-correlation-register)
+| Source | Standing | Use |
+|---|---|---|
+| [Working proposal](proposal.md) | Frozen proposal input | Stage 1 direction and open choices |
+| [v4.0 suite](../../../../evidence/non-authoritative/realizations/v4.0/00-RZN-001-P4-WEB-suite-index.md) | Non-authoritative | Planning detail and pointers |
+| [Architecture suite](../../../../evidence/authoritative/architecture/00-architecture-suite-index.md) | Authoritative | D6 boundary, interaction, operations, conformance |
+| [NIST suite](../../../../evidence/authoritative/security/NIST/00-nist-security-policy-suite-index.md) | Authoritative | Security/assurance |
+| [HIPAA-aligned suite](../../../../evidence/authoritative/security/HIPPA/00-hipaa-security-policy-suite-index.md) | Authoritative | Data-use/evidence gates |
 
-Stage 0 prepared this source-inventory location through the pre-effective-suite
-migration path. Stage 1 creates only the working proposal, and Stage 3
-completes this inventory. Preparation does not promote the realization suite
-or create acceptance authority.
+## Precedence
+
+Authoritative evidence controls; proposal/realization material cannot weaken
+or expand it.
+
+## Source handling
+
+Preserve identity and link corrections to assumptions or `WEB-*` decisions.
+
+## Realization handling
+
+The suite provides one D6 identity/boundary. It resolves no choice and proves
+no bundle, accessibility, security, acceptance, or completion result.
