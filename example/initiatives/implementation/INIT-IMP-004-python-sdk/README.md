@@ -41,4 +41,4 @@ conformance, release, or deployment claim.
 
 | Effective date or event | From | To | Authority or evidence | Claim revision | Reason and affected scope | Git commit |
 |---|---|---|---|---|---|---|
-| 2026-11-11 | Initial | Proposed | [realization suite](../../../evidence/non-authoritative/realizations/v2.2/00-RZN-001-P2-SDK-suite-index.md) and [canonical correlation row](../../initiative-index.md#initiative-and-correlation-register) | Preparation skeleton | Allocate the migrated D4 SDK tuple and open it for proposal work; no acceptance or delivery authority | Pending Stage 0 preparation commit |
+| 2026-11-11 | Initial | Proposed | [realization suite](../../../evidence/non-authoritative/realizations/v2.2/00-RZN-001-P2-SDK-suite-index.md) and [canonical correlation row](../../initiative-index.md#initiative-and-correlation-register) | Preparation skeleton | Allocate the migrated D4 SDK tuple and open it for proposal work; no acceptance or delivery authority | `9ea472f8287a38f324edce41662a07058e1bd5e1` |
