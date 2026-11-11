@@ -1,0 +1,45 @@
+# Example Record Application version-correlation migration ledger
+
+**Project:** Example Record Application
+
+**Correlation revision effective point:** `007e791750a7dd5bca1befabd88cf83defde14b4`,
+the coherent distribution commit containing specification 09, affected
+consumers, validator behavior, tests, and synchronized protected-source locks
+
+**Ledger owner:** User
+
+**Last reviewed:** 2026-11-11
+
+## Authority boundary
+
+This ledger records compatibility and migration disposition. It does not infer
+identity, accept an initiative, create a lifecycle state, or prove delivery.
+Every meaning-changing mapping requires explicit human authority and, where the
+protocol requires it, a linked decision receipt.
+
+## Migration ledger
+
+| Legacy identity | Canonical identity | Suite | Initiative | Branch | Action | Authority/evidence | Ambiguity or blocker |
+|---|---|---|---|---|---|---|---|
+| [`RZN-001` original `v0.0` realization](../evidence/non-authoritative/realizations/v0.0/RZN-001-example-record-application.md), introduced at `d05f334e854431716275a59c980f0c909d88d002` | Not allocated — must not be inferred | Not allocated — must not be inferred | Not allocated — must not be inferred | Not allocated — must not be inferred | Unmigrated | [`RZN-001`](../evidence/non-authoritative/realizations/v0.0/RZN-001-example-record-application.md) remains the broad non-authoritative source for the accepted architecture; governing workflow revision: pre-correlation example realization workflow | The source is broader than one governed tuple and is not one of the six named suite migrations; re-entry or migration condition: an explicit human decision identifies a narrow successor boundary or confirms continued contextual-only retention |
+| Pre-effective `v1.0` suite identity introduced at `80c0ee0d4b7362c68b9726e57620ba14bbdc0475` | Not allocated — must not be inferred | [`RZN-001-P1-DOCS-SUITE`](../evidence/non-authoritative/realizations/v1.0/00-RZN-001-P1-DOCS-suite-index.md) | Not allocated — must not be inferred | Not allocated — must not be inferred | Deferred | The [six-initiative migration prompt](../prompts/create-v1.0-through-v4.0-initiatives.md) names the intended migration without creating it; governing workflow revision: authoritative specifications 00–08 before the specification 09 effective point | No complete tuple exists and the project Git-root gate is open; re-entry or migration condition: satisfy the project adoption gates, then execute the authorized `v1.0` Stage 0 migration on its dedicated branch |
+| Pre-effective `v2.0` suite identity introduced at `80c0ee0d4b7362c68b9726e57620ba14bbdc0475` | Not allocated — must not be inferred | [`RZN-001-P2-PLATFORM-SUITE`](../evidence/non-authoritative/realizations/v2.0/00-RZN-001-P2-PLATFORM-suite-index.md) | Not allocated — must not be inferred | Not allocated — must not be inferred | Deferred | The [six-initiative migration prompt](../prompts/create-v1.0-through-v4.0-initiatives.md) names the intended migration without creating it; governing workflow revision: authoritative specifications 00–08 before the specification 09 effective point | No complete tuple exists and the project Git-root gate is open; re-entry or migration condition: satisfy the project adoption gates, then execute the authorized `v2.0` Stage 0 migration on its dedicated branch |
+| Pre-effective `v2.1` suite identity introduced at `80c0ee0d4b7362c68b9726e57620ba14bbdc0475` | Not allocated — must not be inferred | [`RZN-001-P2-API-SQLITE-SUITE`](../evidence/non-authoritative/realizations/v2.1/00-RZN-001-P2-API-SQLITE-suite-index.md) | Not allocated — must not be inferred | Not allocated — must not be inferred | Deferred | The [six-initiative migration prompt](../prompts/create-v1.0-through-v4.0-initiatives.md) names the intended migration without creating it; governing workflow revision: authoritative specifications 00–08 before the specification 09 effective point | No complete tuple exists and the project Git-root gate is open; re-entry or migration condition: satisfy the project adoption gates, then execute the authorized `v2.1` Stage 0 migration on its dedicated branch |
+| Pre-effective `v2.2` suite identity introduced at `80c0ee0d4b7362c68b9726e57620ba14bbdc0475` | Not allocated — must not be inferred | [`RZN-001-P2-SDK-SUITE`](../evidence/non-authoritative/realizations/v2.2/00-RZN-001-P2-SDK-suite-index.md) | Not allocated — must not be inferred | Not allocated — must not be inferred | Deferred | The [six-initiative migration prompt](../prompts/create-v1.0-through-v4.0-initiatives.md) names the intended migration without creating it; governing workflow revision: authoritative specifications 00–08 before the specification 09 effective point | No complete tuple exists and the project Git-root gate is open; re-entry or migration condition: satisfy the project adoption gates, then execute the authorized `v2.2` Stage 0 migration on its dedicated branch |
+| Pre-effective `v3.0` suite identity introduced at `80c0ee0d4b7362c68b9726e57620ba14bbdc0475` | Not allocated — must not be inferred | [`RZN-001-P3-CLI-SUITE`](../evidence/non-authoritative/realizations/v3.0/00-RZN-001-P3-CLI-suite-index.md) | Not allocated — must not be inferred | Not allocated — must not be inferred | Deferred | The [six-initiative migration prompt](../prompts/create-v1.0-through-v4.0-initiatives.md) names the intended migration without creating it; governing workflow revision: authoritative specifications 00–08 before the specification 09 effective point | No complete tuple exists and the project Git-root gate is open; re-entry or migration condition: satisfy the project adoption gates, then execute the authorized `v3.0` Stage 0 migration on its dedicated branch |
+| Pre-effective `v4.0` suite identity introduced at `80c0ee0d4b7362c68b9726e57620ba14bbdc0475` | Not allocated — must not be inferred | [`RZN-001-P4-WEB-SUITE`](../evidence/non-authoritative/realizations/v4.0/00-RZN-001-P4-WEB-suite-index.md) | Not allocated — must not be inferred | Not allocated — must not be inferred | Deferred | The [six-initiative migration prompt](../prompts/create-v1.0-through-v4.0-initiatives.md) names the intended migration without creating it; governing workflow revision: authoritative specifications 00–08 before the specification 09 effective point | No complete tuple exists and the project Git-root gate is open; re-entry or migration condition: satisfy the project adoption gates, then execute the authorized `v4.0` Stage 0 migration on its dedicated branch |
+
+## Rules
+
+- Normalize `vN` to `vN.0` only when evidence proves a notation-only,
+  identity-preserving change.
+- Use `Not allocated — must not be inferred` for every new-correlation field
+  that lacks authority or evidence. Do not create a partial tuple.
+- Preserve broad legacy realizations and initiatives. A required split allocates
+  one new tuple per narrow outcome through Stage 0.
+- Preserve original realization evidence, historical links, governing workflow
+  revision, and lifecycle evidence.
+- A migrated initiative starts `Proposed` unless retained evidence supports
+  another legal state.
+- `Unmigrated` and `Deferred` rows are actionable warnings and retain their
+  stated re-entry or migration conditions.
