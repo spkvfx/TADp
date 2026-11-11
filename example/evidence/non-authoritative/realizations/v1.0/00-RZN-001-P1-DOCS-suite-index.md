@@ -115,3 +115,31 @@ acceptance or implementation authority from the existence of this suite.
 No initiative, product implementation, delivery status, conformance result, or
 release approval is created by this index.
 
+## Correlation migration addendum
+
+**Effective date:** 2026-11-11
+
+**Migration action:** `Migrate`
+
+**Authority:** [six-initiative migration prompt](../../../../prompts/create-v1.0-through-v4.0-initiatives.md), [EX-GIT-DR-001](../../../../initiatives/decision-receipts/EX-GIT-DR-001-enclosing-worktree-exception.md), and [resolved `INV-CONFLICT-001`](../../../authoritative/LLM/03_Codex_Invariant_Conflict_Register.md#inv-conflict-001--embedded-example-project-root-and-git-root-invariant)
+
+This addendum applies the current correlation protocol to the pre-effective
+suite without rewriting its historical header, source identity, evidence
+standing, or recorded claims.
+
+| Correlation field | Migrated identity |
+|---|---|
+| Work version | `v1.0` |
+| Realization suite | `RZN-001-P1-DOCS-SUITE` at this path |
+| Initiative | [`INIT-IMP-001` — Contract documentation](../../../../initiatives/implementation/INIT-IMP-001-contract-documentation/README.md) |
+| Dedicated branch | `initiative/v1.0-contract-documentation` |
+| Captured base | `v1` at `5a0ea0bd9f51edf97f9eddd39c6a3509c271503b` |
+| Canonical row | [Example initiative index](../../../../initiatives/initiative-index.md#initiative-and-correlation-register) |
+| Migration disposition | [Version-correlation migration ledger](../../../../initiatives/version-correlation-migration-ledger.md#migration-ledger) |
+| Predecessor or successor | None |
+
+The initiative begins `Proposed`. This migration creates identity and
+navigation only; it does not promote this suite, accept the initiative, choose
+a documentation destination, or make a delivery, conformance, release, or
+deployment claim.
+
