@@ -49,10 +49,12 @@ Use this path when TADp will govern work in another repository:
    its scoped `AGENTS.md` and `.tadp-lock.json` intact. If the project instead
    uses an external template distribution, pin an immutable revision and
    record it in the project profile.
-3. Copy the contents of `../../template/project`, including `.gitattributes`
-   and `.githooks/`, into the target root without overwriting established
-   project files blindly. The root copies are working scaffold files; the
-   copies under `template/` remain protected reusable sources.
+3. Copy the contents of `../../template/project`, including `.gitattributes`,
+   `.githooks/`, `prompts/AGENTS.md`, and `prompts/README.md`, into the
+   target root without overwriting established project files blindly. The root
+   copies are working scaffold files; the copies under `template/` remain
+   protected reusable sources. Reconcile pre-existing prompt-directory
+   instructions without weakening either set.
 4. Copy the authoritative `../../evidence/authoritative/LLM` suite, including
    its scoped `AGENTS.md` and `.tadp-lock.json`, to the same path in the target.
 5. Merge the provided `../../AGENTS.md` requirements with existing repository
@@ -77,6 +79,11 @@ An existing adoption without locks must use the
 [protected-source integrity migration](../guides/protected-source-integrity-migration.md).
 Do not initialize a lock until a human has identified the exact template and
 invariant baseline being accepted.
+An existing scaffold without the root project-local prompt boundary must use
+the [project-local prompts migration guide](../guides/project-local-prompts-migration.md).
+The migration copies only the canonical project-local files from
+`template/project/prompts/`; it does not copy the numbered workflow from
+`template/prompts/`.
 Use the
 [version-realization-initiative correlation migration guide](../guides/version-realization-correlation-migration.md)
 for effective-point and legacy-ledger adoption.

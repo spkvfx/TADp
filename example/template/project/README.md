@@ -33,10 +33,12 @@ chain before there is enough material for the directories to become confusing.
 2. Copy the distribution's complete `template/` tree to `template/` in the
    target repository. Preserve `template/AGENTS.md` and
    `template/.tadp-lock.json`; do not specialize any file in that source tree.
-3. Copy the contents of `template/project/`, including `.gitattributes` and
-   `.githooks/`, to the target repository root without overwriting established
-   files blindly. The root copies are the working project scaffold;
-   `template/project/` remains protected reusable source.
+3. Copy the contents of `template/project/`, including `.gitattributes`,
+   `.githooks/`, and the canonical `prompts/AGENTS.md` and
+   `prompts/README.md`, to the target repository root without overwriting
+   established files blindly. The root copies are the working project
+   scaffold; `template/project/` remains protected reusable source. Reconcile
+   pre-existing prompt instructions without weakening either instruction set.
 4. Copy the distribution's authoritative `evidence/authoritative/LLM/` suite,
    including its `AGENTS.md` and `.tadp-lock.json`, to the same path in the new
    project. Keep the copied root `AGENTS.md`; it directs Codex to that suite.
@@ -82,6 +84,7 @@ chain before there is enough material for the directories to become confusing.
 | [evidence/non-authoritative/](evidence/non-authoritative/README.md) | Research, observations, examples, and realization notes | A binding requirement without explicit acceptance | Understanding context or discovering a proposal |
 | [initiatives/](initiatives/README.md) | Records of scoped work and its accepted outcome | Durable repository-wide evidence unless explicitly accepted there | Deciding what work is authorized and who owns it |
 | [products/](products/README.md) | Output indexes and product records | The source of a new product requirement | Locating a delivered artifact and its verification |
+| [prompts/](prompts/README.md) | Non-authoritative instructions confined to the current project scaffold | Generic TADp maintenance or the protected numbered workflow | Invoking stored work instructions about this project |
 
 Use the standard terms and directory names **authoritative** and
 **non-authoritative** for evidence classification. Do not introduce alternate
@@ -148,6 +151,12 @@ change, compatibility and migration review, affected-consumer updates,
 verification, and a governed lock refresh. Do not refresh a lock simply to
 make validation pass.
 
+The canonical project-local prompt instructions are copied from
+`template/project/prompts/` to root `prompts/`. The reusable copies are
+protected; the installed root directory and any additional local prompt files
+are working project material. Root `prompts/` must not contain or replace the
+numbered workflow library at `template/prompts/`.
+
 1. Copy it to a descriptive, stable filename. For example,
    `rule.template.md` becomes `RULE-003-data-retention.md`.
 2. Replace each `{{token}}` with a precise value. A token is not a suggestion
@@ -209,6 +218,9 @@ the assumption that the conflict has been resolved.
       `AGENTS.md` instructions and valid `.tadp-lock.json` files.
 - [ ] `.githooks/pre-commit` is tracked and `core.hooksPath` points to
       `.githooks`.
+- [ ] Root `prompts/AGENTS.md` and `prompts/README.md` preserve the
+      project-local scaffold boundary, and any additional prompt files remain
+      non-authoritative working material.
 - [ ] `project-profile.md` names the project boundary and owners.
 - [ ] Binding evidence has a named owner, source, status, and precise claims.
 - [ ] Contextual evidence and realization notes retain their original context.

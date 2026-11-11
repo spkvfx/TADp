@@ -14,7 +14,8 @@ requested repository root is invalid.
 
 The validator checks the Git and repository-root `AGENTS.md` requirements,
 protocol structure, protected template and authoritative-LLM SHA-256 locks,
-required developer documentation, local Markdown links, unresolved
+the project-local prompt boundary and its reusable-source alignment, required
+developer documentation, local Markdown links, unresolved
 prose tokens outside reusable templates, complete initiative suites, legal lifecycle
 transitions, acceptance receipts, type-specific execution or delivery records,
 completion evidence, human decision receipts, all fourteen numbered prompt

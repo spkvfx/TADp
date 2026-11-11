@@ -105,6 +105,7 @@ quietly weakening a specification or completion claim.
 | [`evidence/non-authoritative/realizations/`](evidence/non-authoritative/realizations/README.md) | Permanently non-authoritative problems or goals that may lead to proposals |
 | [`initiatives/`](initiatives/README.md) | Focused specifications for proposed, accepted, or completed work |
 | [`products/`](products/README.md) | Locations and records for delivered products |
+| [`prompts/`](prompts/README.md) | Non-authoritative project-local instructions confined to this scaffold |
 | [`template/initiatives/`](template/initiatives/README.md) | Standard templates for initiative records |
 | [`template/prompts/`](template/prompts/README.md) | Numbered Codex prompts and the shared workflow rules |
 | [`template/project/`](template/project/README.md) | Reusable structure for adding TADp to another repository |
@@ -169,8 +170,11 @@ For the full sequence and the ownership of each record, see
 2. Copy the complete protected [`template/`](template/README.md) tree into the
    target, preserving its `AGENTS.md` and `.tadp-lock.json`.
 3. Copy the contents of [`template/project/`](template/project/README.md),
-   including `.gitattributes` and `.githooks/`, into the repository root.
-   Specialize only these destination copies, never the reusable source tree.
+   including `.gitattributes`, `.githooks/`, and the canonical
+   `prompts/AGENTS.md` and `prompts/README.md`, into the repository root.
+   Specialize only destination copies, never the reusable source tree, and do
+   not confuse root project-local `prompts/` with the protected numbered
+   workflow at `template/prompts/`.
 4. Copy the protected authoritative `evidence/authoritative/LLM/` suite into
    the same path in the target, preserving its scoped instructions and lock.
 5. Copy the developer documentation, tools, and tests; run the protection check
@@ -220,6 +224,7 @@ The complete documentation index is at [`docs/README.md`](docs/README.md).
 | [Developing TADp](docs/development/developing-tadp.md) | How to change TADp and its supporting files |
 | [Adapting other tools](docs/development/adapting-other-tools.md) | How to check and adapt a tool other than Codex |
 | [Protected-source integrity migration](docs/guides/protected-source-integrity-migration.md) | How existing adopters establish reviewed template and invariant locks |
+| [Project-local prompts migration](docs/guides/project-local-prompts-migration.md) | How existing adopters add the scoped root prompt workspace without weakening local instructions |
 | [Legacy initiative decomposition](docs/guides/legacy-initiative-decomposition.md) | How to split an older, overly broad initiative safely |
 | [Workflow stage 0–13 migration](docs/guides/workflow-stage-0-13-migration.md) | How to migrate an active initiative to explicit acceptance and type-specific delivery paths |
 | [Version-realization-initiative correlation migration](docs/guides/version-realization-correlation-migration.md) | How to record the effective point and disposition or migrate legacy identities without inference |

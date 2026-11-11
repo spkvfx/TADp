@@ -99,6 +99,7 @@ PROTECTED_LOCK_NAME = ".tadp-lock.json"
 PROTECTED_LOCK_SCHEMA_VERSION = 1
 PROTECTED_HASH_ALGORITHM = "sha256-canonical-v1"
 SHA256_DIGEST = re.compile(r"^[0-9a-f]{64}$")
+PROJECT_PROMPT_FILES = ("AGENTS.md", "README.md")
 
 BASE_REQUIRED_PATHS = (
     ".gitattributes",
@@ -113,6 +114,7 @@ BASE_REQUIRED_PATHS = (
     "docs/development/validation-and-quality.md",
     "docs/development/developing-tadp.md",
     "docs/development/adapting-other-tools.md",
+    "docs/guides/project-local-prompts-migration.md",
     "docs/guides/protected-source-integrity-migration.md",
     "docs/guides/version-realization-correlation-migration.md",
     "docs/guides/workflow-stage-0-13-migration.md",
@@ -131,6 +133,7 @@ BASE_REQUIRED_PATHS = (
     "evidence/authoritative/LLM/09_Codex_Version_Realization_Initiative_Correlation_Specification.md",
     "evidence/non-authoritative/README.md",
     "initiatives/README.md",
+    "products/README.md",
     "template/AGENTS.md",
     "template/initiatives/README.md",
     "template/initiatives/preparation-README.template.md",
@@ -604,6 +607,114 @@ def validate_required_paths(root: Path) -> list[Finding]:
     for item in BASE_REQUIRED_PATHS:
         if not (root / item).exists():
             findings.append(Finding("error", "TADP001", item, "required path is missing"))
+    return findings
+
+
+def resolves_within(path: Path, root: Path) -> bool:
+    try:
+        path.resolve().relative_to(root.resolve())
+    except (OSError, ValueError):
+        return False
+    return True
+
+
+def validate_project_prompt_scaffold(root: Path) -> list[Finding]:
+    findings: list[Finding] = []
+    prompt_root = root / "prompts"
+    source_root = root / "template" / "project" / "prompts"
+
+    if not prompt_root.is_dir():
+        findings.append(
+            Finding(
+                "error",
+                "TADP038",
+                "prompts",
+                "project-local prompt directory is missing from the checked scaffold root",
+            )
+        )
+    elif not resolves_within(prompt_root, root):
+        findings.append(
+            Finding(
+                "error",
+                "TADP039",
+                "prompts",
+                "project-local prompt directory resolves outside the checked scaffold",
+            )
+        )
+
+    for name in PROJECT_PROMPT_FILES:
+        working = prompt_root / name
+        source = source_root / name
+        working_ready = prompt_root.is_dir() and working.is_file()
+        source_ready = source.is_file()
+
+        if prompt_root.is_dir() and not working_ready:
+            findings.append(
+                Finding(
+                    "error",
+                    "TADP038",
+                    relative(working, root),
+                    f"required project-local prompt file is missing: prompts/{name}",
+                )
+            )
+        if not source_ready:
+            findings.append(
+                Finding(
+                    "error",
+                    "TADP038",
+                    relative(source, root),
+                    "required reusable project-local prompt source is missing",
+                )
+            )
+
+        safe_working = working_ready and resolves_within(working, root)
+        safe_source = source_ready and resolves_within(source, root)
+        if working_ready and not safe_working:
+            findings.append(
+                Finding(
+                    "error",
+                    "TADP039",
+                    relative(working, root),
+                    "project-local prompt file resolves outside the checked scaffold",
+                )
+            )
+        if source_ready and not safe_source:
+            findings.append(
+                Finding(
+                    "error",
+                    "TADP039",
+                    relative(source, root),
+                    "reusable project-local prompt source resolves outside the checked scaffold",
+                )
+            )
+
+        if not (safe_working and safe_source):
+            continue
+        try:
+            working_text = working.read_text(encoding="utf-8").replace("\r\n", "\n").replace("\r", "\n")
+            source_text = source.read_text(encoding="utf-8").replace("\r\n", "\n").replace("\r", "\n")
+        except (OSError, UnicodeError) as error:
+            findings.append(
+                Finding(
+                    "error",
+                    "TADP040",
+                    relative(working, root),
+                    f"cannot compare working and reusable project-local prompt files: {error}",
+                )
+            )
+            continue
+
+        canonical = source_text.strip()
+        if not canonical or canonical not in working_text.strip():
+            findings.append(
+                Finding(
+                    "error",
+                    "TADP040",
+                    relative(working, root),
+                    f"working project-local prompt file does not preserve template/project/prompts/{name}",
+                )
+            )
+
     return findings
 
 
@@ -1461,6 +1572,7 @@ def validate(root: Path) -> list[Finding]:
     findings: list[Finding] = []
     findings.extend(validate_required_paths(root))
     findings.extend(validate_protected_sources(root))
+    findings.extend(validate_project_prompt_scaffold(root))
     findings.extend(validate_links(root))
     findings.extend(validate_tokens(root))
     findings.extend(validate_initiatives(root))

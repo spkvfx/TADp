@@ -30,11 +30,15 @@ an explanatory guide; its role and accepted authority determine its placement.
 |   |-- initiative-index.md
 |   `-- version-correlation-migration-ledger.md
 |-- products/
+|-- prompts/
+|   |-- AGENTS.md
+|   `-- README.md
 |-- template/
 |   |-- .tadp-lock.json
 |   |-- AGENTS.md
 |   |-- initiatives/
 |   |-- project/
+|   |   `-- prompts/
 |   `-- prompts/
 |-- tests/
 `-- tools/
@@ -162,6 +166,32 @@ applicable evidence, owner, and verification.
 A product demonstrates delivered behavior; it does not revise the initiative
 or invariant that governed it.
 
+## Project-local prompts
+
+`../../prompts` is the current scaffold's workspace for non-authoritative
+instructions about that project. Its direct `AGENTS.md` resolves the scaffold
+from its own installed location, applies recursively below root `prompts/`,
+and confines every side effect to that scaffold and any narrower invoked-prompt
+boundary. `README.md` explains suitable project subjects and the protocol
+maintenance work excluded from this location.
+
+The canonical reusable files live at
+`../../template/project/prompts/AGENTS.md` and
+`../../template/project/prompts/README.md`. Those sources are protected by
+the template lock; their installed root copies and additional project-local
+prompt files are ordinary working material. The installed canonical content
+must remain present, but compatible stricter local instructions may narrow it.
+
+Root `prompts/` is distinct from `../../template/prompts`. The latter is the
+protected numbered initiative workflow and shared contract. Do not duplicate
+that library into the project-local workspace or treat a local prompt as
+authoritative evidence, initiative acceptance, gate evidence, or lifecycle
+proof.
+
+When the scaffold is embedded in a larger Git repository for distribution or
+testing, the enclosing Git root does not enlarge the project-local boundary or
+make the embedded scaffold a compliant governed project.
+
 ## Templates
 
 The entire `../../template` tree is protected reusable source. Its scoped
@@ -194,8 +224,9 @@ specific project name or filesystem location.
 
 This tree is copied when another repository adopts TADp. It provides project
 instructions, evidence structure, profile, initiative indexes, status, and
-product records. The authoritative LLM suite is copied separately into the
-target's `../../evidence/authoritative/LLM` path.
+product records, plus the canonical project-local `prompts/AGENTS.md` and
+`prompts/README.md`. The authoritative LLM suite is copied separately into
+the target's `../../evidence/authoritative/LLM` path.
 
 ## Documentation, tools, and tests
 

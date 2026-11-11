@@ -39,6 +39,7 @@ class ValidatorTests(unittest.TestCase):
             "docs/development/validation-and-quality.md": "# Validation\n",
             "docs/development/developing-tadp.md": "# Development\n",
             "docs/development/adapting-other-tools.md": "# Adapting tools\n",
+            "docs/guides/project-local-prompts-migration.md": "# Prompt migration\n",
             "docs/guides/protected-source-integrity-migration.md": "# Protection migration\n",
             "docs/guides/version-realization-correlation-migration.md": "# Correlation migration\n",
             "docs/guides/workflow-stage-0-13-migration.md": "# Workflow migration\n",
@@ -48,6 +49,9 @@ class ValidatorTests(unittest.TestCase):
             "evidence/authoritative/LLM/AGENTS.md": "# Protected invariants\n",
             "evidence/non-authoritative/README.md": "# Context\n",
             "initiatives/README.md": "# Initiatives\n",
+            "products/README.md": "# Products\n",
+            "prompts/AGENTS.md": "# Project-local prompt boundary\n",
+            "prompts/README.md": "# Project-local prompts\n",
             "template/AGENTS.md": "# Protected templates\n",
             "template/initiatives/README.md": "# Initiative template\n",
             "template/initiatives/preparation-README.template.md": "# Preparation template\n",
@@ -55,6 +59,8 @@ class ValidatorTests(unittest.TestCase):
             "template/project/AGENTS.md": "# Instructions\n",
             "template/project/.gitattributes": "/template/** text eol=lf\n",
             "template/project/.githooks/pre-commit": "#!/bin/sh\n",
+            "template/project/prompts/AGENTS.md": "# Project-local prompt boundary\n",
+            "template/project/prompts/README.md": "# Project-local prompts\n",
             "template/project/evidence/non-authoritative/realizations/realization-suite-index.template.md": "# Suite template\n",
             "template/project/initiatives/version-correlation-migration-ledger.template.md": "# Ledger template\n",
             "template/prompts/README.md": "# Prompts\n",
@@ -252,6 +258,78 @@ class ValidatorTests(unittest.TestCase):
             self.make_repository(root)
             self.assertEqual([], validate(root))
 
+    def test_missing_project_prompt_directory_is_reported_precisely(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_repository(root)
+            (root / "prompts" / "AGENTS.md").unlink()
+            (root / "prompts" / "README.md").unlink()
+            (root / "prompts").rmdir()
+
+            findings = validate(root)
+
+            self.assertTrue(
+                any(item.code == "TADP038" and item.path == "prompts" for item in findings)
+            )
+
+    def test_missing_project_prompt_file_is_reported_precisely(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_repository(root)
+            (root / "prompts" / "README.md").unlink()
+
+            findings = validate(root)
+
+            self.assertTrue(
+                any(
+                    item.code == "TADP038" and item.path == "prompts/README.md"
+                    for item in findings
+                )
+            )
+
+    def test_working_project_prompt_must_preserve_reusable_source(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_repository(root)
+            (root / "prompts" / "AGENTS.md").write_text(
+                "# Different instructions\n", encoding="utf-8"
+            )
+
+            findings = validate(root)
+
+            self.assertTrue(
+                any(
+                    item.code == "TADP040" and item.path == "prompts/AGENTS.md"
+                    for item in findings
+                )
+            )
+
+    def test_template_lock_records_project_prompt_sources(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_repository(root)
+            payload = json.loads(
+                protected_lock_path(root, "template").read_text(encoding="utf-8")
+            )
+
+            self.assertIn("project/prompts/AGENTS.md", payload["files"])
+            self.assertIn("project/prompts/README.md", payload["files"])
+
+    def test_additional_project_local_prompt_is_allowed(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_repository(root)
+            (root / "prompts" / "review-one-initiative.md").write_text(
+                "# Review one initiative\n\nNon-authoritative local work description.\n",
+                encoding="utf-8",
+            )
+
+            self.assertEqual([], validate(root))
+            payload = json.loads(
+                protected_lock_path(root, "template").read_text(encoding="utf-8")
+            )
+            self.assertNotIn("prompts/review-one-initiative.md", payload["files"])
+
     def test_broken_link_is_reported(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -380,6 +458,44 @@ class ValidatorTests(unittest.TestCase):
                 "# Repository instructions\n", encoding="utf-8"
             )
             self.assertEqual([], validate(protocol))
+
+    def test_enclosing_git_root_does_not_supply_prompt_boundary(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            repository = Path(directory)
+            protocol = repository / "protocol"
+            protocol.mkdir()
+            self.make_repository(protocol)
+            for path in (protocol / ".git").iterdir():
+                path.unlink()
+            (protocol / ".git").rmdir()
+            git_directory = repository / ".git"
+            git_directory.mkdir()
+            (git_directory / "HEAD").write_text(
+                "ref: refs/heads/main\n", encoding="utf-8"
+            )
+            (git_directory / "config").write_text(
+                "[core]\n\trepositoryformatversion = 0\n", encoding="utf-8"
+            )
+            (repository / "AGENTS.md").write_text(
+                "# Repository instructions\n", encoding="utf-8"
+            )
+            parent_prompts = repository / "prompts"
+            parent_prompts.mkdir()
+            (parent_prompts / "AGENTS.md").write_text(
+                "# Parent prompt instructions\n", encoding="utf-8"
+            )
+            (parent_prompts / "README.md").write_text(
+                "# Parent prompts\n", encoding="utf-8"
+            )
+            (protocol / "prompts" / "AGENTS.md").unlink()
+            (protocol / "prompts" / "README.md").unlink()
+            (protocol / "prompts").rmdir()
+
+            findings = validate(protocol)
+
+            self.assertTrue(
+                any(item.code == "TADP038" and item.path == "prompts" for item in findings)
+            )
 
     def test_parent_git_repository_requires_root_agents_entry_point(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

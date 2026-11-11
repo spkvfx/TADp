@@ -49,6 +49,12 @@ The current validator checks:
   `AGENTS.md` entry point;
 - required repository, authoritative-suite, template, prompt, and developer
   documentation paths;
+- a direct project-local `prompts/` directory with `AGENTS.md` and
+  `README.md`, resolved inside the checked scaffold and preserving the
+  canonical reusable content from `template/project/prompts/`;
+- separation of additional project-local prompt files from authoritative
+  evidence and the protected numbered workflow, without treating an enclosing
+  Git root as a wider scaffold boundary;
 - local Markdown links;
 - unresolved braced tokens in prose outside reusable templates (literal fenced
   and inline code is excluded);
@@ -89,6 +95,8 @@ when no errors exist.
 
 The validator ignores `.git` contents when walking Markdown and treats files
 under template paths as reusable, so their placeholders are permitted.
+Additional files under root `prompts/` are validated as ordinary working
+project material; they are not added to the protected template file set.
 
 ## Protected-source workflow
 

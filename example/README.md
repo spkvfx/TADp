@@ -59,6 +59,17 @@ Useful starting points are:
 - the example [HIPAA-aligned security-policy suite](evidence/authoritative/security/HIPPA/00-hipaa-security-policy-suite-index.md); and
 - the [initiative workflow guide](docs/development/initiative-workflow.md).
 
+## Project-local prompts
+
+The example's root [`prompts/` workspace](prompts/README.md) holds
+non-authoritative instructions about this scaffold. Its
+[`AGENTS.md`](prompts/AGENTS.md) resolves and enforces the example boundary.
+Additional local prompt files remain ordinary project material and do not
+become authoritative evidence or proof that a workflow gate passed.
+
+The protected numbered initiative workflow remains under
+`template/prompts/`; it is not duplicated into the project-local workspace.
+
 ## Security evidence status
 
 The NIST- and HIPAA-aligned security-policy suites are provided as example
