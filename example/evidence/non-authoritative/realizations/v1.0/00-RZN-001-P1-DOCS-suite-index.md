@@ -134,6 +134,7 @@ standing, or recorded claims.
 | Initiative | [`INIT-IMP-001` — Contract documentation](../../../../initiatives/implementation/INIT-IMP-001-contract-documentation/README.md) |
 | Dedicated branch | `initiative/v1.0-contract-documentation` |
 | Captured base | `v1` at `5a0ea0bd9f51edf97f9eddd39c6a3509c271503b` |
+| Stage 0 preparation commit | `f27b09bf8580668073dbf2265466ae5f4d14a737` |
 | Canonical row | [Example initiative index](../../../../initiatives/initiative-index.md#initiative-and-correlation-register) |
 | Migration disposition | [Version-correlation migration ledger](../../../../initiatives/version-correlation-migration-ledger.md#migration-ledger) |
 | Predecessor or successor | None |
