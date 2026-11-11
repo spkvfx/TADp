@@ -12,6 +12,26 @@ source may change only when the user explicitly requests that exact reusable
 template or invariant change. Never refresh its `.tadp-lock.json` or use the
 protected-update commit override without the same explicit authority.
 
+## Embedded example project root
+
+For this installed example only, treat the directory containing this file as
+the TADp project root for every project file, evidence source, prompt,
+initiative, product, lifecycle record, validation run, and scope decision.
+The resolved
+[`INV-CONFLICT-001`](evidence/authoritative/LLM/03_Codex_Invariant_Conflict_Register.md#inv-conflict-001--embedded-example-project-root-and-git-root-invariant)
+and
+[`EX-GIT-DR-001`](initiatives/decision-receipts/EX-GIT-DR-001-enclosing-worktree-exception.md)
+permit the enclosing repository or worktree to supply Git metadata, branch
+refs, staging, commits, history, and Git verification only. Verify that it
+directly contains this root, and limit every non-Git side effect to this root
+and any narrower applicable workflow boundary.
+
+This project-specific exception applies throughout `example/`; it is not
+limited to one prompt, initiative set, version, or file list. It does not make
+the enclosing TADp repository part of the example project, grant authority to
+change a sibling or parent path, relax protected-source rules, or revise the
+generic requirement for any other TADp project.
+
 - Treat every artifact under `evidence/authoritative` and every source
   explicitly classified as authoritative evidence as binding baseline
   authority.

@@ -33,10 +33,16 @@ predecessor complete.
 
 ## Adoption gate
 
-Canonical allocation is blocked while the example scaffold is not the root of
-its own Git repository or Git worktree. See the
-[project profile](../project-profile.md#git-workflow). This blocker does not
-allocate an initiative, branch, version, or lifecycle state.
+The project-wide
+[`EX-GIT-DR-001`](decision-receipts/EX-GIT-DR-001-enclosing-worktree-exception.md)
+resolution satisfies the Git-root precondition by treating `example/` as the
+TADp project root and the directly enclosing repository or worktree as Git
+mechanics only. It applies to every otherwise-authorized allocation in this
+installed example; it is not limited to the current
+[migration prompt](../prompts/create-v1.0-through-v4.0-initiatives.md#exact-initiative-map).
+The exception allocates no tuple and waives no identity, migration, or
+lifecycle gate. Stage 0 must still create each complete reciprocal row on its
+exact dedicated branch.
 
 ## Status update rules
 

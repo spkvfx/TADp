@@ -2,7 +2,7 @@
 
 **Project:** Example Record Application
 
-**Status:** Active; correlation adoption records established, with the Git-root gate still open
+**Status:** Active; correlation adoption records and the project-wide embedded-example-root exception are established
 
 **Project owner:** User
 
@@ -10,7 +10,9 @@
 
 **Human authority model:** Sole project authority; the User supplies every required human disposition
 
-**Git repository root:** Not satisfied — `example/` is embedded in the enclosing repository worktree at `..`; the parent repository is not a substitute for a project-local Git root
+**TADp project root:** This installed `example/` directory
+
+**Git repository root:** Project-specific exception `INV-CONFLICT-001` / `EX-GIT-DR-001` — treat `example/` as the project root while the directly enclosing repository or worktree at `..` supplies Git mechanics only
 
 **Default integration branch:** `v1` in the enclosing repository; each initiative must capture its actual source branch and commit
 
@@ -104,9 +106,15 @@ tuple. The original `v0.0` realization remains `Unmigrated`; the six existing
 `v1.0` through `v4.0` suites remain `Deferred` until their separately governed
 migration runs on their own branches.
 
-This record does not waive the Git-root invariant. Initiative allocation remains
-blocked while `example/` is only an embedded scaffold rather than the root of
-its own Git repository or Git worktree.
+The generic Git-root invariant remains unchanged outside this installed example.
+The resolved
+[`INV-CONFLICT-001`](evidence/authoritative/LLM/03_Codex_Invariant_Conflict_Register.md#inv-conflict-001--embedded-example-project-root-and-git-root-invariant)
+and [`EX-GIT-DR-001`](initiatives/decision-receipts/EX-GIT-DR-001-enclosing-worktree-exception.md)
+establish `example/` as the TADp project root for all current and future work
+governed by this project. The directly enclosing repository or worktree
+supplies Git mechanics only. The exception is not limited to the six mappings
+in the migration prompt, but it does not expand the example project's scope
+into its parent, a sibling, another scaffold, or another repository.
 
 ## Operating cadence
 
@@ -119,11 +127,14 @@ its own Git repository or Git worktree.
 
 ## Git workflow
 
-The scaffold currently fails the requirement that a TADp project be the root of
-its own Git repository or Git worktree. The enclosing repository is on branch
-`v1`, has remote `origin`, and currently supplies the only Git metadata. That
-relationship may be used to preserve this adoption change, but it does not make
-the embedded scaffold compliant or authorize initiative allocation.
+`example/` is the project root. The directly enclosing repository or worktree
+supplies the only Git metadata under the project-wide exception recorded by
+[`EX-GIT-DR-001`](initiatives/decision-receipts/EX-GIT-DR-001-enclosing-worktree-exception.md).
+Every initiative and other governed operation must capture the applicable
+enclosing base branch and commit, use any required dedicated branch, and stage
+only paths inside `example/`. Repository Git metadata is the only permitted
+mutation outside the project root. The exception applies throughout this
+installed example but nowhere else in the enclosing TADp repository.
 
 - **Initiative branch convention:** `initiative/v<major>.<minor>-<initiative-slug>`
 - **Required checks:** protected-source check, full validator, regression tests,
@@ -140,3 +151,4 @@ the embedded scaffold compliant or authorize initiative allocation.
 | Date | Change | Reason | Owner |
 |---|---|---|---|
 | 2026-11-11 | Instantiated the project profile, canonical initiative index, status view, and legacy correlation ledger | The correlation records were introduced after the example was first drafted; the User explicitly instructed their creation without authorizing inferred tuples | User |
+| 2026-11-11 | Recorded the project-wide embedded-example-root exception | Treat `example/` as the complete example project's root while using the enclosing worktree only for Git mechanics and leaving the generic Git-root invariant unchanged elsewhere | User via [EX-GIT-DR-001](initiatives/decision-receipts/EX-GIT-DR-001-enclosing-worktree-exception.md) |

@@ -1,6 +1,8 @@
 # Create the v1.0 through v4.0 example initiatives
 
-Work in `C:\Users\User\PycharmProjects\TADp`. The target project is
+Resolve the current scaffold from this prompt's governing
+[`AGENTS.md`](AGENTS.md). Work in the active repository or worktree that
+directly contains that resolved `example/` scaffold. The target project is
 `example/`; repository Git metadata is the only permitted target outside that
 directory.
 
@@ -21,6 +23,39 @@ Apply
 [`WORKFLOW-CONTRACT.md`](../template/prompts/WORKFLOW-CONTRACT.md) with every
 stage. Read the templates as instructions; do not edit or fill any file under
 `example/template/`.
+
+## Example project-root resolution
+
+The authoritative
+[`INV-CONFLICT-001`](../evidence/authoritative/LLM/03_Codex_Invariant_Conflict_Register.md#inv-conflict-001--embedded-example-project-root-and-git-root-invariant)
+resolution and
+[`EX-GIT-DR-001`](../initiatives/decision-receipts/EX-GIT-DR-001-enclosing-worktree-exception.md)
+authorize a project-specific exception to the Git-root requirement for the
+entire installed `example/` project. This prompt consumes that established
+resolution for its six mappings; it does not define or limit the resolution.
+
+For all work governed by the installed example, including these mappings:
+
+- use the enclosing repository or worktree that directly contains `example/`
+  only for source-base capture, local branch refs, staging, commits, history,
+  and read-only Git verification;
+- treat the resolved `example/` directory as the TADp project root and maximum
+  project file boundary;
+- permit only repository Git metadata to change outside `example/`;
+- stage only initiative-traceable paths under `example/` on every mapped
+  branch; and
+- preserve the generic Git-root rule for the enclosing TADp repository, every
+  sibling or parent scope, and every other scaffold or project.
+
+Before consuming the exception, verify that the conflict resolution, receipt,
+project instructions, synchronized generic prompt instructions, project
+profile, status gate, migration ledger, and refreshed example invariant lock
+agree. Verify that
+`git rev-parse --show-toplevel` identifies the one enclosing worktree that
+directly contains the resolved `example/` path and that its repository-root
+`AGENTS.md` exists. Stop on any mismatch. This exception changes no lifecycle
+state and does not relax any branch, clean-worktree, captured-base, commit,
+scope, evidence, or verification rule.
 
 ## Explicit execution authority and limits
 
@@ -114,7 +149,8 @@ or run the new-allocation path against an existing suite merely to proceed.
 Read and apply, in precedence order:
 
 1. the repository and `example/` `AGENTS.md` files;
-2. `example/evidence/authoritative/LLM/00_Codex_Invariant_Suite_Index.md` and
+2. `EX-GIT-DR-001`, resolved `INV-CONFLICT-001`,
+   `example/evidence/authoritative/LLM/00_Codex_Invariant_Suite_Index.md`, and
    every applicable specification, including the effective correlation and
    workflow specifications;
 3. the example architecture and security suite indexes and the precise
@@ -126,6 +162,11 @@ Then perform a read-only inventory and verify that:
 
 - the protocol correlation revision is complete, committed, synchronized to
   `example/`, and adopted by the example project;
+- the project-wide example-root resolution is authoritative, locked, and
+  consistent across every named consumer, and this prompt independently limits
+  execution authority to the six exact mappings;
+- the enclosing Git worktree directly contains the resolved `example/`
+  scaffold without expanding its project file boundary;
 - the Git worktree is clean, including untracked paths;
 - the current checked-out branch and commit are captured as the source base;
 - all six versions, suites, notes, initiative IDs, paths, and branch names are

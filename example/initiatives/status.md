@@ -29,7 +29,7 @@ dispositions recorded in the
 
 | Gate ID | Outcome required | Depends on | Evidence required | Owner | State |
 |---|---|---|---|---|---|
-| EX-ADOPT-GIT-01 | `example/` is the root of its own Git repository or Git worktree before governed tuple allocation | Project adoption boundary | [Project profile Git workflow](../project-profile.md#git-workflow) and read-only Git-root verification | User | Blocked — the scaffold is embedded in the enclosing repository |
+| EX-ADOPT-GIT-01 | A valid Git traceability boundary exists before governed tuple allocation | Project adoption boundary | [Project profile Git workflow](../project-profile.md#git-workflow), [resolved `INV-CONFLICT-001`](../evidence/authoritative/LLM/03_Codex_Invariant_Conflict_Register.md#inv-conflict-001--embedded-example-project-root-and-git-root-invariant), and [EX-GIT-DR-001](decision-receipts/EX-GIT-DR-001-enclosing-worktree-exception.md) | User | Passed project-wide for this installed example — `example/` is the project root and the directly enclosing worktree supplies Git mechanics only |
 | EX-ADOPT-CORR-01 | Correlation profile, canonical index, status view, and complete legacy dispositions are structurally valid | Distribution commit `007e791750a7dd5bca1befabd88cf83defde14b4` | 2026-11-11 protected-source check, validator, regression tests, and adoption diff review | User | Passed — protected sources: 0 errors; validator: 0 errors and 7 actionable legacy warnings; regression tests: 51 passed |
 
 ## Maintenance rules
