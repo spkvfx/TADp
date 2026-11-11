@@ -16,10 +16,9 @@
 
 **Pull-request remote:** origin; target branch must be verified per initiative
 
-**Correlation revision effective point:** The first protected-update commit
-containing specification 09, affected consumers, validator behavior, tests,
-and refreshed protocol and example locks; exact SHA pending immediate
-post-commit backfill
+**Correlation revision effective point:** `007e791750a7dd5bca1befabd88cf83defde14b4`,
+the coherent protected-update commit containing specification 09, affected
+consumers, validator behavior, tests, and refreshed protocol and example locks
 
 **Correlation migration ledger:** [Version-correlation migration ledger](initiatives/version-correlation-migration-ledger.md)
 

@@ -2,10 +2,9 @@
 
 **Project:** Traceable Architecture Design Protocol (TADp)
 
-**Correlation revision effective point:** The first protected-update commit
-containing specification 09, affected consumers, validator behavior, tests,
-and refreshed protocol and example locks; exact SHA is recorded in the project
-profile immediately after that commit exists.
+**Correlation revision effective point:** `007e791750a7dd5bca1befabd88cf83defde14b4`,
+the coherent protected-update commit containing specification 09, affected
+consumers, validator behavior, tests, and refreshed protocol and example locks
 
 **Ledger owner:** User
 
