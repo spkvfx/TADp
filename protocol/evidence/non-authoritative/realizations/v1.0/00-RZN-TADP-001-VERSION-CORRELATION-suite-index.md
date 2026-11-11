@@ -24,7 +24,7 @@
 
 **Canonical project correlation:** [TADp protocol initiative index](../../../../initiatives/initiative-index.md#initiative-and-correlation-register)
 
-**Lifecycle status and evidence:** Proposed; [initiative lifecycle history](../../../../initiatives/design/INIT-DSN-001-version-realization-correlation/README.md#initiative-lifecycle), [working proposal](../../../../initiatives/design/INIT-DSN-001-version-realization-correlation/proposal/proposal.md), and Stage 0 commit e2677f2
+**Lifecycle status and evidence:** Superseded; [initiative lifecycle history](../../../../initiatives/design/INIT-DSN-001-version-realization-correlation/README.md#initiative-lifecycle), [VRC-DR-001](../../../../initiatives/design/INIT-DSN-001-version-realization-correlation/decision-receipts/VRC-DR-001-supersede-prior-initiative.md), retained [working proposal](../../../../initiatives/design/INIT-DSN-001-version-realization-correlation/proposal/proposal.md), and Stage 0 commit e2677f2
 
 > **Evidence standing:** This suite is non-authoritative proposal input. Its
 > identity and links do not accept the initiative, make the proposed
@@ -32,6 +32,15 @@
 > status. The suite remains non-authoritative for its entire lifetime at the
 > canonical project-local `evidence/non-authoritative/realizations/**` path;
 > any accepted derivative claim is recorded separately.
+
+## Supersession disposition
+
+The paired initiative was legally superseded under
+[VRC-DR-001](../../../../initiatives/design/INIT-DSN-001-version-realization-correlation/decision-receipts/VRC-DR-001-supersede-prior-initiative.md).
+The [named repository prompt](../../../../../prompts/version-realization-initiative-correlation-protocol-change.md)
+owns the direct protocol-maintenance work. This source suite remains recorded,
+non-authoritative, and unchanged in identity; its prior project-specific
+migration questions do not govern the replacement revision.
 
 ## Purpose
 
@@ -73,7 +82,7 @@ does not rewrite history to claim that successor rule governed e2677f2.
 
 ## Handoff rule
 
-The receiving initiative must retain Proposed status until its existing human
-gates pass, preserve this suite's non-authoritative standing, and keep the
-canonical correlation row synchronized without treating it as lifecycle or
-delivery evidence.
+The original receiving initiative retained `Proposed` status until it was
+superseded without acceptance. Any future consumer must preserve this suite's
+non-authoritative standing and cite the canonical correlation row without
+treating the suite as lifecycle or delivery evidence.

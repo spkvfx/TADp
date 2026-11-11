@@ -2,7 +2,7 @@
 
 **Index owner:** User
 
-**Last reviewed:** 2026-11-10
+**Last reviewed:** 2026-11-11
 
 **Review cadence:** At initiative preparation and every lifecycle transition
 
@@ -16,13 +16,13 @@ delivery, or replace the initiative README's lifecycle authority.
 
 | Work version | Realization suite | Initiative ID | Name | Type | Status | Dedicated branch | Captured base | Predecessor or successor | Record location | Lifecycle evidence | Owner | Next gate |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| v1.0 | [RZN-TADP-001-VERSION-CORRELATION-SUITE](../evidence/non-authoritative/realizations/v1.0/00-RZN-TADP-001-VERSION-CORRELATION-suite-index.md) | INIT-DSN-001 | Version-realization-suite-initiative correlation | design | Proposed | initiative/v1.0-version-realization-correlation | v1 at d05f334e854431716275a59c980f0c909d88d002 | None; first protocol work-version allocation | [Initiative README](design/INIT-DSN-001-version-realization-correlation/README.md) | [Lifecycle history](design/INIT-DSN-001-version-realization-correlation/README.md#initiative-lifecycle); Stage 0 commit e2677f2 | User | Stage 5 assumption review beginning with VRC-A01, then open questions and explicit Stage 7 acceptance |
+| v1.0 | [RZN-TADP-001-VERSION-CORRELATION-SUITE](../evidence/non-authoritative/realizations/v1.0/00-RZN-TADP-001-VERSION-CORRELATION-suite-index.md) | INIT-DSN-001 | Version-realization-suite-initiative correlation | design | Superseded | initiative/v1.0-version-realization-correlation | v1 at d05f334e854431716275a59c980f0c909d88d002 | Named replacement: [direct protocol-maintenance prompt](../../prompts/version-realization-initiative-correlation-protocol-change.md); no successor initiative allocated | [Initiative README](design/INIT-DSN-001-version-realization-correlation/README.md) | [Lifecycle history](design/INIT-DSN-001-version-realization-correlation/README.md#initiative-lifecycle) and [VRC-DR-001](design/INIT-DSN-001-version-realization-correlation/decision-receipts/VRC-DR-001-supersede-prior-initiative.md) | User | None; terminal unless explicitly reopened |
 
 ## Cross-initiative dependencies
 
 | Dependent initiative | Depends on | Required state | Owner | Blocking? |
 |---|---|---|---|---|
-| Planned validator implementation consumer, identity not yet allocated | INIT-DSN-001 | Accepted correlation design and exact validator contract | User | Yes for executable enforcement; no for design acceptance |
+| Historical planned validator implementation consumer, identity never allocated | INIT-DSN-001 | Superseded prior plan; the named repository prompt now owns the exact validator changes in its direct-maintenance scope | User | No; retained only as prior planning history |
 
 ## Correlation rules
 

@@ -13,10 +13,12 @@ work version <-> realization suite <-> initiative <-> dedicated Git branch
 
 I explicitly authorize this exact invariant revision:
 
-1. Every new work version identifies exactly one realization suite.
-2. Every realization suite identifies exactly one new, self-contained
-   initiative.
-3. Every initiative identifies exactly one work version and realization suite.
+1. Every work version allocated under this revision identifies exactly one
+   realization suite.
+2. Every realization suite created or migrated under this revision identifies
+   exactly one new, self-contained initiative.
+3. Every initiative created or migrated under this revision identifies exactly
+   one work version and realization suite.
 4. Every such initiative uses exactly one dedicated Git branch correlated to
    that version.
 5. A substantive successor claim requires a new version, realization suite,
@@ -29,6 +31,32 @@ including:
 - `protocol/template/**`;
 - directly affected prompts, validators, tests, documentation, and migration
   guidance.
+
+## Prior initiative disposition
+
+I explicitly authorize this prompt to supersede the execution plan recorded in
+`protocol/initiatives/design/INIT-DSN-001-version-realization-correlation/`.
+This repository prompt is the named replacement that owns the exact direct
+protocol-maintenance work defined here.
+
+Before changing the initiative's source disposition or lifecycle, create a
+human-decision receipt that preserves this instruction and records:
+
+- its prior `Proposed` state;
+- this prompt as the named replacement;
+- the reason for supersession: the prior plan's type split and
+  project-specific migration analysis no longer govern this direct
+  repository-prompt execution;
+- preservation of all prior records, source identity, and unresolved
+  project-specific questions; and
+- every initiative index, status, and lifecycle record reconciled by the
+  transition.
+
+Record the legal `Proposed` to `Superseded` transition. Do not record
+acceptance, implementation, completion, release, or migration for that
+initiative. Retain VRC-01 and VRC-02 as historical unresolved questions that
+do not govern this revision, and do not use their project-specific evidence as
+protocol design or validation input.
 
 ## Canonical work-version rule
 
@@ -50,9 +78,43 @@ Define a distinct TADp work-version identifier:
 - Keep this work version distinct from architecture, contract, workflow,
   product, package, and release versions.
 
+## Effective point and legacy compatibility
+
+Record the revision's effective point as the commit containing the coherent
+authoritative specification, affected consumers, validation behavior, and
+authorized protected-source locks. The new correlation model governs:
+
+- every work version, realization suite, and initiative allocated after that
+  project-recorded effective point;
+- every pre-effective tuple explicitly migrated to this revision; and
+- every substantive successor or mandatory split begun after that effective
+  point.
+
+A pre-effective initiative may retain its recorded identity and workflow
+revision only through an explicit migration-ledger disposition such as
+`Unmigrated` or `Deferred`. That row must preserve the original evidence,
+identify the governing earlier workflow revision, and state the re-entry or
+migration condition. It must not contain a partial or inferred correlation.
+
+For validator behavior:
+
+- treat a missing, duplicate, partial, or inconsistent correlation as an error
+  for every record governed by this revision;
+- treat a pre-effective record with a complete `Unmigrated` or `Deferred`
+  ledger disposition as an actionable legacy warning rather than an error;
+- treat an undeclared legacy record, a missing ledger disposition, or a record
+  that mixes old and new correlation fields as an error; and
+- never infer a legacy mapping merely to clear a finding.
+
+An unchanged pre-effective claim may proceed only under its recorded
+invariant-compatible workflow revision and ledger disposition. Any substantive
+change after the effective point requires a new governed version, suite,
+initiative, branch, and correlation row.
+
 ## Required cardinality and records
 
-Enforce a bijection within each project:
+Enforce a bijection for every record governed by this revision within each
+project:
 
 - one work version -> one realization suite;
 - one realization suite -> one initiative;
@@ -79,11 +141,11 @@ At minimum, record:
 - realization-suite ID and path;
 - initiative ID, type, and path;
 - dedicated branch;
-- captured base branch and base commit when available;
+- captured base branch and base commit;
 - predecessor or successor relationship, if any;
 - lifecycle status and its supporting evidence.
 
-The project initiative index should own the canonical project-level
+The project initiative index must own the canonical project-level
 correlation row. Copies elsewhere must link to it and must not become competing
 sources of status or authority.
 
@@ -108,14 +170,16 @@ No sibling, parent, release, or earlier version may substitute for a missing
 initiative-local record or permit the initiative to claim another version's
 completion.
 
-Every parent, sibling, or subinitiative that is itself an initiative must
-receive its own version, realization suite, and branch. Do not create a version
-as an umbrella for multiple independently acceptable outcomes.
+Every parent, sibling, or subinitiative created, substantively revised, or
+migrated under this revision must receive its own version, realization suite,
+and branch. Do not create a version as an umbrella for multiple independently
+acceptable outcomes.
 
-A reopening that leaves the exact accepted claim unchanged may retain its
-version. A substantive change to scope, outcome, authority boundary, output,
-compatibility obligation, or verification claim requires a successor version,
-suite, initiative, and branch.
+A governed initiative reopened with its exact accepted claim unchanged may
+retain its tuple. A pre-effective initiative follows its recorded compatibility
+disposition. A substantive change to scope, outcome, authority boundary,
+output, compatibility obligation, or verification claim requires a successor
+version, suite, initiative, and branch.
 
 ## Preserve evidence and lifecycle distinctions
 
@@ -150,7 +214,7 @@ rules accordingly.
 
 ## Authoritative and protected changes
 
-Add an authoritative specification dedicated to this model, preferably:
+Create the authoritative specification dedicated to this model at:
 
 `09_Codex_Version_Realization_Initiative_Correlation_Specification.md`
 
@@ -207,7 +271,11 @@ Extend repository validation and regression tests to check:
 - uniqueness of every version, suite, initiative, and branch mapping;
 - reciprocal links and required metadata;
 - orphan suites, initiatives, or correlation rows;
-- one initiative branch per version;
+- one initiative branch per version, with live branch existence required while
+  the initiative workflow is active;
+- continued uniqueness of the recorded branch identity after separately
+  authorized branch removal, accepting an absent historical ref only when
+  removal authority and evidence are linked;
 - separate versions when a mandatory split occurs;
 - preservation of lifecycle and evidence standing;
 - legacy compatibility and migration records.

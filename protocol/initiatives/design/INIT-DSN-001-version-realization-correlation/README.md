@@ -2,9 +2,9 @@
 
 **Initiative:** INIT-DSN-001-version-realization-correlation
 
-**Status:** Proposed
+**Status:** Superseded
 
-**Last updated:** 2026-11-10
+**Last updated:** 2026-11-11
 
 **Initiative type:** design
 
@@ -24,6 +24,21 @@
 [TADp protocol project profile](../../../project-profile.md). The User is the
 sole project owner for human-decision purposes; technical source, component,
 compatibility, verification, and lifecycle boundaries remain explicit.
+
+## Supersession disposition
+
+The User's [VRC-DR-001 decision](decision-receipts/VRC-DR-001-supersede-prior-initiative.md)
+legally superseded this `Proposed` initiative on 2026-11-11. The named
+replacement is the
+[version-realization correlation repository prompt](../../../../prompts/version-realization-initiative-correlation-protocol-change.md),
+which owns the exact direct protocol-maintenance work it defines. The prior
+plan's type split and project-specific migration analysis no longer govern
+that work.
+
+All content below is retained as historical proposed material under its
+original identity. Nothing in the supersession records acceptance,
+implementation, completion, release, or migration. VRC-01 and VRC-02 remain
+historical unresolved questions and do not govern the replacement revision.
 
 This initiative proposes one authoritative and reusable specification outcome:
 define the canonical work-version and reciprocal realization-suite,
@@ -205,22 +220,23 @@ lifecycle meaning.
 
 ## Initiative lifecycle
 
-The initiative remains Proposed until a separate explicit acceptance response
-is captured in a decision receipt.
+The initiative was `Proposed` and never accepted. It is now `Superseded` by
+the named repository prompt under VRC-DR-001. Reopening would require a new
+explicit human decision reconciled with that replacement.
 
 ### Lifecycle history
 
 | Effective date or event | From | To | Authority or evidence | Claim revision | Reason and affected scope | Git commit |
 |---|---|---|---|---|---|---|
 | 2026-11-10 initial creation | Initial | Proposed | [Source realization](../../../evidence/non-authoritative/realizations/v1.0/RZN-TADP-001-VERSION-CORRELATION.md), [suite index](../../../evidence/non-authoritative/realizations/v1.0/00-RZN-TADP-001-VERSION-CORRELATION-suite-index.md), and [proposal](proposal/proposal.md) | Proposed baseline 0.2 | Open the bounded correlation design for review and incorporate the User's canonical realization-standing and placement clarification; no acceptance or delivery authority | Pending Stage 3/4 commit |
+| 2026-11-11 repository-prompt supersession | Proposed | Superseded | [VRC-DR-001](decision-receipts/VRC-DR-001-supersede-prior-initiative.md) and [named replacement prompt](../../../../prompts/version-realization-initiative-correlation-protocol-change.md) | Proposed baseline 0.2 retained unchanged as historical material | The prior plan's type split and project-specific migration analysis no longer govern the direct repository-prompt execution; preserve all prior records and unresolved VRC-01/VRC-02 without acceptance, implementation, completion, release, or migration claims | Pending |
 
 ## Initiative record maintenance
 
-Reconcile assumption and question receipts with every affected record in the
-same commit. Keep the [status view](../../status.md) and
-[canonical project row](../../initiative-index.md#initiative-and-correlation-register)
-aligned with this README without allowing either summary to create lifecycle
-standing.
+The terminal status is synchronized to the [status view](../../status.md) and
+[canonical project row](../../initiative-index.md#initiative-and-correlation-register).
+Any later reopening or decision must preserve VRC-DR-001 and reconcile every
+affected record without allowing a summary to create lifecycle standing.
 
 ## Authority and conflict discipline
 

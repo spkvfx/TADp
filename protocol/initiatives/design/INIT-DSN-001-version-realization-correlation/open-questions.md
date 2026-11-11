@@ -2,9 +2,9 @@
 
 **Initiative:** INIT-DSN-001-version-realization-correlation
 
-**Status:** Open
+**Status:** Historical; unresolved
 
-**Last updated:** 2026-11-10
+**Last updated:** 2026-11-11
 
 This register separates unresolved legacy identity mappings from the
 source-authorized invariant direction. Recommendations remain proposed until
@@ -12,6 +12,13 @@ the User's exact response is preserved in a decision receipt.
 
 **Human ownership:** The [project ownership convention](../../../project-profile.md)
 identifies the User as Sole Project Owner for these decisions.
+
+The initiative was superseded by the named repository prompt under
+[VRC-DR-001](decision-receipts/VRC-DR-001-supersede-prior-initiative.md).
+VRC-01 and VRC-02 remain open under their original identities as historical
+project-specific questions. They do not govern the replacement protocol
+revision, and their evidence must not be used as protocol design or validation
+input.
 
 ## Status vocabulary
 
@@ -29,7 +36,7 @@ identifies the User as Sole Project Owner for these decisions.
 | VRC-01 | Disposition of requested legacy v4 and v4.1 identities relative to observed v4.0 | Preserve all source identities; apply no equivalence until the User identifies the intended mapping or missing source | Open, blocking | Final v4 migration-ledger disposition and exact accepted migration baseline |
 | VRC-02 | Disposition of requested legacy v3 and v3.1 identities relative to observed v3.0 | Preserve requested and observed identities separately; defer mapping to a migration-specific decision if no source exists | Open | Any future v3 tuple migration; not the core invariant wording |
 
-## Earliest blocking decisions
+## Historical blocking decisions for the superseded plan
 
 1. VRC-01 — the User requires the v4 case to be resolved, while the captured
    repository lacks the named v4 path and v4.1 source.

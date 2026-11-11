@@ -2,7 +2,7 @@
 
 **Status owner:** User
 
-**Last reviewed:** 2026-11-10
+**Last reviewed:** 2026-11-11
 
 **Review cadence:** At every initiative lifecycle or gate change
 
@@ -18,14 +18,14 @@ release standing.
 
 | Work version | Initiative ID | Suite | Type | Status | Current milestone | Next gate | Blockers or holds | Status evidence | Owner | Last updated |
 |---|---|---|---|---|---|---|---|---|---|---|
-| v1.0 | INIT-DSN-001 | [RZN-TADP-001-VERSION-CORRELATION-SUITE](../evidence/non-authoritative/realizations/v1.0/00-RZN-TADP-001-VERSION-CORRELATION-suite-index.md) | design | Proposed | Whole suite aligned to proposal revision 0.2, including permanent non-authoritative realization standing and canonical placement | Stage 5 assumption review beginning with VRC-A01 | VRC-A01 through VRC-A06 require receipts; VRC-01 blocks the final v4 mapping; executable validator work requires a separate initiative | [Lifecycle history](design/INIT-DSN-001-version-realization-correlation/README.md#initiative-lifecycle); [canonical correlation row](initiative-index.md#initiative-and-correlation-register) | User | 2026-11-10 |
+| v1.0 | INIT-DSN-001 | [RZN-TADP-001-VERSION-CORRELATION-SUITE](../evidence/non-authoritative/realizations/v1.0/00-RZN-TADP-001-VERSION-CORRELATION-suite-index.md) | design | Superseded | Prior proposal baseline 0.2 retained as historical material; direct work transferred to the named repository prompt | None for this initiative; explicit reopening authority would be required | VRC-01 and VRC-02 remain historical unresolved questions but do not govern the replacement revision | [Lifecycle history](design/INIT-DSN-001-version-realization-correlation/README.md#initiative-lifecycle); [VRC-DR-001](design/INIT-DSN-001-version-realization-correlation/decision-receipts/VRC-DR-001-supersede-prior-initiative.md); [canonical correlation row](initiative-index.md#initiative-and-correlation-register) | User | 2026-11-11 |
 
 ## Portfolio gates
 
 | Gate ID | Outcome required | Depends on | Evidence required | Owner | State |
 |---|---|---|---|---|---|
-| TADP-CORR-GATE-01 | Exact aligned v1.0 design baseline is ready for human acceptance | Complete initial suite, evidence alignment, assumption review, and legacy mapping decisions | Initiative suite, decision receipts, migration ledger, and explicit acceptance question | User | Open |
-| TADP-CORR-GATE-02 | Executable validator and regression implementation is separately governed | Accepted design and a new correlated implementation tuple | New implementation initiative, branch, acceptance receipt, execution record, and verification | User | Open |
+| TADP-CORR-GATE-01 | Historical acceptance gate for the superseded v1.0 design plan | INIT-DSN-001 remained Proposed and was superseded | [VRC-DR-001](design/INIT-DSN-001-version-realization-correlation/decision-receipts/VRC-DR-001-supersede-prior-initiative.md) | User | Superseded; never accepted |
+| TADP-CORR-GATE-02 | Historical separate-validator gate from the superseded type split | No successor initiative was allocated; direct validator work is now bounded by the named repository prompt | [VRC-DR-001](design/INIT-DSN-001-version-realization-correlation/decision-receipts/VRC-DR-001-supersede-prior-initiative.md) and [replacement prompt](../../prompts/version-realization-initiative-correlation-protocol-change.md) | User | Superseded; no implementation claim |
 
 ## Maintenance rules
 

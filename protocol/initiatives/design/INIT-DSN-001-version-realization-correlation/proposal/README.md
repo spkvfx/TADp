@@ -2,9 +2,9 @@
 
 **Initiative:** INIT-DSN-001-version-realization-correlation
 
-**Status:** Proposed
+**Status:** Retained historical proposal source; paired initiative Superseded
 
-**Last updated:** 2026-11-10
+**Last updated:** 2026-11-11
 
 This directory preserves material that initiated the work. Proposal sources do
 not become accepted specifications merely by being stored or cited.
@@ -19,6 +19,7 @@ not become accepted specifications merely by being stored or cited.
 | [Current invariant suite](../../../../evidence/authoritative/LLM/00_Codex_Invariant_Suite_Index.md) | Captured base d05f334 | ../../../../evidence/authoritative | Binding evidence, governance, lifecycle, Git, scope, decision, and workflow baseline |
 | User instruction in the current task | 2026-11-10 | Explicit human authority for the exact invariant revision; not initiative acceptance | Exact authorized change, protected paths, migration case, validation requirements, and authority limits |
 | User realization placement clarification | 2026-11-10 | Explicit invariant and reusable-source scope; not initiative acceptance | Requires realization artifacts to remain non-authoritative and all protocol, template, prompt-template, and example consumers to use only `evidence/non-authoritative/realizations/**` |
+| [Named replacement repository prompt](../../../../../prompts/version-realization-initiative-correlation-protocol-change.md) | 2026-11-11 execution instruction | Explicit human authority for direct repository-prompt maintenance and for superseding the prior initiative; not acceptance, completion, release, or migration evidence | Replaces the prior initiative execution plan while preserving this proposal and its source identity; see [VRC-DR-001](../decision-receipts/VRC-DR-001-supersede-prior-initiative.md) |
 
 ## Precedence
 
@@ -30,6 +31,9 @@ not become accepted specifications merely by being stored or cited.
    bounded design.
 4. The proposal, realization suite, example migration case, observed Git
    history, and recommendations remain contextual or proposed.
+
+The named replacement prompt now owns the direct protocol-maintenance work.
+This proposal remains historical and does not govern that execution.
 
 When sources conflict, preserve both identities and use the authoritative
 conflict or human-decision procedure. Recency, a version token, or implemented
