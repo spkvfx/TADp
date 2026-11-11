@@ -146,6 +146,7 @@ pre-effective suite's header, source identity, standing, or recorded claims.
 | Initiative | [`INIT-IMP-002` — Container platform and runtime packaging](../../../../initiatives/implementation/INIT-IMP-002-container-platform/README.md) |
 | Dedicated branch | `initiative/v2.0-container-platform` |
 | Captured base | `v1` at `5a0ea0bd9f51edf97f9eddd39c6a3509c271503b` |
+| Stage 0 preparation commit | `d888ea74d36477ba2a192c1eb5531aca6003fe25` |
 | Canonical row | [Example initiative index](../../../../initiatives/initiative-index.md#initiative-and-correlation-register) |
 | Migration disposition | [Version-correlation migration ledger](../../../../initiatives/version-correlation-migration-ledger.md#migration-ledger) |
 | Predecessor or successor | None |
