@@ -19,7 +19,7 @@ verification.
 
 | Work version | Initiative ID | Realization suite | Type | Status | Current milestone | Next gate | Blockers or holds | Status evidence | Owner | Last updated |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `v2.1` | [`INIT-IMP-003`](implementation/INIT-IMP-003-api-sqlite-runtime/README.md) | [`RZN-001-P2-API-SQLITE-SUITE`](../evidence/non-authoritative/realizations/v2.1/00-RZN-001-P2-API-SQLITE-suite-index.md) | `implementation` | Proposed | Complete initial initiative record | Stage 4 initiative alignment | [`API-01`–`API-06`](implementation/INIT-IMP-003-api-sqlite-runtime/open-questions.md#decision-register) remain open; assumptions await human review | [Lifecycle history](implementation/INIT-IMP-003-api-sqlite-runtime/README.md#initiative-lifecycle) | User | 2026-11-11 |
+| `v2.1` | [`INIT-IMP-003`](implementation/INIT-IMP-003-api-sqlite-runtime/README.md) | [`RZN-001-P2-API-SQLITE-SUITE`](../evidence/non-authoritative/realizations/v2.1/00-RZN-001-P2-API-SQLITE-suite-index.md) | `implementation` | Proposed | Stages 0–4 complete; Proposed record aligned | Stage 5 assumption-confirmation review | [`API-01`–`API-06`](implementation/INIT-IMP-003-api-sqlite-runtime/open-questions.md#decision-register) remain open; assumptions await human review | [Lifecycle history](implementation/INIT-IMP-003-api-sqlite-runtime/README.md#initiative-lifecycle) | User | 2026-11-11 |
 
 The `v2.1` initiative is the only canonical tuple on this independent branch.
 Other pre-effective realization suites remain non-authoritative inputs with

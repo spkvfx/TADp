@@ -87,8 +87,9 @@ exception receipt governs repository mechanics only.
 
 ## Reusable prompts
 
-Stages 0–3 are complete. Stage 4 is the next workflow stage and may align the
-coupled Proposed record without resolving assumptions or `API-*` questions.
+Stages 0–4 are complete. The Proposed record remains one D3 initiative: no
+split was introduced and no assumption or `API-*` question was resolved. The
+next workflow stage is Stage 5 assumption-confirmation review.
 
 ## Repository baseline
 
