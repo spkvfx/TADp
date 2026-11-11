@@ -41,4 +41,4 @@ conformance, release, or deployment claim.
 
 | Effective date or event | From | To | Authority or evidence | Claim revision | Reason and affected scope | Git commit |
 |---|---|---|---|---|---|---|
-| 2026-11-11 | Initial | Proposed | [realization suite](../../../evidence/non-authoritative/realizations/v3.0/00-RZN-001-P3-CLI-suite-index.md) and [canonical correlation row](../../initiative-index.md#initiative-and-correlation-register) | Preparation skeleton | Allocate the migrated D5 CLI tuple and open it for proposal work; no acceptance or delivery authority | Pending Stage 0 preparation commit |
+| 2026-11-11 | Initial | Proposed | [realization suite](../../../evidence/non-authoritative/realizations/v3.0/00-RZN-001-P3-CLI-suite-index.md) and [canonical correlation row](../../initiative-index.md#initiative-and-correlation-register) | Preparation skeleton | Allocate the migrated D5 CLI tuple and open it for proposal work; no acceptance or delivery authority | `af45ea7b2d98decd875eb793fadc16558ffae764` |
