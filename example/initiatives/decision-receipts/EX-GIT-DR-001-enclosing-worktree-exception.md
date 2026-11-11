@@ -21,7 +21,8 @@ could not waive the invariant
 entire installed example while using the enclosing repository or worktree only
 for Git mechanics
 
-**Git commit:** Pending — commit containing this receipt and reconciliation
+**Git commit:** `553b1d386623908bdf244cc35c9bc2cea06985fd` — commit
+containing this receipt, resolution, reconciled consumers, and protected lock
 
 ## Decision sequence
 
@@ -49,8 +50,8 @@ for Git mechanics
 - **Material limitations:** A project-local prompt is non-authoritative and
   could not create this exception by wording or invocation. No initiative,
   canonical row, or migration action existed when the decision was requested.
-- **Initial affected scope described to the human:** Only work versions `v1.0`, `v2.0`,
-  `v2.1`, `v2.2`, `v3.0`, and `v4.0`; initiatives `INIT-IMP-001` through
+- **Initial affected scope described to the human:** Only work versions `v1.0`,
+  `v2.0`, `v2.1`, `v2.2`, `v3.0`, and `v4.0`; initiatives `INIT-IMP-001` through
   `INIT-IMP-006`; their exact realization suites, paths, and branches in the
   migration prompt; and the enclosing worktree that directly contains the
   resolved `example/` scaffold.
