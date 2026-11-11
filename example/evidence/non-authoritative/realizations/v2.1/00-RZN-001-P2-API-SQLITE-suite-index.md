@@ -76,3 +76,29 @@ must keep v2.0, v2.2, v3.0, and v4.0 separately governed, map exact architecture
 security evidence, and create no claim broader than the D3 runtime image. No
 initiative is created by this suite.
 
+## Correlation migration addendum
+
+**Effective date:** 2026-11-11
+
+**Migration action:** `Migrate`
+
+**Authority:** [six-initiative migration prompt](../../../../prompts/create-v1.0-through-v4.0-initiatives.md), [EX-GIT-DR-001](../../../../initiatives/decision-receipts/EX-GIT-DR-001-enclosing-worktree-exception.md), and [resolved `INV-CONFLICT-001`](../../../authoritative/LLM/03_Codex_Invariant_Conflict_Register.md#inv-conflict-001--embedded-example-project-root-and-git-root-invariant)
+
+This addendum applies current correlation governance without rewriting the
+pre-effective suite's header, source identity, standing, or recorded claims.
+
+| Correlation field | Migrated identity |
+|---|---|
+| Work version | `v2.1` |
+| Realization suite | `RZN-001-P2-API-SQLITE-SUITE` at this path |
+| Initiative | [`INIT-IMP-003` — API and SQLite runtime image](../../../../initiatives/implementation/INIT-IMP-003-api-sqlite-runtime/README.md) |
+| Dedicated branch | `initiative/v2.1-api-sqlite-runtime` |
+| Captured base | `v1` at `5a0ea0bd9f51edf97f9eddd39c6a3509c271503b` |
+| Canonical row | [Example initiative index](../../../../initiatives/initiative-index.md#initiative-and-correlation-register) |
+| Migration disposition | [Version-correlation migration ledger](../../../../initiatives/version-correlation-migration-ledger.md#migration-ledger) |
+| Predecessor or successor | None |
+
+The initiative begins `Proposed`. Migration creates identity and navigation
+only; it does not promote this suite, select artifact paths, accept API or
+persistence work, or make a delivery, conformance, release, or deployment claim.
+
