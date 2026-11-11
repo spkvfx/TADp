@@ -19,7 +19,7 @@ verification.
 
 | Work version | Initiative ID | Realization suite | Type | Status | Current milestone | Next gate | Blockers or holds | Status evidence | Owner | Last updated |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `v4.0` | [`INIT-IMP-006`](implementation/INIT-IMP-006-web-application-bundle/README.md) | [`RZN-001-P4-WEB-SUITE`](../evidence/non-authoritative/realizations/v4.0/00-RZN-001-P4-WEB-suite-index.md) | `implementation` | Proposed | Complete initial initiative record | Stage 4 initiative alignment | [`WEB-01`–`WEB-07`](implementation/INIT-IMP-006-web-application-bundle/open-questions.md#decision-register) remain open; assumptions await human review | [Lifecycle history](implementation/INIT-IMP-006-web-application-bundle/README.md#initiative-lifecycle) | User | 2026-11-11 |
+| `v4.0` | [`INIT-IMP-006`](implementation/INIT-IMP-006-web-application-bundle/README.md) | [`RZN-001-P4-WEB-SUITE`](../evidence/non-authoritative/realizations/v4.0/00-RZN-001-P4-WEB-suite-index.md) | `implementation` | Proposed | Stages 0–4 complete; Proposed record aligned | Stage 5 assumption-confirmation review | [`WEB-01`–`WEB-07`](implementation/INIT-IMP-006-web-application-bundle/open-questions.md#decision-register) remain open; assumptions await human review | [Lifecycle history](implementation/INIT-IMP-006-web-application-bundle/README.md#initiative-lifecycle) | User | 2026-11-11 |
 
 The `v4.0` initiative is the only canonical tuple on this independent branch.
 Other pre-effective realization suites remain non-authoritative inputs with
