@@ -19,10 +19,11 @@ verification.
 
 | Work version | Initiative ID | Realization suite | Type | Status | Current milestone | Next gate | Blockers or holds | Status evidence | Owner | Last updated |
 |---|---|---|---|---|---|---|---|---|---|---|
+| `v2.1` | [`INIT-IMP-003`](implementation/INIT-IMP-003-api-sqlite-runtime/README.md) | [`RZN-001-P2-API-SQLITE-SUITE`](../evidence/non-authoritative/realizations/v2.1/00-RZN-001-P2-API-SQLITE-suite-index.md) | `implementation` | Proposed | Complete initial initiative record | Stage 4 initiative alignment | [`API-01`–`API-06`](implementation/INIT-IMP-003-api-sqlite-runtime/open-questions.md#decision-register) remain open; assumptions await human review | [Lifecycle history](implementation/INIT-IMP-003-api-sqlite-runtime/README.md#initiative-lifecycle) | User | 2026-11-11 |
 
-No initiative has a canonical correlation row or lifecycle status. The
-pre-effective realization suites remain non-authoritative inputs with the
-dispositions recorded in the
+The `v2.1` initiative is the only canonical tuple on this independent branch.
+Other pre-effective realization suites remain non-authoritative inputs with
+their dispositions recorded in the
 [migration ledger](version-correlation-migration-ledger.md).
 
 ## Portfolio gates
