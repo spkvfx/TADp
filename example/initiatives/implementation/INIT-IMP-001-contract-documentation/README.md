@@ -119,9 +119,10 @@ decision must receive its own receipt and coupled reconciliation.
 
 ## Reusable prompts
 
-This record was prepared through workflow stages 0–3. Stage 4 aligns the
-complete Proposed specification; Stage 5 may review assumptions only after
-Stage 4 completes without a blocking conflict.
+Workflow stages 0–4 are complete. Stage 4 found the coupled Proposed record
+aligned to current authoritative evidence, with no present mandatory split;
+it did not resolve an assumption or `DOC-*` question. Stage 5 is the next
+permitted prompt and may only conduct the explicit human assumption review.
 
 ## Repository baseline
 

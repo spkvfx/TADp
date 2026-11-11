@@ -19,7 +19,7 @@ verification.
 
 | Work version | Initiative ID | Realization suite | Type | Status | Current milestone | Next gate | Blockers or holds | Status evidence | Owner | Last updated |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `v1.0` | [`INIT-IMP-001`](implementation/INIT-IMP-001-contract-documentation/README.md) | [`RZN-001-P1-DOCS-SUITE`](../evidence/non-authoritative/realizations/v1.0/00-RZN-001-P1-DOCS-suite-index.md) | `implementation` | Proposed | Complete initial initiative record | Stage 4 initiative alignment | [`DOC-01`–`DOC-06`](implementation/INIT-IMP-001-contract-documentation/open-questions.md#decision-register) remain open; assumptions await human review | [Lifecycle history](implementation/INIT-IMP-001-contract-documentation/README.md#initiative-lifecycle) | User | 2026-11-11 |
+| `v1.0` | [`INIT-IMP-001`](implementation/INIT-IMP-001-contract-documentation/README.md) | [`RZN-001-P1-DOCS-SUITE`](../evidence/non-authoritative/realizations/v1.0/00-RZN-001-P1-DOCS-suite-index.md) | `implementation` | Proposed | Stages 0–4 complete; Proposed record aligned | Stage 5 assumption confirmation review | [`DOC-01`–`DOC-06`](implementation/INIT-IMP-001-contract-documentation/open-questions.md#decision-register) remain open; assumptions await explicit human review | [Lifecycle history](implementation/INIT-IMP-001-contract-documentation/README.md#initiative-lifecycle) and aligned initiative record | User | 2026-11-11 |
 
 The `v1.0` initiative now has a canonical correlation row and remains
 `Proposed`. Other pre-effective realization suites remain non-authoritative
