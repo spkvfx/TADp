@@ -43,6 +43,9 @@ Read these documents in order when first adopting or maintaining TADp:
 - [Workflow stage 0–13 migration](guides/workflow-stage-0-13-migration.md)
   explains how to move active initiatives to the explicit acceptance gate and
   type-specific delivery paths without rewriting their history.
+- [Version-realization-initiative correlation migration](guides/version-realization-correlation-migration.md)
+  explains effective-point adoption, non-inferred legacy dispositions, and
+  separately governed tuple migration.
 
 ## Documentation maintenance
 

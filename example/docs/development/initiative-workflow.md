@@ -27,6 +27,19 @@ parent specification owns a bounded requirement and the child owns one smaller
 dependent outcome. A parent may coordinate; it may not hide partial or
 unrelated work.
 
+## Correlated work identity
+
+Every work unit governed by the correlation revision has one canonical
+`v<major>.<minor>` work version, one realization suite, one self-contained
+initiative, and one version-bearing dedicated branch from a captured base
+branch and commit. The project initiative index owns the canonical row.
+Suites, initiatives, status, delivery, completion, and Git records link to it.
+
+The tuple establishes identity, not authority or lifecycle standing. Every
+mandatory split and substantive successor receives a new tuple. An unchanged-
+claim reopening may retain its tuple; a pre-effective record follows its
+migration-ledger disposition.
+
 ## Numbered workflow
 
 The prompt sequence under `../../template/prompts` is intentionally explicit.
@@ -39,12 +52,16 @@ Finishing a stage does not automatically change lifecycle state.
 ### 0. Prepare initiative
 
 - Confirm a valid Git repository and clean worktree.
-- Capture the actual current branch as the base branch.
-- Create and switch to a new dedicated initiative branch.
-- Create only the minimal initiative and proposal-source README skeleton when
-  the target is new.
+- Preflight canonical syntax and uniqueness for the proposed version, suite,
+  initiative, branch, paths, base branch, and base commit without writing.
+- Capture the actual current branch and commit as the immutable base.
+- Create and switch to the new version-bearing dedicated branch.
+- On that branch, create the suite index and initial realization note,
+  canonical correlation row, reciprocal metadata, and minimal initiative and
+  proposal-source README skeleton as one unit.
 
-Preparation does not create the proposal or complete initiative record.
+Preparation does not accept the initiative, create the proposal or complete
+initiative record, or begin delivery.
 
 ### 1. Create proposal
 
@@ -69,6 +86,8 @@ Preparation does not create the proposal or complete initiative record.
 - Complete the scope assessment and stop broad acceptance when a split trigger
   applies.
 - Add the initiative to applicable registry and status views.
+- Reconcile the existing Stage 0 canonical row without changing its allocated
+  identity.
 
 ### 4. Align initiative
 
@@ -184,6 +203,8 @@ the initiative; they do not create its state.
 ## Returning to an earlier stage
 
 - A failed entry gate returns to the stage that owns the missing evidence.
+- Correlation drift returns to Stage 0 recovery without inferring or reusing
+  identity; pre-effective records return to their migration ledger.
 - A human review resumes at the next unresolved stable ID without duplicating
   prior receipts.
 - New authoritative evidence or a changed accepted premise returns to alignment

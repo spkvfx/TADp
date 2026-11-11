@@ -117,6 +117,22 @@ Codex must not make documents appear coherent by silently narrowing claims,
 rewriting history, changing another initiative, or treating proposed work as
 implemented.
 
+## Correlated allocation and successor work
+
+For work governed by the
+[version-realization-initiative correlation specification](09_Codex_Version_Realization_Initiative_Correlation_Specification.md),
+Codex must allocate one canonical work version, one realization suite, one new
+self-contained initiative, and one dedicated branch as a reciprocal tuple.
+The project initiative index owns the canonical row; copies elsewhere link to
+it without gaining lifecycle or authority standing.
+
+Every governed parent, sibling, or subinitiative has its own tuple. A
+substantive successor claim also requires a new tuple. An initiative reopened
+with its exact accepted claim unchanged may retain its tuple, while a
+pre-effective initiative follows its recorded compatibility disposition.
+Codex must not reuse, silently renumber, partially infer, or merge tuple
+identities to avoid a new initiative or human decision.
+
 ## Reopening and revising initiatives
 
 An initiative may be reopened or revised, including after acceptance or
@@ -132,6 +148,10 @@ Before changing substantive initiative meaning, Codex must record:
 - compatibility and recovery effects for previously delivered products;
 - the verification required for the revised claim; and
 - the effective date or event and the records that must be reconciled.
+
+When the change is substantive under the correlation specification, the
+recorded disposition must identify the new successor tuple instead of revising
+the old tuple in place.
 
 Codex must preserve the earlier state through history, an explicit supersession
 relationship, or a durable change record. It must update every affected

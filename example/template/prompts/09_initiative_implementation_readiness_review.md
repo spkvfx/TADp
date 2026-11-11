@@ -57,6 +57,11 @@ Verify that the initiative is `Accepted` or `In progress`, links an explicit
 acceptance receipt, and identifies the accepted baseline revision. A coherent
 proposal or completed human reviews do not substitute for acceptance.
 
+Verify that the canonical work version, realization suite, initiative,
+dedicated branch, captured base branch and commit, reciprocal links, and live
+active branch agree. Treat any missing, duplicate, partial, or inconsistent
+correlation as a no-go blocker; this read-only review must not repair it.
+
 Apply the ownership and approval convention at {project_profile_path}. Human
 owner, reviewer, and approver roles resolve as recorded for the target project.
 Continue to treat a missing technical component, selected profile or placement,
@@ -116,6 +121,9 @@ boundaries. At minimum, cover:
    interfaces, compatibility commitments, migrations, security controls,
    recovery and rollback limits, external environment constraints, and
    verification prerequisites.
+5. Canonical correlation and Git evidence: project index row, suite index,
+   initiative metadata, branch ref, captured base, and any authorized branch
+   removal evidence relevant to historical dependencies.
 
 Follow every material local reference and every explicitly identified external
 source that is available in the current environment. If a source is missing,
@@ -205,7 +213,8 @@ Report the reviewed scope and disposition; the evidence-coverage count and any
 unavailable sources; every ready, conditional, blocked, or deferred phase; all
 mismatches and unresolved gates; the exact initiative records that would need
 follow-up; and every required owner, decision, artifact, or verification. State
-that the review changed no files. Do not create a separate report file, stage a
-file, create a commit, or begin implementation.
+the correlation-verification result and that the review changed no files. Do
+not create a separate report file, stage a file, create a commit, or begin
+implementation.
 ~~~
 

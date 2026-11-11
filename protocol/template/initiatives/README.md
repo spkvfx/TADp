@@ -11,10 +11,20 @@ standard files. If a section does not apply, state why instead of deleting it.
 # {{initiative_name}} initiative
 
 **Initiative:** {{initiative_name}}
+**Initiative ID:** {{initiative_id}}
 **Status:** Proposed
 **Last updated:** {{date}}
 **Initiative type:** `{{initiative_type}}`
 **Decision prefix:** `{{decision_prefix}}`
+**Work version:** {{v_major_minor}}
+**Realization suite ID:** {{realization_suite_id}}
+**Realization suite:** [{{realization_suite_path}}]({{relative_realization_suite_index_path}})
+**Canonical project correlation:** [initiative and correlation register]({{relative_initiative_index_path}}#initiative-and-correlation-register)
+**Dedicated branch:** {{initiative_branch}}
+**Captured base branch:** {{base_branch}}
+**Captured base commit:** {{base_commit}}
+**Predecessor or successor:** {{relationship_or_none}}
+**Correlation governance:** {{effective_commit_or_legacy_ledger_link}}
 
 **Human ownership:** Apply the ownership and approval convention recorded in
 `{{project_profile_path}}`. Human owner, reviewer, and approver roles resolve
@@ -28,6 +38,20 @@ Lead with the proposed result rather than the history of the discussion.
 -->
 
 {{initiative_summary}}
+
+## Correlation and identity
+
+The project initiative index owns this initiative's canonical correlation row.
+The work version, realization suite, initiative, and dedicated branch are one
+immutable project-local tuple. This README copies the identity for navigation
+and links to the canonical row; it does not create lifecycle standing.
+
+Later stages must verify the same tuple and captured base before changing the
+initiative. A substantive successor or mandatory split receives a new version,
+suite, initiative, and branch. An exact-claim reopening may retain this tuple
+only under the governing lifecycle record. A pre-effective initiative must
+link a complete migration-ledger disposition instead of mixing old and new
+fields.
 
 ## Protocol vocabulary
 
@@ -93,6 +117,10 @@ A subinitiative is permitted when it implements, designs, or investigates one
 smaller dependent outcome inside an actual parent specification. It must cite
 the parent requirement, keep its own coherent record and verification, and
 must not expand the parent or absorb unrelated work.
+
+Every governed parent, sibling, and subinitiative has its own canonical work
+version, realization suite, initiative, and dedicated branch. A version is not
+an umbrella or release container.
 
 ## Products and placement
 
@@ -279,6 +307,10 @@ Link to code, accepted architecture, and dependent initiatives where useful.
 `Reopened` is an event, not a status. A reopened initiative returns to
 `Proposed` unless an explicit human decision records that the previously
 accepted claim is unchanged and authorizes return to `Accepted`.
+
+Tuple allocation, a branch, and a version do not prove any lifecycle state.
+Preserve the exact branch and base identity after a separately authorized
+branch removal and link that removal evidence from the canonical row.
 
 ### Lifecycle history
 

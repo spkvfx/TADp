@@ -44,6 +44,8 @@ A material protocol change may affect:
 - the validator and regression tests;
 - root and developer documentation;
 - migration or decomposition guidance; and
+- canonical version, realization-suite, initiative, and branch correlation
+  records, including any pre-effective migration ledger; and
 - existing initiative records that explicitly adopt the changed revision.
 
 Not every change touches every surface. Review them all and document why an
@@ -114,6 +116,12 @@ When an authoritative revision is accepted, the commit and review description
 should identify the prior rule, new rule, human authority, affected consumers,
 migration consequence, and verification.
 
+When a revision defines a Git commit as its effective point, keep the
+authoritative rule, all affected reusable consumers, validator coverage,
+distribution mirrors, and refreshed protected locks in that coherent commit.
+Record the resulting immutable commit ID in a follow-up traceability commit; do
+not guess or predeclare the self-referential identifier.
+
 When the revision adds, removes, renumbers, or changes a workflow stage,
 publish a migration guide for active initiatives. Preserve historical prompt
 identity and require an explicit change record before an active initiative
@@ -128,6 +136,8 @@ initiative originally used the current workflow.
 - [ ] Repository-relative links resolve.
 - [ ] Prompt examples and executable placeholders remain separated.
 - [ ] No umbrella or multi-purpose initiative construct was introduced.
+- [ ] Correlated work has exactly one canonical version, realization suite,
+      initiative, and dedicated branch, or a complete legacy disposition.
 - [ ] Git and Codex requirements remain explicit.
 - [ ] Non-Codex compatibility is not claimed without an adapter review.
 - [ ] Protected-source locks match the reviewed template and invariant suite.

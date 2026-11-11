@@ -64,15 +64,22 @@ Use this path when TADp will govern work in another repository:
    with `git config core.hooksPath .githooks`. The hook is local Git
    configuration and therefore must be enabled in every clone or worktree.
 8. Create `project-profile.md` from its template and record owners, boundaries,
-   Git conventions, evidence locations, and approval authority.
-9. Establish the evidence register, initiative index, and status view before
-   accepting the first initiative.
-10. Run a narrow pilot initiative before migrating a large body of work.
+   Git conventions, evidence locations, approval authority, and the exact
+   adopted correlation-revision commit.
+9. Establish the evidence register, canonical initiative and correlation
+   index, status view, and version-correlation migration ledger before
+   allocating the first governed tuple.
+10. Give every pre-effective record a complete `Unmigrated`, `Deferred`, or
+    separately authorized migration disposition. Do not infer a partial tuple.
+11. Run a narrow pilot initiative before migrating a large body of work.
 
 An existing adoption without locks must use the
 [protected-source integrity migration](../guides/protected-source-integrity-migration.md).
 Do not initialize a lock until a human has identified the exact template and
 invariant baseline being accepted.
+Use the
+[version-realization-initiative correlation migration guide](../guides/version-realization-correlation-migration.md)
+for effective-point and legacy-ledger adoption.
 
 ### Start a new repository
 
@@ -114,6 +121,10 @@ acceptance, use exactly one delivery path for the declared initiative type:
 stages 8 through 10 for implementation, stage 11 for design, or stage 12 for
 planning. Use stage 13 only after evidence-backed completion. Do not begin with
 a portfolio-wide or multi-outcome effort.
+
+Stage 0 allocates a canonical work version, realization suite,
+self-contained initiative, and version-bearing branch from a captured base as
+one reciprocal tuple. Later stages verify rather than recreate that identity.
 
 During the pilot, record friction rather than bypassing it. A repeated friction
 point may justify a later TADp change, but a local convenience must not silently

@@ -24,6 +24,8 @@
 
 **Canonical project correlation:** [TADp protocol initiative index](../../../../initiatives/initiative-index.md#initiative-and-correlation-register)
 
+**Correlation governance:** Pre-effective bootstrap identity; [Deferred migration-ledger disposition](../../../../initiatives/version-correlation-migration-ledger.md)
+
 **Lifecycle status and evidence:** Superseded; [initiative lifecycle history](../../../../initiatives/design/INIT-DSN-001-version-realization-correlation/README.md#initiative-lifecycle), [VRC-DR-001](../../../../initiatives/design/INIT-DSN-001-version-realization-correlation/decision-receipts/VRC-DR-001-supersede-prior-initiative.md), retained [working proposal](../../../../initiatives/design/INIT-DSN-001-version-realization-correlation/proposal/proposal.md), and Stage 0 commit e2677f2
 
 > **Evidence standing:** This suite is non-authoritative proposal input. Its

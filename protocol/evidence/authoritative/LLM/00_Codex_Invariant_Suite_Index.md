@@ -53,6 +53,32 @@ migration, and consumer-reconciliation requirements of this suite.
   suite-index revision only for source-integrity handling. Git history
   preserves the predecessor and every earlier substantive invariant.
 
+### Version-realization-initiative correlation revision record
+
+- **Authority:** The User's explicit
+  `prompts/version-realization-initiative-correlation-protocol-change.md`
+  instruction, executed on 2026-11-11, authorizes the exact correlation
+  invariant and affected protected-source revisions.
+- **Reason:** Give every governed work unit one immutable project-local version,
+  one realization suite, one self-contained initiative, and one dedicated Git
+  branch with reciprocal traceability.
+- **Affected scope:** Work identity, realization-suite structure, initiative
+  metadata and scope, branch traceability, workflow Stage 0 and later handoffs,
+  legacy compatibility, reusable sources, validation, and adoption guidance.
+- **Effective point:** The first Git commit containing the coherent
+  specification 09 revision, every necessarily affected consumer, validation
+  behavior, regression tests, and authorized protected-source locks. Each
+  project records that commit before allocating governed tuples.
+- **Compatibility and migration:** The revision governs post-effective
+  allocations, explicitly migrated pre-effective tuples, and post-effective
+  successors or mandatory splits. Pre-effective records require a complete
+  non-inferred migration-ledger disposition and may otherwise remain under
+  their recorded earlier compatible workflow revision.
+- **Successor relationship:** Specification 09 succeeds the earlier suite only
+  for work identity and correlation. Specifications 01 through 08 continue to
+  govern evidence, governance, conflicts, lifecycle, Git, scope, human
+  decisions, and workflow except where they expressly reference this revision.
+
 ## Documents
 
 1. [Codex evidence authority specification](01_Codex_Evidence_Authority_Specification.md)
@@ -75,6 +101,10 @@ migration, and consumer-reconciliation requirements of this suite.
 8. [Codex initiative workflow specification](08_Codex_Initiative_Workflow_Specification.md)
    defines authoritative stage order, acceptance, type-specific delivery,
    record ownership, handoffs, and recovery behavior.
+9. [Codex version-realization-initiative correlation specification](09_Codex_Version_Realization_Initiative_Correlation_Specification.md)
+   defines canonical work versions, reciprocal suite-initiative-branch
+   identity, effective-point compatibility, migration-ledger requirements,
+   and correlation validation.
 
 The repository-root `../../../AGENTS.md` is the Codex entry point because Codex loads
 repository guidance from that standard location. It summarizes this suite but
@@ -114,6 +144,9 @@ existence of contradictory lower-standing material.
   contradict the architecture.
 - A prompt describes requested work; it is not evidence that a premise is true
   or that a gate has passed.
+- A work version, realization suite, correlation row, or branch proves identity
+  only; none establishes evidence authority, acceptance, implementation,
+  completion, compatibility, or release.
 - Missing evidence remains missing. Codex must not fabricate verification,
   acceptance, ownership, qualification, or release evidence.
 - Every material conclusion must retain a traceable path to the evidence and

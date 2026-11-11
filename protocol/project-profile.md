@@ -16,7 +16,14 @@
 
 **Pull-request remote:** origin; target branch must be verified per initiative
 
-**Last reviewed:** 2026-11-10
+**Correlation revision effective point:** The first protected-update commit
+containing specification 09, affected consumers, validator behavior, tests,
+and refreshed protocol and example locks; exact SHA pending immediate
+post-commit backfill
+
+**Correlation migration ledger:** [Version-correlation migration ledger](initiatives/version-correlation-migration-ledger.md)
+
+**Last reviewed:** 2026-11-11
 
 ## Purpose
 
@@ -78,10 +85,11 @@ appear aligned.
 
 The initiative index is the canonical project-level location for work-version,
 realization-suite, initiative, and dedicated-branch correlation. Other records
-link to the row and retain authority only for their existing subject. Until the
-proposed correlation invariant is accepted and delivered, the v1.0 row is a
-bootstrap tracking record rather than evidence that the new invariant is
-effective.
+link to the row and retain authority only for their existing subject.
+Specification 09 governs allocations from the project-recorded effective
+point. The v1.0 row predates that point and remains under its linked `Deferred`
+migration-ledger disposition; it is not retroactively treated as governed or
+migrated.
 
 ## Operating cadence
 
@@ -110,3 +118,4 @@ from a captured clean base.
 | Date | Change | Reason | Owner |
 |---|---|---|---|
 | 2026-11-10 | Instantiated the protocol project profile and branch convention | Provide the ownership and tracking prerequisite for INIT-DSN-001 | User |
+| 2026-11-11 | Adopted the version-realization-initiative correlation revision and linked the legacy ledger | Establish the effective-point and compatibility records authorized by the repository prompt | User |

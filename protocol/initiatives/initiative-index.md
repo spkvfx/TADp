@@ -14,9 +14,9 @@ delivery, or replace the initiative README's lifecycle authority.
 
 ## Initiative and correlation register
 
-| Work version | Realization suite | Initiative ID | Name | Type | Status | Dedicated branch | Captured base | Predecessor or successor | Record location | Lifecycle evidence | Owner | Next gate |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| v1.0 | [RZN-TADP-001-VERSION-CORRELATION-SUITE](../evidence/non-authoritative/realizations/v1.0/00-RZN-TADP-001-VERSION-CORRELATION-suite-index.md) | INIT-DSN-001 | Version-realization-suite-initiative correlation | design | Superseded | initiative/v1.0-version-realization-correlation | v1 at d05f334e854431716275a59c980f0c909d88d002 | Named replacement: [direct protocol-maintenance prompt](../../prompts/version-realization-initiative-correlation-protocol-change.md); no successor initiative allocated | [Initiative README](design/INIT-DSN-001-version-realization-correlation/README.md) | [Lifecycle history](design/INIT-DSN-001-version-realization-correlation/README.md#initiative-lifecycle) and [VRC-DR-001](design/INIT-DSN-001-version-realization-correlation/decision-receipts/VRC-DR-001-supersede-prior-initiative.md) | User | None; terminal unless explicitly reopened |
+| Work version | Realization suite | Initiative ID | Name | Type | Status | Dedicated branch | Captured base branch | Captured base commit | Predecessor or successor | Record location | Lifecycle evidence | Branch removal evidence | Owner | Next gate |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| v1.0 | [RZN-TADP-001-VERSION-CORRELATION-SUITE](../evidence/non-authoritative/realizations/v1.0/00-RZN-TADP-001-VERSION-CORRELATION-suite-index.md) | INIT-DSN-001 | Version-realization-suite-initiative correlation | design | Superseded | initiative/v1.0-version-realization-correlation | v1 | d05f334e854431716275a59c980f0c909d88d002 | Named replacement: [direct protocol-maintenance prompt](../../prompts/version-realization-initiative-correlation-protocol-change.md); no successor initiative allocated | [Initiative README](design/INIT-DSN-001-version-realization-correlation/README.md) | [Lifecycle history](design/INIT-DSN-001-version-realization-correlation/README.md#initiative-lifecycle) and [VRC-DR-001](design/INIT-DSN-001-version-realization-correlation/decision-receipts/VRC-DR-001-supersede-prior-initiative.md); [legacy disposition](version-correlation-migration-ledger.md) | Not applicable — recorded branch ref remains present | User | None; terminal unless explicitly reopened |
 
 ## Cross-initiative dependencies
 
@@ -44,3 +44,6 @@ delivery, or replace the initiative README's lifecycle authority.
 - Keep this register coherent with [status.md](status.md) and each initiative
   README. A row establishes identity and discoverability, not acceptance,
   implementation authority, qualification, completion, or release readiness.
+- Pre-effective rows link [the migration ledger](version-correlation-migration-ledger.md).
+  A `Deferred` or `Unmigrated` row preserves earlier workflow identity and is
+  not partially upgraded to specification 09.

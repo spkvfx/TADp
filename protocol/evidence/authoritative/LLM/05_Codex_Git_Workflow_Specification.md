@@ -11,13 +11,29 @@ Codex must not assume `main`, `master`, a remote, or a hosting service.
 
 ## Initiative branches
 
-Every initiative must have one dedicated branch created from a captured base
-branch. Preparation owns branch creation and records both names. Later workflow
-stages must use that branch and stop if another branch is active.
+Every initiative governed by the
+[version-realization-initiative correlation specification](09_Codex_Version_Realization_Initiative_Correlation_Specification.md)
+must have one dedicated branch correlated to its canonical work version and
+created from a captured base branch and base commit. Preparation owns branch
+creation and records the work version, branch, base branch, and immutable base
+commit in the canonical correlation row and reciprocal records. Later workflow
+stages must use that branch and stop if another branch is active or the tuple
+does not match.
+
+Use the project's recorded branch-naming convention. When none exists, use
+`initiative/v<major>.<minor>-<initiative-slug>`. The exact work-version token
+must remain in the branch name.
 
 A branch may contain only work traceable to its initiative, required
 verification, and the tracking records that must change with it. Work for a
 separately scoped initiative belongs on its own branch.
+
+An active initiative in `Proposed`, `Accepted`, or `In progress` state requires
+its recorded local branch ref to exist. A terminal initiative retains its
+unique recorded branch identity. An absent terminal ref is permitted only when
+a separately authorized removal and its evidence are linked from the
+canonical row and initiative history; the name must never be reused for
+another tuple.
 
 ## Worktree safety
 
@@ -26,8 +42,10 @@ merging, or changing shared tracking, Codex must inspect the worktree and
 identify staged, unstaged, and untracked paths. It must not discard, overwrite,
 stash, move, absorb, or commit unrelated user work.
 
-Preparation requires a clean worktree. Finalization must account for every
-changed path and stage only initiative-traceable work.
+Preparation requires a clean worktree and a read-only uniqueness preflight for
+the proposed version, suite, initiative, branch, base branch, and base commit.
+Finalization must account for every changed path and stage only
+initiative-traceable work.
 
 ## Commits and history
 

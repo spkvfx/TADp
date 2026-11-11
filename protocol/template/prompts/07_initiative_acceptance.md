@@ -51,6 +51,9 @@ initiative.
 Before presenting the acceptance question, verify that:
 - the active branch is exactly {initiative_branch}, prepared for this
   initiative from its captured base branch;
+- the canonical work version, realization suite, initiative ID and path,
+  version-bearing branch, captured base branch and commit, and reciprocal links
+  match one unique canonical project correlation row;
 - the worktree contains no unexplained or unrelated change that would make the
   proposed baseline ambiguous;
 - the initiative is `Proposed` and its lifecycle history is current;
@@ -73,7 +76,7 @@ Before presenting the acceptance question, verify that:
 
 If a precondition fails, stop and report every blocker. Do not repair missing
 earlier-stage records, resolve a decision, weaken a gate, narrow the claim,
-change status, or begin delivery in this prompt.
+change or infer tuple identity, change status, or begin delivery in this prompt.
 
 Prepare one acceptance packet from the existing records with:
 1. initiative identity and declared type;
@@ -115,6 +118,8 @@ For Accept:
 - link the acceptance receipt from the initiative README;
 - reconcile {initiative_status_path}, {initiative_registry_path}, and every
   applicable parent or dependent tracking record; and
+- preserve all allocated correlation fields while updating only copied
+  lifecycle status and its receipt evidence; and
 - identify the next type-specific stage without starting it.
 
 For Reject, leave the initiative `Proposed`, record the rejection receipt and

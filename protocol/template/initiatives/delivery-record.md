@@ -12,7 +12,11 @@ and replace every token.
 **Delivery status:** {{in_progress_blocked_or_complete}}  
 **Accepted delivery scope:** {{exact_steps_or_output_set}}  
 **Accepted baseline revision:** {{revision_or_commit}}  
+**Work version:** {{v_major_minor}}
+**Realization suite:** {{realization_suite_id_and_link}}
+**Canonical correlation:** {{initiative_index_row_link}}
 **Branch:** {{initiative_branch}}  
+**Captured base:** {{base_branch_and_commit}}
 **Started:** {{yyyy-mm-dd}}  
 **Last updated:** {{yyyy-mm-dd}}  
 **Delivery owner:** {{owner}}  
@@ -63,6 +67,7 @@ hide a delivery deviation.
 - **Specification or evidence outputs indexed:** {{links_and_result}}
 - **Initiative and parent status updated:** {{links_and_result}}
 - **Residual work has an owner:** {{links_or_none}}
+- **Correlation tuple remains intact:** {{canonical_row_and_reciprocal_link_review}}
 
 ## Delivery conclusion
 

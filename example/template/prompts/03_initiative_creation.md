@@ -112,6 +112,9 @@ does not replace, expand, or excuse any standard artifact listed below.
 
 Before writing, verify that:
 - 00_initiative_preparation.md prepared the initiative;
+- the active branch, canonical correlation row, realization-suite index,
+  prepared README metadata, dedicated branch, and captured base branch and
+  commit are complete, reciprocal, unique, and unchanged;
 - {initiative_path}/README.md and {initiative_path}/proposal/README.md exist
   as an unmodified prepared README skeleton; if they predate preparation or
   contain initiative-specific content, stop rather than overwrite them;
@@ -208,17 +211,18 @@ initiative material only according to its documented evidence label and
 precedence. Do not allow a proposal, initiative assumption, or
 `evidence/non-authoritative` source to override established precedent.
 
-Add the new initiative to {initiative_registry_path},
-{initiative_status_path}, and the applicable parent initiative index when
-one exists. The initiative index must identify the initiative and its entry
-point. The status entry must
+Reconcile the existing Stage 0 canonical row in {initiative_registry_path}
+without changing its allocated identity. Add the initiative to
+{initiative_status_path} and the applicable parent initiative index when one
+exists. The status entry must
 start at Proposed, summarize its first reviewable milestone, and link any known
 blockers to the new initiative's records. Do not change unrelated initiative rows
 or parent scope.
 
 After creating the documentation, report the exact artifacts created, the
 proposal and governing sources used, the template and example initiatives
-consulted, the parent tracking records updated, and every assumption, open
+consulted, the canonical correlation and reciprocal links verified, the parent
+tracking records updated, and every assumption, open
 decision, source conflict, or blocker that needs review. Do not create a
 separate report.
 ```

@@ -8,6 +8,11 @@ work has reached a terminal, evidence-backed result. Replace every token.
 
 **Initiative:** {{initiative_name}}  
 **Initiative type:** `{{implementation_design_or_planning}}`  
+**Work version:** {{v_major_minor}}
+**Realization suite:** {{realization_suite_id_and_link}}
+**Canonical correlation:** {{initiative_index_row_link}}
+**Dedicated branch:** {{initiative_branch}}
+**Captured base:** {{base_branch_and_commit}}
 **Completion claim:** {{exact_bounded_claim}}  
 **Completion date:** {{yyyy-mm-dd}}  
 **Completed commit or artifact revision:** {{commit_id_or_revision}}  
@@ -69,6 +74,8 @@ must have a truthful disposition and owner.
 - [ ] Roadmap and steps show actual, not planned, completion.
 - [ ] Product, specification, or evidence records identify delivered outputs.
 - [ ] Parent, subinitiative, dependency, index, and status records agree.
+- [ ] Work version, suite, initiative, branch, and captured base agree with the
+      canonical correlation row and reciprocal records.
 - [ ] Open conflicts and exceptions remain visible.
 
 ## Completion determination

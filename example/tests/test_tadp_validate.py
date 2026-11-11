@@ -13,8 +13,10 @@ sys.path.insert(0, str(TOOLS))
 from tadp_validate import (  # noqa: E402
     PROTECTED_ROOTS,
     build_protected_lock,
+    parse_work_version,
     protected_lock_path,
     validate,
+    validate_version_correlation,
 )
 
 
@@ -38,6 +40,7 @@ class ValidatorTests(unittest.TestCase):
             "docs/development/developing-tadp.md": "# Development\n",
             "docs/development/adapting-other-tools.md": "# Adapting tools\n",
             "docs/guides/protected-source-integrity-migration.md": "# Protection migration\n",
+            "docs/guides/version-realization-correlation-migration.md": "# Correlation migration\n",
             "docs/guides/workflow-stage-0-13-migration.md": "# Workflow migration\n",
             "evidence/README.md": "# Evidence\n",
             "evidence/authoritative/README.md": "# Authoritative\n",
@@ -47,9 +50,13 @@ class ValidatorTests(unittest.TestCase):
             "initiatives/README.md": "# Initiatives\n",
             "template/AGENTS.md": "# Protected templates\n",
             "template/initiatives/README.md": "# Initiative template\n",
+            "template/initiatives/preparation-README.template.md": "# Preparation template\n",
+            "template/initiatives/proposal/preparation-README.template.md": "# Proposal preparation template\n",
             "template/project/AGENTS.md": "# Instructions\n",
             "template/project/.gitattributes": "/template/** text eol=lf\n",
             "template/project/.githooks/pre-commit": "#!/bin/sh\n",
+            "template/project/evidence/non-authoritative/realizations/realization-suite-index.template.md": "# Suite template\n",
+            "template/project/initiatives/version-correlation-migration-ledger.template.md": "# Ledger template\n",
             "template/prompts/README.md": "# Prompts\n",
             "template/prompts/WORKFLOW-CONTRACT.md": "# Contract\n",
             ".githooks/pre-commit": "#!/bin/sh\n",
@@ -91,6 +98,9 @@ class ValidatorTests(unittest.TestCase):
             start=1,
         ):
             files[f"evidence/authoritative/LLM/{number:02d}_Codex_{name}.md"] = "# Specification\n"
+        files[
+            "evidence/authoritative/LLM/09_Codex_Version_Realization_Initiative_Correlation_Specification.md"
+        ] = "# Correlation specification\n"
         for name, content in files.items():
             path = root / name
             path.parent.mkdir(parents=True, exist_ok=True)
@@ -141,6 +151,101 @@ class ValidatorTests(unittest.TestCase):
             path.write_text(content, encoding="utf-8")
         return initiative
 
+    def activate_correlation(
+        self,
+        root: Path,
+        *,
+        version: str = "v13.10",
+        branch: str = "initiative/v13.10-example",
+    ) -> tuple[Path, Path, Path]:
+        profile = root / "project-profile.md"
+        profile.write_text(
+            "# Profile\n\n"
+            "**Correlation revision effective point:** " + "f" * 40 + "\n\n"
+            "**Correlation migration ledger:** "
+            "[ledger](initiatives/version-correlation-migration-ledger.md)\n",
+            encoding="utf-8",
+        )
+
+        initiatives = root / "initiatives"
+        ledger = initiatives / "version-correlation-migration-ledger.md"
+        ledger.write_text(
+            "# Migration ledger\n\n"
+            "| Legacy identity | Canonical identity | Suite | Initiative | Branch | Action | Authority/evidence | Ambiguity or blocker |\n"
+            "|---|---|---|---|---|---|---|---|\n",
+            encoding="utf-8",
+        )
+
+        initiative = self.make_initiative(root)
+        base_commit = "a" * 40
+        initiative_readme = initiative / "README.md"
+        initiative_readme.write_text(
+            "# Example\n\n"
+            "**Initiative:** Example\n"
+            "**Initiative ID:** INIT-PLN-001\n"
+            "**Status:** Proposed\n"
+            "**Initiative type:** `planning`\n"
+            f"**Work version:** {version}\n"
+            "**Realization suite ID:** RZN-001-EXAMPLE-SUITE\n"
+            f"**Realization suite:** [RZN-001-EXAMPLE-SUITE](../../evidence/non-authoritative/realizations/{version}/00-RZN-001-EXAMPLE-suite-index.md)\n"
+            "**Canonical project correlation:** [index](../initiative-index.md#initiative-and-correlation-register)\n"
+            f"**Dedicated branch:** {branch}\n"
+            "**Captured base branch:** main\n"
+            f"**Captured base commit:** {base_commit}\n\n"
+            "### Lifecycle history\n\n"
+            "| Effective date or event | From | To | Authority or evidence | Claim revision | Reason and affected scope | Git commit |\n"
+            "|---|---|---|---|---|---|---|\n"
+            "| 2026-11-11 | Initial | Proposed | suite | initial | start | pending |\n",
+            encoding="utf-8",
+        )
+
+        suite = (
+            root
+            / "evidence"
+            / "non-authoritative"
+            / "realizations"
+            / version
+            / "00-RZN-001-EXAMPLE-suite-index.md"
+        )
+        suite.parent.mkdir(parents=True, exist_ok=True)
+        suite.write_text(
+            "# Example realization suite\n\n"
+            f"**Work version:** {version}\n"
+            "**Suite ID:** RZN-001-EXAMPLE-SUITE\n"
+            "**Status:** Recorded; non-authoritative proposal input\n"
+            "**Initiative ID:** INIT-PLN-001\n"
+            "**Initiative type:** `planning`\n"
+            "**Initiative path:** [initiative](../../../../initiatives/example/)\n"
+            f"**Dedicated branch:** {branch}\n"
+            "**Captured base branch:** main\n"
+            f"**Captured base commit:** {base_commit}\n"
+            "**Canonical project correlation:** [index](../../../../initiatives/initiative-index.md#initiative-and-correlation-register)\n",
+            encoding="utf-8",
+        )
+
+        index = initiatives / "initiative-index.md"
+        index.write_text(
+            "# Index\n\n## Initiative and correlation register\n\n"
+            "| Work version | Realization suite | Initiative ID | Name | Type | Status | Dedicated branch | Captured base branch | Captured base commit | Predecessor or successor | Record location | Lifecycle evidence | Branch removal evidence | Owner | Next gate |\n"
+            "|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|\n"
+            f"| {version} | [RZN-001-EXAMPLE-SUITE](../evidence/non-authoritative/realizations/{version}/00-RZN-001-EXAMPLE-suite-index.md) | INIT-PLN-001 | Example | planning | Proposed | {branch} | main | {base_commit} | None | [Initiative](example/README.md) | [Lifecycle](example/README.md#lifecycle-history) | Not applicable — active ref required | User | Acceptance |\n",
+            encoding="utf-8",
+        )
+
+        status = initiatives / "status.md"
+        status.write_text(
+            "# Status\n\n"
+            "| Work version | Initiative ID | Realization suite | Type | Status | Current milestone | Next gate | Blockers or holds | Status evidence | Owner | Last updated |\n"
+            "|---|---|---|---|---|---|---|---|---|---|---|\n"
+            f"| {version} | INIT-PLN-001 | RZN-001-EXAMPLE-SUITE | planning | Proposed | Prepared | Acceptance | None | [Index](initiative-index.md#initiative-and-correlation-register) | User | 2026-11-11 |\n",
+            encoding="utf-8",
+        )
+
+        branch_ref = root / ".git" / "refs" / "heads" / Path(*branch.split("/"))
+        branch_ref.parent.mkdir(parents=True, exist_ok=True)
+        branch_ref.write_text("b" * 40 + "\n", encoding="utf-8")
+        return initiative, suite, index
+
     def test_minimal_repository_passes(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -154,12 +259,32 @@ class ValidatorTests(unittest.TestCase):
             (root / "README.md").write_text("[missing](missing.md)\n", encoding="utf-8")
             self.assertIn("TADP002", {item.code for item in validate(root)})
 
+    def test_markdown_link_literal_in_fenced_code_is_ignored(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_repository(root)
+            (root / "README.md").write_text(
+                "# Transcript\n\n```text\n[local](file:///C:/missing.md)\n```\n",
+                encoding="utf-8",
+            )
+            self.assertNotIn("TADP002", {item.code for item in validate(root)})
+
     def test_unresolved_token_is_reported_outside_templates(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             self.make_repository(root)
             (root / "README.md").write_text("{{project_name}}\n", encoding="utf-8")
             self.assertIn("TADP003", {item.code for item in validate(root)})
+
+    def test_inline_code_braces_are_not_unresolved_tokens(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_repository(root)
+            (root / "README.md").write_text(
+                "# Contract\n\nUse `GET /records/{id}` with `\"rev-{decimal}\"`.\n",
+                encoding="utf-8",
+            )
+            self.assertNotIn("TADP003", {item.code for item in validate(root)})
 
     def test_modified_template_source_is_reported(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -382,6 +507,305 @@ class ValidatorTests(unittest.TestCase):
             self.assertIn("TADP019", {item.code for item in findings})
             self.assertNotIn("TADP020", {item.code for item in findings})
             self.assertNotIn("TADP021", {item.code for item in findings})
+
+    def test_work_version_syntax_and_numeric_ordering(self) -> None:
+        canonical = ("v0.0", "v0.1", "v1.0", "v1.1", "v13.8", "v13.9", "v13.10")
+        parsed = [parse_work_version(value) for value in canonical]
+        self.assertEqual(
+            [(0, 0), (0, 1), (1, 0), (1, 1), (13, 8), (13, 9), (13, 10)],
+            parsed,
+        )
+        self.assertGreater(parse_work_version("v13.10"), parse_work_version("v13.9"))
+        for value in ("v0", "0.1", "v01.0", "v1.01", "v1.0.0"):
+            with self.subTest(value=value), self.assertRaises(ValueError):
+                parse_work_version(value)
+
+    def test_complete_governed_correlation_passes(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_repository(root)
+            self.activate_correlation(root)
+            self.assertEqual([], validate_version_correlation(root))
+
+    def test_noncanonical_governed_version_is_reported(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_repository(root)
+            self.activate_correlation(
+                root,
+                version="v13.01",
+                branch="initiative/v13.01-example",
+            )
+            self.assertIn(
+                "TADP028", {item.code for item in validate_version_correlation(root)}
+            )
+
+    def test_duplicate_version_and_branch_mapping_is_reported(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_repository(root)
+            _, _, index = self.activate_correlation(root)
+            row = index.read_text(encoding="utf-8").splitlines()[-1]
+            index.write_text(
+                index.read_text(encoding="utf-8") + row + "\n", encoding="utf-8"
+            )
+            self.assertIn(
+                "TADP030", {item.code for item in validate_version_correlation(root)}
+            )
+
+    def test_missing_reciprocal_metadata_is_reported(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_repository(root)
+            initiative, _, _ = self.activate_correlation(root)
+            readme = initiative / "README.md"
+            readme.write_text(
+                readme.read_text(encoding="utf-8").replace(
+                    "**Work version:** v13.10", "**Work version:** v13.9"
+                ),
+                encoding="utf-8",
+            )
+            self.assertIn(
+                "TADP032", {item.code for item in validate_version_correlation(root)}
+            )
+
+    def test_orphan_realization_suite_is_reported(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_repository(root)
+            self.activate_correlation(root)
+            orphan = (
+                root
+                / "evidence"
+                / "non-authoritative"
+                / "realizations"
+                / "v0.1"
+                / "00-RZN-ORPHAN-suite-index.md"
+            )
+            orphan.parent.mkdir(parents=True)
+            orphan.write_text(
+                "# Orphan\n\nNon-authoritative proposal input.\n", encoding="utf-8"
+            )
+            self.assertIn(
+                "TADP031", {item.code for item in validate_version_correlation(root)}
+            )
+
+    def test_orphan_prepared_initiative_is_reported(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_repository(root)
+            self.activate_correlation(root)
+            orphan = root / "initiatives" / "orphan" / "README.md"
+            orphan.parent.mkdir()
+            orphan.write_text(
+                "# Orphan\n\n**Work version:** v0.1\n\n"
+                "**Initiative ID:** INIT-PLN-999\n",
+                encoding="utf-8",
+            )
+            self.assertIn(
+                "TADP031", {item.code for item in validate_version_correlation(root)}
+            )
+
+    def test_active_initiative_requires_live_branch(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_repository(root)
+            self.activate_correlation(root)
+            (root / ".git" / "refs" / "heads" / "initiative" / "v13.10-example").unlink()
+            self.assertIn(
+                "TADP035", {item.code for item in validate_version_correlation(root)}
+            )
+
+    def test_absent_historical_branch_requires_removal_evidence(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_repository(root)
+            initiative, _, index = self.activate_correlation(root)
+            index.write_text(
+                index.read_text(encoding="utf-8").replace(
+                    "| planning | Proposed |", "| planning | Superseded |"
+                ),
+                encoding="utf-8",
+            )
+            readme = initiative / "README.md"
+            readme.write_text(
+                readme.read_text(encoding="utf-8").replace(
+                    "**Status:** Proposed", "**Status:** Superseded"
+                ),
+                encoding="utf-8",
+            )
+            (root / ".git" / "refs" / "heads" / "initiative" / "v13.10-example").unlink()
+            self.assertIn(
+                "TADP035", {item.code for item in validate_version_correlation(root)}
+            )
+
+    def test_absent_historical_branch_with_removal_evidence_passes(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_repository(root)
+            initiative, _, index = self.activate_correlation(root)
+            evidence = initiative / "decision-receipts" / "branch-removal.md"
+            evidence.parent.mkdir()
+            evidence.write_text("# Authorized branch removal\n", encoding="utf-8")
+            index.write_text(
+                index.read_text(encoding="utf-8")
+                .replace("| planning | Proposed |", "| planning | Superseded |")
+                .replace(
+                    "Not applicable — active ref required",
+                    "[Removal authority](example/decision-receipts/branch-removal.md)",
+                ),
+                encoding="utf-8",
+            )
+            readme = initiative / "README.md"
+            readme.write_text(
+                readme.read_text(encoding="utf-8").replace(
+                    "**Status:** Proposed", "**Status:** Superseded"
+                ),
+                encoding="utf-8",
+            )
+            (root / ".git" / "refs" / "heads" / "initiative" / "v13.10-example").unlink()
+            self.assertNotIn(
+                "TADP035", {item.code for item in validate_version_correlation(root)}
+            )
+
+    def test_deferred_legacy_row_is_an_actionable_warning(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_repository(root)
+            _, _, index = self.activate_correlation(root)
+            ledger = root / "initiatives" / "version-correlation-migration-ledger.md"
+            ledger.write_text(
+                ledger.read_text(encoding="utf-8")
+                + "| Legacy v13.10 | Not allocated — must not be inferred | "
+                "[suite](../evidence/non-authoritative/realizations/v13.10/00-RZN-001-EXAMPLE-suite-index.md) | "
+                "[initiative](example/README.md) | `initiative/v13.10-example` | Deferred | "
+                "source; governing workflow revision: pre-correlation | "
+                "unresolved; re-entry or migration condition: explicit decision |\n",
+                encoding="utf-8",
+            )
+            index.write_text(
+                index.read_text(encoding="utf-8").replace(
+                    "[Lifecycle](example/README.md#lifecycle-history)",
+                    "[Legacy disposition](version-correlation-migration-ledger.md)",
+                ),
+                encoding="utf-8",
+            )
+            findings = validate_version_correlation(root)
+            self.assertIn("TADP033", {item.code for item in findings})
+            self.assertNotIn("TADP034", {item.code for item in findings})
+
+    def test_mixed_legacy_and_canonical_identity_is_an_error(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_repository(root)
+            self.activate_correlation(root)
+            ledger = root / "initiatives" / "version-correlation-migration-ledger.md"
+            ledger.write_text(
+                ledger.read_text(encoding="utf-8")
+                + "| Legacy v13.10 | v13.10 | "
+                "[suite](../evidence/non-authoritative/realizations/v13.10/00-RZN-001-EXAMPLE-suite-index.md) | "
+                "[initiative](example/README.md) | `initiative/v13.10-example` | Deferred | "
+                "source; governing workflow revision: pre-correlation | "
+                "partial mapping; re-entry or migration condition: explicit decision |\n",
+                encoding="utf-8",
+            )
+            self.assertIn(
+                "TADP034", {item.code for item in validate_version_correlation(root)}
+            )
+
+    def test_canonical_row_cannot_mix_legacy_tuple_components(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_repository(root)
+            self.activate_correlation(root)
+            ledger = root / "initiatives" / "version-correlation-migration-ledger.md"
+            ledger.write_text(
+                ledger.read_text(encoding="utf-8")
+                + "| Legacy example | Not allocated — must not be inferred | "
+                "[suite](../evidence/non-authoritative/realizations/v13.10/00-RZN-001-EXAMPLE-suite-index.md) | "
+                "[initiative](example/README.md) | `legacy/v13.10-example` | Deferred | "
+                "source; governing workflow revision: pre-correlation | "
+                "unresolved; re-entry or migration condition: explicit decision |\n",
+                encoding="utf-8",
+            )
+            self.assertIn(
+                "TADP034", {item.code for item in validate_version_correlation(root)}
+            )
+
+    def test_realization_suite_must_preserve_non_authoritative_standing(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_repository(root)
+            _, suite, _ = self.activate_correlation(root)
+            suite.write_text(
+                suite.read_text(encoding="utf-8").replace(
+                    "non-authoritative proposal input", "proposal input"
+                ),
+                encoding="utf-8",
+            )
+            self.assertIn(
+                "TADP037", {item.code for item in validate_version_correlation(root)}
+            )
+
+    def test_branch_must_retain_exact_version_token(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_repository(root)
+            self.activate_correlation(root, branch="initiative/example")
+            self.assertIn(
+                "TADP035", {item.code for item in validate_version_correlation(root)}
+            )
+
+    def test_branch_version_substring_is_not_an_exact_token(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_repository(root)
+            self.activate_correlation(root, branch="initiative/v13.100-example")
+            self.assertIn(
+                "TADP035", {item.code for item in validate_version_correlation(root)}
+            )
+
+    def test_preparation_skeleton_does_not_require_status_row(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_repository(root)
+            initiative, _, _ = self.activate_correlation(root)
+            readme = initiative / "README.md"
+            readme.write_text(
+                readme.read_text(encoding="utf-8")
+                + "\n## Preparation state\n\nStage 0 identity only.\n",
+                encoding="utf-8",
+            )
+            (root / "initiatives" / "status.md").unlink()
+            codes = {item.code for item in validate_version_correlation(root)}
+            self.assertNotIn("TADP029", codes)
+            self.assertNotIn("TADP032", codes)
+
+    def test_complete_correlation_requires_status_view(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_repository(root)
+            self.activate_correlation(root)
+            (root / "initiatives" / "status.md").unlink()
+            self.assertIn(
+                "TADP029", {item.code for item in validate_version_correlation(root)}
+            )
+
+    def test_status_view_must_match_canonical_correlation(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_repository(root)
+            self.activate_correlation(root)
+            status = root / "initiatives" / "status.md"
+            status.write_text(
+                status.read_text(encoding="utf-8").replace(
+                    "| planning | Proposed |", "| planning | Accepted |"
+                ),
+                encoding="utf-8",
+            )
+            self.assertIn(
+                "TADP032", {item.code for item in validate_version_correlation(root)}
+            )
 
 
 if __name__ == "__main__":

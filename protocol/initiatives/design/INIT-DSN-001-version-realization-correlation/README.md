@@ -16,6 +16,8 @@
 
 **Canonical project correlation:** [TADp protocol initiative index](../../initiative-index.md#initiative-and-correlation-register)
 
+**Correlation governance:** Pre-effective bootstrap identity; [Deferred migration-ledger disposition](../../version-correlation-migration-ledger.md)
+
 **Dedicated branch:** initiative/v1.0-version-realization-correlation
 
 **Captured base:** v1 at d05f334e854431716275a59c980f0c909d88d002
@@ -229,7 +231,7 @@ explicit human decision reconciled with that replacement.
 | Effective date or event | From | To | Authority or evidence | Claim revision | Reason and affected scope | Git commit |
 |---|---|---|---|---|---|---|
 | 2026-11-10 initial creation | Initial | Proposed | [Source realization](../../../evidence/non-authoritative/realizations/v1.0/RZN-TADP-001-VERSION-CORRELATION.md), [suite index](../../../evidence/non-authoritative/realizations/v1.0/00-RZN-TADP-001-VERSION-CORRELATION-suite-index.md), and [proposal](proposal/proposal.md) | Proposed baseline 0.2 | Open the bounded correlation design for review and incorporate the User's canonical realization-standing and placement clarification; no acceptance or delivery authority | Pending Stage 3/4 commit |
-| 2026-11-11 repository-prompt supersession | Proposed | Superseded | [VRC-DR-001](decision-receipts/VRC-DR-001-supersede-prior-initiative.md) and [named replacement prompt](../../../../prompts/version-realization-initiative-correlation-protocol-change.md) | Proposed baseline 0.2 retained unchanged as historical material | The prior plan's type split and project-specific migration analysis no longer govern the direct repository-prompt execution; preserve all prior records and unresolved VRC-01/VRC-02 without acceptance, implementation, completion, release, or migration claims | Pending |
+| 2026-11-11 repository-prompt supersession | Proposed | Superseded | [VRC-DR-001](decision-receipts/VRC-DR-001-supersede-prior-initiative.md) and [named replacement prompt](../../../../prompts/version-realization-initiative-correlation-protocol-change.md) | Proposed baseline 0.2 retained unchanged as historical material | The prior plan's type split and project-specific migration analysis no longer govern the direct repository-prompt execution; preserve all prior records and unresolved VRC-01/VRC-02 without acceptance, implementation, completion, release, or migration claims | 313883ee78771c2fead125b16446837b172c96ea |
 
 ## Initiative record maintenance
 

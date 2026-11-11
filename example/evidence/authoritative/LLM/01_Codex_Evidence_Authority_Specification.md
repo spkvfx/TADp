@@ -40,6 +40,13 @@ Non-authoritative material includes observations, examples, recommendations,
 exploratory analysis, prompts, historical notes, proposals, and realization
 notes unless a named authority separately accepts a claim as binding.
 
+A realization suite and its index remain non-authoritative for their entire
+lifetime. Their work version and reciprocal initiative or branch links
+establish identity only. The
+[correlation specification](09_Codex_Version_Realization_Initiative_Correlation_Specification.md)
+governs those links and never promotes the suite or its notes to authoritative
+standing.
+
 Codex may use non-authoritative material to:
 
 - discover relevant questions or missing evidence;
@@ -73,6 +80,11 @@ For every material claim or change, Codex must:
 Directory names, file extensions, author identity, implementation status, or a
 prompt's wording do not establish authority by themselves. Authority comes
 from repository classification and explicit acceptance.
+
+Work-version order, tuple creation, branch existence, and correlation metadata
+also do not establish authority or precedence. The canonical initiative index
+owns the project-level correlation row, while each linked evidence, initiative,
+Git, and lifecycle record retains authority only for its own subject.
 
 ## Invariant contradictions
 
@@ -122,6 +134,7 @@ Every normative initiative or product claim must be traceable through:
 
 ```text
 invariant or accepted authority
+        -> correlated realization-suite and initiative identity
         -> initiative interpretation or decision
         -> specification and bounded work
         -> product or evidence destination

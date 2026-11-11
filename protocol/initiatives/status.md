@@ -18,7 +18,7 @@ release standing.
 
 | Work version | Initiative ID | Suite | Type | Status | Current milestone | Next gate | Blockers or holds | Status evidence | Owner | Last updated |
 |---|---|---|---|---|---|---|---|---|---|---|
-| v1.0 | INIT-DSN-001 | [RZN-TADP-001-VERSION-CORRELATION-SUITE](../evidence/non-authoritative/realizations/v1.0/00-RZN-TADP-001-VERSION-CORRELATION-suite-index.md) | design | Superseded | Prior proposal baseline 0.2 retained as historical material; direct work transferred to the named repository prompt | None for this initiative; explicit reopening authority would be required | VRC-01 and VRC-02 remain historical unresolved questions but do not govern the replacement revision | [Lifecycle history](design/INIT-DSN-001-version-realization-correlation/README.md#initiative-lifecycle); [VRC-DR-001](design/INIT-DSN-001-version-realization-correlation/decision-receipts/VRC-DR-001-supersede-prior-initiative.md); [canonical correlation row](initiative-index.md#initiative-and-correlation-register) | User | 2026-11-11 |
+| v1.0 | INIT-DSN-001 | [RZN-TADP-001-VERSION-CORRELATION-SUITE](../evidence/non-authoritative/realizations/v1.0/00-RZN-TADP-001-VERSION-CORRELATION-suite-index.md) | design | Superseded | Prior proposal baseline 0.2 retained as historical material; direct work transferred to the named repository prompt | None for this initiative; explicit reopening authority would be required | VRC-01 and VRC-02 remain historical unresolved questions but do not govern the replacement revision | [Lifecycle history](design/INIT-DSN-001-version-realization-correlation/README.md#initiative-lifecycle); [VRC-DR-001](design/INIT-DSN-001-version-realization-correlation/decision-receipts/VRC-DR-001-supersede-prior-initiative.md); [canonical correlation row](initiative-index.md#initiative-and-correlation-register); [Deferred legacy disposition](version-correlation-migration-ledger.md) | User | 2026-11-11 |
 
 ## Portfolio gates
 
@@ -36,3 +36,6 @@ release standing.
   archival.
 - Reconcile this view with the initiative index and affected README in the same
   reviewed change.
+- Copy tuple identity from the canonical index and preserve pre-effective
+  compatibility through the linked migration ledger; do not infer identity in
+  this status view.

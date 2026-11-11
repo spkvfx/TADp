@@ -80,6 +80,9 @@ decisions before the initiative creates its permitted output.
   evidence it may change. For an `implementation` initiative, confirm that the
   accepted specifications support the intended product work. If a specification
   change is needed, stop the affected work and route it to a `design` initiative.
+- Verify that the canonical work version, realization suite, initiative,
+  branch, captured base, and reciprocal links remain intact. Route a mandatory
+  split or substantive successor through a new Stage 0 tuple.
 
 ### Exit gate
 
@@ -88,6 +91,8 @@ decisions before the initiative creates its permitted output.
 - [ ] Every blocking decision has an owner, rationale, date, and acceptance
       condition.
 - [ ] Architecture, roadmap, and steps use the same vocabulary and boundaries.
+- [ ] The canonical correlation row and reciprocal records agree and no
+      independently acceptable outcome shares this tuple.
 - [ ] No planned product migration edits a released or applied migration.
 - [ ] When an `implementation` initiative needs a specification change, a
        `design` initiative owns that change before the affected product work

@@ -12,7 +12,14 @@ all tokens and remove this comment before review.
 **Recorded by:** {{human_team_or_source}}  
 **Recorded date:** {{yyyy-mm-dd}}  
 **Source:** {{source_link_or_description}}  
+**Work version:** {{v_major_minor}}
+**Realization suite:** [{{suite_id}}]({{relative_suite_index_path}})
 **Related initiative or proposal:** {{link_or_not_yet_created}}  
+
+> **Evidence standing:** This note is permanently non-authoritative proposal
+> input. Its work version and reciprocal links establish identity only; they do
+> not accept the paired initiative or prove implementation, completion, or
+> release.
 
 ## Realization
 

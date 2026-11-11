@@ -43,6 +43,12 @@ Review the existing {initiative} proposal in place. Preserve its declared
 initiative type: `implementation` aligns products to specifications, `design`
 aligns specifications to products, and `planning` produces evidence only.
 
+Before editing, verify that the active branch, canonical project correlation
+row, realization-suite index, initiative metadata, and captured base identity
+all describe the same prepared tuple. Stop on any missing, partial, duplicate,
+or inconsistent relationship. Proposal alignment must not allocate, infer,
+renumber, or repair tuple identity.
+
 Edit only the target initiative's existing canonical working proposal. Do not
 create, copy, scaffold, move, or rename any file or directory, including a
 proposal, assumption record, initiative directory, or template-derived document.
@@ -87,5 +93,8 @@ For every conclusion, cite the supporting source. Distinguish corrected claims,
 open decisions, and unresolved conflicts; do not represent a proposal claim as
 accepted architecture or implementation evidence until the relevant record
 confirms it.
+
+Report the verified work version, suite, initiative, branch, and canonical row
+with the proposal-alignment result.
 ```
 

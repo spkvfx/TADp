@@ -38,6 +38,13 @@ A proposal that meets a split trigger must not be accepted until the work is
 decomposed or a human authority records an invariant-compatible reason that
 the trigger does not apply.
 
+For work governed by the
+[version-realization-initiative correlation specification](09_Codex_Version_Realization_Initiative_Correlation_Specification.md),
+every mandatory split allocates a separate canonical work version,
+realization suite, self-contained initiative, and dedicated branch. A parent,
+sibling, subinitiative, release, or version must not act as an umbrella for
+independently acceptable outcomes.
+
 ## Siblings and subinitiatives
 
 Use sibling initiatives when their outcomes stand independently. Use a
@@ -65,5 +72,10 @@ decision, source, dependency, product, and verification claim to a continuing
 owner, and create narrow successor or subinitiative records through the normal
 workflow. Never rewrite history to imply that the old initiative was always
 narrow.
+
+When the correlation revision applies, each narrow successor or subinitiative
+receives its own tuple. A pre-effective broad initiative remains under its
+recorded migration-ledger disposition until a separately governed migration or
+successor allocation occurs.
 
 

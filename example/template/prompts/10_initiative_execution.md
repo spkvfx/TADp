@@ -88,6 +88,9 @@ external-party, contract, artifact, and verification requirement.
 Before changing products, verify that:
 - the active branch is exactly {initiative_branch}, the branch prepared for
   this initiative;
+- the canonical work version, realization suite, initiative ID and path,
+  version-bearing branch, captured base branch and commit, and reciprocal links
+  match one unique project correlation row;
 - the target has its complete initiative suite: initiative index, proposal source
   inventory and proposal, assumption record, architecture, source mapping,
   open-question and decision register, implementation roadmap, implementation
@@ -146,7 +149,8 @@ of proceeding without it.
 For every product artifact in the reviewed scope, build a step-to-target ledger
 before changing it. When the first product change begins, create or update
 `{initiative_path}/execution-record.md` from the shared template. Record the
-captured base and initiative branches, governing sources, and the complete
+work version, realization suite, canonical-row link, captured base and
+initiative branches, governing sources, and the complete
 step-to-target ledger there. Record the accepted implementation-step ID, governing
 source or mapped contract, exact path or symbol, owning product boundary,
 reason the change is needed, and required verification. Treat only ledgered
@@ -272,6 +276,7 @@ deferred item, unresolvable conflict, or failed gate. Do not create an ad hoc
 implementation report; use `execution-record.md` and `completion-evidence.md`
 as the standard records unless an accepted implementation step explicitly
 requires another artifact. When every gate passed, state that the
-finalization prompt is the next step.
+finalization prompt is the next step. Include the final correlation and branch
+verification in the report.
 ```
 

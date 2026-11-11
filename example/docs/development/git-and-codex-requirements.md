@@ -21,9 +21,16 @@ the required project identity.
 
 ### Initiative branches
 
-Each initiative uses a dedicated branch created from an actual captured base
-branch. Do not assume the integration branch is named `main` or `master`.
-Preparation creates the branch; later stages verify and use it.
+Each governed initiative uses a dedicated branch correlated to its canonical
+work version and created from an actual captured base branch and commit. Do not
+assume the integration branch is named `main` or `master`. Preparation creates
+the branch; later stages verify the full tuple and use it.
+
+Use the project's recorded branch convention. If none exists, use
+`initiative/v<major>.<minor>-<initiative-slug>`. The exact version token remains
+in the branch name. Active work requires the local ref. A removed terminal ref
+is acceptable only with separately authorized and linked removal evidence;
+the recorded identity is never reused.
 
 ### Worktree protection
 
@@ -56,7 +63,8 @@ History rewrite, force-push, remote branch deletion, merge, auto-merge, and
 deployment require explicit authority for the specific action.
 
 The binding rules are in the
-[Git workflow specification](../../evidence/authoritative/LLM/05_Codex_Git_Workflow_Specification.md).
+[Git workflow specification](../../evidence/authoritative/LLM/05_Codex_Git_Workflow_Specification.md)
+and [correlation specification](../../evidence/authoritative/LLM/09_Codex_Version_Realization_Initiative_Correlation_Specification.md).
 
 ## Codex contract
 

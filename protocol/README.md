@@ -44,7 +44,10 @@ templates, validator, or workflow. See
 binding evidence and explicit human decisions
                        |
                        v
-realization -> proposal -> focused initiative specification
+work version <-> realization suite <-> focused initiative <-> branch
+                       |
+                       v
+                    proposal
                        |
                        v
           delivered product or initiative evidence
@@ -61,6 +64,11 @@ stage to the next. A realization may lead to a proposal, but it is not a
 requirement. A proposal does not authorize work. A product cannot revise its
 governing specification, and a lifecycle status does not prove completion
 without the required evidence.
+
+Each governed work version uses canonical `v<major>.<minor>` syntax and maps
+one-to-one to one realization suite, one self-contained initiative, and one
+dedicated version-bearing branch. This tuple establishes identity only. A
+substantive successor or mandatory split receives a new tuple.
 
 ## Authority model
 
@@ -118,8 +126,9 @@ specification and must keep its own decisions, lifecycle, and verification.
 
 The standard workflow is:
 
-1. Record the actual base branch, then create a dedicated Git branch for the
-   initiative.
+1. Preflight one unused work version, realization suite, initiative identity,
+   version-bearing branch, actual base branch, and base commit. Create the
+   branch, suite, canonical correlation row, and minimal skeleton together.
 2. Create a proposal from an existing realization.
 3. Compare the proposal with the evidence in the repository.
 4. Create the complete initial initiative record, including its scope review.
@@ -213,6 +222,7 @@ The complete documentation index is at [`docs/README.md`](docs/README.md).
 | [Protected-source integrity migration](docs/guides/protected-source-integrity-migration.md) | How existing adopters establish reviewed template and invariant locks |
 | [Legacy initiative decomposition](docs/guides/legacy-initiative-decomposition.md) | How to split an older, overly broad initiative safely |
 | [Workflow stage 0–13 migration](docs/guides/workflow-stage-0-13-migration.md) | How to migrate an active initiative to explicit acceptance and type-specific delivery paths |
+| [Version-realization-initiative correlation migration](docs/guides/version-realization-correlation-migration.md) | How to record the effective point and disposition or migrate legacy identities without inference |
 
 ## Development and contribution
 

@@ -2,17 +2,18 @@
   "schema_version": 1,
   "algorithm": "sha256-canonical-v1",
   "protected_root": "evidence/authoritative/LLM",
-  "authority": "User instruction 2026-11-10: protect reusable templates and the Codex LLM invariant suite",
+  "authority": "Repository prompt prompts/version-realization-initiative-correlation-protocol-change.md authorized by User 2026-11-11",
   "files": {
-    "00_Codex_Invariant_Suite_Index.md": "531de865e8caefc54931b364635f49bc5e2aa37ed349557c3097f8b8c312ccb7",
-    "01_Codex_Evidence_Authority_Specification.md": "dac66ad627c4fa78c2269cba3a8b75f680b636306bbe2d3cb37dd5a127370494",
-    "02_Codex_Initiative_Governance_Specification.md": "00ffe06dc45e993761c121c1545b88a7469de49787bb6d2f39213741b583704d",
+    "00_Codex_Invariant_Suite_Index.md": "16bc2ac3f6888a9b2c147ab20431f0c34704e035527ae4feb5c20e25fc7ad6ef",
+    "01_Codex_Evidence_Authority_Specification.md": "a30548a72f1ea60f35bd624c6017497b0320cffaaa8cc5652fa559b51286d8df",
+    "02_Codex_Initiative_Governance_Specification.md": "65aa071ef81377f00cb74e1468609213e20ae483ec09ceeeb5fc68e81708d5df",
     "03_Codex_Invariant_Conflict_Register.md": "d32e2d558e691911d81345793e46f420a82c96f8f605fcb56927a70a3d1269c8",
-    "04_Codex_Initiative_Lifecycle_Specification.md": "34ff9ab9c81048249071045d1de9086a34c90a8776acc31ff26505a462754777",
-    "05_Codex_Git_Workflow_Specification.md": "ced984d845e0acf92d66d541ee640141aa695dc8f809490113a2a885461dd25c",
-    "06_Codex_Initiative_Scope_Specification.md": "4fdea4ae1de3731cffd75c9a8ff77db491b33d7bcb0e16a763827595a4601c13",
-    "07_Codex_Human_Decision_Receipt_Specification.md": "101101e685c79bde9e0a07b0445e2830867c5e5ed06dca213a3cc4433ff67000",
-    "08_Codex_Initiative_Workflow_Specification.md": "f150e4653750ddb064a1cc037238e7e5c8913a21b460f41a8ce4d1006d57ed01",
+    "04_Codex_Initiative_Lifecycle_Specification.md": "d3ead9ee295d2501d70f7760a1caa72f09193f3310f0ad068cc3009e324c1225",
+    "05_Codex_Git_Workflow_Specification.md": "60d7ea7fcd9f0ee06c45c24c53a14ad574502e96e6feff2f29f2b379ef124cbc",
+    "06_Codex_Initiative_Scope_Specification.md": "a49089c1bdd1fa156e339b1d42ac350c6489cb52ed9209bd7972379b1a041827",
+    "07_Codex_Human_Decision_Receipt_Specification.md": "09a99795f5a6d0406e453f6746d67586e88c27f8ae956ea32dd656198a9e2972",
+    "08_Codex_Initiative_Workflow_Specification.md": "ccdeb65f7942462980d8361cb7221a41d983fc6c1a2ddb7824146183903fa1a8",
+    "09_Codex_Version_Realization_Initiative_Correlation_Specification.md": "43d4bd01bc316e7946de690d14a2baacb3e53abe5f12ed4c936898fd7e9e5dfa",
     "AGENTS.md": "0f4995562ec74054f02ccce453ee2458b283eb13210816599f11156f98eb95ee"
   }
 }

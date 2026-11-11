@@ -51,6 +51,9 @@ API, runtime configuration, deployment state, or an external system.
 
 Before creating an evidence output, verify that:
 - the active branch is exactly {initiative_branch};
+- the canonical work version, realization suite, initiative ID and path,
+  version-bearing branch, captured base branch and commit, and reciprocal links
+  match one unique project correlation row;
 - the worktree and branch diff contain no unexplained unrelated work;
 - the complete initiative suite, scope assessment, acceptance receipt, accepted
   baseline, roadmap, steps, and source mapping are readable and coherent;
@@ -69,7 +72,8 @@ complete.
 Before producing evidence, create or update
 {initiative_path}/delivery-record.md from the shared template. Record the
 accepted baseline, branch, permitted initiative-local destinations, prohibited
-external-change boundary, and a delivery ledger containing the accepted step,
+external-change boundary, work version, suite, canonical-row link, captured
+base, and a delivery ledger containing the accepted step,
 source set, classification, method, output, limitations, and verification.
 
 When evidence work actually begins, append the legal transition to
@@ -106,6 +110,6 @@ all records agree.
 
 Report every evidence artifact created or changed, delivery steps, source
 coverage, verification results, lifecycle and status updates, limitations,
-recommended follow-up, and remaining blocker. Do not create an ad hoc report
+correlation verification, recommended follow-up, and remaining blocker. Do not create an ad hoc report
 outside the accepted output set or modify another record to act on the result.
 ```

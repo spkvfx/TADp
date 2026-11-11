@@ -110,5 +110,7 @@ permission to bypass ownership and dependency rules in
       accepted with an owner.
 - [ ] User-facing and operator-facing documentation describes the delivered
       behavior.
+- [ ] Work-version, suite, initiative, branch, and captured-base identity still
+      match the canonical correlation row.
 - [ ] `../status.md` and the initiative index record the final state and next
       maintenance responsibility.

@@ -15,6 +15,8 @@ evidence, an accepted initiative, or a product contract.
 **Git repository root:** {{repository_root}}  
 **Default integration branch:** {{actual_branch_or_not_assumed}}  
 **Pull-request remote:** {{remote_name_or_not_configured}}  
+**Correlation revision effective point:** {{commit_or_not_yet_adopted}}
+**Correlation migration ledger:** [{{ledger_name}}]({{relative_migration_ledger_path}})
 **Last reviewed:** {{yyyy-mm-dd}}  
 
 ## Purpose
@@ -61,6 +63,20 @@ authorize product execution, and authorize publication.
 
 Record a conflict instead of changing an earlier record to make a later one
 appear aligned. Link the conflict to its owner, resolution, and effective date.
+
+## Work identity and correlation
+
+The project initiative index owns the canonical one-to-one mapping among work
+version, realization suite, self-contained initiative, and dedicated Git
+branch. Record the exact protocol effective commit above before allocating a
+governed tuple. Copies in suites, initiatives, status, delivery, completion,
+and Git records link to the canonical row and do not create authority or
+lifecycle standing.
+
+Use the linked migration ledger for every pre-effective record. A complete
+`Unmigrated` or `Deferred` disposition preserves earlier identity and workflow
+without inferring a partial tuple. A substantive successor or mandatory split
+after the effective point receives a new tuple.
 
 ## Operating cadence
 

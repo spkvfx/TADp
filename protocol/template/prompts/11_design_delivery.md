@@ -52,6 +52,9 @@ editable only when the accepted scope names its exact destination and owner.
 
 Before changing a specification, verify that:
 - the active branch is exactly {initiative_branch};
+- the canonical work version, realization suite, initiative ID and path,
+  version-bearing branch, captured base branch and commit, and reciprocal links
+  match one unique project correlation row;
 - the worktree and branch diff contain no unexplained unrelated work;
 - the complete initiative suite, scope assessment, acceptance receipt, accepted
   baseline, roadmap, steps, and source mapping are readable and coherent;
@@ -68,7 +71,8 @@ the design appear valid, or create an implementation initiative implicitly.
 
 Before editing, create or update {initiative_path}/delivery-record.md from the
 shared template. Record the accepted baseline, branch, permitted specification
-destinations, prohibited product boundary, and a delivery ledger containing the
+destinations, prohibited product boundary, work version, suite, canonical-row
+link, captured base, and a delivery ledger containing the
 accepted step, governing authority, exact specification target, affected
 consumers, compatibility or migration effect, and required verification.
 
@@ -103,6 +107,7 @@ transition only when all records agree.
 
 Report every specification and evidence artifact changed, delivery steps,
 verification results, lifecycle and status updates, compatibility or migration
-effects, required implementation follow-up, and remaining blocker. Do not
+effects, correlation verification, required implementation follow-up, and
+remaining blocker. Do not
 create an ad hoc delivery report or modify a product.
 ```

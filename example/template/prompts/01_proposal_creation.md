@@ -38,7 +38,8 @@ execute, recurse into, or derive additional work from the example.
 Apply {initiative_template_root}/prompts/WORKFLOW-CONTRACT.md. Its shared rules
 are mandatory and do not reduce this prompt's specific requirements.
 
-Using the existing realization note at {realization_note_path}, create a new
+Using the correlated realization suite at {realization_suite_index_path} and
+its intended note at {realization_note_path}, create a new
 {initiative_type} initiative proposal for {initiative} at {initiative_path}. The type must be
 exactly `implementation`, `design`, or `planning`. State its permitted output:
 products only for implementation, specifications only for design, and evidence
@@ -47,6 +48,9 @@ only for planning.
 Before writing, verify that:
 - the initiative was prepared with 00_initiative_preparation.md and the active
   branch is exactly {initiative_branch};
+- the canonical correlation row, realization-suite index, and prepared
+  initiative metadata agree on work version, suite ID and path, initiative ID
+  and path, dedicated branch, captured base branch, and captured base commit;
 - {initiative_path}/README.md and {initiative_path}/proposal/README.md exist
   as the prepared README skeleton;
 - {realization_note_path} exists, is readable, and is the intended realization
@@ -89,11 +93,14 @@ Write a clear working proposal that:
 5. Cites {realization_note_path} and every material repository source used,
    distinguishing the realization note from `evidence/authoritative` when both
    inform the proposal.
-6. Labels the result as a working proposal only; it does not claim accepted
+6. Records the same work version and realization-suite link without modifying
+   or competing with the canonical project correlation row.
+7. Labels the result as a working proposal only; it does not claim accepted
    architecture, implementation, qualification, or release readiness.
 
-After creating the proposal, report its exact path, the realization note used,
-the active initiative branch, and any assumptions or open decisions that need
-review. Do not create a separate report or any additional document.
+After creating the proposal, report its exact path, work version, realization
+suite and note used, canonical-row verification, active initiative branch, and
+any assumptions or open decisions that need review. Do not create a separate
+report or any additional document.
 ```
 

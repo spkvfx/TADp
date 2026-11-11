@@ -4,6 +4,9 @@
 
 **Status:** Proposed
 
+**Lifecycle disposition:** Retained as historical source under
+[VRC-DR-001](decision-receipts/VRC-DR-001-supersede-prior-initiative.md)
+
 **Last updated:** 2026-11-10
 
 **Assumption review:** Assumed aligned; awaiting validation

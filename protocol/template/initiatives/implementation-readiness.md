@@ -16,6 +16,10 @@ or prove release, deployment, or operational readiness.
 # {{initiative_name}} implementation-readiness review
 
 - **Initiative:** {{initiative_name}}
+- **Work version:** {{v_major_minor}}
+- **Realization suite:** {{realization_suite_id_and_link}}
+- **Canonical correlation:** {{initiative_index_row_link}}
+- **Dedicated branch and captured base:** {{branch_base_and_commit}}
 - **Review date:** {{date}}
 - **Reviewed phase or scope:** {{phase_or_execution_scope}}
 - **Initiative disposition:** {{accepted_initiative_state}}
@@ -57,6 +61,7 @@ recommendation, or unconfirmed assumption as accepted evidence.
 |---|---|---|---|
 | Governing sources and precedence | {{sources_and_precedence_links}} | {{finding}} | {{effect_on_entry_decision}} |
 | Initiative record and accepted decisions | {{initiative_record_and_decision_links}} | {{finding}} | {{effect_on_entry_decision}} |
+| Correlation identity and Git traceability | {{canonical_row_suite_initiative_branch_and_base_links}} | {{finding}} | {{effect_on_entry_decision}} |
 | Repository and product baseline | {{repository_or_product_evidence}} | {{finding}} | {{effect_on_entry_decision}} |
 | Dependencies, owners, and external contracts | {{dependency_owner_or_contract_evidence}} | {{finding}} | {{effect_on_entry_decision}} |
 | Security, operations, recovery, and migration | {{operational_evidence_or_gap}} | {{finding}} | {{effect_on_entry_decision}} |

@@ -27,6 +27,8 @@ an explanatory guide; its role and accepted authority determine its placement.
 |   `-- non-authoritative/
 |       `-- realizations/
 |-- initiatives/
+|   |-- initiative-index.md
+|   `-- version-correlation-migration-ledger.md
 |-- products/
 |-- template/
 |   |-- .tadp-lock.json
@@ -114,11 +116,22 @@ Preserve the realization's source identity when creating a proposal. Correct
 its interpretation in initiative records rather than rewriting historical
 input silently.
 
+For work governed by the correlation revision, place one suite index and its
+supporting notes under the canonical work-version directory. The suite index
+records the reciprocal initiative, branch, captured base, canonical-row link,
+boundary, and catalog while remaining permanently non-authoritative.
+
 ## Initiatives
 
 `../../initiatives` contains actual specifications for bounded work. Each initiative
 must own one outcome, one coherent authority boundary, and one independently
 reviewable acceptance claim.
+
+`initiative-index.md` owns the canonical project-level one-to-one correlation
+among work version, realization suite, initiative, and dedicated branch.
+`version-correlation-migration-ledger.md` preserves pre-effective identities
+and their `Unmigrated`, `Deferred`, or separately authorized migration
+dispositions without inference.
 
 The canonical initial suite contains:
 
@@ -161,6 +174,10 @@ record to its declared destination outside this tree before editing it.
 This is the single canonical initiative template suite for implementation,
 design, and planning initiatives. Type changes what output is permitted, not
 which core records are required.
+
+It also contains Stage 0 preparation skeletons and type-specific execution,
+delivery, and completion templates. Realization-suite and migration-ledger
+templates live under `template/project` at their project destinations.
 
 ### `../../template/prompts`
 

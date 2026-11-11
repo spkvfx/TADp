@@ -60,6 +60,11 @@ Verify that the initiative is `Accepted` or `In progress`, links an explicit
 acceptance receipt, and identifies the accepted baseline revision. Resolved
 assumptions and questions without the acceptance stage are not sufficient.
 
+Verify that the active branch, canonical work version, realization suite,
+initiative identity, dedicated branch, captured base branch and commit, and
+reciprocal links match one unique canonical correlation row. Stop on drift;
+SDK/API alignment must not allocate or repair tuple identity.
+
 Apply the ownership and approval convention at {project_profile_path}. Human
 owner, reviewer, and approver roles resolve as recorded for the target project.
 An existing SDK/API surface, its technical boundary, and the required
@@ -152,6 +157,7 @@ surfaces, open follow-up decisions, and unresolved conflicts. In the review
 response, state the confirmed initiative scope used, list SDKs/APIs evaluated,
 list extensions and their compatibility and verification evidence, list
 initiative records changed to record the result, and identify every conflict or
-blocker that prevented alignment.
+blocker that prevented alignment. Include the correlation and active-branch
+verification in the response.
 ```
 

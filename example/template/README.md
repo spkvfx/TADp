@@ -31,7 +31,11 @@ template edit.
 - [Initiative templates](initiatives/README.md) define the standard initiative
   record: proposal sources, assumptions, scope, specifications, evidence
   mapping, decisions, delivery roadmap, delivery steps, type-specific work
-  records, and completion evidence.
+  records, completion evidence, and the minimal preparation skeletons used at
+  Stage 0.
+- [Project templates](project/README.md) define project profile and initiative
+  indexes, the canonical realization-suite index, and the pre-effective
+  correlation migration ledger.
 - [Initiative prompts](prompts/README.md) provide focused workflows for
   preparing an initiative branch, proposal creation and alignment, initiative
   creation and alignment, human-led assumption and decision reviews, explicit

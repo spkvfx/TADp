@@ -28,6 +28,11 @@ initiative. They are not interchangeable.
 The lifecycle specification governs legal states and transitions. This
 specification governs the activities that may produce transition evidence.
 
+The
+[version-realization-initiative correlation specification](09_Codex_Version_Realization_Initiative_Correlation_Specification.md)
+governs identity allocated by Stage 0 and verified by every later stage. Tuple
+creation is preparation evidence only and does not change lifecycle standing.
+
 ## Universal workflow rules
 
 Every stage must:
@@ -45,6 +50,9 @@ Every stage must:
    result truthfully.
 7. Reconcile every record named by the stage's exit contract before handing the
    initiative to another stage.
+8. For a tuple governed by specification 09, verify the canonical work
+   version, suite, initiative, branch, captured base, and reciprocal links
+   before consuming or changing the initiative.
 
 No stage may use urgency, a recommendation, implementation convenience, or the
 existence of later work to infer an earlier gate.
@@ -53,7 +61,7 @@ existence of later work to infer an earlier gate.
 
 | Stage | Activity | Applies to | Principal output | Lifecycle effect permitted |
 |---|---|---|---|---|
-| 0 | Initiative preparation | All types | Dedicated branch and minimal skeleton | None |
+| 0 | Correlated initiative preparation | All types | Version-bearing branch, realization-suite index, canonical correlation row, and minimal skeleton | None |
 | 1 | Proposal creation | All types | Canonical working proposal | None |
 | 2 | Proposal alignment | All types | Evidence-aligned proposal with uncertainty preserved | None |
 | 3 | Initiative creation | All types | Complete initial initiative suite | Remains `Proposed` |
@@ -78,18 +86,25 @@ one delivery path for its declared type.
 ### Stage 0: preparation
 
 Entry requires a Git repository, a checked-out source branch, a clean worktree,
-an unused initiative branch name, an unambiguous initiative identity and type,
-and readable skeleton templates.
+an unambiguous initiative identity and type, readable suite and skeleton
+templates, and a read-only preflight proving that the proposed canonical work
+version, suite ID and path, initiative ID and path, and version-bearing branch
+are unused. The stage captures the base branch and base commit before writing.
 
-The stage may create the dedicated initiative branch and only the minimal
-initiative and proposal-source README skeleton. Exit records the captured base
-branch, new initiative branch, target placement, and any preparation commit.
+The stage creates the dedicated branch from that base. On the new branch it
+may create, as one preparation unit, the realization-suite index and initial
+non-authoritative realization note, canonical project correlation row,
+reciprocal correlation metadata, and only the minimal initiative and
+proposal-source README skeleton. The initiative remains `Proposed`; Stage 0
+creates no proposal, decision, acceptance, or delivery output. Exit verifies
+every reciprocal link and records the work version, suite, initiative, branch,
+captured base, target placement, and any preparation commit.
 
 ### Stages 1 and 2: proposal
 
 Proposal creation requires the prepared branch, minimal skeleton, intended
-realization, and canonical proposal template. It creates only the working
-proposal.
+realization suite, intact canonical correlation, and canonical proposal
+template. It creates only the working proposal.
 
 Proposal alignment requires one identifiable editable proposal. It reconciles
 that proposal with evidence while preserving assumptions, unresolved choices,
@@ -99,7 +114,8 @@ initiative or creates product work.
 ### Stage 3: initiative creation
 
 Entry requires the prepared skeleton, aligned proposal, complete current
-templates, and unambiguous registry and status locations.
+templates, intact canonical correlation, and unambiguous registry and status
+locations.
 
 The stage creates the complete initial suite, including the scope assessment,
 but no decision receipts, readiness, execution, delivery, or completion record.
@@ -209,7 +225,8 @@ enable auto-merge, or delete the branch.
 
 | Record or output | Stage that creates it | Later stages permitted to reconcile it |
 |---|---|---|
-| Minimal README skeleton | 0 | 3 and later owning stages |
+| Realization-suite index and canonical correlation row | 0 | Later stages may reconcile copied lifecycle evidence but must not change allocated identity |
+| Minimal README skeleton | 0 | 3 and later owning stages; tuple identity remains immutable |
 | Working proposal | 1 | 2 through 7 when evidence requires and it is not frozen |
 | Initial initiative suite | 3 | 4 through the applicable delivery stage |
 | Decision receipt | 5, 6, or 7 for its named human decision | No stage rewrites the exact prompt or response; later stages may add commit links or supersession references |
@@ -261,6 +278,15 @@ the accepted baseline. Continue only when evidence shows that the initiative
 remains coherent and the branch can be reconciled without changing the accepted
 claim. Otherwise return to alignment and acceptance. Do not rebase, merge, or
 rewrite history implicitly.
+
+### Correlation drift or missing identity
+
+When the canonical row, realization-suite index, initiative README, active
+branch, or captured base identity is missing, duplicate, partial, or
+inconsistent, stop the affected stage and return to preparation recovery. Do
+not infer or silently rewrite a tuple. A pre-effective record proceeds only
+under its complete migration-ledger disposition; substantive re-entry after
+the effective point allocates a new governed tuple.
 
 ### Partial delivery
 

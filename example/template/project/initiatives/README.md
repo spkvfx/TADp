@@ -10,26 +10,29 @@ initiative's scope, binding evidence, or an observed product state.
 
 Use the following workflow for every new effort:
 
-1. Determine the initiative type from the output it is permitted to create,
+1. Preflight and allocate one unused canonical work version, one realization
+   suite, one self-contained initiative, and one version-bearing branch from a
+   captured base through Stage 0. Record the canonical row in
+   `initiative-index.md` and reciprocal metadata in the suite and skeleton.
+2. Determine the initiative type from the output it is permitted to create,
    not from the title or team name.
-2. Create a uniquely named directory inside the correct type directory, such as
+3. Create a uniquely named directory inside the correct type directory, such as
    `implementation/INIT-IMP-001-payment-retries/`. Do not place unrelated
    initiatives in one shared folder or one shared document.
-3. Copy the complete
+4. Copy the complete
    [canonical initiative template suite](../../initiatives/README.md) into the
    new directory. It is the single source of truth for every initiative type;
    specialize its content without dropping required artifacts.
-4. Replace every token, remove the instruction comment, cite applicable
+5. Replace every token, remove the instruction comment, cite applicable
    authoritative evidence precisely, and distinguish contextual input from
    binding requirements.
-5. Copy [initiative-index.template.md](initiative-index.template.md) to
+6. Copy [initiative-index.template.md](initiative-index.template.md) to
    `initiative-index.md` and [status.template.md](status.template.md) to
    `status.md` before registering the first initiative. Add the initiative to
-   both records. Include the initiative ID,
-   record path, type, status, owner, governing evidence, primary output, and
-   next gate. The index is the stable registry; the status record is the
+   both records. The index owns version, suite, initiative, branch, base,
+   status-evidence, and relationship identity; the status record is the
    current lifecycle and blocker view.
-6. Obtain the required review before changing a status from `Proposed` to
+7. Obtain the required review before changing a status from `Proposed` to
    `Accepted` or beginning the type's permitted output.
 
 The type directories define output boundaries only. They do not carry separate
@@ -72,6 +75,7 @@ Every reviewable canonical record includes:
 | Subject | What to record | Why it matters |
 |---|---|---|
 | Identity and stewardship | Initiative ID, title, type, status, owner, last updated | Lets reviewers find the accountable record and know whether it is current. |
+| Correlation identity | Work version, suite, initiative path, dedicated branch, captured base, and canonical row | Prevents identity reuse, drift, partial mappings, and umbrella versions. |
 | Intended outcome | Observable result rather than only a task list | Defines what completion means. |
 | Scope boundary | Included work, exclusions, products/specifications/evidence it may touch | Prevents accidental expansion or cross-initiative edits. |
 | Evidence basis | Precise IDs, links, sections, classifications, and known gaps | Distinguishes mandates from context. |

@@ -59,4 +59,9 @@ not accept the initiative or resolve a human decision.
 
 {{narrow_enough_split_required_or_blocked_pending_human_decision}}
 
+When a split is mandatory, identify each separately bounded outcome without
+allocating identity in this assessment. Each split enters Stage 0 and receives
+its own canonical work version, realization suite, self-contained initiative,
+and dedicated branch. Do not reuse this initiative's tuple as an umbrella.
+
 

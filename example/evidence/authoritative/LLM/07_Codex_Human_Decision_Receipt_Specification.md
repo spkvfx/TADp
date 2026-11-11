@@ -7,6 +7,12 @@ reopening, cancellation, supersession, or invariant exception that requires a
 human decision must have a durable decision receipt. A chat summary or changed
 status alone is not sufficient evidence.
 
+A meaning-changing legacy identity mapping, exception to a mandatory split,
+or removal of a recorded initiative branch also requires a receipt. The
+receipt must preserve every source identity, distinguish notation-only change
+from changed meaning, and identify the affected canonical correlation and
+migration-ledger rows. It does not retroactively make a partial tuple valid.
+
 ## One decision per receipt
 
 Each receipt records one human decision for one stable source ID or one clearly
@@ -27,6 +33,8 @@ A decision receipt must preserve:
 - the evidence and material limitations presented with the question;
 - the resulting disposition and its precise scope;
 - every initiative or tracking record reconciled from the decision;
+- every affected work-version, suite, initiative, branch, canonical-row, and
+  migration-ledger identity when the decision changes correlation handling;
 - unresolved consequences or re-entry conditions; and
 - the Git commit that records the receipt and reconciliation, when available.
 

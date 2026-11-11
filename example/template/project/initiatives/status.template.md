@@ -22,9 +22,9 @@ verification.
 
 ## Current status
 
-| Initiative ID | Type | Status | Current milestone | Next gate | Blockers or holds | Status evidence | Owner | Last updated |
-|---|---|---|---|---|---|---|---|---|
-| {{INIT-001}} | `{{design_implementation_or_planning}}` | {{status}} | {{current_milestone}} | {{next_review_decision_or_verification_gate}} | {{blocker_links_or_none}} | {{initiative_section_test_or_review_link}} | {{owner}} | {{yyyy-mm-dd}} |
+| Work version | Initiative ID | Realization suite | Type | Status | Current milestone | Next gate | Blockers or holds | Status evidence | Owner | Last updated |
+|---|---|---|---|---|---|---|---|---|---|---|
+| {{v_major_minor}} | {{INIT-001}} | [{{realization_suite_id}}]({{relative_suite_index_path}}) | `{{design_implementation_or_planning}}` | {{status}} | {{current_milestone}} | {{next_review_decision_or_verification_gate}} | {{blocker_links_or_none}} | {{initiative_lifecycle_and_canonical_correlation_links}} | {{owner}} | {{yyyy-mm-dd}} |
 
 ## Portfolio gates
 
@@ -45,6 +45,8 @@ verification.
 - Reconcile this record with `initiative-index.md`, applicable parent and
   subinitiative indexes, and affected initiative READMEs in the same reviewed
   change.
+- Copy work-version and suite identity from the canonical correlation row;
+  never allocate, renumber, or infer identity in this status view.
 - A parent, subinitiative, release, or version boundary does not rewrite the
   identity, authority, or classification of retained proposal sources.
 

@@ -12,6 +12,8 @@ summary that points to that artifact. Replace every double-brace token.
 **Last updated:** {{date}}  
 **Owner:** {{proposal_owner}}  
 **Initiative type:** `{{initiative_type}}`  
+**Work version:** {{v_major_minor}}
+**Realization suite:** [{{realization_suite_id}}]({{relative_realization_suite_index_path}})
 **Type requirements:** See [the initiative template](../README.md#initiative-type-and-output-boundary).
 
 ## Executive proposal

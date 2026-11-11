@@ -15,10 +15,13 @@ requested repository root is invalid.
 The validator checks the Git and repository-root `AGENTS.md` requirements,
 protocol structure, protected template and authoritative-LLM SHA-256 locks,
 required developer documentation, local Markdown links, unresolved
-tokens outside reusable templates, complete initiative suites, legal lifecycle
+prose tokens outside reusable templates, complete initiative suites, legal lifecycle
 transitions, acceptance receipts, type-specific execution or delivery records,
 completion evidence, human decision receipts, all fourteen numbered prompt
-contracts, and source-mapping fields. Its checks grow with the binding TADp
+contracts, source-mapping fields, and—after a project declares the correlation
+revision effective—canonical work-version syntax, one-to-one realization-suite
+and initiative mappings, reciprocal record metadata, branch continuity, and
+legacy migration dispositions. Its checks grow with the binding TADp
 specifications; passing validation never replaces human acceptance, delivery
 verification, or product verification.
 

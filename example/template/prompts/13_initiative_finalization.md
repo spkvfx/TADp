@@ -73,6 +73,9 @@ Before changing tracking or Git state, verify that:
 - the current branch is exactly {initiative_branch}, it is the branch prepared
   for this initiative, and {base_branch} is the captured branch from which it
   was created;
+- the canonical work version, realization suite, initiative ID and path,
+  version-bearing branch, captured base branch and commit, and reciprocal links
+  match one unique project correlation row;
 - {base_branch} exists locally and on the configured pull-request remote, and
   its intended target is unambiguous;
 - {initiative_path} has a complete initiative record, completed permitted
@@ -125,6 +128,9 @@ finalization:
 4. Confirm that the proposal, accepted specifications, decisions, evidence map,
    roadmap, and delivery steps remain aligned with the completed output and
    were not weakened merely to make the status appear complete.
+5. Confirm that the canonical row retains the allocated branch and captured
+   base identity, and that any absent historical ref has separately authorized
+   removal evidence. Do not delete or free the branch identity in this stage.
 
 If a completion or tracking record is missing, stale, inconsistent, or not
 supported by completion evidence, stop and return it to the appropriate
@@ -159,6 +165,7 @@ or make a deployment.
 Report the tracking files verified and any that were committed during
 finalization, the commit identifiers, the pushed branch and base branch, the
 pull-request URL, the verification evidence summarized in the pull request,
-and any follow-up that remains after merge.
+the final correlation verification, and any follow-up that remains after
+merge.
 ```
 

@@ -51,6 +51,13 @@ allowed output. The type does not change the human-review requirement:
 assumptions can be confirmed, corrected, rejected as not applicable, or turned
 into an open question only through an explicit human response.
 
+Before asking the first assumption, verify that the active branch, canonical
+correlation row, realization-suite index, initiative metadata, and captured
+base identity are complete and reciprocal. Stop on drift or a partial mapping;
+this review must not allocate or repair identity. If a response creates a
+mandatory split or substantive successor, record the effect and route the new
+outcome to Stage 0 without changing this tuple.
+
 Before asking the first question, verify that the target has a readable
 initiative index, assumption record, open-question register, and every
 initiative record identified as affected by an assumption change. Read

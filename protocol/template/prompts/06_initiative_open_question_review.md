@@ -53,6 +53,13 @@ allowed output. The type does not change the human-review requirement: a source
 question is answered, deferred, or closed only through an explicit human
 response.
 
+Before asking the first question, verify that the active branch, canonical
+correlation row, realization-suite index, initiative metadata, and captured
+base identity are complete and reciprocal. Stop on drift or a partial mapping;
+this review must not allocate or repair identity. If an answer creates a
+mandatory split or substantive successor, preserve the decision and route the
+new outcome to Stage 0 for its own tuple.
+
 Before asking the first question, verify that the target has a readable
 initiative index, `open-questions.md` register, assumption record, and every
 initiative record that its index identifies as affected by decisions. Read

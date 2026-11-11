@@ -22,10 +22,11 @@ The binding stage sequence and handoff rules are defined by the
 Stages 0 through 7 are the common path. An accepted initiative then follows
 exactly one type-specific delivery path before stage 13 finalization.
 
-After stage 0 prepares an initiative, run every initiative-specific prompt on
-that initiative's prepared branch. Only the preparation prompt creates or
-switches the branch; later prompts stop when the active branch does not match
-the initiative.
+After stage 0 allocates and prepares a correlated tuple, run every
+initiative-specific prompt on that initiative's prepared branch. Only the
+preparation prompt allocates the work version, creates the realization suite
+and canonical correlation row, or creates or switches the branch. Later
+prompts stop when any reciprocal identity or the active branch does not match.
 
 ## Example request
 
@@ -44,9 +45,9 @@ external-party, contract, artifact, or evidence gate.
 
 The preparation, proposal-creation, initiative-creation, acceptance,
 type-specific delivery, and finalization prompts are the explicit exceptions.
-Preparation may create or
-switch to an initiative branch and create only a missing directory-and-README
-skeleton; it preserves an existing initiative tree. Proposal creation may
+Preparation may create the version-bearing initiative branch, realization
+suite and index, canonical project correlation row, and missing
+directory-and-README skeleton as one unit. Proposal creation may
 create only its target `proposal/proposal.md`. Initiative creation may complete
 the standard initial initiative record and its parent tracking entries.
 Acceptance may create the acceptance receipt and reconcile the accepted
@@ -85,8 +86,8 @@ authoritative within their respective claims and must remain mutually coherent.
 
 | # | Prompt | Use it when |
 |---|---|---|
-| 0 | [Prepare initiative](00_initiative_preparation.md) | Giving a new or existing initiative its own branch and, only when needed, its minimal README skeleton. |
-| 1 | [Proposal creation](01_proposal_creation.md) | Creating the first, proposal-only record for a new initiative from an existing realization note. |
+| 0 | [Prepare initiative](00_initiative_preparation.md) | Preflighting and atomically preparing one work version, realization suite, self-contained initiative identity, version-bearing branch, canonical row, and minimal README skeleton. |
+| 1 | [Proposal creation](01_proposal_creation.md) | Creating the first proposal-only record from the correlated realization suite and its intended note. |
 | 2 | [Proposal alignment](02_proposal_alignment.md) | Aligning an existing initiative proposal in place to its scope, repository evidence, active initiatives, `../../evidence/authoritative`, and implemented work. |
 | 3 | [Initiative creation](03_initiative_creation.md) | Creating the first complete initiative record from an initiative's existing proposal, the shared templates, and repository evidence. |
 | 4 | [Initiative-to-precedent alignment](04_initiative_alignment.md) | Aligning a fully documented initiative as a whole to governing evidence and established precedent before any human confirmation or SDK/API work. |

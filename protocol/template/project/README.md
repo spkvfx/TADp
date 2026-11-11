@@ -46,8 +46,9 @@ chain before there is enough material for the directories to become confusing.
    `git config core.hooksPath .githooks`.
 6. Copy [project-profile.template.md](project-profile.template.md) to
    `project-profile.md`. Replace every `{{double_brace_token}}`, remove the
-   instructional HTML comment, and record the project owner, boundary, and
-   review cadence.
+   instructional HTML comment, and record the project owner, boundary, review
+   cadence, correlation-revision effective commit, branch convention, and
+   migration-ledger link.
 7. Establish the binding sources in
    [evidence/authoritative/](evidence/authoritative/README.md) before accepting
    work that depends on them. Record contextual sources separately in
@@ -61,8 +62,10 @@ chain before there is enough material for the directories to become confusing.
    specification or evidence.
    Copy both [the initiative index](initiatives/initiative-index.template.md)
    and [the portfolio status record](initiatives/status.template.md) before
-   accepting the first initiative. The index answers what exists; the status
-   record answers what is active, blocked, or gated next.
+   accepting the first initiative. Copy the
+   [version-correlation migration ledger](initiatives/version-correlation-migration-ledger.template.md)
+   when adopting the correlation revision. The index owns canonical tuple
+   identity; the status record answers what is active, blocked, or gated next.
 10. Add a product record when an output has a declared destination, even if the
    output itself lives outside `products/`. Link its governing initiative,
    specification, binding evidence, and verification.
@@ -105,7 +108,8 @@ The initiative index and portfolio status record are coordination artifacts,
 not sources of substantive authority:
 
 - `initiative-index.md` is the stable registry of initiative identity, type,
-  location, owner, and high-level relationship.
+  location, owner, high-level relationship, canonical work version,
+  realization suite, dedicated branch, and captured base.
 - `status.md` is the current portfolio view of lifecycle standing, next gate,
   blockers, and the evidence that supports a status claim.
 - Each initiative's own record remains authoritative for its scope, decisions,

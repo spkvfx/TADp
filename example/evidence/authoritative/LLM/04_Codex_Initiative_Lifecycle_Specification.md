@@ -21,6 +21,22 @@ status does not create the facts required by that status.
 `Proposed` unless an explicit human decision states that the prior accepted
 claim remains unchanged and authorizes return to `Accepted`.
 
+## Correlation identity is not lifecycle evidence
+
+A work version, realization suite, canonical correlation row, dedicated
+branch, or preparation commit does not create a lifecycle state. For work
+governed by the
+[correlation specification](09_Codex_Version_Realization_Initiative_Correlation_Specification.md),
+the tuple is allocated while the initiative remains `Proposed` and its
+identity stays immutable through later transitions.
+
+A governed reopening with the exact accepted claim unchanged may retain the
+tuple. A substantive scope, outcome, authority-boundary, output,
+compatibility, or verification change requires a successor tuple and the
+appropriate lifecycle disposition for the prior initiative. A pre-effective
+initiative follows its migration-ledger disposition. None of these identity
+rules permits an otherwise illegal lifecycle transition.
+
 Workflow stages and lifecycle states are distinct. The authoritative workflow
 specification defines which stages may produce transition evidence; completion
 of a stage does not itself cause a transition.
@@ -51,6 +67,11 @@ Every initiative README must keep an append-only lifecycle history with:
 - accepted or completed claim revision;
 - reason and affected scope; and
 - Git commit when available.
+
+The README must also link its canonical project correlation row. When a branch
+ref is separately authorized for removal, the history and canonical row retain
+the original branch and base identity and link the removal authority; branch
+absence never erases lifecycle evidence.
 
 A correction may add a new entry that explains an earlier mistake. It must not
 silently rewrite a truthful historical transition.

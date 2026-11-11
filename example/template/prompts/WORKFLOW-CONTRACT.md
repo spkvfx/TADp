@@ -49,6 +49,27 @@ creates a transition without its required evidence.
 - Do not change another initiative or shared contract unless the numbered
   prompt expressly authorizes that exact boundary.
 
+## Correlation identity
+
+- When the project has recorded the correlation-revision effective point,
+  require one canonical `v<major>.<minor>` work version, one realization suite,
+  one self-contained initiative, and one version-bearing dedicated branch.
+- Treat the project initiative index as the canonical correlation-row owner.
+  Verify reciprocal suite and initiative metadata, captured base branch and
+  commit, lifecycle evidence, and predecessor or successor links before every
+  stage.
+- Only Stage 0 allocates or creates the tuple. Later stages must stop on a
+  missing, duplicate, partial, orphaned, or inconsistent identity; they must
+  not infer or repair it.
+- A mandatory split or substantive successor returns through a new Stage 0 and
+  receives a new tuple. An exact-claim reopening may retain its tuple only
+  under the lifecycle record.
+- A pre-effective record may proceed only under a complete linked
+  `Unmigrated` or `Deferred` migration-ledger disposition and its recorded
+  compatible earlier workflow. Do not mix legacy and new correlation fields.
+- Tuple identity never proves evidence authority, acceptance, implementation,
+  completion, compatibility, release, or deployment.
+
 ## Human authority
 
 - Assumptions, open questions, acceptance, reopening, cancellation,
@@ -64,8 +85,9 @@ creates a transition without its required evidence.
 ## Git and lifecycle
 
 - Require a Git repository and the dedicated initiative branch prepared from a
-  captured base branch. Preserve unrelated user work and stage only traceable
-  changes.
+  captured base branch and commit. Active governed work requires the recorded
+  branch ref and exact version token. Preserve unrelated user work and stage
+  only traceable changes.
 - Do not amend, squash, rebase, force-push, merge, delete a branch, or deploy
   unless explicit authority and the stage prompt permit the specific action.
 - Record only legal lifecycle transitions. Append transition evidence and
@@ -85,5 +107,16 @@ creates a transition without its required evidence.
   out-of-claim follow-up visible with an owner and re-entry condition.
 - Reconcile every record the stage owns. Report exact paths changed, evidence
   used, verification performed, lifecycle effects, and remaining blockers.
+
+## Correlation recovery
+
+- On correlation drift, stop the affected stage and report the exact canonical
+  row, reciprocal record, branch, or base mismatch.
+- Return new-allocation errors to Stage 0 without reusing identity. Route a
+  pre-effective record to its migration ledger. Never create a mapping merely
+  to clear validation.
+- Preserve recorded branch identity after authorized removal. An absent active
+  branch or an absent terminal branch without linked removal evidence remains
+  a blocker.
 
 

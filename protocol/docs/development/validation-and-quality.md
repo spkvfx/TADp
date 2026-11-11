@@ -50,7 +50,8 @@ The current validator checks:
 - required repository, authoritative-suite, template, prompt, and developer
   documentation paths;
 - local Markdown links;
-- unresolved braced tokens outside reusable templates;
+- unresolved braced tokens in prose outside reusable templates (literal fenced
+  and inline code is excluded);
 - complete initial initiative suites;
 - supported lifecycle status values;
 - lifecycle history presence, legal transitions, continuity, and agreement
@@ -61,10 +62,30 @@ The current validator checks:
 - explicit acceptance receipts for accepted, in-progress, and completed
   initiatives;
 - authoritative and verification evidence fields in source mappings;
+- canonical `v<major>.<minor>` work-version syntax and numeric ordering;
+- one-to-one version, realization-suite, initiative, and dedicated-branch
+  mappings in the canonical initiative index;
+- reciprocal identity and base metadata among the canonical index, suite index,
+  initiative record, and the project status view after Stage 3 expands the
+  preparation skeleton;
+- live local refs for active initiative branches, and linked removal authority
+  when a historical initiative branch is absent;
+- orphan realization suites and initiatives after correlation adoption;
+- permanently non-authoritative standing for realization suites; and
+- complete legacy migration-ledger actions, including actionable warnings for
+  deliberately `Unmigrated` or `Deferred` rows;
 - decision receipts and source links for recorded human dispositions; and
 - fourteen complete numbered prompts for stages 0 through 13, each with example
   language, a shared-contract reference, and executable
   `&#123;initiative&#125;` placeholder.
+
+Correlation validation activates only when `project-profile.md` declares a
+version-correlation effective point. Pre-effective projects therefore remain
+compatible until they explicitly adopt the revision. Once active, incomplete or
+mixed legacy mappings are errors; a complete `Unmigrated` or `Deferred` row is
+reported as `TADP033` warning so the unresolved migration remains visible without
+inventing a canonical identity. Warnings do not change the validator exit status
+when no errors exist.
 
 The validator ignores `.git` contents when walking Markdown and treats files
 under template paths as reusable, so their placeholders are permitted.

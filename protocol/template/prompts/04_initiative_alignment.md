@@ -64,6 +64,11 @@ proposal-alignment prompt has a different, proposal-only target; do not apply
 it document by document or treat any initiative document as an independent
 assumption target.
 
+Before editing, verify that the active branch, canonical project correlation
+row, realization-suite index, initiative metadata, and captured base branch and
+commit all describe one unique tuple. Stop on any orphan, duplicate, partial,
+or inconsistent identity; this stage must not infer or repair Stage 0 work.
+
 Apply the ownership and approval convention at {project_profile_path}. Human
 owner, reviewer, and approver roles resolve as recorded for the target project.
 Preserve every technical component, profile, placement, external-party,
@@ -99,6 +104,8 @@ authority boundary or initiative type, separable verification or release,
 unrelated product destination, or independent lifecycle, stop and report the
 required decomposition. This alignment prompt does not create sibling or
 subinitiative records and must not make an umbrella initiative appear coherent.
+Each required split or substantive successor must return through Stage 0 for a
+new version, suite, self-contained initiative, and branch.
 
 Edit only existing allowed documents in the target initiative and the applicable
 parent status record when the initiative's status or next milestone changes. Do
@@ -177,5 +184,7 @@ questions, and unresolved conflicts. In the review response, state the
 initiative-to-precedent alignment outcome, list the initiative records changed to
 express it, identify every assumption or question requiring its human review,
 and report every conflict or blocker that prevents alignment.
+Include the work version, realization suite, canonical row, branch, and
+captured-base verification in that report.
 ```
 

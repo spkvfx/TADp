@@ -9,8 +9,12 @@ actually begins, update it throughout execution, and replace every token.
 **Initiative:** {{initiative_name}}  
 **Execution status:** {{in_progress_blocked_or_complete}}  
 **Accepted execution scope:** {{exact_phase_steps_or_change_set}}  
+**Work version:** {{v_major_minor}}
+**Realization suite:** {{realization_suite_id_and_link}}
+**Canonical correlation:** {{initiative_index_row_link}}
 **Branch:** {{initiative_branch}}  
-**Baseline commit:** {{commit_id}}  
+**Captured base branch:** {{base_branch}}
+**Captured base commit:** {{commit_id}}
 **Started:** {{yyyy-mm-dd}}  
 **Last updated:** {{yyyy-mm-dd}}  
 **Execution owner:** {{owner}}  
@@ -61,6 +65,7 @@ to the invariant conflict register.
 - **Product records updated:** {{links_and_result}}
 - **Initiative and parent status updated:** {{links_and_result}}
 - **Deferred work has an owner:** {{links_or_none}}
+- **Correlation tuple remains intact:** {{canonical_row_and_reciprocal_link_review}}
 
 ## Execution conclusion
 
