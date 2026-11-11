@@ -19,7 +19,7 @@ verification.
 
 | Work version | Initiative ID | Realization suite | Type | Status | Current milestone | Next gate | Blockers or holds | Status evidence | Owner | Last updated |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `v3.0` | [`INIT-IMP-005`](implementation/INIT-IMP-005-standalone-cli-image/README.md) | [`RZN-001-P3-CLI-SUITE`](../evidence/non-authoritative/realizations/v3.0/00-RZN-001-P3-CLI-suite-index.md) | `implementation` | Proposed | Complete initial initiative record | Stage 4 initiative alignment | [`CLI-01`–`CLI-06`](implementation/INIT-IMP-005-standalone-cli-image/open-questions.md#decision-register) remain open; assumptions await human review | [Lifecycle history](implementation/INIT-IMP-005-standalone-cli-image/README.md#initiative-lifecycle) | User | 2026-11-11 |
+| `v3.0` | [`INIT-IMP-005`](implementation/INIT-IMP-005-standalone-cli-image/README.md) | [`RZN-001-P3-CLI-SUITE`](../evidence/non-authoritative/realizations/v3.0/00-RZN-001-P3-CLI-suite-index.md) | `implementation` | Proposed | Stages 0–4 complete; Proposed record aligned | Stage 5 assumption-confirmation review | [`CLI-01`–`CLI-06`](implementation/INIT-IMP-005-standalone-cli-image/open-questions.md#decision-register) remain open; assumptions await human review | [Lifecycle history](implementation/INIT-IMP-005-standalone-cli-image/README.md#initiative-lifecycle) | User | 2026-11-11 |
 
 The `v3.0` initiative is the only canonical tuple on this independent branch.
 Other pre-effective realization suites remain non-authoritative inputs with
