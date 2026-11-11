@@ -84,8 +84,9 @@ No initiative-local human decision has been resolved.
 
 ## Reusable prompts
 
-Stages 0–3 are complete. Stage 4 is the next workflow stage and may align the
-coupled Proposed record without resolving assumptions or `SDK-*` questions.
+Stages 0–4 are complete. The Proposed record remains one D4 initiative: no
+split was introduced and no assumption or `SDK-*` question was resolved. The
+next workflow stage is Stage 5 assumption-confirmation review.
 
 ## Repository baseline
 
