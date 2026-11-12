@@ -128,3 +128,30 @@ must cite exact authoritative sources, choose product destinations, perform the
 mandatory scope assessment, and keep v2.1 and v2.2 as separately governed
 initiatives. No initiative is created by this suite.
 
+## Correlation migration addendum
+
+**Effective date:** 2026-11-11
+
+**Migration action:** `Migrate`
+
+**Authority:** [six-initiative migration prompt](../../../../prompts/create-v1.0-through-v4.0-initiatives.md), [EX-GIT-DR-001](../../../../initiatives/decision-receipts/EX-GIT-DR-001-enclosing-worktree-exception.md), and [resolved `INV-CONFLICT-001`](../../../authoritative/LLM/03_Codex_Invariant_Conflict_Register.md#inv-conflict-001--embedded-example-project-root-and-git-root-invariant)
+
+This addendum applies current correlation governance without rewriting the
+pre-effective suite's header, source identity, standing, or recorded claims.
+
+| Correlation field | Migrated identity |
+|---|---|
+| Work version | `v2.0` |
+| Realization suite | `RZN-001-P2-PLATFORM-SUITE` at this path |
+| Initiative | [`INIT-IMP-002` — Container platform and runtime packaging](../../../../initiatives/implementation/INIT-IMP-002-container-platform/README.md) |
+| Dedicated branch | `initiative/v2.0-container-platform` |
+| Captured base | `v1` at `5a0ea0bd9f51edf97f9eddd39c6a3509c271503b` |
+| Stage 0 preparation commit | `d888ea74d36477ba2a192c1eb5531aca6003fe25` |
+| Canonical row | [Example initiative index](../../../../initiatives/initiative-index.md#initiative-and-correlation-register) |
+| Migration disposition | [Version-correlation migration ledger](../../../../initiatives/version-correlation-migration-ledger.md#migration-ledger) |
+| Predecessor or successor | None |
+
+The initiative begins `Proposed`. Migration creates identity and navigation
+only; it does not promote this suite, select artifact paths, accept platform
+work, or make a delivery, conformance, release, or deployment claim.
+

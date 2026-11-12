@@ -17,8 +17,10 @@ an initiative README's lifecycle authority.
 | Work version | Realization suite | Initiative ID | Name | Type | Status | Dedicated branch | Captured base branch | Captured base commit | Predecessor or successor | Record location | Lifecycle evidence | Branch removal evidence | Owner | Next gate |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | `v1.0` | [`RZN-001-P1-DOCS-SUITE`](../evidence/non-authoritative/realizations/v1.0/00-RZN-001-P1-DOCS-suite-index.md) | [`INIT-IMP-001`](implementation/INIT-IMP-001-contract-documentation/README.md) | Contract documentation | `implementation` | Proposed | `initiative/v1.0-contract-documentation` | `v1` | `5a0ea0bd9f51edf97f9eddd39c6a3509c271503b` | None | [`implementation/INIT-IMP-001-contract-documentation`](implementation/INIT-IMP-001-contract-documentation/README.md) | [Lifecycle history](implementation/INIT-IMP-001-contract-documentation/README.md#initiative-lifecycle), [Migrate disposition](version-correlation-migration-ledger.md#migration-ledger), preparation commit `f27b09bf8580668073dbf2265466ae5f4d14a737` | Not removed | User | Stage 5 assumption confirmation review |
+| `v2.0` | [`RZN-001-P2-PLATFORM-SUITE`](../evidence/non-authoritative/realizations/v2.0/00-RZN-001-P2-PLATFORM-suite-index.md) | [`INIT-IMP-002`](implementation/INIT-IMP-002-container-platform/README.md) | Container platform and runtime packaging | `implementation` | Proposed | `initiative/v2.0-container-platform` | `v1` | `5a0ea0bd9f51edf97f9eddd39c6a3509c271503b` | None | [`implementation/INIT-IMP-002-container-platform`](implementation/INIT-IMP-002-container-platform/README.md) | [Lifecycle history](implementation/INIT-IMP-002-container-platform/README.md#initiative-lifecycle), [Migrate disposition](version-correlation-migration-ledger.md#migration-ledger), preparation commit `d888ea74d36477ba2a192c1eb5531aca6003fe25` | Not removed | User | Stage 5 assumption-confirmation review |
 
-The `v1.0` tuple was allocated through the pre-effective-suite migration path.
+The `v1.0` and `v2.0` tuples were allocated through the pre-effective-suite
+migration path.
 Other pre-effective realization identities remain preserved in the
 [version-correlation migration ledger](version-correlation-migration-ledger.md)
 until their own Stage 0 branch allocates a complete reciprocal tuple.
