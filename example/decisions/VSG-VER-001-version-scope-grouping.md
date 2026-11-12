@@ -281,3 +281,14 @@ or proves completeness of a natural-language work inventory.
 **Delivery recording status:** Verified, ready for traceable maintenance commit.
 The exact effective commit and staged guard/hook result are recorded afterward;
 no future commit identifier is guessed here.
+
+## Recorded effective delivery
+
+**Recording and effective delivery commit:** `873021eef226576aebfc60b94f69886eb4da4a1c`
+
+The coherent 182-path revision committed successfully with explicit per-command
+`core.hooksPath=.githooks`. Both project validators reported zero errors and
+one retained legacy warning each; both staged protected-source guards passed
+under the exact VSG-DR-001 authority. The original modified source prompt was
+not staged. Project scope adoption/migration remains pending as recorded; the
+commit installs protocol capability and grants no live merge authority.
