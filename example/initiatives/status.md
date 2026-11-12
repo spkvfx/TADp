@@ -2,7 +2,7 @@
 
 **Status owner:** User
 
-**Last reviewed:** 2026-11-11
+**Last reviewed:** 2026-11-12
 
 **Review cadence:** At every initiative lifecycle, gate, or correlation change
 
@@ -19,12 +19,12 @@ verification.
 
 | Work version | Initiative ID | Realization suite | Type | Status | Current milestone | Next gate | Blockers or holds | Status evidence | Owner | Last updated |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `v1.0` | [`INIT-IMP-001`](implementation/INIT-IMP-001-contract-documentation/README.md) | [`RZN-001-P1-DOCS-SUITE`](../evidence/non-authoritative/realizations/v1.0/00-RZN-001-P1-DOCS-suite-index.md) | `implementation` | Proposed | Stages 0–4 complete; Proposed record aligned | Stage 5 assumption confirmation review | [`DOC-01`–`DOC-06`](implementation/INIT-IMP-001-contract-documentation/open-questions.md#decision-register) remain open; assumptions await explicit human review | [Lifecycle history](implementation/INIT-IMP-001-contract-documentation/README.md#initiative-lifecycle) and aligned initiative record | User | 2026-11-11 |
-| `v2.0` | [`INIT-IMP-002`](implementation/INIT-IMP-002-container-platform/README.md) | [`RZN-001-P2-PLATFORM-SUITE`](../evidence/non-authoritative/realizations/v2.0/00-RZN-001-P2-PLATFORM-suite-index.md) | `implementation` | Proposed | Stages 0–4 complete; Proposed record aligned | Stage 5 assumption-confirmation review | [`PLT-01`–`PLT-06`](implementation/INIT-IMP-002-container-platform/open-questions.md#decision-register) remain open; assumptions await human review | [Lifecycle history](implementation/INIT-IMP-002-container-platform/README.md#initiative-lifecycle) | User | 2026-11-11 |
-| `v2.1` | [`INIT-IMP-003`](implementation/INIT-IMP-003-api-sqlite-runtime/README.md) | [`RZN-001-P2-API-SQLITE-SUITE`](../evidence/non-authoritative/realizations/v2.1/00-RZN-001-P2-API-SQLITE-suite-index.md) | `implementation` | Proposed | Stages 0–4 complete; Proposed record aligned | Stage 5 assumption-confirmation review | [`API-01`–`API-06`](implementation/INIT-IMP-003-api-sqlite-runtime/open-questions.md#decision-register) remain open; assumptions await human review | [Lifecycle history](implementation/INIT-IMP-003-api-sqlite-runtime/README.md#initiative-lifecycle) | User | 2026-11-11 |
-| `v2.2` | [`INIT-IMP-004`](implementation/INIT-IMP-004-python-sdk/README.md) | [`RZN-001-P2-SDK-SUITE`](../evidence/non-authoritative/realizations/v2.2/00-RZN-001-P2-SDK-suite-index.md) | `implementation` | Proposed | Stages 0–4 complete; Proposed record aligned | Stage 5 assumption-confirmation review | [`SDK-01`–`SDK-06`](implementation/INIT-IMP-004-python-sdk/open-questions.md#decision-register) remain open; assumptions await human review | [Lifecycle history](implementation/INIT-IMP-004-python-sdk/README.md#initiative-lifecycle) | User | 2026-11-11 |
-| `v3.0` | [`INIT-IMP-005`](implementation/INIT-IMP-005-standalone-cli-image/README.md) | [`RZN-001-P3-CLI-SUITE`](../evidence/non-authoritative/realizations/v3.0/00-RZN-001-P3-CLI-suite-index.md) | `implementation` | Proposed | Stages 0–4 complete; Proposed record aligned | Stage 5 assumption-confirmation review | [`CLI-01`–`CLI-06`](implementation/INIT-IMP-005-standalone-cli-image/open-questions.md#decision-register) remain open; assumptions await human review | [Lifecycle history](implementation/INIT-IMP-005-standalone-cli-image/README.md#initiative-lifecycle) | User | 2026-11-11 |
-| `v4.0` | [`INIT-IMP-006`](implementation/INIT-IMP-006-web-application-bundle/README.md) | [`RZN-001-P4-WEB-SUITE`](../evidence/non-authoritative/realizations/v4.0/00-RZN-001-P4-WEB-suite-index.md) | `implementation` | Proposed | Stages 0–4 complete; Proposed record aligned | Stage 5 assumption-confirmation review | [`WEB-01`–`WEB-07`](implementation/INIT-IMP-006-web-application-bundle/open-questions.md#decision-register) remain open; assumptions await human review | [Lifecycle history](implementation/INIT-IMP-006-web-application-bundle/README.md#initiative-lifecycle) | User | 2026-11-11 |
+| `v1.0` | [`INIT-IMP-001`](v1.0/implementation/INIT-IMP-001-contract-documentation/README.md) | [`RZN-001-P1-DOCS-SUITE`](../evidence/non-authoritative/realizations/v1.0/00-RZN-001-P1-DOCS-suite-index.md) | `implementation` | Proposed | Stages 0–4 complete; Proposed record aligned | Preparation recovery, then Stage 5 assumption confirmation review | [`DOC-01`–`DOC-06`](v1.0/implementation/INIT-IMP-001-contract-documentation/open-questions.md#decision-register) remain open; assumptions await explicit human review | [Lifecycle history](v1.0/implementation/INIT-IMP-001-contract-documentation/README.md#initiative-lifecycle) and aligned initiative record | User | 2026-11-11 |
+| `v2.0` | [`INIT-IMP-002`](v2.0/implementation/INIT-IMP-002-container-platform/README.md) | [`RZN-001-P2-PLATFORM-SUITE`](../evidence/non-authoritative/realizations/v2.0/00-RZN-001-P2-PLATFORM-suite-index.md) | `implementation` | Proposed | Stages 0–4 complete; Proposed record aligned | Preparation recovery, then Stage 5 assumption-confirmation review | [`PLT-01`–`PLT-06`](v2.0/implementation/INIT-IMP-002-container-platform/open-questions.md#decision-register) remain open; assumptions await human review | [Lifecycle history](v2.0/implementation/INIT-IMP-002-container-platform/README.md#initiative-lifecycle) | User | 2026-11-11 |
+| `v2.1` | [`INIT-IMP-003`](v2.1/implementation/INIT-IMP-003-api-sqlite-runtime/README.md) | [`RZN-001-P2-API-SQLITE-SUITE`](../evidence/non-authoritative/realizations/v2.1/00-RZN-001-P2-API-SQLITE-suite-index.md) | `implementation` | Proposed | Stages 0–4 complete; Proposed record aligned | Preparation recovery, then Stage 5 assumption-confirmation review | [`API-01`–`API-06`](v2.1/implementation/INIT-IMP-003-api-sqlite-runtime/open-questions.md#decision-register) remain open; assumptions await human review | [Lifecycle history](v2.1/implementation/INIT-IMP-003-api-sqlite-runtime/README.md#initiative-lifecycle) | User | 2026-11-11 |
+| `v2.2` | [`INIT-IMP-004`](v2.2/implementation/INIT-IMP-004-python-sdk/README.md) | [`RZN-001-P2-SDK-SUITE`](../evidence/non-authoritative/realizations/v2.2/00-RZN-001-P2-SDK-suite-index.md) | `implementation` | Proposed | Stages 0–4 complete; Proposed record aligned | Preparation recovery, then Stage 5 assumption-confirmation review | [`SDK-01`–`SDK-06`](v2.2/implementation/INIT-IMP-004-python-sdk/open-questions.md#decision-register) remain open; assumptions await human review | [Lifecycle history](v2.2/implementation/INIT-IMP-004-python-sdk/README.md#initiative-lifecycle) | User | 2026-11-11 |
+| `v3.0` | [`INIT-IMP-005`](v3.0/implementation/INIT-IMP-005-standalone-cli-image/README.md) | [`RZN-001-P3-CLI-SUITE`](../evidence/non-authoritative/realizations/v3.0/00-RZN-001-P3-CLI-suite-index.md) | `implementation` | Proposed | Stages 0–4 complete; Proposed record aligned | Preparation recovery, then Stage 5 assumption-confirmation review | [`CLI-01`–`CLI-06`](v3.0/implementation/INIT-IMP-005-standalone-cli-image/open-questions.md#decision-register) remain open; assumptions await human review | [Lifecycle history](v3.0/implementation/INIT-IMP-005-standalone-cli-image/README.md#initiative-lifecycle) | User | 2026-11-11 |
+| `v4.0` | [`INIT-IMP-006`](v4.0/implementation/INIT-IMP-006-web-application-bundle/README.md) | [`RZN-001-P4-WEB-SUITE`](../evidence/non-authoritative/realizations/v4.0/00-RZN-001-P4-WEB-suite-index.md) | `implementation` | Proposed | Stages 0–4 complete; Proposed record aligned | Preparation recovery, then Stage 5 assumption-confirmation review | [`WEB-01`–`WEB-07`](v4.0/implementation/INIT-IMP-006-web-application-bundle/open-questions.md#decision-register) remain open; assumptions await human review | [Lifecycle history](v4.0/implementation/INIT-IMP-006-web-application-bundle/README.md#initiative-lifecycle) | User | 2026-11-11 |
 
 All six named initiatives have canonical correlation rows and remain
 `Proposed`. The original broad `v0.0` realization remains non-authoritative
@@ -56,10 +56,17 @@ under its `Unmigrated` disposition in the
 - A parent, subinitiative, release, or version boundary does not rewrite the
   identity, authority, or classification of retained proposal sources.
 
-## Prospective scope status
+## Current scope status
 
 [Scope registry](version-scopes.md) owns scope coordination and integration;
-[initiative membership](initiative-index.md#prospective-scope-membership) owns
-correlation. No governed scope or new member is allocated by installation.
-The legacy status above remains unchanged under its recorded revision and
-[scope migration disposition](version-scope-migration-ledger.md).
+[initiative membership](initiative-index.md#initiative-and-correlation-register)
+owns the six current assignments. Ten scopes are registered by the explicit
+project migration, including four major ancestors and six member scopes.
+All scopes remain open and all initiatives remain Proposed. The
+[scope migration dispositions](version-scope-migration-ledger.md) preserve
+their prior revisions, paths and assignments.
+
+
+## Version-scope migration handoff
+
+The six current paths above are grouped by their unchanged source scopes. [Current membership](initiative-index.md) owns cycle 2 continuation assignments; [scope registry](version-scopes.md) owns topology. All six remain Proposed with their original Stage 5 human reviews pending. Administrative migration does not pass those reviews. Before invoking Stage 5, [branch preparation recovery](decision-receipts/EX-VSG-VER-001-migration-verification.md) must confirm the assigned checkout contains the adopted scaffold and migrated suite. No scope is closed or merged.

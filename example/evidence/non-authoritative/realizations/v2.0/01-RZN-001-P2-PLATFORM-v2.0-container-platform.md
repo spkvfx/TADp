@@ -300,3 +300,16 @@ the original `RZN-001` wording, and state precisely what D2 supplies to the
 v2.1/D3, v2.2/D4, v3.0/D5, and v4.0/D6 suites without accepting or completing any
 of them.
 
+
+
+## Version-scope migration addendum (2026-11-12)
+
+**Version scope:** `v2.0`
+
+**Migration authority:** [EX-VSG-DR-001](../../../../initiatives/decision-receipts/EX-VSG-DR-001-initiative-migration.md)
+
+**Current initiative target:** [INIT-IMP-002](../../../../initiatives/v2.0/implementation/INIT-IMP-002-container-platform/README.md)
+
+**Exact source catalog:** [RZN-001-P2-PLATFORM-N01](01-RZN-001-P2-PLATFORM-v2.0-container-platform.md)
+
+The original headers and one-to-one allocation language remain historical evidence under the prior revision. This addendum adopts scope membership and many-target catalog capability without changing source identity, relabeling this note or promoting its non-authoritative standing. The existing target retains the same narrow Proposed claim. Future independent outcomes require their own initiative records, not necessarily another version. The initiative index owns current assignments; the historical branch and base above remain history.

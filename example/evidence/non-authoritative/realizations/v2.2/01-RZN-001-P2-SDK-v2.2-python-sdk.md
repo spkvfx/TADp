@@ -308,3 +308,16 @@ the accepted v2.1 API/v2.2 SDK split, map every public surface and failure path
 to its authoritative contract and verification, and state precisely what the
 wheel supplies to v3.0/D5 without accepting or completing the CLI.
 
+
+
+## Version-scope migration addendum (2026-11-12)
+
+**Version scope:** `v2.2`
+
+**Migration authority:** [EX-VSG-DR-001](../../../../initiatives/decision-receipts/EX-VSG-DR-001-initiative-migration.md)
+
+**Current initiative target:** [INIT-IMP-004](../../../../initiatives/v2.2/implementation/INIT-IMP-004-python-sdk/README.md)
+
+**Exact source catalog:** [RZN-001-P2-SDK-N01](01-RZN-001-P2-SDK-v2.2-python-sdk.md)
+
+The original headers and one-to-one allocation language remain historical evidence under the prior revision. This addendum adopts scope membership and many-target catalog capability without changing source identity, relabeling this note or promoting its non-authoritative standing. The existing target retains the same narrow Proposed claim. Future independent outcomes require their own initiative records, not necessarily another version. The initiative index owns current assignments; the historical branch and base above remain history.

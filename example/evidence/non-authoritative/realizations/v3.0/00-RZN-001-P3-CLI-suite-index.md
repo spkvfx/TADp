@@ -96,7 +96,7 @@ pre-effective suite's header, source identity, standing, or recorded claims.
 |---|---|
 | Work version | `v3.0` |
 | Realization suite | `RZN-001-P3-CLI-SUITE` at this path |
-| Initiative | [`INIT-IMP-005` — Standalone CLI image](../../../../initiatives/implementation/INIT-IMP-005-standalone-cli-image/README.md) |
+| Initiative | [`INIT-IMP-005` — Standalone CLI image](../../../../initiatives/v3.0/implementation/INIT-IMP-005-standalone-cli-image/README.md) |
 | Dedicated branch | `initiative/v3.0-standalone-cli-image` |
 | Captured base | `v1` at `5a0ea0bd9f51edf97f9eddd39c6a3509c271503b` |
 | Canonical row | [Example initiative index](../../../../initiatives/initiative-index.md#initiative-and-correlation-register) |
@@ -107,3 +107,15 @@ The initiative begins `Proposed`. Migration creates identity and navigation
 only; it does not promote this suite, select artifact paths, accept CLI work,
 or make a delivery, conformance, release, or deployment claim.
 
+
+## Version-scope migration addendum (2026-11-12)
+
+**Version scope:** `v3.0`
+
+**Migration authority:** [EX-VSG-DR-001](../../../../initiatives/decision-receipts/EX-VSG-DR-001-initiative-migration.md)
+
+**Current initiative target:** [INIT-IMP-005](../../../../initiatives/v3.0/implementation/INIT-IMP-005-standalone-cli-image/README.md)
+
+**Exact source catalog:** [RZN-001-P3-CLI-N01](01-RZN-001-P3-CLI-command-image.md)
+
+The original headers and one-to-one allocation language remain historical evidence under the prior revision. This addendum adopts scope membership and many-target catalog capability without changing source identity, relabeling this note or promoting its non-authoritative standing. The existing target retains the same narrow Proposed claim. Future independent outcomes require their own initiative records, not necessarily another version. The initiative index owns current assignments; the historical branch and base above remain history.

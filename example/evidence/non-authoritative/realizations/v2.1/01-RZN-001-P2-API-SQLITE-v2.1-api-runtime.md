@@ -312,3 +312,16 @@ the historical Product 2 API lineage without recombining it with the v2.2 SDK
 suite, and map each accepted D3 behavior to its authoritative owner, product
 destination, exact verification, and security evidence record.
 
+
+
+## Version-scope migration addendum (2026-11-12)
+
+**Version scope:** `v2.1`
+
+**Migration authority:** [EX-VSG-DR-001](../../../../initiatives/decision-receipts/EX-VSG-DR-001-initiative-migration.md)
+
+**Current initiative target:** [INIT-IMP-003](../../../../initiatives/v2.1/implementation/INIT-IMP-003-api-sqlite-runtime/README.md)
+
+**Exact source catalog:** [RZN-001-P2-API-SQLITE-N01](01-RZN-001-P2-API-SQLITE-v2.1-api-runtime.md)
+
+The original headers and one-to-one allocation language remain historical evidence under the prior revision. This addendum adopts scope membership and many-target catalog capability without changing source identity, relabeling this note or promoting its non-authoritative standing. The existing target retains the same narrow Proposed claim. Future independent outcomes require their own initiative records, not necessarily another version. The initiative index owns current assignments; the historical branch and base above remain history.

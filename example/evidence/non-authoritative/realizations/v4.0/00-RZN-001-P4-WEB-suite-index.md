@@ -100,7 +100,7 @@ pre-effective suite's header, source identity, standing, or recorded claims.
 |---|---|
 | Work version | `v4.0` |
 | Realization suite | `RZN-001-P4-WEB-SUITE` at this path |
-| Initiative | [`INIT-IMP-006` — Web application bundle](../../../../initiatives/implementation/INIT-IMP-006-web-application-bundle/README.md) |
+| Initiative | [`INIT-IMP-006` — Web application bundle](../../../../initiatives/v4.0/implementation/INIT-IMP-006-web-application-bundle/README.md) |
 | Dedicated branch | `initiative/v4.0-web-application-bundle` |
 | Captured base | `v1` at `5a0ea0bd9f51edf97f9eddd39c6a3509c271503b` |
 | Canonical row | [Example initiative index](../../../../initiatives/initiative-index.md#initiative-and-correlation-register) |
@@ -112,3 +112,15 @@ only; it does not promote this suite, select artifact paths, accept web work,
 or make a delivery, conformance, accessibility, security, release, or
 deployment claim.
 
+
+## Version-scope migration addendum (2026-11-12)
+
+**Version scope:** `v4.0`
+
+**Migration authority:** [EX-VSG-DR-001](../../../../initiatives/decision-receipts/EX-VSG-DR-001-initiative-migration.md)
+
+**Current initiative target:** [INIT-IMP-006](../../../../initiatives/v4.0/implementation/INIT-IMP-006-web-application-bundle/README.md)
+
+**Exact source catalog:** [RZN-001-P4-WEB-N01](01-RZN-001-P4-WEB-browser-bundle.md)
+
+The original headers and one-to-one allocation language remain historical evidence under the prior revision. This addendum adopts scope membership and many-target catalog capability without changing source identity, relabeling this note or promoting its non-authoritative standing. The existing target retains the same narrow Proposed claim. Future independent outcomes require their own initiative records, not necessarily another version. The initiative index owns current assignments; the historical branch and base above remain history.

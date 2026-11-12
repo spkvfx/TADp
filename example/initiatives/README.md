@@ -30,3 +30,8 @@ absorb unrelated work.
 | `implementation` | Products to accepted specifications | Create or modify products; do not modify an existing specification |
 | `design` | Specifications to observed products | Create or modify specifications; do not create a new product |
 | `planning` | Evidence for other initiatives | Evidence only |
+
+
+## Version-scope adoption (2026-11-12)
+
+Current membership and branch assignments follow the [scope registry](version-scopes.md), [initiative index](initiative-index.md) and [explicit migration ledger](version-scope-migration-ledger.md). Earlier tuple rules, bases and allocation evidence remain historical. Scope identities are never normalized or reused as initiative IDs. The project now groups complete suites under `<scope>/<type>/`; old README paths redirect to their continuing owner.

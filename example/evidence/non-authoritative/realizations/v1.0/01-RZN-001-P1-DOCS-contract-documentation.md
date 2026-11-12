@@ -243,3 +243,16 @@ source separately. It must state which candidate publication areas it accepts,
 changes, defers, or rejects; map every normative statement to its authoritative
 owner; and avoid treating the detail in this note as specification acceptance.
 
+
+
+## Version-scope migration addendum (2026-11-12)
+
+**Version scope:** `v1.0`
+
+**Migration authority:** [EX-VSG-DR-001](../../../../initiatives/decision-receipts/EX-VSG-DR-001-initiative-migration.md)
+
+**Current initiative target:** [INIT-IMP-001](../../../../initiatives/v1.0/implementation/INIT-IMP-001-contract-documentation/README.md)
+
+**Exact source catalog:** [RZN-001-P1-DOCS-N01](01-RZN-001-P1-DOCS-contract-documentation.md)
+
+The original headers and one-to-one allocation language remain historical evidence under the prior revision. This addendum adopts scope membership and many-target catalog capability without changing source identity, relabeling this note or promoting its non-authoritative standing. The existing target retains the same narrow Proposed claim. Future independent outcomes require their own initiative records, not necessarily another version. The initiative index owns current assignments; the historical branch and base above remain history.
