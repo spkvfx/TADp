@@ -1,5 +1,14 @@
 # Project-local prompts
 
+Read and apply the canonical
+[prompt keyword specification](../evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md)
+for ordinary requests and these prompts. It owns registered names, their
+extension procedure, positional settings, list scheduling, and bounded
+exception records. A setting request does not itself waive a gate or expand
+the current scaffold, protected-source, lifecycle, or external-action boundary.
+Preview proposals and draft receipts stay in the response; local restrictions
+and independent-review obligations remain applicable alongside gate settings.
+
 The root `prompts/` directory in a TADp scaffold is a workspace for explicit
 instructions about that current project. Its `AGENTS.md` resolves the active
 scaffold from its own installed location and confines prompt-driven work to

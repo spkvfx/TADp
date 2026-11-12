@@ -11,6 +11,52 @@ Numbered prompts implement this specification for Codex. A prompt may impose a
 stricter operational precondition, but it must not skip, weaken, reorder, or
 expand the authority granted by this specification.
 
+## Canonical prompt interpretation and exception route
+
+Read and apply the canonical
+[prompt keyword specification](11_Codex_Prompt_Keyword_Specification.md)
+for every governed task, including tasks without a stored prompt. It owns
+registered names, source-position settings, operative/inert boundaries,
+action-list scheduling, preview, local access, independent review, and
+specific exceptions. Compute block settings before dispatch; nested and
+parallel execution, retries, and resumes retain the source block identity.
+List scheduling does not renumber stages or create lifecycle facts.
+
+All stage-entry, human-review, failure-stop, handoff, execution, and completion
+clauses below state the ordinary contract. A specific exception may replace
+only the exact named prerequisite or human interaction covered by actual
+human authority and its receipt and exception record, created before reliance.
+Do not treat a mode request as a stage-wide waiver. An automated failure still
+blocks when only human-input gates are excepted; preserve all actual failure
+and waiver evidence. Preview allows only response-only proposals and read-only
+checks; local forbids external access; independent-review obligations attach
+to actual or proposed output and survive later inverse directives. Gate modes
+do not cancel these settings. Locks remain enforced.
+
+For stages 5 and 6, an expressly authorized alternative decision method may
+replace the human interaction for the named source IDs. Preserve the exact
+human authorization separately from actual agent-made dispositions, method,
+author, rationale, and reconciliation. Do not repeatedly solicit authority
+already sufficiently recorded. Stage 7 acceptance and closed-claim reopening
+remain separate specific human-authority acts; autonomous question handling
+is not either act. The standard execution or delivery record must retain
+every bypassed prerequisite and actual output, without claiming an ordinary
+gate passed. Stage 10, 11, or 12 completion evidence must distinguish passing,
+failed, skipped, waived, and not-performed checks. No keyword itself permits
+ordinary `Accepted` or `Completed` without their required actual evidence;
+retain the last truthful state and report bounded prompt completion under its
+exception separately. Any proposed lifecycle replacement requires the separate
+specific authority and consumer reconciliation defined by specification 11.
+This revision adopts no such replacement.
+
+When gates resume, recheck current prerequisites for later work depending on
+excepted output; restoration never retroactively validates an earlier skip.
+Inferred switches and any further inferred invariant exception require exact
+human confirmation; no switch can waive that requirement. Existing sufficient
+authority remains usable only within its recorded scope. Stage ownership,
+type boundaries, historical claims, and specification 09 successor rules
+remain unchanged unless separately specifically authorized.
+
 ## Workflow stages and lifecycle states
 
 A workflow stage is an activity that reads evidence and may create or reconcile
@@ -44,8 +90,9 @@ Every stage must:
 3. Preserve source identity, authority, revision, limitations, and unresolved
    conflicts.
 4. Operate only on records and outputs owned by the stage.
-5. Stop the affected work when an entry gate fails or a required human decision
-   is missing.
+5. Stop the affected work when an unexcepted entry gate fails or an unexcepted
+   required human decision is missing. The specific exception route above
+   never changes a failed result into passing evidence.
 6. Preserve unrelated work and report every changed path and verification
    result truthfully.
 7. Reconcile every record named by the stage's exit contract before handing the
@@ -80,7 +127,8 @@ existence of later work to infer an earlier gate.
 | 13 | Finalization | All types after completion | Reconciled commit, push, and pull request when configured | No new completion claim |
 
 Stages 5 and 6 are repeated until their applicable source records have explicit
-human outcomes. Stages 8 through 10 form the implementation path. Stage 11 is
+human outcomes or actual agent dispositions under the specific recorded
+alternative method described above. Stages 8 through 10 form the implementation path. Stage 11 is
 the design path. Stage 12 is the planning path. An initiative follows exactly
 one delivery path for its declared type.
 
@@ -257,8 +305,10 @@ it covers a similar subject.
 
 ### Failed entry or verification
 
-When an entry gate or verification fails, preserve the failure, stop the
-affected work, and identify the owning stage and evidence needed. Independent
+When an unexcepted entry gate or verification fails, preserve the failure, stop
+the affected work, and identify the owning stage and evidence needed. A named
+authorized exception retains the actual failed or unperformed result and
+its limitation; it never supplies ordinary completion evidence. Independent
 authorized work may continue when it cannot alter the failed claim.
 
 ### Human pause and resume

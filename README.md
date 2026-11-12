@@ -137,6 +137,13 @@ require explicit human reopening before refinement. See the
 
 ## What TADp provides
 
+The canonical [prompt keyword specification](protocol/evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md)
+applies to every TADp task. It adds positional settings, bounded exception
+records, declared action-list scheduling, and a protected extensible registry.
+Its defaults preserve ordinary gates and locks. The
+[adoption guide](protocol/docs/guides/prompt-keywords-migration.md) explains
+compatibility and how to request a new keyword.
+
 - rules for ranking evidence so developers can separate binding authority from
   background context;
 - templates for proposals, assumptions, decisions, specifications, plans, work

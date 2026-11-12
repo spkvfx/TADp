@@ -35,12 +35,28 @@ not execute, recurse into, or derive additional work from the example.
 ## Initiative acceptance prompt
 
 ~~~text
-Apply {initiative_template_root}/prompts/WORKFLOW-CONTRACT.md. Its shared rules
-are mandatory and do not reduce this prompt's specific requirements.
+Apply {initiative_template_root}/prompts/WORKFLOW-CONTRACT.md and the canonical
+prompt keyword specification at evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md.
+The following human-response and gate-stop instructions state the ordinary
+required path. Apply only specifically authorized, recorded exceptions under
+that specification; a mode request alone supplies no waiver. Record effective
+settings for each source-position block before dispatch or retry, preserve
+locks and truthful evidence, and retain ordinary lifecycle meanings. Preview
+work remains response-only; local resource restrictions and independent review
+obligations compose with gates. The shared contract and this prompt retain
+all unexcepted preconditions, edit boundaries, verification, and reporting.
 
 Conduct the acceptance review for {initiative} at {initiative_path} on
 {initiative_branch}. This is the human-authority gate from `Proposed` to
 `Accepted`; it is not delivery, execution, finalization, or autonomous approval.
+
+If separately sufficient authority excepts a named prerequisite or requests
+bounded work without the ordinary acceptance decision, record the exact
+exception and actual outcome. A waived human gate is not an Accept response:
+do not run the Accept reconciliation below or manufacture the `Accepted`
+transition. Report the bounded prompt result and the remaining acceptance
+obligation. Existing exact acceptance authority may be documented without
+requesting the same human decision again.
 
 Apply the ownership and approval convention at {project_profile_path}. Identify
 the exact human authority permitted to accept this initiative. Do not infer
@@ -114,17 +130,17 @@ Preserve the complete acceptance packet or its stable link, the exact question,
 exact response, human authority, date or event, accepted revision, scope, and
 affected records.
 
-For Accept:
-- retain the accepted baseline without changing its meaning;
-- set the initiative status to `Accepted`;
-- append the legal `Proposed` to `Accepted` lifecycle entry with the receipt and
+For Accept, perform these reconciliation steps serially:
+1. retain the accepted baseline without changing its meaning;
+2. set the initiative status to `Accepted`;
+3. append the legal `Proposed` to `Accepted` lifecycle entry with the receipt and
   baseline revision;
-- link the acceptance receipt from the initiative README;
-- reconcile {initiative_status_path}, {initiative_registry_path}, and every
+4. link the acceptance receipt from the initiative README;
+5. reconcile {initiative_status_path}, {initiative_registry_path}, and every
   applicable parent or dependent tracking record; and
-- preserve all allocated correlation fields while updating only copied
+6. preserve all allocated correlation fields while updating only copied
   lifecycle status and its receipt evidence; and
-- identify the next type-specific stage without starting it.
+7. identify the next type-specific stage without starting it.
 
 For Reject, leave the initiative `Proposed`, record the rejection receipt and
 reason, and identify the owning earlier stage or evidence needed before another

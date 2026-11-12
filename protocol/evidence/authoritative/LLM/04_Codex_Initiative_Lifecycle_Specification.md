@@ -6,6 +6,22 @@ This specification defines the only lifecycle states and transitions Codex may
 record for a TADp initiative. Lifecycle claims are evidence claims. Changing a
 status does not create the facts required by that status.
 
+Apply the canonical
+[prompt keyword specification](11_Codex_Prompt_Keyword_Specification.md).
+Its exception records may authorize precise bounded prompt work, but requested
+gate settings do not create transitions or change the ordinary state meanings
+below. Acceptance and reopening require their own actual human authority;
+autonomous question authority is not acceptance or reopening. Preserve prior
+claims and link any exception receipt from affected lifecycle and execution
+records before relying on its scope. A waived approval or skipped or failed
+check is not passing evidence for `Accepted` or `Completed`. Keep the last
+truthful state and report excepted prompt work separately when ordinary
+transition evidence is absent. No lifecycle replacement is adopted by the
+keyword revision; any proposed replacement needs the separate exact authority
+and consumer reconciliation required by specification 11. Restoring gates
+does not validate earlier skipped checks, and later gated dependencies must
+recheck current prerequisites. Locks remain enforced in every setting.
+
 ## States
 
 | State | Meaning | Minimum evidence |

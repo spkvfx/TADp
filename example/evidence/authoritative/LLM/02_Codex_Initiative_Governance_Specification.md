@@ -5,6 +5,15 @@
 This specification governs how Codex interprets realization notes and creates,
 reviews, changes, executes, and reports initiatives.
 
+Apply the canonical
+[prompt keyword specification](11_Codex_Prompt_Keyword_Specification.md)
+to every governed task. The human decision, acceptance, execution, completion,
+and reopening requirements below are the ordinary contract. Only exact
+requirements named by specific human exception authority and recorded before
+reliance may receive the stated replacement; every other obligation remains.
+Mode requests alone are insufficient, inferred exceptions require confirmation,
+and locks, truthful evidence, and ordinary lifecycle meanings remain enforced.
+
 ## Realization notes
 
 A realization note is a broad description of an opportunity, concern, desired
@@ -89,9 +98,14 @@ must not confirm, correct, reject, accept, defer, close, or otherwise resolve an
 assumption or question without an explicit human response.
 
 An explicit human instruction may authorize a different decision method for a
-clearly bounded task. That authorization must be recorded with the resulting
-disposition and rationale. It does not authorize an invariant conflict or
-apply automatically to other initiatives, assumptions, or questions.
+clearly bounded task. Before relying on it, record the actual instruction and
+authority in the required receipt and specification 11 exception record,
+identifying every covered source ID and exact human-input rule. Preserve the
+actual agent author, method, result, rationale, affected IDs, limitations, and
+consumer reconciliation for each autonomous disposition. Do not fabricate a
+human answer or ask repeatedly within the same sufficient approved scope.
+It does not authorize an invariant conflict or apply automatically to other
+initiatives, assumptions, or questions. Preview dispositions remain drafts.
 
 Every assumption or question must be handled individually. A blanket approval
 is valid only when the human instruction clearly identifies the complete set
@@ -177,8 +191,12 @@ register. Completion must review every other open initiative and affected
 closed claims, then reconcile blockers or route compatible refinements under
 specification 10. Completion never authorizes silent cross-initiative edits.
 
-Codex may execute work only when the initiative type permits that output and
-all required human decisions and entry gates are satisfied. It must implement
+Under the ordinary workflow, Codex may execute work only when the initiative
+type permits that output and all required human decisions and entry gates are
+satisfied. A specific documented exception may permit named bounded prompt
+work under specification 11; it does not manufacture initiative acceptance,
+readiness, or completion. Retain the last truthful lifecycle state where those
+ordinary prerequisites remain unmet. Codex must implement
 the accepted specification rather than a convenient approximation.
 
 Acceptance is a distinct human-authority stage. Assumption confirmation,
@@ -187,7 +205,7 @@ not by itself accept an initiative. Delivery follows exactly one type-specific
 path: implementation creates or changes products, design creates or changes
 initiative specifications, and planning creates initiative-local evidence.
 
-Codex must not claim completion until:
+Codex must not claim ordinary initiative completion until:
 
 - every in-scope requirement maps to a delivered product or evidence output;
 - applicable invariant and acceptance gates pass;

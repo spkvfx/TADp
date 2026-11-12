@@ -1,5 +1,12 @@
 # Repository prompt execution instructions
 
+Apply the canonical
+[prompt keyword specification](../protocol/evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md)
+when interpreting this prompt and every other TADp task. Read it without
+activating its examples. Operative settings, bounded exception records, and
+list scheduling follow that contract; they do not broaden the target or exact
+maintenance authority below and never bypass TADp locks.
+
 These instructions apply only when an agent executes a prompt stored in this
 directory. They do not change the handling of work requested outside
 `prompts/`.

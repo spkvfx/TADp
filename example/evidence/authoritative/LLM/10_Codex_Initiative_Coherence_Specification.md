@@ -7,6 +7,21 @@ initiative represents work even before acceptance or product execution.
 Completion learning must be usable by open initiatives without silently
 changing a closed claim or discarding conflicting effort.
 
+Apply the canonical
+[prompt keyword specification](11_Codex_Prompt_Keyword_Specification.md)
+to requests involving this specification. Coherence, conflict, completion,
+and reopening requirements below remain the ordinary contract. A mode name
+does not except an inventory, resolve an incompatibility, authorize a target
+edit, or supply human reopening authority. A proposed exception must identify
+the exact affected rule, block, prior claim, authority, consequences, and
+dependent records, with its receipt and exception record created before use.
+An agent-inferred exception requires explicit confirmation. Never hide known
+incompatible effort or convert waived or failed review into passing evidence.
+Ordinary lifecycle labels retain their meanings; excepted prompt completion
+does not establish ordinary initiative completion. Restored gates require
+current checks when later work depends on excepted output. Locks and
+historical source identities remain enforced.
+
 ### Revision record
 
 - **Authority:** The User's exact 2026-11-12 instructions preserved in

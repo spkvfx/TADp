@@ -118,6 +118,18 @@ explicitly what the decision does not authorize.
 - {{constraint_or_authoritative_evidence}}
 - **Not authorized by this review:** {{out_of_scope_or_unmet_claim}}
 
+## Prompt blocks and exception boundaries
+
+{{source_prompt_revision_block_settings_exception_links_and_actual_gate_outcomes_or_none}}
+
+Distinguish the observed readiness finding from separately authorized permission
+to perform bounded work under an exception. A waived or unperformed gate is
+not ready or passed; preserve failures, missing evidence, owners, and re-entry
+conditions. A read-only readiness review creates no persistent exception record.
+For preview work, draft records remain response-only. Identify independent
+review findings and their disposition where required; retain locks and all
+unexcepted obligations.
+
 ## Conclusion and next action
 
 <!--

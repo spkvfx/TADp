@@ -33,13 +33,30 @@ example.
 ## Initiative assumption confirmation prompt
 
 ~~~text
-Apply {initiative_template_root}/prompts/WORKFLOW-CONTRACT.md. Its shared rules
-are mandatory and do not reduce this prompt's specific requirements.
+Apply {initiative_template_root}/prompts/WORKFLOW-CONTRACT.md and the canonical
+prompt keyword specification at evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md.
+The following human-response and gate-stop instructions state the ordinary
+required path. Apply only specifically authorized, recorded exceptions under
+that specification; a mode request alone supplies no waiver. Record effective
+settings for each source-position block before dispatch or retry, preserve
+locks and truthful evidence, and retain ordinary lifecycle meanings. Preview
+work remains response-only; local resource restrictions and independent review
+obligations compose with gates. The shared contract and this prompt retain
+all unexcepted preconditions, edit boundaries, verification, and reporting.
 
-Facilitate a human confirmation review of every current, unresolved assumption for {initiative} at {initiative_path}. This is an interactive
-review, not an autonomous assumption task. A human user must explicitly confirm,
+Facilitate a human confirmation review of every current, unresolved assumption for {initiative} at {initiative_path}. The ordinary path is an interactive
+review. Under that path, a human user must explicitly confirm,
 correct, reject as not applicable, or turn each source assumption into an open
 question before that source record may change.
+
+If a prior exact human instruction sufficiently authorizes an autonomous
+decision method for the named assumptions, first capture that authority and
+the rule-specific exception. For those covered IDs only, use the recorded
+method instead of the human presentation/wait loop below. Retain the source
+inventory and all applicable reconciliation steps, label actual dispositions
+as agent-made, and preserve the method, rationale, affected IDs, and authority.
+Do not fabricate a human response or repeat a covered confirmation. All other
+assumptions retain the ordinary human path.
 
 Apply the ownership and approval convention at {project_profile_path}. Human
 owner, reviewer, and approver roles resolve as recorded for the target project.
@@ -47,7 +64,7 @@ Preserve every technical component, profile, placement, external-party,
 contract, and evidence dependency.
 
 Read `{initiative_path}/README.md` to identify the initiative type and its
-allowed output. The type does not change the human-review requirement:
+allowed output. The type does not change the ordinary human-review requirement:
 assumptions can be confirmed, corrected, rejected as not applicable, or turned
 into an open question only through an explicit human response.
 
@@ -138,7 +155,9 @@ source assumption row. If the response is ambiguous or conflicts with
 authoritative evidence, do not create a governing disposition; request
 clarification or use the invariant-conflict procedure.
 
-Then update the source assumption record:
+Then update the source assumption record using the applicable disposition rule
+below. These numbered alternatives are a reference inventory, not instructions
+to apply incompatible dispositions serially:
 
 1. For Confirm, retain the original assumption verbatim, mark that exact row
    Confirmed, and record the confirmation note and date where the record's

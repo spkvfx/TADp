@@ -69,6 +69,18 @@ hide a delivery deviation.
 - **Residual work has an owner:** {{links_or_none}}
 - **Correlation tuple remains intact:** {{canonical_row_and_reciprocal_link_review}}
 
+## Prompt blocks and bounded exceptions
+
+{{source_prompt_revision_effective_block_ledger_exception_records_and_receipts_or_none}}
+
+Preserve actual author and authorized method for agent-made dispositions;
+reconcile affected decisions, lifecycle, status, and dependent records. Label
+waived, excepted, skipped, unperformed, and failed checks truthfully. They do
+not prove acceptance, qualification, or ordinary completion. Locks remain
+enforced. Keep preview proposals response-only, local access within its
+restriction, and independent-review results and unresolved findings explicit.
+Restored gates recheck current prerequisites dependent on excepted work.
+
 ## Delivery conclusion
 
 {{state_the_exact_completed_blocked_or_partial_delivery_result}}

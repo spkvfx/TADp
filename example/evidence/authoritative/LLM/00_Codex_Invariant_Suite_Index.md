@@ -96,6 +96,25 @@ migration, and consumer-reconciliation requirements of this suite.
   feedback handling without changing evidence precedence, type boundaries,
   human decision gates, stage numbering, or specification 09 successor rules.
 
+### Positional prompt keyword revision record
+
+- **Authority:** The User's 2026-11-12 instruction to execute
+  `prompts/positional-gate-switches-protocol-change.md`, captured in
+  [KWD-DR-001](../../../decisions/KWD-DR-001-positional-keywords.md).
+- **Reason and scope:** Establish canonical extensible directive vocabulary,
+  positional composition, list execution, preview, local access, independent
+  review, and precise recorded exceptions across instructions and consumers.
+- **Effective event:** The first coherent specification 11 revision commit,
+  including reconciled consumers, verification, and authorized locks.
+- **Compatibility and migration:** Prospective adoption only; no historical
+  prompt, decision, gate, question, initiative, or lifecycle claim changes.
+  Existing adopters retain their recorded revision until adoption and any
+  applicable exception authority are recorded.
+- **Successor relationship:** Specification 11 qualifies earlier gate clauses
+  only through its specific authority and documentation process. Unexcepted
+  rules, protected sources, locks, evidence truth, ordinary lifecycle meanings,
+  type boundaries, and substantive-successor requirements remain binding.
+
 ## Documents
 
 1. [Codex evidence authority specification](01_Codex_Evidence_Authority_Specification.md)
@@ -125,11 +144,23 @@ migration, and consumer-reconciliation requirements of this suite.
 10. [Codex initiative coherence specification](10_Codex_Initiative_Coherence_Specification.md)
     defines open effort as work, cross-initiative conflict records, completion
     feedback, closed-claim preservation, and prospective adoption controls.
+11. [Codex prompt keyword specification](11_Codex_Prompt_Keyword_Specification.md)
+    is the canonical extensible directive registry and governs universal
+    interpretation, positional settings, action-list scheduling, explicit
+    exceptions, confirmation, locks, and keyword registration.
 
 The repository-root `../../../AGENTS.md` is the Codex entry point because Codex loads
 repository guidance from that standard location. It summarizes this suite but
 does not replace it. When the summary and this suite differ, this suite governs
 the evidence protocol and the more restrictive instruction applies.
+
+Read and apply specification 11 when interpreting every governed TADp task,
+including ordinary requests and analysis without a stored prompt. Registry
+examples and supporting records remain inert. A requested setting is not
+authority to waive a rule. A specifically authorized, documented exception
+governs only its named rule, block, revision, and duration; compare all other
+instructions under ordinary precedence rather than treating a keyword as a
+blanket override. No switch weakens locks or truthful evidence.
 
 ## Normative language
 

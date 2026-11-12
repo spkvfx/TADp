@@ -32,8 +32,16 @@ execute, recurse into, or derive additional work from the example.
 ## Design delivery prompt
 
 ```text
-Apply {initiative_template_root}/prompts/WORKFLOW-CONTRACT.md. Its shared rules
-are mandatory and do not reduce this prompt's specific requirements.
+Apply {initiative_template_root}/prompts/WORKFLOW-CONTRACT.md and the canonical
+prompt keyword specification at evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md.
+The following human-response and gate-stop instructions state the ordinary
+required path. Apply only specifically authorized, recorded exceptions under
+that specification; a mode request alone supplies no waiver. Record effective
+settings for each source-position block before dispatch or retry, preserve
+locks and truthful evidence, and retain ordinary lifecycle meanings. Preview
+work remains response-only; local resource restrictions and independent review
+obligations compose with gates. The shared contract and this prompt retain
+all unexcepted preconditions, edit boundaries, verification, and reporting.
 
 Deliver the accepted design initiative {initiative} at {initiative_path} on
 {initiative_branch}.

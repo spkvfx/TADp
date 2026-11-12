@@ -54,6 +54,25 @@ python -m unittest discover -s tests -v
 
 ## What the validator checks
 
+The shared `../../tools/tadp_keywords.py` reads the canonical registry from
+[specification 11](../../evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md).
+Keyword regression cases exercise positional state, exact boundaries, inert
+source regions, exception prerequisites, preview/local/review composition,
+and serial/parallel scheduling. The validator checks the registry and its
+universal entry-point references without relaxing ordinary lifecycle checks.
+These checks cannot authenticate a human instruction, infer semantic authority
+from prose, intercept tools, or prove that a real review or concurrent tool
+activity occurred. Consumers retain those obligations and must preserve
+skipped, failed, and unavailable evidence. See the
+[adoption guide](../guides/prompt-keywords-migration.md).
+
+`TADP046` reports a malformed adopted canonical registry; `TADP047` reports
+a missing direct specification reference in the suite index or universal
+entry points. Reusable project instructions deliberately use the installed
+project's direct relative link. Link validation resolves that exact canonical
+destination against the adopting root without creating a duplicate authority
+tree under `template/project/`. A missing canonical target still fails.
+
 The current validator checks:
 
 - SHA-256 integrity locks for every file under `template/` and

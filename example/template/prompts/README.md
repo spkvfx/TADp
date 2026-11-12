@@ -7,6 +7,14 @@ needs.
 
 # Initiative prompts
 
+Apply the canonical
+[prompt keyword specification](../../evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md)
+when interpreting these prompts and ordinary TADp requests. Its registry owns
+recognized directives and extensions; this library does not define aliases.
+The shared contract explains how bounded exception records qualify the ordinary
+gate path without changing lifecycle meanings, lock protection, or evidence.
+The numbered stage map below is a reference inventory, not an action list.
+
 Use these prompts to review and reconcile initiative material. Each prompt
 addresses a specific task; additional prompts can be added here as they are
 defined.

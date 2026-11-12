@@ -36,8 +36,22 @@ from the example.
 ## Initiative implementation-readiness review prompt
 
 ~~~text
-Apply {initiative_template_root}/prompts/WORKFLOW-CONTRACT.md. Its shared rules
-are mandatory and do not reduce this prompt's specific requirements.
+Apply {initiative_template_root}/prompts/WORKFLOW-CONTRACT.md and the canonical
+prompt keyword specification at evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md.
+The following human-response and gate-stop instructions state the ordinary
+required path. Apply only specifically authorized, recorded exceptions under
+that specification; a mode request alone supplies no waiver. Record effective
+settings for each source-position block before dispatch or retry, preserve
+locks and truthful evidence, and retain ordinary lifecycle meanings. Preview
+work remains response-only; local resource restrictions and independent review
+obligations compose with gates. The shared contract and this prompt retain
+all unexcepted preconditions, edit boundaries, verification, and reporting.
+
+This review remains read-only. It may inspect already recorded authority and
+exceptions or show proposed records in its response, but it cannot persist
+them. Preserve the observed readiness result independently of any separately
+authorized permission to perform bounded work under an exception. Waived,
+failed, and unperformed checks are not Go evidence.
 
 Perform an implementation-readiness review for the existing {initiative} at
 {initiative_path}, immediately before execution of

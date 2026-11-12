@@ -84,6 +84,15 @@ expands prompt scope.
 
 ## Gates, evidence, and prompt authority
 
+- Read and apply the current scaffold's canonical
+  [prompt keyword specification](../evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md)
+  when interpreting any task, including ordinary requests and local prompts.
+  Its registry, positional blocks, list scheduling, and bounded exception
+  process govern operative instructions. Reading examples does not activate
+  them. A requested setting alone cannot except a rule; record sufficient
+  exact authority before reliance, retain every unexcepted gate, and distinguish
+  excepted work from ordinary acceptance or completion. This contract does not
+  expand the scaffold boundary or permit protected-source maintenance here.
 - Read `S/AGENTS.md` and all applicable authoritative material, beginning
   with the local invariant-suite index, before making a normative decision.
 - Apply the more restrictive instruction when the root instructions, a local
@@ -100,7 +109,7 @@ expands prompt scope.
   captured base, active branch, stage ownership, lifecycle evidence, and
   type-specific delivery path whenever a prompt participates in an initiative
   workflow.
-- When a gate fails, retain the failure and stop only the affected work.
+- When an unexcepted gate fails, retain the failure and stop only the affected work.
   Continue independent in-scope work only when the protocol permits it.
 - Record invariant conflicts through the required conflict process. Do not
   alter higher- or lower-standing material to conceal a contradiction.
