@@ -131,7 +131,7 @@ standing, or recorded claims.
 |---|---|
 | Work version | `v1.0` |
 | Realization suite | `RZN-001-P1-DOCS-SUITE` at this path |
-| Initiative | [`INIT-IMP-001` — Contract documentation](../../../../initiatives/implementation/INIT-IMP-001-contract-documentation/README.md) |
+| Initiative | [`INIT-IMP-001` — Contract documentation](../../../../initiatives/v1.0/implementation/INIT-IMP-001-contract-documentation/README.md) |
 | Dedicated branch | `initiative/v1.0-contract-documentation` |
 | Captured base | `v1` at `5a0ea0bd9f51edf97f9eddd39c6a3509c271503b` |
 | Stage 0 preparation commit | `f27b09bf8580668073dbf2265466ae5f4d14a737` |
@@ -144,3 +144,15 @@ navigation only; it does not promote this suite, accept the initiative, choose
 a documentation destination, or make a delivery, conformance, release, or
 deployment claim.
 
+
+## Version-scope migration addendum (2026-11-12)
+
+**Version scope:** `v1.0`
+
+**Migration authority:** [EX-VSG-DR-001](../../../../initiatives/decision-receipts/EX-VSG-DR-001-initiative-migration.md)
+
+**Current initiative target:** [INIT-IMP-001](../../../../initiatives/v1.0/implementation/INIT-IMP-001-contract-documentation/README.md)
+
+**Exact source catalog:** [RZN-001-P1-DOCS-N01](01-RZN-001-P1-DOCS-contract-documentation.md)
+
+The original headers and one-to-one allocation language remain historical evidence under the prior revision. This addendum adopts scope membership and many-target catalog capability without changing source identity, relabeling this note or promoting its non-authoritative standing. The existing target retains the same narrow Proposed claim. Future independent outcomes require their own initiative records, not necessarily another version. The initiative index owns current assignments; the historical branch and base above remain history.

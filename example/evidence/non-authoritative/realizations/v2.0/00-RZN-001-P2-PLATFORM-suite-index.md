@@ -143,7 +143,7 @@ pre-effective suite's header, source identity, standing, or recorded claims.
 |---|---|
 | Work version | `v2.0` |
 | Realization suite | `RZN-001-P2-PLATFORM-SUITE` at this path |
-| Initiative | [`INIT-IMP-002` — Container platform and runtime packaging](../../../../initiatives/implementation/INIT-IMP-002-container-platform/README.md) |
+| Initiative | [`INIT-IMP-002` — Container platform and runtime packaging](../../../../initiatives/v2.0/implementation/INIT-IMP-002-container-platform/README.md) |
 | Dedicated branch | `initiative/v2.0-container-platform` |
 | Captured base | `v1` at `5a0ea0bd9f51edf97f9eddd39c6a3509c271503b` |
 | Stage 0 preparation commit | `d888ea74d36477ba2a192c1eb5531aca6003fe25` |
@@ -155,3 +155,15 @@ The initiative begins `Proposed`. Migration creates identity and navigation
 only; it does not promote this suite, select artifact paths, accept platform
 work, or make a delivery, conformance, release, or deployment claim.
 
+
+## Version-scope migration addendum (2026-11-12)
+
+**Version scope:** `v2.0`
+
+**Migration authority:** [EX-VSG-DR-001](../../../../initiatives/decision-receipts/EX-VSG-DR-001-initiative-migration.md)
+
+**Current initiative target:** [INIT-IMP-002](../../../../initiatives/v2.0/implementation/INIT-IMP-002-container-platform/README.md)
+
+**Exact source catalog:** [RZN-001-P2-PLATFORM-N01](01-RZN-001-P2-PLATFORM-v2.0-container-platform.md)
+
+The original headers and one-to-one allocation language remain historical evidence under the prior revision. This addendum adopts scope membership and many-target catalog capability without changing source identity, relabeling this note or promoting its non-authoritative standing. The existing target retains the same narrow Proposed claim. Future independent outcomes require their own initiative records, not necessarily another version. The initiative index owns current assignments; the historical branch and base above remain history.
