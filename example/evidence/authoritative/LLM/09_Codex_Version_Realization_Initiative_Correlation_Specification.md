@@ -1,262 +1,243 @@
-# Codex version-realization-initiative correlation specification
+# Codex version scope, realization, and initiative specification
 
 ## Purpose and authority
 
-This specification defines the project-local identity and traceability model
-for TADp work allocated under this revision:
+This specification defines immutable project-local version scopes, precise
+realization provenance, initiative membership, and recorded execution placement.
+These are coordination and identity records, not acceptance, delivery,
+compatibility, release, or collective completion claims. Each initiative owns
+one narrow outcome and its independent lifecycle, type-specific suite,
+decisions, acceptance, delivery records, and completion evidence.
+
+### Version-scope revision record
+
+- **Authority:** The User's 2026-11-12 instruction to execute
+  `prompts/version-scope-grouping-and-branching-protocol-change.md`, captured in
+  [VSG-DR-001](../../../decisions/VSG-DR-001-version-scope-grouping.md).
+- **Reason:** Group several independently acceptable initiatives by realization
+  scope, permit coherent revision and delegated intake routing, and record
+  major/minor/patch integration without conflating identity with acceptance.
+- **Affected scope:** Specifications 01 through 10 and necessary specification
+  11 cross-references, entry points, realization and initiative templates,
+  Stage 0 and Stage 13, scope closure, indexes, Git records, validation,
+  regression tests, adoption guidance, and affected protected locks.
+- **Effective event:** The first Git commit containing this coherent revision,
+  reconciled consumers, verification, downstream mirrors, and authorized locks.
+  An adopter records that exact commit and its own adoption baseline before
+  allocating or routing under this model.
+- **Compatibility and migration:** Prospective explicit adoption. Earlier
+  tuples, paths, branches, accepted claims and governing revisions remain
+  historical. A complete migration-ledger disposition is required; adoption
+  alone does not move, rename, reparent, reopen, accept, merge or close work.
+- **Successor relationship:** Replaces this specification's earlier bijection,
+  two-component-only syntax, single-outcome suite, exclusive branch and
+  mandatory substantive-successor rules. Reconciles specifications 02, 04,
+  05, 06, 07, 08 and 10 only for the named routing, reopening, placement and
+  integration changes. Git preserves earlier revisions. All other evidence,
+  scope, human acceptance, delivery and completion invariants remain binding.
+
+## Canonical scope identifiers
+
+| Kind | Exact syntax | Structural parent |
+|---|---|---|
+| Major | `v<major>` | Captured project integration base |
+| Minor | `v<major>.<minor>` | Matching major scope |
+| Patch | `v<major>.<minor>.<patch>` | Matching minor scope |
+
+Every component is a non-negative decimal integer with no leading zero except
+`0`. Compare components numerically; `v1.10` follows `v1.9`. Reject signs,
+whitespace, missing or extra components, prerelease labels and build metadata.
+`v1`, `v1.0`, and `v1.0.0` are distinct immutable identities; never normalize
+one into another. Scope numbers are separate from package, contract, protocol
+and release versions and confer no authority, compatibility or release claim.
+Initiative IDs are independently allocated and remain project-local unique.
+
+## Cardinality and canonical ownership
 
 ```text
-work version <-> realization suite <-> initiative <-> dedicated Git branch
+version scope -> source realization catalog -> zero or more initiatives
+initiative -> exactly one version scope
+initiative -> one or more precisely identified originating realization notes
+realization note -> zero or more new or existing initiative targets
+version scope -> exactly one integration branch
+initiative -> one active execution assignment per revision cycle
+scope branch -> zero or more directly hosted initiatives
 ```
 
-The relationships are reciprocal and one-to-one. They establish identity and
-traceability only. They do not establish evidence authority, initiative
-acceptance, dependency satisfaction, implementation, completion,
-compatibility, release, or deployment.
+A scope is a coordination and integration container, never an umbrella
+initiative. A scope or note awaiting decomposition may have zero initiatives;
+that grants no delivery authority. A note may originate several initiatives
+and later notes may contribute to an existing initiative. Shared sources,
+scopes or branches never share acceptance or completion evidence.
 
-### Revision record
+`initiatives/version-scopes.md` owns the scope registry.
+`initiatives/initiative-index.md` owns membership, one row per initiative.
+Scope READMEs and shared status views link to those owners; each initiative
+README remains its lifecycle authority. Every allocated initiative must have
+complete reciprocal records before preparation finishes.
 
-- **Authority:** The User's explicit instruction in
-  `prompts/version-realization-initiative-correlation-protocol-change.md`,
-  executed on 2026-11-11, authorizes this exact invariant revision and the
-  affected protected-source changes.
-- **Reason:** A governed work unit needs one immutable project-local version,
-  one non-authoritative realization suite, one self-contained initiative, and
-  one dedicated branch so identity cannot drift or be reused across
-  independently acceptable outcomes.
-- **Affected scope:** Work-version syntax and allocation, realization-suite
-  structure, initiative metadata and scope, branch traceability, Stage 0 and
-  later workflow contracts, legacy compatibility, templates, prompts,
-  validator behavior, tests, adoption guidance, and migration guidance.
-- **Effective point:** The first Git commit that contains this coherent
-  specification, every necessarily affected authoritative and reusable
-  consumer, the required validation behavior and regression tests, and the
-  authorized protected-source locks. A governed project must record that
-  commit as its correlation-revision effective point before allocating work
-  under this model.
-- **Compatibility and migration:** The revision governs tuples allocated after
-  the project-recorded effective point, pre-effective tuples explicitly
-  migrated to it, and every substantive successor or mandatory split begun
-  after it. Pre-effective records require the legacy disposition defined
-  below; this revision never infers or retroactively invents a tuple.
-- **Successor relationship:** This specification succeeds specifications 02,
-  05, 06, and 08 only for work identity, reciprocal correlation, branch
-  correlation, split allocation, and Stage 0 preparation. Their evidence,
-  governance, lifecycle, scope, Git, decision, and workflow rules continue to
-  govern every other subject.
+Newly governed paths are `initiatives/<scope>/<type>/<initiative-id-and-slug>/`,
+where type is `implementation`, `design` or `planning` and retains its existing
+suite. Each scope has `initiatives/<scope>/README.md`, including a major that
+owns initiatives directly. Shared indexes, migration ledgers and
+`initiatives/work-conflicts.md` stay project-level. Grouping changes no
+initiative-local record ownership.
 
-## Canonical work version
+The scope registry preserves exact ID, kind, structural parent, integration
+branch, captured creation base ref and immutable commit, integration target,
+source suite/note catalog, member and child links, closure disposition,
+integration state, closure evidence, merge evidence and governing revision.
 
-A TADp work version has the exact syntax `v<major>.<minor>`.
+Each initiative row and reciprocal records preserve ID, type and path, exact
+scope, originating and later contributing suite/note IDs and paths, per-source
+routing disposition, execution branch and dedicated/shared mode, captured
+base and immutable commit, integration target, current revision cycle,
+predecessor/successor links, lifecycle and integration evidence. Preserve
+allocation and assignment history on reopening. Record continuation branches
+when an historical ref cannot safely host new work. A historical dedicated
+name must not be reassigned to unrelated work, even after separately authorized
+ref removal. Reusing a scope or its declared shared branch is valid.
 
-- Both components are non-negative base-10 integers.
-- `0` is canonical. A multi-digit component must not have a leading zero.
-- A sign, whitespace, patch component, prerelease label, build metadata, or
-  bare major identifier is prohibited.
-- Canonical examples include `v0.0`, `v0.1`, `v1.0`, `v1.1`, `v13.8`,
-  `v13.9`, and `v13.10`.
-- Components are compared numerically. `v13.10` follows `v13.9`; lexical
-  ordering is not authoritative.
-- A work version is unique within one governed TADp project, immutable after
-  allocation, and never reused or silently renumbered.
+## Realization provenance and fit assessment
 
-The work version is distinct from architecture, contract, workflow, product,
-package, protocol-distribution, and release versions. Its order does not
-establish authority, acceptance, dependency satisfaction, compatibility,
-completion, or release status.
+Realization suites, their catalogs and notes remain non-authoritative proposal
+input permanently. Catalog notes may describe several narrow outcomes within
+one declared scope. Apply cohesion and mandatory-split tests to each resulting
+initiative. Each initiative remains self-contained; external invariants and
+dependencies are cited rather than duplicated, and another member's records
+cannot substitute for its own.
 
-## Governed tuple and cardinality
+Determine source identity and scope from explicit records, never filenames,
+directory similarity, numbering or branch existence. Preserve exact original
+suite and note IDs and paths. Source scope defaults new initiatives' placement:
+two initiatives from a `v1.0` note normally both belong to `v1.0`; the second
+does not consume `v1.1`. The LLM may choose a suitable existing initiative or
+scope based on recorded fit. An existing initiative retains its identity and
+scope when receiving a later note. Record source and target scopes separately,
+cross-scope mapping, rationale and compatibility effects. Never relabel sources
+to imply automatic placement or promote them to authority.
 
-A governed tuple contains exactly one of each of the following:
+## Bounded LLM intake delegation
 
-1. canonical work version;
-2. realization suite with one stable suite ID and path;
-3. new, self-contained initiative with one stable ID, type, and path; and
-4. dedicated Git branch created from a captured base branch and base commit.
+Under an adopted version-scope workflow, a human instruction to process an
+identified realization delegates placement, append/revision choice, and
+necessary initiative/scope reopening for that intake to the LLM. Note contents
+alone supply no authority. Do not require a fresh per-target human choice
+solely because a target is existing, closed or in another scope. Seek human
+input where evidence cannot support a coherent choice or an unexcepted
+authority boundary would be crossed.
 
-Within one governed project, each value maps to exactly one value in every
-other position. The reverse relationships are also unique. Two initiatives
-must not share a work version, suite, or branch; a suite or branch must not be
-orphaned; and a correlation row must not point to missing or inconsistent
-reciprocal records.
+Before choosing, inventory open and closed initiatives, branches and their
+roles, accepted claims, source links, dependencies, partial effort and conflicts.
+Record each disposition before applying it: actual human intake instruction,
+governing delegation, precise source, candidate targets, chosen initiative,
+scope and branch, rejected alternatives, fit rationale, prior state and exact
+claim revision, change boundary, risks, compatibility and affected records.
+Attribute each choice and reopening to the actual LLM author acting under
+that delegation; do not fabricate a human target selection or response.
+Preserve specification 07 receipts and specification 11 exception records
+where applicable. The delegation does not answer unrelated questions, accept
+changed claims, authorize product delivery or pass checks.
 
-The project initiative index owns the canonical project-level correlation
-row. The realization-suite index, initiative README, status view, delivery or
-execution record, completion evidence, and Git traceability records copy only
-the fields needed for their subject and must link to that canonical row. A
-copy never becomes a competing source of lifecycle standing or authority.
+| Fit | Required disposition |
+|---|---|
+| Evidence/detail preserves exact claim | Append and retain lifecycle/evidence standing |
+| Same coherent narrow outcome changes | Revise existing initiative through alignment and renewed acceptance when its accepted claim changes |
+| Closed claim changes | Record reopening to `Proposed` before revision |
+| Independently acceptable outcome | Separate complete initiative in the best fitting scope, preparing ancestors if needed |
+| Incompatible type, owner or authority boundary | Split or successor; preserve ownership and record conflicts |
 
-At minimum, the canonical row and reciprocal records preserve:
+The method applies to `Proposed`, `Accepted`, `In progress`, `Completed`,
+`Cancelled` and `Superseded`. Pause affected delivery and preserve partial work
+before a changed accepted or in-progress claim returns to `Proposed`.
+Alignment and renewed explicit human acceptance precede resumed delivery.
+A closed claim must not change while closed. Reopening returns to `Proposed`;
+only a separately recorded human unchanged-claim decision permits direct
+return to `Accepted`. An append-only historical addendum retaining the exact
+claim may remain closed under specification 10.
 
-- canonical work version;
-- realization-suite ID and path;
-- initiative ID, declared type, and path;
-- dedicated branch;
-- captured base branch and immutable base commit;
-- predecessor or successor relationship, when one exists;
-- lifecycle status and its supporting evidence; and
-- branch-removal authority and evidence when an historical branch ref is
-  absent.
+Reconcile source mapping, assumptions, decisions, architecture, scope,
+dependencies, roadmap, steps, verification, product compatibility, membership,
+status and work-conflicts. Preserve earlier accepted/completed baselines,
+receipts, closure snapshots and integrations as historical revisions.
+Reconcile a reopened superseded target with its replacement explicitly;
+competing claim owners must not be silently created.
 
-The project uses its recorded branch-naming convention. When none exists, the
-default is `initiative/v<major>.<minor>-<initiative-slug>`. The branch name
-must retain the exact work-version token.
+Record necessary reopening of each affected closed scope or ancestor under
+the same bounded delegation or separate human authority. Reopening a child
+does not silently reopen or re-close ancestors. Record pending integration;
+earlier merges cannot certify new revision deltas. Later merges still require
+the closure authority and gates in specification 05.
 
-## Realization-suite and initiative boundaries
+## Revision and successor identity
 
-A realization suite is permanently non-authoritative proposal input. Creating
-it or pairing it with an initiative does not accept the initiative or promote
-any realization claim.
-
-A suite may contain an index and several supporting realization notes only
-when every note describes the same narrowly bounded outcome, owner, authority
-boundary, output family, verification claim, and lifecycle. The suite index
-owns suite identity, boundary, catalog, evidence standing, and reciprocal
-correlation metadata.
-
-The paired initiative must be self-contained. It owns one narrow outcome, one
-acceptance claim, its complete required initiative suite, its decisions,
-lifecycle history, type-specific delivery records, and completion evidence.
-External invariants and dependencies are cited rather than duplicated, but no
-parent, sibling, subinitiative, release, or earlier version may substitute for
-a missing initiative-local record or prove another version's completion.
-
-Every parent, sibling, or subinitiative created, substantively revised, or
-migrated under this revision receives its own work version, realization suite,
-initiative, and branch. A mandatory scope split therefore creates separately
-allocated tuples; a version must not act as an umbrella for independently
-acceptable outcomes.
-
-## Successors, reopening, and immutable identity
-
-A substantive change to an outcome, scope, authority boundary, output family,
-compatibility obligation, or verification claim requires a successor work
-version, realization suite, initiative, branch, and correlation row. The old
-tuple remains immutable and links to the successor.
-
-A governed initiative reopened with its exact accepted claim unchanged may
-retain its tuple. The reopening event, authority, compatibility effect, and
-new verification boundary remain subject to the lifecycle and human-decision
-specifications. A pre-effective initiative follows its recorded legacy
-disposition. Neither reopening nor a successor changes historical identity.
+Substantive change alone no longer forces a new initiative. The LLM may
+retain identity for one coherent narrow outcome under the recorded method.
+An independent outcome, mandatory split, or incompatible type, owner or
+authority boundary requires a separate initiative or successor with complete
+records. Successors and split siblings may share scope, source material and
+a declared scope branch while retaining independent identities and evidence.
+Preserve all predecessor/replacement relationships and each revision cycle.
+No revision inherits new acceptance or completion from an earlier baseline.
 
 ## Workflow integration
 
-The canonical Stage 0 sequence is:
+Stage 0 assesses realization fit before allocating. It preflights and records
+needed scopes and ancestors, then either records an existing-target append,
+revision/reopening, or allocates a new narrow initiative. Prepare a branch
+only when the recorded placement needs one. Existing complete initiatives
+reuse their records rather than being recreated by new-initiative stages.
 
-1. Preflight the proposed work version, suite ID and path, initiative ID and
-   path, dedicated branch, base branch, and base commit without writing.
-2. Verify canonical syntax, project-local uniqueness, intended scope and type,
-   readable templates, and a clean worktree.
-3. Create the version-bearing initiative branch from the captured base.
-4. On that branch, create the realization-suite index and initial
-   non-authoritative realization note, canonical correlation row, reciprocal
-   metadata, and minimal initiative skeleton as one preparation unit.
-5. Record the preparation commit when one is created, without treating it as
-   acceptance or delivery evidence.
+Preflight canonical syntax, parent existence and open state, unique initiative
+identity, branch roles, captured base, clean worktree, readable templates and
+reciprocal records. Existing matching scopes, sources and declared shared
+branches are reused. Missing ancestors are prepared major-to-minor-to-patch
+with independent records. Later stages verify membership, provenance, active
+revision, execution assignment and captured base; never infer repairs.
+Stages 0 through 13 and their three delivery paths remain unchanged in number.
+Stage 13 finalizes completed initiative work and integrates only into its
+assigned scope, or records verified direct scope placement. A separate scope
+closure operation governs patch/minor/major integration; neither operation
+implicitly closes a parent. Specification 05 owns Git and merge safety.
 
-Stage 0 does not create a proposal, resolve a question, accept the initiative,
-or begin delivery. Stages 1 through 13 must verify that the same tuple remains
-canonical, complete, reciprocal, and on the recorded branch before consuming
-or changing initiative state. A mismatch is a failed entry or verification
-gate; a later stage must not repair earlier identity by inference.
+## Adoption and migration ledger
 
-The stage numbers and type-specific paths do not change under this revision.
+An adopter records `Version scope revision effective point`, its governing
+commit, adoption authority and baseline, and a linked migration ledger.
+Preserve the prior correlation revision and its historical ledger. Until
+explicit adoption, projects retain their recorded compatible revision.
 
-## Branch retention and removal
+For every legacy record, preserve version, suite and note identities,
+initiative, type, paths, branch/base and governing revision. Record proposed
+scope membership, source evidence, proposed action, authority, blockers,
+continuing ownership, historical link mappings and re-entry conditions.
+Actions include `Unmigrated`, `Deferred`, `Migrate`, `Split`, or `Blocked`;
+no mapping may be inferred to clear a check. Existing one-to-one tuples may
+join shared scopes only through explicit evidence-backed migration.
 
-An active initiative in `Proposed`, `Accepted`, or `In progress` state requires
-the recorded local branch ref to exist. Branch identity remains unique even
-after the workflow becomes terminal.
+Moving an initiative, changing provenance or reparenting a branch is a
+substantive migration, not notation repair. Never rename legacy `v1.0` to
+`v1`, reinterpret bare `v1` as `v1.0`, or move closed initiatives/rewrite
+accepted claims during generic distribution synchronization. Unmigrated
+records require a complete compatible governing-revision disposition.
+After explicit adoption, the intake method may select same-initiative
+revision or a successor with recorded placement, preserving earlier claims
+without inventing new acceptance or completion. Protocol distribution
+maintenance does not itself migrate live projects.
 
-A branch ref may be absent only after a separately authorized removal whose
-decision receipt or equivalent governing evidence is linked from the
-canonical correlation row and initiative Git history. The recorded branch,
-base branch, and base commit remain immutable. Absence without linked removal
-authority is an error; branch deletion must never free the name for another
-tuple.
+## Validation requirements and limits
 
-## Effective point and legacy compatibility
+Report useful errors for malformed identifiers, duplicate initiative identity,
+wrong/missing parent, wrong major or patch mapping, cycles, orphan scopes or
+members, conflicting branch roles, undeclared sharing, missing reciprocal
+provenance or bases, unavailable active refs, and absent historical refs lacking
+removal authority. Shared scopes and declared direct scope placement are valid.
+Check lifecycle/reopening records, revision deltas, closure snapshots,
+child/member integration, exact merge authority and targets, branch retention,
+legacy dispositions and required source standing. A missing or blocked required
+integration blocks scope closure; open siblings never close with one member.
 
-A governed project records the exact correlation-revision effective commit in
-its project profile and links its migration ledger. The new model governs:
-
-- every work version, realization suite, and initiative allocated after that
-  effective point;
-- every pre-effective tuple whose ledger action explicitly migrates it; and
-- every substantive successor or mandatory split begun after that point.
-
-An unchanged pre-effective claim may continue only under its recorded,
-invariant-compatible earlier workflow revision and a complete `Unmigrated` or
-`Deferred` migration-ledger disposition. Such a row must preserve the legacy
-identity and source evidence, name the earlier workflow revision, state the
-re-entry or migration condition, and contain no partial or inferred new
-correlation. It remains an actionable warning until migrated or given another
-authorized terminal disposition.
-
-An undeclared legacy record, a missing or incomplete ledger disposition, or a
-record that mixes legacy and new correlation fields is an error. Any
-substantive change after the effective point requires a new governed tuple.
-
-## Migration ledger
-
-Every adopting project uses this reusable minimum ledger shape:
-
-| Legacy identity | Canonical identity | Suite | Initiative | Branch | Action | Authority/evidence | Ambiguity or blocker |
-|---|---|---|---|---|---|---|---|
-| `<legacy identity>` | `<canonical identity or not allocated>` | `<suite path or not inferred>` | `<initiative path or not inferred>` | `<branch or not inferred>` | `<Unmigrated, Deferred, Migrate, Normalize, Split, or Blocked>` | `<source links and governing workflow revision>` | `<ambiguity and re-entry or migration condition>` |
-
-Ledger actions obey these rules:
-
-- Normalize a bare `vN` to `vN.0` only when evidence proves a notation-only,
-  identity-preserving change.
-- Do not silently convert a broad realization or umbrella initiative into a
-  narrow governed tuple. Allocate one new tuple for each required split.
-- When a bare suite embeds or references a distinct dot-scoped outcome,
-  preserve both identities as a possible split until an explicit human
-  decision resolves the mapping.
-- Preserve immutable realization evidence and historical links. Use a linked
-  successor, compatibility mapping, or migration record rather than rewriting
-  history to imply that this model always applied.
-- Do not invent missing realizations, decisions, initiatives, branches,
-  acceptance, implementation, completion, or release evidence.
-- A migrated initiative begins `Proposed` unless retained evidence supports a
-  different legal state.
-- A meaning-changing mapping requires an explicit human decision and receipt
-  before it is applied.
-
-Project-specific legacy tuples are migrated later, one narrowly scoped tuple
-at a time on its own version-correlated branch. A protocol distribution
-revision does not perform those project migrations.
-
-## Validation requirements
-
-Validation for a project that records this revision must report errors for:
-
-- non-canonical work versions;
-- duplicate versions, suites, initiatives, or branch mappings;
-- missing required metadata or captured base identity;
-- inconsistent or missing reciprocal links;
-- orphan suites, initiatives, or canonical rows;
-- a version token missing from its branch name;
-- a missing live branch for an active initiative;
-- an absent historical branch ref without linked removal authority;
-- a mandatory split represented by shared tuple identity;
-- lifecycle or evidence-standing claims that treat identity as acceptance,
-  completion, or authority; and
-- undeclared, partial, mixed, or incompletely dispositioned legacy records.
-
-A complete pre-effective `Unmigrated` or `Deferred` row is an actionable
-legacy warning, not an error. The validator must never infer or write a mapping
-to clear a finding.
-
-## Review checklist
-
-- [ ] The work version is canonical and unique under numeric comparison.
-- [ ] Suite, initiative, branch, and canonical row are reciprocal and unique.
-- [ ] The initiative owns one narrow, self-contained acceptance claim.
-- [ ] Captured base branch and commit remain immutable and traceable.
-- [ ] Lifecycle and evidence standing remain separate from tuple identity.
-- [ ] A successor or mandatory split has a separately allocated tuple.
-- [ ] Legacy records have complete non-inferred ledger dispositions.
-- [ ] Active and removed-branch states carry the required Git evidence.
+A validator reads evidence and reports findings. It never resolves fit,
+reopens a target, repairs mappings, authenticates human authority, proves
+semantic coherence, or turns identity, a branch or a merge into acceptance.
+Independent semantic review and ordinary human gates remain required.

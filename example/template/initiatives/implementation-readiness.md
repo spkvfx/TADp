@@ -16,10 +16,10 @@ or prove release, deployment, or operational readiness.
 # {{initiative_name}} implementation-readiness review
 
 - **Initiative:** {{initiative_name}}
-- **Work version:** {{v_major_minor}}
+- **Version scope:** {{version_scope}}
 - **Realization suite:** {{realization_suite_id_and_link}}
 - **Canonical correlation:** {{initiative_index_row_link}}
-- **Dedicated branch and captured base:** {{branch_base_and_commit}}
+- **Execution branch and captured base:** {{branch_base_and_commit}}
 - **Review date:** {{date}}
 - **Reviewed phase or scope:** {{phase_or_execution_scope}}
 - **Initiative disposition:** {{accepted_initiative_state}}

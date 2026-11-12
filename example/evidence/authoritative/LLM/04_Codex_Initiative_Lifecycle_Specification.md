@@ -10,8 +10,9 @@ Apply the canonical
 [prompt keyword specification](11_Codex_Prompt_Keyword_Specification.md).
 Its exception records may authorize precise bounded prompt work, but requested
 gate settings do not create transitions or change the ordinary state meanings
-below. Acceptance and reopening require their own actual human authority;
-autonomous question authority is not acceptance or reopening. Preserve prior
+below. Acceptance requires actual human authority; reopening requires recorded
+bounded intake delegation under specification 09 or separate human authority.
+Autonomous question authority is not either act. Preserve prior
 claims and link any exception receipt from affected lifecycle and execution
 records before relying on its scope. A waived approval or skipped or failed
 check is not passing evidence for `Accepted` or `Completed`. Keep the last
@@ -39,19 +40,15 @@ claim remains unchanged and authorizes return to `Accepted`.
 
 ## Correlation identity is not lifecycle evidence
 
-A work version, realization suite, canonical correlation row, dedicated
-branch, or preparation commit does not create a lifecycle state. For work
-governed by the
-[correlation specification](09_Codex_Version_Realization_Initiative_Correlation_Specification.md),
-the tuple is allocated while the initiative remains `Proposed` and its
-identity stays immutable through later transitions.
-
-A governed reopening with the exact accepted claim unchanged may retain the
-tuple. A substantive scope, outcome, authority-boundary, output,
-compatibility, or verification change requires a successor tuple and the
-appropriate lifecycle disposition for the prior initiative. A pre-effective
-initiative follows its migration-ledger disposition. None of these identity
-rules permits an otherwise illegal lifecycle transition.
+A scope, realization suite, membership row, execution branch or preparation
+commit does not create a lifecycle state. The
+[scope specification](09_Codex_Version_Realization_Initiative_Correlation_Specification.md)
+governs identity, provenance and revision-cycle placement. A new initiative
+remains `Proposed`; an existing target preserves its actual standing until a
+recorded legal transition. Coherent same-outcome revision may retain identity;
+independent outcomes or incompatible boundaries require separate complete
+initiatives. Pre-effective records follow their migration-ledger disposition.
+No identity rule permits an illegal lifecycle transition.
 
 Workflow stages and lifecycle states are distinct. The authoritative workflow
 specification defines which stages may produce transition evidence; completion
@@ -64,9 +61,9 @@ of a stage does not itself cause a transition.
 | `Proposed` | `Accepted`, `Cancelled`, `Superseded` | The decision, decision receipt, resulting claim, and reconciled records. |
 | `Accepted` | `In progress`, `Proposed`, `Cancelled`, `Superseded` | Start evidence for `In progress`; otherwise a documented revision, cancellation, or supersession event. |
 | `In progress` | `Completed`, `Accepted`, `Proposed`, `Cancelled`, `Superseded` | Completion evidence, or a documented pause/replanning/revision event with partial-work disposition. |
-| `Completed` | `Proposed`, or `Accepted` only under the unchanged-claim exception | Explicit human reopening authority, prior completed claim, reason, affected evidence, compatibility effect, and new verification boundary. |
-| `Cancelled` | `Proposed`, or `Accepted` only under the unchanged-claim exception | Explicit human reopening authority and a new disposition for the earlier cancellation. |
-| `Superseded` | `Proposed`, or `Accepted` only under the unchanged-claim exception | Explicit human reopening authority and reconciliation with the named replacement. |
+| `Completed` | `Proposed`, or `Accepted` only under the unchanged-claim exception | Recorded specification 09 intake delegation or separate human reopening authority, prior completed claim, reason, affected evidence, compatibility effect, and new verification boundary. |
+| `Cancelled` | `Proposed`, or `Accepted` only under the unchanged-claim exception | Recorded specification 09 intake delegation or separate human reopening authority and a new disposition for the earlier cancellation. |
+| `Superseded` | `Proposed`, or `Accepted` only under the unchanged-claim exception | Recorded specification 09 intake delegation or separate human reopening authority and reconciliation with the named replacement. |
 
 Every other direct transition is prohibited. Codex must not infer acceptance
 from implementation activity, completion from a merge, cancellation from
@@ -78,7 +75,7 @@ Every initiative README must keep an append-only lifecycle history with:
 
 - effective date or event;
 - prior and resulting state;
-- human authority or execution evidence;
+- actual human authority, bounded intake delegation and LLM author, or execution evidence;
 - decision-receipt or verification link;
 - accepted or completed claim revision;
 - reason and affected scope; and
@@ -95,13 +92,17 @@ silently rewrite a truthful historical transition.
 ## Reopening and revision
 
 `Completed`, `Cancelled`, and `Superseded` are closed. A closed initiative's
-claim must not be refined without a recorded human-authorized reopening.
+claim must not be refined without a recorded reopening under bounded intake delegation or separate human authority.
 Append-only factual historical corrections and successor references that
 preserve the exact claim follow the narrow exceptions in the
 [coherence specification](10_Codex_Initiative_Coherence_Specification.md).
 An explicit revision instruction alone must not leave a changed claim in a
-terminal state. A substantive new claim follows specification 09's successor
-workflow rather than rewriting the predecessor.
+terminal state. Apply specification 09's fit method: revise the same coherent
+narrow outcome, or split/use a successor for an independently acceptable
+outcome or incompatible type, owner or authority boundary. A changed accepted
+or in-progress claim pauses delivery, preserves partial work and returns to
+`Proposed` for alignment and renewed human acceptance. Reopening a superseded
+target also reconciles its replacement's ownership.
 
 Before reopening or materially revising an initiative, preserve the earlier
 accepted or completed claim and record the human instruction that authorizes
@@ -116,8 +117,8 @@ retroactively.
 ## Status synchronization
 
 The initiative README is the lifecycle authority for the initiative. Shared
-status views, parent indexes, subinitiative records, branch descriptions, and
-pull requests must reflect it without expanding the claim. When records differ,
+status views, parent indexes, subinitiative records and branch descriptions
+must reflect it without expanding the claim. Historical PR evidence is retained. When records differ,
 Codex must stop the affected transition, preserve the stronger evidence, and
 reconcile the records before continuing.
 

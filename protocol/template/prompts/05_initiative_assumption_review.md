@@ -44,6 +44,14 @@ work remains response-only; local resource restrictions and independent review
 obligations compose with gates. The shared contract and this prompt retain
 all unexcepted preconditions, edit boundaries, verification, and reporting.
 
+For a project with the version-scope revision adopted, verify exact scope
+membership, originating and contributing suite/note IDs and paths, per-source
+routing, current numeric revision cycle, recorded dedicated/shared execution
+mode and branch, immutable captured base ref/commit and immediate integration
+target. Shared source/scopes and declared shared scope branches are valid;
+initiative identities and active per-cycle assignments remain unique. Preserve
+historical allocation, closure and branch history. No later-stage repair by
+inference is allowed; route inconsistencies to the owning preparation/intake.
 Facilitate a human confirmation review of every current, unresolved assumption for {initiative} at {initiative_path}. The ordinary path is an interactive
 review. Under that path, a human user must explicitly confirm,
 correct, reject as not applicable, or turn each source assumption into an open
@@ -72,8 +80,8 @@ Before asking the first assumption, verify that the active branch, canonical
 correlation row, realization-suite index, initiative metadata, and captured
 base identity are complete and reciprocal. Stop on drift or a partial mapping;
 this review must not allocate or repair identity. If a response creates a
-mandatory split or substantive successor, record the effect and route the new
-outcome to Stage 0 without changing this tuple.
+mandatory split or independent successor, record the effect and route the new
+outcome to Stage 0 without overwriting this initiative's historical identity.
 
 Before asking the first question, verify that the target has a readable
 initiative index, assumption record, open-question register, and every

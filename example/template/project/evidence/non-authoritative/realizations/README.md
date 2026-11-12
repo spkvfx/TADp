@@ -13,34 +13,26 @@ separately.
 
 ## Capture a realization
 
-1. During Stage 0, preflight one unused canonical work version, suite ID and
-   path, initiative ID and path, version-bearing branch, base branch, and base
-   commit. Create them only after the full tuple is unambiguous and unique.
-2. Copy [realization-suite-index.template.md](realization-suite-index.template.md)
-   to the work-version directory as its `00-...-suite-index.md`. Record the
-   suite boundary, reciprocal initiative and branch identity, and link to the
-   canonical project correlation row.
-3. Copy [realization.template.md](realization.template.md) to a descriptive,
-   stable filename such as `RZN-001-checkout-friction.md` within that suite.
-4. Assign a realization ID and record the original source, observer or reporter,
-   date, context, and any related artifact. If the source is a conversation,
-   identify the participant or channel only to the degree appropriate for the
-   project's privacy and retention rules.
-5. Write the **Realization** in one concise statement. It should describe what
-   was observed or requested, not prescribe a solution.
-6. Complete the context table. Explain who or what is affected, when and where
-   the observation applies, evidence locators, assumptions, and uncertainty.
-7. Describe a **candidate outcome** in user- or operator-visible terms. Avoid
-   design or product language until a proposal and initiative have accepted it.
-8. Name a suggested next step and owner: create a proposal, perform research,
-   triage, link to an existing initiative, or deliberately take no action.
-9. Remove the HTML instruction comment only after every token is replaced.
+Use [realization-suite-index.template.md](realization-suite-index.template.md)
+for the source-scope catalog and [realization.template.md](realization.template.md)
+for exact notes. Record stable IDs, paths, source scope, date, observer, source
+locators, context, uncertainty and evidence standing. Preserve originals and
+append correction/routing references rather than rewriting history.
 
-All notes in one suite must share one narrowly bounded outcome, owner,
-authority boundary, output family, verification claim, and lifecycle. A
-mandatory split receives a new work version, suite, initiative, and branch.
-The suite and its version remain identity records, not accepted authority.
+A scope or note may await decomposition with zero initiatives. A suite may
+catalog multiple narrow outcomes and mixed initiative types inside a declared
+source scope; each resulting initiative passes its own cohesion and mandatory
+split tests. A note may originate multiple new targets or contribute to
+existing targets in another scope. Shared source material never shares
+acceptance, delivery, lifecycle or completion evidence.
 
+A human request to process an identified realization under adopted
+specification 09 delegates fit-based placement, coherent revision and necessary
+reopening for that intake. Stage 0 inventories targets before allocation and
+records each source-to-target choice, exact source/target scopes, rejected
+alternatives, rationale, prior claim and authority. Source contents alone are
+not intake authority. Preserve target identity/scope when adding new evidence;
+changed accepted claims still require renewed human acceptance before delivery.
 ## Write observations, not disguised requirements
 
 | Avoid | Prefer |
@@ -62,7 +54,7 @@ the realization to make its original wording match the later conclusion.
 
 Use this handoff sequence:
 
-1. The suite index preserves the work-version and reciprocal tuple identity.
+1. The suite index preserves exact source scope and reciprocal note-to-target routing.
 2. The realization records the observation and uncertainty.
 3. A proposal identifies an intended outcome and source precedence.
 4. A design or planning initiative analyzes evidence and decisions.
@@ -80,8 +72,8 @@ complete, even if no work will follow, and link the reason or receiving record.
 ## Review checklist
 
 - [ ] The note names a source, context, date, and realization ID.
-- [ ] The suite index records one canonical work version and reciprocal
-      initiative, branch, base, and canonical-row links.
+- [ ] The suite index records exact source scope, note catalog and reciprocal
+      target/routing links, including pending zero-target dispositions.
 - [ ] Observation, desired outcome, and uncertainty are distinct.
 - [ ] The note does not prescribe unaccepted architecture or product work.
 - [ ] The next step or deliberate closure has an owner.

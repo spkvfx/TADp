@@ -14,7 +14,7 @@
 
 **Default integration branch:** Not assumed; each initiative captures its actual base
 
-**Pull-request remote:** origin; target branch must be verified per initiative
+**Remote operations:** Pushes need separate authority; pull requests are human managed
 
 **Correlation revision effective point:** `007e791750a7dd5bca1befabd88cf83defde14b4`,
 the coherent protected-update commit containing specification 09, affected
@@ -115,16 +115,18 @@ earlier evidence without invented retrospective reviews.
 
 ## Git workflow
 
-This project requires Git. Every initiative uses one dedicated branch created
-from a captured clean base.
+This project requires Git. Scope-revision work uses recorded dedicated or shared
+execution assignments and immutable captured parent bases. Legacy assignments
+retain their governing revision until separately migrated.
 
-- **Initiative branch convention:** initiative/v<major>.<minor>-<initiative-slug>
+- **Initiative branch convention:** initiative/<scope>-<initiative-id-and-slug>; scope branches use exact scope tokens
 - **Required checks:** protected-source check, full validator, regression
   tests, local-link review, and initiative-specific verification
 - **Commit requirements:** coherent initiative-traceable commits; protected
   changes require the exact recorded lock authority and one-commit guard
-- **Merge authority:** User; merge method must be explicitly authorized and is
-  not assumed by this profile
+- **Merge authority:** An identified governed close/finalize instruction supplies
+  only local child-to-recorded-parent authority after its gates pass; installation
+  of this revision supplies no live merge authority
 
 ## Change record
 
@@ -133,3 +135,19 @@ from a captured clean base.
 | 2026-11-10 | Instantiated the protocol project profile and branch convention | Provide the ownership and tracking prerequisite for INIT-DSN-001 | User |
 | 2026-11-11 | Adopted the version-realization-initiative correlation revision and linked the legacy ledger | Establish the effective-point and compatibility records authorized by the repository prompt | User |
 | 2026-11-12 | Adopted initiative coherence and completion-feedback controls from the captured pre-revision baseline | User's specific rule in COH-DR-001; retain closed claims and existing human gates | User |
+
+## Version scope installation
+
+**Version scope revision effective point:** Installed; adoption pending
+
+**Version scope migration ledger:** [Version scope dispositions](initiatives/version-scope-migration-ledger.md)
+
+**Version scope registry:** [Scope registry](initiatives/version-scopes.md)
+
+**Version scope installation authority:** [VSG-DR-001](decisions/VSG-DR-001-version-scope-grouping.md)
+
+The coherent maintenance delivery installs the new sources prospectively;
+its actual commit is recorded after creation. It does not migrate INIT-DSN-001,
+move paths, reparent branches or reopen historical claims. The earlier profile
+and migration clauses above describe the legacy governing revision. New scope
+allocations require explicit project adoption and complete reciprocal records.

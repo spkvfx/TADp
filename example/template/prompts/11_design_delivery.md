@@ -43,6 +43,14 @@ work remains response-only; local resource restrictions and independent review
 obligations compose with gates. The shared contract and this prompt retain
 all unexcepted preconditions, edit boundaries, verification, and reporting.
 
+For a project with the version-scope revision adopted, verify exact scope
+membership, originating and contributing suite/note IDs and paths, per-source
+routing, current numeric revision cycle, recorded dedicated/shared execution
+mode and branch, immutable captured base ref/commit and immediate integration
+target. Shared source/scopes and declared shared scope branches are valid;
+initiative identities and active per-cycle assignments remain unique. Preserve
+historical allocation, closure and branch history. No later-stage repair by
+inference is allowed; route inconsistencies to the owning preparation/intake.
 Deliver the accepted design initiative {initiative} at {initiative_path} on
 {initiative_branch}.
 
@@ -61,8 +69,8 @@ editable only when the accepted scope names its exact destination and owner.
 
 Before changing a specification, verify that:
 - the active branch is exactly {initiative_branch};
-- the canonical work version, realization suite, initiative ID and path,
-  version-bearing branch, captured base branch and commit, and reciprocal links
+- the exact version scope, realization suite, initiative ID and path,
+  recorded execution branch, captured base branch and commit, and reciprocal links
   match one unique project correlation row;
 - the worktree and branch diff contain no unexplained unrelated work;
 - the complete initiative suite, scope assessment, acceptance receipt, accepted
@@ -126,9 +134,10 @@ an open consumer requires its declared destination in the accepted design
 scope and the governing operation's authorized branch and edit boundary,
 while preserving the consumer's own acceptance, reopening, lifecycle, and
 human gates; this review alone grants no cross-initiative edit authority.
-Never refine a closed consumer without an
-explicit human reopening receipt and legal transition. A substantive change
-requires a new successor tuple; otherwise record an owned referral.
+Never refine a closed consumer before recorded reopening under adopted bounded
+intake delegation or separate human authority, receipt and legal transition.
+Coherent same-outcome revision may retain identity; independent outcomes split.
+This delivery alone supplies no target intake authority; record owned referrals.
 
 Report every specification and evidence artifact changed, delivery steps,
 verification results, lifecycle and status updates, compatibility or migration

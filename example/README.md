@@ -44,7 +44,7 @@ templates, validator, or workflow. See
 binding evidence and explicit human decisions
                        |
                        v
-work version <-> realization suite <-> focused initiative <-> branch
+version scope -> realization catalog -> focused initiatives
                        |
                        v
                     proposal
@@ -65,16 +65,25 @@ requirement. A proposal does not authorize work. A product cannot revise its
 governing specification, and a lifecycle status does not prove completion
 without the required evidence.
 
-Each governed work version uses canonical `v<major>.<minor>` syntax and maps
-one-to-one to one realization suite, one self-contained initiative, and one
-dedicated version-bearing branch. This tuple establishes identity only. A
-substantive successor or mandatory split receives a new tuple.
+The prospectively adopted scope revision gives each initiative exactly one
+major (`vN`), minor (`vN.M`), or patch (`vN.M.P`) scope. Multiple narrow
+initiatives may share a scope and source notes. New initiative paths are
+`initiatives/<scope>/<type>/<id-and-slug>/`. Each initiative retains independent
+acceptance, lifecycle and evidence. The LLM records exact source routing,
+coherent same-initiative revision and necessary reopening under a human intake
+instruction; changed claims require renewed human acceptance.
+
+Execution uses a dedicated child or matching shared scope branch with per-member
+attribution. Creation follows project base to major to minor to patch; dedicated
+initiatives branch from their scope. Closure integrates child into recorded
+immediate parent, bottom-up. Closing a member leaves its scope open; scope
+closure is separately gated. See [adoption and operation](docs/guides/version-scope-migration.md).
 
 Open initiative effort is also work to reconcile. Completion reviews account
 for every other open initiative, preserve conflicting efforts in the
 [work-conflict register](initiatives/work-conflicts.md), and route refinements
-through their owning workflow. Closed claims require explicit human reopening
-before refinement. See the [coherence specification](evidence/authoritative/LLM/10_Codex_Initiative_Coherence_Specification.md).
+through their owning workflow. Closed claims require recorded authorized reopening before refinement;
+adopted realization intake delegates necessary reopening, never acceptance. See the [coherence specification](evidence/authoritative/LLM/10_Codex_Initiative_Coherence_Specification.md).
 
 ## Authority model
 
@@ -140,9 +149,9 @@ specification and must keep its own decisions, lifecycle, and verification.
 
 The standard workflow is:
 
-1. Preflight one unused work version, realization suite, initiative identity,
-   version-bearing branch, actual base branch, and base commit. Create the
-   branch, suite, canonical correlation row, and minimal skeleton together.
+1. Assess realization fit and record append, revision/reopening or new narrow
+   initiative placement. Preflight scope ancestors, membership, exact provenance
+   and shared/dedicated assignment; create a branch only when required.
 2. Create a proposal from an existing realization.
 3. Compare the proposal with the evidence in the repository.
 4. Create the complete initial initiative record, including its scope review.
@@ -160,8 +169,9 @@ The standard workflow is:
 10. Create completion evidence and the cross-initiative coherence review for
     the exact accepted claim. Record `Completed` only when every in-scope gate
     passes and incompatible efforts have a compatible disposition.
-11. Prepare the branch and pull request for review. Do not merge, deploy, or
-    delete history without explicit approval.
+11. Finalize traceable commits and perform authorized local child-to-parent
+    integration or record verified direct scope hosting. Scope closure remains
+    separate. Pull requests are independently human managed.
 
 For the full sequence and the ownership of each record, see
 [Initiative workflow](docs/development/initiative-workflow.md).

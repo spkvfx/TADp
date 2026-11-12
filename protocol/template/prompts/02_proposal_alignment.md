@@ -47,15 +47,23 @@ work remains response-only; local resource restrictions and independent review
 obligations compose with gates. The shared contract and this prompt retain
 all unexcepted preconditions, edit boundaries, verification, and reporting.
 
+For a project with the version-scope revision adopted, verify exact scope
+membership, originating and contributing suite/note IDs and paths, per-source
+routing, current numeric revision cycle, recorded dedicated/shared execution
+mode and branch, immutable captured base ref/commit and immediate integration
+target. Shared source/scopes and declared shared scope branches are valid;
+initiative identities and active per-cycle assignments remain unique. Preserve
+historical allocation, closure and branch history. No later-stage repair by
+inference is allowed; route inconsistencies to the owning preparation/intake.
 Review the existing {initiative} proposal in place. Preserve its declared
 initiative type: `implementation` aligns products to specifications, `design`
 aligns specifications to products, and `planning` produces evidence only.
 
 Before editing, verify that the active branch, canonical project correlation
 row, realization-suite index, initiative metadata, and captured base identity
-all describe the same prepared tuple. Stop on any missing, partial, duplicate,
+all describe the same prepared membership and active assignment. Stop on any missing, partial, duplicate,
 or inconsistent relationship. Proposal alignment must not allocate, infer,
-renumber, or repair tuple identity.
+renumber, or repair membership identity.
 
 Edit only the target initiative's existing canonical working proposal. Do not
 create, copy, scaffold, move, or rename any file or directory, including a

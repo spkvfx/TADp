@@ -39,3 +39,11 @@ release standing.
 - Copy tuple identity from the canonical index and preserve pre-effective
   compatibility through the linked migration ledger; do not infer identity in
   this status view.
+
+## Prospective scope status
+
+[Scope registry](version-scopes.md) owns scope coordination and integration;
+[initiative membership](initiative-index.md#prospective-scope-membership) owns
+correlation. No governed scope or new member is allocated by installation.
+The legacy status above remains unchanged under its recorded revision and
+[scope migration disposition](version-scope-migration-ledger.md).

@@ -146,8 +146,9 @@ initiative originally used the current workflow.
 - [ ] Repository-relative links resolve.
 - [ ] Prompt examples and executable placeholders remain separated.
 - [ ] No umbrella or multi-purpose initiative construct was introduced.
-- [ ] Correlated work has exactly one canonical version, realization suite,
-      initiative, and dedicated branch, or a complete legacy disposition.
+- [ ] Scope identity, initiative membership, exact per-note routing, active cycle,
+      branch roles and immutable creation bases are reciprocal; legacy work has
+      a complete disposition under its recorded compatible revision.
 - [ ] Git and Codex requirements remain explicit.
 - [ ] Non-Codex compatibility is not claimed without an adapter review.
 - [ ] Protected-source locks match the reviewed template and invariant suite.

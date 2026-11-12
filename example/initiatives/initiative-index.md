@@ -68,3 +68,13 @@ exact dedicated branch.
   readiness.
 - Never reuse a version or branch. If a terminal branch ref is separately
   removed, retain the recorded name and link its removal authority.
+
+## Prospective scope membership
+
+The preceding register retains historical correlation and lifecycle evidence.
+No initiative has been migrated into the new model. New membership after
+adoption is owned here, with scopes registered in [version-scopes.md](version-scopes.md).
+See the [scope migration ledger](version-scope-migration-ledger.md).
+
+| Scope | Initiative ID | Type | Record location | Source notes | Execution branch | Execution mode | Captured base ref | Captured base commit | Integration target | Revision cycle | Lifecycle evidence | Integration evidence |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|

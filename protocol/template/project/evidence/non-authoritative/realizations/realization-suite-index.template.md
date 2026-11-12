@@ -1,16 +1,12 @@
-<!--
-Create one suite index during Stage 0 for one canonical work version and one
-self-contained initiative. Place it in the suite directory as a stable
-00-...-suite-index.md filename. Replace every token and remove this comment.
--->
+<!-- Copy to the declared realization suite's stable 00-...-suite-index.md. -->
 
 # {{realization_suite_title}}
-
-**Work version:** {{v_major_minor}}
 
 **Suite ID:** {{realization_suite_id}}
 
 **Suite path:** {{project_relative_suite_path}}
+
+**Version scope:** {{source_version_scope}}
 
 **Status:** Recorded; non-authoritative proposal input
 
@@ -18,54 +14,40 @@ self-contained initiative. Place it in the suite directory as a stable
 
 **Recorded date:** {{yyyy-mm-dd}}
 
-**Initiative ID:** {{initiative_id}}
+**Canonical scope record:** [Version scopes]({{relative_version_scopes_path}})
 
-**Initiative type:** `{{implementation_design_or_planning}}`
+**Canonical project correlation:** [Initiative register]({{relative_initiative_index_path}}#initiative-and-correlation-register)
 
-**Initiative path:** [{{initiative_path}}]({{relative_initiative_path}})
-
-**Dedicated branch:** {{initiative_branch}}
-
-**Captured base branch:** {{base_branch}}
-
-**Captured base commit:** {{base_commit}}
-
-**Predecessor or successor:** {{relationship_or_none}}
-
-**Canonical project correlation:** [initiative and correlation register]({{relative_initiative_index_path}}#initiative-and-correlation-register)
-
-**Lifecycle status and evidence:** Proposed; [initiative lifecycle]({{relative_initiative_readme_path}}#initiative-lifecycle)
-
-> **Evidence standing:** This suite is permanently non-authoritative proposal
-> input. Its version, initiative, and branch links establish identity and
-> navigation only. They do not accept the initiative, establish authority,
-> prove delivery, or create release status.
+> **Evidence standing:** This suite and every realization note remain permanently
+> non-authoritative proposal input. Scope, member and branch links establish
+> identity/navigation only, never acceptance, delivery, completion or release.
 
 ## Suite boundary
 
-**Single outcome:** {{one_narrow_outcome}}
+**Catalog boundary:** {{source_material_scope_and_limits}}
 
-**Owner and authority boundary:** {{owner_and_authority_boundary}}
+**Source owner and authority boundary:** {{source_owner_and_standing}}
 
-**Output family:** {{product_specification_or_evidence_family}}
-
-**Verification claim:** {{one_verification_claim}}
-
-Every note cataloged below must share this boundary. A note with an
-independently acceptable outcome, different owner or authority, different
-output family, separable verification, or independent lifecycle requires a new
-work version, suite, initiative, and branch.
+The catalog may contain material for multiple narrow initiatives and mixed
+types inside its declared source scope. Apply cohesion and mandatory splits to
+each resulting initiative, never convert the suite into an umbrella claim.
+One note may originate several initiatives or append/revise several existing
+targets. Each target retains independent gates, lifecycle and acceptance.
 
 ## Document catalog
 
-| Order | Realization ID | Work version | Role |
-|---:|---|---|---|
-| 00 | {{realization_suite_id}} | {{v_major_minor}} | Suite identity, boundary, standing, reciprocal correlation, and navigation |
-| 01 | [{{realization_id}}]({{realization_note_filename}}) | {{v_major_minor}} | {{note_role}} |
+| Order | Realization ID | Source scope | Exact note path | Role |
+|---:|---|---|---|---|
+| 01 | {{realization_id}} | {{source_scope}} | [{{note_filename}}]({{realization_note_filename}}) | {{source_role_and_limits}} |
 
-## Handoff
+## Reciprocal routing catalog
 
-The paired initiative remains `Proposed` until its separate human acceptance
-gate passes. Later stages must verify this suite against the canonical
-correlation row and must not rewrite the suite to imply acceptance or
-completion.
+| Source note ID/path | Target initiative ID/type/path | Target scope | Disposition | Fit rationale and intake authority | Revision/branch and lifecycle evidence |
+|---|---|---|---|---|---|
+| {{note_link}} | {{initiative_link_or_not_yet_allocated}} | {{target_scope_or_unassigned}} | {{append_revision_reopening_new_successor_or_pending}} | {{routing_record_and_receipt}} | {{cycle_assignment_and_README_links_or_none}} |
+
+Zero initiative targets is valid for awaiting decomposition; it grants no
+delivery authority. Preserve original source identity and scope across target
+choices. Add routing records rather than rewriting original notes. Source and
+target scopes may differ under a documented compatible fit assessment. No
+suite-level acceptance or completion evidence substitutes for a target's own.

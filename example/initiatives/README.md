@@ -15,7 +15,8 @@ gaining accepted authority. Use the [work-conflict register](work-conflicts.md)
 to preserve incompatible efforts. Apply the
 [coherence specification](../evidence/authoritative/LLM/10_Codex_Initiative_Coherence_Specification.md)
 to completion feedback and require explicit reopening before refining closed
-claims. Substantive new claims retain the successor workflow.
+claims. Under explicit scope-revision adoption, coherent same-outcome revision
+may retain identity; independent outcomes still require separate work.
 
 Every initiative must own one narrowly bounded outcome and one independently
 reviewable acceptance claim. Do not create umbrella or multi-purpose

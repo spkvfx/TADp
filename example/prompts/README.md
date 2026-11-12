@@ -43,8 +43,8 @@ act only when applicable authoritative evidence, explicit human decisions,
 initiative scope and state, correlation identity, branch, workflow stage,
 protected-source rules, and verification gates permit the requested work.
 
-Invoking or storing a prompt does not confirm an assumption, resolve a
-question, accept or reopen an initiative, authorize an invariant exception,
+Storing a prompt does not confirm an assumption, resolve a question, accept
+or reopen an initiative, authorize an invariant exception,
 satisfy a gate, change lifecycle state, or prove implementation, completion,
 release, or cross-scaffold permission.
 
@@ -64,3 +64,10 @@ scoped protocol-maintenance instruction outside the project-local directory.
 
 The protected numbered workflow library remains at `template/prompts/`. It is
 separate from this workspace and must not be copied or duplicated here.
+
+An actual human request to process an identified realization under adopted
+specification 09 supplies its bounded intake delegation for fit-based placement,
+coherent revision and necessary target/scope reopening. Capture the instruction
+and each LLM-authored disposition before action. The source note or stored
+prompt alone does not grant that authority. Changed claims return to Proposed
+and require renewed human acceptance before delivery; other gates remain.

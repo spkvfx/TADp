@@ -12,7 +12,10 @@ instructional comments, and preserve the exact prompt and response verbatim.
 **Response date or event:** {{yyyy-mm-dd_or_event}}  
 **Capture context:** {{chat_review_meeting_or_other_traceable_context}}  
 **Disposition:** {{confirmed_corrected_not_applicable_accepted_deferred_cancelled_superseded_reopened_or_other_exact_result}}  
-**Git commit:** {{commit_or_pending}}  
+**Git commit:** {{commit_or_pending}}
+**Scope:** {{exact_version_scope}}
+**Revision cycle:** {{positive_integer_cycle}}
+**Claim revision:** {{exact_current_claim_revision}}
 
 <!--
 For a reopening, set the exact field **Disposition:** Reopened and retain
@@ -69,3 +72,64 @@ for a resulting agent-made disposition or claim a waived gate passed.
 - **Remaining obligations and restoration:** {{locks_unexcepted_rules_end_condition_and_rechecks}}
 
 
+
+## Delegated realization intake event
+
+<!-- Retain for one adopted specification 09 intake routing/reopening event.
+Record before applying the disposition. Preserve exact human instruction
+separately from actual LLM authorship. No fabricated per-target human answer.
+Every new reopening needs its own event receipt. -->
+
+**Decision author:** {{actual_LLM_or_human_author}}
+
+**Decision method:** Delegated realization intake
+
+**Governing delegation:** {{adopted_specification_09_revision_and_intake_authority_link}}
+
+**Human intake instruction:** {{verbatim_actual_human_instruction}}
+
+**Source realization:** {{exact_suite_note_IDs_paths_and_source_scope}}
+
+**Target initiative and scope:** {{exact_ID_path_and_target_scope}}
+
+**Prior lifecycle state:** {{prior_state}}
+
+**Prior claim revision:** {{immutable_prior_baseline}}
+
+**Revision history:** {{prior_cycle_history_link}}
+
+**Routing disposition:** {{append_revision_reopening_new_or_successor}}
+
+**Candidates and rejected alternatives:** {{target_inventory_and_rationale}}
+
+**Change boundary:** {{bounded_same_outcome_change_risks_and_compatibility}}
+
+**Verification boundary:** {{required_checks_and_new_delta}}
+
+**Routing evidence:** {{per_source_routing_and_fit_links}}
+
+**Affected scope/ancestor events:** {{separate_event_links_or_none}}
+
+For a reopening retain **Disposition:** Reopened and the actual human authority
+that delegated this intake, with this event's LLM decision separately identified.
+Return to Proposed. Direct return to Accepted requires a separate explicit human
+unchanged-claim decision and **Unchanged accepted claim:** Yes. Prior acceptance
+and prior integration do not certify a changed claim or new revision delta.
+Reconcile replacement consequences for Cancelled/Superseded targets explicitly.
+
+For acceptance, Revision cycle and Claim revision identify the exact current
+claim being accepted and match its README and subsequent delivery/completion
+evidence. A prior-cycle acceptance receipt supplies no changed-claim acceptance.
+
+
+For separately authorized historical ref removal, retain **Human authority:**
+and add **Branch:** {{exact_removed_branch_ref}} and **Historical branch tip:**
+{{immutable_source_tip_commit}}. Preserve source history and all reciprocal
+removal links; this receipt does not authorize reusing a historical name.
+
+
+For a scope/ancestor reopening, record a separate event with exact **Scope:**,
+**Disposition:** Reopened and actual **Human authority:** plus the adopted
+intake Governing delegation and Human intake instruction when delegated. Link
+the receipt from the canonical scope registry's Reopening evidence metadata.
+No child event implicitly reopens another scope or ancestor.

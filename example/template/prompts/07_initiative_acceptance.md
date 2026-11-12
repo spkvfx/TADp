@@ -46,6 +46,14 @@ work remains response-only; local resource restrictions and independent review
 obligations compose with gates. The shared contract and this prompt retain
 all unexcepted preconditions, edit boundaries, verification, and reporting.
 
+For a project with the version-scope revision adopted, verify exact scope
+membership, originating and contributing suite/note IDs and paths, per-source
+routing, current numeric revision cycle, recorded dedicated/shared execution
+mode and branch, immutable captured base ref/commit and immediate integration
+target. Shared source/scopes and declared shared scope branches are valid;
+initiative identities and active per-cycle assignments remain unique. Preserve
+historical allocation, closure and branch history. No later-stage repair by
+inference is allowed; route inconsistencies to the owning preparation/intake.
 Conduct the acceptance review for {initiative} at {initiative_path} on
 {initiative_branch}. This is the human-authority gate from `Proposed` to
 `Accepted`; it is not delivery, execution, finalization, or autonomous approval.
@@ -67,8 +75,8 @@ initiative.
 Before presenting the acceptance question, verify that:
 - the active branch is exactly {initiative_branch}, prepared for this
   initiative from its captured base branch;
-- the canonical work version, realization suite, initiative ID and path,
-  version-bearing branch, captured base branch and commit, and reciprocal links
+- the exact version scope, realization suite, initiative ID and path,
+  recorded execution branch, captured base branch and commit, and reciprocal links
   match one unique canonical project correlation row;
 - the worktree contains no unexplained or unrelated change that would make the
   proposed baseline ambiguous;
@@ -96,7 +104,7 @@ Before presenting the acceptance question, verify that:
 
 If a precondition fails, stop and report every blocker. Do not repair missing
 earlier-stage records, resolve a decision, weaken a gate, narrow the claim,
-change or infer tuple identity, change status, or begin delivery in this prompt.
+change or infer membership identity, change status, or begin delivery in this prompt.
 
 Prepare one acceptance packet from the existing records with:
 1. initiative identity and declared type;

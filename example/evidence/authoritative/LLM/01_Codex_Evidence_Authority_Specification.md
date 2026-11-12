@@ -100,9 +100,9 @@ Directory names, file extensions, author identity, implementation status, or a
 prompt's wording do not establish authority by themselves. Authority comes
 from repository classification and explicit acceptance.
 
-Work-version order, tuple creation, branch existence, and correlation metadata
+Scope order, membership allocation, branch existence, and correlation metadata
 also do not establish authority or precedence. The canonical initiative index
-owns the project-level correlation row, while each linked evidence, initiative,
+owns initiative membership, the scope registry owns scope topology, and each linked evidence, initiative,
 Git, and lifecycle record retains authority only for its own subject.
 
 ## Invariant contradictions

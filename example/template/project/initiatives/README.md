@@ -8,37 +8,30 @@ initiative's scope, binding evidence, or an observed product state.
 
 ## Begin and register an initiative
 
-Use the following workflow for every new effort:
+Process identified realizations through Stage 0 fit assessment before allocation.
+Inventory existing targets and scopes; record append, coherent revision,
+reopening or new-initiative dispositions under the adopted bounded intake
+method. Existing complete records are reused. Acceptance remains human.
 
-1. Preflight and allocate one unused canonical work version, one realization
-   suite, one self-contained initiative, and one version-bearing branch from a
-   captured base through Stage 0. Record the canonical row in
-   `initiative-index.md` and reciprocal metadata in the suite and skeleton.
-2. Determine the initiative type from the output it is permitted to create,
-   not from the title or team name.
-3. Create a uniquely named directory inside the correct type directory, such as
-   `implementation/INIT-IMP-001-payment-retries/`. Do not place unrelated
-   initiatives in one shared folder or one shared document.
-4. Copy the complete
-   [canonical initiative template suite](../../initiatives/README.md) into the
-   new directory. It is the single source of truth for every initiative type;
-   specialize its content without dropping required artifacts.
-5. Replace every token, remove the instruction comment, cite applicable
-   authoritative evidence precisely, and distinguish contextual input from
-   binding requirements.
-6. Copy [initiative-index.template.md](initiative-index.template.md) to
-   `initiative-index.md` and [status.template.md](status.template.md) to
-   `status.md` before registering the first initiative. Add the initiative to
-   both records. The index owns version, suite, initiative, branch, base,
-   status-evidence, and relationship identity; the status record is the
-   current lifecycle and blocker view.
-   Copy [work-conflicts.template.md](work-conflicts.template.md) to
-   `work-conflicts.md` for work conflicts, including proposed, planned, and
-   partially delivered effort. Capture the pre-adoption Git commit in the
-   project profile's `Coherence revision baseline` field.
-7. Obtain the required review before changing a status from `Proposed` to
-   `Accepted` or beginning the type's permitted output.
+For new work use initiatives/<scope>/<type>/<initiative-id-and-slug>/, retaining
+implementation/design/planning output boundaries. Each initiative owns complete
+independent records; it may share scope, notes and a declared scope branch.
 
+Instantiate [version-scopes.template.md](version-scopes.template.md) as the
+canonical scope registry; use [scope-README.template.md](scope-README.template.md)
+for scope navigation. [initiative-index.template.md](initiative-index.template.md)
+owns one membership/provenance row per initiative; [status.template.md](status.template.md)
+is only a view. Record adoption and legacy dispositions using the
+[scope migration ledger](version-scope-migration-ledger.template.md). Preserve
+earlier correlation migration history without retroactively relabeling it.
+
+Stage 0 prepares scope/ancestor records when needed and chooses dedicated child
+or existing shared scope execution. Create only the new initiative's minimal
+README skeletons there. Stage 1 creates its proposal and Stage 3 completes the
+[canonical initiative suite](../../initiatives/README.md). Later delivery records
+are created only when their respective stages begin. Use
+[work-conflicts.template.md](work-conflicts.template.md) for all relevant open
+and partial effort; preserve their original authority standing.
 The type directories define output boundaries only. They do not carry separate
 initiative templates. Every design, implementation, and planning initiative
 uses the same canonical suite so structure and review gates cannot drift by
@@ -79,7 +72,7 @@ Every reviewable canonical record includes:
 | Subject | What to record | Why it matters |
 |---|---|---|
 | Identity and stewardship | Initiative ID, title, type, status, owner, last updated | Lets reviewers find the accountable record and know whether it is current. |
-| Correlation identity | Work version, suite, initiative path, dedicated branch, captured base, and canonical row | Prevents identity reuse, drift, partial mappings, and umbrella versions. |
+| Correlation identity | Exact scope, originating/contributing notes, initiative path, revision/assignment history, captured base, integration evidence and canonical row | Prevents identity reuse, drift, partial mappings, and umbrella versions. |
 | Intended outcome | Observable result rather than only a task list | Defines what completion means. |
 | Scope boundary | Included work, exclusions, products/specifications/evidence it may touch | Prevents accidental expansion or cross-initiative edits. |
 | Evidence basis | Precise IDs, links, sections, classifications, and known gaps | Distinguishes mandates from context. |

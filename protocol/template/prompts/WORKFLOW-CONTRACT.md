@@ -115,9 +115,11 @@ parallel execution. Gate settings alone do not change declared scheduling.
   specification changes to design; planning hands off evidence without editing
   another initiative. A referral does not authorize or prove the target change.
 - Never refine a `Completed`, `Cancelled`, or `Superseded` initiative before
-  explicit human reopening, a decision receipt, and a legal lifecycle
-  transition. Preserve prior claims. A substantive change still requires a
-  successor tuple; linking a successor does not revise the closed claim.
+  recorded reopening under specification 09's bounded intake delegation or
+  separate human authority, a receipt, and return to Proposed unless a separate
+  human unchanged-claim decision specifically authorizes direct Accepted
+  return. Preserve prior claims; coherent same-outcome revisions may retain identity.
+  Independent outcomes or incompatible boundaries still split or use successors.
 - Keep append-only historical corrections and administrative successor links
   distinct from refinement. README additions use `Historical correction`,
   `Successor references`, or `Administrative addendum` headings; other existing
@@ -127,27 +129,42 @@ parallel execution. Gate settings alone do not change declared scheduling.
   coherence review and verify its inventory is current. Do not resolve open
   assumptions or questions from completion evidence alone.
 
-## Correlation identity
+## Scope membership, routing and execution identity
 
-- When the project has recorded the correlation-revision effective point,
-  require one canonical `v<major>.<minor>` work version, one realization suite,
-  one self-contained initiative, and one version-bearing dedicated branch.
-- Treat the project initiative index as the canonical correlation-row owner.
-  Verify reciprocal suite and initiative metadata, captured base branch and
-  commit, lifecycle evidence, and predecessor or successor links before every
-  stage.
-- Only Stage 0 allocates or creates the tuple. Later stages must stop on a
-  missing, duplicate, partial, orphaned, or inconsistent identity; they must
-  not infer or repair it.
-- A mandatory split or substantive successor returns through a new Stage 0 and
-  receives a new tuple. An exact-claim reopening may retain its tuple only
-  under the lifecycle record.
-- A pre-effective record may proceed only under a complete linked
-  `Unmigrated` or `Deferred` migration-ledger disposition and its recorded
-  compatible earlier workflow. Do not mix legacy and new correlation fields.
-- Tuple identity never proves evidence authority, acceptance, implementation,
-  completion, compatibility, release, or deployment.
-
+- Under the adopted version-scope revision, accept exact canonical `vN`,
+  `vN.M`, and `vN.M.P` scopes. A scope contains zero or more initiatives;
+  each initiative has exactly one immutable scope and one narrow claim.
+- `initiatives/version-scopes.md` owns scope identity/topology; the initiative
+  index owns one membership/provenance row per initiative. Scope READMEs and
+  status views link these owners. The initiative README owns lifecycle.
+- Verify source suite/note IDs and paths, per-source routing, exact scope,
+  active revision cycle, execution mode/branch, captured creation base ref and
+  immutable commit, integration target, relationships and reciprocal links.
+  Shared notes, suites, scopes and declared scope branches are valid; duplicate
+  initiative identity and undeclared exclusive branch reuse are not.
+- Stage 0 assesses realization fit before allocation. An actual human intake
+  instruction under adopted specification 09 delegates placement, append versus
+  coherent revision, and necessary target/scope reopening for that intake.
+  Record each LLM-authored choice before applying it; no fabricated human
+  answer, unrelated question resolution or initiative acceptance is implied.
+- Changed Accepted/In progress claims pause delivery, retain partial evidence
+  and return to Proposed. Reopen changed closed claims first, preserving exact
+  prior baselines, cancelled/superseded consequences and each ancestor event.
+  Only separate human unchanged-claim authority permits direct Accepted return.
+  Changed claims require alignment and renewed human acceptance before delivery.
+- New independent outcomes and incompatible type/owner/authority boundaries
+  require separate complete initiatives/successors, which may share scope and
+  sources. Coherent same-outcome revision need not allocate another identity.
+- Existing complete records are reused. Later stages verify membership,
+  provenance, cycle, branch and captured base; stop on missing or inconsistent
+  evidence without inferring repairs. New-initiative stages never recreate them.
+- Preserve branch/allocation history across cycles and retained/removed refs;
+  record continuation assignments when historical refs cannot safely host work.
+- Existing legacy records retain their complete migration-ledger disposition
+  and compatible governing revision until explicit evidence-backed migration.
+  Do not normalize bare majors, move closed paths or mix legacy/new metadata.
+- Identity, branch presence and numeric order never prove acceptance, evidence
+  authority, completion, compatibility, dependency satisfaction or release.
 ## Human authority
 
 - Assumptions, open questions, acceptance, reopening, cancellation,
@@ -162,10 +179,10 @@ parallel execution. Gate settings alone do not change declared scheduling.
 
 ## Git and lifecycle
 
-- Require a Git repository and the dedicated initiative branch prepared from a
-  captured base branch and commit. Active governed work requires the recorded
-  branch ref and exact version token. Preserve unrelated user work and stage
-  only traceable changes.
+- Require Git and the recorded dedicated or shared scope execution assignment
+  for the current cycle. Preserve captured base ref/commit and branch role.
+  Active work requires its recorded local ref. Serialize shared writes and
+  preserve concurrent index additions and unrelated or unaccepted work.
 - Do not amend, squash, rebase, force-push, merge, delete a branch, or deploy
   unless explicit authority and the stage prompt permit the specific action.
 - Record only legal lifecycle transitions. Append transition evidence and
@@ -186,7 +203,7 @@ parallel execution. Gate settings alone do not change declared scheduling.
 - Reconcile every record the stage owns. Report exact paths changed, evidence
   used, verification performed, lifecycle effects, and remaining blockers.
 
-## Correlation recovery
+## Scope and correlation recovery
 
 - On correlation drift, stop the affected stage and report the exact canonical
   row, reciprocal record, branch, or base mismatch.
@@ -198,3 +215,38 @@ parallel execution. Gate settings alone do not change declared scheduling.
   a blocker.
 
 
+
+## Closure and immediate-parent integration
+
+- Major branches start at the captured project integration base; minors start
+  directly at their matching major; patches start directly at their matching
+  minor; dedicated initiative branches start at their assigned scope. Capture
+  actual parent tips before creation. No minor-from-minor or silent reparenting.
+- Merge down means child into immediate parent: initiative -> assigned scope,
+  patch -> minor, minor -> major, major -> project integration base. Work directly
+  hosted on a scope records verified commits without self-merge or upward merge.
+- A human close/finalize instruction for an identified governed target supplies
+  its bounded local source-to-recorded-parent merge authority after every gate
+  passes. Record it before acting; adoption, implementation and status alone
+  supply no live merge authority. Pushes remain separately authorized.
+- Scope closure is a separate operation in scope_closure.md. Closing one member
+  never closes a sibling or scope. Capture membership/descendants, truthful
+  closed dispositions, successful required child integration, aggregate checks,
+  coherence/conflict reconciliation and closure authority before closing scope.
+  Empty scopes need explicit no-work disposition. Closed parents require their
+  own recorded reopening before new membership or integration.
+- Never integrate a shared branch whole tip while it includes unfinished,
+  unaccepted, cancelled or unrelated work. Keep integration blocked or use only
+  separately authorized safe isolation/transfer preserving every owner. Closing
+  one member does not authorize cherry-picking/reverting/discarding others.
+- Inspect source/target tips and worktree, verify current target and source
+  delta, run required checks, preserve failures, detect already integrated work,
+  and record actual tips, authority, method/result commit and post-checks.
+  Fast-forward and already integrated outcomes are recorded truthfully.
+- Lifecycle closure and integration status remain separate. Failed integration
+  preserves truthful prior completion and pending/blocked evidence. Retain
+  branches unless their removal is separately authorized. New revision deltas
+  require fresh evidence; historical merge receipts do not qualify new work.
+- Pull requests are human-managed. Stages neither solicit nor prepare/create
+  them, require a URL/hosting connection, or make local closure depend on one.
+  Report external remote-policy constraints without bypassing them.

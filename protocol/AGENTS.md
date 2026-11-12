@@ -52,16 +52,19 @@ protected-update commit override without the same explicit authority.
   change record, impact analysis, and cross-record reconciliation.
 - Count open effort as work without promoting its authority, document
   incompatible efforts in `initiatives/work-conflicts.md`, and review
-  completion feedback against all open initiatives. Require explicit human
-  reopening before refining closed claims under specification 10.
+  completion feedback against all open initiatives. Require recorded authorized
+  reopening before refining closed claims under specifications 09 and 10;
+  adopted realization intake delegates necessary reopening, never acceptance.
 - Record only legal lifecycle transitions. Require the standard execution
   record for implementation, the standard delivery record for design or
   planning, and standard completion evidence before any initiative is marked
   `Completed`. Follow exactly one delivery path for the declared type.
-- Require Git for every TADp project. Use a dedicated initiative branch from a
-  captured base, preserve unrelated work, and keep commits and branch history
-  traceable to the initiative. Never rewrite shared history or merge without
-  explicit authority.
+- Require Git for every TADp project. Use the recorded dedicated or shared scope execution
+  assignment from a captured base, preserve unrelated work, and retain
+  initiative-specific commits and verification. Never rewrite shared history.
+  An identified close/finalize instruction authorizes only local integration
+  into the recorded immediate parent after all gates pass. Further upward
+  integration, pushes and branch deletion retain separate authority.
 - Record every discovered contradiction in the invariant conflict register and
   in the affected initiative records. Do not hide it by changing history,
   narrowing a claim, or marking incomplete work complete.

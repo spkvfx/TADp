@@ -14,7 +14,9 @@ evidence, an accepted initiative, or a product contract.
 **Human authority model:** {{solo_project_owner_or_named_review_authorities}}  
 **Git repository root:** {{repository_root}}  
 **Default integration branch:** {{actual_branch_or_not_assumed}}  
-**Pull-request remote:** {{remote_name_or_not_configured}}  
+**Remote operations:** {{separate_authority_and_external_constraints}}
+**Version scope revision effective point:** {{coherent_revision_commit_or_not_yet_adopted}}
+**Version scope migration ledger:** [Scope migration]({{relative_version_scope_migration_ledger_path}})
 **Correlation revision effective point:** {{commit_or_not_yet_adopted}}
 **Correlation migration ledger:** [{{ledger_name}}]({{relative_migration_ledger_path}})
 **Coherence revision baseline:** {{pre_adoption_git_commit_or_not_yet_adopted}}
@@ -68,18 +70,21 @@ appear aligned. Link the conflict to its owner, resolution, and effective date.
 
 ## Work identity and correlation
 
-The project initiative index owns the canonical one-to-one mapping among work
-version, realization suite, self-contained initiative, and dedicated Git
-branch. Record the exact protocol effective commit above before allocating a
-governed tuple. Copies in suites, initiatives, status, delivery, completion,
-and Git records link to the canonical row and do not create authority or
-lifecycle standing.
+The scope registry initiatives/version-scopes.md owns exact major/minor/patch
+scope identity and topology. The initiative index owns one membership row per
+initiative, its exact source provenance and current cycle execution assignment.
+Scope READMEs and status link those owners; initiative READMEs own lifecycle.
+Sources remain non-authoritative and may route to several narrow targets.
+Scopes and declared shared scope branches may be reused. Initiative IDs are
+independent of scope numbers. Record fit choices, target/source scopes and
+LLM authorship under the exact bounded intake delegation before applying them.
 
-Use the linked migration ledger for every pre-effective record. A complete
-`Unmigrated` or `Deferred` disposition preserves earlier identity and workflow
-without inferring a partial tuple. A substantive successor or mandatory split
-after the effective point receives a new tuple.
-
+Adopt prospectively at the recorded coherent commit. Existing one-to-one
+correlation records keep their compatible earlier revision and complete ledger
+disposition until explicit evidence-backed migration. Preserve legacy scopes,
+paths, branch/base and source identities, historical PR evidence and claims.
+Neither synchronization nor scope notation authorizes migration, path moves,
+reparenting, acceptance or completion.
 ## Operating cadence
 
 | Event | Required review | Record to update |
@@ -93,16 +98,18 @@ after the effective point receives a new tuple.
 The coherence revision baseline identifies the Git commit immediately before
 adoption. Historical terminal claims are preserved without retroactive review;
 new or changed work follows the adopted coherence rule. Open effort counts as
-work to reconcile, not as authority or execution approval. Refine closed
-initiatives only after explicit human reopening; substantive claim changes
-still require a successor tuple.
+work to reconcile, not as authority or execution approval. Refine closed claims only after recorded reopening under adopted bounded
+intake delegation or separate human authority; coherent same-outcome claim changes may retain identity; independent outcomes
+and incompatible type/owner/authority boundaries require separate initiatives.
 
 ## Git workflow
 
-This project requires Git. Every initiative uses a dedicated branch created
-from a captured base branch. Record repository-specific branch naming,
-required checks, commit signing, review, remote, and pull-request conventions
-here without weakening the authoritative Git workflow specification.
+This project requires Git and recorded dedicated/shared execution per cycle.
+Use exact scope branches, major from captured project integration base, minor
+from matching major, patch from matching minor, and dedicated member from scope.
+Record immutable creation bases and initiative-specific shared-branch evidence.
+Human close/finalize instructions supply bounded local immediate-parent merge
+authority after all gates; pushes require separate authority.
 
 - **Initiative branch convention:** {{branch_naming_rule}}
 - **Required checks:** {{checks_or_none_beyond_initiative_gates}}

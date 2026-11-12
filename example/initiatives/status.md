@@ -55,3 +55,11 @@ under its `Unmigrated` disposition in the
   never allocate, renumber, or infer identity in this status view.
 - A parent, subinitiative, release, or version boundary does not rewrite the
   identity, authority, or classification of retained proposal sources.
+
+## Prospective scope status
+
+[Scope registry](version-scopes.md) owns scope coordination and integration;
+[initiative membership](initiative-index.md#prospective-scope-membership) owns
+correlation. No governed scope or new member is allocated by installation.
+The legacy status above remains unchanged under its recorded revision and
+[scope migration disposition](version-scope-migration-ledger.md).

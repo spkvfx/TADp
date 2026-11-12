@@ -9,7 +9,7 @@ below. Replace every double-brace token before review.
 **Initiative:** {{initiative_name}}  
 **Status:** Proposed  
 **Last updated:** {{date}}
-**Work version:** {{v_major_minor}}
+**Version scope:** {{version_scope}}
 **Realization suite:** [{{realization_suite_id}}]({{relative_realization_suite_index_path}})
 **Canonical project correlation:** [initiative and correlation register]({{relative_initiative_index_path}}#initiative-and-correlation-register)
 
@@ -69,4 +69,4 @@ accepted initiative.
 Use the paired suite index as the source of realization-suite identity and
 boundary. Do not infer a second suite, initiative, version, or branch from a
 supporting note. If the notes do not share one narrow boundary, stop and route
-the required split through Stage 0 as a new tuple.
+the required split through Stage 0 as a new independent initiative membership.

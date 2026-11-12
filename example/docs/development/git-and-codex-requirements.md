@@ -19,18 +19,30 @@ Every TADp project must have its own `.git` metadata entry at the project root.
 Being nested somewhere inside an unrelated parent repository does not provide
 the required project identity.
 
-### Initiative branches
+### Initiative and scope branches
 
-Each governed initiative uses a dedicated branch correlated to its canonical
-work version and created from an actual captured base branch and commit. Do not
-assume the integration branch is named `main` or `master`. Preparation creates
-the branch; later stages verify the full tuple and use it.
+Discover the actual configured integration base. Major `vN` branches come from
+its captured tip, minor `vN.M` branches directly from matching majors, and patch
+`vN.M.P` branches directly from matching minors. Siblings never create the next
+minor. Capture immutable creation bases and retain branch-role history.
 
-Use the project's recorded branch convention. If none exists, use
-`initiative/v<major>.<minor>-<initiative-slug>`. The exact version token remains
-in the branch name. Active work requires the local ref. A removed terminal ref
-is acceptable only with separately authorized and linked removal evidence;
-the recorded identity is never reused.
+Record one active execution assignment per initiative revision: directly on its
+matching scope branch or on `initiative/<scope>-<id-and-slug>` from that scope.
+Preflight existing role, work, parent, clean worktree and reciprocal records.
+Shared scopes retain per-member paths, commits and verification; serialize
+shared writes and preserve concurrent index additions. Dedicated branches host
+only their bounded initiative. Historical refs are not reassigned to unrelated
+work; separately authorized removal retains identity and evidence.
+
+Closure integrates the closed child into its immediate recorded parent after
+all gates pass. A close/finalize instruction for an identified governed unit
+supplies only that bounded local merge authority. Direct scope hosting records
+presence without self-merge. Scope closure requires its own complete inventory,
+closed descendants, child integration, aggregate checks and authority; no
+premature upward merge or unaccepted shared work is permitted. Retain actual
+tips, method, resulting commit, failure/pending state and post-integration checks.
+Pull requests are independently human managed; pushes remain separately authorized.
+See [scope migration and operation](../guides/version-scope-migration.md).
 
 ### Worktree protection
 
@@ -112,10 +124,10 @@ explain consequences. It must not silently manufacture the human disposition.
 
 ## Remote hosting is conditional
 
-Git is required; a particular hosting provider is not. Pull-request
-finalization requires a configured remote, authentication, and a service able
-to create the intended review request. If those are absent, local work and
-evidence can remain valid while publication is reported as blocked.
+Git is required; a particular hosting provider is not. Local finalization and
+child-to-parent integration need no remote or PR service. Humans independently
+manage pull requests. Pushes need separate authority; report an external remote
+policy without bypassing it or creating a PR automatically.
 
 ## Other tools
 

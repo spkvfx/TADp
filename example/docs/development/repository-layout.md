@@ -131,8 +131,11 @@ boundary, and catalog while remaining permanently non-authoritative.
 must own one outcome, one coherent authority boundary, and one independently
 reviewable acceptance claim.
 
-`initiative-index.md` owns the canonical project-level one-to-one correlation
-among work version, realization suite, initiative, and dedicated branch.
+`initiative-index.md` owns membership and exact multi-note provenance.
+`version-scopes.md` owns scope identity, hierarchy, captured bases, closure and
+integration. New paths are `initiatives/<scope>/<type>/<id-and-slug>/`.
+Scope READMEs link to these owners; initiative READMEs own lifecycle. Project
+status, migration ledgers and work-conflict registers remain project-level.
 `version-correlation-migration-ledger.md` preserves pre-effective identities
 and their `Unmigrated`, `Deferred`, or separately authorized migration
 dispositions without inference.

@@ -16,6 +16,7 @@ from typing import Iterable
 from urllib.parse import unquote
 
 from tadp_keywords import SPECIFICATION as KEYWORD_SPECIFICATION, load_registry
+from tadp_scopes import adopted as scopes_adopted, adopted_for_record, validate_version_scopes
 
 
 MARKDOWN_LINK = re.compile(r"(?<!!)\[[^\]]+\]\(([^)]+)\)")
@@ -804,7 +805,7 @@ def correlated_initiative_directories(root: Path) -> list[Path]:
 
     for readme in initiative_root.rglob("README.md"):
         text = readme.read_text(encoding="utf-8")
-        if metadata_plain(text, "Work version") and metadata_plain(
+        if (metadata_plain(text, "Work version") or metadata_plain(text, "Version scope")) and metadata_plain(
             text, "Initiative ID"
         ):
             result.add(readme.parent)
@@ -1027,13 +1028,25 @@ def validate_initiatives(root: Path) -> list[Finding]:
     return findings
 
 
-def validate_version_correlation(root: Path) -> list[Finding]:
+def validate_version_correlation(root: Path, *, _scope_dispatch: bool = True) -> list[Finding]:
     findings: list[Finding] = []
     profile = root / "project-profile.md"
     if not profile.is_file():
+        if _scope_dispatch:
+            return validate_version_scopes(root)
         return findings
 
     profile_text = profile.read_text(encoding="utf-8")
+    if _scope_dispatch:
+        scope_findings = validate_version_scopes(root)
+        if scopes_adopted(profile_text) or scope_findings:
+            legacy_index = root / "initiatives/initiative-index.md"
+            # Deferred tuples retain their old canonical table and old checks.
+            # New members occupy a separate scope table and are never inferred
+            # into the earlier one-to-one model.
+            if legacy_index.is_file() and find_markdown_table(legacy_index.read_text(encoding="utf-8"), CORRELATION_HEADERS) is not None:
+                scope_findings.extend(validate_version_correlation(root, _scope_dispatch=False))
+            return scope_findings
     effective = CORRELATION_EFFECTIVE_POINT.search(profile_text)
     if not effective or "not yet adopted" in effective.group(1).lower():
         return findings
@@ -1441,6 +1454,8 @@ def validate_version_correlation(root: Path) -> list[Finding]:
     realization_root = root / "evidence" / "non-authoritative" / "realizations"
     if realization_root.is_dir():
         for suite_path in realization_root.rglob("*suite-index.md"):
+            if metadata_plain(suite_path.read_text(encoding="utf-8"), "Version scope"):
+                continue
             resolved = suite_path.resolve()
             if resolved not in canonical_suite_paths and resolved not in legacy_suite_paths:
                 findings.append(
@@ -1453,6 +1468,8 @@ def validate_version_correlation(root: Path) -> list[Finding]:
                 )
 
     for directory in correlated_initiative_directories(root):
+        if metadata_plain((directory / "README.md").read_text(encoding="utf-8") if (directory / "README.md").is_file() else "", "Version scope"):
+            continue
         resolved = directory.resolve()
         if (
             resolved not in canonical_initiative_paths
@@ -1664,7 +1681,20 @@ def coherence_reopened(
         text = coherence_text(content)
         if metadata_plain(text, "Disposition") != "Reopened":
             continue
+        delegated = (
+            row[2] == "Proposed"
+            and adopted_for_record(readme, git_root)
+            and metadata_plain(text, "Decision method") == "Delegated realization intake"
+            and metadata_value(text, "Decision author")
+            and metadata_value(text, "Human intake instruction")
+            and metadata_value(text, "Governing delegation")
+            and metadata_value(text, "Routing evidence")
+            and metadata_value(text, "Prior claim revision")
+            and metadata_value(text, "Verification boundary")
+        )
         if not metadata_value(text, "Human authority"):
+            continue
+        if metadata_plain(text, "Decision method") == "Delegated realization intake" and not delegated:
             continue
         if row[2] == "Accepted" and metadata_plain(text, "Unchanged accepted claim") != "Yes":
             continue
@@ -1739,7 +1769,7 @@ def validate_terminal_changes(
                 continue
             findings.append(Finding(
                 "error", "TADP043", relative(path, root),
-                "closed initiative record changed or was removed without a new evidenced reopening; preserve the prior claim and use a successor for substantive work",
+                "closed initiative record changed or was removed without a new evidenced reopening; preserve the prior claim and route coherent revision or independent successor under the governing revision",
             ))
         if not reopened:
             candidates = (

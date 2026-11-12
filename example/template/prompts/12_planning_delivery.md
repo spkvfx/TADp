@@ -43,6 +43,14 @@ work remains response-only; local resource restrictions and independent review
 obligations compose with gates. The shared contract and this prompt retain
 all unexcepted preconditions, edit boundaries, verification, and reporting.
 
+For a project with the version-scope revision adopted, verify exact scope
+membership, originating and contributing suite/note IDs and paths, per-source
+routing, current numeric revision cycle, recorded dedicated/shared execution
+mode and branch, immutable captured base ref/commit and immediate integration
+target. Shared source/scopes and declared shared scope branches are valid;
+initiative identities and active per-cycle assignments remain unique. Preserve
+historical allocation, closure and branch history. No later-stage repair by
+inference is allowed; route inconsistencies to the owning preparation/intake.
 Deliver the accepted planning initiative {initiative} at {initiative_path} on
 {initiative_branch}.
 
@@ -59,8 +67,8 @@ API, runtime configuration, deployment state, or an external system.
 
 Before creating an evidence output, verify that:
 - the active branch is exactly {initiative_branch};
-- the canonical work version, realization suite, initiative ID and path,
-  version-bearing branch, captured base branch and commit, and reciprocal links
+- the exact version scope, realization suite, initiative ID and path,
+  recorded execution branch, captured base branch and commit, and reciprocal links
   match one unique project correlation row;
 - the worktree and branch diff contain no unexplained unrelated work;
 - the complete initiative suite, scope assessment, acceptance receipt, accepted
@@ -127,9 +135,10 @@ claims and effort, impact, owner, blocking scope, and required decision or
 evidence. Invariant contradictions also require the authoritative register.
 Stop completion when a conflict affects the accepted evidence claim. Hand
 findings to target owners through their workflow and branch; do not refine
-another initiative from this planning stage. A closed target requires explicit
-human reopening, a receipt, and a legal transition before refinement, and
-substantive changes require a successor tuple.
+another initiative from this planning stage. A closed target needs recorded reopening under adopted bounded intake delegation
+or separate human authority, a receipt and legal transition before refinement.
+Coherent same-outcome revision may retain identity; independent outcomes split.
+Planning delivery alone supplies no target intake authority.
 
 Report every evidence artifact created or changed, delivery steps, source
 coverage, verification results, lifecycle and status updates, limitations,

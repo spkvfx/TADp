@@ -1,196 +1,107 @@
-<!--
-Replace every braced placeholder before using this prompt.
--->
+<!-- Replace every braced placeholder before execution. -->
 
-# 13. Finalize initiative
+# 13. Finalize completed initiative and record local integration
 
-## Use after an initiative completes its permitted work
-
-Use this prompt after the initiative has completed its accepted type-specific
-work and recorded the required verification evidence. For an
-`implementation` initiative, that follows the
-[implementation-execution prompt](10_initiative_execution.md). A `design`
-initiative follows the [design delivery prompt](11_design_delivery.md), and a
-`planning` initiative follows the
-[planning delivery prompt](12_planning_delivery.md). The prompt verifies the
-completion state, commits any remaining accepted work, pushes the initiative
-branch, and opens its pull request. It does not declare incomplete work
-complete, merge the pull request, delete the branch, deploy a product, or waive
-an unresolved gate.
-
-The initiative branch and its base branch come from the
-[prepare-initiative prompt](00_initiative_preparation.md). The completion state
-recorded by the initiative's type-specific work becomes part of the base branch only when the pull
-request merges.
+Use this prompt after the initiative's type-specific delivery has verified
+`Completed`. It verifies existing completion, finalizes traceable commits and
+integrates a dedicated initiative branch into its assigned scope when specifically
+authorized, or records verified direct placement. It never closes that scope.
 
 ## Shared workflow contract
 
-Apply [WORKFLOW-CONTRACT.md](WORKFLOW-CONTRACT.md) together with this prompt.
-The contract is mandatory and does not replace this prompt's specific
-preconditions, edit boundary, verification, or reporting requirements.
+Apply [WORKFLOW-CONTRACT.md](WORKFLOW-CONTRACT.md) and the
+[Git workflow specification](../../evidence/authoritative/LLM/05_Codex_Git_Workflow_Specification.md).
 
+Use the [integration receipt source](../project/initiatives/integration-receipt.template.md)
+for each actual integration or explicit exclusion/transfer/no-deliverable event.
+Preserve exact current-cycle identity, source/target tips, closure authority,
+method and post-integration verification; record failures as failures.
 ## Example usage
 
 > **Reference only — do not execute this example.**
 >
-> Using the [finalize initiative prompt](13_initiative_finalization.md), finalize
-> the attached initiative after its accepted work is complete. Verify its
-> aligned completion records, commit any remaining accepted initiative work,
-> push the prepared branch, and create the pull request.
+> Using [initiative finalization](13_initiative_finalization.md), finalize the
+> attached initiative after verified completion and its recorded immediate-parent
+> integration.
 
-This example shows how to invoke the template. When using this file, execute
-only the instructions in the **Finalize initiative prompt** block below. Do not
-execute, recurse into, or derive additional work from the example.
+Only the **Finalize initiative prompt** block below is executable when invoked.
 
 ## Finalize initiative prompt
 
 ```text
 Apply {initiative_template_root}/prompts/WORKFLOW-CONTRACT.md and the canonical
 prompt keyword specification at evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md.
-The following human-response and gate-stop instructions state the ordinary
-required path. Apply only specifically authorized, recorded exceptions under
-that specification; a mode request alone supplies no waiver. Record effective
-settings for each source-position block before dispatch or retry, preserve
-locks and truthful evidence, and retain ordinary lifecycle meanings. Preview
-work remains response-only; local resource restrictions and independent review
-obligations compose with gates. The shared contract and this prompt retain
-all unexcepted preconditions, edit boundaries, verification, and reporting.
+Preserve effective settings, protected locks, all unexcepted gates and truthful
+evidence. Finalize {initiative} at {initiative_path} under its adopted revision.
 
-Reconcile any earlier prompt exceptions against current prerequisites before
-ordinary finalization. Finishing requested work under an exception does not
-establish `Completed`, and restoring gates does not pass earlier skipped
-checks. Preserve each exception outcome in the final report and do not infer
-permission to push or open a pull request from a mode setting.
+Before changing anything, verify the canonical membership row, exact scope,
+source provenance, current revision cycle, dedicated/shared execution mode,
+active branch, captured base and immediate integration target. Inspect both
+branch tips and the staged, unstaged and untracked worktree. Stop on a mismatch,
+missing ref/authority, changed target requiring review, or unrelated work that
+cannot be preserved safely. Do not infer repairs, targets or remote authority.
 
-Finalize {initiative} at {initiative_path} from {initiative_branch} into
-{base_branch}.
+Before integration, instantiate the reusable integration receipt outside
+template/ at the initiative/scope evidence location and capture authority.
+Complete its objective fields from actual Git results, never planned values.
+Integration state uses exact Pending, Blocked, Merged, Fast-forward,
+Already integrated, Direct placement, Excluded, Transferred or No deliverable.
 
-This prompt may run only after the initiative has completed its accepted
-type-specific work and all in-scope acceptance, qualification, and release
-gates have recorded passing evidence. It must not turn partial, blocked, or
-failed work into a completed initiative or a pull request. A separately owned
-future production, deployment, or release scope may remain explicitly deferred
-when it is outside the completed initiative's accepted claim.
+Perform these actions serially:
+1. Verify README.md is Completed under its recorded accepted claim and current
+   revision. Confirm completion-evidence.md supplies every applicable passing
+   gate; implementation uses execution-record.md and design/planning uses
+   delivery-record.md. Verify complete source diff, output/type boundaries,
+   acceptance receipts, proposal, specifications, decisions, mapping, roadmap,
+   steps, verification, compatibility and deferred ownership agree. Do not
+   manufacture completion or weaken specifications to fit delivered work.
+2. Recheck the cross-initiative coherence review against current open effort
+   and affected closed claims. Reconcile source-claim blockers through owning
+   workflows. Verify initiative-status and parent/dependent records reflect
+   the same claim. Preserve conflicts and historical closures. A new cycle's
+   delta requires fresh verification; earlier completion/integration receipts
+   do not certify it. Return stale or unsupported completion to delivery.
+3. Review the full branch diff and current target. On a shared scope branch,
+   attribute this initiative's exact paths, commits, revision base, verification
+   and unavoidable mixed boundaries; preserve every other member's work and
+   latest index additions. Stage only traceable accepted work and aligned
+   evidence/tracking. Commit remaining changes coherently or retain existing
+   commits when nothing remains; do not make an empty commit.
+4. Capture the actual human instruction to close/finalize this identified
+   initiative, its bounded local merge authority and exact source/target in
+   the closure record before acting. A prior protocol adoption, implementation
+   request or terminal status alone does not authorize integration. Do not ask
+   again when the exact instruction already supplies sufficient authority.
+5. For shared execution directly on its assigned scope branch, record already
+   present placement and exact verified initiative commits. Perform no self-
+   merge and no upward scope merge. Mere presence is not acceptance of other
+   hosted work. For a dedicated initiative branch, verify its accepted source delta,
+   current target, open parent state and all applicable checks, then integrate
+   initiative branch -> assigned version-scope branch locally. If the parent
+   is closed, require its recorded authorized reopening before integration.
+   Detect already integrated source commits before retrying. Record a real
+   fast-forward, merge or already integrated result without inventing a merge
+   commit. Conflicts or failed checks leave integration pending/blocked while
+   preserving truthful lifecycle completion and actual failures. Resolve only
+   accepted scope; substantive claim changes return through revision gates.
+6. Record actual source and target tips, target ref, authority, method, result
+   commit, source delta, command results and post-integration verification in
+   initiative integration evidence and reciprocal index/scope records. Preserve
+   previous cycles and immutable creation bases. Retain source branches.
 
-Verify the target's declared type. An `implementation` initiative must have
-completed only accepted product work; a `design` initiative must have completed
-accepted specification or supporting-evidence work without creating a new
-product; and a `planning` initiative must have completed evidence work only.
-Do not finalize an initiative whose diff crosses its type boundary.
+Cancelled or Superseded work uses a separate explicit closure disposition;
+this Completed entry must not integrate abandoned or unaccepted deliverables.
+A scope closes only through scope_closure.md after every required member/child
+integration and aggregate gate passes. This initiative finalization neither
+closes siblings/ancestors nor authorizes further upward merges.
 
-Apply the ownership and approval convention at {project_profile_path}. Human
-owner, reviewer, and approver roles resolve as recorded for the target project.
-No technical, evidence, acceptance, or release gate within the accepted
-completion claim is waived.
+Pushes, publication, deployment, history rewriting and branch removal need
+separate specific authority. Human-managed review requests are outside this
+operation; no hosting connection or URL is a prerequisite or output. If remote
+policy constrains integration, report the constraint without bypassing it.
 
-Before changing tracking or Git state, verify that:
-- the current branch is exactly {initiative_branch}, it is the branch prepared
-  for this initiative, and {base_branch} is the captured branch from which it
-  was created;
-- the canonical work version, realization suite, initiative ID and path,
-  version-bearing branch, captured base branch and commit, and reciprocal links
-  match one unique project correlation row;
-- {base_branch} exists locally and on the configured pull-request remote, and
-  its intended target is unambiguous;
-- {initiative_path} has a complete initiative record, completed permitted
-  output, and supporting evidence, with no remaining required in-scope delivery
-  step, acceptance
-  gate, qualification gate, release gate, failed verification, unresolvable
-  conflict, deferred item, or blocker; separately deferred follow-up scope is
-  explicit and does not contradict the completed claim;
-- `{initiative_path}/completion-evidence.md` states the exact completed claim
-  and provides evidence for every applicable acceptance and verification gate;
-- the completion evidence's cross-initiative coherence review records its
-  inventory baseline, every other current open initiative (including Proposed
-  and partial effort), affected closed claims, findings, compatible
-  dispositions, and links to the project work-conflict register;
-- no unresolved work conflict contradicts the completed claim, and the branch
-  diff does not refine a closed initiative without a new explicit human
-  reopening receipt and legal transition; substantive changes use successors;
-- the linked acceptance receipt names the same accepted baseline and exact
-  bounded claim, and no later delivery record silently revises that baseline;
-- an `implementation` initiative also has an
-  `{initiative_path}/execution-record.md` whose ledger, changed paths,
-  commands, and results agree with the complete branch diff;
-- a `design` or `planning` initiative also has an
-  `{initiative_path}/delivery-record.md` whose ledger, outputs, methods,
-  verification, and results agree with the complete branch diff;
-- every uncommitted or untracked artifact traces to this initiative's permitted
-  output or an already-aligned completion record. Identify the exact paths
-  and do not stage unrelated work;
-- {initiative_status_path} and any applicable parent initiative index are
-  available, identify the intended initiative entry, and already reflect the
-  verified completed result;
-- the configured remote accepts pushes for {initiative_branch}, the pull
-  request service is authenticated, and a pull request does not already exist
-  from {initiative_branch} into {base_branch}; and
-- the pull-request title, summary, delivery-step list, verification
-  results, compatibility or migration effects, and recorded completion status
-  can be stated from evidence.
-
-If any precondition fails, stop and report the blocker. Do not change a status,
-commit, push, create a duplicate pull request, merge, delete a branch, or use a
-different target branch.
-
-Verify, but do not re-declare, the completed result recorded before
-finalization:
-1. Confirm that {initiative_path}/README.md is `Completed`, has the correct
-   `Last updated` value, and links the completed scope and verification
-   evidence.
-2. Confirm that `{initiative_path}/completion-evidence.md` states the same
-   completed claim and supplies evidence for every applicable gate. For an
-   `implementation` initiative, confirm that `execution-record.md` agrees with
-   the complete branch diff and verification results. For a `design` or
-   `planning` initiative, confirm that `delivery-record.md` agrees with the
-   complete branch diff and verification results.
-3. Confirm that the matching {initiative_status_path} row and any applicable
-   parent or dependent record state the same verified result, next
-   responsibility, and intentionally deferred or unavailable follow-up scope.
-4. Confirm that the proposal, accepted specifications, decisions, evidence map,
-   roadmap, and delivery steps remain aligned with the completed output and
-   were not weakened merely to make the status appear complete.
-5. Confirm that the canonical row retains the allocated branch and captured
-   base identity, and that any absent historical ref has separately authorized
-   removal evidence. Do not delete or free the branch identity in this stage.
-6. Confirm the coherence review remains current against open work and affected
-   closed claims at finalization. Preserve documented effort and conflict
-   history. Return stale or incompatible findings to the owning workflow;
-   finalization must not refine another initiative or manufacture reopening.
-
-If a completion or tracking record is missing, stale, inconsistent, or not
-supported by completion evidence, stop and return it to the appropriate
-type-specific workflow
-for reconciliation. Do not repair or manufacture completion state during
-finalization, and do not change unrelated status rows or parent scope.
-
-Review the complete branch diff and working tree. Stage only remaining accepted
-initiative permitted output, required verification evidence, and already-aligned
-tracking records. When staged changes remain, commit them with a clear
-initiative-specific message; otherwise use the existing initiative commits and
-do not create an empty commit. Do not add credentials, local settings,
-generated caches, unrelated user work, or any path not traced to the
-initiative.
-
-Push {initiative_branch} to the configured remote and create one non-draft
-pull request from {initiative_branch} into {base_branch}. Its title must name
-the initiative and completed outcome. Its body must identify:
-1. the initiative and accepted scope delivered;
-2. delivery steps completed;
-3. verification commands and results;
-4. compatibility, migration, operational, or rollout effects;
-5. the initiative-status records verified and any remaining accepted records
-   committed; and
-6. remaining in-scope blockers or deferred work, which must be `None`, plus any
-   separately owned follow-up scope that remains explicitly unavailable or
-   deferred outside the completed initiative claim.
-
-Do not merge the pull request, enable auto-merge, delete {initiative_branch},
-or make a deployment.
-
-Report the tracking files verified and any that were committed during
-finalization, the commit identifiers, the pushed branch and base branch, the
-pull-request URL, the verification evidence summarized in the pull request,
-the final correlation verification, and any follow-up that remains after
-merge.
+Report exact tracking paths, acceptance/completion verification, commit IDs,
+execution mode, source/target refs and tips, authority, method/result commit,
+post-integration checks, closure versus integration status, pending failures
+and remaining independently owned follow-up. Report no merge when none occurred.
 ```
-

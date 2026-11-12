@@ -1,53 +1,58 @@
-<!--
-Copy this file to initiative-index.md at the root of the initiatives directory.
-It is a directory-level register, not a replacement for an initiative's own
-record. Replace tokens, retain closed rows for history, and remove this comment
-before review.
--->
+<!-- Copy to initiatives/initiative-index.md. Replace tokens and retain rows. -->
 
 # {{project_name}} initiative index
 
-**Index owner:** {{human_or_team}}  
-**Last reviewed:** {{yyyy-mm-dd}}  
-**Review cadence:** {{event_or_interval}}  
+**Index owner:** {{human_or_team}}
+
+**Last reviewed:** {{yyyy-mm-dd}}
+
+**Review cadence:** {{event_or_interval}}
 
 ## Authority boundary
 
-This index owns canonical project-level tuple identity and initiative
-discovery. It does not accept an initiative, resolve a decision, prove
-delivery, or replace the initiative README's lifecycle authority.
+This is the canonical membership/provenance index with exactly one row per
+initiative. [Version scopes]({{relative_version_scopes_path}}) owns scopes;
+each initiative README owns lifecycle. Source catalogs remain permanently
+non-authoritative. Correlation creates no acceptance, delivery or release.
 
 ## Initiative and correlation register
 
-| Work version | Realization suite | Initiative ID | Name | Type | Status | Dedicated branch | Captured base branch | Captured base commit | Predecessor or successor | Record location | Lifecycle evidence | Branch removal evidence | Owner | Next gate |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| {{v_major_minor}} | [{{realization_suite_id}}]({{relative_suite_index_path}}) | {{INIT-001}} | {{initiative_name}} | `{{design_implementation_or_planning}}` | {{proposed_accepted_in_progress_completed_cancelled_or_superseded}} | {{initiative_branch}} | {{base_branch}} | {{base_commit}} | {{relationship_or_none}} | [{{directory_or_record}}]({{relative_initiative_path}}) | {{lifecycle_evidence_link}} | {{not_applicable_or_removal_authority_link}} | {{owner}} | {{decision_review_or_date}} |
+| Scope | Initiative ID | Type | Record location | Source notes | Execution branch | Execution mode | Captured base ref | Captured base commit | Integration target | Revision cycle | Lifecycle evidence | Integration evidence |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| {{version_scope}} | {{initiative_id}} | {{implementation_design_or_planning}} | [{{initiative_name}}]({{scope_type_id_slug_path}}) | {{exact_originating_and_contributing_note_ID_path_links_only}} | {{active_branch}} | {{dedicated_or_shared}} | {{actual_base_ref}} | {{immutable_base_commit}} | {{assigned_scope_branch}} | {{positive_integer_cycle}} | {{README_lifecycle_link}} | {{integration_receipt_or_pending}} |
+
+Each initiative has one immutable scope, one narrow claim and one active
+execution assignment per revision cycle. Multiple initiatives may share scope,
+notes/suites and a declared scope branch. IDs remain independent of scope
+numbers. Preserve exact source and selected target scopes, fit/routing rationale,
+predecessor/successor links and branch-removal authority in reciprocal records.
+No row or historical branch identity may be reassigned to unrelated work.
+
+## Source and execution history
+
+| Initiative | Cycle | Source suite ID/path | Source note ID/path | Source scope | Target scope | Routing disposition and rationale | Branch/mode | Captured base ref/commit | Integration target | Prior/replacement relationship | Authority and evidence |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| {{initiative_link}} | {{cycle}} | {{suite_link}} | {{note_link}} | {{source_scope}} | {{target_scope}} | {{append_revision_reopening_new_or_successor_and_fit_link}} | {{branch_and_mode}} | {{base}} | {{target}} | {{relationship_or_none}} | {{intake_receipt_routing_history_and_verification_links}} |
+
+Append contributing sources and new-cycle/continuation assignments; do not
+overwrite earlier allocation/base/integration history. The current row points
+to that history and current lifecycle evidence. Serialize shared writes and
+preserve concurrent additions instead of restoring an older index snapshot.
 
 ## Cross-initiative dependencies
 
 | Dependent initiative | Depends on | Required state | Owner | Blocking? |
 |---|---|---|---|---|
-| {{initiative_id}} | {{initiative_id_or_evidence}} | {{accepted_completed_or_other_state}} | {{owner}} | {{yes_or_no}} |
+| {{initiative_id}} | {{initiative_id_or_evidence}} | {{required_state}} | {{owner}} | {{yes_or_no}} |
 
-Review dependencies alongside proposed, planned, and partially delivered open
-effort. Record incompatibilities in [work-conflicts.md]({{relative_work_conflict_register_path}})
-with links to both claims and their affected initiative records. Neither this
-index nor a completion finding authorizes changes to another initiative or
-reopening of a closed claim.
+Review proposed and partial effort without promoting authority. Record
+incompatible work in [work-conflicts.md]({{relative_work_conflict_register_path}}).
+Routing authority and necessary reopening follow the exact adopted intake
+method; changed claims still require renewed human acceptance before delivery.
 
 ## Status update rules
 
-- Add a row only as part of the Stage 0 preparation unit that allocates the
-  unused version, suite, initiative, and branch from a captured base.
-- Preserve allocated identity and base fields immutably. Update copied status,
-  lifecycle evidence, branch-removal evidence, owner, dependency, or next gate
-  only from their owning records.
-- Keep completed, cancelled, and superseded rows as traceable history.
-- Link conflicts and major decisions to the initiative's own record; do not put
-  unreviewed decisions only in this index.
-- Keep this registry coherent with `status.md`, the realization-suite index,
-  the initiative README, and any applicable parent or subinitiative indexes.
-  A row establishes identity and discoverability, not evidence authority,
-  acceptance, implementation, qualification, completion, or release readiness.
-- Never reuse a version or branch. If a terminal branch ref is separately
-  removed, retain the recorded name and link its removal authority.
+Preserve closed rows and prior claims. Update copied current fields from their
+owners, not inference. A closed scope needs recorded reopening before new
+membership. Legacy records stay under their complete non-inferred ledger and
+governing revision until explicit migration; historical paths are retained.

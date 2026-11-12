@@ -62,6 +62,14 @@ work remains response-only; local resource restrictions and independent review
 obligations compose with gates. The shared contract and this prompt retain
 all unexcepted preconditions, edit boundaries, verification, and reporting.
 
+For a project with the version-scope revision adopted, verify exact scope
+membership, originating and contributing suite/note IDs and paths, per-source
+routing, current numeric revision cycle, recorded dedicated/shared execution
+mode and branch, immutable captured base ref/commit and immediate integration
+target. Shared source/scopes and declared shared scope branches are valid;
+initiative identities and active per-cycle assignments remain unique. Preserve
+historical allocation, closure and branch history. No later-stage repair by
+inference is allowed; route inconsistencies to the owning preparation/intake.
 Review and align the existing {initiative} as a whole in place. This is the
 post-documentation initiative-to-precedent alignment step: validate evidence
 before confirming any initiative assumption. It precedes the
@@ -74,7 +82,7 @@ assumption target.
 
 Before editing, verify that the active branch, canonical project correlation
 row, realization-suite index, initiative metadata, and captured base branch and
-commit all describe one unique tuple. Stop on any orphan, duplicate, partial,
+commit all describe one consistent membership and current execution assignment. Stop on any orphan, duplicate, partial,
 or inconsistent identity; this stage must not infer or repair Stage 0 work.
 
 Apply the ownership and approval convention at {project_profile_path}. Human
@@ -109,7 +117,7 @@ contradictions. Preserve both claims and effort, impact, owner, blocking scope,
 and the decision or evidence required. This prompt may append factual work
 conflicts to that project register; it must not resolve human choices, refine
 another initiative, or silently discard its work. A closed target must be
-explicitly reopened before refinement; substantive changes need a successor.
+explicitly reopened before refinement; coherent same-outcome revisions may retain identity; independent outcomes split.
 
 Before editing, read the target's declared initiative type and classify each
 proposed output. An `implementation` initiative must not modify an existing
@@ -125,8 +133,8 @@ authority boundary or initiative type, separable verification or release,
 unrelated product destination, or independent lifecycle, stop and report the
 required decomposition. This alignment prompt does not create sibling or
 subinitiative records and must not make an umbrella initiative appear coherent.
-Each required split or substantive successor must return through Stage 0 for a
-new version, suite, self-contained initiative, and branch.
+Each required split or independent successor must return through Stage 0 for a
+distinct complete initiative and recorded scope/branch assignment.
 
 Edit only existing allowed documents in the target initiative and the applicable
 parent status record when the initiative's status or next milestone changes. Do
@@ -205,7 +213,7 @@ questions, and unresolved conflicts. In the review response, state the
 initiative-to-precedent alignment outcome, list the initiative records changed to
 express it, identify every assumption or question requiring its human review,
 and report every conflict or blocker that prevents alignment.
-Include the work version, realization suite, canonical row, branch, and
+Include the version scope, realization provenance, canonical row, branch, and
 captured-base verification in that report.
 ```
 

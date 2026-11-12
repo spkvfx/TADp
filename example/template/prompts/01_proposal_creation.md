@@ -46,6 +46,18 @@ work remains response-only; local resource restrictions and independent review
 obligations compose with gates. The shared contract and this prompt retain
 all unexcepted preconditions, edit boundaries, verification, and reporting.
 
+For a project with the version-scope revision adopted, verify exact scope
+membership, originating and contributing suite/note IDs and paths, per-source
+routing, current numeric revision cycle, recorded dedicated/shared execution
+mode and branch, immutable captured base ref/commit and immediate integration
+target. Shared source/scopes and declared shared scope branches are valid;
+initiative identities and active per-cycle assignments remain unique. Preserve
+historical allocation, closure and branch history. No later-stage repair by
+inference is allowed; route inconsistencies to the owning preparation/intake.
+This new-initiative stage must not recreate complete existing target records.
+For an existing-target intake revision, use its recorded alignment, decision
+and renewed-acceptance route instead of scaffolding or overwriting records.
+
 Using the correlated realization suite at {realization_suite_index_path} and
 its intended note at {realization_note_path}, create a new
 {initiative_type} initiative proposal for {initiative} at {initiative_path}. The type must be
@@ -57,8 +69,8 @@ Before writing, verify that:
 - the initiative was prepared with 00_initiative_preparation.md and the active
   branch is exactly {initiative_branch};
 - the canonical correlation row, realization-suite index, and prepared
-  initiative metadata agree on work version, suite ID and path, initiative ID
-  and path, dedicated branch, captured base branch, and captured base commit;
+  initiative metadata agree on version scope, source suite/note IDs and paths, initiative ID
+  and path, execution branch, captured base branch, and captured base commit;
 - {initiative_path}/README.md and {initiative_path}/proposal/README.md exist
   as the prepared README skeleton;
 - {realization_note_path} exists, is readable, and is the intended realization

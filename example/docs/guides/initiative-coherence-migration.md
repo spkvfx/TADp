@@ -42,9 +42,13 @@ When a finding affects a closed initiative, record the finding and impact in
 the new work and project conflict register first. Obtain explicit human
 reopening authority before changing the closed specification. Append the
 reopening event, preserve the prior claim, and return to the legal active
-state. An unchanged accepted claim may retain its tuple only under the
-existing unchanged-claim exception. A substantive change receives a successor
-tuple and leaves the predecessor's historical claim intact.
+state. Under adopted [scope intake](version-scope-migration.md), a human instruction
+to process an identified realization delegates necessary reopening and coherent
+same-outcome revision. Record the actual agent decision before changing records;
+return changed claims to `Proposed`, preserve prior evidence and obtain renewed
+human acceptance. Independent outcomes and incompatible boundaries still split.
+A direct closed-to-`Accepted` return requires a separate human unchanged-claim
+decision. Unadopted records retain the predecessor workflow.
 
 Append-only factual corrections and successor references may preserve history
 without refining the closed claim. They must not conceal a changed scope,

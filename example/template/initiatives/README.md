@@ -1,5 +1,5 @@
 <!--
-Copy the standard files in this directory to docs/initiatives/{{initiative_slug}}.
+Copy the standard files in this directory to initiatives/{{version_scope}}/{{initiative_type}}/{{initiative_id_and_slug}}.
 Do not copy `implementation-readiness.md`, `execution-record.md`,
 `delivery-record.md`, `completion-evidence.md`, or `decision-receipts/` during
 initiative creation.
@@ -16,16 +16,25 @@ standard files. If a section does not apply, state why instead of deleting it.
 **Last updated:** {{date}}
 **Initiative type:** `{{initiative_type}}`
 **Decision prefix:** `{{decision_prefix}}`
-**Work version:** {{v_major_minor}}
-**Realization suite ID:** {{realization_suite_id}}
+**Version scope:** {{version_scope}}
+**Source notes:** {{exact_originating_and_contributing_note_ID_path_links_only}}
+**Realization suite ID:** {{originating_realization_suite_id}}
 **Realization suite:** [{{realization_suite_path}}]({{relative_realization_suite_index_path}})
-**Canonical project correlation:** [initiative and correlation register]({{relative_initiative_index_path}}#initiative-and-correlation-register)
-**Dedicated branch:** {{initiative_branch}}
-**Captured base branch:** {{base_branch}}
-**Captured base commit:** {{base_commit}}
+**Canonical project correlation:** [initiative register]({{relative_initiative_index_path}}#initiative-and-correlation-register)
+**Canonical scope record:** [Version scopes]({{relative_version_scopes_path}})
+**Execution branch:** {{active_execution_branch}}
+**Execution mode:** {{dedicated_or_shared}}
+**Historical branch tip:** {{immutable_tip_if_ref_removed_or_not_applicable}}
+**Branch removal evidence:** {{separate_removal_receipt_link_or_not_applicable}}
+**Captured base ref:** {{captured_base_ref}}
+**Captured base commit:** {{immutable_base_commit}}
+**Integration target:** {{assigned_scope_branch}}
+**Revision cycle:** {{positive_integer_cycle}}
+**Claim revision:** {{exact_current_claim_revision}}
+**Prior revision record:** {{preserved_previous_README_assignment_snapshot_link_or_initial}}
+**Revision history:** {{cycle_history_link}}
 **Predecessor or successor:** {{relationship_or_none}}
-**Correlation governance:** {{effective_commit_or_legacy_ledger_link}}
-
+**Correlation governance:** {{adopted_revision_or_legacy_ledger_link}}
 **Human ownership:** Apply the ownership and approval convention recorded in
 `{{project_profile_path}}`. Human owner, reviewer, and approver roles resolve
 as recorded there; technical component and resource boundaries remain
@@ -41,18 +50,41 @@ Lead with the proposed result rather than the history of the discussion.
 
 ## Correlation and identity
 
-The project initiative index owns this initiative's canonical correlation row.
-The work version, realization suite, initiative, and dedicated branch are one
-immutable project-local tuple. This README copies the identity for navigation
-and links to the canonical row; it does not create lifecycle standing.
+The project initiative index owns this initiative's single membership row;
+version-scopes.md owns its immutable scope and topology. Multiple initiatives
+may share a scope, sources and a declared shared scope branch. Each retains
+one narrow claim and independent lifecycle, decisions, acceptance and evidence.
+Verify exact source provenance, current cycle/assignment and captured immutable
+base before every stage; stop on drift instead of inferring repairs.
 
-Later stages must verify the same tuple and captured base before changing the
-initiative. A substantive successor or mandatory split receives a new version,
-suite, initiative, and branch. An exact-claim reopening may retain this tuple
-only under the governing lifecycle record. A pre-effective initiative must
-link a complete migration-ledger disposition instead of mixing old and new
-fields.
+Record new contributing notes without relocating this initiative to their
+source scope. Preserve source versus target scopes, exact note/suite IDs and
+paths, routing disposition and rationale in the source mapping/history. A human
+request to process an identified realization under adopted specification 09
+supplies bounded LLM intake placement, coherent revision and necessary reopening
+authority. Record each actual choice before applying it, with candidates,
+rejected alternatives, prior claim, risks and affected records; it does not
+answer unrelated questions, accept changed claims or authorize delivery.
 
+Coherent same-outcome revision may retain identity. Independent outcomes and
+incompatible type/owner/authority boundaries split or use successors, which
+may share this scope and source material. Reopen changed closed claims to
+Proposed; changed Accepted/In progress claims pause delivery and return to
+Proposed with partial work preserved. Renew human acceptance before delivery.
+Direct return from closed to Accepted needs separate human unchanged-claim
+authority. Legacy targets retain their governing revision until explicitly
+migrated with evidence; never infer path moves, reparenting or normalization.
+
+### Routing and execution history
+
+| Cycle | Exact source suite/note IDs and paths | Source scope | Target scope | Disposition and fit rationale | Instruction, delegation and actual LLM decision | Execution branch/mode | Captured base ref/commit | Integration target/evidence |
+|---|---|---|---|---|---|---|---|---|
+| {{cycle}} | {{source_links}} | {{source_scope}} | {{immutable_target_scope}} | {{routing_record}} | {{receipt_author_method}} | {{branch_mode}} | {{base}} | {{target_and_evidence}} |
+
+Append cycle/continuation assignments and integration receipts; never overwrite
+historical bases, prior closure snapshots, acceptance or branch-removal evidence.
+On shared execution record initiative-specific paths, commits, revision base,
+verification and unavoidable mixed boundaries. Serialize shared record writes.
 ## Protocol vocabulary
 
 Within the initiative-type rules in this template, **specification** and
@@ -118,9 +150,9 @@ smaller dependent outcome inside an actual parent specification. It must cite
 the parent requirement, keep its own coherent record and verification, and
 must not expand the parent or absorb unrelated work.
 
-Every governed parent, sibling, and subinitiative has its own canonical work
-version, realization suite, initiative, and dedicated branch. A version is not
-an umbrella or release container.
+Every parent, sibling and subinitiative has independent identity, records and
+acceptance evidence. They may share scope, sources and a declared scope branch.
+A version scope is a coordination container, never an umbrella acceptance claim.
 
 ## Coherence with other work
 
@@ -140,9 +172,9 @@ remains incompatible. Independently owned follow-up may remain open only when
 it does not contradict the completed claim.
 
 A closed initiative (`Completed`, `Cancelled`, or `Superseded`) must be
-explicitly reopened with a human decision receipt and legal transition before
-refinement. Preserve the prior claim. A substantive change uses a successor
-tuple under the correlation rules. Append-only historical corrections and
+reopened with a receipt under bounded adopted intake delegation or separate
+human authority before refinement, returning to Proposed. Preserve prior claims
+and apply coherent revision versus mandatory split rules. Append-only historical corrections and
 administrative links must not change earlier meaning.
 
 ## Products and placement
@@ -333,7 +365,7 @@ Link to code, accepted architecture, and dependent initiatives where useful.
 `Proposed` unless an explicit human decision records that the previously
 accepted claim is unchanged and authorizes return to `Accepted`.
 
-Tuple allocation, a branch, and a version do not prove any lifecycle state.
+Membership allocation, a branch, and a version scope do not prove any lifecycle state.
 Preserve the exact branch and base identity after a separately authorized
 branch removal and link that removal evidence from the canonical row.
 
@@ -356,14 +388,14 @@ affected initiative document in the same change. When a decision is accepted,
 update its stable entry in `open-questions.md`, then reconcile the architecture,
 roadmap, and implementation step that depend on it. Update `Last updated` only
 in files whose meaning changed. An implementation or design initiative updates
-`../status.md` whenever its status or next milestone changes. A planning
+the project-level `initiatives/status.md` whenever its status or next milestone changes. A planning
 initiative records those changes only in its own record; a shared-status owner
 may cite that evidence separately.
 
 Every status change must be a legal lifecycle transition backed by the required
 evidence and appended to the lifecycle history. Reopening must preserve the
-prior accepted or completed claim and the explicit human authority for the
-change. Before refining a closed initiative, link the reopening decision
+prior accepted or completed claim and exact intake delegation or separate
+human authority, actual decision author and recorded change boundary. Before refining a closed initiative, link the reopening decision
 receipt and record its return to `Proposed`, or to `Accepted` only under the
 explicit unchanged-claim exception. Historical corrections and successor
 links may be appended under `Historical correction`, `Successor references`,
@@ -386,3 +418,30 @@ initiative-local correction or reference to a new revision only when explicitly
 authorized. `../../evidence/non-authoritative` may explain ambiguity or support a
 decision, but cannot supersede `../../evidence/authoritative`.
 
+
+## Closure and integration evidence
+
+Record lifecycle closure separately from Git integration. A Completed dedicated
+initiative integrates into its assigned scope branch only after gates and
+recorded human close/finalize authority; direct shared placement records exact
+verified commits without self-merge or scope-upward merge. Retain source/target
+tips, target ref, authority, method/result commit and post-checks for each cycle.
+Failure leaves integration pending/blocked without inventing success or erasing
+truthful prior completion. Cancelled/Superseded deliverables need explicit
+retain/exclude/transfer/no-deliverable disposition. This member's closure never
+closes scope or siblings. Source refs are retained unless removal is separately
+authorized. New cycle deltas need fresh completion and integration evidence.
+## Source routing provenance
+
+| Suite ID | Suite path | Source ID | Source scope | Source path | Disposition | Routing evidence |
+|---|---|---|---|---|---|---|
+| {{suite_id}} | [{{suite_id}}]({{relative_suite_path}}) | {{note_id}} | {{source_scope}} | [{{note_id}}]({{relative_note_path}}) | {{originating_or_contributing_append_revision_reopening_new_or_successor}} | {{routing_receipt_link}} |
+
+Retain exact originating and later contributing notes independently. Each row
+links its source suite and note and the per-source fit/authority record. Source
+scope may differ from target scope without relabeling either identity.
+
+Any absent historical dedicated ref retains its exact immutable Historical
+branch tip and separately authorized Branch removal evidence. That removal
+receipt records Human authority and exact Branch; removing a ref never frees
+its identity for unrelated work or qualifies a new cycle.
