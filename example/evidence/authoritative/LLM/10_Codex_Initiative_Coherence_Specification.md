@@ -148,33 +148,48 @@ design initiative's branch; target acceptance, reopening, and lifecycle
 decisions remain owned by the target's workflow. The completing branch must
 not absorb another initiative's execution work.
 
-Open refinements may improve evidence, detail, and consistency within the
-existing claim. Substantive changes to outcome, scope, authority boundary,
-output family, compatibility obligation, or verification claim require a new
-successor tuple under specification 09, whether the target is open or closed.
-An unresolved or previously answered question cannot be automatically
-resolved or reopened merely because another initiative completed.
+Open refinements may improve evidence, detail and consistency. Under adopted
+specification 09 intake delegation, the LLM may revise the same coherent narrow
+outcome instead of forcing a successor for every substantive change. Independent
+outcomes, mandatory split triggers and incompatible type/owner/authority
+boundaries still require separate complete initiatives. Changed accepted or
+in-progress claims pause affected delivery, preserve partial work and return
+to `Proposed` for alignment and renewed human acceptance. Completion feedback
+alone supplies no intake delegation. An unresolved or previously answered
+question cannot be automatically resolved or reopened merely because another
+initiative completed.
 
 ## Closed-claim preservation and reopening
 
 Codex must not refine a closed initiative's specification, scope, assumptions,
 decisions, delivery, or verification claim while leaving it closed. First
-preserve the exact prior claim and obtain explicit human reopening authority,
-create its receipt, append the reopening event, and reconcile the affected
-records. Return to `Proposed` unless an explicit decision confirms that the
-exact accepted claim is unchanged and authorizes return to `Accepted`.
+preserve the exact prior claim and record specification 09 bounded realization
+intake delegation or separate explicit human reopening authority. Create an
+event-specific receipt identifying the actual LLM author and intake fit,
+append the event, and reconcile affected records before substantive edits.
+Return to `Proposed` unless a separate explicit human unchanged-claim decision
+authorizes direct return to `Accepted`. This applies to completed, cancelled
+and superseded targets, with prior cancellation and replacement consequences
+explicitly reconciled. Reopen every necessary closed scope/ancestor by its own
+event; no child event silently reopens or re-closes ancestors.
 
 The receipt must declare `**Disposition:** Reopened` and
 `**Human authority:**`. A direct terminal-to-`Accepted` reopening additionally
 requires `**Unchanged accepted claim:** Yes`, the exact prior claim and
 baseline, and the new verification boundary. A previously used acceptance or
-reopening receipt is not authority for a new event. Closing again requires
+reopening event is not authority for a new event. A recorded human intake may
+delegate several necessary events, each with its own target/claim disposition;
+never label the LLM result as a per-target human response. Unrelated questions,
+acceptance and execution remain outside that delegation. Closing again requires
 new completion evidence; a same-change reopen and close must retain both
 events and their separate evidence.
 
-A substantive successor may instead preserve the closed predecessor intact
-and own the new claim on its own tuple. This is not refinement of the closed
-record. A successor reference may be appended without reopening.
+A separate successor may instead preserve the closed predecessor intact and
+own the new claim with complete records and independent acceptance. It may
+share scope and precise realization sources. This does not refine the closed
+record. A successor reference may be appended without reopening. Preserve
+prior closure snapshots and integrated commits; new revision deltas require
+fresh completion and integration evidence, including affected ancestors.
 
 Append-only factual historical corrections and administrative or successor
 references that preserve the earlier claim are permitted without reopening.

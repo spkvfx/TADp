@@ -102,10 +102,15 @@ expands prompt scope.
   existence, wording, or invocation does not prove an assumption, answer a
   question, accept an initiative, authorize an exception, satisfy a gate,
   change lifecycle state, or establish completion or release.
+- An actual human request to process an identified realization under adopted
+  specification 09 delegates bounded fit-based placement, coherent revision and
+  necessary target/scope reopening. Capture each choice, prior claim, exact
+  source/target and actual LLM author before action. Invocation alone proves
+  no acceptance or changed completion and supplies no unrelated waiver.
 - Require explicit human authority and a decision receipt wherever the
   protocol requires them. Never infer a decision from invocation, urgency,
   silence, a recommendation, or later work.
-- Preserve the declared initiative type, narrow scope, correlation tuple,
+- Preserve the declared initiative type, narrow scope, scope membership and revision assignment,
   captured base, active branch, stage ownership, lifecycle evidence, and
   type-specific delivery path whenever a prompt participates in an initiative
   workflow.

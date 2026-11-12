@@ -71,3 +71,15 @@ decision.
 Remove placeholder rows only after recording `None` when no unresolved mapping
 remains. Re-run the coverage audit whenever evidence classification, an
 accepted assumption, decision, specification, or product destination changes.
+
+## Realization routing and revision provenance
+
+| Suite ID | Suite path | Source ID | Source path | Source scope | Target initiative/scope | Disposition | Fit, rejected alternatives and compatibility | Routing evidence | Intake instruction/delegation and actual decision author | Cycle and affected records |
+|---|---|---|---|---|---|---|---|---|---|---|
+| {{suite_id}} | {{suite_link}} | {{note_id}} | {{note_link}} | {{source_scope}} | {{target_ID_and_scope}} | {{append_revision_reopening_new_successor}} | {{rationale_impact_and_limits}} | {{routing_receipt_link}} | {{receipt_and_LLM_method}} | {{cycle_and_reconciled_links}} |
+
+Preserve original and later contributing sources independently. Shared notes
+remain non-authoritative and do not share target acceptance or completion.
+An existing target keeps scope when receiving cross-scope material. Every
+routing/reopening disposition is recorded before changes and reconciles claims,
+dependencies, roadmap, steps, compatibility, verification and conflict records.

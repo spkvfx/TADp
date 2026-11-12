@@ -42,7 +42,8 @@ No work conflicts recorded.
   affected records; retain the original conflict and its history.
 - Link each entry from affected initiative records and completion reviews.
   If one target is closed, record the finding here without refining that
-  target until explicit human reopening is recorded. A separately governed
+  target until reopening under adopted bounded intake delegation or separate
+  human authority is recorded. A separately governed
   successor may preserve and cite the closed claim.
 - Also register contradictions with an invariant in the authoritative
   invariant conflict register. This work register cannot waive an invariant.

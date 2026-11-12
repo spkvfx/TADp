@@ -34,6 +34,10 @@ Read these documents in order when first adopting or maintaining TADp:
 
 ## Operating guides
 
+- [Version scope migration and operation](guides/version-scope-migration.md)
+  explains shared scopes, exact provenance, delegated intake, branch topology,
+  closure integration and preservation of unmigrated legacy records.
+
 - [Prompt keywords migration](guides/prompt-keywords-migration.md) explains
   adoption, preservation of historical prompts, and adding a precisely
   authorized keyword through the canonical registry.

@@ -36,9 +36,12 @@ required records and verification.
 Include proposed, accepted, and partially performed initiative effort as work
 in coherence reviews without promoting its authority. Record incompatible
 efforts in each project's work-conflict register and affected records. Apply
-specification 10's completion feedback review and require explicit human
-reopening before refining closed claims; substantive changes retain the
-successor workflow.
+specification 10's completion feedback review and require recorded authorized reopening before
+refining closed claims. Under adopted specification 09, a human instruction to
+process an identified realization delegates placement and necessary reopening.
+Coherent same-outcome revision is permitted; independent outcomes and incompatible
+boundaries require separate initiatives. Changed claims require renewed human
+acceptance.
 
 ## Repository prompts
 

@@ -135,17 +135,22 @@ implemented.
 
 For work governed by the
 [version-realization-initiative correlation specification](09_Codex_Version_Realization_Initiative_Correlation_Specification.md),
-Codex must allocate one canonical work version, one realization suite, one new
-self-contained initiative, and one dedicated branch as a reciprocal tuple.
-The project initiative index owns the canonical row; copies elsewhere link to
-it without gaining lifecycle or authority standing.
+Codex must assess realization fit before allocation. Each initiative has one
+immutable scope membership, independent ID and complete type-specific records,
+precise originating and later contributing note provenance, and one recorded
+active dedicated/shared execution assignment per revision cycle. The scope
+registry and initiative index own their respective canonical records; copies
+link there without acquiring lifecycle authority. Several narrow initiatives
+may share a scope, realization sources or a declared scope branch.
 
-Every governed parent, sibling, or subinitiative has its own tuple. A
-substantive successor claim also requires a new tuple. An initiative reopened
-with its exact accepted claim unchanged may retain its tuple, while a
-pre-effective initiative follows its recorded compatibility disposition.
-Codex must not reuse, silently renumber, partially infer, or merge tuple
-identities to avoid a new initiative or human decision.
+A human instruction to process an identified realization under this adopted
+workflow delegates the specification 09 placement, append/revision choice and
+necessary reopening method for that intake. Inventory candidates and record
+actual source authority, fit, alternatives and consequences before acting.
+A coherent narrow outcome may retain its identity through revision. Independent
+outcomes and incompatible type/owner/authority boundaries still require a
+separate initiative or successor with complete records. Never infer migration,
+merge identities or fabricate acceptance to avoid these boundaries.
 
 ## Reopening and revising initiatives
 
@@ -158,7 +163,7 @@ the prior claim are exempt, as defined by the
 
 Before changing substantive initiative meaning, Codex must record:
 
-- the human authority and instruction that reopened or revised the initiative;
+- the actual human instruction, governing delegation or specific revision authority, and LLM decision author;
 - the prior lifecycle state and exact accepted or completed claim;
 - the reason for change and the newly affected scope;
 - every changed assumption, decision, invariant mapping, specification,
@@ -167,9 +172,16 @@ Before changing substantive initiative meaning, Codex must record:
 - the verification required for the revised claim; and
 - the effective date or event and the records that must be reconciled.
 
-When the change is substantive under the correlation specification, the
-recorded disposition must identify the new successor tuple instead of revising
-the old tuple in place.
+Apply specification 09's recorded fit method rather than forcing a successor
+for every substantive change. Before changing an accepted or in-progress
+normative claim, pause affected delivery, preserve partial-work evidence and
+return to `Proposed`. Alignment and renewed explicit human acceptance precede
+resumed delivery. Closed targets first require a recorded reopening to
+`Proposed`, including each affected closed scope or ancestor, under bounded
+intake delegation or separate human authority. Direct return to `Accepted`
+requires a separate human unchanged-claim decision. Reconcile a superseded
+target with its replacement and preserve continuing ownership. Intake routing
+does not decide unrelated questions, accept claims or pass completion gates.
 
 Codex must preserve the earlier state through history, an explicit supersession
 relationship, or a durable change record. It must update every affected

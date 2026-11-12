@@ -20,26 +20,6 @@ source may change only when the user explicitly requests that exact reusable
 template or invariant change. Never refresh its `.tadp-lock.json` or use the
 protected-update commit override without the same explicit authority.
 
-## Embedded example project root
-
-For this installed example only, treat the directory containing this file as
-the TADp project root for every project file, evidence source, prompt,
-initiative, product, lifecycle record, validation run, and scope decision.
-The resolved
-[`INV-CONFLICT-001`](evidence/authoritative/LLM/03_Codex_Invariant_Conflict_Register.md#inv-conflict-001--embedded-example-project-root-and-git-root-invariant)
-and
-[`EX-GIT-DR-001`](initiatives/decision-receipts/EX-GIT-DR-001-enclosing-worktree-exception.md)
-permit the enclosing repository or worktree to supply Git metadata, branch
-refs, staging, commits, history, and Git verification only. Verify that it
-directly contains this root, and limit every non-Git side effect to this root
-and any narrower applicable workflow boundary.
-
-This project-specific exception applies throughout `example/`; it is not
-limited to one prompt, initiative set, version, or file list. It does not make
-the enclosing TADp repository part of the example project, grant authority to
-change a sibling or parent path, relax protected-source rules, or revise the
-generic requirement for any other TADp project.
-
 - Treat every artifact under `evidence/authoritative` and every source
   explicitly classified as authoritative evidence as binding baseline
   authority.
@@ -72,16 +52,19 @@ generic requirement for any other TADp project.
   change record, impact analysis, and cross-record reconciliation.
 - Count open effort as work without promoting its authority, document
   incompatible efforts in `initiatives/work-conflicts.md`, and review
-  completion feedback against all open initiatives. Require explicit human
-  reopening before refining closed claims under specification 10.
+  completion feedback against all open initiatives. Require recorded authorized
+  reopening before refining closed claims under specifications 09 and 10;
+  adopted realization intake delegates necessary reopening, never acceptance.
 - Record only legal lifecycle transitions. Require the standard execution
   record for implementation, the standard delivery record for design or
   planning, and standard completion evidence before any initiative is marked
   `Completed`. Follow exactly one delivery path for the declared type.
-- Require Git for every TADp project. Use a dedicated initiative branch from a
-  captured base, preserve unrelated work, and keep commits and branch history
-  traceable to the initiative. Never rewrite shared history or merge without
-  explicit authority.
+- Require Git for every TADp project. Use the recorded dedicated or shared scope execution
+  assignment from a captured base, preserve unrelated work, and retain
+  initiative-specific commits and verification. Never rewrite shared history.
+  An identified close/finalize instruction authorizes only local integration
+  into the recorded immediate parent after all gates pass. Further upward
+  integration, pushes and branch deletion retain separate authority.
 - Record every discovered contradiction in the invariant conflict register and
   in the affected initiative records. Do not hide it by changing history,
   narrowing a claim, or marking incomplete work complete.

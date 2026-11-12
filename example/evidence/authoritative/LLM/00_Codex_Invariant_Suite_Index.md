@@ -115,6 +115,40 @@ migration, and consumer-reconciliation requirements of this suite.
   rules, protected sources, locks, evidence truth, ordinary lifecycle meanings,
   type boundaries, and substantive-successor requirements remain binding.
 
+### Version-scope grouping, delegated intake and closure integration revision
+
+- **Authority:** The User's 2026-11-12 instruction to execute
+  `prompts/version-scope-grouping-and-branching-protocol-change.md`, captured in
+  [VSG-DR-001](../../../decisions/VSG-DR-001-version-scope-grouping.md).
+- **Reason:** Several narrow initiatives may share an immutable realization
+  scope while retaining precise provenance and independent acceptance.
+- **Affected clauses:** Specification 09's bijection, two-component-only
+  version syntax, single-outcome suite, exclusive branch and mandatory
+  substantive-successor requirements; specifications 02, 04, 07, 08 and 10's
+  necessary per-target human reopening clauses; specification 05's hierarchy,
+  finalization and local integration contract; necessary specification 01/06
+  references, reusable sources, entry points, consumers, validation, tests,
+  guidance, adoption records and locks. Specification 11 changes only its
+  affected reopening/successor cross-reference, preserving registry semantics.
+- **Effective event:** The first coherent Git commit containing reconciled
+  sources and consumers, verification, mirrors and authorized lock updates.
+  Projects adopt explicitly with their governing commit, baseline and ledger.
+- **Compatibility:** Preserve legacy versions, suites/notes, initiatives,
+  paths, branches and claims under their recorded compatible revision until
+  evidence-backed migration. Distribution synchronization does not migrate
+  live work. Historical PR evidence remains preserved.
+- **Successor relationship:** This revision supersedes only the named clauses.
+  The earlier revision records above preserve their historical contracts; their
+  old tuple and mandatory-successor descriptions do not govern new allocations
+  after explicit version-scope adoption. Git preserves prior invariant text.
+
+The current specification 09 permits major, minor and patch scopes, many-note
+and many-initiative provenance, coherent same-initiative revision, bounded LLM
+intake placement/reopening and dedicated/shared placement. Human acceptance
+and ordinary completion evidence remain required. Specification 05 defines
+child-to-immediate-parent local integration after recorded closure authority,
+separate scope closure and human-managed PRs. No protocol adoption itself
+reopens, accepts, closes, merges or migrates live work.
 ## Documents
 
 1. [Codex evidence authority specification](01_Codex_Evidence_Authority_Specification.md)
@@ -138,8 +172,8 @@ migration, and consumer-reconciliation requirements of this suite.
    defines authoritative stage order, acceptance, type-specific delivery,
    record ownership, handoffs, and recovery behavior.
 9. [Codex version-realization-initiative correlation specification](09_Codex_Version_Realization_Initiative_Correlation_Specification.md)
-   defines canonical work versions, reciprocal suite-initiative-branch
-   identity, effective-point compatibility, migration-ledger requirements,
+   defines immutable version scopes, exact provenance, delegated intake,
+   revision-cycle execution placement, adoption, migration-ledger requirements,
    and correlation validation.
 10. [Codex initiative coherence specification](10_Codex_Initiative_Coherence_Specification.md)
     defines open effort as work, cross-initiative conflict records, completion
@@ -204,6 +238,6 @@ existence of contradictory lower-standing material.
   authority that support it.
 - Open initiative effort must be considered as work without promoting its
   authority. Document incompatible efforts, review completion feedback against
-  open initiatives, and require explicit human reopening before refining a
-  closed claim under specification 10.
+  open initiatives, and require recorded reopening under specification 09 intake
+  delegation or separate human authority before refining a closed claim.
 

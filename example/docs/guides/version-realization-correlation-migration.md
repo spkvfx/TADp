@@ -1,5 +1,9 @@
 # Version-realization-initiative correlation migration
 
+This guide describes the predecessor correlation revision for legacy records.
+New adoption follows [version scope migration](version-scope-migration.md).
+Do not use predecessor tuple or normalization rules for the new scope model.
+
 ## Purpose and standing
 
 This guide explains how an existing TADp project adopts the one-to-one

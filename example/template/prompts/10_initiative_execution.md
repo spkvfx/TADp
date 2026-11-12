@@ -16,7 +16,7 @@ product evidence exposes a conflict.
 Run it on the initiative
 branch prepared by [00_initiative_preparation.md](00_initiative_preparation.md);
 use [13_initiative_finalization.md](13_initiative_finalization.md) only after
-successful execution to update tracking and open the pull request.
+successful execution to verify completion and record authorized local integration.
 
 ## Shared workflow contract
 
@@ -53,6 +53,14 @@ work remains response-only; local resource restrictions and independent review
 obligations compose with gates. The shared contract and this prompt retain
 all unexcepted preconditions, edit boundaries, verification, and reporting.
 
+For a project with the version-scope revision adopted, verify exact scope
+membership, originating and contributing suite/note IDs and paths, per-source
+routing, current numeric revision cycle, recorded dedicated/shared execution
+mode and branch, immutable captured base ref/commit and immediate integration
+target. Shared source/scopes and declared shared scope branches are valid;
+initiative identities and active per-cycle assignments remain unique. Preserve
+historical allocation, closure and branch history. No later-stage repair by
+inference is allowed; route inconsistencies to the owning preparation/intake.
 Execute the fully aligned {initiative} at {initiative_path} in place.
 
 Verify that the target's declared type is `implementation`. A `design`
@@ -96,8 +104,8 @@ external-party, contract, artifact, and verification requirement.
 Before changing products, verify that:
 - the active branch is exactly {initiative_branch}, the branch prepared for
   this initiative;
-- the canonical work version, realization suite, initiative ID and path,
-  version-bearing branch, captured base branch and commit, and reciprocal links
+- the exact version scope, realization suite, initiative ID and path,
+  recorded execution branch, captured base branch and commit, and reciprocal links
   match one unique project correlation row;
 - the target has its complete initiative suite: initiative index, proposal source
   inventory and proposal, assumption record, architecture, source mapping,
@@ -157,7 +165,7 @@ of proceeding without it.
 For every product artifact in the reviewed scope, build a step-to-target ledger
 before changing it. When the first product change begins, create or update
 `{initiative_path}/execution-record.md` from the shared template. Record the
-work version, realization suite, canonical-row link, captured base and
+version scope, realization provenance, canonical-row link, captured base and
 initiative branches, governing sources, and the complete
 step-to-target ledger there. Record the accepted implementation-step ID, governing
 source or mapped contract, exact path or symbol, owning product boundary,
@@ -270,8 +278,9 @@ completion records; invariant contradictions also require the authoritative
 register. Stop completion if a conflict affects the accepted claim. Route
 specification refinement to design and consumer follow-up through the target's
 own workflow and branch; do not edit another initiative's specification.
-Never refine a closed initiative without explicit human reopening, a linked
-receipt, and a legal transition. Substantive changes require a successor tuple.
+Never refine a closed claim before recorded reopening under adopted bounded
+intake delegation or separate human authority, receipt and legal transition.
+Coherent same-outcome revision may retain identity; independent outcomes split.
 When every gate passes, create or update
 `{initiative_path}/completion-evidence.md` from the shared template and state
 the exact completed claim, evidence for every acceptance condition, verification
@@ -281,10 +290,9 @@ that record with `execution-record.md` and the initiative suite before recording
 Update {initiative_status_path}, the initiative index, and affected parent or
 dependent tracking records when needed to reflect that evidence; retain every
 deferred production, release, deployment, risk, and blocker statement. These
-execution-stage updates do not perform branch finalization, merge, release, or
-pull-request work. When all required work and gates pass, hand the aligned
+execution-stage updates do not perform branch finalization, merge or release. When all required work and gates pass, hand the aligned
 initiative to the [finalize-initiative prompt](13_initiative_finalization.md),
-which owns final branch tracking, push, and pull-request creation. Do not
+which owns final tracking, traceable commits and authorized local integration. Do not
 finalize a partial or blocked execution.
 
 After execution, report the product artifacts created or changed, including new

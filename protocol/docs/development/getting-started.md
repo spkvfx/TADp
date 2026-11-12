@@ -16,9 +16,8 @@ TADp has two explicit platform requirements:
    inspect Git state, pause for human decisions, edit files, and run validation.
 
 Python 3 is required to run the bundled validator and regression tests. The
-validator itself uses only the Python standard library. A remote Git host and
-pull-request service are needed only when the chosen finalization workflow will
-push a branch and open a pull request.
+validator itself uses only the Python standard library. Local finalization requires no hosting connection. Humans independently manage
+pull requests; pushes require separate authority.
 
 Other agents and tools are outside the guaranteed execution environment. Read
 [Adapting TADp to other tools](adapting-other-tools.md) before substituting one.
@@ -73,10 +72,10 @@ Use this path when TADp will govern work in another repository:
    configuration and therefore must be enabled in every clone or worktree.
 8. Create `project-profile.md` from its template and record owners, boundaries,
    Git conventions, evidence locations, approval authority, and the exact
-   adopted correlation-revision commit.
+   adopted scope-revision commit, with predecessor revision retained for legacy work.
 9. Establish the evidence register, canonical initiative and correlation
-   index, status view, and version-correlation migration ledger before
-   allocating the first governed tuple.
+   index, status view, scope registry and version-scope migration ledger before
+   allocating the first governed scope member.
 10. Give every pre-effective record a complete `Unmigrated`, `Deferred`, or
     separately authorized migration disposition. Do not infer a partial tuple.
 11. Run a narrow pilot initiative before migrating a large body of work.
@@ -135,9 +134,10 @@ stages 8 through 10 for implementation, stage 11 for design, or stage 12 for
 planning. Use stage 13 only after evidence-backed completion. Do not begin with
 a portfolio-wide or multi-outcome effort.
 
-Stage 0 allocates a canonical work version, realization suite,
-self-contained initiative, and version-bearing branch from a captured base as
-one reciprocal tuple. Later stages verify rather than recreate that identity.
+Stage 0 assesses realization fit before allocation, recording append, revision,
+reopening or new initiative placement with a shared/dedicated branch assignment.
+Adopt the [scope revision](../guides/version-scope-migration.md) explicitly and
+preserve every legacy disposition. Later stages verify recorded identity.
 
 During the pilot, record friction rather than bypassing it. A repeated friction
 point may justify a later TADp change, but a local convenience must not silently
@@ -158,3 +158,10 @@ weaken the invariant baseline.
 - Explain that `..` is explanatory while `../../evidence/authoritative` is
   binding.
 
+
+For scope-revision adoption, establish the scope registry, membership index and
+complete version-scope migration ledger before allocation. Record the coherent
+revision's real immutable delivery commit in the profile. Legacy work remains
+under its recorded compatible revision until explicitly migrated; predecessor
+adoption steps above do not allocate a new scope or rename historical versions.
+See [scope migration](../guides/version-scope-migration.md).

@@ -21,7 +21,7 @@ cleanup.
    receipt. State whether the legacy initiative continues, is superseded, is
    cancelled, or is reopened for narrowing.
 6. Create each new initiative through the normal preparation and creation
-   workflow on its own Git branch. Give it its own scope assessment, lifecycle,
+   workflow with a recorded dedicated child or shared scope execution assignment. Give it its own scope assessment, lifecycle,
    decisions, acceptance claim, and verification.
 7. Add durable predecessor, successor, parent, and sibling links. Preserve
    source IDs; when an item moves, record its old ID and new owning record rather

@@ -101,9 +101,10 @@ The current validator checks:
 - explicit acceptance receipts for accepted, in-progress, and completed
   initiatives;
 - authoritative and verification evidence fields in source mappings;
-- canonical `v<major>.<minor>` work-version syntax and numeric ordering;
-- one-to-one version, realization-suite, initiative, and dedicated-branch
-  mappings in the canonical initiative index;
+- canonical scope syntax and numeric component ordering after scope adoption;
+- scope registry topology, unique initiative membership and exact source routing,
+  dedicated/shared execution assignments, captured bases and integration evidence;
+- predecessor one-to-one correlation only for records governed by that revision;
 - reciprocal identity and base metadata among the canonical index, suite index,
   initiative record, and the project status view after Stage 3 expands the
   preparation skeleton;

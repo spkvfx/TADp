@@ -2,72 +2,160 @@
 
 ## Requirement
 
-Every TADp project must be the root of a Git repository. Git history is part of
-the traceability record; a copied directory, external change log, or informal
-statement is not a substitute.
+Every TADp project must be the root of a Git repository. Git history is part
+of traceability; a copied directory or informal change log is no substitute.
+Discover actual current branches, integration configuration and refs from Git;
+never assume `main`, `master`, a remote or a hosting service.
 
-The repository must identify its actual current and base branches from Git.
-Codex must not assume `main`, `master`, a remote, or a hosting service.
+## Version-scope hierarchy and execution placement
 
-## Initiative branches
+The [scope specification](09_Codex_Version_Realization_Initiative_Correlation_Specification.md)
+governs prospective adoption, identity, provenance and routing. Each scope has
+one integration branch named by its exact scope token. Capture the actual base
+tip before creation and retain that immutable evidence afterward.
 
-Every initiative governed by the
-[version-realization-initiative correlation specification](09_Codex_Version_Realization_Initiative_Correlation_Specification.md)
-must have one dedicated branch correlated to its canonical work version and
-created from a captured base branch and base commit. Preparation owns branch
-creation and records the work version, branch, base branch, and immutable base
-commit in the canonical correlation row and reciprocal records. Later workflow
-stages must use that branch and stop if another branch is active or the tuple
-does not match.
+| Branch | Creation parent and integration target |
+|---|---|
+| Major `vN` | Captured project integration base |
+| Minor `vN.M` | Matching major `vN` |
+| Patch `vN.M.P` | Matching minor `vN.M` |
+| Dedicated initiative | Assigned scope branch |
 
-Use the project's recorded branch-naming convention. When none exists, use
-`initiative/v<major>.<minor>-<initiative-slug>`. The exact work-version token
-must remain in the branch name.
+Thus `v1.0` and `v1.1` are siblings from `v1`; `v2.0` and `v2.1` are siblings
+from `v2`; `v1.0.1` and `v2.1.1` originate from their respective minors.
+An earlier minor is never the creation parent of a later minor. Numeric order,
+later parent updates or sibling integration cannot rewrite creation evidence.
 
-A branch may contain only work traceable to its initiative, required
-verification, and the tracking records that must change with it. Work for a
-separately scoped initiative belongs on its own branch.
+The LLM chooses and records dedicated or shared execution based on scope,
+dependencies, existing work and integration risk. Default dedicated names are
+`initiative/<scope>-<initiative-id-and-slug>`. A new initiative may instead be
+registered directly on the existing matching scope branch. It retains all
+independent records and one active execution assignment per revision cycle.
+A dedicated branch contains only its bounded initiative, required verification
+and tracking; never silently convert another initiative's exclusive branch
+into a shared container. Scope branches may directly host multiple initiatives
+and aggregate dedicated members and closed child scopes.
 
-An active initiative in `Proposed`, `Accepted`, or `In progress` state requires
-its recorded local branch ref to exist. A terminal initiative retains its
-unique recorded branch identity. An absent terminal ref is permitted only when
-a separately authorized removal and its evidence are linked from the
-canonical row and initiative history; the name must never be reused for
-another tuple.
+Preflight identity uniqueness, actual branch roles, open scope state, parent
+existence, clean worktree and reciprocal records. Explicitly prepare missing
+ancestors major-to-minor-to-patch with their own records; reuse existing
+parents. Reject wrong parents, wrong-major/patch mapping, cycles, conflicting
+branch roles and undeclared sharing. Later stages stop on an assignment or
+captured-base mismatch rather than inferring a repair.
 
-## Worktree safety
+Shared branches require initiative-specific paths, commits, revision bases,
+delivery/verification evidence and any unavoidable mixed-change boundary.
+Serialize writes sharing a worktree or records. Refresh indexes before
+updating so concurrent member additions survive; never replace another
+member's row from an older snapshot. Presence on a scope branch does not
+accept or qualify any work for upward integration.
 
-Before creating or switching an initiative branch, rebasing, finalizing,
-merging, or changing shared tracking, Codex must inspect the worktree and
-identify staged, unstaged, and untracked paths. It must not discard, overwrite,
-stash, move, absorb, or commit unrelated user work.
+Active work requires its assigned local ref. Preserve historical assignments,
+bases, continuation refs and revision cycles. An historical ref may be absent
+only with separately authorized removal evidence linked in the canonical row
+and initiative history; do not reuse an historical dedicated name for unrelated
+work. Source retention is the default after integration.
 
-Preparation requires a clean worktree and a read-only uniqueness preflight for
-the proposed version, suite, initiative, branch, base branch, and base commit.
-Finalization must account for every changed path and stage only
-initiative-traceable work.
+## Worktree, commits and history safety
 
-## Commits and history
+Before branch creation/switching, rebasing, finalization, integration or shared
+tracking changes, inspect staged, unstaged and untracked work. Never discard,
+overwrite, stash, move, absorb or commit unrelated work. Branch creation needs
+a clean worktree and read-only preflight. Stage only traceable changes and
+account for every changed path. Coherent commits name the initiative outcome
+or workflow event. Record actual identifiers after creation; do not invent
+future commits or create empty commits to satisfy a field.
 
-Commits must be coherent, reviewable, and named for the initiative outcome or
-workflow event. Where a protocol record has a commit field, record the actual
-identifier after the commit exists. Do not create empty commits merely to
-satisfy a template.
+Do not rewrite shared history, force-push, remove refs, release or deploy
+without their separate explicit authority. Local closure authority below does
+not authorize pushes or any remote action. Preserve general remote-operation
+safeguards and historical PR evidence.
 
-Codex must not rewrite shared history, force-push, delete a remote branch,
-merge a pull request, or enable automatic merging unless an explicit human
-instruction authorizes that specific action. A general request to implement or
-finalize an initiative is not authorization for those actions.
+## Closure authority and merge direction
 
-## Finalization
+Merge down means integration of a closed child into its recorded immediate
+parent, bottom-up:
 
-Before finalization, the branch diff, lifecycle history, execution record when
-applicable, completion evidence, and status records must describe the same
-bounded claim. The configured remote and pull-request target must be verified
-rather than inferred.
+```text
+initiative branch -> assigned version-scope branch
+patch branch      -> matching minor branch
+minor branch      -> matching major branch
+major branch      -> captured project integration base
+```
 
-Finalization may commit remaining accepted work, push the initiative branch,
-and open one pull request when the prompt and repository configuration authorize
-those actions. It must not merge, deploy, or delete the branch.
+A human instruction to close/finalize an identified governed initiative or
+scope under the adopted workflow authorizes its local child-to-recorded-parent
+merge once every required gate passes. Capture the actual instruction and
+exact source/target in the closure record before acting. Do not ask the human
+to repeat sufficient authority. Implementation instructions, a terminal status
+or protocol adoption alone do not authorize live integration. Parent closure
+and further upward merges require their own satisfied closure scope.
 
+An initiative hosted directly on its scope branch is already present there.
+Record exact verified commits and direct placement; do not create a self-merge
+or merge the scope upward on that member's closure. Closing a member does not
+close its scope; closing a patch does not close its minor; closing a minor
+does not close its major. Open siblings remain open.
 
+## Separate scope closure
+
+Scope closure is distinct from initiative lifecycle and is not another
+initiative type. Before closure, capture complete member and child inventories,
+including descendants. Every member and descendant must be closed with a
+truthful disposition, all required child integration must have succeeded,
+aggregate verification must pass, and coherence/conflicts must be reconciled.
+No in-scope work may silently disappear. Every completed accepted deliverable
+must be integrated into the scope or carry explicitly authorized exclusion or
+transfer preserving ownership and the exact closure claim. Pending or blocked
+required integration blocks scope closure. Empty scopes require explicit
+no-work disposition. Preserve the closure snapshot and authority.
+
+New membership in a closed scope, or integration into an already closed
+parent, requires recorded reopening under specification 09's bounded intake
+delegation or separate human authority. A reopened child does not silently
+reopen or re-close ancestors. Preserve previous snapshots and merge evidence;
+new deltas need fresh completion and integration evidence at each ancestor.
+
+`Cancelled` and `Superseded` are closed but do not automatically integrate
+abandoned or unaccepted implementation. Record retained, excluded or transferred
+work and authority. With no accepted deliverable, explicit no-deliverable
+closure may occur without integration; retain history and report no merge.
+
+## Integration safety and evidence
+
+Inspect both tips and the worktree, verify the source diff against its accepted
+claim and the current target, preserve unrelated work, and run applicable
+checks before integration. Record actual source/target tips, target ref,
+authority, method, resulting commit and post-integration verification.
+A fast-forward or already-integrated result must be reported as such; never
+invent a merge commit. Reruns detect integrated commits and avoid duplicate
+work. Parent-tip drift requires current comparison and checks rather than
+reuse of stale evidence.
+
+Never merge a shared branch's whole tip if it includes unfinished, unaccepted,
+cancelled or unrelated work. Block integration until all included changes
+qualify or separately recorded safe isolation/transfer preserves every
+initiative's ownership and evidence. Closing one member does not authorize
+cherry-picking, reverting, discarding or qualifying another member's changes.
+
+Lifecycle closure and integration status are separate. Conflict, changed
+target, unavailable ref or failed checks preserve truthful completion but leave
+integration pending or blocked with actual failure evidence. Resolve only
+within accepted scope; substantive changes use revision/reopening or successor
+policy and renewed human acceptance where required. A prior merge cannot
+certify a reopened cycle's new delta or bypass ancestor integration.
+
+## Finalization and human-managed pull requests
+
+Stage 13 verifies a truthful completed initiative, reconciles its bounded diff,
+completion/coherence evidence, lifecycle, type-specific delivery records and
+tracking, and finalizes traceable commits. With captured closure authority it
+integrates a dedicated member into its assigned scope, or records verified
+direct scope placement. Scope closure is a separate operation.
+
+Pull requests are independently human managed. Operational workflow prompts
+must not solicit, prepare, create or require one, generate its title/body,
+request a PR URL, call hosting PR commands, or make local closure/integration
+depend on a PR. A remote policy requiring one is a reported external constraint,
+not authority to bypass policy or create a PR. Pushes require separate
+authorization; branch deletion, deployment and release remain separate acts.

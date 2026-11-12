@@ -28,12 +28,13 @@ Every meaning-changing mapping requires an explicit human decision receipt.
 
 ## Rules
 
-- Normalize `vN` to `vN.0` only when evidence proves a notation-only,
-  identity-preserving change.
+- Preserve historical normalization evidence under its original governing
+  revision. Under the adopted scope model vN and vN.0 are distinct identities;
+  never normalize one into the other. Use the separate scope adoption ledger.
 - Use `Not allocated — must not be inferred` for every new-correlation field
   that lacks authority or evidence. Do not create a partial tuple.
 - Preserve broad legacy realizations and initiatives. A required split
-  allocates one new tuple per narrow outcome through Stage 0.
+  allocates one new independent initiative membership per narrow outcome through Stage 0.
 - Preserve original realization evidence, historical links, governing workflow
   revision, and lifecycle evidence.
 - A migrated initiative starts `Proposed` unless existing evidence supports

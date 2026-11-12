@@ -61,7 +61,8 @@ not accept the initiative or resolve a human decision.
 
 When a split is mandatory, identify each separately bounded outcome without
 allocating identity in this assessment. Each split enters Stage 0 and receives
-its own canonical work version, realization suite, self-contained initiative,
-and dedicated branch. Do not reuse this initiative's tuple as an umbrella.
+its own complete initiative identity, records and acceptance claim. It may
+share scope, source notes/suite and a declared shared scope branch; Stage 0
+records dedicated/shared placement without using this claim as an umbrella.
 
 

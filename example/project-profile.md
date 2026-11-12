@@ -168,3 +168,19 @@ installed example but nowhere else in the enclosing TADp repository.
 | 2026-11-11 | Instantiated the project profile, canonical initiative index, status view, and legacy correlation ledger | The correlation records were introduced after the example was first drafted; the User explicitly instructed their creation without authorizing inferred tuples | User |
 | 2026-11-11 | Recorded the project-wide embedded-example-root exception | Treat `example/` as the complete example project's root while using the enclosing worktree only for Git mechanics and leaving the generic Git-root invariant unchanged elsewhere | User via [EX-GIT-DR-001](initiatives/decision-receipts/EX-GIT-DR-001-enclosing-worktree-exception.md) |
 | 2026-11-12 | Adopted initiative coherence and completion-feedback controls from the captured pre-revision baseline | Apply User's COH-DR-001 rule to open effort without answering questions, accepting initiatives, or changing the Git-root exception | User |
+
+## Version scope installation
+
+**Version scope revision effective point:** Installed; adoption pending
+
+**Version scope migration ledger:** [Version scope dispositions](initiatives/version-scope-migration-ledger.md)
+
+**Version scope registry:** [Scope registry](initiatives/version-scopes.md)
+
+**Version scope installation authority:** [VSG-DR-001](decisions/VSG-DR-001-version-scope-grouping.md)
+
+The coherent maintenance delivery installs the new sources prospectively;
+its actual commit is recorded after creation. It does not migrate existing initiatives,
+move paths, reparent branches or reopen historical claims. The earlier profile
+and migration clauses above describe the legacy governing revision. New scope
+allocations require explicit project adoption and complete reciprocal records.

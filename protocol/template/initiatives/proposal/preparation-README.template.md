@@ -13,7 +13,7 @@ Stage 0 copies this file to proposal/README.md and replaces every token. Stage
 
 **Last updated:** {{yyyy-mm-dd}}
 
-**Work version:** {{v_major_minor}}
+**Version scope:** {{version_scope}}
 
 **Realization suite:** [{{realization_suite_id}}]({{relative_realization_suite_index_path}})
 

@@ -22,9 +22,9 @@ verification.
 
 ## Current status
 
-| Work version | Initiative ID | Realization suite | Type | Status | Current milestone | Next gate | Blockers or holds | Status evidence | Owner | Last updated |
+| Scope | Initiative ID | Realization suite | Type | Status | Current milestone | Next gate | Blockers or holds | Status evidence | Owner | Last updated |
 |---|---|---|---|---|---|---|---|---|---|---|
-| {{v_major_minor}} | {{INIT-001}} | [{{realization_suite_id}}]({{relative_suite_index_path}}) | `{{design_implementation_or_planning}}` | {{status}} | {{current_milestone}} | {{next_review_decision_or_verification_gate}} | {{blocker_links_or_none}} | {{initiative_lifecycle_and_canonical_correlation_links}} | {{owner}} | {{yyyy-mm-dd}} |
+| {{version_scope}} | {{INIT-001}} | [{{realization_suite_id}}]({{relative_suite_index_path}}) | `{{design_implementation_or_planning}}` | {{status}} | {{current_milestone}} | {{next_review_decision_or_verification_gate}} | {{blocker_links_or_none}} | {{initiative_lifecycle_and_canonical_correlation_links}} | {{owner}} | {{yyyy-mm-dd}} |
 
 ## Portfolio gates
 
@@ -45,8 +45,13 @@ verification.
 - Reconcile this record with `initiative-index.md`, applicable parent and
   subinitiative indexes, and affected initiative READMEs in the same reviewed
   change.
-- Copy work-version and suite identity from the canonical correlation row;
+- Copy scope, source and current assignment identity from the canonical correlation row;
   never allocate, renumber, or infer identity in this status view.
 - A parent, subinitiative, release, or version boundary does not rewrite the
   identity, authority, or classification of retained proposal sources.
 
+
+Scope closure/integration is linked from the canonical version-scopes.md
+registry, independently of member lifecycle. This view creates no collective
+acceptance or scope closure. Keep membership links and per-cycle integration
+history in their canonical owners.

@@ -49,6 +49,14 @@ work remains response-only; local resource restrictions and independent review
 obligations compose with gates. The shared contract and this prompt retain
 all unexcepted preconditions, edit boundaries, verification, and reporting.
 
+For a project with the version-scope revision adopted, verify exact scope
+membership, originating and contributing suite/note IDs and paths, per-source
+routing, current numeric revision cycle, recorded dedicated/shared execution
+mode and branch, immutable captured base ref/commit and immediate integration
+target. Shared source/scopes and declared shared scope branches are valid;
+initiative identities and active per-cycle assignments remain unique. Preserve
+historical allocation, closure and branch history. No later-stage repair by
+inference is allowed; route inconsistencies to the owning preparation/intake.
 Align the applicable existing SDKs and APIs to the accepted {initiative} at
 {initiative_path}.
 
@@ -68,10 +76,10 @@ Verify that the initiative is `Accepted` or `In progress`, links an explicit
 acceptance receipt, and identifies the accepted baseline revision. Resolved
 assumptions and questions without the acceptance stage are not sufficient.
 
-Verify that the active branch, canonical work version, realization suite,
-initiative identity, dedicated branch, captured base branch and commit, and
+Verify that the active branch, exact version scope, realization suite,
+initiative identity, execution branch, captured base branch and commit, and
 reciprocal links match one unique canonical correlation row. Stop on drift;
-SDK/API alignment must not allocate or repair tuple identity.
+SDK/API alignment must not allocate or repair membership identity.
 
 Apply the ownership and approval convention at {project_profile_path}. Human
 owner, reviewer, and approver roles resolve as recorded for the target project.

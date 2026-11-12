@@ -353,8 +353,12 @@ replacement of a lifecycle requirement requires separately specific human
 authority identifying that requirement, a documented meaning and reconciliation
 for every consumer before use; a keyword or generic gate waiver alone is
 insufficient. No such replacement is adopted by this vocabulary revision.
-Closed claims still require explicit human reopening; substantive changes
-still use specification 09 successors. Specifications 01 and 10 conflicts and
+Closed claims still require recorded reopening under specification 09's bounded
+realization-intake delegation or separate specific human authority. That
+specification permits coherent same-outcome revision; independent outcomes and
+incompatible type/owner/authority boundaries still require separate initiatives
+or successors. Its delegation does not change this registry, switch semantics,
+acceptance or unrelated human gates. Specifications 01 and 10 conflicts and
 coherence inventories remain required unless an exact separately authorized
 exception names the affected obligation, and factual conflict evidence remains
 visible. Tool permissions, higher-priority instructions, factual limits, and

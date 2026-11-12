@@ -132,7 +132,7 @@ Open initiative effort counts as work to reconcile, including proposed and
 partially performed effort. Completion reviews consider the other open
 initiatives and route useful refinements through their governed workflows.
 Conflicting efforts remain visible in a work-conflict register; closed claims
-require explicit human reopening before refinement. See the
+require recorded authorized reopening before refinement. Adopted realization intake delegates necessary reopening while changed claims retain human acceptance. See the
 [coherence rule](protocol/evidence/authoritative/LLM/10_Codex_Initiative_Coherence_Specification.md).
 
 ## What TADp provides

@@ -30,12 +30,12 @@ The binding stage sequence and handoff rules are defined by the
 Stages 0 through 7 are the common path. An accepted initiative then follows
 exactly one type-specific delivery path before stage 13 finalization.
 
-After stage 0 allocates and prepares a correlated tuple, run every
-initiative-specific prompt on that initiative's prepared branch. Only the
-preparation prompt allocates the work version, creates the realization suite
-and canonical correlation row, or creates or switches the branch. Later
-prompts stop when any reciprocal identity or the active branch does not match.
-
+Stage 0 assesses realization fit before allocation, records each delegated
+routing/reopening choice, and selects dedicated or shared scope execution.
+Later stages verify membership, provenance, current revision assignment and
+captured base. Existing complete initiatives reuse records and return through
+alignment/decisions/renewed acceptance rather than new-initiative creation.
+New initiatives are grouped at initiatives/<scope>/<type>/<id-and-slug>/.
 ## Example request
 
 > Using the [proposal alignment prompt](02_proposal_alignment.md), align the
@@ -53,9 +53,10 @@ external-party, contract, artifact, or evidence gate.
 
 The preparation, proposal-creation, initiative-creation, acceptance,
 type-specific delivery, and finalization prompts are the explicit exceptions.
-Preparation may create the version-bearing initiative branch, realization
-suite and index, canonical project correlation row, and missing
-directory-and-README skeleton as one unit. Proposal creation may
+Preparation may register scopes/ancestors and independent source routing,
+record necessary reopening under the adopted intake method, select/reuse a
+shared scope branch or create a dedicated child, and prepare new member
+correlation and minimal README skeletons. Existing targets retain their records. Proposal creation may
 create only its target `proposal/proposal.md`. Initiative creation may complete
 the standard initial initiative record and its parent tracking entries.
 Acceptance may create the acceptance receipt and reconcile the accepted
@@ -70,8 +71,9 @@ gates pass. Design delivery may change only accepted specification destinations
 and supporting initiative evidence. Planning delivery may create only accepted
 initiative-local evidence. Both use `delivery-record.md`, and every type
 requires `completion-evidence.md` before completion. Finalization verifies that already-aligned completion
-state, commits any remaining accepted work, pushes the initiative branch, and
-creates its pull request; it does not declare an incomplete execution complete.
+state, commits remaining traceable accepted work, and performs authorized local
+initiative-to-scope integration or records verified direct scope placement.
+It never declares incomplete delivery complete or closes its scope.
 The implementation-readiness review prompt is read-only and applies only to an
 `implementation` initiative: it gathers and reports evidence without changing
 its target.
@@ -94,7 +96,7 @@ authoritative within their respective claims and must remain mutually coherent.
 
 | # | Prompt | Use it when |
 |---|---|---|
-| 0 | [Prepare initiative](00_initiative_preparation.md) | Preflighting and atomically preparing one work version, realization suite, self-contained initiative identity, version-bearing branch, canonical row, and minimal README skeleton. |
+| 0 | [Prepare initiative](00_initiative_preparation.md) | Assessing realization fit; recording append, coherent revision, reopening or new targets, scopes/ancestors and dedicated/shared execution assignments. |
 | 1 | [Proposal creation](01_proposal_creation.md) | Creating the first proposal-only record from the correlated realization suite and its intended note. |
 | 2 | [Proposal alignment](02_proposal_alignment.md) | Aligning an existing initiative proposal in place to its scope, repository evidence, active initiatives, `../../evidence/authoritative`, and implemented work. |
 | 3 | [Initiative creation](03_initiative_creation.md) | Creating the first complete initiative record from an initiative's existing proposal, the shared templates, and repository evidence. |
@@ -107,5 +109,11 @@ authoritative within their respective claims and must remain mutually coherent.
 | 10 | [Implementation execution](10_initiative_execution.md) | For an `implementation` initiative, aligning products to accepted specifications and recording execution and verification evidence. |
 | 11 | [Design delivery](11_design_delivery.md) | For a `design` initiative, delivering accepted specification changes and their verification without modifying products. |
 | 12 | [Planning delivery](12_planning_delivery.md) | For a `planning` initiative, delivering accepted initiative-local evidence while preserving source classifications and limitations. |
-| 13 | [Finalize initiative](13_initiative_finalization.md) | Verifying aligned completion records, committing any remaining accepted work, pushing the branch, and opening its pull request. |
+| 13 | [Finalize initiative](13_initiative_finalization.md) | Verifying completion, finalizing traceable commits, and recording authorized immediate-parent integration or direct placement. |
 
+
+[Scope closure](scope_closure.md) is a distinct operation for patch/minor/major
+integration; it is not another initiative type or stage. Closing a member does
+not close scope or ancestors. Pull requests are independently human-managed;
+these prompts neither solicit nor prepare/create them, and require no URL or
+hosting connection. Pushes remain separately authorized.

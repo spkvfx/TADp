@@ -27,18 +27,27 @@ parent specification owns a bounded requirement and the child owns one smaller
 dependent outcome. A parent may coordinate; it may not hide partial or
 unrelated work.
 
-## Correlated work identity
+## Version scopes and realization routing
 
-Every work unit governed by the correlation revision has one canonical
-`v<major>.<minor>` work version, one realization suite, one self-contained
-initiative, and one version-bearing dedicated branch from a captured base
-branch and commit. The project initiative index owns the canonical row.
-Suites, initiatives, status, delivery, completion, and Git records link to it.
+Under the adopted scope revision, an initiative belongs to exactly one `vN`,
+`vN.M`, or `vN.M.P` scope. A scope may contain multiple narrow initiatives,
+and a source note may contribute to several existing or new targets. Canonical
+membership lives in `initiatives/initiative-index.md`; scope identity and
+hierarchy live in `initiatives/version-scopes.md`. Each initiative retains
+its lifecycle and acceptance authority and complete type-specific records.
+New paths are `initiatives/<scope>/<type>/<id-and-slug>/`.
 
-The tuple establishes identity, not authority or lifecycle standing. Every
-mandatory split and substantive successor receives a new tuple. An unchanged-
-claim reopening may retain its tuple; a pre-effective record follows its
-migration-ledger disposition.
+A human realization-processing instruction delegates recorded intake placement,
+coherent same-initiative revision and necessary initiative/scope reopening.
+Append unchanged-claim detail; split independent outcomes or incompatible
+boundaries. Preserve exact per-note provenance and source/target scope choices.
+Changed accepted claims return to `Proposed` with delivery paused and require
+renewed human acceptance. Closed targets reopen first with prior claims intact.
+Record agent-made choices under delegation without inventing human answers.
+Each cycle records dedicated or shared execution placement and captured base.
+
+See [version scope migration and operation](../guides/version-scope-migration.md).
+Legacy records retain their recorded compatible workflow until explicit adoption.
 
 ## Coherence across initiative work
 
@@ -74,17 +83,19 @@ Finishing a stage does not automatically change lifecycle state.
 
 ### 0. Prepare initiative
 
-- Confirm a valid Git repository and clean worktree.
-- Preflight canonical syntax and uniqueness for the proposed version, suite,
-  initiative, branch, paths, base branch, and base commit without writing.
-- Capture the actual current branch and commit as the immutable base.
-- Create and switch to the new version-bearing dedicated branch.
-- On that branch, create the suite index and initial realization note,
-  canonical correlation row, reciprocal metadata, and minimal initiative and
-  proposal-source README skeleton as one unit.
+Inspect Git, existing initiatives, claims, source notes, open/partial effort,
+conflicts and branch roles before allocation. Record fit and one independent
+disposition for each source/target pair. Reuse complete existing records for
+append/revision/reopening; create no duplicate initiative. Record reopening
+before changing a closed claim and preserve its old cycle.
 
-Preparation does not accept the initiative, create the proposal or complete
-initiative record, or begin delivery.
+For a new initiative, preflight identity, sources, clean worktree, reciprocal
+records and open chosen scope. Prepare missing major/minor/patch ancestors in
+order from captured actual parent tips. Choose a matching scope branch directly
+or a dedicated initiative child; create a branch only when placement requires
+one. Register membership, exact provenance, execution mode, branch, captured
+base and integration target, then create only the minimal skeleton.
+Preparation creates no acceptance or delivery authority.
 
 ### 1. Create proposal
 
@@ -199,15 +210,23 @@ A missing or non-ready gate blocks only the affected execution.
 
 ### 13. Finalize initiative
 
-- Verify that lifecycle history, completion evidence, status, branch diff, and
-  the type-specific execution or delivery record describe the same claim.
-- Refresh the completion coherence review when target initiatives or their
-  dependencies changed after that review.
-- Stage and commit only traceable initiative work.
-- Push and open one pull request when the repository is configured and the
-  stage is authorized.
-- Do not merge, deploy, enable auto-merge, or delete the branch as an implicit
-  part of finalization.
+Verify completion, lifecycle, current coherence review, membership, provenance,
+active revision, diff and delivery records. Commit only traceable work. A human
+instruction to close/finalize the identified governed initiative supplies its
+bounded local child-to-recorded-parent merge authority once gates pass; record
+that instruction and both tips before integration. Dedicated branches integrate
+into their assigned scope. Directly hosted members record verified commits
+without self-merge. Retain source refs and verify the resulting target.
+Failures leave integration pending/blocked and preserve truthful completion.
+Pull requests are human managed and are not a workflow output or prerequisite.
+
+Scope closure is a separate operation. It captures all members and descendants,
+requires truthful closure and child integration/exclusion evidence, aggregate
+verification and reconciled conflicts, then integrates patch to minor, minor
+to major, or major to captured project base. Closing one member never closes
+or merges its scope upward. Unfinished or unaccepted shared-tip work blocks
+whole-tip integration. Closed parents require recorded reopening before later
+integration. Pushes and branch deletion require separate authority.
 
 ## Lifecycle
 
@@ -228,8 +247,9 @@ Closed initiatives (`Completed`, `Cancelled`, and `Superseded`) must be
 explicitly reopened before their specifications are refined. A completion
 finding does not supply reopening authority. Keep factual history corrections
 append-only and keep successor links distinct from changes to the closed
-claim. A substantive change still requires a successor tuple; reopening does
-not permit reuse of the old identity for a different claim.
+claim. A coherent revision may retain initiative identity under recorded intake
+authority; independent outcomes and incompatible boundaries require separate
+initiatives or successors. Changed claims require renewed human acceptance.
 
 Every transition is appended to lifecycle history. Shared status views mirror
 the initiative; they do not create its state.

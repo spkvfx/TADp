@@ -20,9 +20,11 @@ prose tokens outside reusable templates, complete initiative suites, legal lifec
 transitions, acceptance receipts, type-specific execution or delivery records,
 completion evidence, human decision receipts, all fourteen numbered prompt
 contracts, source-mapping fields, and—after a project declares the correlation
-revision effective—canonical work-version syntax, one-to-one realization-suite
-and initiative mappings, reciprocal record metadata, branch continuity, and
-legacy migration dispositions. Its checks grow with the binding TADp
+revision effective—legacy work-version syntax, reciprocal tuple metadata,
+branch continuity and migration dispositions. After explicit version-scope
+adoption, it also validates shared scope membership, precise source routing,
+major/minor/patch topology, recorded execution placement and closure evidence.
+Its checks grow with the binding TADp
 specifications; passing validation never replaces human acceptance, delivery
 verification, or product verification.
 
@@ -92,3 +94,51 @@ maintenance must actually reconcile and verify locks through `tadp_protect`.
 These helpers cannot authenticate human authority, classify natural-language
 intent, establish semantic review quality, or intercept arbitrary agent tools.
 The governing agent remains responsible for enforcing the canonical contract.
+
+`tadp_scopes.py` supplies the prospectively adopted version-scope model.
+`parse_scope` accepts exact `vN`, `vN.M`, and `vN.M.P` identities, compares
+components numerically and preserves arity. `scope_parent` derives only the
+structural major/minor parent; major scopes use the project's explicitly
+recorded integration branch. No helper infers migration or source authority.
+
+An immutable `Version scope revision effective point` in `project-profile.md`
+activates `initiatives/version-scopes.md`, the scope membership table in
+`initiative-index.md`, and `version-scope-migration-ledger.md`. Absence,
+`Not yet adopted`, and `Installed; adoption pending` retain legacy handling.
+The module exports `SCOPE_HEADERS`, `MEMBER_HEADERS`, `MIGRATION_HEADERS`, and
+`SOURCE_HEADERS`; templates use those table shapes. Original tuple tables and
+their legacy ledger remain checked when retained alongside the new table.
+Deferred records do not qualify for delegated reopening just because a
+project has adopted scopes; the target needs actual new canonical membership.
+
+Read-only checks cover explicit suite/note identities and metadata, reciprocal
+links, source catalogs, grouped paths and types, branch roles and captured
+ancestry, scope navigation, current cycle/claim acceptance and delivery records,
+closed-member/child integration evidence, and required scope reopening.
+Recorded scope creation fields and execution assignment history are compared
+with `HEAD`. This scope-table comparison does not inspect every intermediate
+commit in a branch range; review must inspect those transitions separately.
+The existing coherence guard retains its independent `--base-ref` range checks
+for closed initiative claims. Human authority authenticity, narrow semantic
+fit, ownership, completeness of an inventory and verification quality still
+require review; objective fields cannot establish them.
+
+`integrate_closed_child(root, IntegrationRequest(...), verify)` is an optional
+bounded local helper, not a workflow dispatcher. Callers first persist the
+actual closure instruction/authority, inspect accepted source changes and the
+current parent, and check ownership of every included change. The helper
+requires the recorded parent already checked out, a clean worktree, matching
+captured source/target tips, closed source, open parent and qualified changes.
+It rechecks refs/worktree after pre-verification and records direct placement,
+no-deliverable, fast-forward, merge, already-integrated, or blocked results.
+Conflicts and failed post-verification retain actual Git evidence; the helper
+does not revert, delete branches, push, or invoke a hosting service. Callers
+persist the result and post-verification evidence; it never accepts an
+initiative or closes ancestors. Shared completed members must record their
+`Verified member commit` separately from the whole shared tip.
+
+`test_tadp_scopes.py` uses isolated Git repositories for shared/dedicated
+placement, cross-scope provenance and mixed types, full adopted-project
+validation, delegated terminal-state reopening, current-cycle acceptance,
+closure blockers, precise numeric syntax, integration reruns, drift and real
+conflicts. These fixtures are protocol-owned and do not migrate live projects.

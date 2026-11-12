@@ -52,8 +52,8 @@ chain before there is enough material for the directories to become confusing.
 6. Copy [project-profile.template.md](project-profile.template.md) to
    `project-profile.md`. Replace every `{{double_brace_token}}`, remove the
    instructional HTML comment, and record the project owner, boundary, review
-   cadence, correlation-revision effective commit, branch convention, and
-   migration-ledger link. Capture the current Git commit as the coherence
+   cadence, version-scope revision effective commit, branch convention, and
+   scope-adoption migration-ledger link; preserve earlier correlation history. Capture the current Git commit as the coherence
    revision baseline before adopting the coherence controls.
 7. Establish the binding sources in
    [evidence/authoritative/](evidence/authoritative/README.md) before accepting
@@ -70,8 +70,7 @@ chain before there is enough material for the directories to become confusing.
    and [the portfolio status record](initiatives/status.template.md) before
    accepting the first initiative. Copy the
    [version-correlation migration ledger](initiatives/version-correlation-migration-ledger.template.md)
-   when adopting the correlation revision. The index owns canonical tuple
-   identity; the status record answers what is active, blocked, or gated next.
+   when adopting the correlation revision. The index owns canonical initiative membership/provenance; the status record answers what is active, blocked, or gated next.
    Copy [the work-conflict register](initiatives/work-conflicts.template.md) to
    `initiatives/work-conflicts.md`; preserve both claims and effort when work
    conflicts, including proposed open initiative work.
@@ -118,8 +117,8 @@ The initiative index and portfolio status record are coordination artifacts,
 not sources of substantive authority:
 
 - `initiative-index.md` is the stable registry of initiative identity, type,
-  location, owner, high-level relationship, canonical work version,
-  realization suite, dedicated branch, and captured base.
+  location, relationships, exact scope/source provenance, revision assignment,
+  execution mode/branch, captured base and integration evidence.
 - `status.md` is the current portfolio view of lifecycle standing, next gate,
   blockers, and the evidence that supports a status claim.
 - `work-conflicts.md` preserves incompatible work claims, their effort,
@@ -243,3 +242,25 @@ the assumption that the conflict has been resolved.
 - [ ] Review dates are scheduled or tied to a release, decision, or source
       change event.
 
+
+## Version-scope adoption
+
+For newly adopted work, group initiatives physically at
+initiatives/<scope>/<type>/<id-and-slug>/. Instantiate
+[the scope registry](initiatives/version-scopes.template.md),
+[scope navigation](initiatives/scope-README.template.md) and
+[scope adoption ledger](initiatives/version-scope-migration-ledger.template.md).
+Version scopes have exact major/minor/patch identity and one integration branch;
+multiple narrow initiatives and source notes may share a scope. An actual human
+intake request delegates fit-based routing and necessary reopening under adopted
+specification 09, with each LLM-authored event recorded before changes. Existing
+complete targets reuse their records and changed claims need renewed acceptance.
+
+Branch topology is project integration base -> major -> matching minor ->
+matching patch; a dedicated member branches from its scope, or the scope branch
+hosts it directly. Local integration runs child into recorded immediate parent
+after required closure gates and bounded human close/finalize authority. Shared
+whole-tip integration blocks on unfinished/unaccepted inclusions. Scope closure
+is separate from member lifecycle. Pull requests are human-managed, and remote
+operations need separate authority. Preserve legacy revision/path/branch/source
+identity until explicit evidence-backed migration; installation is not migration.

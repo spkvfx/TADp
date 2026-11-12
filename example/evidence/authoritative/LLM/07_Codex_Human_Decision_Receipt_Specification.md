@@ -11,7 +11,7 @@ A meaning-changing legacy identity mapping, exception to a mandatory split,
 or removal of a recorded initiative branch also requires a receipt. The
 receipt must preserve every source identity, distinguish notation-only change
 from changed meaning, and identify the affected canonical correlation and
-migration-ledger rows. It does not retroactively make a partial tuple valid.
+migration-ledger rows. It does not retroactively make incomplete identity valid.
 
 ## Prompt exceptions and actual decision authorship
 
@@ -46,9 +46,12 @@ and protected-source maintenance authority remain separate and enforced.
 ## One decision per receipt
 
 Each receipt records one human decision for one stable source ID or one clearly
-bounded lifecycle event. A blanket response may use one receipt only when the
-human explicitly identifies the complete set and the receipt lists every item
-without ambiguity.
+bounded event. Under specification 09, capture the actual human realization
+intake instruction as delegation, then record each LLM routing/reopening event
+and its actual author, target and fit separately before applying it. Do not
+fabricate a per-target human answer or require repeated confirmation solely
+because the target is closed, existing or cross-scope. A blanket human response
+may cover a set only when it identifies that complete set without ambiguity.
 
 ## Required content
 
@@ -63,7 +66,7 @@ A decision receipt must preserve:
 - the evidence and material limitations presented with the question;
 - the resulting disposition and its precise scope;
 - every initiative or tracking record reconciled from the decision;
-- every affected work-version, suite, initiative, branch, canonical-row, and
+- every affected scope, suite/note, initiative/revision cycle, branch, canonical-row, and
   migration-ledger identity when the decision changes correlation handling;
 - unresolved consequences or re-entry conditions; and
 - the Git commit that records the receipt and reconciliation, when available.
@@ -75,8 +78,17 @@ A reopening receipt declares `**Disposition:** Reopened` and
 authorized scope and verification boundary. A direct closed-to-`Accepted`
 transition also declares `**Unchanged accepted claim:** Yes` and preserves the
 human decision supporting that exception. Each new reopening needs its own
-receipt; an earlier acceptance or reopening receipt cannot be reused. These
-objective fields support the
+receipt; an earlier acceptance or reopening event cannot be reused. A bounded
+intake may support several necessary target events, each independently recorded.
+A delegated event also records `**Decision method:** Delegated realization intake`,
+`**Decision author:**`, source realization ID/path, exact human intake words,
+governing revision and delegation, candidate targets, chosen scope/branch,
+rejected alternatives, fit rationale, prior state/claim revision, risks,
+compatibility, affected records and necessary scope/ancestor reopening events.
+Its human-authority field links the delegation, not an invented target answer.
+Direct return to `Accepted` still requires a separate explicit human
+unchanged-claim decision. Delegation never implies acceptance, product
+execution, unrelated answers or passing verification. These objective fields support the
 [closed-claim preservation check](10_Codex_Initiative_Coherence_Specification.md)
 without substituting for human authority.
 
@@ -92,8 +104,10 @@ the invariant-conflict procedure.
 
 ## Limits
 
-A receipt proves what the named human decided for the recorded scope. It does
-not prove implementation, verification, release, or broader acceptance; waive
-an invariant; or transfer authority to another initiative.
+A receipt preserves what the named human instructed and what the recorded
+LLM author decided under an applicable delegation. It does not prove
+implementation, verification, release or broader acceptance, waive an
+unexcepted invariant, or silently transfer ownership. Outside specification
+09's bounded intake method, ordinary per-event human authority remains required.
 
 

@@ -40,10 +40,11 @@ the trigger does not apply.
 
 For work governed by the
 [version-realization-initiative correlation specification](09_Codex_Version_Realization_Initiative_Correlation_Specification.md),
-every mandatory split allocates a separate canonical work version,
-realization suite, self-contained initiative, and dedicated branch. A parent,
-sibling, subinitiative, release, or version must not act as an umbrella for
-independently acceptable outcomes.
+every mandatory split allocates a separate self-contained initiative with an
+independent ID, acceptance claim and recorded execution assignment. Split
+initiatives may share an exact version scope, originating realization notes,
+and a declared scope branch. A scope, parent, sibling, subinitiative or release
+must not act as an umbrella acceptance claim for independent outcomes.
 
 ## Siblings and subinitiatives
 
@@ -73,9 +74,10 @@ owner, and create narrow successor or subinitiative records through the normal
 workflow. Never rewrite history to imply that the old initiative was always
 narrow.
 
-When the correlation revision applies, each narrow successor or subinitiative
-receives its own tuple. A pre-effective broad initiative remains under its
-recorded migration-ledger disposition until a separately governed migration or
-successor allocation occurs.
+Under the adopted version-scope revision, each narrow successor or subinitiative
+receives its own identity and complete records; source and scope reuse is valid.
+Coherent same-outcome revision need not create a successor. A pre-effective
+broad initiative retains its complete compatible migration-ledger disposition
+until separately governed adoption, migration or successor allocation.
 
 

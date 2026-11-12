@@ -12,10 +12,15 @@ and replace every token.
 **Delivery status:** {{in_progress_blocked_or_complete}}  
 **Accepted delivery scope:** {{exact_steps_or_output_set}}  
 **Accepted baseline revision:** {{revision_or_commit}}  
-**Work version:** {{v_major_minor}}
+**Version scope:** {{version_scope}}
+**Source notes:** {{exact_originating_and_contributing_note_ID_path_links_only}}
+**Revision cycle:** {{positive_integer_cycle}}
+**Claim revision:** {{exact_current_claim_revision}}
+**Execution mode:** {{dedicated_or_shared}}
+**Integration target:** {{assigned_scope_branch}}
 **Realization suite:** {{realization_suite_id_and_link}}
 **Canonical correlation:** {{initiative_index_row_link}}
-**Branch:** {{initiative_branch}}  
+**Execution branch:** {{initiative_branch}}
 **Captured base:** {{base_branch_and_commit}}
 **Started:** {{yyyy-mm-dd}}  
 **Last updated:** {{yyyy-mm-dd}}  
@@ -67,7 +72,7 @@ hide a delivery deviation.
 - **Specification or evidence outputs indexed:** {{links_and_result}}
 - **Initiative and parent status updated:** {{links_and_result}}
 - **Residual work has an owner:** {{links_or_none}}
-- **Correlation tuple remains intact:** {{canonical_row_and_reciprocal_link_review}}
+- **Membership, provenance and active revision remain intact:** {{canonical_row_and_reciprocal_link_review}}
 
 ## Prompt blocks and bounded exceptions
 
@@ -87,3 +92,36 @@ Restored gates recheck current prerequisites dependent on excepted work.
 
 Delivery is complete only when every in-scope ledger row and verification gate
 has evidence and the result is captured in `completion-evidence.md`.
+
+## Per-cycle Git attribution and integration
+
+**Revision base:** {{immutable_current_cycle_base_commit}}
+
+**Initiative-specific paths and commits:** {{exact_paths_commits_and_verified_delta}}
+
+**Shared mixed-change boundary:** {{limits_and_other_member_ownership_or_none}}
+
+**Integration state:** {{Pending_Blocked_Merged_Fast-forward_Already_integrated_Direct_placement_Excluded_Transferred_or_No_deliverable}}
+
+**Integration evidence:** {{current_cycle_integration_receipt_link_or_pending}}
+
+**Verified member commit:** {{immutable_accepted_initiative_specific_commit_or_pending}}
+
+Earlier cycle evidence is historical. A new cycle requires fresh verification
+and integration of its delta. Direct scope placement uses exact verified commits
+without self-merge or upward scope closure. Never merge shared whole tips with
+unfinished/unaccepted/cancelled/unrelated changes. Preserve failures and prior
+truthful lifecycle independently of integration success.
+
+The exact Revision cycle and Claim revision must match the current initiative
+README and acceptance receipt. Earlier-cycle evidence cannot qualify reopened
+or changed claims. For shared execution, Verified member commit identifies this
+member's accepted verified commit, not an undifferentiated whole shared tip.
+
+Instantiate the [integration receipt source](../project/initiatives/integration-receipt.template.md)
+outside template/ to record actual integration. Its exact current-cycle fields
+are Initiative ID, Revision cycle, Claim revision, Integration state, Source tip,
+Target ref, Target before, Target after, Authority, Method and Post-integration
+verification. Preserve closure authority, inventory and any exclusion/transfer
+Human authority. A status or combined narrative does not substitute for this
+receipt or its actual Git/verification evidence.

@@ -1,143 +1,126 @@
-<!--
-Replace every braced placeholder before using this prompt.
--->
+<!-- Replace every braced placeholder before execution. -->
 
-# 0. Prepare correlated initiative
+# 0. Assess realization fit and prepare execution placement
 
-## Use before proposal creation
-
-Use this prompt to preflight and allocate one canonical work version, one
-realization suite, one self-contained initiative identity, and one dedicated
-version-bearing Git branch. On that branch it creates the suite index and
-initial realization note, canonical project correlation row, reciprocal
-metadata, and smallest initiative README skeleton as one preparation unit.
-
-Run it before the [proposal-creation prompt](01_proposal_creation.md). It
-creates no proposal, assumption or question disposition, acceptance, delivery
-output, completion claim, or product artifact. A pre-effective initiative uses
-its recorded migration-ledger workflow instead of this new-allocation prompt.
-
-If no parent initiative is supplied, the initiative belongs to `root`. Set
-`{parent_initiative_or_root}` to `root` and place it at
-`{initiative_registry_root}/{initiative_type}/{initiative_slug}`. Do not infer
-a parent from a similar name, version, or nearby directory.
+Use this prompt when a human requests processing of an identified realization
+under the adopted version-scope workflow. Assess existing targets before
+allocating anything. An existing complete initiative reuses its records;
+Stages 1 and 3 must not recreate them. New allocations remain `Proposed`.
 
 ## Shared workflow contract
 
-Apply [WORKFLOW-CONTRACT.md](WORKFLOW-CONTRACT.md) together with this prompt.
-The contract is mandatory and does not replace this prompt's specific
-preconditions, edit boundary, verification, or reporting requirements.
+Apply [WORKFLOW-CONTRACT.md](WORKFLOW-CONTRACT.md) and the
+[workflow specification](../../evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md).
 
 ## Example usage
 
 > **Reference only — do not execute this example.**
 >
-> Using the [initiative preparation prompt](00_initiative_preparation.md),
-> prepare the attached initiative's correlated work version, realization
-> suite, canonical row, branch, and minimum README skeleton.
+> Using [initiative preparation](00_initiative_preparation.md), process the
+> attached initiative's identified realization and record its target fit and
+> execution placement.
 
-This example shows how to invoke the template. When using this file, execute
-only the instructions in the **Prepare initiative prompt** block below. Do not
-execute, recurse into, or derive additional work from the example.
+Only the **Prepare initiative prompt** block below is executable when invoked.
 
 ## Prepare initiative prompt
 
 ```text
 Apply {initiative_template_root}/prompts/WORKFLOW-CONTRACT.md and the canonical
 prompt keyword specification at evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md.
-The following human-response and gate-stop instructions state the ordinary
-required path. Apply only specifically authorized, recorded exceptions under
-that specification; a mode request alone supplies no waiver. Record effective
-settings for each source-position block before dispatch or retry, preserve
-locks and truthful evidence, and retain ordinary lifecycle meanings. Preview
-work remains response-only; local resource restrictions and independent review
-obligations compose with gates. The shared contract and this prompt retain
-all unexcepted preconditions, edit boundaries, verification, and reporting.
+Preserve source-position effective settings, locks, evidence and all unexcepted
+gates. Use the adopted specification 09 revision, never inferred migration.
 
-Prepare canonical work version {work_version}, realization suite
-{realization_suite_id} at {realization_suite_path}, and the
-{initiative_type} initiative {initiative_id} named {initiative} at
-{initiative_path} as a member of {parent_initiative_or_root}.
-{initiative_type} must be exactly `implementation`, `design`, or `planning`.
-The tuple is new and owns one narrow outcome and acceptance claim.
+Process the identified realization {realization_note_path} for candidate
+{initiative} in suite
+{realization_suite_index_path}. Capture the actual human intake instruction,
+its authority, source IDs and paths, source scope, governing revision and Git
+baseline before applying any routing disposition. A note alone supplies no
+intake authority. This delegation covers placement, coherent revision and
+necessary initiative/scope reopening for this intake only; it does not accept
+a claim, answer unrelated questions, authorize delivery or pass completion.
 
-Use the currently checked-out branch as the source branch. Capture its exact
-name as {base_branch} and its current commit as {base_commit}. Apply the branch
-convention in {project_profile_path}. If none is recorded, use
-initiative/{work_version}-{initiative_slug}. The exact {work_version} token
-must appear in {initiative_branch}; {initiative_branch} is the new branch to
-create, not an existing branch to reuse.
+Perform the following actions serially:
+1. Inspect Git, the recorded project integration configuration, staged,
+   unstaged and untracked work, scope registry, initiative index, realization
+   catalogs and existing open and closed initiatives. Include accepted claims,
+   partial effort, dependencies, branches, conflicts and historical removals.
+   Determine actual integration base from evidence; never assume main, master,
+   a remote or a hosting service. Verify project adoption and migration records.
+2. Assess every independent outcome and suitable target. Record candidate
+   targets, rejected alternatives, fit rationale, source and selected target
+   scopes separately, compatibility effects, risks and required reconciliation.
+   Append unchanged-claim evidence/detail to an existing target; revise a
+   coherent existing narrow outcome; split independently acceptable outcomes
+   and incompatible type/owner/authority boundaries into separate initiatives
+   or successors. A source note or suite may route to several targets, and
+   several notes may contribute to one target. Every disposition is independent.
+3. Before each existing-target change, record the actual LLM choice, author,
+   method, source links, governing delegation, prior state and claim revision,
+   change boundary and affected records in a decision receipt/routing record.
+   Reopen Completed, Cancelled or Superseded targets before substantive edits
+   and return them to Proposed; reconcile replacement ownership explicitly.
+   Accepted/In progress changed claims pause delivery, preserve partial work
+   and return to Proposed. Renew human acceptance before changed delivery.
+   Direct closed-to-Accepted return requires a separate human unchanged-claim
+   decision. A historical addendum preserving the exact claim is append-only.
+   Record each necessary closed-scope/ancestor reopening; no silent reopening
+   or reclosing. Preserve all prior claims, receipts and integration evidence.
+4. Select execution placement for each new initiative or revision cycle using
+   fit, dependencies, existing work and integration risk. Reuse an open matching
+   scope and its declared shared integration branch, or select a dedicated child
+   initiative/{version_scope}-{initiative_id_and_slug}. Inspect branch role and
+   ownership before reuse; never convert an exclusive initiative branch into
+   a shared container or reuse historical identity for unrelated work. Record
+   one active assignment per initiative cycle and continuation history.
+5. Preflight any branch creation with a clean worktree, readable templates,
+   unique initiative ID/path, canonical scope syntax, reciprocal mappings,
+   open parent and no conflicting branch role. Accept exact vN, vN.M, vN.M.P
+   components without leading zeros; preserve v1, v1.0 and v1.0.0 identities.
+   Numeric ordering never changes parentage. Prepare missing ancestors in
+   major-to-minor-to-patch order with their own records. Capture actual base
+   ref and immutable tip before creation: major from project integration base,
+   minor directly from matching major, patch directly from matching minor,
+   dedicated initiative directly from assigned scope. Existing parents are
+   reused. A new minor never branches from an earlier minor. Detect cycles,
+   orphans, wrong parents and undeclared branch sharing before writing.
+6. For a new allocation only, prepare initiatives/{version_scope}/{initiative_type}/
+   {initiative_id_and_slug}/ with README.md and proposal/README.md from the
+   preparation templates. Type is implementation, design or planning. Preserve
+   exact originating notes and suite catalog rather than relabeling sources;
+   create a missing source catalog/note only when this intake includes that
+   preparation authority, never fabricate provenance. Register the scope in
+   initiatives/version-scopes.md, its navigation README and reciprocal member/
+   child links. Register exactly one row per initiative in initiative-index.md
+   with source notes/routing dispositions, type/path, scope, execution mode/
+   branch, captured base ref/commit, target, cycle, relationships, lifecycle
+   and integration evidence. Multiple initiatives may share scope/source/
+   declared scope branch. Shared records preserve concurrent additions.
+7. For existing targets, retain identity and scope, append source routing and
+   revision/branch history, and reconcile assumptions, decisions, architecture,
+   source mapping, scope assessment, dependencies, roadmap, steps, verification,
+   compatibility, membership, status and work conflicts within authorized
+   boundaries. No new-initiative skeleton may overwrite a complete record.
+   Preserve unrelated and unaccepted work. Serialize shared writes and record
+   initiative-specific paths, commits, revision bases and mixed-change limits.
+8. Verify reciprocal scope/member/source mappings, active assignment, captured
+   creation bases, exact parent topology and legal lifecycle evidence. Stop on
+   missing authority, unresolved ambiguity or invariant conflict; preserve the
+   blocker and continue independent authorized dispositions. Never infer or
+   normalize a legacy identity to clear validation. Review and commit only
+   traceable prepared/routing records, then record the actual commit when it
+   exists; no empty commit and no remote operation.
 
-If no parent is provided, set {parent_initiative_or_root} to `root` and use the
-project's type directory for {initiative_path}. If a parent is provided, verify
-the exact parent requirement and intended member location. The parent does not
-share this tuple and must not absorb this initiative's acceptance claim.
-
-Before writing, perform one read-only preflight and verify that:
-- this is a Git repository with a checked-out source branch captured exactly as
-  {base_branch} at {base_commit}; do not assume a default branch;
-- the worktree is clean, including untracked paths;
-- {project_profile_path} records the correlation-revision effective commit,
-  branch convention, and migration-ledger location;
-- {work_version} has canonical `v<major>.<minor>` syntax and is unused in the
-  project initiative index, realization hierarchy, initiative records, local
-  branch refs, and retained historical identities;
-- {realization_suite_id}, {realization_suite_path}, {initiative_id},
-  {initiative_path}, and {initiative_branch} are unused and unambiguous;
-- {realization_source} is readable, preserves its original identity and
-  limitations, and supports only the single narrow suite boundary;
-- {initiative_registry_path} exists, owns the canonical initiative and
-  correlation register, and has no partial or conflicting row;
-- the initiative, proposal-source, realization-note, and suite-index
-  preparation templates exist at their declared locations; and
-- the proposed outcome passes the narrow-scope cohesion test without a
-  mandatory split.
-
-If any precondition fails, stop and report every blocker. Do not allocate a
-partial tuple; normalize or infer a legacy mapping; reuse or silently renumber
-a version; reuse a suite, initiative, or branch; guess a base; create a parent;
-stash or move unrelated work; or write a record merely to clear validation.
-
-Create {initiative_branch} from {base_commit} on {base_branch} and switch to
-it. Preserve the source branch and do not query, create, or change a remote
-branch during preparation.
-
-On {initiative_branch}, create only this preparation unit:
-1. {realization_suite_path} and its `00-...-suite-index.md`, instantiated from
-   the realization-suite-index template with the exact work version, suite,
-   initiative, branch, captured base, boundary, evidence standing, catalog,
-   canonical-row link, and lifecycle navigation;
-2. one initial realization note at {realization_note_path}, instantiated from
-   the realization-note template and faithfully preserving
-   {realization_source}, uncertainty, and non-authoritative standing;
-3. {initiative_path} and {initiative_path}/proposal;
-4. {initiative_path}/README.md, instantiated from
-   initiatives/preparation-README.template.md;
-5. {initiative_path}/proposal/README.md, instantiated from
-   initiatives/proposal/preparation-README.template.md; and
-6. one row in {initiative_registry_path} containing the same work version,
-   suite ID and path, initiative ID, type and path, branch, captured base branch
-   and commit, predecessor or successor relationship, `Proposed` lifecycle
-   evidence, branch-removal evidence state, owner, and next gate.
-
-Replace every template token in the created files. Make every reciprocal link
-resolve. The canonical index row owns project-level correlation; the suite and
-README copies link to it and do not create status or authority.
-
-Do not create proposal/proposal.md, assumption.md, scope-assessment.md,
-architecture.md, source-mapping.md, open-questions.md,
-implementation-roadmap.md, implementation-steps.md,
+For new targets create no proposal/proposal.md, full initiative suite,
 implementation-readiness.md, execution-record.md, delivery-record.md,
-completion-evidence.md, a portfolio status entry, code, tests, configuration,
-or any other artifact.
+completion-evidence.md, product or portfolio acceptance/completion claim.
+Record the minimal preparation lifecycle as Proposed only. Existing-target
+revision records are not new-initiative creation or delivery evidence.
 
-Review the diff. Stage and commit only the suite index, realization note,
-canonical row, and two prepared README files with a clear preparation message.
-Record the resulting preparation commit in the created lifecycle and
-correlation evidence when available. Do not push or open a pull request.
-
-Report the exact work version, suite ID and path, initiative ID and path,
-branch, captured base branch and commit, parent-or-root placement, canonical
-row, files created, reciprocal-link verification, and preparation commit.
-State the proposal-creation prompt as the next stage on the same branch.
+Report each source-to-target disposition, rationale, exact source/target scopes,
+initiative/type/path, execution mode/branch, captured base ref/commit, immediate
+integration target, cycle, reciprocal records, reopened events, authority,
+verification, commits and remaining blockers. New skeletons hand off to Stage 1;
+existing complete targets hand off to alignment/decisions/renewed acceptance as
+required by their recorded change boundary. No existing acceptance certifies
+changed claims.
 ```

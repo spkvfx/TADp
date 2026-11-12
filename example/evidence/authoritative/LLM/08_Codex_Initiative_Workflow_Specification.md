@@ -37,9 +37,14 @@ For stages 5 and 6, an expressly authorized alternative decision method may
 replace the human interaction for the named source IDs. Preserve the exact
 human authorization separately from actual agent-made dispositions, method,
 author, rationale, and reconciliation. Do not repeatedly solicit authority
-already sufficiently recorded. Stage 7 acceptance and closed-claim reopening
+already sufficiently recorded. Stage 7 acceptance and reopening outside
+specification 09 intake delegation
 remain separate specific human-authority acts; autonomous question handling
-is not either act. The standard execution or delivery record must retain
+is not either act. Specification 09 separately delegates intake routing and
+necessary reopening when a human requests processing an identified realization
+under the adopted workflow; record each event and actual LLM authorship first.
+It supplies no acceptance or delivery authority. The standard execution or
+delivery record must retain
 every bypassed prerequisite and actual output, without claiming an ordinary
 gate passed. Stage 10, 11, or 12 completion evidence must distinguish passing,
 failed, skipped, waived, and not-performed checks. No keyword itself permits
@@ -76,8 +81,9 @@ specification governs the activities that may produce transition evidence.
 
 The
 [version-realization-initiative correlation specification](09_Codex_Version_Realization_Initiative_Correlation_Specification.md)
-governs identity allocated by Stage 0 and verified by every later stage. Tuple
-creation is preparation evidence only and does not change lifecycle standing.
+governs identity allocated or reused by Stage 0 and verified by every later
+stage. Membership
+allocation is preparation evidence only and does not change lifecycle standing.
 
 ## Universal workflow rules
 
@@ -97,12 +103,13 @@ Every stage must:
    result truthfully.
 7. Reconcile every record named by the stage's exit contract before handing the
    initiative to another stage.
-8. For a tuple governed by specification 09, verify the canonical work
-   version, suite, initiative, branch, captured base, and reciprocal links
-   before consuming or changing the initiative.
+8. For work governed by specification 09, verify exact scope membership,
+   originating/contributing note provenance, active revision cycle, execution
+   assignment, immutable captured base and reciprocal links before use.
 9. Apply the [coherence specification](10_Codex_Initiative_Coherence_Specification.md):
    include relevant open initiative effort as work, record incompatible
-   efforts, and preserve closed claims until explicit human reopening.
+   efforts, and preserve closed claims until recorded reopening under
+   specification 09 delegation or separate human authority.
 
 No stage may use urgency, a recommendation, implementation convenience, or the
 existence of later work to infer an earlier gate.
@@ -111,7 +118,7 @@ existence of later work to infer an earlier gate.
 
 | Stage | Activity | Applies to | Principal output | Lifecycle effect permitted |
 |---|---|---|---|---|
-| 0 | Correlated initiative preparation | All types | Version-bearing branch, realization-suite index, canonical correlation row, and minimal skeleton | None |
+| 0 | Realization fit and scoped preparation | All types | Recorded routing; scope/ancestor and membership records, required execution placement, new skeleton only when allocated | Existing-target revision/reopening may return to `Proposed` under recorded authority; no acceptance |
 | 1 | Proposal creation | All types | Canonical working proposal | None |
 | 2 | Proposal alignment | All types | Evidence-aligned proposal with uncertainty preserved | None |
 | 3 | Initiative creation | All types | Complete initial initiative suite | Remains `Proposed` |
@@ -124,7 +131,7 @@ existence of later work to infer an earlier gate.
 | 10 | Implementation execution | Implementation | Products, execution record, verification, and completion evidence | `Accepted` to `In progress`; then `Completed` when all evidence exists |
 | 11 | Design delivery | Design | Delivery record, accepted specification changes, verification, and completion evidence | `Accepted` to `In progress`; then `Completed` when all evidence exists |
 | 12 | Planning delivery | Planning | Delivery record, initiative-local evidence outputs, verification, and completion evidence | `Accepted` to `In progress`; then `Completed` when all evidence exists |
-| 13 | Finalization | All types after completion | Reconciled commit, push, and pull request when configured | No new completion claim |
+| 13 | Finalization | All types after completion | Traceable commits and authorized initiative-to-scope integration or verified direct scope placement | No new completion or parent closure claim |
 
 Stages 5 and 6 are repeated until their applicable source records have explicit
 human outcomes or actual agent dispositions under the specific recorded
@@ -134,23 +141,38 @@ one delivery path for its declared type.
 
 ## Stage entry and exit contracts
 
-### Stage 0: preparation
+### Stage 0: realization fit and preparation
 
-Entry requires a Git repository, a checked-out source branch, a clean worktree,
-an unambiguous initiative identity and type, readable suite and skeleton
-templates, and a read-only preflight proving that the proposed canonical work
-version, suite ID and path, initiative ID and path, and version-bearing branch
-are unused. The stage captures the base branch and base commit before writing.
+Entry requires Git, inspected actual integration configuration and worktree,
+identified realization intake authority, source records, readable templates
+and an inventory of open/closed candidate initiatives and branches. Perform
+specification 09 fit assessment before allocation. Preserve exact source scope
+and note identity separately from selected target scope.
 
-The stage creates the dedicated branch from that base. On the new branch it
-may create, as one preparation unit, the realization-suite index and initial
-non-authoritative realization note, canonical project correlation row,
-reciprocal correlation metadata, and only the minimal initiative and
-proposal-source README skeleton. The initiative remains `Proposed`; Stage 0
-creates no proposal, decision, acceptance, or delivery output. Exit verifies
-every reciprocal link and records the work version, suite, initiative, branch,
-captured base, target placement, and any preparation commit.
+Record each append, revision, reopening or new-initiative disposition, actual
+LLM author, candidate/rejected targets, fit rationale, prior state/claim,
+compatibility, risks and affected records before applying it. The human intake
+instruction supplies the adopted bounded placement/reopening delegation; seek
+input only for unsupported fit or an unexcepted boundary. Changed accepted or
+in-progress claims pause delivery, preserve partial evidence and return to
+`Proposed`. Closed targets first receive an event-specific reopening record.
+Alignment and renewed human acceptance are still required before delivery.
 
+For allocation, preflight exact canonical scope syntax, parent existence/open
+state, unique initiative ID/path, branch role and assignment, clean worktree,
+immutable base and reciprocal records. Reuse existing scopes, source catalogs
+and declared scope branches. Prepare missing ancestors explicitly in
+major-to-minor-to-patch order. Choose and record shared scope execution or a
+dedicated child created from that scope, capturing actual base tip first.
+
+Create only required new scope/ancestor records, exact source catalog/note
+links, canonical membership row, reciprocal metadata and minimal initiative
+and proposal-source skeleton for a new initiative. Newly governed paths are
+`initiatives/<scope>/<type>/<initiative-id-and-slug>/`. A new initiative remains
+`Proposed`; create no acceptance or delivery evidence. Existing complete
+initiatives retain their suites rather than being recreated by stages 1 or 3.
+Exit checks each independent routing disposition, reciprocal scope membership,
+provenance, current cycle, assignment, base and any actual preparation commit.
 ### Stages 1 and 2: proposal
 
 Proposal creation requires the prepared branch, minimal skeleton, intended
@@ -275,20 +297,39 @@ Entry requires a truthful `Completed` initiative, completion evidence, aligned
 tracking, and a branch diff that matches the completed claim. Implementation
 also requires an execution record aligned with the diff.
 
-Finalization may commit remaining accepted work, push the initiative branch,
-and open one pull request when the repository is configured and authorized. It
-does not create completion, accept deferred in-scope work, merge, deploy,
-enable auto-merge, or delete the branch.
+Finalization verifies membership, provenance, active revision/assignment and
+captured base; reconciles coherence feedback and traceable commits; and applies
+specification 05's bounded local initiative-to-recorded-scope integration when
+the actual human closure/finalization instruction and required gates are
+recorded. Direct scope execution records exact verified commits without a
+self-merge. It does not close or merge the scope upward, accept deferred work,
+create completion, push, release, deploy or delete refs. PRs are independently
+human managed: no prompt, title/body, URL requirement, command or PR handoff
+belongs to finalization.
+
+### Separate scope-closure operation
+
+Specification 05 governs patch-to-minor, minor-to-major and major-to-captured-
+base closure integration. Capture complete membership/descendants, truthful
+closed dispositions, successful required child integrations, aggregate checks,
+coherence/conflict reconciliation and authority. Pending integration blocks
+closure; empty scopes require no-work disposition. Closing a child never
+closes an ancestor. Closed parents require recorded reopening before new
+membership/integration. Cancelled/superseded work retains explicit retention,
+exclusion/transfer or no-deliverable disposition outside Stage 13's completed
+entry contract. Shared whole-tip integration is blocked by any included
+unaccepted or unfinished work. Preserve actual failures and separate lifecycle
+closure from integration state; reruns and reopened deltas need current proof.
 
 ## Record ownership by stage
 
 | Record or output | Stage that creates it | Later stages permitted to reconcile it |
 |---|---|---|
 | Realization-suite index and canonical correlation row | 0 | Later stages may reconcile copied lifecycle evidence but must not change allocated identity |
-| Minimal README skeleton | 0 | 3 and later owning stages; tuple identity remains immutable |
+| Minimal README skeleton | 0 for new initiatives | 3 and later owning stages; identity remains immutable |
 | Working proposal | 1 | 2 through 7 when evidence requires and it is not frozen |
 | Initial initiative suite | 3 | 4 through the applicable delivery stage |
-| Decision receipt | 5, 6, or 7 for its named human decision | No stage rewrites the exact prompt or response; later stages may add commit links or supersession references |
+| Decision receipt | 0 for delegated intake events; 5, 6, or 7 for named human decisions | No stage rewrites the exact prompt or response; later stages may add commit links or supersession references |
 | Accepted baseline revision | 7 | Only an explicitly authorized revision or reopening workflow |
 | Readiness result | 9 | A later readiness review supersedes it for a named phase; execution does not rewrite it |
 | Execution record | 10 | 10 and verification reconciliation before 13 |
@@ -296,7 +337,7 @@ enable auto-merge, or delete the branch.
 | Design specification output | 11 | 11 and explicitly authorized later revisions |
 | Planning evidence output | 12 | 12; later consumers cite rather than rewrite it |
 | Completion evidence | 10, 11, or 12 | The owning delivery stage before finalization; corrections preserve history |
-| Finalization commit and pull request | 13 | Later merge or release workflows outside this stage |
+| Finalization commits and initiative integration evidence | 13 | New revision cycles and separately authorized scope closure retain history |
 
 No supporting document may replace a missing canonical record merely because
 it covers a similar subject.
@@ -345,9 +386,11 @@ rewrite history implicitly.
 When the canonical row, realization-suite index, initiative README, active
 branch, or captured base identity is missing, duplicate, partial, or
 inconsistent, stop the affected stage and return to preparation recovery. Do
-not infer or silently rewrite a tuple. A pre-effective record proceeds only
-under its complete migration-ledger disposition; substantive re-entry after
-the effective point allocates a new governed tuple.
+not infer or silently rewrite identity, provenance or assignment. Shared scopes
+and declared scope branches are valid and do not fail a bijection check.
+A pre-effective record proceeds under its complete compatible migration-ledger
+disposition until explicit adoption/migration; subsequent intake uses the
+recorded coherent-revision or separate-successor decision method.
 
 ### Partial delivery
 
