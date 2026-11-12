@@ -24,6 +24,20 @@ For structured output:
 python tools/tadp_validate.py . --json
 ```
 
+After adopting the coherence revision, a branch review should select the
+captured integration or merge base explicitly:
+
+```powershell
+python tools/tadp_validate.py . --base-ref <captured-base-commit>
+```
+
+The default comparison is `HEAD`, which checks local changes against the latest
+commit. An explicit comparison base covers terminal-record edits across a
+branch, including changes already committed on that branch.
+The history check also covers an initiative completed and then changed in a
+later commit within that range. A later reopening cannot legitimize an earlier
+unrecorded refinement.
+
 Exit status meanings:
 
 | Status | Meaning |
@@ -92,6 +106,34 @@ mixed legacy mappings are errors; a complete `Unmigrated` or `Deferred` row is
 reported as `TADP033` warning so the unresolved migration remains visible without
 inventing a canonical identity. Warnings do not change the validator exit status
 when no errors exist.
+
+## Initiative coherence checks
+
+The [coherence specification](../../evidence/authoritative/LLM/10_Codex_Initiative_Coherence_Specification.md)
+adds checks when the project profile declares a resolved
+`Coherence revision baseline`. This is the fixed pre-adoption Git commit,
+not an authority or acceptance record. Existing terminal completions preserved
+at that baseline do not need an invented historical review; new completion
+claims and later changes follow the adopted rule.
+
+| Finding | Checked condition |
+|---|---|
+| `TADP041` | A resolvable adoption baseline and the project work-conflict register exist. |
+| `TADP042` | Governed completion evidence has a cross-initiative coherence review, baseline and register fields, and an inventory covering every other open initiative. |
+| `TADP043` | A prior terminal initiative's files are preserved unless a new reopening event and linked human decision receipt support the change. |
+| `TADP044` | Work-conflict rows preserve their required identity, claims, effort, impact, owner, status, and disposition fields. |
+
+The terminal-record comparison includes removed initiative directories and
+files. It permits narrow administrative additions and append-only factual
+history corrections; it does not treat an old reopening receipt as authority
+for a new revision. An adopted baseline cannot be silently changed, removed,
+or deactivated in the project profile. See the [migration guide](../guides/initiative-coherence-migration.md)
+for adoption and comparison-base handling.
+
+The inventory check does not determine semantic compatibility, discover every
+unrecorded conflict, certify that effort estimates are accurate, or accept a
+proposed resolution. Those obligations remain part of human and architectural
+review. Recognizing proposed effort never makes that effort authoritative.
 
 The validator ignores `.git` contents when walking Markdown and treats files
 under template paths as reusable, so their placeholders are permitted.

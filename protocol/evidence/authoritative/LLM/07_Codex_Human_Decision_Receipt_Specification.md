@@ -40,6 +40,16 @@ A decision receipt must preserve:
 
 ## Recording order
 
+A reopening receipt declares `**Disposition:** Reopened` and
+`**Human authority:**`, cites the exact prior claim, and identifies the newly
+authorized scope and verification boundary. A direct closed-to-`Accepted`
+transition also declares `**Unchanged accepted claim:** Yes` and preserves the
+human decision supporting that exception. Each new reopening needs its own
+receipt; an earlier acceptance or reopening receipt cannot be reused. These
+objective fields support the
+[closed-claim preservation check](10_Codex_Initiative_Coherence_Specification.md)
+without substituting for human authority.
+
 After receiving an explicit response, Codex must create the decision receipt
 before changing the source disposition. It must link the receipt from the
 assumption, question, lifecycle history, or conflict record it resolves and

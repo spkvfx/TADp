@@ -40,6 +40,29 @@ mandatory split and substantive successor receives a new tuple. An unchanged-
 claim reopening may retain its tuple; a pre-effective record follows its
 migration-ledger disposition.
 
+## Coherence across initiative work
+
+Open initiatives (`Proposed`, `Accepted`, and `In progress`) represent work
+that must be considered when another initiative changes a shared contract,
+product, dependency, or ownership boundary. Include their specification
+effort, decisions, planned steps, and partial outputs in the comparison.
+Proposed effort remains proposed: recognizing its cost and dependencies does
+not authorize its delivery or give it precedence over accepted authority.
+
+The [initiative coherence specification](../../evidence/authoritative/LLM/10_Codex_Initiative_Coherence_Specification.md)
+governs this review. Preserve both sides of an incompatible work claim in
+`initiatives/work-conflicts.md` and link the entry from the affected initiative
+records. Record the exact claims, source revisions, lifecycle standing, effort
+at risk, affected gates, owner, and resolution or required human decision.
+An invariant contradiction also belongs in the authoritative invariant conflict
+register. A conflict between proposed work items does not become an invariant
+merely because it is recorded.
+
+Pause only the acceptance, execution, or completion claims made incompatible
+by the conflict. Do not silently discard earlier planning effort, rewrite
+another initiative, or treat the latest completed work as the deciding
+authority. Independent compatible work may continue.
+
 ## Numbered workflow
 
 The prompt sequence under `../../template/prompts` is intentionally explicit.
@@ -96,6 +119,8 @@ initiative record, or begin delivery.
 - Keep scope, ownership, IDs, dependencies, roadmap, steps, and verification
   coherent.
 - Stop and route decomposition if current evidence exposes an umbrella scope.
+- Compare the claim with affected open initiative effort and record work
+  conflicts before handing off to human review.
 
 ### 5. Confirm assumptions
 
@@ -176,6 +201,8 @@ A missing or non-ready gate blocks only the affected execution.
 
 - Verify that lifecycle history, completion evidence, status, branch diff, and
   the type-specific execution or delivery record describe the same claim.
+- Refresh the completion coherence review when target initiatives or their
+  dependencies changed after that review.
 - Stage and commit only traceable initiative work.
 - Push and open one pull request when the repository is configured and the
   stage is authorized.
@@ -196,6 +223,13 @@ A missing or non-ready gate blocks only the affected execution.
 `Reopened` is an event rather than a status. Reopening preserves the prior
 accepted or completed claim, records human authority and impact, and returns to
 `Proposed` unless the unchanged-claim exception is explicitly authorized.
+
+Closed initiatives (`Completed`, `Cancelled`, and `Superseded`) must be
+explicitly reopened before their specifications are refined. A completion
+finding does not supply reopening authority. Keep factual history corrections
+append-only and keep successor links distinct from changes to the closed
+claim. A substantive change still requires a successor tuple; reopening does
+not permit reuse of the old identity for a different claim.
 
 Every transition is appended to lifecycle history. Shared status views mirror
 the initiative; they do not create its state.
@@ -220,6 +254,28 @@ An initiative is complete only when every in-scope requirement maps to a
 delivered product or evidence output, applicable invariant and acceptance gates
 pass, verification supports the exact claim, all records agree, and remaining
 work has a truthful owner and disposition.
+
+Before recording completion, document a cross-initiative coherence review in
+`completion-evidence.md`. Identify the inventory and source baseline reviewed,
+every other open initiative and its effort, relevant closed claims, findings,
+and linked dispositions. Include `Proposed` initiatives. A target outside the
+affected boundary still receives an explicit no-impact finding with rationale;
+record an evidenced no-target result when there are no other open initiatives.
+Silence is not a review. Use the template's `Inventory baseline` and
+`Work-conflict register` fields and its target review table.
+
+Use completion findings to refine open initiatives through their owning
+workflow. Proposed targets return through alignment and human decisions;
+accepted or in-progress targets require the authorized revision and acceptance
+steps when their baseline changes. Design work owns specification changes;
+implementation and planning work record findings and route them within their
+type boundaries. Evidence alone never answers a human open question.
+
+A handoff to later work does not complete that work. The source initiative may
+complete with a recorded follow-up only when its own exact claim remains
+coherent and all of its gates pass. A conflict that invalidates its claim must
+be resolved before completion. The receiving initiative keeps its own
+lifecycle, decisions, branch, and verification obligations.
 
 Closing a branch, version, parent, or portfolio does not make unfinished work
 disappear.

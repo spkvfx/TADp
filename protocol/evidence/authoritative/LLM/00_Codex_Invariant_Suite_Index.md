@@ -79,6 +79,23 @@ migration, and consumer-reconciliation requirements of this suite.
   govern evidence, governance, conflicts, lifecycle, Git, scope, human
   decisions, and workflow except where they expressly reference this revision.
 
+### Initiative coherence and completion-feedback revision record
+
+- **Authority:** The User's exact 2026-11-12 instructions preserved in
+  [COH-DR-001](../../../decisions/COH-DR-001-initiative-coherence.md).
+- **Reason:** Count open effort as work, document incompatible efforts,
+  route completion learning to open initiatives, and require explicit
+  reopening before refining closed claims.
+- **Affected scope:** Specifications 02, 04, 07, and 08, new specification 10,
+  reusable sources for every initiative type, validation, tests, documentation,
+  and the protocol and installed example adoption records and locks.
+- **Effective event:** Coherent adoption with a captured pre-revision Git
+  baseline. Earlier closed claims remain historical; no retrospective
+  acceptance, completion review, or reopening is invented.
+- **Successor relationship:** Specification 10 strengthens coherence and
+  feedback handling without changing evidence precedence, type boundaries,
+  human decision gates, stage numbering, or specification 09 successor rules.
+
 ## Documents
 
 1. [Codex evidence authority specification](01_Codex_Evidence_Authority_Specification.md)
@@ -105,6 +122,9 @@ migration, and consumer-reconciliation requirements of this suite.
    defines canonical work versions, reciprocal suite-initiative-branch
    identity, effective-point compatibility, migration-ledger requirements,
    and correlation validation.
+10. [Codex initiative coherence specification](10_Codex_Initiative_Coherence_Specification.md)
+    defines open effort as work, cross-initiative conflict records, completion
+    feedback, closed-claim preservation, and prospective adoption controls.
 
 The repository-root `../../../AGENTS.md` is the Codex entry point because Codex loads
 repository guidance from that standard location. It summarizes this suite but
@@ -151,4 +171,8 @@ existence of contradictory lower-standing material.
   acceptance, ownership, qualification, or release evidence.
 - Every material conclusion must retain a traceable path to the evidence and
   authority that support it.
+- Open initiative effort must be considered as work without promoting its
+  authority. Document incompatible efforts, review completion feedback against
+  open initiatives, and require explicit human reopening before refining a
+  closed claim under specification 10.
 

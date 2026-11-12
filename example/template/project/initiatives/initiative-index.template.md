@@ -29,6 +29,12 @@ delivery, or replace the initiative README's lifecycle authority.
 |---|---|---|---|---|
 | {{initiative_id}} | {{initiative_id_or_evidence}} | {{accepted_completed_or_other_state}} | {{owner}} | {{yes_or_no}} |
 
+Review dependencies alongside proposed, planned, and partially delivered open
+effort. Record incompatibilities in [work-conflicts.md]({{relative_work_conflict_register_path}})
+with links to both claims and their affected initiative records. Neither this
+index nor a completion finding authorizes changes to another initiative or
+reopening of a closed claim.
+
 ## Status update rules
 
 - Add a row only as part of the Stage 0 preparation unit that allocates the

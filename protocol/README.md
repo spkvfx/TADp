@@ -70,6 +70,12 @@ one-to-one to one realization suite, one self-contained initiative, and one
 dedicated version-bearing branch. This tuple establishes identity only. A
 substantive successor or mandatory split receives a new tuple.
 
+Open initiative effort is also work to reconcile. Completion reviews account
+for every other open initiative, preserve conflicting efforts in the
+[work-conflict register](initiatives/work-conflicts.md), and route refinements
+through their owning workflow. Closed claims require explicit human reopening
+before refinement. See the [coherence specification](evidence/authoritative/LLM/10_Codex_Initiative_Coherence_Specification.md).
+
 ## Authority model
 
 TADp uses a single authority hierarchy to decide which records govern the work:
@@ -144,8 +150,9 @@ The standard workflow is:
    readiness review before product execution.
 9. Maintain the type-specific execution or delivery record while performing
    only accepted work.
-10. Create completion evidence for the exact accepted claim and record
-    `Completed` only when every in-scope gate passes.
+10. Create completion evidence and the cross-initiative coherence review for
+    the exact accepted claim. Record `Completed` only when every in-scope gate
+    passes and incompatible efforts have a compatible disposition.
 11. Prepare the branch and pull request for review. Do not merge, deploy, or
     delete history without explicit approval.
 
@@ -177,10 +184,14 @@ For the full sequence and the ownership of each record, see
    workflow at `template/prompts/`.
 4. Copy the protected authoritative `evidence/authoritative/LLM/` suite into
    the same path in the target, preserving its scoped instructions and lock.
+   Preserve the distribution decision receipts linked by that suite under
+   `decisions/`; they retain their historical source identity and do not
+   constitute decisions for the adopting project's work.
 5. Copy the developer documentation, tools, and tests; run the protection check
    and configure `core.hooksPath=.githooks` in each clone or worktree.
 6. Complete `project-profile.md`, assign ownership for each source of evidence,
-   and create the initiative index and status record.
+   and create the initiative index, status record, and work-conflict register.
+   Capture the pre-adoption Git commit in the coherence baseline field.
 
 See [Getting started](docs/development/getting-started.md) for prerequisites,
 setup options, and the first validation run.
@@ -228,6 +239,7 @@ The complete documentation index is at [`docs/README.md`](docs/README.md).
 | [Legacy initiative decomposition](docs/guides/legacy-initiative-decomposition.md) | How to split an older, overly broad initiative safely |
 | [Workflow stage 0–13 migration](docs/guides/workflow-stage-0-13-migration.md) | How to migrate an active initiative to explicit acceptance and type-specific delivery paths |
 | [Version-realization-initiative correlation migration](docs/guides/version-realization-correlation-migration.md) | How to record the effective point and disposition or migrate legacy identities without inference |
+| [Initiative coherence migration](docs/guides/initiative-coherence-migration.md) | How to adopt open-work reviews, conflict records, feedback, and closed-claim preservation |
 
 ## Development and contribution
 

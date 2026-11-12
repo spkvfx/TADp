@@ -108,6 +108,21 @@ limitations, recommendations, missing evidence, and residual work. Reconcile it
 with `delivery-record.md` and append the legal `Completed` transition only when
 all records agree.
 
+Before that transition, complete the standard cross-initiative coherence
+review against an exact inventory baseline. Include every other current open
+initiative, including Proposed and partial effort, and affected closed claims.
+Record target states, effort evidence, findings, compatible dispositions, and
+links. Append factual conflicts to initiatives/work-conflicts.md and link
+the owning planning and completion evidence; this coordination record is the
+only additional project-level edit authorized by this review. Preserve both
+claims and effort, impact, owner, blocking scope, and required decision or
+evidence. Invariant contradictions also require the authoritative register.
+Stop completion when a conflict affects the accepted evidence claim. Hand
+findings to target owners through their workflow and branch; do not refine
+another initiative from this planning stage. A closed target requires explicit
+human reopening, a receipt, and a legal transition before refinement, and
+substantive changes require a successor tuple.
+
 Report every evidence artifact created or changed, delivery steps, source
 coverage, verification results, lifecycle and status updates, limitations,
 correlation verification, recommended follow-up, and remaining blocker. Do not create an ad hoc report

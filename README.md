@@ -128,6 +128,13 @@ Every lifecycle status is a claim that must be supported by evidence. When an
 initiative is reopened, TADp records the event and preserves its history.
 Reopening does not erase an earlier acceptance or completion.
 
+Open initiative effort counts as work to reconcile, including proposed and
+partially performed effort. Completion reviews consider the other open
+initiatives and route useful refinements through their governed workflows.
+Conflicting efforts remain visible in a work-conflict register; closed claims
+require explicit human reopening before refinement. See the
+[coherence rule](protocol/evidence/authoritative/LLM/10_Codex_Initiative_Coherence_Specification.md).
+
 ## What TADp provides
 
 - rules for ranking evidence so developers can separate binding authority from
@@ -175,3 +182,9 @@ prove that the product is correct or ready for production.
 TADp requires **Git** and **Codex**. Python 3 is also required to run the
 validator and its tests, although the validator uses only the Python standard
 library.
+
+For this repository's combined protocol and example, enable the root
+[pre-commit hook](.githooks/pre-commit) with `git config core.hooksPath .githooks`.
+It validates and guards both project trees. Set `TADP_PYTHON` to the configured
+Python executable when it is not the shell's default. Adopted standalone
+projects retain their project-local hook.

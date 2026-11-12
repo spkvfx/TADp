@@ -10,6 +10,13 @@ Initiatives must be coherent with one another, with
 every conflict explicitly; do not silently rewrite an initiative, product, or
 invariant to make another record appear aligned.
 
+Open effort counts as work, including proposed and partial work, without
+gaining accepted authority. Use the [work-conflict register](work-conflicts.md)
+to preserve incompatible efforts. Apply the
+[coherence specification](../evidence/authoritative/LLM/10_Codex_Initiative_Coherence_Specification.md)
+to completion feedback and require explicit reopening before refining closed
+claims. Substantive new claims retain the successor workflow.
+
 Every initiative must own one narrowly bounded outcome and one independently
 reviewable acceptance claim. Do not create umbrella or multi-purpose
 initiatives. Use separately scoped initiatives for independent outcomes.

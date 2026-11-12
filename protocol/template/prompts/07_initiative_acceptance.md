@@ -68,6 +68,10 @@ Before presenting the acceptance question, verify that:
 - every active blocking question has an explicit accepted answer or an
   authorized deferral whose re-entry condition does not block acceptance;
 - every normative claim is compatible with applicable authoritative evidence;
+- current open effort, including Proposed and partial work, and affected
+  closed claims have been reviewed against an identified inventory baseline;
+  work conflicts are preserved in initiatives/work-conflicts.md and affected
+  records, with no unresolved incompatibility blocking this acceptance;
 - the initiative type and permitted output boundary are unambiguous;
 - dependencies, owners, compatibility, migration, recovery, security,
   verification, release gates, and residual limitations are explicit; and

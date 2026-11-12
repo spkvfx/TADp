@@ -122,6 +122,29 @@ Every governed parent, sibling, and subinitiative has its own canonical work
 version, realization suite, initiative, and dedicated branch. A version is not
 an umbrella or release container.
 
+## Coherence with other work
+
+Proposed, planned, and partially delivered effort in open initiatives is work
+that must be included in coherence review; its existence does not create
+acceptance or authority. Review current open initiatives and affected closed
+claims at alignment and completion. Preserve each claim, lifecycle state,
+effort evidence, impact, and disposition. Link conflicts from affected records
+to the project `initiatives/work-conflicts.md`; also record invariant
+contradictions in the authoritative conflict register.
+
+Completion findings may refine open work through the target's authorized
+workflow, branch, and human gates. They do not authorize changes to another
+initiative, resolve its questions, or widen this initiative's declared type.
+Stop affected acceptance, execution, or completion while a conflicting claim
+remains incompatible. Independently owned follow-up may remain open only when
+it does not contradict the completed claim.
+
+A closed initiative (`Completed`, `Cancelled`, or `Superseded`) must be
+explicitly reopened with a human decision receipt and legal transition before
+refinement. Preserve the prior claim. A substantive change uses a successor
+tuple under the correlation rules. Append-only historical corrections and
+administrative links must not change earlier meaning.
+
 ## Products and placement
 
 Record every product output and its destination. A destination can be a
@@ -205,7 +228,9 @@ commits or revisions, and reconciliation current throughout delivery.
 when the initiative's permitted work reaches an evidence-backed terminal
 result. It records the exact bounded claim, authoritative-evidence coverage,
 outputs, verification, compatibility, residual scope, and cross-record
-reconciliation. It is required before `Completed`; it does not replace a
+reconciliation. Its cross-initiative coherence review inventories other open
+initiatives, affected closed claims, effort evidence, findings, and governed
+dispositions, including linked work conflicts. It is required before `Completed`; it does not replace a
 product record or expand a local result into a release or production claim.
 
 ## Human decision receipts
@@ -338,14 +363,20 @@ may cite that evidence separately.
 Every status change must be a legal lifecycle transition backed by the required
 evidence and appended to the lifecycle history. Reopening must preserve the
 prior accepted or completed claim and the explicit human authority for the
-change.
+change. Before refining a closed initiative, link the reopening decision
+receipt and record its return to `Proposed`, or to `Accepted` only under the
+explicit unchanged-claim exception. Historical corrections and successor
+links may be appended under `Historical correction`, `Successor references`,
+or `Administrative addendum` headings without changing earlier meaning.
 
 ## Authority and conflict discipline
 
 An initiative is authoritative for its declared status, scope, and stated
 outcome. An accepted initiative is authoritative for approved work. Every
 initiative must remain coherent with every other accepted initiative, applicable
-authoritative initiative evidence, and the products it governs. Record and
+authoritative initiative evidence, proposed and partial open work, and the
+products it governs. Open effort remains at its original evidence standing.
+Record and
 resolve every conflict explicitly; do not silently rewrite another initiative,
 a product record, or a cited invariant to make this initiative appear aligned.
 

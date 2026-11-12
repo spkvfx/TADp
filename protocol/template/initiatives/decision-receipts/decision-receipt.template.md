@@ -14,6 +14,15 @@ instructional comments, and preserve the exact prompt and response verbatim.
 **Disposition:** {{confirmed_corrected_not_applicable_accepted_deferred_cancelled_superseded_reopened_or_other_exact_result}}  
 **Git commit:** {{commit_or_pending}}  
 
+<!--
+For a reopening, set the exact field **Disposition:** Reopened and retain
+**Human authority:** with the responder and governing role.
+For an explicit unchanged-claim reopening directly to Accepted, add
+**Unchanged accepted claim:** Yes
+only when the exact human response confirms that exception. Otherwise the
+reopening returns to Proposed. Never infer the exception from older acceptance.
+-->
+
 ## Exact prompt or question
 
 {{verbatim_prompt_or_question_presented_to_the_human}}

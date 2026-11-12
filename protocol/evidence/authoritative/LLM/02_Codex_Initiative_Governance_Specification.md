@@ -135,8 +135,12 @@ identities to avoid a new initiative or human decision.
 
 ## Reopening and revising initiatives
 
-An initiative may be reopened or revised, including after acceptance or
-completion, but the change must be explicit and fully documented.
+An open initiative may be revised through its applicable workflow, but the
+change must be explicit and fully documented. A closed initiative must be
+explicitly reopened before its claim is refined. Only append-only factual
+historical corrections and administrative or successor references that retain
+the prior claim are exempt, as defined by the
+[coherence specification](10_Codex_Initiative_Coherence_Specification.md).
 
 Before changing substantive initiative meaning, Codex must record:
 
@@ -164,6 +168,14 @@ invariant-conflict procedure instead of revising the initiative into a
 contradictory state.
 
 ## Execution and completion
+
+Open initiative effort, including proposed and partially performed work, must
+be included in coherence and impact reviews without gaining accepted authority.
+Record incompatible work in `initiatives/work-conflicts.md` and affected
+initiative records; invariant contradictions also enter the invariant conflict
+register. Completion must review every other open initiative and affected
+closed claims, then reconcile blockers or route compatible refinements under
+specification 10. Completion never authorizes silent cross-initiative edits.
 
 Codex may execute work only when the initiative type permits that output and
 all required human decisions and entry gates are satisfied. It must implement

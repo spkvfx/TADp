@@ -78,6 +78,15 @@ silently rewrite a truthful historical transition.
 
 ## Reopening and revision
 
+`Completed`, `Cancelled`, and `Superseded` are closed. A closed initiative's
+claim must not be refined without a recorded human-authorized reopening.
+Append-only factual historical corrections and successor references that
+preserve the exact claim follow the narrow exceptions in the
+[coherence specification](10_Codex_Initiative_Coherence_Specification.md).
+An explicit revision instruction alone must not leave a changed claim in a
+terminal state. A substantive new claim follows specification 09's successor
+workflow rather than rewriting the predecessor.
+
 Before reopening or materially revising an initiative, preserve the earlier
 accepted or completed claim and record the human instruction that authorizes
 the change. Reconcile assumptions, decisions, architecture, evidence mapping,

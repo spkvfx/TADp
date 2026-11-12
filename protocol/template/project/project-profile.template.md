@@ -17,6 +17,8 @@ evidence, an accepted initiative, or a product contract.
 **Pull-request remote:** {{remote_name_or_not_configured}}  
 **Correlation revision effective point:** {{commit_or_not_yet_adopted}}
 **Correlation migration ledger:** [{{ledger_name}}]({{relative_migration_ledger_path}})
+**Coherence revision baseline:** {{pre_adoption_git_commit_or_not_yet_adopted}}
+**Work-conflict register:** [Work conflicts]({{relative_work_conflict_register_path}})
 **Last reviewed:** {{yyyy-mm-dd}}  
 
 ## Purpose
@@ -86,6 +88,14 @@ after the effective point receives a new tuple.
 | {{initiative_is_accepted_or_changes_status}} | {{scope_and_dependency_review}} | {{initiative_index}} |
 | {{product_is_released}} | {{traceability_and_verification_review}} | {{product_record}} |
 | {{scheduled_review}} | {{owner_and_staleness_review}} | {{this_profile_and_affected_records}} |
+| Initiative alignment or completion | Compare current open effort and affected closed claims; preserve and route incompatibilities | Owning review, completion evidence, and work-conflict register |
+
+The coherence revision baseline identifies the Git commit immediately before
+adoption. Historical terminal claims are preserved without retroactive review;
+new or changed work follows the adopted coherence rule. Open effort counts as
+work to reconcile, not as authority or execution approval. Refine closed
+initiatives only after explicit human reopening; substantive claim changes
+still require a successor tuple.
 
 ## Git workflow
 

@@ -35,7 +35,8 @@ template edit.
   Stage 0.
 - [Project templates](project/README.md) define project profile and initiative
   indexes, the canonical realization-suite index, and the pre-effective
-  correlation migration ledger.
+  correlation migration ledger, plus the work-conflict register and coherence
+  adoption baseline.
 - [Initiative prompts](prompts/README.md) provide focused workflows for
   preparing an initiative branch, proposal creation and alignment, initiative
   creation and alignment, human-led assumption and decision reviews, explicit

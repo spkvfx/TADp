@@ -63,6 +63,41 @@ This record does not claim {{explicitly_excluded_release_deployment_or_follow_up
 No unfinished requirement may disappear from this record. Every residual item
 must have a truthful disposition and owner.
 
+## Cross-initiative coherence review
+
+**Inventory baseline:** {{git_commit_or_exact_inventory_revision_reviewed}}
+**Work-conflict register:** {{link_to_project_initiatives_work_conflicts}}
+
+Review every other open initiative (`Proposed`, `Accepted`, or `In progress`)
+and every affected closed initiative (`Completed`, `Cancelled`, or
+`Superseded`). Include proposed, planned, and partially delivered effort as
+work while retaining its evidence standing. Add one row per target; if there
+are no other active targets or affected closed targets, say so explicitly.
+Use `No other active initiatives; no affected closed targets.` for that result
+and retain the empty table with supporting inventory evidence.
+
+| Target initiative | Lifecycle state | Work and effort evidence | Finding | Disposition | Record links |
+|---|---|---|---|---|---|
+| {{initiative_id_and_link}} | {{current_state}} | {{linked_claim_plan_partial_work_or_verified_output}} | {{compatible_refinement_needed_or_conflict}} | {{reconciled_or_owned_governed_follow_up_with_re_entry_condition}} | {{review_conflict_decision_or_handoff_links}} |
+
+Completion findings may refine open initiative effort only through an
+authorized operation and branch, preserving the target's workflow and human
+gates. Record both conflicting claims,
+their effort, impact, owner, and disposition in the project work-conflict
+register and affected records. Also record any invariant contradiction in the
+authoritative invariant conflict register. An unresolved conflict affecting
+this completion claim blocks completion; transferring incompatible work does
+not resolve it.
+Prefix incompatible findings with `Conflict:` and link the specific
+work-conflict register entry in `Record links`, using its stable
+`#work-conflict-NNN` anchor; the ID must exist in the project register.
+
+Do not refine a closed initiative without explicit human reopening authority,
+a linked receipt, and a recorded legal transition. Preserve its prior claim.
+A substantive change requires a successor tuple; a successor may cite the
+closed predecessor without modifying its claim. Review and referral do not
+authorize another initiative's changes or resolve its open questions.
+
 ## Cross-record reconciliation
 
 - [ ] The acceptance receipt identifies the same accepted baseline and bounded
@@ -77,6 +112,8 @@ must have a truthful disposition and owner.
 - [ ] Work version, suite, initiative, branch, and captured base agree with the
       canonical correlation row and reciprocal records.
 - [ ] Open conflicts and exceptions remain visible.
+- [ ] The cross-initiative coherence review covers current open work and
+      affected closed claims; every finding has a compatible disposition.
 
 ## Completion determination
 

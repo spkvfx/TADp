@@ -86,6 +86,13 @@ Before changing tracking or Git state, verify that:
   explicit and does not contradict the completed claim;
 - `{initiative_path}/completion-evidence.md` states the exact completed claim
   and provides evidence for every applicable acceptance and verification gate;
+- the completion evidence's cross-initiative coherence review records its
+  inventory baseline, every other current open initiative (including Proposed
+  and partial effort), affected closed claims, findings, compatible
+  dispositions, and links to the project work-conflict register;
+- no unresolved work conflict contradicts the completed claim, and the branch
+  diff does not refine a closed initiative without a new explicit human
+  reopening receipt and legal transition; substantive changes use successors;
 - the linked acceptance receipt names the same accepted baseline and exact
   bounded claim, and no later delivery record silently revises that baseline;
 - an `implementation` initiative also has an
@@ -131,6 +138,10 @@ finalization:
 5. Confirm that the canonical row retains the allocated branch and captured
    base identity, and that any absent historical ref has separately authorized
    removal evidence. Do not delete or free the branch identity in this stage.
+6. Confirm the coherence review remains current against open work and affected
+   closed claims at finalization. Preserve documented effort and conflict
+   history. Return stale or incompatible findings to the owning workflow;
+   finalization must not refine another initiative or manufacture reopening.
 
 If a completion or tracking record is missing, stale, inconsistent, or not
 supported by completion evidence, stop and return it to the appropriate

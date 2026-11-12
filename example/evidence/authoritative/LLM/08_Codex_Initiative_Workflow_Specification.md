@@ -53,6 +53,9 @@ Every stage must:
 8. For a tuple governed by specification 09, verify the canonical work
    version, suite, initiative, branch, captured base, and reciprocal links
    before consuming or changing the initiative.
+9. Apply the [coherence specification](10_Codex_Initiative_Coherence_Specification.md):
+   include relevant open initiative effort as work, record incompatible
+   efforts, and preserve closed claims until explicit human reopening.
 
 No stage may use urgency, a recommendation, implementation convenience, or the
 existence of later work to infer an earlier gate.
@@ -132,6 +135,11 @@ decisions, create products, or conceal a required decomposition.
 Exit requires either a coherent proposed specification ready for human gates or
 an explicit blocker, conflict, or decomposition requirement.
 
+The alignment inventory includes proposed and partially performed effort in
+other open initiatives. Record incompatible work in the project work-conflict
+register and affected initiative records, retaining source authority and human
+gates. The existence of a completed product does not erase open effort.
+
 ### Stages 5 and 6: human decision reviews
 
 Entry requires stable source IDs, complete source text, applicable evidence,
@@ -202,6 +210,9 @@ inside the design completion claim.
 Entry requires an accepted planning initiative and a current accepted baseline.
 The stage may create only its declared initiative-local evidence outputs. It
 must not change a product, another initiative, or an existing specification.
+Specification 10 additionally permits factual recording in the project
+work-conflict register; this coordination record does not change either
+work claim or authorize its resolution.
 
 When evidence work begins, record `In progress`. Exit requires every accepted
 research, audit, comparison, inventory, or recommendation output;
@@ -296,6 +307,17 @@ fact. A substantive scope revision returns through the documented revision and
 acceptance workflow.
 
 ## Cross-stage reconciliation
+
+All three delivery paths require the specification 10 cross-initiative
+coherence review in completion evidence before recording `Completed`.
+Inventory every other open initiative, include affected closed claims,
+document incompatible effort, and route compatible feedback to its owning
+workflow. Finalization verifies the review against material inventory drift
+and the branch diff. A handoff does not authorize implementation or planning
+to change another initiative's specifications, waive human decisions, or
+refine a closed target without explicit reopening. A compatible future
+refinement may remain open only when its owned handoff does not invalidate
+the completing initiative's exact accepted claim.
 
 Before every handoff, reconcile the records owned by the current stage with the
 initiative README, source mapping, lifecycle history, status, registry, parent

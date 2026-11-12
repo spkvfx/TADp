@@ -49,6 +49,9 @@ Read these documents in order when first adopting or maintaining TADp:
 - [Version-realization-initiative correlation migration](guides/version-realization-correlation-migration.md)
   explains effective-point adoption, non-inferred legacy dispositions, and
   separately governed tuple migration.
+- [Initiative coherence migration](guides/initiative-coherence-migration.md)
+  explains how to account for open effort, document work conflicts, review
+  completion feedback, and preserve closed claims during adoption.
 
 ## Documentation maintenance
 

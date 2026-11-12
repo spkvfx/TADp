@@ -22,7 +22,13 @@ consumers, validator behavior, tests, and refreshed protocol and example locks
 
 **Correlation migration ledger:** [Version-correlation migration ledger](initiatives/version-correlation-migration-ledger.md)
 
-**Last reviewed:** 2026-11-11
+**Coherence revision baseline:** `7b9d302b3dc7a94627518e42819a3130b5ba17d3`
+
+**Work-conflict register:** [Work conflicts](initiatives/work-conflicts.md)
+
+**Coherence adoption authority:** [COH-DR-001](decisions/COH-DR-001-initiative-coherence.md)
+
+**Last reviewed:** 2026-11-12
 
 ## Purpose
 
@@ -92,12 +98,20 @@ migrated.
 
 ## Operating cadence
 
+The [coherence revision](evidence/authoritative/LLM/10_Codex_Initiative_Coherence_Specification.md)
+applies to new work and later refinement from the recorded pre-adoption
+baseline. Consider open initiative effort as work without promoting its
+authority. Preserve closed claims, record incompatible efforts, and review
+every open target at completion. Historical terminal records retain their
+earlier evidence without invented retrospective reviews.
+
 | Event | Required review | Record to update |
 |---|---|---|
 | New or revised authoritative evidence | Authority, compatibility, migration, and consumer review | Authoritative suite, affected initiative, and project tracking |
 | Initiative receives an ID or changes status | Scope, tuple identity, dependency, and lifecycle-evidence review | Initiative index, status view, and initiative README |
 | Protected source changes | Exact authority, affected consumers, verification, and lock review | Protected source, lock, delivery record, and completion evidence |
 | Validator or test changes | Accepted protocol basis and positive/negative regression review | Implementation initiative, tools, tests, and documentation |
+| Initiative alignment, acceptance, or completion | Open effort, partial and delivered work, conflicts, and owned feedback | Work-conflict register, owning review, and completion evidence |
 
 ## Git workflow
 
@@ -118,3 +132,4 @@ from a captured clean base.
 |---|---|---|---|
 | 2026-11-10 | Instantiated the protocol project profile and branch convention | Provide the ownership and tracking prerequisite for INIT-DSN-001 | User |
 | 2026-11-11 | Adopted the version-realization-initiative correlation revision and linked the legacy ledger | Establish the effective-point and compatibility records authorized by the repository prompt | User |
+| 2026-11-12 | Adopted initiative coherence and completion-feedback controls from the captured pre-revision baseline | User's specific rule in COH-DR-001; retain closed claims and existing human gates | User |
