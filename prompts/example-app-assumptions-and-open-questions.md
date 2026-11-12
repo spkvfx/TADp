@@ -1,7 +1,5 @@
 # Robotically answer every example-app question and confirm its assumptions
 
-[tadp:robotic]
-
 Execute this task from the TADp repository root. Read the repository
 `AGENTS.md`, `prompts/AGENTS.md`, and the canonical prompt keyword specification
 before acting. This is a repository-level analysis of the Example Record
@@ -398,5 +396,3 @@ its own authorized reconciliation; this prompt leaves no records there.
    the example app and that no canonical app files or lifecycle states were
    changed. At prompt end the robotic setting does not carry into another
    task; resumed work retains its recorded source prompt and block identity.
-
-[tadp:!robotic]
