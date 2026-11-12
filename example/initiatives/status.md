@@ -24,10 +24,11 @@ verification.
 | `v2.1` | [`INIT-IMP-003`](implementation/INIT-IMP-003-api-sqlite-runtime/README.md) | [`RZN-001-P2-API-SQLITE-SUITE`](../evidence/non-authoritative/realizations/v2.1/00-RZN-001-P2-API-SQLITE-suite-index.md) | `implementation` | Proposed | Stages 0–4 complete; Proposed record aligned | Stage 5 assumption-confirmation review | [`API-01`–`API-06`](implementation/INIT-IMP-003-api-sqlite-runtime/open-questions.md#decision-register) remain open; assumptions await human review | [Lifecycle history](implementation/INIT-IMP-003-api-sqlite-runtime/README.md#initiative-lifecycle) | User | 2026-11-11 |
 | `v2.2` | [`INIT-IMP-004`](implementation/INIT-IMP-004-python-sdk/README.md) | [`RZN-001-P2-SDK-SUITE`](../evidence/non-authoritative/realizations/v2.2/00-RZN-001-P2-SDK-suite-index.md) | `implementation` | Proposed | Stages 0–4 complete; Proposed record aligned | Stage 5 assumption-confirmation review | [`SDK-01`–`SDK-06`](implementation/INIT-IMP-004-python-sdk/open-questions.md#decision-register) remain open; assumptions await human review | [Lifecycle history](implementation/INIT-IMP-004-python-sdk/README.md#initiative-lifecycle) | User | 2026-11-11 |
 | `v3.0` | [`INIT-IMP-005`](implementation/INIT-IMP-005-standalone-cli-image/README.md) | [`RZN-001-P3-CLI-SUITE`](../evidence/non-authoritative/realizations/v3.0/00-RZN-001-P3-CLI-suite-index.md) | `implementation` | Proposed | Stages 0–4 complete; Proposed record aligned | Stage 5 assumption-confirmation review | [`CLI-01`–`CLI-06`](implementation/INIT-IMP-005-standalone-cli-image/open-questions.md#decision-register) remain open; assumptions await human review | [Lifecycle history](implementation/INIT-IMP-005-standalone-cli-image/README.md#initiative-lifecycle) | User | 2026-11-11 |
+| `v4.0` | [`INIT-IMP-006`](implementation/INIT-IMP-006-web-application-bundle/README.md) | [`RZN-001-P4-WEB-SUITE`](../evidence/non-authoritative/realizations/v4.0/00-RZN-001-P4-WEB-suite-index.md) | `implementation` | Proposed | Stages 0–4 complete; Proposed record aligned | Stage 5 assumption-confirmation review | [`WEB-01`–`WEB-07`](implementation/INIT-IMP-006-web-application-bundle/open-questions.md#decision-register) remain open; assumptions await human review | [Lifecycle history](implementation/INIT-IMP-006-web-application-bundle/README.md#initiative-lifecycle) | User | 2026-11-11 |
 
-The `v1.0`, `v2.0`, `v2.1`, `v2.2`, and `v3.0` initiatives have canonical
-correlation rows and remain `Proposed`. Other pre-effective realization suites
-remain non-authoritative inputs with their dispositions recorded in the
+All six named initiatives have canonical correlation rows and remain
+`Proposed`. The original broad `v0.0` realization remains non-authoritative
+under its `Unmigrated` disposition in the
 [migration ledger](version-correlation-migration-ledger.md).
 
 ## Portfolio gates
