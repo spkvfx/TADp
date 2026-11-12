@@ -84,9 +84,14 @@ refinement within the reviewed Git history.
 Existing protocol and example initiative suites and the example's authoritative
 invariant-conflict register have no changes in the final diff.
 
-**Guarded delivery commit:** Pending; the enclosing repository hook will run
-both project validators and staged protected-source guards for the local
-commit. The one-commit protected-update authority will not be persisted.
+**Guarded delivery commit:** `0ac8c32a95169c902fb14b0a6549af097a24274c`
+
+The enclosing repository hook ran both project validators and staged
+protected-source guards successfully for this commit. The one-commit
+protected-update authority was not persisted. The first commit attempt was
+blocked before recording a commit because the combined hook inherited
+relative Git paths; normalizing its Git directory, worktree, and actual index
+to absolute paths corrected the nested-project check without bypassing it.
 
 ## Limits and remaining work
 
