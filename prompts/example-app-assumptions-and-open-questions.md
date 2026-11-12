@@ -3,7 +3,10 @@
 Execute this task from the TADp repository root. Read the repository
 `AGENTS.md`, `prompts/AGENTS.md`, and the canonical prompt keyword specification
 before acting. This is a repository-level analysis of the Example Record
-Application, with `example/initiatives/v1/README.md` as the entry reference.
+Application, with
+`example/evidence/non-authoritative/realizations/v0.0/RZN-001-example-record-application.md`
+as the original intent and sequencing reference, and
+`example/initiatives/v1/README.md` as the initiative entry reference.
 The requested deliverable is a complete decision report outside the example
 app; do not apply the report to the app.
 
@@ -68,6 +71,15 @@ inside the app.
    identity, governing revision, standing, and existing exceptions; copying a
    source into the report does not promote its authority.
 
+   Then read the original `v0.0/RZN-001` realization named above, especially
+   "Candidate product sequence", "Documentation and implementation feedback
+   loop", and "Historical suggested next step and current handoff". Follow
+   its authoritative reconciliation to `ADR-007` for the current D1-D6
+   decomposition and order, and `ADR-006` for versioned feedback. Preserve the
+   original intent without promoting historical wording over those accepted
+   decisions. Map historical `RZN-001-Q01` through `Q17` to their current
+   authoritative dispositions; their presence in v0 does not reopen them.
+
    Resolve the repository root and verify that the output directory is outside
    `example/` and all protected trees, including after path indirection. Capture
    the current branch, commit, staged, unstaged, and untracked paths before any
@@ -105,13 +117,65 @@ inside the app.
    wording. Record exclusions with reasons and source links. Do not silently
    reopen a previously answered question.
 
+   Assign each item to its owning D1-D6 analytical phase below, retaining its
+   source-ID links and cross-phase dependencies. Map v0 Product 1 to D1,
+   Product 2 to D2-D4 (the accepted Docker-platform addition and API/SDK split),
+   Product 3 to D5, and Product 4 to D6. Scope numbers, directory order, and
+   apparent lack of a code dependency must not replace this schedule. A
+   cross-cutting item retains one owner and is checked by later consumers;
+   earlier phases may state requirements for it without preselecting a later
+   phase's implementation answer.
+
 3. Evaluate every item independently using the following method.
 
-   Work in actual dependency order. Independent items may be assessed in
-   parallel with separate records; serialize shared writes and reconcile
-   dependencies before final selection. Independent reasoning does not mean
-   ignoring another decision's constraints or inventing a separate answer to
-   an already binding contract.
+   Execute these analytical phases serially, in this exact order. Complete
+   every item's assessment, phase consistency check, and recorded handoff
+   before beginning the next phase's evaluation. Whole-app discovery and
+   read-only dependency inspection may precede the phases; they do not permit
+   speculative decisions in later phases. Parallel assessment is permitted
+   only for independent items within the current phase, with separate records
+   and serialized shared writes. Use the per-item method below in every phase.
+
+   1. D1: Assess contract-documentation assumptions and questions. Identify the
+      exact governing contract revision and the proposed documentation baseline
+      that subsequent analytical phases will consume; claim no SDK/API
+      implementation or observed behavior.
+   2. D2: Assess container-platform and runtime-packaging items against the D1
+      baseline, keeping platform topology and artifact evidence distinct from
+      API/domain behavior.
+   3. D3: Assess API and SQLite runtime-image items against the identified D1
+      contract and compatible D2 platform selections.
+   4. D4: Assess Python SDK items against D1/D2 and the D3 API contract and
+      compatibility selections. Complete the documentation-feedback checkpoint
+      described below before handing off to D5.
+   5. D5: Assess standalone CLI-image items against the recorded D1-D4
+      selections, including the exact proposed SDK/API compatibility boundary.
+   6. D6: Assess web-bundle items last. Preserve the explicit after-D5
+      sequencing gate even though the browser does not depend on CLI code.
+
+   Record each phase's input revisions or report anchors, per-item results,
+   checks, remaining evidence gaps, and output handoff. These are analytical
+   checkpoints, not accepted or completed products. Missing acceptance, live
+   API conformance, artifact hashes, or release evidence remains missing; do
+   not invent it to advance the report. An unresolved item must receive its
+   precise evidence-gap disposition before handoff, and any dependent later
+   answer must remain conditional or unresolved. Do not skip an unassessed
+   item or claim a blocked phase finished.
+
+   At the D4-to-D5 handoff, review D2-D4 findings against the D1 baseline under
+   the v0 feedback loop and `ADR-006`. Preserve which documentation/contract
+   revision guided each API/SDK selection. Distinguish proposed design
+   implications from actual observed implementation evidence. If a finding
+   warrants documentation or contract refinement, record the proposed change
+   classification, successor/revision identity, compatibility consequences,
+   and required authority in the report; retain the previous baseline and
+   re-evaluate affected D2-D4 answers against the proposed revision before
+   handing off. An unaccepted change remains a proposal, and dependent answers
+   stay conditional. Never rewrite the app documentation or simulate live
+   verification as part of this checkpoint.
+
+   Independent reasoning does not mean ignoring another decision's constraints
+   or inventing a separate answer to an already binding contract.
 
    For each assumption, identify its exact claim and test it against the
    governing architecture, security boundaries, source evidence, and other
@@ -168,7 +232,10 @@ inside the app.
    interfaces, dependency order, security/data limits, environments, review
    responsibilities, compatibility, failure/recovery, and verification gates.
    Revisit affected individual answers when reconciliation changes them,
-   preserving the rationale and dependencies for each source ID. Do not merge
+   preserving the rationale and dependencies for each source ID. Later CLI or
+   web findings that affect an earlier phase must use the same explicit
+   versioned feedback process and renewed downstream consistency checks;
+   retain the original phase sequence and every revised handoff. Do not merge
    separately acceptable outcomes into an umbrella initiative.
 
    Preserve discovered invariant contradictions and incompatible efforts in
@@ -200,12 +267,16 @@ inside the app.
    Account for every discovered initiative and all exclusions. Reconcile
    total discovered assumptions and open questions against assessed, answered,
    conditional, and unresolved totals; repeats must not inflate coverage.
+   Include the v0-product-to-D1-D6 mapping, each item's owning phase, and the
+   serial phase/handoff record, including feedback revisions and unmet actual
+   product gates. Present decision records in that phase order.
    A summary or shared rationale must not substitute for individual records.
 
    Obtain a distinct independent review of coverage, evidence quality,
    anti-anchoring reasoning, concrete answer quality, cross-initiative
-   coherence, authority limits, and the read-only example boundary. Record
-   findings and their reconciliation in `review.md` in the same report
+   coherence, v0/ADR-007 phase order and ADR-006 feedback, authority limits,
+   and the read-only example boundary. Record findings and their
+   reconciliation in `review.md` in the same report
    directory. An unavailable reviewer remains an unmet review requirement.
 
 6. Verify the output boundary and report the actual result.
