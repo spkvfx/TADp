@@ -90,6 +90,19 @@ initiative-specific document cannot replace a missing standard record merely
 because it covers a similar topic. Report any template deviation; do not rename,
 migrate, or normalize it in this alignment workflow.
 
+Inventory the other open initiatives, including Proposed effort, and affected
+closed claims against an exact Git baseline. Compare intended outcomes,
+dependencies, planned work, partial delivery, and verified outputs; open effort
+is work to reconcile but does not gain authority from existing. Record findings
+and effort evidence in the target's existing source mapping and dependency
+records. Append incompatibilities to initiatives/work-conflicts.md and link
+the affected records; also use the authoritative register for invariant
+contradictions. Preserve both claims and effort, impact, owner, blocking scope,
+and the decision or evidence required. This prompt may append factual work
+conflicts to that project register; it must not resolve human choices, refine
+another initiative, or silently discard its work. A closed target must be
+explicitly reopened before refinement; substantive changes need a successor.
+
 Before editing, read the target's declared initiative type and classify each
 proposed output. An `implementation` initiative must not modify an existing
 specification; report a needed specification change for a `design` initiative.

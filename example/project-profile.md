@@ -22,7 +22,13 @@
 
 **Correlation migration ledger:** [Version-correlation migration ledger](initiatives/version-correlation-migration-ledger.md)
 
-**Last reviewed:** 2026-11-11
+**Coherence revision baseline:** `7b9d302b3dc7a94627518e42819a3130b5ba17d3`
+
+**Work-conflict register:** [Work conflicts](initiatives/work-conflicts.md)
+
+**Coherence adoption authority:** [COH-DR-001](decisions/COH-DR-001-initiative-coherence.md)
+
+**Last reviewed:** 2026-11-12
 
 ## Purpose
 
@@ -118,12 +124,21 @@ into its parent, a sibling, another scaffold, or another repository.
 
 ## Operating cadence
 
+The [coherence revision](evidence/authoritative/LLM/10_Codex_Initiative_Coherence_Specification.md)
+applies to all six existing Proposed initiatives and subsequent work from the
+recorded pre-adoption baseline. Their effort counts as work to reconcile;
+their questions, assumptions, accepted authority boundaries, and lifecycle
+standing do not change through adoption. At each material handoff, document
+incompatible efforts and route completion feedback through the target's
+governed workflow. Preserve historical closed claims until explicit reopening.
+
 | Event | Required review | Record to update |
 |---|---|---|
 | New or revised authoritative evidence | Authority, compatibility, migration, and affected-consumer review | Evidence suite, affected initiative, profile, and tracking records |
 | Initiative receives a tuple or changes lifecycle state | Scope, reciprocal identity, dependency, and lifecycle-evidence review | Initiative index, status view, suite index, and initiative README |
 | Product work begins or delivery evidence changes | Accepted scope, target, security, compatibility, and verification review | Initiative execution record, product record, and completion evidence |
 | Before every workflow handoff | Branch, tuple, source standing, blockers, and owned-record reconciliation | Records named by the stage exit contract |
+| Initiative alignment, acceptance, or completion | Open effort, partial and delivered work, conflicts, and owned feedback | Work-conflict register, owning review, and completion evidence |
 
 ## Git workflow
 
@@ -152,3 +167,4 @@ installed example but nowhere else in the enclosing TADp repository.
 |---|---|---|---|
 | 2026-11-11 | Instantiated the project profile, canonical initiative index, status view, and legacy correlation ledger | The correlation records were introduced after the example was first drafted; the User explicitly instructed their creation without authorizing inferred tuples | User |
 | 2026-11-11 | Recorded the project-wide embedded-example-root exception | Treat `example/` as the complete example project's root while using the enclosing worktree only for Git mechanics and leaving the generic Git-root invariant unchanged elsewhere | User via [EX-GIT-DR-001](initiatives/decision-receipts/EX-GIT-DR-001-enclosing-worktree-exception.md) |
+| 2026-11-12 | Adopted initiative coherence and completion-feedback controls from the captured pre-revision baseline | Apply User's COH-DR-001 rule to open effort without answering questions, accepting initiatives, or changing the Git-root exception | User |

@@ -61,6 +61,14 @@ Useful starting points are:
 
 ## Project-local prompts
 
+The [initiative coherence rule](evidence/authoritative/LLM/10_Codex_Initiative_Coherence_Specification.md)
+applies to the example and its installed template suites. Proposed and partial
+initiative effort counts as work to reconcile, while its authority remains
+explicit. Record incompatible efforts in the
+[work-conflict register](initiatives/work-conflicts.md); use completion reviews
+to route refinements to open initiatives. Closed claims require explicit
+human reopening before refinement.
+
 The example's root [`prompts/` workspace](prompts/README.md) holds
 non-authoritative instructions about this scaffold. Its
 [`AGENTS.md`](prompts/AGENTS.md) resolves and enforces the example boundary.

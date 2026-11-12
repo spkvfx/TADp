@@ -24,6 +24,16 @@ override without the same explicit authority.
   evidence.
 - Treat realizations as broad inputs and initiatives as the coherent, bounded
   specifications for work.
+- Count open initiative effort as work in coherence review without promoting
+  its evidence standing. Before completion, compare current open work and
+  affected closed claims; preserve incompatible claims and effort in
+  `initiatives/work-conflicts.md` and affected records. Invariant conflicts
+  also require the authoritative conflict register. Stop affected incompatible
+  acceptance, execution, or completion.
+- Refine open initiatives only through their authorized workflow and human
+  gates. Never refine a closed initiative before explicit human reopening,
+  a linked receipt, and a legal transition. Preserve prior claims and use a
+  successor tuple for substantive changes.
 - Require one narrow outcome and acceptance claim. Split independent outcomes;
   use a subinitiative only inside a real parent specification.
 - Require explicit human decisions for assumptions, questions, lifecycle

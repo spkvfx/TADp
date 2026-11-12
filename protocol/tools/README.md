@@ -26,6 +26,24 @@ legacy migration dispositions. Its checks grow with the binding TADp
 specifications; passing validation never replaces human acceptance, delivery
 verification, or product verification.
 
+After the project profile records a resolved `Coherence revision baseline`,
+validation also checks the work-conflict register, completion reviews of every
+other open initiative, and terminal-record preservation against Git. Proposed
+effort is included in the review without gaining authority. Historical closed
+claims preserved at the adoption baseline do not acquire invented reviews.
+
+The terminal comparison defaults to `HEAD`. Use a captured integration or
+merge-base commit to review a whole branch:
+
+```powershell
+python tools/tadp_validate.py . --base-ref <captured-base-commit>
+```
+
+The guard detects record edits and missing reopening evidence; it cannot judge
+semantic compatibility or whether the named human had authority. See the
+[coherence migration guide](../docs/guides/initiative-coherence-migration.md)
+for the separate adoption-baseline and comparison-base roles.
+
 The path supplied to the validator must be the protocol or adopted TADp root
 and must be contained in a valid Git repository. The Git metadata may be at
 that path or an ancestor, as it is in this reference repository where

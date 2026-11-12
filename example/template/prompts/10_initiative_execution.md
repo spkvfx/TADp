@@ -252,6 +252,18 @@ unless an accepted implementation step expressly authorizes that target.
 Keep the initiative's lifecycle and tracking truthful. Record `In progress`
 only when implementation has actually begun, and record execution completion
 only after every in-scope acceptance and qualification gate has evidence.
+Before recording completion, perform the cross-initiative coherence review in
+the standard completion template. Review every other current open initiative,
+including Proposed and partial effort, and affected closed claims against an
+exact inventory baseline. Record target lifecycle, linked effort evidence,
+finding, compatible disposition, and record links. Append factual work
+conflicts to initiatives/work-conflicts.md and link the owning execution and
+completion records; invariant contradictions also require the authoritative
+register. Stop completion if a conflict affects the accepted claim. Route
+specification refinement to design and consumer follow-up through the target's
+own workflow and branch; do not edit another initiative's specification.
+Never refine a closed initiative without explicit human reopening, a linked
+receipt, and a legal transition. Substantive changes require a successor tuple.
 When every gate passes, create or update
 `{initiative_path}/completion-evidence.md` from the shared template and state
 the exact completed claim, evidence for every acceptance condition, verification

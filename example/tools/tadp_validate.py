@@ -5,8 +5,10 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import io
 import json
 import re
+import subprocess
 import sys
 from dataclasses import asdict, dataclass
 from pathlib import Path, PurePosixPath
@@ -32,6 +34,15 @@ COMMIT_ID = re.compile(r"^[0-9a-fA-F]{7,40}$")
 MARKDOWN_CELL_LINK = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
 CORRELATION_EFFECTIVE_POINT = re.compile(
     r"(?im)^\*\*Correlation revision effective point:\*\*\s*(.+)$"
+)
+
+COHERENCE_REVIEW_HEADERS = (
+    "Target initiative", "Lifecycle state", "Work and effort evidence",
+    "Finding", "Disposition", "Record links",
+)
+WORK_CONFLICT_HEADERS = (
+    "ID", "Source work", "Conflicting work", "States and effort",
+    "Conflict and impact", "Owner", "Status", "Disposition and evidence",
 )
 
 CORRELATION_HEADERS = (
@@ -248,7 +259,7 @@ def plain_cell(cell: str) -> str:
 
 def metadata_value(text: str, label: str) -> str | None:
     match = re.search(
-        rf"(?im)^\*\*{re.escape(label)}:\*\*\s*([^\r\n]+)", text
+        rf"(?im)^\*\*{re.escape(label)}:\*\*[ \t]*([^\r\n]+)", text
     )
     return match.group(1).strip().rstrip("  ") if match else None
 
@@ -1531,6 +1542,443 @@ def validate_version_correlation(root: Path) -> list[Finding]:
     return findings
 
 
+def coherence_git(root: Path, *arguments: str, input_data: bytes | None = None) -> bytes:
+    """Read Git evidence without changing refs, the index, or working files."""
+    result = subprocess.run(
+        ("git", "-C", str(root), *arguments),
+        input=input_data, stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=False,
+    )
+    if result.returncode:
+        raise ValueError(result.stderr.decode("utf-8", errors="replace").strip())
+    return result.stdout
+
+
+def coherence_commit(root: Path, ref: str) -> str:
+    if not ref or ref.startswith("-"):
+        raise ValueError("a non-option Git revision is required")
+    return coherence_git(
+        root, "rev-parse", "--verify", "--end-of-options", f"{ref}^{{commit}}"
+    ).decode("ascii").strip()
+
+
+def coherence_snapshot(root: Path, commit: str, prefix: str) -> dict[str, bytes]:
+    entries = coherence_git(root, "ls-tree", "-r", "-z", commit, "--", prefix).split(b"\0")
+    objects: list[tuple[str, bytes]] = []
+    for entry in entries:
+        if not entry:
+            continue
+        metadata, name = entry.split(b"\t", 1)
+        _, kind, object_id = metadata.split()
+        if kind == b"blob":
+            objects.append((name.decode("utf-8"), object_id))
+    if not objects:
+        return {}
+    # Batch raw blobs, preserving bytes and ignoring export-ignore attributes.
+    stream = io.BytesIO(coherence_git(
+        root, "cat-file", "--batch", input_data=b"\n".join(oid for _, oid in objects) + b"\n"
+    ))
+    result: dict[str, bytes] = {}
+    for name, object_id in objects:
+        header = stream.readline().split()
+        if len(header) != 3 or header[:2] != [object_id, b"blob"]:
+            raise ValueError("cannot read exact initiative blob from Git")
+        size = int(header[2])
+        content = stream.read(size)
+        if len(content) != size or stream.read(1) != b"\n":
+            raise ValueError("incomplete initiative blob in Git response")
+        result[name] = content
+    return result
+
+
+def coherence_text(content: bytes) -> str:
+    return content.decode("utf-8").replace("\r\n", "\n").replace("\r", "\n")
+
+
+def coherence_history(text: str) -> list[list[str]]:
+    history = LIFECYCLE_SECTION.search(text)
+    if not history:
+        return []
+    return [
+        [plain_cell(cell) for cell in split_markdown_row(line)]
+        for line in history.group(1).splitlines()
+        if line.lstrip().startswith("|")
+        and len(split_markdown_row(line)) >= 4
+        and plain_cell(split_markdown_row(line)[2]) in ALLOWED_STATUSES
+    ]
+
+
+def coherence_content(path: Path, git_root: Path, snapshot: dict[str, bytes] | None) -> bytes | None:
+    if snapshot is not None:
+        return snapshot.get(relative(path, git_root))
+    return path.read_bytes() if path.is_file() else None
+
+
+def coherence_reopened(
+    prior_text: str, current_text: str, readme: Path,
+    previous_files: dict[str, bytes], git_root: Path,
+    current_files: dict[str, bytes] | None = None,
+) -> bool:
+    """A new, appended reopening needs a new receipt, never an old approval."""
+    before = coherence_history(prior_text)
+    after = coherence_history(current_text)
+    if not before or after[:len(before)] != before or len(after) <= len(before):
+        return False
+    row = after[len(before)]
+    if row[1] not in TERMINAL_STATUSES or row[2] not in ACTIVE_STATUSES:
+        return False
+    if row[2] not in {"Proposed", "Accepted"}:
+        return False
+    # Inspect only the transition's authority cell, not unrelated README links.
+    history = LIFECYCLE_SECTION.search(current_text)
+    assert history is not None
+    raw_rows = [
+        split_markdown_row(line)
+        for line in history.group(1).splitlines()
+        if line.lstrip().startswith("|")
+        and len(split_markdown_row(line)) >= 4
+        and plain_cell(split_markdown_row(line)[2]) in ALLOWED_STATUSES
+    ]
+    authority_cell = raw_rows[len(before)][3]
+    for target in MARKDOWN_LINK.findall(authority_cell):
+        if target.startswith(("http:", "https:", "mailto:")):
+            continue
+        receipt = (readme.parent / unquote(target.split("#", 1)[0])).resolve()
+        if receipt.parent != (readme.parent / "decision-receipts").resolve():
+            continue
+        if not resolves_within(receipt, git_root):
+            continue
+        if relative(receipt, git_root) in previous_files:
+            continue
+        content = coherence_content(receipt, git_root, current_files)
+        if content is None:
+            continue
+        text = coherence_text(content)
+        if metadata_plain(text, "Disposition") != "Reopened":
+            continue
+        if not metadata_value(text, "Human authority"):
+            continue
+        if row[2] == "Accepted" and metadata_plain(text, "Unchanged accepted claim") != "Yes":
+            continue
+        return True
+    return False
+
+
+def coherence_append_only(before: bytes, after: bytes, *, readme: bool) -> bool:
+    try:
+        old, new = coherence_text(before), coherence_text(after)
+    except UnicodeError:
+        return before == after
+    if readme:
+        # A date is navigation metadata, not permission to alter a closed claim.
+        date = re.compile(r"(?im)^\*\*Last updated:\*\*[^\n]*\n?")
+        old, new = date.sub("", old), date.sub("", new)
+    old = old.rstrip()
+    if new.rstrip() == old:
+        return True
+    if not new.startswith(old):
+        return False
+    suffix = new[len(old):].lstrip()
+    allowed = ("Historical correction", "Successor references", "Administrative addendum") if readme else ("Historical correction",)
+    return any(suffix.startswith(f"## {heading}\n") for heading in allowed)
+
+
+def validate_terminal_changes(
+    root: Path, git_root: Path, previous: dict[str, bytes],
+    current_files: dict[str, bytes] | None = None,
+) -> list[Finding]:
+    findings: list[Finding] = []
+    owners = {
+        name.rsplit("/", 1)[0] + "/"
+        for name, content in previous.items()
+        if name.endswith("/README.md") and TYPE_LINE.search(content.decode("utf-8", errors="replace"))
+    }
+    if current_files is not None:
+        owners.update(
+            name.rsplit("/", 1)[0] + "/"
+            for name, content in current_files.items()
+            if name.endswith("/README.md") and TYPE_LINE.search(content.decode("utf-8", errors="replace"))
+        )
+    elif (root / "initiatives").is_dir():
+        owners.update(
+            relative(path.parent, git_root).rstrip("/") + "/"
+            for path in (root / "initiatives").rglob("README.md")
+            if TYPE_LINE.search(path.read_text(encoding="utf-8"))
+        )
+    for name, content in previous.items():
+        if not name.endswith("/README.md"):
+            continue
+        try:
+            prior_text = coherence_text(content)
+        except UnicodeError:
+            continue
+        if not TYPE_LINE.search(prior_text) or metadata_plain(prior_text, "Status") not in TERMINAL_STATUSES:
+            continue
+        readme = git_root / name
+        prefix = name.rsplit("/", 1)[0] + "/"
+        children = [owner for owner in owners if owner != prefix and owner.startswith(prefix)]
+        current_readme = coherence_content(readme, git_root, current_files)
+        current_text = coherence_text(current_readme) if current_readme is not None else ""
+        reopened = coherence_reopened(prior_text, current_text, readme, previous, git_root, current_files)
+        for old_name, old_content in previous.items():
+            if not old_name.startswith(prefix) or any(old_name.startswith(child) for child in children):
+                continue
+            path = git_root / old_name
+            content = coherence_content(path, git_root, current_files)
+            if content is not None and (
+                reopened or coherence_append_only(old_content, content, readme=path == readme)
+            ):
+                continue
+            findings.append(Finding(
+                "error", "TADP043", relative(path, root),
+                "closed initiative record changed or was removed without a new evidenced reopening; preserve the prior claim and use a successor for substantive work",
+            ))
+        if not reopened:
+            candidates = (
+                [git_root / path for path in current_files if path.startswith(prefix)]
+                if current_files is not None else list(readme.parent.rglob("*"))
+            )
+            for path in candidates:
+                if coherence_content(path, git_root, current_files) is None or relative(path, git_root) in previous:
+                    continue
+                if any(relative(path, git_root).startswith(child) for child in children):
+                    continue
+                if path.parent == readme.parent / "decision-receipts" and path.suffix == ".md":
+                    continue
+                findings.append(Finding(
+                    "error", "TADP043", relative(path, root),
+                    "new closed-initiative content requires a new evidenced reopening; record feedback in the source initiative instead",
+                ))
+    return findings
+
+
+def coherence_table(text: str, headers: tuple[str, ...]) -> list[dict[str, str]] | None:
+    table = find_markdown_table(text, headers)
+    if table is None:
+        return None
+    # The generic parser skips malformed-width rows; coherence records must not.
+    lines = text.splitlines()
+    for index, line in enumerate(lines[:-1]):
+        if line.lstrip().startswith("|") and is_markdown_separator(lines[index + 1]):
+            actual = split_markdown_row(line)
+            if not set(headers).issubset(actual):
+                continue
+            for row in lines[index + 2:]:
+                if not row.lstrip().startswith("|"):
+                    break
+                if len(split_markdown_row(row)) != len(actual):
+                    return None
+            break
+    return table[1]
+
+
+def validate_work_conflicts(root: Path) -> list[Finding]:
+    path = root / "initiatives" / "work-conflicts.md"
+    if not path.is_file():
+        return [Finding("error", "TADP041", relative(path, root), "coherence adoption requires a project work-conflict register")]
+    text = HTML_COMMENT.sub("", mask_fenced_code(path.read_text(encoding="utf-8")))
+    rows = coherence_table(text, WORK_CONFLICT_HEADERS)
+    if rows is None or (not rows and "no work conflicts recorded" not in text.lower()):
+        return [Finding("error", "TADP044", relative(path, root), "work-conflict register needs the declared table or an explicit empty register")]
+    findings: list[Finding] = []
+    seen: set[str] = set()
+    for row in rows:
+        conflict_id = plain_cell(row["ID"])
+        invalid = (
+            not re.fullmatch(r"WORK-CONFLICT-[0-9]{3,}", conflict_id)
+            or conflict_id in seen
+            or any(not plain_cell(row[field]) or plain_cell(row[field]) == "-" for field in WORK_CONFLICT_HEADERS)
+            or plain_cell(row["Status"]) not in {"Open", "Resolved"}
+            or any(markdown_link(row[field]) is None for field in ("Source work", "Conflicting work"))
+            or (plain_cell(row["Status"]) == "Resolved" and markdown_link(row["Disposition and evidence"]) is None)
+        )
+        if invalid:
+            findings.append(Finding(
+                "error", "TADP044", relative(path, root),
+                f"{conflict_id or 'conflict row'} must preserve unique identity, both linked work claims, effort/impact, owner, status, and evidenced disposition",
+            ))
+        seen.add(conflict_id)
+    return findings
+
+
+def validate_completion_coherence(
+    root: Path, git_root: Path, adoption: dict[str, bytes], comparison: dict[str, bytes],
+) -> list[Finding]:
+    findings: list[Finding] = []
+    readmes = {
+        path for path in (root / "initiatives").rglob("README.md")
+        if TYPE_LINE.search(path.read_text(encoding="utf-8"))
+    } if (root / "initiatives").is_dir() else set()
+    states = {path.resolve(): metadata_plain(path.read_text(encoding="utf-8"), "Status") for path in readmes}
+    register = (root / "initiatives" / "work-conflicts.md").resolve()
+    register_text = HTML_COMMENT.sub("", mask_fenced_code(register.read_text(encoding="utf-8"))) if register.is_file() else ""
+    register_rows = coherence_table(register_text, WORK_CONFLICT_HEADERS) or []
+    registered_ids = {plain_cell(row["ID"]).lower() for row in register_rows}
+    registered_anchors = {
+        match.lower() for match in re.findall(r"(?im)^#{1,6}[ \t]+(WORK-CONFLICT-[0-9]{3,})[ \t]*$", register_text)
+    }
+    for readme in sorted(readmes):
+        current_text = readme.read_text(encoding="utf-8")
+        if metadata_plain(current_text, "Status") != "Completed":
+            continue
+        name = relative(readme, git_root)
+        prior = coherence_text(adoption.get(name, b""))
+        # Retain truthful historical completion; a new cycle is a new claim.
+        if metadata_plain(prior, "Status") == "Completed" and not coherence_reopened(prior, current_text, readme, adoption, git_root):
+            continue
+        evidence = readme.parent / "completion-evidence.md"
+        if not evidence.is_file():
+            continue  # The existing completion-record rule reports this.
+        text = HTML_COMMENT.sub("", mask_fenced_code(evidence.read_text(encoding="utf-8")))
+        section = re.search(r"(?ims)^## Cross-initiative coherence review\s*\n(.*?)(?=^##\s|\Z)", text)
+        body = section.group(1) if section else ""
+        rows = coherence_table(body, COHERENCE_REVIEW_HEADERS)
+        problems: list[str] = []
+        if not metadata_value(body, "Inventory baseline"):
+            problems.append("inventory baseline")
+        register_field = metadata_value(body, "Work-conflict register") or ""
+        if resolve_markdown_link(register_field, evidence) != register:
+            problems.append("linked project work-conflict register")
+        if rows is None:
+            problems.append("coherence review table")
+            rows = []
+        seen: set[Path] = set()
+        previous_evidence = comparison.get(relative(evidence, git_root))
+        changed = previous_evidence is None or coherence_text(previous_evidence) != coherence_text(evidence.read_bytes())
+        before_status = metadata_plain(coherence_text(comparison.get(name, b"")), "Status")
+        check_inventory = changed or before_status != "Completed"
+        for row in rows:
+            target = resolve_markdown_link(row["Target initiative"], evidence)
+            if target is not None:
+                target = initiative_record_path(target).resolve()
+            state = plain_cell(row["Lifecycle state"])
+            if target is None or target == readme.resolve() or not resolves_within(target, root / "initiatives") or not target.is_file() or target in seen:
+                problems.append("unique linked target initiative")
+            elif check_inventory and (target not in states or states[target] != state):
+                problems.append(f"current lifecycle state for {relative(target, root)}")
+            if target is not None:
+                seen.add(target)
+            if state not in ALLOWED_STATUSES or any(not plain_cell(row[field]) or plain_cell(row[field]) == "-" for field in COHERENCE_REVIEW_HEADERS):
+                problems.append("complete review row")
+            if any(markdown_link(row[field]) is None for field in ("Work and effort evidence", "Record links")):
+                problems.append("linked work/effort evidence and disposition records")
+            if re.match(r"(?i)^Conflict[ \t]*:", plain_cell(row["Finding"])):
+                linked_conflict = False
+                for link in MARKDOWN_LINK.findall(row["Record links"]):
+                    target_file = resolve_markdown_link(f"[record]({link})", evidence)
+                    anchor = unquote(link.partition("#")[2]).lower()
+                    if target_file == register and anchor in registered_ids and anchor in registered_anchors:
+                        linked_conflict = True
+                if not linked_conflict:
+                    problems.append("linked existing work-conflict entry for a conflict finding")
+        if check_inventory:
+            expected = {path for path, state in states.items() if state in ACTIVE_STATUSES and path != readme.resolve()}
+            missing = expected - seen
+            if missing:
+                problems.append("active initiative coverage (including Proposed): " + ", ".join(relative(path, root) for path in sorted(missing)))
+            if not rows and not expected and "no other active initiatives" not in body.lower():
+                problems.append("explicit no other active initiatives finding")
+        if problems:
+            findings.append(Finding(
+                "error", "TADP042", relative(evidence, root),
+                "completion coherence review is missing or incomplete: " + "; ".join(dict.fromkeys(problems)),
+            ))
+    return findings
+
+
+def validate_coherence(root: Path, base_ref: str = "HEAD") -> list[Finding]:
+    profile = root / "project-profile.md"
+    declaration = re.compile(r"(?im)^\*\*Coherence revision baseline:\*\*[ \t]*([^\r\n]*)")
+
+    def declared_baseline(text: str) -> str | None:
+        match = declaration.search(text)
+        return plain_cell(match.group(1)) if match else None
+
+    baseline = declared_baseline(profile.read_text(encoding="utf-8")) if profile.is_file() else None
+    active = baseline is not None and not baseline.lower().startswith("not yet adopted")
+    findings: list[Finding] = []
+    previously_active = False
+    try:
+        git_root = Path(coherence_git(root, "rev-parse", "--show-toplevel").decode("utf-8").strip()).resolve()
+        head = coherence_commit(root, "HEAD")
+        profile_name = relative(profile, git_root)
+        history = coherence_git(root, "log", "--format=%H", head, "--", profile_name).decode("ascii").splitlines()
+        previous_baselines: set[str] = set()
+        # The selected CI base may predate adoption. Inspect HEAD history too,
+        # so deleting the declaration cannot disable a previously adopted rule.
+        for revision in dict.fromkeys((head, *history)):
+            try:
+                prior_profile = coherence_text(coherence_git(root, "show", f"{revision}:{profile_name}"))
+            except ValueError:
+                continue  # A first adoption may create the project profile.
+            previous = declared_baseline(prior_profile)
+            if previous is not None and not previous.lower().startswith("not yet adopted"):
+                previous_baselines.add(previous)
+        previously_active = bool(previous_baselines)
+        comparison_commit = coherence_commit(root, base_ref)
+        if previously_active and not active:
+            raise ValueError("adopted coherence baseline must not be removed or disabled")
+        if not active:
+            return []
+        assert baseline is not None
+        findings.extend(validate_work_conflicts(root))
+        for required in (
+            "evidence/authoritative/LLM/10_Codex_Initiative_Coherence_Specification.md",
+            "template/project/initiatives/work-conflicts.template.md",
+        ):
+            if not (root / required).is_file():
+                findings.append(Finding("error", "TADP041", required, "adopted coherence source is missing"))
+        if not COMMIT_ID.fullmatch(baseline):
+            raise ValueError("Coherence revision baseline must name the captured pre-revision Git commit")
+        adoption_commit = coherence_commit(root, baseline)
+        for previous in previous_baselines:
+            if not COMMIT_ID.fullmatch(previous) or coherence_commit(root, previous) != adoption_commit:
+                raise ValueError("captured coherence baseline must not be changed after adoption")
+        coherence_git(root, "merge-base", "--is-ancestor", adoption_commit, head)
+        coherence_git(root, "merge-base", "--is-ancestor", comparison_commit, head)
+        common = coherence_git(root, "merge-base", adoption_commit, comparison_commit).decode("ascii").strip()
+        if common == comparison_commit:
+            # Rules apply prospectively; never reinterpret pre-adoption edits.
+            comparison_commit = adoption_commit
+        elif common != adoption_commit:
+            raise ValueError("comparison and adoption baselines must be on the same ancestry")
+        prefix = relative(root / "initiatives", git_root).rstrip("/") + "/"
+        adoption = coherence_snapshot(root, adoption_commit, prefix)
+        comparison = adoption if comparison_commit == adoption_commit else coherence_snapshot(root, comparison_commit, prefix)
+        # In CI a range may contain both completion and a later closed edit.
+        # Check each parent-to-commit snapshot, not just the range's endpoints.
+        if comparison_commit != head:
+            coherence_git(root, "merge-base", "--is-ancestor", comparison_commit, head)
+            snapshots = {adoption_commit: adoption, comparison_commit: comparison}
+            revisions = coherence_git(
+                root, "rev-list", "--reverse", "--ancestry-path", f"{comparison_commit}..{head}"
+            ).decode("ascii").splitlines()
+            for revision in revisions:
+                parents = coherence_git(root, "rev-list", "--parents", "-n", "1", revision).decode("ascii").split()[1:]
+                if revision not in snapshots:
+                    snapshots[revision] = coherence_snapshot(root, revision, prefix)
+                for parent in parents:
+                    if parent not in snapshots:
+                        snapshots[parent] = coherence_snapshot(root, parent, prefix)
+                    for finding in validate_terminal_changes(root, git_root, snapshots[parent], snapshots[revision]):
+                        findings.append(Finding(
+                            finding.severity, finding.code, finding.path,
+                            f"commit {revision}: {finding.message}",
+                        ))
+    except (OSError, ValueError, UnicodeError) as error:
+        # Unadopted legacy scaffolds do not require Git objects for this rule.
+        # A declared or previously observed adoption always fails closed.
+        if not active and not previously_active:
+            return []
+        findings.append(Finding(
+            "error", "TADP041", relative(profile, root),
+            f"cannot verify coherence Git baseline or comparison revision: {error}",
+        ))
+        return findings
+    findings.extend(validate_terminal_changes(root, git_root, comparison))
+    findings.extend(validate_completion_coherence(root, git_root, adoption, comparison))
+    return findings
+
+
 def validate_prompts(root: Path) -> list[Finding]:
     findings: list[Finding] = []
     prompt_root = root / "template" / "prompts"
@@ -1567,7 +2015,7 @@ def validate_prompts(root: Path) -> list[Finding]:
     return findings
 
 
-def validate(root: Path) -> list[Finding]:
+def validate(root: Path, *, base_ref: str = "HEAD") -> list[Finding]:
     root = root.resolve()
     findings: list[Finding] = []
     findings.extend(validate_required_paths(root))
@@ -1577,6 +2025,7 @@ def validate(root: Path) -> list[Finding]:
     findings.extend(validate_tokens(root))
     findings.extend(validate_initiatives(root))
     findings.extend(validate_version_correlation(root))
+    findings.extend(validate_coherence(root, base_ref))
     findings.extend(validate_prompts(root))
     return sorted(findings, key=lambda item: (item.severity, item.code, item.path))
 
@@ -1585,6 +2034,10 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("root", nargs="?", default=".", help="TADp repository root")
     parser.add_argument("--json", action="store_true", help="emit a JSON report")
+    parser.add_argument(
+        "--base-ref", default="HEAD",
+        help="Git comparison revision for closed-initiative changes (use the integration base in CI)",
+    )
     args = parser.parse_args(argv)
 
     root = Path(args.root).resolve()
@@ -1592,7 +2045,7 @@ def main(argv: list[str] | None = None) -> int:
         print(f"error: repository root does not exist: {root}", file=sys.stderr)
         return 2
 
-    findings = validate(root)
+    findings = validate(root, base_ref=args.base_ref)
     errors = sum(item.severity == "error" for item in findings)
     warnings = sum(item.severity == "warning" for item in findings)
 

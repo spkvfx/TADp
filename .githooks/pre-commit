@@ -1,0 +1,20 @@
+#!/bin/sh
+set -eu
+
+TADP_HOOK_DIRECTORY=$(CDPATH= cd "$(dirname "$0")" && pwd)
+TADP_REPOSITORY_ROOT=$(dirname "$TADP_HOOK_DIRECTORY")
+TADP_PYTHON_BIN=${TADP_PYTHON:-python}
+
+cd "$TADP_REPOSITORY_ROOT"
+# Nested project checks change cwd. Keep hook-local Git paths absolute while
+# preserving the actual index supplied by Git (including a temporary index).
+TADP_GIT_DIRECTORY=$(git rev-parse --absolute-git-dir)
+TADP_GIT_INDEX=$(git rev-parse --path-format=absolute --git-path index)
+export GIT_DIR="$TADP_GIT_DIRECTORY"
+export GIT_WORK_TREE="$TADP_REPOSITORY_ROOT"
+export GIT_INDEX_FILE="$TADP_GIT_INDEX"
+
+for TADP_PROJECT in protocol example; do
+    "$TADP_PYTHON_BIN" "$TADP_PROJECT/tools/tadp_validate.py" "$TADP_PROJECT"
+    "$TADP_PYTHON_BIN" "$TADP_PROJECT/tools/tadp_protect.py" guard-staged "$TADP_PROJECT"
+done

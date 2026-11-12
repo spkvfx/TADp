@@ -32,6 +32,10 @@ Use the following workflow for every new effort:
    both records. The index owns version, suite, initiative, branch, base,
    status-evidence, and relationship identity; the status record is the
    current lifecycle and blocker view.
+   Copy [work-conflicts.template.md](work-conflicts.template.md) to
+   `work-conflicts.md` for work conflicts, including proposed, planned, and
+   partially delivered effort. Capture the pre-adoption Git commit in the
+   project profile's `Coherence revision baseline` field.
 7. Obtain the required review before changing a status from `Proposed` to
    `Accepted` or beginning the type's permitted output.
 

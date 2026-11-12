@@ -42,6 +42,9 @@ chain before there is enough material for the directories to become confusing.
 4. Copy the distribution's authoritative `evidence/authoritative/LLM/` suite,
    including its `AGENTS.md` and `.tadp-lock.json`, to the same path in the new
    project. Keep the copied root `AGENTS.md`; it directs Codex to that suite.
+   Preserve distribution authority receipts linked by the copied suite under
+   `decisions/`, with their historical source identity. Those receipts do not
+   decide the adopting project's assumptions or authorize its delivery work.
 5. Copy the distribution's `docs/`, `tools/`, and `tests/` trees when using the
    complete reference workflow. Run `python tools/tadp_protect.py check .`,
    then enable the tracked guard with
@@ -50,7 +53,8 @@ chain before there is enough material for the directories to become confusing.
    `project-profile.md`. Replace every `{{double_brace_token}}`, remove the
    instructional HTML comment, and record the project owner, boundary, review
    cadence, correlation-revision effective commit, branch convention, and
-   migration-ledger link.
+   migration-ledger link. Capture the current Git commit as the coherence
+   revision baseline before adopting the coherence controls.
 7. Establish the binding sources in
    [evidence/authoritative/](evidence/authoritative/README.md) before accepting
    work that depends on them. Record contextual sources separately in
@@ -68,6 +72,9 @@ chain before there is enough material for the directories to become confusing.
    [version-correlation migration ledger](initiatives/version-correlation-migration-ledger.template.md)
    when adopting the correlation revision. The index owns canonical tuple
    identity; the status record answers what is active, blocked, or gated next.
+   Copy [the work-conflict register](initiatives/work-conflicts.template.md) to
+   `initiatives/work-conflicts.md`; preserve both claims and effort when work
+   conflicts, including proposed open initiative work.
 10. Add a product record when an output has a declared destination, even if the
    output itself lives outside `products/`. Link its governing initiative,
    specification, binding evidence, and verification.
@@ -115,6 +122,9 @@ not sources of substantive authority:
   realization suite, dedicated branch, and captured base.
 - `status.md` is the current portfolio view of lifecycle standing, next gate,
   blockers, and the evidence that supports a status claim.
+- `work-conflicts.md` preserves incompatible work claims, their effort,
+  impact, owner, blocking scope, and governed disposition. It does not accept
+  a claim or override the authoritative invariant conflict register.
 - Each initiative's own record remains authoritative for its scope, decisions,
   assumptions, and detailed state.
 
@@ -225,6 +235,8 @@ the assumption that the conflict has been resolved.
 - [ ] Binding evidence has a named owner, source, status, and precise claims.
 - [ ] Contextual evidence and realization notes retain their original context.
 - [ ] The initiative index lists every active effort and its next review gate.
+- [ ] The project profile captures the coherence revision baseline, and
+      `initiatives/work-conflicts.md` exists with an owner and review date.
 - [ ] Each delivered product links to a governing initiative, specification or
       decision, applicable evidence, and verification.
 - [ ] Open conflicts, exceptions, and missing evidence have named owners.

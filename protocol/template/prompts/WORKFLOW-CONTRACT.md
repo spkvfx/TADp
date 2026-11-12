@@ -49,6 +49,38 @@ creates a transition without its required evidence.
 - Do not change another initiative or shared contract unless the numbered
   prompt expressly authorizes that exact boundary.
 
+## Coherence and feedback
+
+- Apply the [initiative coherence specification](../../evidence/authoritative/LLM/10_Codex_Initiative_Coherence_Specification.md).
+  Count proposed, planned, and partially delivered open initiative effort as
+  work to review, without treating it as accepted authority.
+- At alignment and before completion, compare the intended or delivered claim
+  with current open initiatives and affected closed claims. Record the exact
+  inventory baseline, target states, effort evidence, findings, dispositions,
+  and links in the owning review or completion evidence.
+- Append work conflicts to `initiatives/work-conflicts.md` and link affected
+  records. Preserve both claims and effort, impact, owner, blocking scope,
+  and the authority and evidence needed for resolution. Invariant
+  contradictions also belong in the authoritative invariant conflict register.
+- Stop affected acceptance, execution, and completion when incompatible work
+  remains unresolved. Completion findings may refine open initiatives only
+  through an authorized operation and branch, preserving the target's workflow
+  and human gates. Implementation routes
+  specification changes to design; planning hands off evidence without editing
+  another initiative. A referral does not authorize or prove the target change.
+- Never refine a `Completed`, `Cancelled`, or `Superseded` initiative before
+  explicit human reopening, a decision receipt, and a legal lifecycle
+  transition. Preserve prior claims. A substantive change still requires a
+  successor tuple; linking a successor does not revise the closed claim.
+- Keep append-only historical corrections and administrative successor links
+  distinct from refinement. README additions use `Historical correction`,
+  `Successor references`, or `Administrative addendum` headings; other existing
+  records may append only `Historical correction`. They must not alter earlier
+  meaning or decisions.
+- Before completion or finalization, require the standard cross-initiative
+  coherence review and verify its inventory is current. Do not resolve open
+  assumptions or questions from completion evidence alone.
+
 ## Correlation identity
 
 - When the project has recorded the correlation-revision effective point,

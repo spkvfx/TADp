@@ -2,18 +2,19 @@
   "schema_version": 1,
   "algorithm": "sha256-canonical-v1",
   "protected_root": "evidence/authoritative/LLM",
-  "authority": "EX-GIT-DR-001 project-wide example-root exception authorized by User 2026-11-11",
+  "authority": "decisions/COH-DR-001-initiative-coherence.md",
   "files": {
-    "00_Codex_Invariant_Suite_Index.md": "16bc2ac3f6888a9b2c147ab20431f0c34704e035527ae4feb5c20e25fc7ad6ef",
+    "00_Codex_Invariant_Suite_Index.md": "c7771f27428fc6d0499b5f13cfa1543a39103f1fc9d4d6c80b3cbe30f500618a",
     "01_Codex_Evidence_Authority_Specification.md": "a30548a72f1ea60f35bd624c6017497b0320cffaaa8cc5652fa559b51286d8df",
-    "02_Codex_Initiative_Governance_Specification.md": "65aa071ef81377f00cb74e1468609213e20ae483ec09ceeeb5fc68e81708d5df",
+    "02_Codex_Initiative_Governance_Specification.md": "7168ef393d25d55144cd87c1c7180328c41a5acd4ffc37892fbf6998054e12dc",
     "03_Codex_Invariant_Conflict_Register.md": "3c2db4def3669753d8acf588eba4701af269c0eb75f2424d2c7bee9dd93a0310",
-    "04_Codex_Initiative_Lifecycle_Specification.md": "d3ead9ee295d2501d70f7760a1caa72f09193f3310f0ad068cc3009e324c1225",
+    "04_Codex_Initiative_Lifecycle_Specification.md": "120c73b83225a35b454e4d5aa402c28804f9edfc8181535c04800a3aff9d70ae",
     "05_Codex_Git_Workflow_Specification.md": "60d7ea7fcd9f0ee06c45c24c53a14ad574502e96e6feff2f29f2b379ef124cbc",
     "06_Codex_Initiative_Scope_Specification.md": "a49089c1bdd1fa156e339b1d42ac350c6489cb52ed9209bd7972379b1a041827",
-    "07_Codex_Human_Decision_Receipt_Specification.md": "09a99795f5a6d0406e453f6746d67586e88c27f8ae956ea32dd656198a9e2972",
-    "08_Codex_Initiative_Workflow_Specification.md": "ccdeb65f7942462980d8361cb7221a41d983fc6c1a2ddb7824146183903fa1a8",
+    "07_Codex_Human_Decision_Receipt_Specification.md": "da6088fbb0729f185ba3bffebc1bec363b3295c9226e8b372a7bbaf6efb38e98",
+    "08_Codex_Initiative_Workflow_Specification.md": "e77d9b02325c9b67602fad5753afeceb7dbc8f4db30445ac332ca629091c4123",
     "09_Codex_Version_Realization_Initiative_Correlation_Specification.md": "43d4bd01bc316e7946de690d14a2baacb3e53abe5f12ed4c936898fd7e9e5dfa",
+    "10_Codex_Initiative_Coherence_Specification.md": "504216c11133664f7a9b13de737d965abd0e2847ab4e74aa9dfb195ba5424ac4",
     "AGENTS.md": "0f4995562ec74054f02ccce453ee2458b283eb13210816599f11156f98eb95ee"
   }
 }

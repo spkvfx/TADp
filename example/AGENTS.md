@@ -62,6 +62,10 @@ generic requirement for any other TADp project.
   Alignment and resolved assumptions or questions do not imply acceptance.
 - Reopen or revise an initiative only with a documented reason, authority,
   change record, impact analysis, and cross-record reconciliation.
+- Count open effort as work without promoting its authority, document
+  incompatible efforts in `initiatives/work-conflicts.md`, and review
+  completion feedback against all open initiatives. Require explicit human
+  reopening before refining closed claims under specification 10.
 - Record only legal lifecycle transitions. Require the standard execution
   record for implementation, the standard delivery record for design or
   planning, and standard completion evidence before any initiative is marked

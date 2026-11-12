@@ -47,7 +47,8 @@ This stage may create or modify only the specification destinations and
 supporting initiative evidence explicitly named by the accepted design scope.
 It must not create or modify product source, SDK/API implementation, runtime
 configuration, migration execution, deployment assets, product tests, or
-another initiative. A specification stored outside the initiative directory is
+another initiative outside the exact accepted specification destinations.
+A specification stored outside the initiative directory is
 editable only when the accepted scope names its exact destination and owner.
 
 Before changing a specification, verify that:
@@ -104,6 +105,22 @@ claim, specification destinations and revisions, authoritative-evidence
 coverage, verification, consumer and migration effects, and residual work.
 Reconcile it with `delivery-record.md` and append the legal `Completed`
 transition only when all records agree.
+
+Before that transition, complete the standard cross-initiative coherence
+review against an exact inventory baseline. Include every other current open
+initiative, including Proposed and partial effort, and affected closed claims.
+Record target states, effort evidence, findings, compatible dispositions, and
+links. Append factual conflicts to initiatives/work-conflicts.md with both
+claims and effort, impact, owner, blocking scope, and decision or evidence
+required; also record invariant contradictions in the authoritative register.
+Stop completion while a conflict affects the accepted design claim. Refining
+an open consumer requires its declared destination in the accepted design
+scope and the governing operation's authorized branch and edit boundary,
+while preserving the consumer's own acceptance, reopening, lifecycle, and
+human gates; this review alone grants no cross-initiative edit authority.
+Never refine a closed consumer without an
+explicit human reopening receipt and legal transition. A substantive change
+requires a new successor tuple; otherwise record an owned referral.
 
 Report every specification and evidence artifact changed, delivery steps,
 verification results, lifecycle and status updates, compatibility or migration
