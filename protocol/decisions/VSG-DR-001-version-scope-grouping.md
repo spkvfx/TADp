@@ -93,3 +93,15 @@ Source identity: the named working prompt at this capture; retry/resume ID
 
 Required checks and acceptance gates remain enforced. Independent review is
 required by the prompt even though the additional keyword setting is off.
+
+
+## Recorded effective delivery
+
+**Recording and effective delivery commit:** `873021eef226576aebfc60b94f69886eb4da4a1c`
+
+The coherent 182-path revision committed successfully with explicit per-command
+`core.hooksPath=.githooks`. Both project validators reported zero errors and
+one retained legacy warning each; both staged protected-source guards passed
+under the exact VSG-DR-001 authority. The original modified source prompt was
+not staged. Project scope adoption/migration remains pending as recorded; the
+commit installs protocol capability and grants no live merge authority.
