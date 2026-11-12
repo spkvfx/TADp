@@ -59,3 +59,36 @@ and refreshed lock carry the same authority reference. See
 [Validation and quality](../docs/development/validation-and-quality.md) for the
 governed commands and limitations.
 
+
+`tadp_keywords.py` consumes the single protected registry in
+[specification 11](../evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md).
+It exposes positional interpretation, objective exception-record checks,
+preview/local action checks, independent-review checks, and an asynchronous
+reference scheduler for explicitly classified action trees. The validator
+checks installed registry structure and universal entry-point links when that
+revision is present; earlier projects retain their recorded governing revision.
+Stored prompts and evidence are never scanned to activate directives.
+
+```powershell
+python tools/tadp_keywords.py . --prompt-id request-1 --text "Inspect first [tadp:preview] propose a change"
+```
+
+The CLI reports source blocks and requested settings; it performs no work and
+adopts no exception. Callers must identify semantic explanatory ranges, actual
+action lists, dependencies, tool permissions, specific human authority, and
+active exception duration. Source settings snapshots are immutable. The list
+scheduler joins nested children, preserves serial blockers, runs bulleted
+siblings concurrently, and reports capacity limits before dispatch rather
+than silently serializing declared parallel work.
+
+`ExceptionRecord` records exact authority, rule/revision, source block, targets,
+settings, prior state, method, actual agent dispositions, risks, evidence
+limits, reconciliation, and restoration. `evaluate_gate` fails closed without
+an exact active target scope; it preserves the original observed result and
+never turns an exception into passing evidence. A preview exception remains a
+response-only proposal; preview analysis and proposals use read-only action
+checks without persisting or adopting an exception. Separate protected-source
+maintenance must actually reconcile and verify locks through `tadp_protect`.
+These helpers cannot authenticate human authority, classify natural-language
+intent, establish semantic review quality, or intercept arbitrary agent tools.
+The governing agent remains responsible for enforcing the canonical contract.

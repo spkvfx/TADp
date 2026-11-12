@@ -5,11 +5,57 @@ rules shared by all stages. A numbered prompt remains responsible for its
 specific target, preconditions, edit boundary, verification, and reporting.
 The contract never expands a prompt's permission.
 
+The bulleted clauses in this contract are standing requirements, not an
+action-dispatch list. They constrain each stage's operative actions.
+
 The authoritative stage map, handoffs, record ownership, acceptance gate, and
 recovery semantics are defined by the
 [initiative workflow specification](../../evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md).
 A stage is an activity, not a lifecycle state, and finishing a prompt never
 creates a transition without its required evidence.
+
+## Prompt interpretation and bounded exceptions
+
+Read and apply the canonical
+[prompt keyword specification](../../evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md)
+for every task. It owns the extensible registry, positional settings, inert
+mentions, instruction-block identity, list scheduling, and exception contract.
+Do not maintain a separate vocabulary or scan supporting evidence for switches.
+
+The human-response and gate-stop instructions in this contract and numbered
+prompts describe the ordinary required path. A requested gate setting alone
+does not waive one of those requirements. Before relying on an exception,
+inventory each affected rule and gate, establish its exact sufficient human
+authority, and create its bounded record using the
+[gate-exception source](../initiatives/decision-receipts/gate-exception.template.md).
+Link the governing human decision receipt and record effective settings for
+each source-position block before dispatch, retry, or handoff. Do not repeat
+already sufficient authorization merely to obtain paperwork. Covered autonomous
+dispositions retain their agent author, method, evidence, and affected IDs.
+
+Preserve actual failures, missing evidence, and waived or unperformed checks.
+An exception may authorize only its named work; it does not prove human
+acceptance, reopening, readiness, qualification, or completion. Retain ordinary
+`Accepted` and `Completed` meanings, legal transitions, and required evidence;
+report finished prompt work under an exception separately when those lifecycle
+claims remain unsupported. Restored gates recheck current prerequisites that
+depend on earlier excepted work. Locks, protected-source authority, type and
+scope boundaries, tool permissions, and truthful evidence remain enforced.
+
+Preview blocks produce response-only proposals, including draft receipts and
+exception records; do not persist files or run state-changing checks. Local
+blocks use supplied and local resources only. Added independent review must
+review the actual output with a distinct reviewer; producing-agent self-review
+does not satisfy it. Retain earlier review obligations after a later inverse.
+
+Determine each action's settings from source position before scheduling it.
+Numbered sibling actions execute serially; bulleted sibling actions request
+equal-priority parallel execution with a join before their parent finishes.
+Each nested level retains its rule. Prerequisite inventories, requirement
+checklists, options, stage maps, and inert examples are descriptive unless
+they actually instruct actions. Report dependency, shared-write, capacity, or
+capability conflicts that prevent declared concurrency; never claim unperformed
+parallel execution. Gate settings alone do not change declared scheduling.
 
 ## Target and placeholders
 

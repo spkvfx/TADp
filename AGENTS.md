@@ -1,5 +1,12 @@
 # TADp repository instructions for Codex
 
+For every TADp task, read and apply the canonical
+[prompt keyword specification](protocol/evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md),
+including ordinary requests, analysis, and all prompt types. Its registry owns
+directive interpretation and list scheduling; references and examples remain
+inert. This entry point grants no exception, protected-source edit, or wider
+target authority.
+
 Before changing any file in this repository, read and apply
 `protocol/AGENTS.md`. Before changing architecture, specifications,
 initiatives, products, evidence, lifecycle behavior, templates, prompts, or

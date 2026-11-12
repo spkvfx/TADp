@@ -13,6 +13,36 @@ receipt must preserve every source identity, distinguish notation-only change
 from changed meaning, and identify the affected canonical correlation and
 migration-ledger rows. It does not retroactively make a partial tuple valid.
 
+## Prompt exceptions and actual decision authorship
+
+The canonical
+[prompt keyword specification](11_Codex_Prompt_Keyword_Specification.md)
+governs mode requests and exceptions, including exceptions proposed without a
+keyword. The agent may automatically capture sufficient actual human authority
+and prepare the receipt before using it; the human need not author paperwork
+or repeat the same sufficiently bounded instruction. Automatic documentation
+does not supply approval. Preserve exact human words separately from the
+agent's interpretation, proposed scope, autonomous method, and resulting
+agent-made dispositions. Link every covered rule, source ID, instruction
+block, affected record, and reconciliation. Never label an agent's answer as
+a human response. Once the authority and records cover the exact scope, no
+repeated confirmation is required solely to recreate that authority.
+
+Use the
+[gate-exception source](../../../template/initiatives/decision-receipts/gate-exception.template.md)
+for the additional per-rule and per-block fields. A shared receipt may cover
+multiple named gates only when the actual human authority explicitly covers
+the complete bounded set. Inferred use or a further inferred invariant
+exception remains unapproved until its exact proposal is confirmed. Neither
+gate setting can authorize its own missing confirmation. Preview receipts and
+exceptions remain response-only drafts, not adopted records.
+
+Retain waived, skipped, failed, and passed evidence distinctly in receipts,
+lifecycle, delivery, and completion consumers. An exception receipt records
+the specific authority and disposition; it is not evidence that an ordinary
+approval, test, review, acceptance, reopening, or completion occurred. Locks
+and protected-source maintenance authority remain separate and enforced.
+
 ## One decision per receipt
 
 Each receipt records one human decision for one stable source ID or one clearly

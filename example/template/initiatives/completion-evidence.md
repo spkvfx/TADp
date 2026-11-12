@@ -44,6 +44,12 @@ This record does not claim {{explicitly_excluded_release_deployment_or_follow_up
 
 ## Verification summary
 
+Preserve actual results as passed, failed, blocked, excepted, waived, skipped,
+or not performed, with links to evidence or the exact bounded exception.
+An exception never counts as passing verification. Finishing requested prompt
+work under an exception is distinct from the ordinary `Completed` claim;
+retain that lifecycle meaning and every still-required completion obligation.
+
 | Verification gate | Environment | Result | Evidence | Claim limit |
 |---|---|---|---|---|
 | {{gate}} | {{environment_or_fixture}} | {{pass}} | {{log_test_review_or_artifact}} | {{what_this_does_not_prove}} |
@@ -114,6 +120,17 @@ authorize another initiative's changes or resolve its open questions.
 - [ ] Open conflicts and exceptions remain visible.
 - [ ] The cross-initiative coherence review covers current open work and
       affected closed claims; every finding has a compatible disposition.
+
+## Prompt blocks and exception reconciliation
+
+{{effective_prompt_block_ledger_and_exception_links_or_no_operative_directives}}
+
+Record source prompt and revision, block identity, effective settings,
+autonomous-method authority and agent-made results, actual gate outcomes,
+review findings and disposition, and restoration or re-entry conditions.
+Use the gate-exception source under `decision-receipts/` when applicable.
+Do not persist this record for preview work; show a response-only draft.
+Later restored gates must recheck prerequisites dependent on excepted work.
 
 ## Completion determination
 

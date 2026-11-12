@@ -2,19 +2,20 @@
   "schema_version": 1,
   "algorithm": "sha256-canonical-v1",
   "protected_root": "evidence/authoritative/LLM",
-  "authority": "decisions/COH-DR-001-initiative-coherence.md",
+  "authority": "decisions/KWD-DR-001-positional-keywords.md",
   "files": {
-    "00_Codex_Invariant_Suite_Index.md": "c7771f27428fc6d0499b5f13cfa1543a39103f1fc9d4d6c80b3cbe30f500618a",
-    "01_Codex_Evidence_Authority_Specification.md": "a30548a72f1ea60f35bd624c6017497b0320cffaaa8cc5652fa559b51286d8df",
-    "02_Codex_Initiative_Governance_Specification.md": "7168ef393d25d55144cd87c1c7180328c41a5acd4ffc37892fbf6998054e12dc",
+    "00_Codex_Invariant_Suite_Index.md": "3e34210b581cff6608c20d7173d34e236d93191842dcd2327b262da6816b0fc3",
+    "01_Codex_Evidence_Authority_Specification.md": "f78c1127600d1cb64d356db99c7a7e34be31a894eb2d4ee0682fc65ea44cf372",
+    "02_Codex_Initiative_Governance_Specification.md": "9f3b4c4bc396801c2fbcce6d53ee4093905198384caa259a74b07545eda8952a",
     "03_Codex_Invariant_Conflict_Register.md": "3c2db4def3669753d8acf588eba4701af269c0eb75f2424d2c7bee9dd93a0310",
-    "04_Codex_Initiative_Lifecycle_Specification.md": "120c73b83225a35b454e4d5aa402c28804f9edfc8181535c04800a3aff9d70ae",
+    "04_Codex_Initiative_Lifecycle_Specification.md": "581d9db979500e9841d418ce6ee124ea155a14129e7758ff34849e60665ed0d9",
     "05_Codex_Git_Workflow_Specification.md": "60d7ea7fcd9f0ee06c45c24c53a14ad574502e96e6feff2f29f2b379ef124cbc",
     "06_Codex_Initiative_Scope_Specification.md": "a49089c1bdd1fa156e339b1d42ac350c6489cb52ed9209bd7972379b1a041827",
-    "07_Codex_Human_Decision_Receipt_Specification.md": "da6088fbb0729f185ba3bffebc1bec363b3295c9226e8b372a7bbaf6efb38e98",
-    "08_Codex_Initiative_Workflow_Specification.md": "e77d9b02325c9b67602fad5753afeceb7dbc8f4db30445ac332ca629091c4123",
+    "07_Codex_Human_Decision_Receipt_Specification.md": "9e1a9602be900735e4f39c03eece4da6449142eb9668c35ff7cec944534dbeb2",
+    "08_Codex_Initiative_Workflow_Specification.md": "56df36533449a1cbc68ec57f083c93be8842ca2dfeab9bbfd0e28253a8deba71",
     "09_Codex_Version_Realization_Initiative_Correlation_Specification.md": "43d4bd01bc316e7946de690d14a2baacb3e53abe5f12ed4c936898fd7e9e5dfa",
-    "10_Codex_Initiative_Coherence_Specification.md": "504216c11133664f7a9b13de737d965abd0e2847ab4e74aa9dfb195ba5424ac4",
+    "10_Codex_Initiative_Coherence_Specification.md": "735d7bc871e25c8b9136d884836912a2b3624ce0f06dbba3bb5a4f7b97b155a1",
+    "11_Codex_Prompt_Keyword_Specification.md": "d7fcb5f9f2726f7dc4624ea3fb58161cdc24c0bd28a371f92987c89ce75fd182",
     "AGENTS.md": "0f4995562ec74054f02ccce453ee2458b283eb13210816599f11156f98eb95ee"
   }
 }

@@ -1,5 +1,13 @@
 # TADp instructions for Codex
 
+When interpreting any TADp task, read and apply the project root's
+[prompt keyword specification](evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md).
+This includes ordinary requests, analysis, project-local prompts, numbered
+workflow prompts, and repository maintenance. Apply operative directives and
+list scheduling only as defined there; reading the registry or its examples
+does not activate them. Record bounded exceptions before relying on them;
+all unexcepted rules and TADp locks remain binding.
+
 Before changing architecture, specifications, initiatives, products, or
 evidence, read the applicable documents in the TADp project root's
 `evidence/authoritative/LLM`, beginning with the suite index.

@@ -34,6 +34,10 @@ Read these documents in order when first adopting or maintaining TADp:
 
 ## Operating guides
 
+- [Prompt keywords migration](guides/prompt-keywords-migration.md) explains
+  adoption, preservation of historical prompts, and adding a precisely
+  authorized keyword through the canonical registry.
+
 - [Protected-source integrity migration](guides/protected-source-integrity-migration.md)
   explains how an existing adoption establishes reviewed template and Codex
   invariant locks without treating unexplained local drift as authority.

@@ -33,14 +33,31 @@ example.
 ## Initiative open-question resolution prompt
 
 ~~~text
-Apply {initiative_template_root}/prompts/WORKFLOW-CONTRACT.md. Its shared rules
-are mandatory and do not reduce this prompt's specific requirements.
+Apply {initiative_template_root}/prompts/WORKFLOW-CONTRACT.md and the canonical
+prompt keyword specification at evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md.
+The following human-response and gate-stop instructions state the ordinary
+required path. Apply only specifically authorized, recorded exceptions under
+that specification; a mode request alone supplies no waiver. Record effective
+settings for each source-position block before dispatch or retry, preserve
+locks and truthful evidence, and retain ordinary lifecycle meanings. Preview
+work remains response-only; local resource restrictions and independent review
+obligations compose with gates. The shared contract and this prompt retain
+all unexcepted preconditions, edit boundaries, verification, and reporting.
 
 Facilitate a human resolution review of every active open question for
-{initiative} at {initiative_path}. This is an interactive human-decision
-workflow, not an autonomous design task. A human user must explicitly answer
+{initiative} at {initiative_path}. The ordinary path is an interactive human-decision
+workflow. Under that path, a human user must explicitly answer
 each source question before that question may be accepted, deferred, closed,
 or used to change related initiative documents.
+
+If a prior exact human instruction sufficiently authorizes an autonomous
+decision method for the named questions, first capture that authority and
+the rule-specific exception. For those covered IDs only, use the recorded
+method instead of the human presentation/wait loop below. Retain the source
+inventory and all applicable reconciliation steps, label actual dispositions
+as agent-made, and preserve the method, rationale, affected IDs, and authority.
+Do not fabricate a human response or repeat a covered confirmation. All other
+questions retain the ordinary human path.
 
 Apply the ownership and approval convention at {project_profile_path}. Human
 owner, reviewer, and approver roles resolve as recorded for the target project.
@@ -49,7 +66,7 @@ contract, and evidence dependency. This convention never supplies an answer to
 a source question.
 
 Read `{initiative_path}/README.md` to identify the initiative type and its
-allowed output. The type does not change the human-review requirement: a source
+allowed output. The type does not change the ordinary human-review requirement: a source
 question is answered, deferred, or closed only through an explicit human
 response.
 

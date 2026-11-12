@@ -90,6 +90,16 @@ guide; do not silently rewrite their baseline.
 
 ## Prompt rules
 
+The canonical
+[prompt keyword specification](../../evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md)
+owns recognized names and interpretation for every TADp request. New names
+require precise human revision authority, a complete **Adding a keyword**
+entry, consumer reconciliation, verification, and governed lock refresh.
+Keep machine consumers registry-driven; no competing allowlist or unprotected
+override registry may redefine behavior. An inferred keyword or invariant
+exception needs explicit confirmation before use. Distinguish numbered
+workflow stages and reference inventories from operative action lists.
+
 Every numbered prompt must:
 
 - link and apply `WORKFLOW-CONTRACT.md`;

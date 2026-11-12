@@ -1,118 +1,267 @@
-# TADp Example Record Application
+# Traceable Architecture Design Protocol (TADp)
 
-This directory presents a complete worked example of the Traceable
-Architecture Design Protocol (TADp) through a small, local record-management
-application. The application carries an initial request through realization,
-evidence reconciliation, explicit human decisions, authoritative architecture,
-security policy, delivery, and verification in narrowly scoped, traceable
-initiatives.
+TADp organizes software work in a Git repository. It turns evidence and
+explicit human decisions into focused initiatives whose results developers can
+review and verify. To preserve traceability, TADp stores architectural
+authority, background evidence, proposals, initiative specifications,
+delivered products, verification, and lifecycle claims as separate but linked
+records.
 
-## Application
+TADp is designed for work that must always provide clear answers to these
+questions:
 
-The application manages records with three public fields:
+- What evidence governed this decision?
+- Who had the authority to make it?
+- What work did developers approve?
+- Which change in the repository implemented the work?
+- What evidence proves the exact completion claim?
+- What remains unresolved, deferred, cancelled, or owned elsewhere?
 
-- `id`: an immutable, service-generated UUID;
-- `name`: editable text; and
-- `value`: editable text.
+## Explicit requirements
 
-Users can create, retrieve, and update records; move to the next or previous
-record in a deterministic order; and search by an accepted field using exact,
-prefix, suffix, contains, or regular-expression matching.
+TADp requires both **Git** and **Codex**.
 
-The application uses a local, single-user architecture in which:
+- **Git is required** because it gives the repository a stable identity and
+  tracks initiative branches, reviewable commits, change history, and
+  finalization evidence. A copied folder or a separate change log cannot
+  replace Git.
+- **Codex is required** because TADp's operating model is built around
+  repository-level `AGENTS.md` instructions and workflow prompts written for
+  Codex. The workflow also relies on Codex to inspect the repository, pause for
+  human decisions, edit files, and verify work.
 
-- a versioned HTTP API owns record behavior and is the only normal runtime
-  component that accesses the live SQLite database;
-- a Python SDK, one-shot command-line client, and browser interface use the
-  same `/api/v1` contract and semantics;
-- Docker Compose provides the supported build and runtime path, without
-  installing the application toolchain or services directly on the host; and
-- operation is limited to non-production demonstration and test data that
-  satisfies the applicable security-policy restrictions.
+Other coding agents, IDE assistants, automation systems, or document tools may
+be useful, but they are not direct replacements. They may differ in how they
+find instructions, process prompts, request human input, manage files, use Git,
+and report verification. Developers who adopt another tool must document a
+compatibility review and may need to adapt the prompts, agent instructions,
+templates, validator, or workflow. See
+[Adapting TADp to other tools](docs/development/adapting-other-tools.md).
 
-Deletion, bulk mutation, record history, application accounts, remote
-multi-user access, and regulated production use are outside the accepted
-example boundary.
+## Core traceability model
 
-## What the example demonstrates
+```text
+binding evidence and explicit human decisions
+                       |
+                       v
+work version <-> realization suite <-> focused initiative <-> branch
+                       |
+                       v
+                    proposal
+                       |
+                       v
+          delivered product or initiative evidence
+                       |
+                       v
+             verification and completion evidence
+                       |
+                       v
+             evidence-backed lifecycle status
+```
 
-The repository material demonstrates how TADp can:
+The arrows show traceability between stages, not automatic promotion from one
+stage to the next. A realization may lead to a proposal, but it is not a
+requirement. A proposal does not authorize work. A product cannot revise its
+governing specification, and a lifecycle status does not prove completion
+without the required evidence.
 
-- preserve an initial realization without treating it as an accepted
-  specification;
-- distinguish authoritative evidence from contextual or non-authoritative
-  material;
-- retain explicit human authority and decisions alongside the records they
-  govern;
-- turn a broad application idea into versioned boundaries, contracts, policy,
-  and independently reviewable delivery units;
-- keep architecture, security policy, future initiatives, products, tests,
-  and completion claims traceable without allowing lower-authority material to
-  rewrite a governing invariant; and
-- use Git and Codex as part of a reviewable, evidence-backed workflow.
+Each governed work version uses canonical `v<major>.<minor>` syntax and maps
+one-to-one to one realization suite, one self-contained initiative, and one
+dedicated version-bearing branch. This tuple establishes identity only. A
+substantive successor or mandatory split receives a new tuple.
 
-Useful starting points are:
+Open initiative effort is also work to reconcile. Completion reviews account
+for every other open initiative, preserve conflicting efforts in the
+[work-conflict register](initiatives/work-conflicts.md), and route refinements
+through their owning workflow. Closed claims require explicit human reopening
+before refinement. See the [coherence specification](evidence/authoritative/LLM/10_Codex_Initiative_Coherence_Specification.md).
 
-- the original [application realization](evidence/non-authoritative/realizations/v0.0/RZN-001-example-record-application.md);
-- the accepted [architecture suite](evidence/authoritative/architecture/00-architecture-suite-index.md);
-- the example [NIST-aligned security-policy suite](evidence/authoritative/security/NIST/00-nist-security-policy-suite-index.md);
-- the example [HIPAA-aligned security-policy suite](evidence/authoritative/security/HIPPA/00-hipaa-security-policy-suite-index.md); and
-- the [initiative workflow guide](docs/development/initiative-workflow.md).
+## Authority model
 
-## Project-local prompts
+For every TADp request, Codex applies the canonical
+[prompt keyword contract](evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md).
+It defines positional directives, explicit exception records, action-list
+scheduling, and an extensible registry. Defaults preserve existing gates;
+reading examples grants no exception. See the
+[adoption and extension guide](docs/guides/prompt-keywords-migration.md).
 
-The [initiative coherence rule](evidence/authoritative/LLM/10_Codex_Initiative_Coherence_Specification.md)
-applies to the example and its installed template suites. Proposed and partial
-initiative effort counts as work to reconcile, while its authority remains
-explicit. Record incompatible efforts in the
-[work-conflict register](initiatives/work-conflicts.md); use completion reviews
-to route refinements to open initiatives. Closed claims require explicit
-human reopening before refinement.
+TADp uses a single authority hierarchy to decide which records govern the work:
 
-The example's root [`prompts/` workspace](prompts/README.md) holds
-non-authoritative instructions about this scaffold. Its
-[`AGENTS.md`](prompts/AGENTS.md) resolves and enforces the example boundary.
-Additional local prompt files remain ordinary project material and do not
-become authoritative evidence or proof that a workflow gate passed.
+1. [`evidence/authoritative/`](evidence/authoritative/README.md) contains
+   binding invariant evidence. These invariants set rules that all
+   lower-authority records must follow.
+2. Accepted decisions and initiative specifications govern only their recorded
+   scope and must remain compatible with authoritative evidence.
+3. Verified products show what developers delivered, but existing code or
+   behavior cannot override architectural authority.
+4. [`evidence/non-authoritative/`](evidence/non-authoritative/README.md)
+   contains clues, observations, research, examples, and advice. These sources
+   may clarify an uncertain point, but they cannot override an invariant.
 
-The protected numbered initiative workflow remains under
-`template/prompts/`; it is not duplicated into the project-local workspace.
+Codex must start by reading the binding
+[LLM invariant suite](evidence/authoritative/LLM/00_Codex_Invariant_Suite_Index.md).
+The root [`AGENTS.md`](AGENTS.md) is the repository entry point for those
+instructions. When records conflict, TADp records the conflict and routes it to
+a person with authority to resolve it. The conflict must never be hidden by
+quietly weakening a specification or completion claim.
 
-## Security evidence status
+## Repository structure
 
-The NIST- and HIPAA-aligned security-policy suites are provided as example
-evidence. Their relationships to the realization, architecture, future
-initiatives, delivery gates, and verification requirements demonstrate the
-effects that security evidence can have on a TADp workflow.
+| Path | Role |
+|---|---|
+| [`.gitattributes`](.gitattributes) | Portable LF handling for protected text and hook scripts |
+| [`.githooks/pre-commit`](.githooks/pre-commit) | Tracked validation and protected-source commit guard |
+| [`AGENTS.md`](AGENTS.md) | Repository-wide Codex instructions |
+| [`evidence/`](evidence/README.md) | Evidence and the authority level of each source |
+| [`evidence/authoritative/`](evidence/authoritative/README.md) | Binding invariants and Codex protocol rules |
+| [`evidence/non-authoritative/`](evidence/non-authoritative/README.md) | Background context that cannot override authority |
+| [`evidence/non-authoritative/realizations/`](evidence/non-authoritative/realizations/README.md) | Permanently non-authoritative problems or goals that may lead to proposals |
+| [`initiatives/`](initiatives/README.md) | Focused specifications for proposed, accepted, or completed work |
+| [`products/`](products/README.md) | Locations and records for delivered products |
+| [`prompts/`](prompts/README.md) | Non-authoritative project-local instructions confined to this scaffold |
+| [`template/initiatives/`](template/initiatives/README.md) | Standard templates for initiative records |
+| [`template/prompts/`](template/prompts/README.md) | Numbered Codex prompts and the shared workflow rules |
+| [`template/project/`](template/project/README.md) | Reusable structure for adding TADp to another repository |
+| [`tools/`](tools/README.md) | Protocol validator and instructions for using it |
+| [`tests/`](tests/test_tadp_validate.py) | Tests for the validator |
+| [`docs/`](docs/README.md) | Development and operating guides |
 
-Those suites are prospective examples, not current assessment results. Their
-presence does not establish that a product exists or that the proposed
-product, architecture, realizations, initiatives, designs, code, tests,
-configuration, documentation, or any other intermediate material conforms to
-NIST or HIPAA guidelines. Nothing in this example is a NIST or HIPAA
-compliance claim.
+See [Repository layout](docs/development/repository-layout.md) for the full
+rules about where each record belongs.
 
-## Status and disclaimer
+## Initiative workflow
 
-> **Protocol demonstration only:** The README presents the application in its
-> complete end-state form so the workflow can be understood from beginning to
-> end. The repository material is a protocol workflow demonstration, not proof
-> that a product or intermediate artifact has actually been implemented,
-> tested, released, validated, or certified. Not all evidence, realizations,
-> initiatives, product records, verification records, intermediate artifacts,
-> or other material in the example has been fully validated, reviewed,
-> reconciled, accepted, implemented, or completed.
+Each initiative covers one focused outcome, one clear authority boundary, and
+one acceptance claim that reviewers can judge on its own. The authority
+boundary identifies the people and records that can approve the work. Outcomes
+that can be accepted, verified, released, or cancelled separately become
+sibling initiatives. A subinitiative is allowed only within a real parent
+specification and must keep its own decisions, lifecycle, and verification.
 
-An accepted architecture or prospective policy describes what future work must
-satisfy; it does not prove that a product or control exists. Passing the TADp
-validator checks protocol structure and traceability rules only. It does not
-replace architecture review, product testing, security assessment, legal
-review, release approval, or evidence from a running system.
+The standard workflow is:
 
-Do not use this example with actual or possible electronic protected health
-information (ePHI), production data, confidential data, credentials, or other
-sensitive material.
+1. Preflight one unused work version, realization suite, initiative identity,
+   version-bearing branch, actual base branch, and base commit. Create the
+   branch, suite, canonical correlation row, and minimal skeleton together.
+2. Create a proposal from an existing realization.
+3. Compare the proposal with the evidence in the repository.
+4. Create the complete initial initiative record, including its scope review.
+5. Check the initiative against authoritative evidence and earlier accepted
+   decisions.
+6. Ask a human to resolve open assumptions and questions, then record each
+   response in a decision receipt.
+7. Present the complete bounded baseline for a separate explicit human
+   acceptance decision and receipt.
+8. Follow exactly one delivery path: implementation, design, or planning.
+   Implementation also performs applicable SDK/API alignment and the read-only
+   readiness review before product execution.
+9. Maintain the type-specific execution or delivery record while performing
+   only accepted work.
+10. Create completion evidence and the cross-initiative coherence review for
+    the exact accepted claim. Record `Completed` only when every in-scope gate
+    passes and incompatible efforts have a compatible disposition.
+11. Prepare the branch and pull request for review. Do not merge, deploy, or
+    delete history without explicit approval.
 
-This README is explanatory. The applicable records under
-[`evidence/authoritative`](evidence/authoritative/README.md) remain the binding
-source for the example's accepted architecture and policy.
+For the full sequence and the ownership of each record, see
+[Initiative workflow](docs/development/initiative-workflow.md).
+
+## Getting started
+
+### Work on TADp itself
+
+1. Open this repository with Codex at the repository root.
+2. Read `AGENTS.md` and the authoritative LLM rules that apply to the work.
+3. Confirm the current Git branch and inspect the complete worktree before
+   editing.
+4. Make the smallest coherent change, then update every document, template,
+   prompt, test, and validator rule that depends on it.
+5. Run the validator and its regression tests before review.
+
+### Adopt TADp in another repository
+
+1. Start with a repository root that has its own Git history.
+2. Copy the complete protected [`template/`](template/README.md) tree into the
+   target, preserving its `AGENTS.md` and `.tadp-lock.json`.
+3. Copy the contents of [`template/project/`](template/project/README.md),
+   including `.gitattributes`, `.githooks/`, and the canonical
+   `prompts/AGENTS.md` and `prompts/README.md`, into the repository root.
+   Specialize only destination copies, never the reusable source tree, and do
+   not confuse root project-local `prompts/` with the protected numbered
+   workflow at `template/prompts/`.
+4. Copy the protected authoritative `evidence/authoritative/LLM/` suite into
+   the same path in the target, preserving its scoped instructions and lock.
+   Preserve the distribution decision receipts linked by that suite under
+   `decisions/`; they retain their historical source identity and do not
+   constitute decisions for the adopting project's work.
+5. Copy the developer documentation, tools, and tests; run the protection check
+   and configure `core.hooksPath=.githooks` in each clone or worktree.
+6. Complete `project-profile.md`, assign ownership for each source of evidence,
+   and create the initiative index, status record, and work-conflict register.
+   Capture the pre-adoption Git commit in the coherence baseline field.
+
+See [Getting started](docs/development/getting-started.md) for prerequisites,
+setup options, and the first validation run.
+
+## Validation
+
+The validator uses only the Python standard library. From the protocol root
+(`protocol/` in the reference repository and normally the project root in an
+adopted repository):
+
+```powershell
+python tools/tadp_protect.py check .
+python tools/tadp_validate.py .
+python -m unittest discover -s tests -v
+```
+
+For machine-readable output:
+
+```powershell
+python tools/tadp_validate.py . --json
+```
+
+Passing validation confirms that the checked records follow TADp's structure
+and traceability rules. It does not replace architecture review, human
+decisions, product tests, release checks, or evidence from a production system.
+See [Validation and quality](docs/development/validation-and-quality.md) for
+details.
+
+## Documentation index
+
+The complete documentation index is at [`docs/README.md`](docs/README.md).
+
+| Document | Purpose |
+|---|---|
+| [Getting started](docs/development/getting-started.md) | Requirements, setup, adoption, and first validation |
+| [Architecture and authority](docs/development/architecture-and-authority.md) | Evidence order, authority boundaries, and conflicts |
+| [Repository layout](docs/development/repository-layout.md) | Rules for where folders and records belong |
+| [Initiative workflow](docs/development/initiative-workflow.md) | Workflow stages, records, human decisions, and lifecycle |
+| [Git and Codex requirements](docs/development/git-and-codex-requirements.md) | Required behavior from Git and Codex |
+| [Validation and quality](docs/development/validation-and-quality.md) | Validator behavior, tests, limits, and continuous integration (CI) |
+| [Developing TADp](docs/development/developing-tadp.md) | How to change TADp and its supporting files |
+| [Adapting other tools](docs/development/adapting-other-tools.md) | How to check and adapt a tool other than Codex |
+| [Protected-source integrity migration](docs/guides/protected-source-integrity-migration.md) | How existing adopters establish reviewed template and invariant locks |
+| [Project-local prompts migration](docs/guides/project-local-prompts-migration.md) | How existing adopters add the scoped root prompt workspace without weakening local instructions |
+| [Legacy initiative decomposition](docs/guides/legacy-initiative-decomposition.md) | How to split an older, overly broad initiative safely |
+| [Workflow stage 0–13 migration](docs/guides/workflow-stage-0-13-migration.md) | How to migrate an active initiative to explicit acceptance and type-specific delivery paths |
+| [Version-realization-initiative correlation migration](docs/guides/version-realization-correlation-migration.md) | How to record the effective point and disposition or migrate legacy identities without inference |
+| [Initiative coherence migration](docs/guides/initiative-coherence-migration.md) | How to adopt open-work reviews, conflict records, feedback, and closed-claim preservation |
+
+## Development and contribution
+
+Authoritative specifications set TADp's rules, while developer guides explain
+them. A guide cannot weaken or replace a rule. Because many files depend on the
+workflow contract, changing it usually requires matching updates to the
+specification, Codex instructions, templates, prompts, validator, tests, and
+documentation.
+
+Read [Developing TADp](docs/development/developing-tadp.md) before changing the
+protocol itself.
+
+## Status
+
+This repository is TADp's reference implementation and reusable template. Its
+validator checks the protocol structure and traceability rules. Even so,
+developers should begin with one small trial initiative before using the
+workflow for many initiatives.

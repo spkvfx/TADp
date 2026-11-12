@@ -52,4 +52,20 @@ reopening returns to Proposed. Never infer the exception from older acceptance.
 
 {{none_or_exact_remaining_question_owner_and_trigger}}
 
+## Bounded prompt exception or autonomous-method authority
+
+<!--
+Retain this section when this human decision authorizes a prompt exception or
+another decision method; otherwise remove it. Follow canonical specification
+11. Draft only in the response for preview work. Do not invent a human answer
+for a resulting agent-made disposition or claim a waived gate passed.
+-->
+
+- **Exception record:** {{gate_exception_link_or_none}}
+- **Source prompt and block:** {{stable_prompt_revision_block_id_and_exact_range}}
+- **Authorized rules and gates:** {{exact_rule_ids_revisions_and_bounded_replacements}}
+- **Autonomous method and limits:** {{explicitly_authorized_method_or_none}}
+- **Resulting agent-made dispositions:** {{actual_agent_author_method_source_ids_and_links_or_none}}
+- **Remaining obligations and restoration:** {{locks_unexcepted_rules_end_condition_and_rechecks}}
+
 

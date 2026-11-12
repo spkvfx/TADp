@@ -25,6 +25,12 @@ Other agents and tools are outside the guaranteed execution environment. Read
 
 ## Choose an adoption path
 
+Every TADp task applies the canonical
+[prompt keyword contract](../../evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md),
+even when no stored prompt is invoked. Existing installations use the
+[keyword migration guide](../guides/prompt-keywords-migration.md) before
+claiming adoption; installing the capability grants no live exception.
+
 ### Use this repository as the TADp reference implementation
 
 Use this path when maintaining the protocol itself:

@@ -15,6 +15,8 @@ from pathlib import Path, PurePosixPath
 from typing import Iterable
 from urllib.parse import unquote
 
+from tadp_keywords import SPECIFICATION as KEYWORD_SPECIFICATION, load_registry
+
 
 MARKDOWN_LINK = re.compile(r"(?<!!)\[[^\]]+\]\(([^)]+)\)")
 HTML_COMMENT = re.compile(r"<!--.*?-->", re.DOTALL)
@@ -742,6 +744,13 @@ def validate_links(root: Path) -> list[Finding]:
             if not target_path:
                 continue
             resolved = (path.parent / unquote(target_path)).resolve()
+            # Project instruction templates deliberately use the installed
+            # project's direct canonical link. Resolve that one destination
+            # against the adopting root, rather than duplicating authority
+            # below template/project/evidence.
+            template_keyword = (root / "template/project" / KEYWORD_SPECIFICATION).resolve()
+            if resolved == template_keyword and is_template(path, root):
+                resolved = (root / KEYWORD_SPECIFICATION).resolve()
             if not resolved.exists():
                 line = text.count("\n", 0, match.start()) + 1
                 findings.append(
@@ -2015,6 +2024,37 @@ def validate_prompts(root: Path) -> list[Finding]:
     return findings
 
 
+def validate_keyword_contract(root: Path) -> list[Finding]:
+    """Check adopted registry and entry points without interpreting stored prompts.
+
+    Earlier projects without specification 11 retain their governing revision.
+    Protected-source validation independently detects removal or drift of an
+    adopted specification; keyword requests never bypass that check.
+    """
+    specification = root / KEYWORD_SPECIFICATION
+    if not specification.is_file():
+        return []
+    findings: list[Finding] = []
+    try:
+        load_registry(root)
+    except (OSError, ValueError, TypeError, AttributeError) as error:
+        findings.append(Finding("error", "TADP046", KEYWORD_SPECIFICATION,
+                                f"invalid canonical keyword registry: {error}"))
+    name = specification.name
+    references = {
+        "AGENTS.md": f"evidence/authoritative/LLM/{name}",
+        "template/project/AGENTS.md": f"evidence/authoritative/LLM/{name}",
+        "evidence/authoritative/LLM/00_Codex_Invariant_Suite_Index.md": name,
+    }
+    for path, target in references.items():
+        source = root / path
+        text = source.read_text(encoding="utf-8") if source.is_file() else ""
+        if target not in MARKDOWN_LINK.findall(text):
+            findings.append(Finding("error", "TADP047", path,
+                                    "missing direct relative canonical keyword specification reference"))
+    return findings
+
+
 def validate(root: Path, *, base_ref: str = "HEAD") -> list[Finding]:
     root = root.resolve()
     findings: list[Finding] = []
@@ -2027,6 +2067,7 @@ def validate(root: Path, *, base_ref: str = "HEAD") -> list[Finding]:
     findings.extend(validate_version_correlation(root))
     findings.extend(validate_coherence(root, base_ref))
     findings.extend(validate_prompts(root))
+    findings.extend(validate_keyword_contract(root))
     return sorted(findings, key=lambda item: (item.severity, item.code, item.path))
 
 

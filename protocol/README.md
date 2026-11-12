@@ -78,6 +78,13 @@ before refinement. See the [coherence specification](evidence/authoritative/LLM/
 
 ## Authority model
 
+For every TADp request, Codex applies the canonical
+[prompt keyword contract](evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md).
+It defines positional directives, explicit exception records, action-list
+scheduling, and an extensible registry. Defaults preserve existing gates;
+reading examples grants no exception. See the
+[adoption and extension guide](docs/guides/prompt-keywords-migration.md).
+
 TADp uses a single authority hierarchy to decide which records govern the work:
 
 1. [`evidence/authoritative/`](evidence/authoritative/README.md) contains
@@ -258,4 +265,3 @@ This repository is TADp's reference implementation and reusable template. Its
 validator checks the protocol structure and traceability rules. Even so,
 developers should begin with one small trial initiative before using the
 workflow for many initiatives.
-
