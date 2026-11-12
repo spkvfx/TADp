@@ -65,4 +65,3 @@ Uncertainty belongs in [open questions](open-questions.md).
 
 Keep proposal sources frozen and reconcile any future explicit disposition
 across architecture, mapping, roadmap, and steps.
-

@@ -205,4 +205,3 @@ supported.
 Not accepted. Readiness requires explicit assumption review, accepted blocking
 decisions, no split, exact source/destination/verification mapping, and a later
 human lifecycle decision.
-

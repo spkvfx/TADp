@@ -132,4 +132,3 @@ Run complete D2 and policy gates on exact released artifacts.
 
 Completion requires every phase and applicable architecture/NIST/HIPAA gate
 for the same exact artifact family. This Proposed roadmap authorizes no release.
-

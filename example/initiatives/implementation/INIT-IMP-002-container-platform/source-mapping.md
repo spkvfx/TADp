@@ -52,4 +52,3 @@ authority; retain Proposed standing until the authorized lifecycle changes it.
 | `MAP-Q01` | Product paths and artifact family not selected | `MAP-001`–`MAP-007` | `PLT-01` / User | Select paths and rerun scope/ownership review |
 | `MAP-Q02` | Tool/platform/provenance matrix open | `MAP-002`–`MAP-005` | `PLT-02`–`PLT-04` / User | Fix exact identities, trust, and environments |
 | `MAP-Q03` | Evidence destination and split review open | `MAP-001`, `MAP-006`, `MAP-007` | `PLT-05`, `PLT-06` / User | Select retention and confirm one claim |
-

@@ -200,4 +200,3 @@ zero-downtime or automatic-downgrade claim.
 | Revision | Date | Owner | Change |
 |---|---|---|---|
 | 0.1 | 2026-11-11 | User | Initial D2 proposal; all six implementation choices remain open |
-

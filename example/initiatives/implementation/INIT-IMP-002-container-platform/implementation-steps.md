@@ -208,4 +208,3 @@ Run the full platform, matrix, security, supply-chain, and claim gates.
 - [ ] Operator and consumer documentation states exact behavior and limits.
 - [ ] Canonical tuple remains reciprocal.
 - [ ] Status, index, artifacts, and completion evidence agree.
-

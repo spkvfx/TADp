@@ -233,4 +233,3 @@ verification, and any split consequence.
 Confirm evidence and owner boundaries; compare options against scope,
 compatibility, failure, and policy; record exact human answer/receipt; reconcile
 all affected records; link verification when first exercised.
-

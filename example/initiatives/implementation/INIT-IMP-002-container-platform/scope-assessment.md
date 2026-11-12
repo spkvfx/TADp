@@ -57,4 +57,3 @@ tuples, evidence, lifecycle, and claims.
 The current evidence supports one narrow D2 initiative. No mandatory split is
 established, but `PLT-01` and `PLT-06` must be resolved and the split audit
 rerun before acceptance.
-
