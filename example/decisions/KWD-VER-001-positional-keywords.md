@@ -4,7 +4,7 @@
 
 **Authority:** [KWD-DR-001](KWD-DR-001-positional-keywords.md)
 
-**Status:** Verified 2026-11-12; guarded recording commit tracked below
+**Status:** Verified 2026-11-12 and recorded through the guarded delivery commit
 
 **Captured Git baseline:** `fb1e241ca89303abf6376bf53a897d54ab42c617`
 
@@ -52,6 +52,7 @@ reviewed and verified before example synchronization.
 | Mirrored path inventory and parity | 51 paths reviewed | 51 corresponding paths reviewed |
 | Existing initiative, product, question, profile, and conflict-register preservation | Unchanged | Unchanged |
 | Git whitespace check | Passed | Passed |
+| Shared CLI smoke check | Two correct source-position blocks; preview affects only following text | Identical shared implementation |
 
 The retained `TADP033` warnings are the protocol's `Deferred` pre-effective
 v1.0 bootstrap and the example's `Unmigrated` original v0.0 realization.
@@ -114,12 +115,16 @@ inert keyword example, authorized protected-source changes.
 
 ## Git recording
 
-The coherent delivery is recorded through the combined repository hook and
-both staged protected-source guards, using the lock authority above for that
-single commit. Its actual commit ID and observed hook result are added in a
-follow-up traceability commit, as required by the developer workflow. No push,
-merge, release, deployment, history rewrite, or branch deletion is authorized
-or claimed.
+**Guarded delivery and effective revision commit:** `1fecb0dbca4133bfa65008e95fc7e842b7fd034b`
+
+The combined repository hook ran both installed validators and both staged
+protected-source guards successfully for that commit. Each validator reported
+zero errors and its single retained warning. Only that commit used the exact
+protected-update authority above; the override variables were removed after
+the operation. The worktree was clean after delivery. This follow-up adds
+the observed immutable commit ID and hook result, as required by the developer
+workflow. No push, merge, release, deployment, history rewrite, or branch
+deletion occurred.
 
 ## Exact path inventory
 

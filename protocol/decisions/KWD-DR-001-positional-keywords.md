@@ -68,3 +68,9 @@ its example copy preserves the same decision, not a new human response.
 Use `decisions/KWD-DR-001-positional-keywords.md` as the affected locks'
 authority reference after coherent review. Automatic record authorship does
 not itself grant authority. No unrelated protected drift may be absorbed.
+
+**Recording and effective delivery commit:** `1fecb0dbca4133bfa65008e95fc7e842b7fd034b`
+
+The coherent change was recorded through both installed validators and staged
+protected-source guards. This follow-up records the actual immutable commit,
+without retroactively creating any initiative gate exception or lifecycle fact.
