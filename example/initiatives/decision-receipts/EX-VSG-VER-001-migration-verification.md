@@ -79,6 +79,18 @@ through PyCharm's environment tool. Commands inherit a per-process Git
 | Independent preservation review (`/root/review_preservation`) | Proposal text, assumptions, questions, architecture, scope, roadmaps and steps preserved apart from navigation; source notes receive append-only addenda |
 | Independent semantic review (`/root/audit_migration`) | Exact scopes/provenance and prior claims preserved; stale profile/status installation language, old anchor and next-gate ordering identified and corrected; branch readiness limitation retained explicitly |
 
-Final commit evidence is recorded after its actual creation. These checks
-verify record structure and preservation;
+## Recorded delivery commits
+
+- `9edc7f3`: authority and placement plan, committed before planned ref creation.
+- `c3b9b13f48b850855ebefe567fa12123e7f4fd1a`: record migration, grouped suites,
+  reciprocal membership/provenance, historical mappings and recovery blocker.
+
+The migration commit ran `.githooks/pre-commit`: both project validators
+reported zero errors and one retained legacy warning each; both protected
+staged guards passed without overrides. The worktree was clean afterward.
+`git diff --check 9ab8c99 HEAD` passed, and the same range contained no changed
+protocol or example protected-source paths. This verification addendum records
+those actual results without changing the branch readiness disposition.
+
+These checks verify record structure and preservation;
 they do not resolve initiative questions, accept work or qualify a merge.
