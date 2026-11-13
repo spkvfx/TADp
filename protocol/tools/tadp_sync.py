@@ -1,0 +1,469 @@
+#!/usr/bin/env python3
+"""Preview or safely install the canonical TADp template in the current Git root.
+
+Standard library only; Git is required. No upstream code is executed. Installation
+does not adopt a protocol revision, migrate work, enable hooks, or commit files.
+"""
+
+from __future__ import annotations
+
+import argparse
+import ast
+import hashlib
+import json
+import os
+import re
+import stat
+import subprocess
+import sys
+import tempfile
+import uuid
+from dataclasses import dataclass
+from pathlib import Path, PurePosixPath
+
+DEFAULT_SOURCE = "https://github.com/spkvfx/TADp.git"
+STATE = ".tadp-sync.json"
+BACKUPS = ".tadp-sync-backups"
+RUN_LOCK = ".tadp-sync.lock"
+PROTECTED = ("template", "evidence/authoritative/LLM")
+RUNTIME_TOOLS = ("tadp_validate.py", "tadp_protect.py", "tadp_keywords.py",
+                 "tadp_scopes.py", "tadp_templates.py", "tadp_sync.py")
+
+
+class SyncError(ValueError):
+    """A synchronization was refused without overriding local work."""
+
+
+@dataclass(frozen=True)
+class Asset:
+    content: bytes
+    mode: int = 0o644
+    kind: str = "managed"
+
+
+def digest(content: bytes) -> str:
+    return hashlib.sha256(content).hexdigest()
+
+
+def canonical_digest(content: bytes) -> str:
+    if b"\0" not in content:
+        try:
+            content = content.decode("utf-8").replace("\r\n", "\n").replace("\r", "\n").encode("utf-8")
+        except UnicodeDecodeError:
+            pass
+    return digest(content)
+
+
+def safe_name(name: str) -> str:
+    if not isinstance(name, str) or not name or "\\" in name:
+        raise SyncError(f"unsafe relative path: {name!r}")
+    path = PurePosixPath(name)
+    if path.is_absolute() or path.as_posix() != name:
+        raise SyncError(f"unsafe relative path: {name!r}")
+    for part in path.parts:
+        if (part in (".", "..") or part.lower() == ".git" or part.endswith((".", " "))
+                or re.search(r'[<>:"|?*\x00-\x1f]', part)
+                or re.fullmatch(r"(?i)(con|prn|aux|nul|com[0-9]|lpt[0-9])(?:\..*)?", part)):
+            raise SyncError(f"unsafe relative path: {name!r}")
+    return name
+
+
+def linked(path: Path) -> bool:
+    info = path.lstat()
+    return stat.S_ISLNK(info.st_mode) or bool(getattr(info, "st_file_attributes", 0) & 0x400)
+
+
+def safe_target(root: Path, name: str) -> Path:
+    safe_name(name)
+    current = root
+    for part in PurePosixPath(name).parts:
+        if current.exists():
+            # Reject aliases on case-sensitive systems as well as Windows.
+            if not current.is_dir():
+                raise SyncError(f"parent is not a directory: {current}")
+            aliases = [p.name for p in current.iterdir() if p.name.casefold() == part.casefold()]
+            if len(aliases) > 1 or (aliases and part not in aliases):
+                raise SyncError(f"case-colliding destination: {name}")
+        current = current / part
+        if os.path.lexists(current) and linked(current):
+            raise SyncError(f"symlink or junction destination: {current}")
+    return current
+
+
+def snapshot(root: Path, name: str) -> str | None:
+    path = safe_target(root, name)
+    if not path.exists():
+        return None
+    if not path.is_file() or path.stat().st_nlink > 1:
+        raise SyncError(f"destination is not an independent regular file: {name}")
+    return digest(path.read_bytes())
+
+
+def validate_names(names) -> None:
+    seen: set[str] = set()
+    spellings: dict[str, str] = {}
+    for name in names:
+        safe_name(name)
+        folded = name.casefold()
+        if folded in seen:
+            raise SyncError(f"case-colliding payload/state paths: {name}")
+        seen.add(folded)
+        parts = PurePosixPath(name).parts
+        for length in range(1, len(parts) + 1):
+            prefix = "/".join(parts[:length])
+            prior = spellings.setdefault(prefix.casefold(), prefix)
+            if prior != prefix:
+                raise SyncError(f"case-colliding path components: {prior}, {prefix}")
+    for name in seen:
+        if any(parent.as_posix() in seen for parent in PurePosixPath(name).parents if parent.as_posix() != "."):
+            raise SyncError(f"file/directory collision: {name}")
+
+
+def load_state(root: Path) -> dict | None:
+    path = safe_target(root, STATE)
+    if not path.exists():
+        return None
+    snapshot(root, STATE)
+    try:
+        value = json.loads(path.read_text(encoding="utf-8"))
+    except (ValueError, UnicodeError) as error:
+        raise SyncError(f"invalid {STATE}; preserve it and reconcile manually") from error
+    if (not isinstance(value, dict) or value.get("schema_version") != 1
+            or not isinstance(value.get("source"), str)
+            or not isinstance(value.get("revision"), str)
+            or not isinstance(value.get("files"), dict)):
+        raise SyncError(f"unrecognized {STATE}; refusing to replace it")
+    if "history" in value and not isinstance(value["history"], list):
+        raise SyncError(f"unrecognized history in {STATE}; refusing to replace it")
+    validate_names(value["files"])
+    for name, entry in value["files"].items():
+        if (name.casefold() in (STATE, RUN_LOCK) or name.casefold().startswith(BACKUPS + "/")
+                or not isinstance(entry, dict) or entry.get("kind") not in ("managed", "seed")
+                or not isinstance(entry.get("sha256"), str)
+                or not re.fullmatch("[0-9a-f]{64}", entry["sha256"])):
+            raise SyncError(f"invalid sync baseline: {name}")
+    return value
+
+
+def git(repo: Path, *args: str, data: bytes | None = None) -> bytes:
+    result = subprocess.run(("git", "-c", "core.hooksPath=", *args), cwd=repo,
+                            input=data, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    if result.returncode:
+        raise SyncError(result.stderr.decode("utf-8", errors="replace").strip() or "Git failed")
+    return result.stdout
+
+
+def fetch_source(directory: Path, source: str, ref: str) -> str:
+    if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._/-]*", ref) or ".." in ref:
+        raise SyncError("--ref must be HEAD, a branch/tag/ref, or a commit ID")
+    if not source.startswith("https://"):
+        local = Path(source).expanduser()
+        if not local.is_dir():
+            raise SyncError("--source must be an HTTPS Git URL or a local repository directory")
+        source = str(local.resolve())
+    git(directory, "init", "--bare", "--quiet")
+    git(directory, "-c", "protocol.file.allow=always", "fetch", "--quiet", "--depth=1",
+        "--no-tags", "--", source, ref)
+    return git(directory, "rev-parse", "--verify", "FETCH_HEAD^{commit}").decode().strip()
+
+
+def verify_lock(assets: dict[str, Asset], prefix: str) -> None:
+    lock_name = prefix + "/.tadp-lock.json"
+    if lock_name not in assets:
+        raise SyncError(f"upstream is missing {lock_name}")
+    try:
+        lock = json.loads(assets[lock_name].content)
+    except (ValueError, UnicodeError) as error:
+        raise SyncError(f"invalid upstream lock: {lock_name}") from error
+    expected = {name[len(prefix) + 1:]: canonical_digest(asset.content)
+                for name, asset in assets.items() if name.startswith(prefix + "/") and name != lock_name}
+    if (not isinstance(lock, dict) or lock.get("schema_version") != 1
+            or lock.get("algorithm") != "sha256-canonical-v1"
+            or lock.get("protected_root") != prefix
+            or not isinstance(lock.get("authority"), str) or not lock["authority"].strip()
+            or lock.get("files") != expected):
+        raise SyncError(f"upstream lock does not match its complete source tree: {lock_name}")
+
+
+def load_assets(repo: Path, revision: str) -> dict[str, Asset]:
+    """Read committed blobs, never a checkout or executable remote code.
+
+    Only template/, the runtime invariant suite and the named runtime tools
+    are selected. No development docs, decisions or live work are imported.
+    """
+    entries = []
+    for item in git(repo, "ls-tree", "-r", "-z", revision).split(b"\0"):
+        if not item:
+            continue
+        metadata, encoded_name = item.split(b"\t", 1)
+        mode, kind, oid = metadata.decode().split()
+        name = encoded_name.decode("utf-8")
+        if (name.startswith("protocol/template/")
+                or name.startswith("protocol/evidence/authoritative/LLM/")
+                or name in {"protocol/tools/" + tool for tool in RUNTIME_TOOLS}):
+            safe_name(name)
+            if mode not in ("100644", "100755") or kind != "blob":
+                raise SyncError(f"upstream links/submodules are not supported: {name}")
+            entries.append((name, oid, 0o755 if mode == "100755" else 0o644))
+    if not entries:
+        raise SyncError("upstream has no protocol/template distribution")
+    raw = git(repo, "cat-file", "--batch", data="".join(oid + "\n" for _, oid, _ in entries).encode())
+    blobs = []
+    offset = 0
+    for _ in entries:
+        end = raw.index(b"\n", offset)
+        header = raw[offset:end].split()
+        if len(header) != 3 or header[1] != b"blob":
+            raise SyncError("unreadable upstream blob")
+        size = int(header[2])
+        if size > 32 * 1024 * 1024:
+            raise SyncError("upstream template file exceeds 32 MiB")
+        blobs.append(raw[end + 1:end + 1 + size])
+        offset = end + 2 + size
+    assets: dict[str, Asset] = {}
+    has_embedded_suite = any(name.startswith("protocol/template/project/evidence/authoritative/LLM/")
+                             for name, _, _ in entries)
+
+    def add(name: str, content: bytes, mode: int, kind: str = "managed") -> None:
+        asset = Asset(content, mode, kind)
+        if name in assets and assets[name] != asset:
+            raise SyncError(f"conflicting upstream deployment sources: {name}")
+        assets[name] = asset
+
+    for (name, _, mode), content in zip(entries, blobs):
+        if name.startswith("protocol/template/"):
+            relative = name[len("protocol/template/"):]
+            if relative.startswith(("project/docs/development/", "project/decisions/")):
+                raise SyncError(f"template contains excluded development documents: {name}")
+            add("template/" + relative, content, mode)
+            if relative.startswith("project/"):
+                target = relative[len("project/"):]
+                managed = target.startswith(("evidence/authoritative/LLM/", "tools/"))
+                add(target, content, mode, "managed" if managed else "seed")
+        elif name.startswith("protocol/evidence/"):
+            if not has_embedded_suite:
+                add(name[len("protocol/"):], content, mode)
+        else:
+            add(name[len("protocol/"):], content, mode)
+    validate_names(assets)
+    for required in ("template/AGENTS.md", "AGENTS.md", "README.md",
+                     "evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md",
+                     "tools/tadp_validate.py", "tools/tadp_protect.py"):
+        if required not in assets:
+            raise SyncError(f"upstream deployment prerequisite is missing: {required}")
+    for prefix in PROTECTED:
+        verify_lock(assets, prefix)
+    # Older published revisions need only their actual runtime dependencies.
+    # Check local tadp_* imports without importing or running fetched code.
+    for name, asset in assets.items():
+        if name.startswith("tools/") and name.endswith(".py"):
+            try:
+                tree = ast.parse(asset.content, filename=name)
+            except SyntaxError as error:
+                raise SyncError(f"upstream tool requires unsupported/invalid Python syntax: {name}") from error
+            for node in ast.walk(tree):
+                modules = ([node.module] if isinstance(node, ast.ImportFrom)
+                           else [alias.name for alias in node.names] if isinstance(node, ast.Import) else [])
+                for module in modules:
+                    if module and module.startswith("tadp_") and "tools/" + module + ".py" not in assets:
+                        raise SyncError(f"upstream runtime dependency is missing: {name} imports {module}")
+    return assets
+
+
+def make_plan(root: Path, assets: dict[str, Asset], state: dict | None) -> dict:
+    validate_names(assets)
+    previous = state["files"] if state else {}
+    actions = []
+    expected = {STATE: snapshot(root, STATE)}
+    for name in sorted(set(assets) | set(previous)):
+        if name.casefold() in (STATE, RUN_LOCK) or name.casefold().startswith(BACKUPS + "/"):
+            raise SyncError(f"reserved sync path: {name}")
+        current = expected[name] = snapshot(root, name)
+        asset = assets.get(name)
+        baseline = previous.get(name)
+        if asset is None:
+            action, reason = "retain", "removed upstream; local file is never deleted or recreated"
+        elif asset.kind == "seed" and current is not None:
+            action, reason = "preserve", "project-owned scaffold file already exists"
+        elif current == digest(asset.content):
+            action, reason = "unchanged", "already matches upstream"
+        elif current is None and baseline:
+            action, reason = "conflict", "previously installed file was removed locally; preserving that choice"
+        elif current is None:
+            action, reason = "create", "missing template/runtime asset"
+        elif baseline and baseline["kind"] == "managed" and current == baseline["sha256"]:
+            action, reason = "update", "unchanged since the recorded installation"
+        else:
+            action, reason = "conflict", "user-modified or unmanaged destination; manual reconciliation required"
+        actions.append(dict(path=name, action=action, reason=reason))
+    # A changed lock must never hide local additions or upstream removals.
+    for prefix in PROTECTED:
+        if not any(a["action"] in ("create", "update") and a["path"].startswith(prefix + "/") for a in actions):
+            continue
+        directory = safe_target(root, prefix)
+        if directory.exists():
+            for path in directory.rglob("*"):
+                if linked(path):
+                    raise SyncError(f"symlink or junction in protected tree: {path}")
+                if path.is_file():
+                    name = path.relative_to(root).as_posix()
+                    expected[name] = snapshot(root, name)
+                    if name not in assets:
+                        actions.append(dict(path=name, action="conflict",
+                                            reason="protected local/retired file would contradict upstream lock; retained"))
+    conflicts = [a["path"] + ": " + a["reason"] for a in actions if a["action"] == "conflict"]
+    return dict(actions=actions, conflicts=conflicts, _expected=expected,
+                _assets={name: (digest(a.content), a.mode, a.kind) for name, a in assets.items()})
+
+
+def apply_plan(root: Path, assets: dict[str, Asset], plan: dict, *, source: str,
+               revision: str, authority: str = "") -> None:
+    # Serialize cooperating sync processes. Never replace/remove someone else's
+    # lock, including a stale lock left by interruption; that requires inspection.
+    if plan["conflicts"]:
+        raise SyncError("conflicts block all writes; reconcile manually and preview again")
+    lock = safe_target(root, RUN_LOCK)
+    token = uuid.uuid4().hex.encode()
+    with lock.open("xb") as stream:
+        stream.write(token)
+    try:
+        _apply_plan(root, assets, plan, source=source, revision=revision, authority=authority)
+    finally:
+        if snapshot(root, RUN_LOCK) == digest(token):
+            lock.unlink()  # Only our own temporary coordination file, never payload.
+
+
+def _apply_plan(root: Path, assets: dict[str, Asset], plan: dict, *, source: str,
+                revision: str, authority: str = "") -> None:
+    if plan["conflicts"]:
+        raise SyncError("conflicts block all writes; reconcile manually and preview again")
+    if plan["_assets"] != {name: (digest(a.content), a.mode, a.kind) for name, a in assets.items()}:
+        raise SyncError("payload changed after preview")
+    updates = [a for a in plan["actions"] if a["action"] in ("create", "update")]
+    protected_updates = [a["path"] for a in updates if a["action"] == "update"
+                         and any(a["path"].startswith(p + "/") for p in PROTECTED)]
+    if protected_updates and not authority.strip():
+        raise SyncError("protected updates require --authority identifying the exact human-approved upstream revision/change")
+    for name, expected in plan["_expected"].items():
+        if snapshot(root, name) != expected:
+            raise SyncError(f"destination changed since preview: {name}")
+    old_state = load_state(root)
+    fresh = make_plan(root, assets, old_state)
+    if fresh["conflicts"] or fresh["actions"] != plan["actions"] or fresh["_expected"] != plan["_expected"]:
+        raise SyncError("destination tree changed since preview; preview again before applying")
+    files = dict(old_state["files"]) if old_state else {}
+    backup_id = uuid.uuid4().hex
+    # Back up every replaceable file first, retaining exact bytes and permissions.
+    for item in updates:
+        if item["action"] == "update":
+            name = item["path"]
+            destination = safe_target(root, f"{BACKUPS}/{backup_id}/{name}")
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            original = safe_target(root, name)
+            with destination.open("xb") as stream:
+                stream.write(original.read_bytes())
+            os.chmod(destination, stat.S_IMODE(original.stat().st_mode))
+    for item in updates:
+        name = item["path"]
+        if snapshot(root, name) != plan["_expected"][name]:
+            raise SyncError(f"destination changed during apply: {name}; earlier writes/backups retained")
+        path = safe_target(root, name)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        asset = assets[name]
+        # Exclusive creation; existing managed files are opened without truncation
+        # and checked again on the actual handle before replacement.
+        with path.open("xb" if item["action"] == "create" else "r+b") as stream:
+            # Confirm the actual opened handle still names the intended regular
+            # file before writing (including Windows link/junction checks).
+            checked = safe_target(root, name).stat(follow_symlinks=False)
+            opened = os.fstat(stream.fileno())
+            if ((checked.st_dev, checked.st_ino) != (opened.st_dev, opened.st_ino)
+                    or not stat.S_ISREG(opened.st_mode) or opened.st_nlink != 1):
+                raise SyncError(f"destination identity changed while opening: {name}")
+            if item["action"] == "update":
+                if digest(stream.read()) != plan["_expected"][name]:
+                    raise SyncError(f"destination changed while opening: {name}")
+                stream.seek(0)
+            stream.write(asset.content)
+            stream.truncate()
+        if item["action"] == "create":
+            os.chmod(path, asset.mode)
+    for item in plan["actions"]:
+        name = item["path"]
+        if name in assets and item["action"] in ("create", "update", "unchanged"):
+            files[name] = dict(sha256=digest(assets[name].content), kind=assets[name].kind)
+    if (old_state and not updates and files == old_state["files"]
+            and source == old_state["source"] and revision == old_state["revision"]
+            and not authority):
+        return  # A repeated identical apply does not erase authority or rewrite state.
+    history = list(old_state.get("history", [])) if old_state else []
+    if old_state and not history:
+        history.append({key: old_state.get(key) for key in ("source", "revision", "authority", "backup")})
+    history.append(dict(source=source, revision=revision, authority=authority,
+                        backup=backup_id if any(a["action"] == "update" for a in updates) else None,
+                        paths=[a["path"] for a in updates]))
+    payload = dict(schema_version=1, source=source, revision=revision, authority=authority,
+                   backup=backup_id if any(a["action"] == "update" for a in updates) else None,
+                   files=files, history=history)
+    if snapshot(root, STATE) != plan["_expected"][STATE]:
+        raise SyncError("sync state changed during apply; earlier writes/backups retained")
+    # Metadata replacement is atomic; payload writes are deliberately not described
+    # as transactional. On an I/O failure retain all work and backups for inspection.
+    temporary = safe_target(root, STATE + "." + uuid.uuid4().hex + ".tmp")
+    with temporary.open("x", encoding="utf-8", newline="\n") as stream:
+        json.dump(payload, stream, indent=2, sort_keys=True)
+        stream.write("\n")
+    os.replace(temporary, safe_target(root, STATE))
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--source", default=DEFAULT_SOURCE, help="HTTPS Git URL or local fixture repository")
+    parser.add_argument("--ref", default="HEAD", help="upstream branch/tag/commit; HEAD discovers the default branch")
+    parser.add_argument("--apply", action="store_true", help="write a conflict-free plan; default is preview")
+    parser.add_argument("--authority", default="", help="exact human authority for existing protected-source updates")
+    parser.add_argument("--json", action="store_true", help="emit the plan and pinned commit as JSON")
+    args = parser.parse_args(argv)
+    try:
+        root = Path.cwd().resolve()
+        git_root = Path(git(root, "rev-parse", "--show-toplevel").decode().strip()).resolve()
+        if root != git_root:
+            raise SyncError("run from the target repository's Git root (no implicit parent or protocol/ target)")
+        state = load_state(root)
+        if state and state["source"] != args.source:
+            raise SyncError("source differs from recorded installation; reconcile source identity manually")
+        with tempfile.TemporaryDirectory(prefix="tadp-upstream-") as directory:
+            source_repo = Path(directory)
+            revision = fetch_source(source_repo, args.source, args.ref)
+            assets = load_assets(source_repo, revision)
+        plan = make_plan(root, assets, state)
+        warnings = ["Only template/scaffold, runtime suite and named runtime tools are included; development documents and live work are excluded.",
+                    "Fresh installs cannot pass the full validator's required development-document checks with this restricted payload; historical links also reference excluded records. Source synchronization is not template completeness or protocol adoption.",
+                    "No deletion, pruning, automatic merge, hook activation, staging or commit is performed."]
+        result = dict(source=args.source, revision=revision, mode="apply" if args.apply else "preview",
+                      actions=plan["actions"], conflicts=plan["conflicts"], warnings=warnings, applied=False)
+        if args.apply and not plan["conflicts"]:
+            apply_plan(root, assets, plan, source=args.source, revision=revision, authority=args.authority)
+            result["applied"] = True
+        if args.json:
+            print(json.dumps(result, indent=2))
+        else:
+            print(f"TADp {result['mode']}: {args.source} @ {revision}")
+            for item in plan["actions"]:
+                print(f"{item['action']:10} {item['path']}: {item['reason']}")
+            for warning in warnings:
+                print(f"NOTE: {warning}")
+            if result["applied"]:
+                print(f"Applied. Baselines: {STATE}; previous managed bytes: {BACKUPS}/ (when updated).")
+            elif plan["conflicts"]:
+                print("Blocked: conflicts; no target writes performed.")
+            else:
+                print("Preview only; no target writes. Use --ref with the printed commit and --apply after review.")
+        return 1 if plan["conflicts"] else 0
+    except (OSError, UnicodeError, SyncError, subprocess.SubprocessError) as error:
+        print(f"error: {error}", file=sys.stderr)
+        return 2
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

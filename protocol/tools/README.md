@@ -11,6 +11,7 @@ commands and do not execute when this document is read.
 | `python tools/tadp_protect.py check [root]` | Root defaults to `.`; text findings for both protected roots. | Read-only. `0`: locks match; `1`: integrity findings; `2`: invalid root or arguments. |
 | `python tools/tadp_protect.py guard-staged [root]` | Inspects actual staged/unstaged protected paths and matching recorded update authority. | Read-only commit gate. `0`: permitted; `1`: blocked; `2`: inspection or argument error. |
 | `python tools/tadp_keywords.py root --prompt-id ID --text TEXT` | Explicit prompt text and identity; reads the canonical registry and emits JSON interpretation blocks. | Read-only. `0`: interpreted; `2`: invalid arguments or registry/input error. It performs no requested work. |
+| `python tools/tadp_sync.py [--ref REVISION] [--apply] [--authority REFERENCE] [--json]` | Run from the target Git root; fetches the canonical GitHub template and pins its actual commit. Defaults to a preview. | `0`: conflict-free preview or successful apply; `1`: conflicts, no target writes; `2`: invalid input, unsafe source/destination, missing authority, Git or I/O error. An I/O failure during apply can leave partial writes and retained backups. |
 | `tadp_scopes.py`, `tadp_templates.py` | Python library APIs described below; called by the validator where applicable. | No standalone CLI. Integration helpers have their own explicit side effects and authority requirements. |
 
 `initialize` and `refresh` are the protection tool's separately authorized
@@ -20,6 +21,83 @@ selectors and require `--authority`; without selectors they address both
 roots. They write locks, return `0` on success and `2` for rejected input or
 baseline conditions. See the governed procedure in
 [Validation and quality](../docs/development/validation-and-quality.md#protected-source-workflow).
+
+## Synchronize template sources into a project
+
+Use `tadp_sync.py` with Python 3.11 or later and Git. Run it from the Git root
+of the **adopting repository**, using an absolute path to the script if it has
+not been installed there. It defaults to `https://github.com/spkvfx/TADp.git`
+and the upstream default branch (`HEAD`). `--source` accepts another trusted
+HTTPS Git repository or a local fixture repository; it must retain the
+`protocol/` distribution layout. `--ref` can pin a branch, tag or commit.
+Upstream content is read from committed Git blobs; fetched programs and hooks
+are never executed during synchronization.
+
+These are inert command examples. Here `python` denotes the configured
+interpreter, and `UPSTREAM_COMMIT` is the exact hash printed by the preview:
+
+```powershell
+python C:/path/to/TADp/protocol/tools/tadp_sync.py --json
+python C:/path/to/TADp/protocol/tools/tadp_sync.py --ref UPSTREAM_COMMIT --apply
+```
+
+The payload contains the complete upstream `protocol/template/` library at
+`template/`, project scaffold files from `template/project/` at the target
+root, the runtime invariant suite, and the named `tadp_*.py` runtime tools.
+If the template embeds the suite, that copy is used; older templates use the
+distribution's canonical suite. Both source locks must match their complete
+trees. The script copies upstream locks unchanged and never refreshes them.
+It excludes the distribution's live initiatives, products, realizations,
+decisions, development reports, `docs/` and `tests/`; it refuses templates
+that package project development documentation or development decision files.
+It does not copy the reference repository's root maintenance `prompts/`.
+
+Existing scaffold files such as root `README.md`, `AGENTS.md`, project prompts
+and `.githooks/pre-commit` are preserved. Missing scaffold sources are copied
+without populating project-specific fields or instantiating live work records.
+Review existing instructions against newer scaffold sources under
+`template/project/` manually. A preserved root hook is not automatically
+upgraded or enabled.
+
+`.tadp-sync.json` records the installed source, commit and raw content hashes,
+plus history of sync revisions, authority references and backups.
+Keep it with the project. Existing managed files update only when they still
+match their recorded installation; identical upstream files can establish a
+baseline on the first run. Unmanaged collisions, locally edited managed files,
+and locally removed installed files require manual reconciliation. Any
+conflict prevents all target writes. Preview does not create state or backups.
+Switching recorded source identity also requires manual reconciliation.
+
+Existing protected-source updates additionally require `--authority` naming
+the human-approved revision and exact change, for example a project decision
+receipt. This argument records authority; it cannot create authorization.
+Review compatibility and adoption requirements before approving that update.
+Local additions or upstream removals that would contradict an incoming
+protected lock block the update. There is no force, prune or delete option.
+Upstream-retired files and user work remain in place. The tool never stages,
+commits, merges, changes Git configuration, enables hooks or deletes branches.
+
+Before replacing a managed file, the script saves its exact previous content
+under `.tadp-sync-backups/<run-id>/<original-path>`. Retain these backups until
+the update has been reviewed. Run without concurrent writers; changes detected
+between planning and writing abort the operation. Apply is not a transaction:
+an I/O failure can leave some files updated, with backups retained and an error
+exit. Inspect those paths and reconcile them manually before retrying; the
+script never deletes work as rollback or restores backups over user edits.
+An exclusive `.tadp-sync.lock` serializes sync runs and is removed only by its
+own invocation. If interruption leaves it behind, inspect it before manually
+reconciling the stale lock; the tool never removes another run's lock.
+
+Source synchronization does not establish template completeness, project
+adoption, migration, acceptance or lifecycle completion. The current suite
+contains historical links to excluded development records, and the full
+validator expects documentation not supplied by this restricted payload.
+Report those gaps rather than importing protocol-development records to make
+validation pass. After installation, review the template completeness prompt,
+the project's recorded governing revision, required manual scaffold changes,
+and the actual protection/validation findings. Use
+`python tools/tadp_protect.py check .` and `python tools/tadp_validate.py .`
+from the adopting root; do not infer a passing result from successful copying.
 
 `tadp_templates.py` supplies read-only checks for the installed
 [canonical coverage map](../template/TEMPLATE-COVERAGE.md) and documentary

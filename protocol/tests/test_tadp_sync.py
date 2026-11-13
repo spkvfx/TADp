@@ -1,0 +1,522 @@
+from __future__ import annotations
+
+import json
+import os
+import stat
+import subprocess
+import sys
+import tempfile
+import unittest
+from pathlib import Path
+
+PROTOCOL = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(PROTOCOL / "tools"))
+
+from tadp_sync import Asset, apply_plan, digest, load_assets, load_state, make_plan  # noqa: E402
+
+
+class SynchronizationSafetyTests(unittest.TestCase):
+    """Exercise preservation with real files, independently of Git/network access."""
+
+    def write(self, root: Path, name: str, content: bytes) -> Path:
+        path = root / name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(content)
+        return path
+
+    def snapshot(self, root: Path) -> dict[str, bytes]:
+        return {
+            path.relative_to(root).as_posix(): path.read_bytes()
+            for path in root.rglob("*")
+            if path.is_file() and not path.is_symlink()
+        }
+
+    def apply(self, root: Path, assets: dict[str, Asset], revision: str = "a" * 40):
+        plan = make_plan(root, assets, load_state(root))
+        self.assertFalse(plan["conflicts"], plan["conflicts"])
+        apply_plan(root, assets, plan, source="https://github.com/spkvfx/TADp.git",
+                   revision=revision)
+        return plan
+
+    def refuse(self, root: Path, assets: dict[str, Asset]):
+        before = self.snapshot(root)
+        try:
+            plan = make_plan(root, assets, load_state(root))
+        except (ValueError, RuntimeError, OSError):
+            pass
+        else:
+            self.assertTrue(plan["conflicts"], plan)
+            with self.assertRaises((ValueError, RuntimeError, OSError)):
+                apply_plan(root, assets, plan,
+                           source="https://github.com/spkvfx/TADp.git", revision="b" * 40)
+        self.assertEqual(before, self.snapshot(root))
+
+    def test_preview_does_not_write_files_or_state(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.write(root, "user.txt", b"draft work\n")
+            before = self.snapshot(root)
+            plan = make_plan(root, {"tools/runtime.py": Asset(b"runtime\n")}, None)
+            self.assertFalse(plan["conflicts"])
+            self.assertEqual(before, self.snapshot(root))
+
+    def test_install_creates_only_requested_assets_and_records_raw_hashes(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            content = b"runtime\r\n"
+            self.apply(root, {"tools/runtime.py": Asset(content)})
+            self.assertEqual(content, (root / "tools/runtime.py").read_bytes())
+            state = load_state(root)
+            self.assertEqual(digest(content), state["files"]["tools/runtime.py"]["sha256"])
+            self.assertNotEqual(digest(content), digest(b"runtime\n"))
+
+    def test_identical_repeat_apply_does_not_rewrite_state_or_create_backups(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            assets = {"tools/runtime.py": Asset(b"unchanged runtime\n")}
+            self.apply(root, assets)
+            before = self.snapshot(root)
+            state_modified = (root / ".tadp-sync.json").stat().st_mtime_ns
+            self.apply(root, assets)
+            self.assertEqual(before, self.snapshot(root))
+            self.assertEqual(state_modified, (root / ".tadp-sync.json").stat().st_mtime_ns)
+            self.assertFalse((root / ".tadp-sync-backups").exists())
+
+    def test_existing_project_scaffold_remains_user_owned(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            user_files = {
+                "README.md": b"My application, not a blank scaffold\n",
+                "AGENTS.md": b"My project instructions\n",
+                "prompts/AGENTS.md": b"Project prompt rules\n",
+                ".githooks/pre-commit": b"My existing hook\n",
+            }
+            for name, content in user_files.items():
+                self.write(root, name, content)
+            assets = {name: Asset(b"upstream seed\n", kind="seed") for name in user_files}
+            self.apply(root, assets)
+            for name, content in user_files.items():
+                self.assertEqual(content, (root / name).read_bytes(), name)
+
+    def test_user_customized_seed_survives_later_sync(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.apply(root, {"README.md": Asset(b"scaffold\n", kind="seed")})
+            self.write(root, "README.md", b"Now my actual project\n")
+            self.apply(root, {"README.md": Asset(b"new scaffold\n", kind="seed")}, "b" * 40)
+            self.assertEqual(b"Now my actual project\n", (root / "README.md").read_bytes())
+
+    def test_unmanaged_collision_blocks_every_write(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.write(root, "tools/runtime.py", b"user-owned implementation\n")
+            self.refuse(root, {
+                "tools/runtime.py": Asset(b"upstream runtime\n"),
+                "tools/new.py": Asset(b"new upstream file\n"),
+            })
+            self.assertFalse((root / "tools/new.py").exists())
+            self.assertFalse((root / ".tadp-sync.json").exists())
+
+    def test_unchanged_managed_file_updates_with_retained_backup(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.apply(root, {"tools/runtime.py": Asset(b"version one\n")})
+            user_files = {
+                "initiatives/my-initiative/README.md": b"partially performed user work\n",
+                "products/user-product.txt": b"delivered work\n",
+                "prompts/custom.md": b"a user prompt\n",
+                "evidence/authoritative/user-rule.md": b"user authority\n",
+                "untracked-draft.txt": b"a user draft\n",
+            }
+            for name, content in user_files.items():
+                self.write(root, name, content)
+            self.apply(root, {"tools/runtime.py": Asset(b"version two\n")}, "b" * 40)
+            self.assertEqual(b"version two\n", (root / "tools/runtime.py").read_bytes())
+            backups = [path for path in (root / ".tadp-sync-backups").rglob("*") if path.is_file()]
+            self.assertTrue(any(path.read_bytes() == b"version one\n" for path in backups))
+            for name, content in user_files.items():
+                self.assertEqual(content, (root / name).read_bytes(), name)
+
+    def test_user_edit_to_managed_file_blocks_update(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.apply(root, {"tools/runtime.py": Asset(b"version one\n")})
+            self.write(root, "tools/runtime.py", b"version one plus user changes\n")
+            self.refuse(root, {
+                "tools/runtime.py": Asset(b"version two\n"),
+                "tools/new.py": Asset(b"new file\n"),
+            })
+
+    def test_newline_only_user_edit_is_preserved_as_conflict(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.apply(root, {"tools/runtime.py": Asset(b"version one\n")})
+            self.write(root, "tools/runtime.py", b"version one\r\n")
+            self.refuse(root, {"tools/runtime.py": Asset(b"version two\n")})
+
+    def test_locally_deleted_managed_file_is_not_recreated(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.apply(root, {"tools/runtime.py": Asset(b"version one\n")})
+            (root / "tools/runtime.py").unlink()
+            self.refuse(root, {"tools/runtime.py": Asset(b"version two\n")})
+            self.assertFalse((root / "tools/runtime.py").exists())
+
+    def test_files_removed_upstream_are_retained_including_user_changes(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.apply(root, {
+                "tools/retired.py": Asset(b"old runtime\n"),
+                "tools/runtime.py": Asset(b"current runtime\n"),
+            })
+            self.write(root, "tools/retired.py", b"user kept and extended this\n")
+            self.apply(root, {"tools/runtime.py": Asset(b"current runtime\n")}, "b" * 40)
+            self.assertEqual(b"user kept and extended this\n", (root / "tools/retired.py").read_bytes())
+
+    def test_file_created_after_preview_is_never_overwritten(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            assets = {"tools/runtime.py": Asset(b"upstream runtime\n")}
+            plan = make_plan(root, assets, None)
+            self.write(root, "tools/runtime.py", b"new user work after preview\n")
+            before = self.snapshot(root)
+            with self.assertRaises((ValueError, RuntimeError, OSError)):
+                apply_plan(root, assets, plan, source="source", revision="a" * 40)
+            self.assertEqual(before, self.snapshot(root))
+
+    def test_edit_after_preview_blocks_all_writes(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.apply(root, {"tools/runtime.py": Asset(b"version one\n")})
+            assets = {
+                "tools/runtime.py": Asset(b"version two\n"),
+                "tools/new.py": Asset(b"new file\n"),
+            }
+            plan = make_plan(root, assets, load_state(root))
+            self.write(root, "tools/runtime.py", b"a concurrent user edit\n")
+            before = self.snapshot(root)
+            with self.assertRaises((ValueError, RuntimeError, OSError)):
+                apply_plan(root, assets, plan, source="source", revision="b" * 40)
+            self.assertEqual(before, self.snapshot(root))
+
+    def test_changed_sync_state_after_preview_is_preserved(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.apply(root, {"tools/runtime.py": Asset(b"version one\n")})
+            assets = {"tools/runtime.py": Asset(b"version two\n")}
+            plan = make_plan(root, assets, load_state(root))
+            state_path = root / ".tadp-sync.json"
+            state_path.write_bytes(state_path.read_bytes() + b" \n")
+            before = self.snapshot(root)
+            with self.assertRaises((ValueError, RuntimeError, OSError)):
+                apply_plan(root, assets, plan, source="source", revision="b" * 40)
+            self.assertEqual(before, self.snapshot(root))
+
+    def test_existing_sync_lock_is_preserved_and_blocks_every_write(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            assets = {"tools/runtime.py": Asset(b"upstream runtime\n")}
+            plan = make_plan(root, assets, None)
+            self.write(root, ".tadp-sync.lock", b"another process or retained user evidence\n")
+            before = self.snapshot(root)
+            with self.assertRaises((ValueError, RuntimeError, OSError)):
+                apply_plan(root, assets, plan, source="source", revision="a" * 40)
+            self.assertEqual(before, self.snapshot(root))
+            self.assertFalse((root / "tools/runtime.py").exists())
+
+    @unittest.skipIf(os.name == "nt", "Windows chmod does not expose POSIX execution modes")
+    def test_updates_preserve_locally_selected_permissions(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.apply(root, {"tools/runtime.py": Asset(b"version one\n", mode=0o644)})
+            target = root / "tools/runtime.py"
+            target.chmod(0o700)
+            self.apply(root, {"tools/runtime.py": Asset(b"version two\n", mode=0o755)}, "b" * 40)
+            self.assertEqual(0o700, stat.S_IMODE(target.stat().st_mode))
+            backups = [path for path in (root / ".tadp-sync-backups").rglob("*")
+                       if path.is_file() and path.read_bytes() == b"version one\n"]
+            self.assertTrue(backups)
+            self.assertTrue(all(stat.S_IMODE(path.stat().st_mode) == 0o700 for path in backups))
+
+    def test_malformed_state_never_becomes_overwrite_authority(self):
+        for value in (b"not JSON\n", b"[]\n", b'{"schema_version":99,"files":{}}\n'):
+            with self.subTest(value=value), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                self.write(root, ".tadp-sync.json", value)
+                before = self.snapshot(root)
+                with self.assertRaises((ValueError, RuntimeError, OSError)):
+                    load_state(root)
+                self.assertEqual(before, self.snapshot(root))
+
+    def test_state_cannot_name_paths_outside_repository(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            value = {
+                "schema_version": 1, "source": "source", "revision": "a" * 40,
+                "files": {"../outside.txt": {"sha256": "a" * 64, "kind": "managed"}},
+            }
+            self.write(root, ".tadp-sync.json", json.dumps(value).encode())
+            with self.assertRaises((ValueError, RuntimeError, OSError)):
+                load_state(root)
+
+    def test_traversal_and_git_metadata_assets_are_refused(self):
+        for path in ("../outside.txt", "/absolute.txt", "tools/../../outside.txt",
+                     "C:/outside.txt", ".git/config", "tools\\escape.py"):
+            with self.subTest(path=path), tempfile.TemporaryDirectory() as directory:
+                self.refuse(Path(directory), {path: Asset(b"untrusted source\n")})
+
+    def test_case_colliding_assets_are_refused_on_every_platform(self):
+        with tempfile.TemporaryDirectory() as directory:
+            self.refuse(Path(directory), {
+                "tools/runtime.py": Asset(b"one\n"),
+                "tools/Runtime.py": Asset(b"another\n"),
+            })
+
+    def test_case_colliding_parent_directories_are_refused_before_writes(self):
+        with tempfile.TemporaryDirectory() as directory:
+            self.refuse(Path(directory), {
+                "Tools/first.py": Asset(b"one\n"),
+                "tools/second.py": Asset(b"another\n"),
+            })
+
+    def test_user_file_blocking_directory_is_not_replaced(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.write(root, "tools", b"a user file named tools\n")
+            self.refuse(root, {"tools/runtime.py": Asset(b"upstream\n")})
+
+    def test_symlink_parent_never_writes_outside_repository(self):
+        with tempfile.TemporaryDirectory() as directory:
+            parent = Path(directory)
+            root, outside = parent / "repo", parent / "outside"
+            root.mkdir()
+            outside.mkdir()
+            try:
+                (root / "tools").symlink_to(outside, target_is_directory=True)
+            except (OSError, NotImplementedError):
+                self.skipTest("creating symbolic links is unavailable")
+            self.refuse(root, {"tools/runtime.py": Asset(b"untrusted\n")})
+            self.assertEqual([], list(outside.iterdir()))
+
+    def protected_assets(self, content: bytes) -> dict[str, Asset]:
+        lock = {
+            "schema_version": 1, "algorithm": "sha256-canonical-v1",
+            "protected_root": "template", "authority": "Fixture protected source revision",
+            "files": {"record.md": digest(content)},
+        }
+        return {
+            "template/record.md": Asset(content),
+            "template/.tadp-lock.json": Asset(json.dumps(lock, sort_keys=True).encode() + b"\n"),
+        }
+
+    def test_existing_protected_source_update_requires_exact_authority_reference(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.apply(root, self.protected_assets(b"source one\n"))
+            assets = self.protected_assets(b"source two\n")
+            plan = make_plan(root, assets, load_state(root))
+            before = self.snapshot(root)
+            with self.assertRaisesRegex(ValueError, "authority"):
+                apply_plan(root, assets, plan, source="source", revision="b" * 40)
+            self.assertEqual(before, self.snapshot(root))
+            apply_plan(root, assets, plan, source="source", revision="b" * 40,
+                       authority="Fixture human authorizes source-two revision")
+            self.assertEqual(b"source two\n", (root / "template/record.md").read_bytes())
+
+    def test_local_addition_to_protected_tree_blocks_lock_replacement(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.apply(root, self.protected_assets(b"source one\n"))
+            self.write(root, "template/user-source.md", b"a user-created source\n")
+            self.refuse(root, self.protected_assets(b"source two\n"))
+
+    def test_protected_addition_after_preview_blocks_every_write(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.apply(root, self.protected_assets(b"source one\n"))
+            assets = self.protected_assets(b"source two\n")
+            assets["tools/new.py"] = Asset(b"new runtime\n")
+            plan = make_plan(root, assets, load_state(root))
+            self.assertFalse(plan["conflicts"])
+            self.write(root, "template/new-user-source.md", b"created after preview\n")
+            before = self.snapshot(root)
+            with self.assertRaisesRegex(ValueError, "changed"):
+                apply_plan(root, assets, plan, source="source", revision="b" * 40,
+                           authority="Fixture authorizes source-two revision")
+            self.assertEqual(before, self.snapshot(root))
+
+    def test_later_updates_preserve_authority_revision_and_backup_history(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            source = "https://github.com/spkvfx/TADp.git"
+            self.apply(root, self.protected_assets(b"source one\n"))
+            assets_two = self.protected_assets(b"source two\n")
+            plan_two = make_plan(root, assets_two, load_state(root))
+            apply_plan(root, assets_two, plan_two, source=source, revision="b" * 40,
+                       authority="Fixture human approves source two")
+            state_two = load_state(root)
+            history_two = state_two["history"]
+            self.assertTrue(any(entry.get("authority") == "Fixture human approves source two"
+                                and entry.get("revision") == "b" * 40 for entry in history_two))
+            old_backup = root / ".tadp-sync-backups" / state_two["backup"] / "template/record.md"
+            self.assertEqual(b"source one\n", old_backup.read_bytes())
+            assets_three = self.protected_assets(b"source three\n")
+            plan_three = make_plan(root, assets_three, load_state(root))
+            apply_plan(root, assets_three, plan_three, source=source, revision="c" * 40,
+                       authority="Fixture human approves source three")
+            state_three = load_state(root)
+            self.assertEqual(history_two, state_three["history"][:len(history_two)])
+            self.assertEqual(b"source one\n", old_backup.read_bytes())
+            self.assertEqual("Fixture human approves source three", state_three["history"][-1]["authority"])
+            self.assertEqual("c" * 40, state_three["history"][-1]["revision"])
+
+    def test_upstream_removal_from_protected_tree_is_retained_and_blocks_new_lock(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.apply(root, self.protected_assets(b"source one\n"))
+            next_lock = {
+                "schema_version": 1, "algorithm": "sha256-canonical-v1",
+                "protected_root": "template", "authority": "Fixture next revision", "files": {},
+            }
+            self.refuse(root, {"template/.tadp-lock.json": Asset(json.dumps(next_lock).encode() + b"\n")})
+            self.assertEqual(b"source one\n", (root / "template/record.md").read_bytes())
+
+
+class CommittedDistributionTests(unittest.TestCase):
+    """Check actual Git blobs without executing or checking out upstream code."""
+
+    def git(self, root: Path, *arguments: str, data: bytes | None = None) -> bytes:
+        result = subprocess.run(
+            ("git", "-c", "core.hooksPath=", "-c", "commit.gpgsign=false",
+             "-c", "user.name=Fixture", "-c", "user.email=fixture@example.invalid", *arguments),
+            cwd=root, input=data, stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=True,
+        )
+        return result.stdout
+
+    def fixture_files(self) -> dict[str, bytes]:
+        files = {
+            "protocol/template/AGENTS.md": b"# Reusable source rules\n",
+            "protocol/template/project/AGENTS.md": b"# Project instructions\n",
+            "protocol/template/project/README.md": b"# Project scaffold\n",
+            "protocol/template/project/.githooks/pre-commit": b"#!/bin/sh\nexit 0\n",
+            "protocol/template/prompts/00_initiative_preparation.md": b"# Preparation\n",
+            "protocol/evidence/authoritative/LLM/AGENTS.md": b"# Protected suite\n",
+            "protocol/evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md": b"# Keywords\n",
+            "protocol/docs/development/private-development-notes.md": b"EXCLUDED development report\n",
+            "protocol/decisions/private-decision.md": b"EXCLUDED historical development decision\n",
+            "protocol/initiatives/private-initiative/README.md": b"EXCLUDED development initiative\n",
+            "protocol/products/private-product.txt": b"EXCLUDED development product\n",
+            "protocol/evidence/non-authoritative/realizations/private.md": b"EXCLUDED development realization\n",
+        }
+        for name in ("tadp_validate.py", "tadp_protect.py", "tadp_keywords.py",
+                     "tadp_scopes.py", "tadp_templates.py"):
+            files["protocol/tools/" + name] = b"# runtime tool fixture, never executed\n"
+        self.refresh_fixture_locks(files)
+        return files
+
+    def refresh_fixture_locks(self, files: dict[str, bytes]) -> None:
+        for protected in ("template", "evidence/authoritative/LLM"):
+            prefix = "protocol/" + protected + "/"
+            lock_name = prefix + ".tadp-lock.json"
+            content_hashes = {
+                name[len(prefix):]: digest(content)
+                for name, content in files.items()
+                if name.startswith(prefix) and name != lock_name
+            }
+            files[lock_name] = json.dumps({
+                "schema_version": 1, "algorithm": "sha256-canonical-v1",
+                "protected_root": protected, "authority": "Fixture source authority",
+                "files": content_hashes,
+            }, sort_keys=True).encode() + b"\n"
+
+    def commit_fixture(self, root: Path, files: dict[str, bytes]) -> str:
+        self.git(root, "init", "--quiet")
+        for name, content in files.items():
+            path = root / name
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_bytes(content)
+        self.git(root, "add", "--", ".")
+        self.git(root, "commit", "--quiet", "-m", "isolated template source")
+        return self.git(root, "rev-parse", "HEAD").decode().strip()
+
+    def test_load_selects_template_and_runtime_without_development_records(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            revision = self.commit_fixture(root, self.fixture_files())
+            assets = load_assets(root, revision)
+            self.assertIn("template/project/README.md", assets)
+            self.assertEqual("seed", assets["README.md"].kind)
+            self.assertEqual("seed", assets[".githooks/pre-commit"].kind)
+            self.assertIn("tools/tadp_validate.py", assets)
+            self.assertIn("evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md", assets)
+            self.assertFalse(any(b"EXCLUDED" in asset.content for asset in assets.values()))
+            self.assertFalse(any(name.startswith(("docs/development/", "decisions/", "products/"))
+                                 for name in assets))
+
+    def test_uncommitted_source_changes_are_not_imported(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            revision = self.commit_fixture(root, self.fixture_files())
+            path = root / "protocol/template/project/README.md"
+            path.write_bytes(b"uncommitted source changes\n")
+            assets = load_assets(root, revision)
+            self.assertEqual(b"# Project scaffold\n", assets["README.md"].content)
+
+    def test_older_distribution_without_unused_optional_tools_is_accepted(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            files = self.fixture_files()
+            for optional in ("tadp_keywords.py", "tadp_scopes.py", "tadp_templates.py"):
+                files.pop("protocol/tools/" + optional)
+            files["protocol/tools/tadp_protect.py"] = b"from tadp_validate import validate\n"
+            revision = self.commit_fixture(root, files)
+            assets = load_assets(root, revision)
+            self.assertIn("tools/tadp_validate.py", assets)
+            self.assertIn("tools/tadp_protect.py", assets)
+            self.assertNotIn("tools/tadp_templates.py", assets)
+
+    def test_missing_actual_runtime_import_is_rejected_without_execution(self):
+        for code in (b"import tadp_missing\n", b"from tadp_missing import validate\n"):
+            with self.subTest(code=code), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                files = self.fixture_files()
+                files["protocol/tools/tadp_validate.py"] = code + b"raise AssertionError('must not execute')\n"
+                revision = self.commit_fixture(root, files)
+                with self.assertRaisesRegex(ValueError, "dependency.*tadp_missing"):
+                    load_assets(root, revision)
+
+    def test_drifted_upstream_lock_is_rejected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            files = self.fixture_files()
+            files["protocol/template/project/README.md"] = b"changed without authorized lock\n"
+            revision = self.commit_fixture(root, files)
+            with self.assertRaisesRegex(ValueError, "lock"):
+                load_assets(root, revision)
+
+    def test_development_documents_embedded_in_template_are_rejected(self):
+        for excluded in ("docs/development/maintenance-report.md", "decisions/history.md"):
+            with self.subTest(excluded=excluded), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                files = self.fixture_files()
+                files["protocol/template/project/" + excluded] = b"forbidden deployment content\n"
+                self.refresh_fixture_locks(files)
+                revision = self.commit_fixture(root, files)
+                with self.assertRaisesRegex(ValueError, "development"):
+                    load_assets(root, revision)
+
+    def test_committed_symlink_is_rejected_without_creating_local_symlinks(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.commit_fixture(root, self.fixture_files())
+            object_id = self.git(root, "hash-object", "-w", "--stdin", data=b"../../outside.txt").decode().strip()
+            self.git(root, "update-index", "--add", "--cacheinfo",
+                     "120000," + object_id + ",protocol/template/project/README.md")
+            self.git(root, "commit", "--quiet", "-m", "source link fixture")
+            revision = self.git(root, "rev-parse", "HEAD").decode().strip()
+            with self.assertRaisesRegex(ValueError, "links"):
+                load_assets(root, revision)
+
+
+if __name__ == "__main__":
+    unittest.main()
