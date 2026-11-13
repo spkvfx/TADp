@@ -60,6 +60,46 @@ The authoritative workflow specification defines the stages that create,
 align, accept, deliver, complete, and finalize an initiative. A workflow stage
 does not create a lifecycle state merely by finishing.
 
+## Canonical template selection and use
+
+Select the canonical reusable source for the record's role, declared initiative
+type, recorded governing revision, and owning stage. The
+[coverage and use map](../../../template/TEMPLATE-COVERAGE.md) identifies file,
+embedded-section, conditional, and response-shape sources; it is navigation,
+not a competing authority or a new document obligation. Reuse an existing
+suitable source instead of creating a duplicate record. A required section
+remains part of its canonical owning record.
+
+Copy a durable source to its declared destination outside protected `template/`
+before populating it. Preserve existing customization, stable IDs, immutable
+identity, exact human text, accepted baselines, and history. Replace placeholders,
+retain required sections, and cite a governing reason for conditional
+non-applicability; empty or unresolved fields must be explicit. Recalculate
+relative links from the instance's actual directory, including scope/type depth.
+Response-shape templates define an answer only and create no durable-file
+requirement; Stage 9 readiness is such a response unless a governing rule
+explicitly requires a durable record.
+
+For each material populated claim retain the source path or stable ID, precise
+locator, evidence standing, revision or event/date when available, and limits.
+Inspect underlying material references within the named project and work
+boundary: applicable invariants and accepted decisions first, then source
+inventories/mappings, realization inputs, actual human instructions/receipts,
+initiative and dependency records, affected products, implementation,
+configuration, tests, verification, and Git history. Include relevant proposed
+and partial effort and affected closed claims without promoting their standing.
+Record unavailable, unreadable, stale, conflicting, and out-of-scope evidence
+and its effect. External access requires otherwise sufficient permission.
+Neither an enclosing repository nor a linked prompt expands the scope.
+
+Validate identity, required fields, provenance, authority, links, lifecycle,
+and current applicability before using the instance. A plausible field value
+does not satisfy a gate. Apply specification 08's bounded preparation procedure
+for missing or stale documentary prerequisites, reusing valid records and
+receipts idempotently. If a required canonical source is genuinely missing,
+report its governing requirement and route it to separately authorized protocol
+maintenance; ordinary workflow execution cannot invent or edit reusable sources.
+
 ## Narrow scope and subinitiatives
 
 Every initiative must own one narrowly bounded outcome, one coherent authority

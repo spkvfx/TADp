@@ -18,7 +18,42 @@ authority stated by the governing invariant or an explicit human instruction.
 
 ## Active conflicts
 
-No invariant conflicts are recorded.
+### INV-CONFLICT-001 — Realization template standing and scope
+
+- **Detected:** 2026-11-13, Codex template coverage audit.
+- **Status:** Open.
+- **Governing invariant:** Specification 09, Realization provenance and fit
+  assessment: suites and notes remain permanently non-authoritative and a
+  catalog may contain several narrow outcomes.
+- **Conflicting source:** `template/initiatives/proposal/README.md`, Realization
+  handling, permits an owning authority to classify a realization otherwise and
+  instructs a stop if suite notes do not share one narrow boundary.
+- **Impact and disposition:** Do not rely on those clauses to promote standing
+  or reject an otherwise valid many-outcome catalog; specification 09 governs.
+  Preserve the reusable source pending a specifically authorized correction.
+- **Owner and required decision:** Protocol maintainer; explicitly authorize
+  correction of those realization-handling clauses and affected consumers.
+- **Affected records and evidence:** No live initiative is changed. The
+  [maintenance audit](../../../docs/development/template-prerequisites-maintenance.md#audit-findings-outside-the-revision)
+  records the inspected source, limitation, and independent work.
+
+### INV-CONFLICT-002 — Unconditional review pushes
+
+- **Detected:** 2026-11-13, Codex workflow prompt audit.
+- **Status:** Open.
+- **Governing invariant:** Specification 05, Worktree, commits and history
+  safety, and Finalization and human-managed pull requests: remote pushes
+  require separate explicit authority.
+- **Conflicting sources:** `template/prompts/05_initiative_assumption_review.md`
+  and `template/prompts/06_initiative_open_question_review.md`, unconditional
+  instructions to push new review commits.
+- **Impact and disposition:** No push is authorized by those clauses alone.
+  Preserve source identity and continue independent local preparation work;
+  do not perform a remote action without sufficient separate authority.
+- **Owner and required decision:** Protocol maintainer; explicitly authorize
+  correction of those remote-action clauses and affected consumers.
+- **Affected records and evidence:** No live initiative is changed. See the
+  [maintenance audit](../../../docs/development/template-prerequisites-maintenance.md#audit-findings-outside-the-revision).
 
 <!--
 When a conflict is discovered, replace the statement above with the first

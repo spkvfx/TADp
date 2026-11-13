@@ -1,5 +1,25 @@
 # TADp tools
 
+`tadp_templates.py` supplies read-only checks for the installed
+[canonical coverage map](../template/TEMPLATE-COVERAGE.md) and documentary
+prerequisite declarations in all fourteen workflow prompts and scope closure.
+The full validator invokes these checks; the module has no writer or stage
+dispatcher. `TADP050` reports missing or malformed coverage, sources, sections,
+governing locators, or unsafe instance destinations. `TADP051` reports missing
+or inconsistent prompt prerequisites or the shared preparation procedure.
+Earlier distributions without this contract retain their recorded behavior;
+installation checks do not adopt the revision for live initiatives.
+
+The optional `assess_prerequisites(root, requirements, context)` API consumes
+explicitly reviewed evidence facts and returns classifications, owning-stage
+recovery order, and blockers. `ready` requires current applicable documents and
+the supplied actual gates; constructible paperwork is still missing. The
+caller must establish semantic sufficiency, genuine authority, correct type,
+identity, phase and revision. `instance_link_issues` checks links at an actual
+instance's destination depth. Neither helper copies templates, authenticates
+instructions, repairs records, or proves that an event occurred. See the
+[recovery guide](../docs/guides/template-prerequisites-migration.md).
+
 Run the repository validator from the protocol root (`protocol/` in the
 reference repository and normally the project root in an adopted repository):
 

@@ -17,6 +17,18 @@ Apply [WORKFLOW-CONTRACT.md](WORKFLOW-CONTRACT.md) together with this prompt.
 The contract is mandatory and does not replace this prompt's specific
 preconditions, edit boundary, verification, or reporting requirements.
 
+## Documentary prerequisites
+
+Use the [canonical coverage and use map](../TEMPLATE-COVERAGE.md) and the
+[shared preparation procedure](WORKFLOW-CONTRACT.md#documentary-prerequisite-preparation).
+The following metadata is a reference inventory of applicable canonical
+record roles, not an action list or authority to create every listed record.
+<!-- tadp-prerequisites: {"stage":11,"records":["profile","initial-suite","membership","decision-receipt","acceptance","delivery","completion","coherence"],"procedure":"WORKFLOW-CONTRACT.md#documentary-prerequisite-preparation"} -->
+
+The executable block below applies these prerequisites to this stage before
+its substantive entry check. Existing records and actual events retain their
+owners and authority; conditional roles require a cited applicability result.
+
 ## Example usage
 
 > **Reference only — do not execute this example.**
@@ -42,6 +54,25 @@ locks and truthful evidence, and retain ordinary lifecycle meanings. Preview
 work remains response-only; local resource restrictions and independent review
 obligations compose with gates. The shared contract and this prompt retain
 all unexcepted preconditions, edit boundaries, verification, and reporting.
+
+Before the substantive step, apply documentary prerequisite preparation in
+{initiative_template_root}/prompts/WORKFLOW-CONTRACT.md using
+{initiative_template_root}/TEMPLATE-COVERAGE.md and this stage's inventory.
+Classify and prepare only necessary constructible inputs from sufficient
+scoped evidence through their owning stages; then validate and recheck this
+step's real entry gates. Disclose preparation changes separately. The edit
+limits below govern the substantive activity after this preparation.
+Reusable source paths below are relative to {initiative_template_root};
+instantiate only at the map's declared project-relative destination.
+Required inputs: accepted design suite, exact baseline/receipt, named
+specification destinations/owners, observed product evidence and readable
+initiatives/delivery-record.md and initiatives/completion-evidence.md sources.
+Use mapped initial-suite, decision and coherence sources for documentary
+recovery through owning activities from sufficient actual evidence. Missing
+acceptance, wrong type, immutable identity, destination authority or required
+verification blocks delivery; preparation cannot create product work or a
+completion event. Validate source standing, links, accepted scope and actual
+entry gates before specification delivery.
 
 For a project with the version-scope revision adopted, verify exact scope
 membership, originating and contributing suite/note IDs and paths, per-source

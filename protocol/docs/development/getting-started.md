@@ -126,6 +126,11 @@ change to the named reusable source or invariant.
 
 ## First initiative
 
+Use the [canonical coverage map](../../template/TEMPLATE-COVERAGE.md) for source
+selection and [prerequisite recovery guide](../guides/template-prerequisites-migration.md)
+for evidence-backed preparation before a stage's entry check. Existing adopters
+record the revision explicitly; installing sources does not migrate live work.
+
 Choose a small outcome with one owner, one authority boundary, and an
 independent acceptance claim. Use numbered stages 0 through 7 in
 `../../template/prompts` in order, beginning with preparation. After explicit

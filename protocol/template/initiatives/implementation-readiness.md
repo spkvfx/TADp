@@ -1,12 +1,12 @@
 <!--
-This is an execution-stage template for an `implementation` initiative, not a
-standard initial initiative artifact.
-Do NOT copy or create it when creating an initiative. Create an initiative-local
-implementation-readiness.md later, immediately before execution begins, and
-replace every double-brace token. Remove instructional comments before review.
-Use the shared `prompts/09_initiative_implementation_readiness_review.md`
-to gather and report the evidence comparison before this document is created in
-a separately scoped documentation change.
+This is the Stage 9 response shape for an `implementation` initiative, not a
+standard initial artifact or an instruction to create a file. Populate it in
+the response immediately before execution, replacing every double-brace token
+and omitting instructional comments. A durable instance requires a separate
+applicable governing requirement; retain historical files under their recorded
+revision. Use `prompts/09_initiative_implementation_readiness_review.md`.
+Disclose any preceding owning-stage prerequisite preparation and its changes;
+the subsequent readiness assessment itself remains read-only.
 
 The review makes a phase-specific implementation-entry decision from current
 evidence. It does not replace the initiative record, authorize unplanned work,
@@ -144,9 +144,11 @@ reviewed evidence supports it.
 ## Documentation verification
 
 <!--
-Record only checks actually performed after the review is written. Add the
-review to the initiative README at this point, rather than during initiative
-creation, and update initiative status only when the evidence changes it.
+Record only checks actually performed. Report prepared inputs and their owning
+activities separately from the assessment. Compare the worktree snapshot at
+assessment entry and exit and report any changes; the assessment creates no
+file, README link, or status update. Do not claim the whole invocation changed
+no files when its preceding preparation changed them.
 -->
 
 - [ ] {{documentation_or_link_check}}

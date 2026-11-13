@@ -39,12 +39,21 @@ New initiatives are grouped at initiatives/<scope>/<type>/<id-and-slug>/.
 ## Example request
 
 > Using the [proposal alignment prompt](02_proposal_alignment.md), align the
-> attached initiative's proposal in place. Do not create, copy, or change any
-> other document or directory.
+> attached initiative's proposal in place after preparing any constructible
+> documentary prerequisites through their owning stages.
 
 Unless a prompt explicitly says otherwise, use it only on its named existing
-target and make changes in place. Prompts must not scaffold, copy, or create
-template, proposal, assumption, or initiative documents.
+target. Before its substantive step, apply the shared contract's
+[documentary prerequisite preparation](WORKFLOW-CONTRACT.md#documentary-prerequisite-preparation)
+to that prompt's explicit prerequisite inventory and the
+[canonical coverage and use map](../TEMPLATE-COVERAGE.md). Recover only
+necessary documentary inputs from sufficient scoped evidence through their
+owning preparation activities after their actual entry gates hold. The
+substantive step's in-place edit limits follow this preparation; missing
+paperwork alone does not block recoverable inputs. Missing facts, immutable
+identity, actual decisions, authority and verification still block affected
+work. This permission cannot scaffold an invented target or edit reusable
+templates, execute linked prompts, or manufacture an earlier gate.
 
 Apply the ownership and approval convention in the target project's profile.
 It resolves human owner, reviewer, and approver roles as recorded by that
@@ -74,9 +83,21 @@ requires `completion-evidence.md` before completion. Finalization verifies that 
 state, commits remaining traceable accepted work, and performs authorized local
 initiative-to-scope integration or records verified direct scope placement.
 It never declares incomplete delivery complete or closes its scope.
-The implementation-readiness review prompt is read-only and applies only to an
-`implementation` initiative: it gathers and reports evidence without changing
-its target.
+The implementation-readiness assessment is read-only and applies only to an
+`implementation` initiative. Its preceding prerequisite preparation may recover
+documentary records through their owning stages; disclose those changes, then
+capture an assessment baseline and verify no file changes during assessment.
+Its canonical template is a response shape, not a required durable readiness
+file. Reconstructed paperwork does not prove phase readiness.
+
+Each prompt declares its documentary prerequisites, canonical record IDs,
+scoped evidence, preparation boundary, genuine blockers and post-preparation
+validation. Records and required embedded sections retain one owner. Stages
+5 through 7 may capture already sufficient exact human instructions without
+repeating the decision; otherwise their human gates remain open. Delivery,
+verification, completion and integration records require actual events, not
+plausible reconstruction. Repeated invocations reuse valid records and receipts
+without overwriting customization, changing claims or creating duplicates.
 
 Every prompt template must include an **Example usage** section. The example
 must link to the template's specific Markdown file inline. Mark the example as

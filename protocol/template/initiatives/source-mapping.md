@@ -18,10 +18,10 @@ assumption record, decision register, or architecture and specification.
 
 ## Evidence inventory
 
-| Evidence ID | Source | Evidence label | Governs | Conflict rule |
-|---|---|---|---|---|
-| EVD-01 | {{source_link_or_path}} | `../../evidence/authoritative` | {{governed_concepts}} | {{how_conflict_is_handled}} |
-| EVD-02 | {{source_link_or_path}} | `../../evidence/non-authoritative` | {{context_or_supported_claim}} | {{how_conflict_is_handled}} |
+| Evidence ID | Source | Precise locator | Revision or date | Evidence label | Governs | Limitations | Conflict rule |
+|---|---|---|---|---|---|---|---|
+| EVD-01 | {{source_link_or_path}} | {{claim_heading_section_or_symbol}} | {{inspected_revision_or_date_or_unavailable}} | `../../evidence/authoritative` | {{governed_concepts}} | {{scope_staleness_availability_or_none}} | {{how_conflict_is_handled}} |
+| EVD-02 | {{source_link_or_path}} | {{claim_heading_section_or_symbol}} | {{inspected_revision_or_date_or_unavailable}} | `../../evidence/non-authoritative` | {{context_or_supported_claim}} | {{scope_staleness_availability_or_none}} | {{how_conflict_is_handled}} |
 
 Use `../../evidence/authoritative` only for binding evidence that an accepted
 specification or product decision must follow. Use

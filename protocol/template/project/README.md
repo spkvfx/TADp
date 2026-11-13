@@ -136,6 +136,33 @@ and status evidence coherent without merging their acceptance claims.
 
 ## How template files work
 
+Select the canonical source by record role, declared initiative type, governing
+revision, and current stage using the
+[coverage and use map](../TEMPLATE-COVERAGE.md). Its destinations are relative
+to the adopting project root. A README or an embedded section may be the
+canonical template; keep an embedded section in its owning record instead of
+creating a competing file. A response shape, including ordinary Stage 9
+readiness, is populated in the response and creates no durable record unless
+an applicable governing requirement separately calls for one.
+
+Before a workflow step's substantive entry check, follow the shared
+[documentary prerequisite preparation procedure](../prompts/WORKFLOW-CONTRACT.md#documentary-prerequisite-preparation).
+Reuse current records and recover only the missing documentary outputs needed
+by the invocation, through the earlier owning activity and its actual gates.
+Existing sufficient human instructions may be captured as receipts without
+requesting the decision again; unavailable decisions remain unresolved. Keep
+original event and later capture time separate. Preparing paperwork cannot
+create acceptance, execution, verification, or a lifecycle event.
+
+Populate material claims from precise source paths or stable IDs and locators,
+retaining standing, revision/date, and limitations. Replace tokens, justify
+non-applicability, recompute every relative link from the instance's actual
+destination, and validate identity, authority, sections, links, and lifecycle
+consistency before use. Reruns preserve customization and stable IDs and reuse
+completed preparation. Report a genuinely missing canonical source for
+separately authorized protocol maintenance; ordinary work cannot create or
+edit a protected reusable source.
+
 The complete `template/` tree is protected reusable source, including numbered
 prompts, scaffold files, and every `*.template.md` file. The authoritative
 Codex suite at `evidence/authoritative/LLM/` is protected separately. Ordinary

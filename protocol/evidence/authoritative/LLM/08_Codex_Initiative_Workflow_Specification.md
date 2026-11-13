@@ -139,6 +139,65 @@ alternative method described above. Stages 8 through 10 form the implementation 
 the design path. Stage 12 is the planning path. An initiative follows exactly
 one delivery path for its declared type.
 
+## Documentary prerequisite preparation
+
+Before an invoked stage's ordinary entry check, perform this bounded preceding
+preparation activity. It recovers documentary outputs through their owning
+stages; it does not transfer record ownership, recursively execute linked
+prompts, run later delivery stages, or waive any underlying gate. Apply the
+[template-use rules](02_Codex_Initiative_Governance_Specification.md#canonical-template-selection-and-use)
+and [canonical coverage map](../../../template/TEMPLATE-COVERAGE.md).
+
+1. Resolve the exact existing target or authorized new allocation, declared
+   type, recorded governing revision, stage, actual paths, execution assignment,
+   and evidence boundary. Inventory required inputs and their owning stages.
+   Do not infer immutable identity from a directory, branch, or convenient name.
+2. Classify each prerequisite as present/current; missing but constructible
+   from sufficient recorded evidence; incomplete/stale; conditionally
+   inapplicable with a cited reason; or blocked by missing facts, authority,
+   verification, or identity. Identify dependencies and earliest recovery owner.
+3. Reuse valid records. For constructible documents, instantiate the canonical
+   source at its declared destination and populate only evidence-backed claims.
+   Recover earlier documentary outputs in dependency order through their owning
+   preparation activity, satisfying that activity's actual entry gates before
+   writing. Create only this invocation's necessary prerequisites and reconcile
+   authorized tracking links. Do not overwrite frozen or accepted claims.
+4. If exact sufficient human authority already exists but its receipt is
+   missing, capture the actual words, author, original event, scope, and source
+   before relying on it. Record capture time separately. Do not repeat a
+   sufficient decision solely to recreate paperwork. Unavailable or insufficient
+   instructions remain unresolved; recommendations, branches, status, or
+   implementation cannot reconstruct acceptance or a human answer.
+5. Validate prepared records and their evidence, identity, authority, links,
+   ownership, lifecycle consistency, and current applicability. Recheck the
+   invoked stage's entry gates. Begin its substantive activity only when they
+   actually hold; otherwise report exact gaps, owning recovery workflow, and
+   required evidence or decision. Continue only independent authorized work
+   permitted by specification 11 scheduling and the governing workflow.
+
+A missing file alone is not a stop when this procedure can lawfully recover
+it. Missing facts, identity, decisions, work, and passing verification remain
+blockers. Preparation never manufactures the event a document records. Preserve
+the original event and evidence limits when reconstructing historical facts;
+do not backdate a new decision, test, approval, or lifecycle transition.
+Reruns reuse prepared records and receipts without duplication, lost
+customization, repeated decisions, empty commits, or altered claims. Repairs of
+accepted or closed meaning retain the revision/reopening and renewed-acceptance
+requirements; recoverable paperwork does not authorize a substantive revision.
+
+Stage 3 still creates only the initial suite. Conditional decision, execution,
+delivery, and completion records arise only from their actual triggering
+decisions, work, and checks through their owning stages. Readiness remains a
+Stage 9 response shape unless another governing rule requires a durable file.
+
+For Stage 9, complete and disclose any lawful preceding owning-stage
+preparation changes first. Then capture file state and conduct the phase-specific
+readiness assessment read-only, verifying no changes during that assessment.
+Never report the whole invocation as changing no files if preparation wrote
+files, or produce a passing result merely because inputs were reconstructed.
+This procedure also applies to separate scope closure's documentary inputs,
+without creating member closure, aggregate verification, or integration facts.
+
 ## Stage entry and exit contracts
 
 ### Stage 0: realization fit and preparation
@@ -251,7 +310,8 @@ an existing SDK or API. It may create compatible product changes traceable to
 the accepted initiative, but it must route a required specification change to
 a design initiative.
 
-The readiness review is read-only and must be current for the requested phase
+After the separate preceding preparation activity, the readiness review itself
+is read-only and must be current for the requested phase
 or work set. A missing, blocked, deferred, failed, or unmet conditional entry
 gate prevents the affected execution.
 
@@ -346,7 +406,8 @@ it covers a similar subject.
 
 ### Failed entry or verification
 
-When an unexcepted entry gate or verification fails, preserve the failure, stop
+After bounded documentary preparation, when an unexcepted entry gate or
+verification fails, preserve the failure, stop
 the affected work, and identify the owning stage and evidence needed. A named
 authorized exception retains the actual failed or unperformed result and
 its limitation; it never supplies ordinary completion evidence. Independent
@@ -385,8 +446,9 @@ rewrite history implicitly.
 
 When the canonical row, realization-suite index, initiative README, active
 branch, or captured base identity is missing, duplicate, partial, or
-inconsistent, stop the affected stage and return to preparation recovery. Do
-not infer or silently rewrite identity, provenance or assignment. Shared scopes
+inconsistent, stop the affected substantive stage and use bounded preparation
+recovery only where recorded evidence is sufficient. Do not infer or silently
+rewrite identity, provenance or assignment. Shared scopes
 and declared scope branches are valid and do not fail a bijection check.
 A pre-effective record proceeds under its complete compatible migration-ledger
 disposition until explicit adoption/migration; subsequent intake uses the
@@ -414,9 +476,10 @@ the completing initiative's exact accepted claim.
 
 Before every handoff, reconcile the records owned by the current stage with the
 initiative README, source mapping, lifecycle history, status, registry, parent
-and dependent tracking, and Git evidence that consume its result. A later stage
-must stop when the handoff records are missing, stale, or inconsistent rather
-than repairing earlier authority implicitly.
+and dependent tracking, and Git evidence that consume its result. Before a later
+substantive stage, recover missing, stale, or inconsistent documentary handoffs
+only through the preceding owning-stage preparation procedure above. Missing
+earlier authority remains a blocker and must never be repaired implicitly.
 
 ## Workflow versioning and compatibility
 

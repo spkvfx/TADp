@@ -20,6 +20,18 @@ Apply [WORKFLOW-CONTRACT.md](WORKFLOW-CONTRACT.md) together with this prompt.
 The contract is mandatory and does not replace this prompt's specific
 preconditions, edit boundary, verification, or reporting requirements.
 
+## Documentary prerequisites
+
+Use the [canonical coverage and use map](../TEMPLATE-COVERAGE.md) and the
+[shared preparation procedure](WORKFLOW-CONTRACT.md#documentary-prerequisite-preparation).
+The following metadata is a reference inventory of applicable canonical
+record roles, not an action list or authority to create every listed record.
+<!-- tadp-prerequisites: {"stage":7,"records":["profile","initial-suite","membership","decision-receipt","acceptance","work-conflict"],"procedure":"WORKFLOW-CONTRACT.md#documentary-prerequisite-preparation"} -->
+
+The executable block below applies these prerequisites to this stage before
+its substantive entry check. Existing records and actual events retain their
+owners and authority; conditional roles require a cited applicability result.
+
 ## Example usage
 
 > **Reference only — do not execute this example.**
@@ -45,6 +57,27 @@ locks and truthful evidence, and retain ordinary lifecycle meanings. Preview
 work remains response-only; local resource restrictions and independent review
 obligations compose with gates. The shared contract and this prompt retain
 all unexcepted preconditions, edit boundaries, verification, and reporting.
+
+Before the substantive step, apply documentary prerequisite preparation in
+{initiative_template_root}/prompts/WORKFLOW-CONTRACT.md using
+{initiative_template_root}/TEMPLATE-COVERAGE.md and this stage's inventory.
+Classify and prepare only necessary constructible inputs from sufficient
+scoped evidence through their owning stages; then validate and recheck this
+step's real entry gates. Disclose preparation changes separately. The edit
+limits below govern the substantive activity after this preparation.
+Reusable source paths below are relative to {initiative_template_root};
+instantiate only at the map's declared project-relative destination.
+Required inputs: complete aligned suite, scope assessment, resolved blocking
+decisions/receipts, exact proposed baseline, acceptance authority and coherence
+inventory. Use initiatives/README.md and its constituent sources plus
+initiatives/decision-receipts/decision-receipt.template.md and
+project/initiatives/work-conflicts.template.md. Retain the pre-acceptance
+open-work inventory in existing owning records or the acceptance packet;
+create no completion-evidence file. Recover earlier documentary inputs through owning
+activities, capturing sufficient actual decisions without repeating them.
+Missing acceptance authority or unresolved blocking decisions remain blockers;
+preparation cannot turn alignment or implementation into acceptance. Validate
+baseline, receipts, source standing and current gates before presentation.
 
 For a project with the version-scope revision adopted, verify exact scope
 membership, originating and contributing suite/note IDs and paths, per-source
@@ -102,9 +135,11 @@ Before presenting the acceptance question, verify that:
 - the exact proposed accepted-baseline revision can be identified by commit,
   content revision, or another stable repository locator.
 
-If a precondition fails, stop and report every blocker. Do not repair missing
-earlier-stage records, resolve a decision, weaken a gate, narrow the claim,
-change or infer membership identity, change status, or begin delivery in this prompt.
+After owning-stage documentary preparation, stop and report every remaining
+precondition failure. Acceptance itself cannot repair earlier authority,
+resolve a separate decision, weaken a gate, narrow the claim, infer membership
+identity or begin delivery. Change status only after actual sufficient
+acceptance authority is captured and all real gates hold.
 
 Prepare one acceptance packet from the existing records with:
 1. initiative identity and declared type;

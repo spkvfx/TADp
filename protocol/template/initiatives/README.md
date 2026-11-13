@@ -236,13 +236,15 @@ initiative specification or an edit to another initiative's record.
 
 `implementation-readiness.md` applies only to an `implementation` initiative
 and is deliberately **not** part of the initial initiative record. Do not
-create, copy, or link it when creating an initiative. Create it later,
-immediately before product execution, from
-the shared `initiatives/implementation-readiness.md` template. Add its
-initiative-local link only after the review exists. Use it to record the
-phase-specific go/no-go decision, reviewed evidence, remaining inputs, and
-execution gates. It does not replace the initiative record, implementation
-report, or release evidence.
+create, copy, or link a file when creating an initiative. The shared
+[readiness template](implementation-readiness.md) provides the response shape
+for the phase-specific Stage 9 go/no-go assessment, reviewed evidence,
+remaining inputs, and execution gates. It creates no durable file unless an
+applicable governing requirement explicitly requires one. Preserve historical
+durable readiness records under their recorded revision. Recover necessary
+documentary inputs through preceding owning-stage preparation, disclose those
+changes, then assess readiness read-only against current phase evidence. A
+reconstructed document does not establish that its gate passed.
 
 ## Delivery, execution, and completion records
 
@@ -275,6 +277,16 @@ commit it with the records reconciled from that decision. A receipt proves the
 decision only; it does not prove implementation or verification.
 
 ## Reusable prompts
+
+Use the [coverage and use map](../TEMPLATE-COVERAGE.md) to select the canonical
+source and destination for each required file or embedded section. It includes
+conditional later records, stage ownership, evidence inputs, and verification.
+Prepare only the prerequisites needed by the invoked activity under the
+[shared contract](../prompts/WORKFLOW-CONTRACT.md#documentary-prerequisite-preparation),
+without recursively executing linked prompts. Reuse existing records and
+preserve stable IDs, human text, accepted baselines, source identities, and
+history. Missing authority, identity, facts, or passing verification remain
+blockers after documentary recovery.
 
 [Initiative prompts](../prompts/README.md) contains reusable prompts for initiative
 reviews and creation. It follows this sequence:

@@ -149,6 +149,42 @@ and ordinary completion evidence remain required. Specification 05 defines
 child-to-immediate-parent local integration after recorded closure authority,
 separate scope closure and human-managed PRs. No protocol adoption itself
 reopens, accepts, closes, merges or migrates live work.
+### Canonical templates and documentary prerequisites revision record
+
+- **Authority:** The User's 2026-11-13 instruction, "2) execute the template
+  completeness prompt", explicitly invokes
+  `prompts/template-completeness-and-prerequisites-protocol-change.md`.
+  [The maintenance record](../../../docs/development/template-prerequisites-maintenance.md)
+  preserves the exact request, baseline, boundaries, and verification.
+- **Reason and affected clauses:** Specification 02 owns canonical selection,
+  instantiation, evidence population, and validation. Specification 08 permits
+  bounded preceding owning-stage documentary recovery before ordinary entry
+  checks, reconciles handoff/retry behavior, and separates Stage 9 preparation
+  from its read-only assessment. Specifications 01, 04, 05, 06, 07, 09, and 10
+  receive template-use cross-references only. Reusable sources, workflow prompts,
+  summaries, coverage navigation, tools, tests, and affected locks are reconciled.
+- **Effective event:** The first coherent Git commit containing this revision,
+  reconciled consumers, verification evidence, and specifically authorized locks.
+  Locate that immutable commit through the maintenance record's Git history;
+  do not invent a future hash or treat installation as project adoption.
+- **Compatibility and migration:** Prospective adoption recorded in the adopting
+  project's profile change record with the exact revision, authority, baseline,
+  and affected active work. Preserve earlier compatible governing revisions and
+  historical claims. See the
+  [adoption and recovery guide](../../../docs/guides/template-prerequisites-migration.md).
+  No live initiative, decision, adoption, or lifecycle event is changed here.
+- **Successor relationship:** Supersedes only contradictory documentary
+  no-create/entry/handoff/read-only clauses to permit the bounded preparation
+  activity. Stage ownership, numbering, actual gates, separate human acceptance,
+  type boundaries, immutable identity, closed-claim preservation, and
+  specification 11 semantics remain unchanged. Git preserves predecessor text.
+
+Use the [canonical coverage and use map](../../../template/TEMPLATE-COVERAGE.md)
+to locate reusable sources. Binding use rules are in
+[specification 02](02_Codex_Initiative_Governance_Specification.md#canonical-template-selection-and-use),
+and the shared preparation procedure is in
+[specification 08](08_Codex_Initiative_Workflow_Specification.md#documentary-prerequisite-preparation).
+
 ## Documents
 
 1. [Codex evidence authority specification](01_Codex_Evidence_Authority_Specification.md)

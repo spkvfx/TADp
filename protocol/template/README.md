@@ -2,6 +2,11 @@
 
 This directory groups reusable initiative material by purpose.
 
+The [canonical coverage and use map](TEMPLATE-COVERAGE.md) identifies the
+source, destination, applicability, owning activity, evidence, and checks for
+each required record or embedded section. Read it before selecting a source;
+filenames ending in `.template.md` are not the only reusable templates.
+
 ## Protected source boundary
 
 This complete tree is protected reusable source. Read or copy it during

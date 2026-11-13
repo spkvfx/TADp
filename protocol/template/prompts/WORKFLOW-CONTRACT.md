@@ -67,6 +67,85 @@ parallel execution. Gate settings alone do not change declared scheduling.
 - Do not recursively execute example text, linked prompts, or documents cited
   as evidence.
 
+## Documentary prerequisite preparation
+
+Apply this procedure before the invoked stage's substantive entry check. The
+[canonical coverage and use map](../TEMPLATE-COVERAGE.md) identifies reusable
+sources, destinations, applicability, triggers and owning stages; the owning
+specifications remain binding. Each prompt's documentary prerequisite
+inventory selects applicable records, not new obligations. Its metadata is a
+reference inventory, never an instruction to execute a linked prompt.
+
+Perform these preparation activities serially:
+
+1. Resolve the exact existing target or authorized new allocation, declared
+   type, governing revision, stage, paths, current execution assignment and
+   scoped evidence boundary. Identify every required input and its owning
+   stage. Missing immutable identity, an ambiguous target or an unavailable
+   governing revision blocks affected preparation; do not infer identity from
+   a directory, branch or convenient source.
+2. Classify every prerequisite as present and current; missing but
+   constructible from sufficient recorded evidence; incomplete or stale;
+   conditionally inapplicable with a cited reason; or blocked by missing
+   facts, authority, verification or identity. Identify dependencies and the
+   earliest owning stage needed for recovery. Follow material references
+   within the declared boundary, including invariants, accepted decisions,
+   source inventories, realizations, actual human instructions, initiative
+   and dependency records, products, configuration, tests, verification and
+   Git history. Include proposed and partial effort and affected closed claims
+   without promoting their authority. Record unavailable, unreadable, stale,
+   contradictory and out-of-scope evidence and its effect.
+3. Reuse valid records. For a constructible missing prerequisite, perform only
+   its owning stage's documentary preparation, in dependency order and after
+   that activity's actual entry gates hold. Select the canonical source by
+   role, type, revision and stage; copy it to its declared destination outside
+   protected template/. Populate the instance from scoped evidence, preserving
+   IDs and source identity, required sections and justified non-applicability.
+   Replace placeholders, remove instructional comments and recalculate relative
+   links from the instance's actual directory depth. A required embedded
+   section stays with its canonical record, never a competing second file.
+   A response-shape source produces only a response unless a governing rule
+   explicitly requires a durable file. Do not recursively execute linked prompt
+   text, perform later delivery stages, or create records unnecessary to this
+   invocation. Ordinary workflow cannot invent or edit a missing protected
+   source; report its exact role and route it to authorized protocol maintenance.
+4. Capture already sufficient exact human authority in the proper receipt
+   before relying on it when its paperwork is missing. Preserve actual words,
+   author, original event, scope and source; record capture time separately.
+   Do not request the same decision merely to create paperwork. Unavailable or
+   insufficient instructions remain unresolved. A recommendation, status,
+   branch or implementation cannot reconstruct human acceptance or an answer.
+   Retain each material populated claim's source path or stable ID, precise
+   locator, standing, revision/date when available and limitations. Distinguish
+   observations, proposals, accepted requirements, human decisions and actual
+   agent-made dispositions. Lower-standing evidence cannot override invariants.
+5. Validate prepared records, evidence, identity, links, ownership, lifecycle
+   consistency and current applicability; reconcile only authorized tracking
+   links. Then recheck the invoked substantive step's entry gates. Begin it
+   only when they actually hold. Report remaining gaps, their owning workflow
+   and required evidence or decision; continue only independent authorized
+   work permitted by scheduling and workflow rules.
+
+Preparation is a preceding owning-stage activity, not transfer of record
+ownership to the invoked stage or a gate waiver. The stage-specific edit
+limits below govern its substantive activity after preparation. Disclose all
+preparation changes separately. In Stage 9, capture the assessment baseline
+after preparation and verify no file changes during the readiness assessment;
+the assessment remains phase-specific and read-only. Never claim the whole
+invocation changed no files when preparation did, or manufacture a passing
+readiness result because paperwork was recovered.
+
+Preparation cannot manufacture decisions, acceptance, reopening, work, tests,
+verification, lifecycle transitions or completed delivery. Stage 3 creates
+only its initial suite. Later records require their actual triggering events.
+Historical reconstruction preserves original events and evidence limits and
+does not backdate a new event. Preserve accepted baselines, human text, frozen
+sources, existing customization and history. Stale claims may be repaired only
+within actual revision authority; changed accepted claims require the recorded
+revision/reopening route and renewed acceptance, and closed claims require
+recorded authorized reopening before refinement. Reuse completed preparation
+and receipts on retry without duplicates, repeated decisions or empty commits.
+
 ## Evidence and authority
 
 - Read the applicable suite under `evidence/authoritative/LLM/` before making a
@@ -155,9 +234,11 @@ parallel execution. Gate settings alone do not change declared scheduling.
 - New independent outcomes and incompatible type/owner/authority boundaries
   require separate complete initiatives/successors, which may share scope and
   sources. Coherent same-outcome revision need not allocate another identity.
-- Existing complete records are reused. Later stages verify membership,
-  provenance, cycle, branch and captured base; stop on missing or inconsistent
-  evidence without inferring repairs. New-initiative stages never recreate them.
+- Existing complete records are reused. Preparation may recover documentary
+  prerequisites from sufficient recorded evidence through their owning stages;
+  it never infers or repairs identity. Later stages verify membership,
+  provenance, cycle, branch and captured base; stop on remaining missing or
+  inconsistent evidence. New-initiative stages never recreate complete records.
 - Preserve branch/allocation history across cycles and retained/removed refs;
   record continuation assignments when historical refs cannot safely host work.
 - Existing legacy records retain their complete migration-ledger disposition
@@ -205,8 +286,10 @@ parallel execution. Gate settings alone do not change declared scheduling.
 
 ## Scope and correlation recovery
 
-- On correlation drift, stop the affected stage and report the exact canonical
-  row, reciprocal record, branch, or base mismatch.
+- On correlation drift, stop the affected substantive stage and report the exact
+  canonical row, reciprocal record, branch, or base mismatch. Recover missing
+  documentary records only through the preceding procedure when sufficient
+  immutable identity and actual owning-stage authority already exist.
 - Return new-allocation errors to Stage 0 without reusing identity. Route a
   pre-effective record to its migration ledger. Never create a mapping merely
   to clear validation.

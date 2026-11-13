@@ -12,6 +12,18 @@ Stages 1 and 3 must not recreate them. New allocations remain `Proposed`.
 Apply [WORKFLOW-CONTRACT.md](WORKFLOW-CONTRACT.md) and the
 [workflow specification](../../evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md).
 
+## Documentary prerequisites
+
+Use the [canonical coverage and use map](../TEMPLATE-COVERAGE.md) and the
+[shared preparation procedure](WORKFLOW-CONTRACT.md#documentary-prerequisite-preparation).
+The following metadata is a reference inventory of applicable canonical
+record roles, not an action list or authority to create every listed record.
+<!-- tadp-prerequisites: {"stage":0,"records":["profile","adoption","scope-registry","membership","realization-suite","preparation-skeleton","preparation-proposal-source","decision-receipt"],"procedure":"WORKFLOW-CONTRACT.md#documentary-prerequisite-preparation"} -->
+
+The executable block below applies these prerequisites to this stage before
+its substantive entry check. Existing records and actual events retain their
+owners and authority; conditional roles require a cited applicability result.
+
 ## Example usage
 
 > **Reference only — do not execute this example.**
@@ -29,6 +41,26 @@ Apply {initiative_template_root}/prompts/WORKFLOW-CONTRACT.md and the canonical
 prompt keyword specification at evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md.
 Preserve source-position effective settings, locks, evidence and all unexcepted
 gates. Use the adopted specification 09 revision, never inferred migration.
+
+Before the substantive step, apply documentary prerequisite preparation in
+{initiative_template_root}/prompts/WORKFLOW-CONTRACT.md using
+{initiative_template_root}/TEMPLATE-COVERAGE.md and this stage's inventory.
+Classify and prepare only necessary constructible inputs from sufficient
+scoped evidence through their owning stages; then validate and recheck this
+step's real entry gates. Disclose preparation changes separately. The edit
+limits below govern the substantive activity after this preparation.
+Reusable source paths below are relative to {initiative_template_root};
+instantiate only at the map's declared project-relative destination.
+Required inputs: recorded profile/adoption, exact source suite/note and human
+intake instruction, scope registry, membership index and candidate initiatives.
+Use project/project-profile.template.md and registry sources, project/evidence/non-authoritative/realizations/
+realization-suite-index.template.md, initiatives/preparation-README.template.md and
+initiatives/proposal/preparation-README.template.md and initiatives/decision-receipts/
+from the canonical map. Recover missing documentary navigation, catalogs or
+receipts only from sufficient recorded identity and authority; new allocation
+and fit/reopening choices remain this Stage 0 substantive activity. Missing
+intake authority, immutable source identity or a disputed boundary blocks
+allocation. Validate reciprocal records and actual branch/base evidence.
 
 Process the identified realization {realization_note_path} for candidate
 {initiative} in suite

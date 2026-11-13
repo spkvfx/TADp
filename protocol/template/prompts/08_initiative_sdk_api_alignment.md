@@ -20,6 +20,18 @@ Apply [WORKFLOW-CONTRACT.md](WORKFLOW-CONTRACT.md) together with this prompt.
 The contract is mandatory and does not replace this prompt's specific
 preconditions, edit boundary, verification, or reporting requirements.
 
+## Documentary prerequisites
+
+Use the [canonical coverage and use map](../TEMPLATE-COVERAGE.md) and the
+[shared preparation procedure](WORKFLOW-CONTRACT.md#documentary-prerequisite-preparation).
+The following metadata is a reference inventory of applicable canonical
+record roles, not an action list or authority to create every listed record.
+<!-- tadp-prerequisites: {"stage":8,"records":["profile","initial-suite","membership","decision-receipt","acceptance"],"procedure":"WORKFLOW-CONTRACT.md#documentary-prerequisite-preparation"} -->
+
+The executable block below applies these prerequisites to this stage before
+its substantive entry check. Existing records and actual events retain their
+owners and authority; conditional roles require a cited applicability result.
+
 ## Example usage
 
 > **Reference only — do not execute this example.**
@@ -48,6 +60,24 @@ locks and truthful evidence, and retain ordinary lifecycle meanings. Preview
 work remains response-only; local resource restrictions and independent review
 obligations compose with gates. The shared contract and this prompt retain
 all unexcepted preconditions, edit boundaries, verification, and reporting.
+
+Before the substantive step, apply documentary prerequisite preparation in
+{initiative_template_root}/prompts/WORKFLOW-CONTRACT.md using
+{initiative_template_root}/TEMPLATE-COVERAGE.md and this stage's inventory.
+Classify and prepare only necessary constructible inputs from sufficient
+scoped evidence through their owning stages; then validate and recheck this
+step's real entry gates. Disclose preparation changes separately. The edit
+limits below govern the substantive activity after this preparation.
+Reusable source paths below are relative to {initiative_template_root};
+instantiate only at the map's declared project-relative destination.
+Required inputs: accepted implementation suite, exact baseline and acceptance
+receipt, resolved surface decisions and current in-scope SDK/API contracts,
+implementation and compatibility tests. Use initiatives/README.md and its
+constituent sources and initiatives/decision-receipts/decision-receipt.template.md from
+the map. Recover only missing documentary prerequisites from actual earlier
+events and authority. Missing acceptance, wrong type, unavailable contract or
+unverified compatibility still blocks affected product work. Validate type,
+phase, authority, links and actual SDK evidence before alignment.
 
 For a project with the version-scope revision adopted, verify exact scope
 membership, originating and contributing suite/note IDs and paths, per-source
@@ -122,8 +152,9 @@ Edit only existing documents in the target initiative, the applicable parent
 status record when the initiative's status or next milestone changes, and
 existing SDK/API surfaces demonstrably within the confirmed initiative's scope.
 Do not edit {initiative_template_root}/initiatives or {initiative_template_root}/prompts.
-Do not create, copy, scaffold, move, or rename an initiative document, initiative
-directory, standalone SDK, replacement API, or competing interface. Add a
+After preceding owning-stage documentary preparation, substantive SDK/API
+alignment must not create, copy, scaffold, move or rename an initiative
+document or directory, standalone SDK, replacement API or competing interface. Add a
 source file only when it is an additive part of an existing in-scope SDK or API
 and the compatibility requirements below are met.
 

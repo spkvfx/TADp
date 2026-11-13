@@ -7,6 +7,19 @@ of traceability; a copied directory or informal change log is no substitute.
 Discover actual current branches, integration configuration and refs from Git;
 never assume `main`, `master`, a remote or a hosting service.
 
+## Documentary sources
+
+Use specification 02's
+[canonical template rules](02_Codex_Initiative_Governance_Specification.md#canonical-template-selection-and-use)
+and specification 08's
+[preceding preparation procedure](08_Codex_Initiative_Workflow_Specification.md#documentary-prerequisite-preparation)
+for records required by this specification. The
+[coverage map](../../../template/TEMPLATE-COVERAGE.md) identifies reusable file
+and embedded-section sources, their destinations, owners, and conditional
+triggers. Documentary recovery does not supply missing authority, identity,
+decisions, work, verification, or legal lifecycle events; this specification's
+substantive requirements remain binding.
+
 ## Version-scope hierarchy and execution placement
 
 The [scope specification](09_Codex_Version_Realization_Initiative_Correlation_Specification.md)

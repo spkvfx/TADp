@@ -72,6 +72,24 @@ by the conflict. Do not silently discard earlier planning effort, rewrite
 another initiative, or treat the latest completed work as the deciding
 authority. Independent compatible work may continue.
 
+## Documentary prerequisites before entry
+
+Every workflow prompt first inventories and prepares its documentary inputs
+under [specification 08](../../evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md#documentary-prerequisite-preparation).
+Use the [coverage map](../../template/TEMPLATE-COVERAGE.md) and owning-stage
+canonical sources. Reuse current records; recover constructible paperwork in
+dependency order from scoped evidence and actual authority, then validate it
+and recheck the invoked stage's gates. Missing facts, identity, decisions,
+work, or verification remain blockers. Preparation does not run linked prompts
+or transfer record ownership. Substantive stage descriptions below apply after
+this preceding activity. See the
+[adoption and recovery guide](../guides/template-prerequisites-migration.md).
+
+Stage 9 discloses any preparation changes before a separately read-only
+phase-specific assessment. Its readiness template supplies a response shape,
+unless a governing rule explicitly requires a durable record. Stage 3 creates
+only the initial suite; later records need actual triggering events.
+
 ## Numbered workflow
 
 The prompt sequence under `../../template/prompts` is intentionally explicit.

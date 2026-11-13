@@ -127,6 +127,28 @@ reported as `TADP033` warning so the unresolved migration remains visible withou
 inventing a canonical identity. Warnings do not change the validator exit status
 when no errors exist.
 
+## Canonical template and prerequisite checks
+
+When the canonical coverage revision is installed, `TADP050` checks its JSON
+map, unique IDs, required metadata, source files/sections, governing locators,
+embedded members, and instance destination boundaries. `TADP051` checks the
+shared preparation procedure and the fourteen numbered prompts plus scope
+closure for known prerequisite IDs and explicit executable preparation calls.
+Removing a map still fails when the governing specifications reference it.
+Older distributions without this revision keep their earlier contract.
+
+`tools/tadp_templates.py` exposes a read-only assessment API for explicitly
+reviewed prerequisite facts. Focused tests cover missing and embedded sources,
+conditional records, grouped-depth links, recorded authority versus missing
+paperwork, unavailable/conflicting evidence, owning-stage recovery, missing
+identity, wrong type, closed claims, stale phase evidence, idempotence and the
+Stage 9 preparation/assessment boundary. No helper writes a record or executes
+a prompt. Review actual prompt behavior as well: passing synthetic cases cannot
+prove semantic evidence completeness, authentic authority, lawful adoption,
+or that a missing event occurred. See the
+[canonical map](../../template/TEMPLATE-COVERAGE.md) and
+[migration guide](../guides/template-prerequisites-migration.md).
+
 ## Initiative coherence checks
 
 The [coherence specification](../../evidence/authoritative/LLM/10_Codex_Initiative_Coherence_Specification.md)

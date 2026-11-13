@@ -34,6 +34,18 @@ Apply [WORKFLOW-CONTRACT.md](WORKFLOW-CONTRACT.md) together with this prompt.
 The contract is mandatory and does not replace this prompt's specific
 preconditions, edit boundary, verification, or reporting requirements.
 
+## Documentary prerequisites
+
+Use the [canonical coverage and use map](../TEMPLATE-COVERAGE.md) and the
+[shared preparation procedure](WORKFLOW-CONTRACT.md#documentary-prerequisite-preparation).
+The following metadata is a reference inventory of applicable canonical
+record roles, not an action list or authority to create every listed record.
+<!-- tadp-prerequisites: {"stage":4,"records":["profile","proposal-source","proposal","initial-suite","membership","work-conflict"],"procedure":"WORKFLOW-CONTRACT.md#documentary-prerequisite-preparation"} -->
+
+The executable block below applies these prerequisites to this stage before
+its substantive entry check. Existing records and actual events retain their
+owners and authority; conditional roles require a cited applicability result.
+
 ## Example usage
 
 > **Reference only — do not execute this example.**
@@ -61,6 +73,26 @@ locks and truthful evidence, and retain ordinary lifecycle meanings. Preview
 work remains response-only; local resource restrictions and independent review
 obligations compose with gates. The shared contract and this prompt retain
 all unexcepted preconditions, edit boundaries, verification, and reporting.
+
+Before the substantive step, apply documentary prerequisite preparation in
+{initiative_template_root}/prompts/WORKFLOW-CONTRACT.md using
+{initiative_template_root}/TEMPLATE-COVERAGE.md and this stage's inventory.
+Classify and prepare only necessary constructible inputs from sufficient
+scoped evidence through their owning stages; then validate and recheck this
+step's real entry gates. Disclose preparation changes separately. The edit
+limits below govern the substantive activity after this preparation.
+Reusable source paths below are relative to {initiative_template_root};
+instantiate only at the map's declared project-relative destination.
+Required inputs: complete initial suite including scope assessment, canonical
+source inventory, recorded assignment and current open-effort/conflict evidence.
+Use initiatives/README.md and its constituent sources and
+project/initiatives/work-conflicts.template.md. Keep the open-effort inventory
+in the owning source mapping or review response, not a premature completion
+file. Recover missing initial documentation through Stage 3's
+preparation activity using scoped evidence and its actual entry gates; do not
+invent a new target, decide assumptions or overwrite accepted/frozen claims.
+Missing identity, unresolved authority or mandatory decomposition remains a
+blocker. Validate the recovered suite and evidence before alignment.
 
 For a project with the version-scope revision adopted, verify exact scope
 membership, originating and contributing suite/note IDs and paths, per-source
@@ -95,9 +127,11 @@ initiative suite: the initiative index, proposal source inventory and working
 proposal, assumption record, scope assessment, architecture, source mapping, open-question and
 decision register, implementation roadmap, and implementation steps. Also
 identify every existing supporting initiative document linked from the initiative
-index. If a required document is missing, the target is ambiguous, or the
-initiative has not been initialized, stop and report the blocker. Do not
-scaffold, copy, or repair a missing initiative document or directory.
+index. Prepare constructible missing documents first through their owning
+activities under the shared procedure. If required evidence remains missing,
+the target is ambiguous or no actual initialization authority/identity exists,
+stop and report the blocker. Alignment itself cannot scaffold an invented
+initiative or infer an earlier event.
 
 Read linked supporting records for evidence that bears on the aligned account,
 but keep their role separate from the canonical suite. A readiness review,
@@ -136,12 +170,13 @@ subinitiative records and must not make an umbrella initiative appear coherent.
 Each required split or independent successor must return through Stage 0 for a
 distinct complete initiative and recorded scope/branch assignment.
 
-Edit only existing allowed documents in the target initiative and the applicable
+After preceding preparation, edit only allowed documents in the target initiative and the applicable
 parent status record when the initiative's status or next milestone changes. Do
 not edit {initiative_template_root}/initiatives,
 {initiative_template_root}/prompts, product source, SDK/API surfaces, or another
-initiative. Do not create, copy, scaffold, move, or rename an initiative
-document or initiative directory.
+initiative. During substantive alignment do not create, copy, scaffold, move
+or rename an initiative document or initiative directory; authorized preceding
+documentary recovery retains its own stage ownership.
 
 Keep the initiative's intended outcome, included work, and excluded work. Do
 not broaden boundaries, add capabilities, or resolve uncertainty by silently

@@ -34,6 +34,10 @@ Read these documents in order when first adopting or maintaining TADp:
 
 ## Operating guides
 
+- [Canonical templates and prerequisite recovery](guides/template-prerequisites-migration.md)
+  explains prospective adoption, canonical source selection, evidence-backed
+  owning-stage recovery, genuine blockers, and Stage 9's read-only assessment.
+
 - [Version scope migration and operation](guides/version-scope-migration.md)
   explains shared scopes, exact provenance, delegated intake, branch topology,
   closure integration and preservation of unmigrated legacy records.

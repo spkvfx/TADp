@@ -12,8 +12,8 @@ its initial complete initiative documentation. It follows the
 initiative preparation and its two README-file skeletons. The existing
 initiative proposal is the primary input. This prompt completes the standard
 initiative record; use the [initiative alignment prompt](04_initiative_alignment.md)
-only after that record exists. Branch creation, selection, switching, and
-validation are out of scope for this prompt.
+only after that record exists. Branch creation, selection and switching are
+out of scope; verify the recorded assignment through read-only Git inspection.
 
 ## Structure and reference evidence
 
@@ -43,14 +43,26 @@ is deliberately not an initial initiative artifact. Do not create, copy, or
 link an implementation-readiness review when creating an initiative. Gather
 readiness evidence later, immediately before execution, with the
 [implementation-readiness review prompt](09_initiative_implementation_readiness_review.md).
-That prompt only reports evidence; create any readiness document in a separate,
-explicitly scoped documentation change.
+That assessment reports evidence in its response; a durable readiness document
+requires a separate explicit governing requirement.
 
 ## Shared workflow contract
 
 Apply [WORKFLOW-CONTRACT.md](WORKFLOW-CONTRACT.md) together with this prompt.
 The contract is mandatory and does not replace this prompt's specific
 preconditions, edit boundary, verification, or reporting requirements.
+
+## Documentary prerequisites
+
+Use the [canonical coverage and use map](../TEMPLATE-COVERAGE.md) and the
+[shared preparation procedure](WORKFLOW-CONTRACT.md#documentary-prerequisite-preparation).
+The following metadata is a reference inventory of applicable canonical
+record roles, not an action list or authority to create every listed record.
+<!-- tadp-prerequisites: {"stage":3,"records":["profile","preparation-skeleton","proposal-source","proposal","membership","initial-suite"],"procedure":"WORKFLOW-CONTRACT.md#documentary-prerequisite-preparation"} -->
+
+The executable block below applies these prerequisites to this stage before
+its substantive entry check. Existing records and actual events retain their
+owners and authority; conditional roles require a cited applicability result.
 
 ## Example usage
 
@@ -78,6 +90,26 @@ locks and truthful evidence, and retain ordinary lifecycle meanings. Preview
 work remains response-only; local resource restrictions and independent review
 obligations compose with gates. The shared contract and this prompt retain
 all unexcepted preconditions, edit boundaries, verification, and reporting.
+
+Before the substantive step, apply documentary prerequisite preparation in
+{initiative_template_root}/prompts/WORKFLOW-CONTRACT.md using
+{initiative_template_root}/TEMPLATE-COVERAGE.md and this stage's inventory.
+Classify and prepare only necessary constructible inputs from sufficient
+scoped evidence through their owning stages; then validate and recheck this
+step's real entry gates. Disclose preparation changes separately. The edit
+limits below govern the substantive activity after this preparation.
+Reusable source paths below are relative to {initiative_template_root};
+instantiate only at the map's declared project-relative destination.
+Required inputs: recorded Stage 0 skeleton/identity/assignment, an aligned
+canonical proposal, project tracking and complete initial-suite sources.
+Use initiatives/README.md and its constituent sources, initiatives/preparation-README.template.md and
+initiatives/proposal/preparation-README.template.md
+and initiatives/proposal/ from the map. Recover missing earlier documentary
+outputs in owning-stage order only when their actual entry gates and evidence
+hold. Reuse current initial records on retry and preserve customization; create
+only missing initial-suite outputs. No decision, readiness, execution, delivery
+or completion claim is a Stage 3 output. Validate source standing, IDs, type,
+links, scope and Proposed tracking before completing the initial suite.
 
 For a project with the version-scope revision adopted, verify exact scope
 membership, originating and contributing suite/note IDs and paths, per-source
@@ -136,24 +168,27 @@ Before writing, verify that:
   prepared README metadata, execution branch, and captured base branch and
   commit are complete, reciprocal, unique, and unchanged;
 - {initiative_path}/README.md and {initiative_path}/proposal/README.md exist
-  as an unmodified prepared README skeleton; if they predate preparation or
-  contain initiative-specific content, stop rather than overwrite them;
+  as identifiable prepared records; preserve valid existing initiative-specific
+  content and reuse completed records on retry instead of overwriting them;
 - {initiative_path}/proposal/proposal.md exists and is the intended canonical
   working proposal;
 - {initiative_template_root}/initiatives/README.md and each standard document template exist;
 - the target contains no initial-initiative artifact beyond the prepared README
-  skeleton and canonical proposal whose existing work could be overwritten;
+  skeleton and canonical proposal that has not been inventoried for reuse;
+  create only missing outputs and stop where unresolved conflicts would
+  require overwriting existing work or changing an accepted claim;
 - the target path, initiative type, decision prefix, governing sources, and
   any applicable parent initiative are unambiguous; and
 - {initiative_registry_path}, {initiative_status_path}, and any applicable parent
   initiative index are available for the required tracking entries.
 
-If any precondition fails, stop and report the blocker. The two prepared README
-files are the only existing-document exception: complete them below. Do not
-overwrite, merge, move, rename, or repair another existing initiative document.
-Branching is out of scope: do not create, select, switch, validate, or otherwise
-operate on branches. Do not create a replacement proposal, alter the existing
-proposal, or modify the template.
+After preceding preparation, stop and report remaining precondition failures.
+Complete the prepared README files and reuse current initial-suite records;
+recover missing documentary outputs only within their owning activity and
+actual authority. Do not overwrite, move or rename existing work or alter an
+accepted claim. Branch mutations are out of scope: do not create or switch
+branches; retain required read-only assignment checks. Do not create a
+replacement proposal, alter its meaning or modify reusable sources.
 
 Complete the prepared README files and create only these initial initiative
 artifacts, replacing every template placeholder and removing instructional
@@ -170,8 +205,8 @@ comments:
 
 Retain {initiative_path}/proposal/proposal.md as the existing canonical proposal.
 Do not copy {initiative_template_root}/prompts into the initiative. Do not create
-implementation-readiness.md: it is created later, immediately before
-execution. Do not create delivery-record.md, optional supporting documents,
+implementation-readiness.md: Stage 9 uses that source only as a response shape
+immediately before execution. Do not create delivery-record.md, optional supporting documents,
 implementation reports, decision receipts, SDKs, APIs, code, schemas, tests,
 migrations, or other product artifacts as
 part of this prompt.

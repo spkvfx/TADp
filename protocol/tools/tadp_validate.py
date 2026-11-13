@@ -17,6 +17,7 @@ from urllib.parse import unquote
 
 from tadp_keywords import SPECIFICATION as KEYWORD_SPECIFICATION, load_registry
 from tadp_scopes import adopted as scopes_adopted, adopted_for_record, validate_version_scopes
+from tadp_templates import validate_contract as validate_template_contract
 
 
 MARKDOWN_LINK = re.compile(r"(?<!!)\[[^\]]+\]\(([^)]+)\)")
@@ -2098,6 +2099,8 @@ def validate(root: Path, *, base_ref: str = "HEAD") -> list[Finding]:
     findings.extend(validate_coherence(root, base_ref))
     findings.extend(validate_prompts(root))
     findings.extend(validate_keyword_contract(root))
+    findings.extend(Finding("error", item.code, item.path, item.message)
+                    for item in validate_template_contract(root))
     return sorted(findings, key=lambda item: (item.severity, item.code, item.path))
 
 

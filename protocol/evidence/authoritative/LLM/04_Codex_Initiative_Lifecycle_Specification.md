@@ -23,6 +23,19 @@ and consumer reconciliation required by specification 11. Restoring gates
 does not validate earlier skipped checks, and later gated dependencies must
 recheck current prerequisites. Locks remain enforced in every setting.
 
+## Documentary sources
+
+Use specification 02's
+[canonical template rules](02_Codex_Initiative_Governance_Specification.md#canonical-template-selection-and-use)
+and specification 08's
+[preceding preparation procedure](08_Codex_Initiative_Workflow_Specification.md#documentary-prerequisite-preparation)
+for records required by this specification. The
+[coverage map](../../../template/TEMPLATE-COVERAGE.md) identifies reusable file
+and embedded-section sources, their destinations, owners, and conditional
+triggers. Documentary recovery does not supply missing authority, identity,
+decisions, work, verification, or legal lifecycle events; this specification's
+substantive requirements remain binding.
+
 ## States
 
 | State | Meaning | Minimum evidence |

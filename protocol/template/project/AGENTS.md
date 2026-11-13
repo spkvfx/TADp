@@ -62,6 +62,15 @@ override without the same explicit authority.
   corresponding lifecycle claim. Use the delivery record for design or
   planning and follow exactly one delivery path for the declared type.
 
+For documentary prerequisites, apply specification 02's canonical template-use
+rules and specification 08's preceding owning-stage preparation procedure.
+Use the project root's `template/TEMPLATE-COVERAGE.md` to locate sources,
+destinations, and owners. Recover only necessary evidence-backed paperwork
+before the invoked entry check; missing authority, identity, actual work, and
+verification remain blockers. Preserve accepted/closed claims and reuse records
+idempotently. Stage 9 must disclose preceding preparation changes and keep its
+assessment itself read-only.
+
 Preserve source identity, distinguish observed evidence from accepted
 authority, and report only outcomes supported by verification.
 

@@ -8,7 +8,8 @@ Replace every braced placeholder before using this prompt.
 
 Use this prompt after [preparing the initiative](00_initiative_preparation.md)
 to turn an existing realization note into the first working proposal for a new
-initiative. It creates only the proposal inside the prepared README skeleton;
+initiative. Its substantive activity creates only the proposal inside the
+prepared README skeleton, after bounded documentary prerequisite preparation;
 it does not create a branch or scaffold the initiative's full record.
 
 **Proposal template:**
@@ -19,6 +20,18 @@ the shared [`proposal/proposal.md`](../initiatives/proposal/proposal.md) templat
 Apply [WORKFLOW-CONTRACT.md](WORKFLOW-CONTRACT.md) together with this prompt.
 The contract is mandatory and does not replace this prompt's specific
 preconditions, edit boundary, verification, or reporting requirements.
+
+## Documentary prerequisites
+
+Use the [canonical coverage and use map](../TEMPLATE-COVERAGE.md) and the
+[shared preparation procedure](WORKFLOW-CONTRACT.md#documentary-prerequisite-preparation).
+The following metadata is a reference inventory of applicable canonical
+record roles, not an action list or authority to create every listed record.
+<!-- tadp-prerequisites: {"stage":1,"records":["profile","preparation-skeleton","preparation-proposal-source","realization-suite","membership","proposal"],"procedure":"WORKFLOW-CONTRACT.md#documentary-prerequisite-preparation"} -->
+
+The executable block below applies these prerequisites to this stage before
+its substantive entry check. Existing records and actual events retain their
+owners and authority; conditional roles require a cited applicability result.
 
 ## Example usage
 
@@ -45,6 +58,25 @@ locks and truthful evidence, and retain ordinary lifecycle meanings. Preview
 work remains response-only; local resource restrictions and independent review
 obligations compose with gates. The shared contract and this prompt retain
 all unexcepted preconditions, edit boundaries, verification, and reporting.
+
+Before the substantive step, apply documentary prerequisite preparation in
+{initiative_template_root}/prompts/WORKFLOW-CONTRACT.md using
+{initiative_template_root}/TEMPLATE-COVERAGE.md and this stage's inventory.
+Classify and prepare only necessary constructible inputs from sufficient
+scoped evidence through their owning stages; then validate and recheck this
+step's real entry gates. Disclose preparation changes separately. The edit
+limits below govern the substantive activity after this preparation.
+Reusable source paths below are relative to {initiative_template_root};
+instantiate only at the map's declared project-relative destination.
+Required inputs: exact scoped realization sources, Stage 0 skeleton, proposal
+source inventory, recorded membership/assignment/base and readable proposal
+source. Use initiatives/preparation-README.template.md and
+initiatives/proposal/preparation-README.template.md, initiatives/proposal/README.md and
+initiatives/proposal/proposal.md plus the mapped project registry sources.
+Recover a missing Stage 0 documentary output only from sufficient actual
+allocation evidence after its entry gates hold. Do not allocate or invent
+identity. Missing source, authority or immutable assignment remains a blocker.
+Validate the recovered skeleton and provenance before proposal creation.
 
 For a project with the version-scope revision adopted, verify exact scope
 membership, originating and contributing suite/note IDs and paths, per-source
@@ -75,20 +107,24 @@ Before writing, verify that:
   as the prepared README skeleton;
 - {realization_note_path} exists, is readable, and is the intended realization
   note;
-- {initiative_path}/proposal/proposal.md does not already exist or contain a
-  proposal that could be overwritten; and
+- any existing {initiative_path}/proposal/proposal.md is identified and
+  preserved; reuse a valid completed proposal on retry rather than overwrite
+  it or create a duplicate; and
 - {initiative_template_root}/initiatives/proposal/proposal.md exists and is the applicable
   proposal template.
 
-If any precondition fails or the target path is ambiguous, stop and report the
-blocker. Do not invent, move, overwrite, or repair any missing source,
-template, initiative, or directory. Do not create or switch branches, alter
-the prepared README files, or change a status or parent index.
+After preceding preparation, if any precondition still fails or the target
+path is ambiguous, stop and report the blocker. Do not invent a source,
+template, initiative or identity. During proposal creation do not create or
+switch branches, alter the prepared README files or change a status or parent
+index; earlier documentary preparation retains its owning-stage boundary.
 
-Create only {initiative_path}/proposal/proposal.md in the prepared directory.
+Create only a missing {initiative_path}/proposal/proposal.md in the prepared
+directory, or report the existing valid proposal as reused.
 Base that file on
 {initiative_template_root}/initiatives/proposal/proposal.md.
-Do not copy the complete initiative template or create any other initiative
+During substantive proposal creation, do not copy the complete initiative
+template or create any other initiative
 document, including an initiative README, proposal-source README, assumption,
 architecture, source mapping, open-question register, roadmap, implementation
 steps, status entry, or supporting report. Do not modify the realization note
@@ -120,7 +156,8 @@ Write a clear working proposal that:
 
 After creating the proposal, report its exact path, work version, realization
 suite and note used, canonical-row verification, active initiative branch, and
-any assumptions or open decisions that need review. Do not create a separate
-report or any additional document.
+any assumptions or open decisions that need review, and disclose any preceding
+preparation paths and evidence separately. Create no separate report or
+additional document outside that preparation and the proposal output.
 ```
 

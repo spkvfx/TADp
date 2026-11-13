@@ -16,6 +16,18 @@ Use the [integration receipt source](../project/initiatives/integration-receipt.
 for each actual integration or explicit exclusion/transfer/no-deliverable event.
 Preserve exact current-cycle identity, source/target tips, closure authority,
 method and post-integration verification; record failures as failures.
+## Documentary prerequisites
+
+Use the [canonical coverage and use map](../TEMPLATE-COVERAGE.md) and the
+[shared preparation procedure](WORKFLOW-CONTRACT.md#documentary-prerequisite-preparation).
+The following metadata is a reference inventory of applicable canonical
+record roles, not an action list or authority to create every listed record.
+<!-- tadp-prerequisites: {"stage":13,"records":["profile","initial-suite","membership","decision-receipt","acceptance","execution","delivery","completion","coherence","integration"],"procedure":"WORKFLOW-CONTRACT.md#documentary-prerequisite-preparation"} -->
+
+The executable block below applies these prerequisites to this stage before
+its substantive entry check. Existing records and actual events retain their
+owners and authority; conditional roles require a cited applicability result.
+
 ## Example usage
 
 > **Reference only — do not execute this example.**
@@ -33,6 +45,25 @@ Apply {initiative_template_root}/prompts/WORKFLOW-CONTRACT.md and the canonical
 prompt keyword specification at evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md.
 Preserve effective settings, protected locks, all unexcepted gates and truthful
 evidence. Finalize {initiative} at {initiative_path} under its adopted revision.
+
+Before the substantive step, apply documentary prerequisite preparation in
+{initiative_template_root}/prompts/WORKFLOW-CONTRACT.md using
+{initiative_template_root}/TEMPLATE-COVERAGE.md and this stage's inventory.
+Classify and prepare only necessary constructible inputs from sufficient
+scoped evidence through their owning stages; then validate and recheck this
+step's real entry gates. Disclose preparation changes separately. The edit
+limits below govern the substantive activity after this preparation.
+Reusable source paths below are relative to {initiative_template_root};
+instantiate only at the map's declared project-relative destination.
+Required inputs: truthful Completed current claim, acceptance and actual
+type-specific execution/delivery, verification and coherence evidence,
+recorded branch/base/parent and closure authority. Use mapped initiatives/
+record sources and project/initiatives/integration-receipt.template.md. Execution
+is conditional on implementation; delivery applies to design/planning only.
+Recover missing documentary evidence through its owning activity only from
+actual events and sufficient authority, preserving closed claims. Missing
+completion, verification, reopening or integration authority blocks affected
+finalization. Validate current-cycle evidence and both tips before acting.
 
 Before changing anything, verify the canonical membership row, exact scope,
 source provenance, current revision cycle, dedicated/shared execution mode,

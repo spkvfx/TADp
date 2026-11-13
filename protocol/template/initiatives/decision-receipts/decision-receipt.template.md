@@ -10,6 +10,10 @@ instructional comments, and preserve the exact prompt and response verbatim.
 **Source ID or lifecycle event:** {{stable_source_id_or_event}}  
 **Human authority:** {{responder_and_governing_role}}  
 **Response date or event:** {{yyyy-mm-dd_or_event}}  
+**Capture date or event:** {{actual_capture_time_separate_from_original_response_event}}
+
+**Recorded by:** {{actual_recording_agent_or_human}}
+
 **Capture context:** {{chat_review_meeting_or_other_traceable_context}}  
 **Disposition:** {{confirmed_corrected_not_applicable_accepted_deferred_cancelled_superseded_reopened_or_other_exact_result}}  
 **Git commit:** {{commit_or_pending}}

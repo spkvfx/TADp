@@ -7,10 +7,11 @@ Replace every braced placeholder before using this prompt.
 ## Use when reviewing an existing initiative immediately before execution
 
 Use this prompt immediately before an existing `implementation` initiative
-begins the reviewed product-execution phase or work set. It gathers and reports
-current evidence; it
-does not create or update the initiative, an implementation-readiness document,
-or any product artifact. The review compares all material existing evidence
+begins the reviewed product-execution phase or work set. First prepare any
+constructible documentary prerequisites through their owning activities.
+Then the readiness assessment gathers and reports current evidence without
+creating or updating the initiative, a readiness file or any product artifact.
+The assessment compares all material existing evidence
 against the initiative's current claims without implementing work, realigning
 the initiative, or expanding its scope.
 
@@ -19,6 +20,18 @@ the initiative, or expanding its scope.
 Apply [WORKFLOW-CONTRACT.md](WORKFLOW-CONTRACT.md) together with this prompt.
 The contract is mandatory and does not replace this prompt's specific
 preconditions, edit boundary, verification, or reporting requirements.
+
+## Documentary prerequisites
+
+Use the [canonical coverage and use map](../TEMPLATE-COVERAGE.md) and the
+[shared preparation procedure](WORKFLOW-CONTRACT.md#documentary-prerequisite-preparation).
+The following metadata is a reference inventory of applicable canonical
+record roles, not an action list or authority to create every listed record.
+<!-- tadp-prerequisites: {"stage":9,"records":["profile","initial-suite","membership","decision-receipt","acceptance","readiness-response"],"procedure":"WORKFLOW-CONTRACT.md#documentary-prerequisite-preparation"} -->
+
+The executable block below applies these prerequisites to this stage before
+its substantive entry check. Existing records and actual events retain their
+owners and authority; conditional roles require a cited applicability result.
 
 ## Example usage
 
@@ -47,6 +60,25 @@ work remains response-only; local resource restrictions and independent review
 obligations compose with gates. The shared contract and this prompt retain
 all unexcepted preconditions, edit boundaries, verification, and reporting.
 
+Before the substantive step, apply documentary prerequisite preparation in
+{initiative_template_root}/prompts/WORKFLOW-CONTRACT.md using
+{initiative_template_root}/TEMPLATE-COVERAGE.md and this stage's inventory.
+Classify and prepare only necessary constructible inputs from sufficient
+scoped evidence through their owning stages; then validate and recheck this
+step's real entry gates. Disclose preparation changes separately. The edit
+limits below govern the substantive activity after this preparation.
+Reusable source paths below are relative to {initiative_template_root};
+instantiate only at the map's declared project-relative destination.
+Required inputs: accepted implementation suite/baseline/receipt, exact phase
+plan, current SDK/API results, product/dependency/verification evidence and
+initiatives/implementation-readiness.md as response shape only. Use the mapped
+initial-suite and decision sources for preceding owning-stage documentary
+recovery from actual sufficient evidence. Do not reconstruct passing tests or
+human acceptance. Missing identity, wrong type, stale phase evidence, required
+verification or authority remains a blocker. Disclose all preparation changes,
+then capture a file-state baseline including staged, unstaged and untracked
+content before the read-only assessment; verify it is unchanged afterwards.
+
 For a project with the version-scope revision adopted, verify exact scope
 membership, originating and contributing suite/note IDs and paths, per-source
 routing, current numeric revision cycle, recorded dedicated/shared execution
@@ -55,7 +87,7 @@ target. Shared source/scopes and declared shared scope branches are valid;
 initiative identities and active per-cycle assignments remain unique. Preserve
 historical allocation, closure and branch history. No later-stage repair by
 inference is allowed; route inconsistencies to the owning preparation/intake.
-This review remains read-only. It may inspect already recorded authority and
+After preceding preparation, the readiness assessment remains read-only. It may inspect recorded authority and
 exceptions or show proposed records in its response, but it cannot persist
 them. Preserve the observed readiness result independently of any separately
 authorized permission to perform bounded work under an exception. Waived,
@@ -97,7 +129,7 @@ source maps. Read a linked record as evidence only; its title does not make it a
 substitute for a missing standard record or prove the current phase is ready.
 Record a template deviation or a stale, differently scoped review as a gap.
 
-Before writing, verify that:
+Before assessing readiness, verify that:
 
 - {initiative_path} exists and has a readable initiative index;
 - the initiative index, proposal source inventory and proposal, assumption,
@@ -114,10 +146,10 @@ Before writing, verify that:
   from the initiative SDK/API alignment prompt; treat a blocked or conflicting
   surface as a readiness blocker for the affected work.
 
-If the initiative itself is missing, ambiguous, or lacks enough initiative
-records to identify the intended work, stop and report the exact blocker. Do
-not create a partial readiness review, scaffold missing initiative material, or
-substitute a newly inferred initiative.
+After owning-stage preparation, if the initiative identity remains missing or
+ambiguous, or evidence is insufficient to identify the intended work, stop and
+report the exact blocker. Do not substitute an inferred initiative or treat
+reconstructed documentary inputs as proof that a readiness gate passed.
 
 Build a complete evidence-coverage inventory before reaching a readiness
 conclusion. Treat "all existing evidence" as every material source that the
@@ -217,26 +249,29 @@ Do not generalize a phase-specific result into a release, deployment,
 operational-readiness, or broader implementation claim. Do not mark a phase
 implemented merely because its accepted direction is documented.
 
-Do not create, copy, update, move, rename, stage, commit, or delete any file
-or directory. In particular, do not create or update
+During the readiness assessment, do not create, copy, update, move, rename,
+stage, commit or delete any file or directory. In particular, do not create or update
 implementation-readiness.md; add a README link; change the proposal,
 assumption, architecture, source map, open-question register, roadmap,
 implementation steps, status records, other initiative records, product
 artifacts, tests, or templates; or begin implementation. When evidence shows
 that one of those records needs correction, preserve the evidence in the review
 response and report the required follow-up, owner, and blocking effect for a
-later, separately scoped action.
+later, separately scoped action. This assessment boundary begins only after
+the preceding preparation changes have been disclosed and its file-state
+baseline captured; preparation remains an owning-stage activity.
 
 Before finishing, verify that every material evidence source in the inventory
-was compared, every conclusion cites its evidence, and no initiative or product
-file changed during the review.
+was compared, every conclusion cites its evidence, and no file changed during
+the assessment compared with its post-preparation baseline.
 
 Report the reviewed scope and disposition; the evidence-coverage count and any
 unavailable sources; every ready, conditional, blocked, or deferred phase; all
 mismatches and unresolved gates; the exact initiative records that would need
 follow-up; and every required owner, decision, artifact, or verification. State
-the correlation-verification result and that the review changed no files. Do
-not create a separate report file, stage a file, create a commit, or begin
-implementation.
+the correlation-verification result, every preceding preparation path/change,
+and whether the assessment itself changed no files. Never claim the whole
+invocation changed no files when preparation did. Do not create a readiness
+report file or begin implementation; stage or commit no files during assessment.
 ~~~
 

@@ -10,6 +10,18 @@ Use the [integration receipt source](../project/initiatives/integration-receipt.
 for each actual integration or explicit exclusion/transfer/no-deliverable event.
 Preserve exact current-cycle identity, source/target tips, closure authority,
 method and post-integration verification; record failures as failures.
+## Documentary prerequisites
+
+Use the [canonical coverage and use map](../TEMPLATE-COVERAGE.md) and the
+[shared preparation procedure](WORKFLOW-CONTRACT.md#documentary-prerequisite-preparation).
+The following metadata is a reference inventory of applicable canonical
+record roles, not an action list or authority to create every listed record.
+<!-- tadp-prerequisites: {"stage":"scope-closure","records":["profile","adoption","scope-registry","membership","scope-closure","integration","coherence","decision-receipt"],"procedure":"WORKFLOW-CONTRACT.md#documentary-prerequisite-preparation"} -->
+
+The executable block below applies these prerequisites to this stage before
+its substantive entry check. Existing records and actual events retain their
+owners and authority; conditional roles require a cited applicability result.
+
 ## Example usage
 
 > **Reference only — do not execute this example.**
@@ -28,6 +40,26 @@ human close/finalize instruction captured in its closure record. The instruction
 supplies only bounded local integration into its recorded immediate parent
 after all required gates pass; protocol adoption or terminal status alone does
 not. Do not infer remote authority, scope reopening or further ancestor closure.
+
+Before the substantive step, apply documentary prerequisite preparation in
+WORKFLOW-CONTRACT.md using
+template/TEMPLATE-COVERAGE.md and this stage's inventory.
+Classify and prepare only necessary constructible inputs from sufficient
+scoped evidence through their owning stages; then validate and recheck this
+step's real entry gates. Disclose preparation changes separately. The edit
+limits below govern the substantive activity after this preparation.
+Reusable source paths below are relative to template/; instantiate only at
+the map's declared project-relative destination.
+Required inputs: exact adopted scope/parent identity, complete current member
+and descendant inventory, truthful closed dispositions, actual required child
+integration/aggregate verification/coherence and human closure authority. Use
+project/initiatives/version-scopes.template.md, scope-README.template.md,
+initiative-index.template.md and integration-receipt.template.md plus mapped
+decision/coherence sources. Recover missing documentary prerequisites only
+from sufficient actual events through their owning activities. Missing
+identity, open members, failed checks or missing authority still blocks
+closure; preparation cannot close a member or invent integration. Validate
+current inventory, links, topology and actual gates before scope closure.
 
 Before integration, instantiate the reusable integration receipt outside
 template/ at the initiative/scope evidence location and capture authority.

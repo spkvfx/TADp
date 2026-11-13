@@ -6,8 +6,9 @@ Replace {initiative} with the initiative name or path before using this prompt.
 
 ## Use when revising an existing proposal in place
 
-Use this prompt with an existing target initiative and proposal. It updates only
-that proposal; it does not create initiative artifacts.
+Use this prompt with an identified target initiative and canonical proposal.
+After preceding documentary preparation, its alignment activity updates only
+that proposal.
 
 When the target has an initiative index or proposal source inventory, use it to
 identify the canonical editable proposal, editability, and evidence label
@@ -21,13 +22,25 @@ Apply [WORKFLOW-CONTRACT.md](WORKFLOW-CONTRACT.md) together with this prompt.
 The contract is mandatory and does not replace this prompt's specific
 preconditions, edit boundary, verification, or reporting requirements.
 
+## Documentary prerequisites
+
+Use the [canonical coverage and use map](../TEMPLATE-COVERAGE.md) and the
+[shared preparation procedure](WORKFLOW-CONTRACT.md#documentary-prerequisite-preparation).
+The following metadata is a reference inventory of applicable canonical
+record roles, not an action list or authority to create every listed record.
+<!-- tadp-prerequisites: {"stage":2,"records":["profile","preparation-skeleton","preparation-proposal-source","realization-suite","membership","proposal"],"procedure":"WORKFLOW-CONTRACT.md#documentary-prerequisite-preparation"} -->
+
+The executable block below applies these prerequisites to this stage before
+its substantive entry check. Existing records and actual events retain their
+owners and authority; conditional roles require a cited applicability result.
+
 ## Example usage
 
 > **Reference only — do not execute this example.**
 >
 > Using the [proposal alignment prompt](02_proposal_alignment.md), align the
-> attached initiative's proposal in place. Do not create, copy, or change any
-> other document or directory.
+> attached initiative's proposal in place after preparing constructible
+> documentary prerequisites through their owning stages.
 
 This example shows how to invoke the template. When using this file, execute
 only the instructions in the **Alignment prompt** block below. Do not execute,
@@ -47,6 +60,24 @@ work remains response-only; local resource restrictions and independent review
 obligations compose with gates. The shared contract and this prompt retain
 all unexcepted preconditions, edit boundaries, verification, and reporting.
 
+Before the substantive step, apply documentary prerequisite preparation in
+{initiative_template_root}/prompts/WORKFLOW-CONTRACT.md using
+{initiative_template_root}/TEMPLATE-COVERAGE.md and this stage's inventory.
+Classify and prepare only necessary constructible inputs from sufficient
+scoped evidence through their owning stages; then validate and recheck this
+step's real entry gates. Disclose preparation changes separately. The edit
+limits below govern the substantive activity after this preparation.
+Reusable source paths below are relative to {initiative_template_root};
+instantiate only at the map's declared project-relative destination.
+Required inputs: one canonical editable proposal, source inventory, actual
+realization and governing evidence, target identity and recorded assignment.
+Use initiatives/proposal/README.md and initiatives/proposal/proposal.md and
+Stage 0 preparation-README sources from the map. A missing proposal may be prepared
+through Stage 1's documentary activity only after its real entry gates hold;
+reuse valid proposals and preserve frozen sources. Missing identity, ambiguous
+editability or insufficient evidence blocks the substantive alignment. Validate
+source standing, links and the single canonical owner before editing.
+
 For a project with the version-scope revision adopted, verify exact scope
 membership, originating and contributing suite/note IDs and paths, per-source
 routing, current numeric revision cycle, recorded dedicated/shared execution
@@ -65,9 +96,10 @@ all describe the same prepared membership and active assignment. Stop on any mis
 or inconsistent relationship. Proposal alignment must not allocate, infer,
 renumber, or repair membership identity.
 
-Edit only the target initiative's existing canonical working proposal. Do not
-create, copy, scaffold, move, or rename any file or directory, including a
-proposal, assumption record, initiative directory, or template-derived document.
+After preceding preparation, edit only the target initiative's canonical
+working proposal during alignment. This substantive activity must not create,
+copy, scaffold, move or rename another file or directory, including an
+assumption record, initiative directory or template-derived document.
 Do not edit `{initiative_template_root}/initiatives` or
 `{initiative_template_root}/prompts`; use them only as guidance. Put every
 proposal correction in the target proposal itself, and report unresolved
@@ -82,7 +114,9 @@ replacement, and report that the review is blocked by its frozen state.
 If the initiative index or source inventory does not identify one canonical
 editable proposal, or identifies a legacy document whose role is ambiguous,
 stop and report that discrepancy. Do not infer equivalence from a similar
-filename or repair the initiative structure in this proposal-only workflow.
+filename. Missing documentary records may be prepared only through the shared
+owning-stage procedure; unresolved identity or role ambiguity still blocks
+this proposal-only alignment activity.
 
 Work in this order:
 
