@@ -187,3 +187,17 @@ This project now adopts the installed revision under [EX-VSG-DR-001](initiatives
 Local integration is authorized only by an identified close/finalize instruction after all gates pass, into the recorded immediate parent. No such instruction is supplied by this migration. PRs remain human managed; pushes and ref removal require separate authority.
 
 The historical tuple and dedicated-branch clauses above apply to cycle 1. Current preparation verifies scope membership, provenance, cycle and dedicated/shared assignment. Before Stage 5 on a continuation, [preparation recovery](initiatives/decision-receipts/EX-VSG-VER-001-migration-verification.md) must verify the actual checkout contains the migrated suite and adopted scaffold.
+
+### Verified preparation recovery
+
+The User's follow-up merge/cleanup instruction is captured in
+[EX-PREP-DR-001](initiatives/decision-receipts/EX-PREP-DR-001-branch-recovery.md).
+On 2026-11-12, original adoption ancestry was restored through actual merges,
+and the exact existing baseline was installed on every current assigned
+checkout. [Verification](initiatives/decision-receipts/EX-VSG-VER-001-migration-verification.md#ex-prep-001-verified-recovery-results)
+records successful protection, validation, local links and 138 regression
+tests. The original effective point, canonical creation bases, cycle 2
+assignments, human ownership and all Proposed lifecycle claims remain intact.
+Preparation is ready for stages 5/6; those source decisions and separate
+human initiative acceptance remain unperformed. Main is unchanged and no
+scope closure, release or publication is inferred.

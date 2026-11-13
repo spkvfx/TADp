@@ -20,3 +20,15 @@ This is the canonical topology, inventory and closure registry. Existing v1 crea
 | v4.0 | minor | v4 | v4.0 | v4 | 36bb20c88802191e13b873a36a07531fcfab5f42 | v4 | [00-RZN-001-P4-WEB-suite-index](../evidence/non-authoritative/realizations/v4.0/00-RZN-001-P4-WEB-suite-index.md); [01-RZN-001-P4-WEB-browser-bundle](../evidence/non-authoritative/realizations/v4.0/01-RZN-001-P4-WEB-browser-bundle.md) | [INIT-IMP-006](v4.0/implementation/INIT-IMP-006-web-application-bundle/README.md) | None | Open | Pending; no closure authority | Not closed | No merge performed | 873021eef226576aebfc60b94f69886eb4da4a1c |
 
 [Membership](initiative-index.md), [migration dispositions](version-scope-migration-ledger.md), [verification](decision-receipts/EX-VSG-VER-001-migration-verification.md). Legacy v1 includes all six Proposed suites in its historical tip. Whole-tip upward integration remains blocked until every included change qualifies or has an explicitly authorized exclusion/transfer. Main is not changed.
+
+## Preparation recovery
+
+On 2026-11-12, [EX-PREP-DR-001](decision-receipts/EX-PREP-DR-001-branch-recovery.md)
+authorized and recorded exact baseline installation on the ten existing scope
+branches and six dedicated continuations. [Verification](decision-receipts/EX-VSG-VER-001-migration-verification.md#ex-prep-001-verified-recovery-results)
+confirms current scaffold/suite availability and original effective-point
+ancestry. Installation was by history-preserving merge/fast-forward; every
+captured creation base, structural parent, integration target, assignment and
+open scope disposition in the table remains unchanged. Its pending integration
+states describe future closure integration, not baseline preparation. Main
+and historical refs are unchanged.

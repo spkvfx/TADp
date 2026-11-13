@@ -250,3 +250,45 @@ installation boundary, serialized merge plan and required verification before
 action. This is a new preparation operation; the preceding blocked review
 and its failures remain historical evidence. Execution is pending, and no
 source decision or readiness claim changes merely by recording authority.
+
+## EX-PREP-001 verified recovery results
+
+The [recorded follow-up authority](EX-PREP-DR-001-branch-recovery.md) was
+executed on 2026-11-12. The earlier preparation blockers and preflight remain
+historical; the following observed results supersede their current blocking
+effect for baseline installation and adoption ancestry only.
+
+| Operation/check | Actual result |
+|---|---|
+| Authority captured before merges | `c69fa54`; prior preflight notes preserved |
+| Original-history merge into v1 | `89c8c382027b52f3999c54b5bbe95ac71c0675c0`; first-parent file tree unchanged |
+| Captured main-history merge into v1 | `12bddc8d978b44e0761a0d9bf448f379c163ccf1`; first-parent file tree unchanged; main ref unchanged |
+| Original effective point 873021e and main ancestry | Both now ancestors; recorded identities unchanged |
+| Major baseline installation | v2, v3, v4 fast-forwarded to verified baseline 12bddc8 |
+| Minor preparation from matching major | v1.0, v2.0, v2.1, v2.2, v3.0, v4.0 fast-forwarded to 12bddc8 |
+| Assigned continuation preparation from matching minor | All six canonical cycle 2 branches fast-forwarded to 12bddc8 |
+| Actual D1, D2, D3, D4, D5, D6 checkout validation | Each checked out and validated: zero errors, one retained TADP049 warning; current canonical suite and adopted ancestry verified |
+| Full protocol and example validators/local links | Both passed with zero errors; one retained TADP033 protocol warning and one retained TADP049 example warning |
+| Protected-source checks | Both projects passed, zero errors; locked content unchanged |
+| Installed regression suite | 138 tests passed in 108.422 seconds |
+| Independent merge review | /root/merge_audit: authority order, merge graph, zero-content merge diffs, ancestry and propagation plan passed without corrective findings |
+| Independent final tracking review | /root/merge_audit: 14-file scope, preserved identities/statuses/sources and all 16 prepared refs verified; six stale status-row update dates corrected before commit |
+
+The original-history merge needed preservation of the three recently appended
+tracking files. The main-history merge needed resolution of outdated protocol
+README guidance in favor of the current adopted baseline. Neither merge
+changed source-file content relative to its first parent. No generic source,
+validator or lock was revised; no creation base or execution assignment changed.
+
+The final administrative tracking commit records these results and is then
+propagated by the same parent-first fast-forward procedure. Its exact ID is
+available from this record's Git history; the verified protected and initiative
+decision content remains identical to 12bddc8. All 16 current scope/execution
+refs retain their roles. Main, original initiative refs, protocol/migration
+source refs and remote-tracking refs are preserved, with no push or deletion.
+
+Preparation recovery is complete. All six initiatives remain `Proposed`, with
+36 unresolved assumptions and 37 unresolved questions. The next stage is
+template 05 followed by 06 under their separate recorded review authority,
+beginning with D1. This operation neither executes those reviews nor qualifies
+Stage 7 acceptance readiness, delivery, scope closure or upward integration.

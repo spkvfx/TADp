@@ -160,3 +160,20 @@ artifacts, or convenience block affected work.
 | RZN-001-P3-CLI-SUITE | [Original suite](../../../../evidence/non-authoritative/realizations/v3.0/00-RZN-001-P3-CLI-suite-index.md) | RZN-001-P3-CLI-N01 | v3.0 | [RZN-001-P3-CLI-N01](../../../../evidence/non-authoritative/realizations/v3.0/01-RZN-001-P3-CLI-command-image.md) | Originate | [Migration placement and rationale](../../../decision-receipts/EX-VSG-DR-001-initiative-migration.md) |
 
 No source or accepted claim changes, no cross-scope routing and no reopening occur. Before Stage 5, preparation recovery must verify the current migrated suite and adopted scaffold on the assigned checkout. The new ref alone is not a ready handoff. Human review and acceptance gates remain open.
+
+## Administrative addendum: verified preparation recovery
+
+On 2026-11-12, [EX-PREP-DR-001](../../../decision-receipts/EX-PREP-DR-001-branch-recovery.md)
+recorded the User-authorized history repair and exact baseline installation.
+The actual assigned checkout, initiative/v3.0-INIT-IMP-005-standalone-cli-image,
+was verified at 12bddc8d978b44e0761a0d9bf448f379c163ccf1: the current
+canonical suite, adopted ancestry, protection and full validation/local links
+passed. [Actual results](../../../decision-receipts/EX-VSG-VER-001-migration-verification.md#ex-prep-001-verified-recovery-results)
+supersede the earlier missing-preparation blocker. Final administrative
+tracking updates preserve that baseline's source and protected content.
+
+This initiative remains Proposed with its original source dispositions,
+creation base, cycle 2 assignment, provenance and narrow claim unchanged.
+The next stage is template 05, followed by 06 under the separate authorized
+review method and D1-D6 order. No source review, initiative acceptance,
+delivery, scope closure or upward integration is claimed here.
