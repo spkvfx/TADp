@@ -9,6 +9,11 @@ an explanatory guide; its role and accepted authority determine its placement.
 
 ## Top-level structure
 
+The tree below describes a project after adoption of the current scope model.
+In the reference checkout these paths live under `protocol/`; its enclosing
+repository also has maintenance prompts. A legacy project keeps its recorded
+paths and compatible revision until explicitly migrated.
+
 ```text
 .
 |-- .gitattributes
@@ -28,7 +33,12 @@ an explanatory guide; its role and accepted authority determine its placement.
 |       `-- realizations/
 |-- initiatives/
 |   |-- initiative-index.md
-|   `-- version-correlation-migration-ledger.md
+|   |-- version-scopes.md
+|   |-- version-scope-migration-ledger.md
+|   |-- version-correlation-migration-ledger.md
+|   |-- work-conflicts.md
+|   |-- status.md
+|   `-- <scope>/<type>/<id-and-slug>/
 |-- products/
 |-- prompts/
 |   |-- AGENTS.md
@@ -36,6 +46,7 @@ an explanatory guide; its role and accepted authority determine its placement.
 |-- template/
 |   |-- .tadp-lock.json
 |   |-- AGENTS.md
+|   |-- TEMPLATE-COVERAGE.md
 |   |-- initiatives/
 |   |-- project/
 |   |   `-- prompts/
@@ -71,7 +82,7 @@ The tracked hook runs validation and the staged protected-source guard. Git
 does not activate tracked hooks automatically; every clone or worktree must set
 `core.hooksPath` to `.githooks`.
 
-### `../../../README.md`
+### `README.md`
 
 The root README is the human entry point. It explains the purpose, requirements,
 core model, main workflow, validation commands, and documentation index. It
@@ -120,10 +131,13 @@ Preserve the realization's source identity when creating a proposal. Correct
 its interpretation in initiative records rather than rewriting historical
 input silently.
 
-For work governed by the correlation revision, place one suite index and its
-supporting notes under the canonical work-version directory. The suite index
-records the reciprocal initiative, branch, captured base, canonical-row link,
-boundary, and catalog while remaining permanently non-authoritative.
+Under the adopted scope revision, the suite index catalogs exact source notes
+and their routing to existing or new initiatives. Shared sources and several
+targets are valid; each initiative still has one immutable scope membership.
+Preserve source scope separately from the selected target scope and link the
+canonical membership and source-mapping records. Earlier one-to-one tuples
+retain their recorded predecessor contract until explicitly migrated. See
+[scope operation](../guides/version-scope-migration.md).
 
 ## Initiatives
 
@@ -142,7 +156,7 @@ dispositions without inference.
 
 The canonical initial suite contains:
 
-- `../../../README.md` for identity, type, scope, lifecycle, and links;
+- `README.md` for identity, type, scope, lifecycle, and links;
 - `proposal/README.md` and `proposal/proposal.md` for source inventory and the
   working proposal;
 - `assumption.md` for stable assumptions and human dispositions;
@@ -153,10 +167,12 @@ The canonical initial suite contains:
 - `implementation-roadmap.md` for dependency and gate ordering; and
 - `implementation-steps.md` for reviewable changes and verification.
 
-Later-stage records include `decision-receipts/`,
-`implementation-readiness.md`, `execution-record.md`, `delivery-record.md`, and
-`completion-evidence.md`. Do not create a later-stage record merely to make the
-initial suite look complete.
+Later-stage durable records include `decision-receipts/`, `execution-record.md`,
+`delivery-record.md`, and `completion-evidence.md`, only when their actual
+decisions, work or verification trigger them. `implementation-readiness.md` is
+a reusable response shape for Stage 9, not a required initiative-local file;
+a durable readiness record needs an explicit governing requirement. Do not
+create later records merely to make the initial suite look complete.
 
 ## Products
 
@@ -191,6 +207,12 @@ that library into the project-local workspace or treat a local prompt as
 authoritative evidence, initiative acceptance, gate evidence, or lifecycle
 proof.
 
+In this reference repository, outer repository-level `prompts/` contains
+maintenance requests for TADp itself. Its instructions determine that target;
+the nested `protocol/prompts/` remains the distributable project-local
+workspace. Neither location becomes the protected workflow library merely
+because it contains Markdown instructions.
+
 When the scaffold is embedded in a larger Git repository for distribution or
 testing, the enclosing Git root does not enlarge the project-local boundary or
 make the embedded scaffold a compliant governed project.
@@ -201,6 +223,14 @@ The entire `../../template` tree is protected reusable source. Its scoped
 `AGENTS.md` prohibits in-place specialization, and `.tadp-lock.json` makes
 unexpected additions, removals, and byte changes validator errors. Copy a
 record to its declared destination outside this tree before editing it.
+
+The [canonical coverage map](../../template/TEMPLATE-COVERAGE.md) selects file,
+embedded-section, conditional and response-shape sources by role and owning
+stage. The [preparation contract](../../template/prompts/WORKFLOW-CONTRACT.md#documentary-prerequisite-preparation)
+permits recovery of necessary documentary inputs from sufficient actual
+evidence before a substantive step's entry check; it never invents identity,
+authority, work or verification. Recompute relative links from the instance's
+actual directory depth.
 
 ### `../../template/initiatives`
 
@@ -233,7 +263,7 @@ the target's `../../evidence/authoritative/LLM` path.
 
 ## Documentation, tools, and tests
 
-- `` explains adoption and maintenance.
+- `docs/` explains adoption and maintenance.
 - `../guides` contains focused non-authoritative procedures.
 - `../../tools/tadp_validate.py` enforces machine-checkable protocol contracts.
 - `../../tools/tadp_protect.py` checks and deliberately maintains the two

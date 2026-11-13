@@ -65,7 +65,13 @@ scope.
 The decision receipt preserves what the human was asked, what evidence and
 limitations were shown, the exact response, the authority under which it
 governs, the resulting disposition, and the records reconciled from it. The
-receipt proves the decision, not implementation or release.
+receipt records that decision and its source, not implementation or release.
+File presence and structural validation cannot authenticate human authority.
+Scope identity,
+membership, a branch and a passing check likewise establish no acceptance or
+release claim. Actual sufficient human instructions may be captured when their
+receipt is missing, with capture time separate from the original event; this
+does not reconstruct an unavailable decision.
 
 ## Conflict handling
 
@@ -74,14 +80,22 @@ When records conflict:
 1. Preserve both claims and their source identities.
 2. Determine their evidence class, scope, revision, and applicable authority.
 3. Stop only the affected decision or work.
-4. Record the contradiction in the authoritative conflict register and the
-   affected initiative record.
+4. Record an invariant contradiction in the authoritative conflict register
+   and affected initiative record. Record incompatible initiative effort in
+   `initiatives/work-conflicts.md` and affected records under
+   [specification 10](../../evidence/authoritative/LLM/10_Codex_Initiative_Coherence_Specification.md).
+   A disagreement between lower-standing proposals does not become an invariant.
 5. Identify the owner and exact evidence or human decision needed.
 6. Resolve the conflict by correcting lower-standing work or through an
    explicitly authorized invariant revision.
 
 Do not make documents appear coherent by deleting uncertainty, changing
 history, weakening acceptance criteria, or marking incomplete work complete.
+
+Document preparation follows the same precedence. The
+[template and prerequisite guide](../guides/template-prerequisites-migration.md)
+explains how scoped source evidence can populate missing paperwork while
+unavailable facts, human decisions, verification and identity remain blockers.
 
 ## Explanatory documentation
 

@@ -7,14 +7,10 @@ can review and verify. For each initiative, TADp records **why the work exists**
 **what evidence shows the result**.
 
 TADp is designed for software architecture work with Git using Codex. It is most
-useful when developers need explain what a system does, how each decision
-gained authority, and what evidence supports completion. It is most useful 
-describing large, complex systems consisting of multiple components or services.
-It is less useful for smaller, monolithic projects where the rigid structured planning
-may become costly.
-
-
-
+useful when developers need to explain what a system does, how each decision
+gained authority, and what evidence supports completion. Its structured records
+help coordinate complex systems with multiple components or services; use a
+small pilot to assess the record-keeping cost for a smaller project.
 The reference protocol and its complete documentation live in
 [`protocol/`](protocol/README.md).
 
@@ -67,7 +63,8 @@ flowchart LR
     I --> G{"Assumptions and<br/>questions settled?"}
     G -->|Decision needed| D["Human decision<br/>and receipt"]
     D --> I
-    G -->|Ready| X["Execute accepted work"]
+    G -->|Ready| H{"Explicit human acceptance<br/>of exact baseline"}
+    H -->|Accepted| X["Execute accepted work"]
     X --> V["Verify work and record<br/>completion evidence"]
     V --> S["Evidence-backed<br/>lifecycle status"]
 ```
@@ -137,6 +134,21 @@ require recorded authorized reopening before refinement. Adopted realization int
 
 ## What TADp provides
 
+The current distribution supports major, minor and patch version scopes,
+precise realization-note provenance, shared or dedicated execution branches,
+and separately gated local integration into the immediate parent. Each narrow
+initiative keeps independent acceptance and completion evidence. Adoption is
+explicit; installed tools do not migrate historical work. See
+[scope operation and migration](protocol/docs/guides/version-scope-migration.md).
+
+The [canonical coverage map](protocol/template/TEMPLATE-COVERAGE.md) identifies
+reusable files, embedded sections, conditional records and response shapes.
+Workflow prompts prepare recoverable documentary prerequisites from scoped
+evidence through their owning stages before checking entry gates. Missing
+authority, identity, actual work and verification still block affected work.
+Stage 9 assesses readiness read-only after disclosed preparation. See
+[template use and recovery](protocol/docs/guides/template-prerequisites-migration.md).
+
 The canonical [prompt keyword specification](protocol/evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md)
 applies to every TADp task. It adds positional settings, bounded exception
 records, declared action-list scheduling, and a protected extensible registry.
@@ -190,8 +202,20 @@ TADp requires **Git** and **Codex**. Python 3 is also required to run the
 validator and its tests, although the validator uses only the Python standard
 library.
 
-For this repository's combined protocol and example, enable the root
-[pre-commit hook](.githooks/pre-commit) with `git config core.hooksPath .githooks`.
-It validates and guards both project trees. Set `TADP_PYTHON` to the configured
-Python executable when it is not the shell's default. Adopted standalone
-projects retain their project-local hook.
+For protocol maintenance, the [protocol hook](protocol/.githooks/pre-commit)
+validates and guards `protocol/`. From the repository root, its setup command
+is `git config core.hooksPath protocol/.githooks`; inspect existing hook
+configuration and validation findings before making that local change.
+Set `TADP_PYTHON` to the configured Python executable when it differs from the
+shell default. Adopted standalone projects use their own `.githooks/` path.
+The older [root hook](.githooks/pre-commit) still expects a local `example/`
+tree and needs separately authorized executable maintenance. Examples are
+outside this repository's protocol-maintenance validation target.
+
+## Example repository
+
+The example has a separate [repository](https://github.com/spkvfx/TADp-example).
+Its clone URL is `https://github.com/spkvfx/TADp-example.git`. These supplied
+links identify its location; rebuild status, protocol adoption, feature parity
+and application behavior have not been verified by this documentation review.
+For TADp adoption, follow [getting started](protocol/docs/development/getting-started.md).

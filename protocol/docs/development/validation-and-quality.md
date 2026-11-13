@@ -11,7 +11,10 @@ ready for production.
 ## Running validation
 
 From the protocol root (`protocol/` in the reference repository and normally
-the project root in an adopted repository):
+the project root in an adopted repository), use the project's configured
+Python interpreter. `python` below stands for that interpreter, not an
+assumed system installation. These are reference commands; reading this guide
+performs no checks or maintenance.
 
 ```powershell
 python tools/tadp_protect.py check .
@@ -43,8 +46,13 @@ Exit status meanings:
 | Status | Meaning |
 |---|---|
 | `0` | No validator errors were found. |
-| `1` | One or more protocol findings were reported. |
-| `2` | The requested repository root is invalid. |
+| `1` | One or more validator errors were reported. Warnings alone retain exit `0`. |
+| `2` | The requested root does not exist, or CLI arguments are invalid. |
+
+An existing directory with missing Git metadata or scaffold files reports
+errors with exit `1`. JSON mode reports the same findings and exit status as
+text mode. The protection tool has separate text output and exit meanings;
+see the [tool entry points](../../tools/README.md).
 
 Run regression tests with:
 
@@ -213,12 +221,23 @@ to LF line endings before hashing so a Git checkout's line-ending conversion
 does not create false drift; binary content is hashed as stored.
 
 The tracked `.githooks/pre-commit` first runs full validation and then blocks
-staged changes to either protected root. Enable it once in every clone or
-worktree:
+staged changes to either protected root. This describes the hook inside the
+protocol/adopted project. Configure the hook path from the actual Git root:
 
 ```powershell
 git config core.hooksPath .githooks
 ```
+
+In this reference repository the protocol hook is at `protocol/.githooks`, so
+its project-relative configuration is `core.hooksPath=protocol/.githooks`.
+The repository-root `.githooks/pre-commit` is an older combined hook that still
+targets `protocol` and `example`; it does not reflect the current separate
+example boundary. Correcting that executable requires separately authorized
+support-file maintenance. Inspect an existing hook configuration before
+changing it. The supported protocol hook uses `TADP_PYTHON` when set and
+otherwise resolves `python`; select the configured interpreter explicitly
+when the shell default differs. Hook installation changes local Git
+configuration and is not performed by a validation command.
 
 An authorized protected-source commit must set
 `TADP_ALLOW_PROTECTED_UPDATE=1` and set
@@ -269,8 +288,10 @@ governed correction to the appropriate workflow.
 ## Continuous integration
 
 The JSON mode is suitable for CI or a repository-specific wrapper. A minimal
-pipeline should run both the validator and regression tests from the repository
-root using an explicitly supported Python version.
+pipeline should run both the validator and regression tests from `protocol/`
+in this distribution, or the adopted project's root, using its configured
+Python interpreter. The interpreter verified for this maintenance was Python
+3.11.1; this does not certify other interpreter versions.
 
 CI should fail on validator errors. It must not automatically accept an
 initiative, resolve a question, or promote a lifecycle state merely because the

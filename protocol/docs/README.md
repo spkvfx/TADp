@@ -67,12 +67,15 @@ Read these documents in order when first adopting or maintaining TADp:
 
 ## Documentation maintenance
 
+The [2026-11-13 review](development/documentation-review-20261113.md) records
+coverage, evidence, checked commands and unresolved findings for this refresh.
+
 - Keep root-level orientation in `../../README.md`; put durable explanations here.
 - Link to authoritative specifications instead of copying normative text when
   the exact rule matters.
 - Use repository-relative links and run the validator after changing them.
 - Update the root documentation index and this index when adding, renaming, or
   removing a developer document.
-- Do not place binding invariants in ``; authoritative material belongs in
+- Do not place binding invariants in `docs/`; authoritative material belongs in
   `../evidence/authoritative`.
 

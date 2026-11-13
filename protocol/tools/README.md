@@ -1,5 +1,26 @@
 # TADp tools
 
+Run commands below from `protocol/` in this distribution, or the root of an
+adopted TADp project. `python` means that project's configured interpreter;
+the maintained checks were verified with Python 3.11.1. Examples are reference
+commands and do not execute when this document is read.
+
+| Entry point | Inputs and output | Exit and effect |
+|---|---|---|
+| `python tools/tadp_validate.py [root]` | Root defaults to `.`; `--json` emits `root`, `valid`, error/warning counts and findings; `--base-ref` selects the closed-claim comparison revision, default `HEAD`. | Read-only. `0`: no errors, including warnings-only results; `1`: errors; `2`: nonexistent root or invalid CLI arguments. |
+| `python tools/tadp_protect.py check [root]` | Root defaults to `.`; text findings for both protected roots. | Read-only. `0`: locks match; `1`: integrity findings; `2`: invalid root or arguments. |
+| `python tools/tadp_protect.py guard-staged [root]` | Inspects actual staged/unstaged protected paths and matching recorded update authority. | Read-only commit gate. `0`: permitted; `1`: blocked; `2`: inspection or argument error. |
+| `python tools/tadp_keywords.py root --prompt-id ID --text TEXT` | Explicit prompt text and identity; reads the canonical registry and emits JSON interpretation blocks. | Read-only. `0`: interpreted; `2`: invalid arguments or registry/input error. It performs no requested work. |
+| `tadp_scopes.py`, `tadp_templates.py` | Python library APIs described below; called by the validator where applicable. | No standalone CLI. Integration helpers have their own explicit side effects and authority requirements. |
+
+`initialize` and `refresh` are the protection tool's separately authorized
+maintenance actions, not ordinary validation. Both accept repeated
+`--protected-root template` or `--protected-root evidence/authoritative/LLM`
+selectors and require `--authority`; without selectors they address both
+roots. They write locks, return `0` on success and `2` for rejected input or
+baseline conditions. See the governed procedure in
+[Validation and quality](../docs/development/validation-and-quality.md#protected-source-workflow).
+
 `tadp_templates.py` supplies read-only checks for the installed
 [canonical coverage map](../template/TEMPLATE-COVERAGE.md) and documentary
 prerequisite declarations in all fourteen workflow prompts and scope closure.
@@ -28,9 +49,10 @@ python tools/tadp_protect.py check .
 python tools/tadp_validate.py .
 ```
 
-Use `--json` for continuous integration or another machine consumer. The
-validator exits with status `1` when protocol errors exist and `2` when the
-requested repository root is invalid.
+Use the validator's `--json` option for continuous integration or another
+machine consumer. The protection tool's output is text. A directory that
+exists but lacks a valid TADp/Git scaffold produces validator findings and
+exit `1`; a nonexistent root produces exit `2`.
 
 The validator checks the Git and repository-root `AGENTS.md` requirements,
 protocol structure, protected template and authoritative-LLM SHA-256 locks,

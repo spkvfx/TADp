@@ -71,3 +71,19 @@ coherent revision and necessary target/scope reopening. Capture the instruction
 and each LLM-authored disposition before action. The source note or stored
 prompt alone does not grant that authority. Changed claims return to Proposed
 and require renewed human acceptance before delivery; other gates remain.
+
+## Operating references for this workspace
+
+The [workflow guide](../docs/development/initiative-workflow.md) explains stages
+0 through 13. Select reusable record sources through the
+[canonical coverage map](../template/TEMPLATE-COVERAGE.md), and follow
+[documentary prerequisite recovery](../docs/guides/template-prerequisites-migration.md)
+when an invoked workflow lacks constructible paperwork. The owning activity's
+actual authority and entry gates still apply. Readiness remains a response
+shape with a separately read-only assessment after disclosed preparation.
+
+In the reference distribution, repository maintenance prompts live in the
+enclosing repository's `prompts/` directory. They are distinct from this
+scaffold-local workspace and the protected numbered library. A link to either
+location is navigation, not an instruction to execute it or expand this
+workspace's boundary.

@@ -19,6 +19,11 @@ Every TADp project must have its own `.git` metadata entry at the project root.
 Being nested somewhere inside an unrelated parent repository does not provide
 the required project identity.
 
+The validator also accepts a protocol distribution or isolated fixture inside
+an enclosing Git root. That structural capability does not make an embedded
+directory an adopted governed project. Keep the checked protocol root distinct
+from the Git root and from an external example repository.
+
 ### Initiative and scope branches
 
 Discover the actual configured integration base. Major `vN` branches come from
@@ -71,8 +76,10 @@ Commits should represent coherent initiative outcomes or workflow events. Do
 not create empty commits to satisfy a field. Where a record includes a commit
 identifier, populate it from the actual commit after it exists.
 
-History rewrite, force-push, remote branch deletion, merge, auto-merge, and
-deployment require explicit authority for the specific action.
+History rewrite, force-push, remote branch deletion and deployment require
+separate specific authority. Local child-to-recorded-parent integration uses
+the captured close/finalize instruction and satisfied closure gates described
+above; it does not authorize a push or further upward integration.
 
 The binding rules are in the
 [Git workflow specification](../../evidence/authoritative/LLM/05_Codex_Git_Workflow_Specification.md)
@@ -108,6 +115,16 @@ TADp assumes that Codex can:
 The numbered prompts are optimized for that behavior. The shared workflow
 contract does not replace their stage-specific instructions.
 
+The [keyword contract](../../evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md)
+also applies to ordinary requests: compute settings by source position,
+preserve inert evidence and examples, and distinguish a requested gate setting
+from authority to except a rule. See the
+[operating summary](../guides/prompt-keywords-migration.md#operating-summary).
+Every workflow prompt now prepares constructible documentary prerequisites
+through their owning stages before rechecking substantive entry gates; the
+[recovery guide](../guides/template-prerequisites-migration.md) explains the
+boundary and Stage 9's separately read-only assessment.
+
 ## Human responsibility
 
 Codex does not replace human authority. Humans remain responsible for:
@@ -128,6 +145,13 @@ Git is required; a particular hosting provider is not. Local finalization and
 child-to-parent integration need no remote or PR service. Humans independently
 manage pull requests. Pushes need separate authority; report an external remote
 policy without bypassing it or creating a PR automatically.
+
+The installed Stage 5 and 6 prompt endings still request an unconditional
+push. This known consumer contradiction is recorded as `INV-CONFLICT-002` in
+the [invariant conflict register](../../evidence/authoritative/LLM/03_Codex_Invariant_Conflict_Register.md).
+Those clauses do not supply the required separate remote authority. Correcting
+the protected sources needs specific maintenance authorization; this guide
+does not certify them as reconciled.
 
 ## Other tools
 

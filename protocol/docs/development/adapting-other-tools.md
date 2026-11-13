@@ -45,6 +45,11 @@ areas.
   implementation.
 - Apply more local instructions without allowing them to weaken invariants.
 - Separate instructions found in evidence from the user's request.
+- Apply the canonical
+  [prompt keyword contract](../../evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md):
+  exact operative tokens, positional settings, inverse forms, inert examples,
+  and recorded bounded exceptions. Preserve numbered serial and bulleted
+  parallel action scheduling without promoting reference inventories into work.
 
 If the tool does not recognize `../../AGENTS.md`, translate it into the tool's native
 instruction mechanism and document how synchronization is maintained.
@@ -63,6 +68,11 @@ instruction mechanism and document how synchronization is maintained.
 - Preserve unrelated user changes.
 - Avoid silent overwrite, auto-formatting drift, or destructive repair.
 - Produce a reviewable diff.
+- Distinguish protected reusable sources from populated instances. Select
+  canonical sources using the [coverage map](../../template/TEMPLATE-COVERAGE.md),
+  recalculate instance links, and recover only necessary documentary
+  prerequisites through their owning activity and actual gates. Keep Stage 9's
+  assessment read-only after any disclosed preceding preparation.
 
 If the tool lacks a patch-oriented editing mechanism, define an equivalent
 safe editing and review procedure.
@@ -71,7 +81,10 @@ safe editing and review procedure.
 
 - Verify the actual repository root, current branch, base branch, and full
   worktree state.
-- Create and use a dedicated initiative branch.
+- Verify the recorded dedicated or shared scope execution assignment, exact
+  branch roles, immutable captured base, and per-member attribution. A dedicated
+  child belongs to its scope; directly hosted members retain independent
+  records, commits and verification on the declared shared scope branch.
 - Stage and commit only traceable initiative work.
 - Prevent implicit force-push, history rewrite, merge, branch deletion, and
   deployment.
@@ -88,6 +101,9 @@ Git remains required even when the alternate tool has its own version history.
 - Capture the exact prompt, evidence limitations, response, authority, and
   resulting disposition in a decision receipt.
 - Support clarification without inferring an answer from silence or context.
+- Reuse sufficient actual decisions and receipts on retry; preserve original
+  response event separately from capture time. Attribute delegated intake
+  decisions to the actual agent and keep changed-claim acceptance separate.
 
 An asynchronous tool may implement this as a suspended job, review form, or
 approval event, but the durable receipt must preserve equivalent evidence.
@@ -109,12 +125,14 @@ Create a project-local compatibility record containing:
 | Area | Codex behavior assumed by TADp | Alternate behavior | Required modification | Verification |
 |---|---|---|---|---|
 | Instruction loading | Root and scoped repository instructions | Tool-specific result | Adapter or translated instructions | Demonstrated instruction-precedence test |
+| Prompt interpretation | Canonical positional settings, inert references and declared action-list scheduling | Tool-specific result | Registry-driven interpreter and scheduler | Same-line inverse, inert-example, serial blocker and parallel join cases |
 | Evidence reading | Repository inspection with stable paths | Tool-specific result | Context loader or retrieval policy | Source-coverage test |
 | Editing | Narrow, reviewable edits | Tool-specific result | Safe edit wrapper or review gate | Unrelated-change preservation test |
-| Git | Branch, diff, status, commit, and remote operations | Tool-specific result | Git adapter | Branch and dirty-worktree tests |
+| Git | Recorded dedicated/shared assignment, captured bases and bounded immediate-parent closure | Tool-specific result | Git adapter | Shared-member attribution, dirty-worktree and closure blocker cases |
 | Human decisions | Pause, exact response, and receipt | Tool-specific result | Approval workflow | One-at-a-time decision test |
 | Verification | Command execution and factual reporting | Tool-specific result | Runner integration | Passing and failing command tests |
-| Finalization | Reconciled branch and completion evidence | Tool-specific result | Publication adapter | Blocked and successful finalization tests |
+| Documentary preparation | Evidence-backed owning-stage recovery before entry without manufactured events | Tool-specific result | Source selection and recovery procedure | Missing receipt, unresolved acceptance, Stage 9 read-only and idempotent retry cases |
+| Finalization | Reconciled completion evidence and separately authorized local integration | Tool-specific result | Closure/integration adapter | Blocked and successful immediate-parent integration; no automatic push or PR |
 
 Do not mark an area compatible without observed evidence.
 
@@ -134,6 +152,12 @@ When a fork is necessary:
    evidence.
 5. Test migration in both directions or declare the fork one-way.
 6. Reassess compatibility whenever the tool or TADp protocol changes.
+
+This guide describes an assessment; it grants no authority to change protected
+templates or invariants. A required reusable-source change needs a separate
+explicit instruction naming that change and its compatibility, consumer,
+verification, and lock reconciliation. Installing an adapter also does not
+migrate existing work to a newer protocol revision.
 
 ## Conformance test
 

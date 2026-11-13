@@ -24,6 +24,13 @@ Other agents and tools are outside the guaranteed execution environment. Read
 
 ## Choose an adoption path
 
+This reference repository stores the distributable protocol under `protocol/`
+inside the enclosing Git repository. An adopted product project normally puts
+that structure at its own Git root. Paths in links below are relative to this
+guide; command paths are relative to the explicitly named working directory.
+Inspect the recorded governing revision before applying installed capabilities
+to existing work. Installation alone is not adoption or acceptance.
+
 Every TADp task applies the canonical
 [prompt keyword contract](../../evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md),
 even when no stored prompt is invoked. Existing installations use the
@@ -35,7 +42,8 @@ claiming adoption; installing the capability grants no live exception.
 Use this path when maintaining the protocol itself:
 
 1. Open the repository root in Codex.
-2. Read `../../AGENTS.md`.
+2. Read the enclosing repository's `AGENTS.md`, `protocol/AGENTS.md`, and
+   applicable directory instructions.
 3. Read the applicable specifications under
    `../../evidence/authoritative/LLM`, starting with the suite index.
 4. Inspect the Git branch, staged changes, unstaged changes, and untracked
@@ -44,6 +52,13 @@ Use this path when maintaining the protocol itself:
    reusable template or prompt change, validator work, or explanatory
    documentation.
 6. Update every consumer of the changed contract and run validation.
+
+Run checks from `protocol/`. To configure the protocol-owned hook from the
+enclosing Git root, inspect existing configuration first, then use
+`git config core.hooksPath protocol/.githooks`. The old root hook still targets
+both `protocol/` and absent `example/`; it is not the current maintenance check
+boundary. Setup changes local Git configuration; reading this guide does not
+perform them. Set `TADP_PYTHON` to the configured interpreter for hook execution.
 
 ### Adopt TADp in an existing product repository
 
@@ -62,11 +77,14 @@ Use this path when TADp will govern work in another repository:
    instructions without weakening either set.
 4. Copy the authoritative `../../evidence/authoritative/LLM` suite, including
    its scoped `AGENTS.md` and `.tadp-lock.json`, to the same path in the target.
-5. Merge the provided `../../AGENTS.md` requirements with existing repository
+5. Merge the copied `template/project/AGENTS.md` requirements with existing repository
    instructions. More local instructions may be stricter, but they must not
    weaken the authoritative TADp rules.
 6. Copy `../../docs`, `../../tools`, and `../../tests`. This preserves the
    protection utility, validator, migration guidance, and regression coverage.
+   Preserve historical distribution receipts linked by the suite under
+   `decisions/`; these are source-provenance records, not decisions for your
+   project's work.
 7. Run `python tools/tadp_protect.py check .`, then activate the tracked hook
    with `git config core.hooksPath .githooks`. The hook is local Git
    configuration and therefore must be enabled in every clone or worktree.
@@ -102,6 +120,10 @@ reconstruct the base branch or original evidence state.
 
 ## First validation
 
+The following commands are reference procedures, not instructions activated by
+reading this guide. Select the project's configured Python interpreter (the
+`python` spelling below is illustrative) before running them.
+
 From the protocol root (`protocol/` in the reference repository and normally
 the project root in an adopted repository), run:
 
@@ -111,8 +133,10 @@ python tools/tadp_validate.py .
 python -m unittest discover -s tests -v
 ```
 
-On systems where the Python launcher is named differently, use the equivalent
-interpreter command without changing validator semantics.
+Use the configured interpreter's actual executable when the shell default
+differs. Protection should report zero errors; the validator exits 0 with no
+errors, 1 with errors, and 2 for an invalid root. Warnings remain visible and
+do not alone cause exit 1. Tests report their actual passing/failing results.
 
 The validator should report zero errors before an initiative is prepared. If it
 reports missing protocol files, complete the adoption structure rather than
@@ -170,3 +194,11 @@ revision's real immutable delivery commit in the profile. Legacy work remains
 under its recorded compatible revision until explicitly migrated; predecessor
 adoption steps above do not allocate a new scope or rename historical versions.
 See [scope migration](../guides/version-scope-migration.md).
+
+## Separate example
+
+The example is maintained in the separate
+[TADp-example repository](https://github.com/spkvfx/TADp-example), with clone URL
+`https://github.com/spkvfx/TADp-example.git`. Its current rebuild, adoption and
+application behavior are unverified here. Cloning it is optional and does not
+replace the adoption steps or make it a protocol synchronization target.

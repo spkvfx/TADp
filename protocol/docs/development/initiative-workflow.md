@@ -156,7 +156,8 @@ Preparation creates no acceptance or delivery authority.
 - Review one stable assumption ID at a time.
 - Present the exact assumption, plain-language explanation, evidence, and
   affected records.
-- Wait for an explicit human response.
+- Obtain an explicit human response, or capture an already sufficient exact
+  response in its missing receipt without asking the same decision again.
 - Create and link a decision receipt before changing the disposition.
 - Commit only the receipt and reconciliation for that decision.
 
@@ -165,8 +166,9 @@ Preparation creates no acceptance or delivery authority.
 - Review one ready question at a time in dependency order.
 - Preserve the exact question, source options, recommendation status, and
   evidence limitations.
-- Wait for an explicit human answer or explicit deferral with a re-entry
-  condition.
+- Obtain an explicit human answer or explicit deferral with a re-entry
+  condition; capture sufficient actual earlier authority rather than repeat
+  an already answered item solely because its receipt is missing.
 - Create and link a decision receipt before recording the answer.
 
 ### 7. Accept initiative
@@ -175,7 +177,8 @@ Preparation creates no acceptance or delivery authority.
   invariant-compatible.
 - Present the exact bounded claim, output boundary, gates, limitations, and
   accepted-baseline revision to the identified human authority.
-- Wait for an explicit Accept, Reject, or Revise response.
+- Obtain an explicit Accept, Reject, or Revise response for the exact baseline;
+  sufficient existing acceptance may be documented without repeating it.
 - Create the acceptance receipt before changing lifecycle standing.
 - Only an explicit Accept response may record `Proposed` to `Accepted`.
 
@@ -191,7 +194,9 @@ Route specification conflicts to design work.
 
 ### 9. Review implementation readiness
 
-This is a read-only comparison immediately before product execution. Review the
+After preceding documentary preparation, this is a read-only assessment
+immediately before product execution. Disclose preparation changes, capture
+the assessment file state, and verify that it stays unchanged. Review the
 requested phase or work set against current authoritative evidence, accepted
 specifications, dependencies, owners, product state, and verification inputs.
 A missing or non-ready gate blocks only the affected execution.
@@ -274,7 +279,9 @@ the initiative; they do not create its state.
 
 ## Returning to an earlier stage
 
-- A failed entry gate returns to the stage that owns the missing evidence.
+- A missing constructible documentary input first uses bounded owning-stage
+  preparation; recheck the invoked gate after validation. A remaining failed
+  entry gate returns to the stage that owns the missing evidence or decision.
 - Correlation drift returns to Stage 0 recovery without inferring or reusing
   identity; pre-effective records return to their migration ledger.
 - A human review resumes at the next unresolved stable ID without duplicating
@@ -317,4 +324,14 @@ lifecycle, decisions, branch, and verification obligations.
 
 Closing a branch, version, parent, or portfolio does not make unfinished work
 disappear.
+
+## Prompt settings and limits
+
+The [canonical keyword registry](../../evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md)
+governs ordinary requests as well as these stages. A requested gate mode is
+not sufficient authority to skip human acceptance, refresh a protected lock,
+or manufacture passing evidence. Positional settings and serial or parallel
+action-list scheduling preserve the stage's actual dependencies, authority and
+edit boundary. See the [keyword guide](../guides/prompt-keywords-migration.md)
+for defaults, inverse forms and reference-only examples.
 

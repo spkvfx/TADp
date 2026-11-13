@@ -79,6 +79,19 @@ initiatives branch from their scope. Closure integrates child into recorded
 immediate parent, bottom-up. Closing a member leaves its scope open; scope
 closure is separately gated. See [adoption and operation](docs/guides/version-scope-migration.md).
 
+These capabilities belong to the installed distribution. Each adopting project
+records its governing revision and migration disposition; file presence does
+not adopt a revision or change an existing initiative's accepted claim.
+
+Before a workflow step, use the
+[canonical template coverage map](template/TEMPLATE-COVERAGE.md) to identify
+its documentary inputs and their owning stages. Constructible missing paperwork
+is prepared from sufficient scoped evidence before the substantive entry check.
+Missing authority, immutable identity, actual work, or verification remains a
+blocker. Stage 9 discloses any preceding preparation and then performs its
+phase-specific readiness assessment read-only, using a response shape. See
+[template adoption and recovery](docs/guides/template-prerequisites-migration.md).
+
 Open initiative effort is also work to reconcile. Completion reviews account
 for every other open initiative, preserve conflicting efforts in the
 [work-conflict register](initiatives/work-conflicts.md), and route refinements
@@ -131,6 +144,7 @@ quietly weakening a specification or completion claim.
 | [`template/initiatives/`](template/initiatives/README.md) | Standard templates for initiative records |
 | [`template/prompts/`](template/prompts/README.md) | Numbered Codex prompts and the shared workflow rules |
 | [`template/project/`](template/project/README.md) | Reusable structure for adding TADp to another repository |
+| [`template/TEMPLATE-COVERAGE.md`](template/TEMPLATE-COVERAGE.md) | Canonical file, embedded-section, conditional, and response-shape sources with destinations and owning stages |
 | [`tools/`](tools/README.md) | Protocol validator and instructions for using it |
 | [`tests/`](tests/test_tadp_validate.py) | Tests for the validator |
 | [`docs/`](docs/README.md) | Development and operating guides |
@@ -189,6 +203,13 @@ For the full sequence and the ownership of each record, see
 5. Run the validator and its regression tests before review.
 
 ### Adopt TADp in another repository
+
+The human-supplied link identifies the separate
+[TADp example repository](https://github.com/spkvfx/TADp-example); its clone URL is
+`https://github.com/spkvfx/TADp-example.git`. This documentation refresh has
+not inspected or validated its contents, rebuild status, parity, or adoption.
+The example is a separate application target; protocol maintenance here does
+not synchronize or validate it.
 
 1. Start with a repository root that has its own Git history.
 2. Copy the complete protected [`template/`](template/README.md) tree into the
@@ -257,6 +278,9 @@ The complete documentation index is at [`docs/README.md`](docs/README.md).
 | [Workflow stage 0–13 migration](docs/guides/workflow-stage-0-13-migration.md) | How to migrate an active initiative to explicit acceptance and type-specific delivery paths |
 | [Version-realization-initiative correlation migration](docs/guides/version-realization-correlation-migration.md) | How to record the effective point and disposition or migrate legacy identities without inference |
 | [Initiative coherence migration](docs/guides/initiative-coherence-migration.md) | How to adopt open-work reviews, conflict records, feedback, and closed-claim preservation |
+| [Version scope migration and operation](docs/guides/version-scope-migration.md) | Exact source routing, shared/dedicated execution, revision, and separately gated scope closure |
+| [Prompt keywords migration](docs/guides/prompt-keywords-migration.md) | Positional settings, list scheduling, bounded exceptions, and extension of the canonical registry |
+| [Canonical templates and prerequisite recovery](docs/guides/template-prerequisites-migration.md) | Source selection, prospective adoption, owning-stage recovery, and genuine entry blockers |
 
 ## Development and contribution
 

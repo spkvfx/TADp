@@ -53,6 +53,12 @@ apparently related consumer is unaffected.
 
 ## Template rules
 
+- Select the existing reusable source from the
+  [canonical coverage and use map](../../template/TEMPLATE-COVERAGE.md),
+  including README templates, embedded sections and conditional records.
+  Add a source only for a requirement established by its owning specification;
+  keep the map's source, destination, trigger, owner, evidence and verification
+  locators coherent. Instances belong outside protected `template/`.
 - Maintain one canonical initiative suite for all initiative types.
 - Preserve required sections; use an explicit not-applicable explanation
   instead of deleting a field.
@@ -103,6 +109,9 @@ workflow stages and reference inventories from operative action lists.
 Every numbered prompt must:
 
 - link and apply `WORKFLOW-CONTRACT.md`;
+- declare its documentary prerequisite roles and apply the shared preparation
+  procedure before substantive entry checks; recover earlier paperwork only
+  through its owning activity and actual gates, then validate and recheck;
 - include a clearly marked reference-only example;
 - use “attached initiative” in example invocation language;
 - use the `&#123;initiative&#125;` placeholder and other declared placeholders in
@@ -114,6 +123,14 @@ Every numbered prompt must:
 
 Centralize only genuinely shared rules. Do not shorten a prompt until the
 result still defines the task with enough detail to behave consistently.
+
+Preserve the distinction between constructible paperwork and missing facts,
+identity, decisions, work or verification. Stage 9 may have preceding
+owning-stage preparation; the readiness assessment itself remains read-only
+and uses its source as a response shape. Review the actual prompt semantics
+alongside the structural checks in `tadp_templates.py`; passing fixture cases
+cannot establish genuine authority or complete evidence. See the
+[prerequisite revision guide](../guides/template-prerequisites-migration.md).
 
 ## Git workflow for TADp changes
 
@@ -128,7 +145,10 @@ migration consequence, and verification.
 
 When a revision defines a Git commit as its effective point, keep the
 authoritative rule, all affected reusable consumers, validator coverage,
-distribution mirrors, and refreshed protected locks in that coherent commit.
+scoped distribution documentation and refreshed protected locks in that coherent
+commit. Repository maintenance targets the protocol; the separate example
+repository is not a synchronization or verification target. Its presence,
+parity or adoption is not established by a protocol commit.
 Record the resulting immutable commit ID in a follow-up traceability commit; do
 not guess or predeclare the self-referential identifier.
 

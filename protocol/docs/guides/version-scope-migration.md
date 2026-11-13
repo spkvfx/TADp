@@ -34,7 +34,7 @@ synchronization or rewrite old links to imply that grouping always applied.
 
 1. Capture Git baseline, worktree inventory, governing revision, old version,
    suite/note, initiative, branch/base, path and lifecycle evidence.
-2. Install a coherent revision with verified templates, tools, tests, mirrors
+2. Install a coherent revision with verified templates, tools, tests, guidance
    and protected locks. Record its actual delivery commit as the project
    `Version scope revision effective point` only after that commit exists.
    Link `Version scope migration ledger` and exact adoption authority.
@@ -53,6 +53,13 @@ synchronization or rewrite old links to imply that grouping always applied.
 The earlier [correlation migration guide](version-realization-correlation-migration.md)
 describes the predecessor revision. Its old tuple and notation rules apply
 only to records still governed by that revision.
+
+In this reference repository, maintenance targets `protocol/` and its scoped
+support files. The example application lives in a separate repository; it is
+not a synchronized mirror or an adoption prerequisite. Existing target projects
+choose and record their own coherent governing revision. For evidence-backed
+document recovery within that revision, use the
+[template and prerequisite guide](template-prerequisites-migration.md).
 
 ## Route realizations before allocation
 
