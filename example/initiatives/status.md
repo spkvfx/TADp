@@ -70,3 +70,18 @@ their prior revisions, paths and assignments.
 ## Version-scope migration handoff
 
 The six current paths above are grouped by their unchanged source scopes. [Current membership](initiative-index.md) owns cycle 2 continuation assignments; [scope registry](version-scopes.md) owns topology. All six remain Proposed with their original Stage 5 human reviews pending. Administrative migration does not pass those reviews. Before invoking Stage 5, [branch preparation recovery](decision-receipts/EX-VSG-VER-001-migration-verification.md) must confirm the assigned checkout contains the adopted scaffold and migrated suite. No scope is closed or merged.
+
+## Autonomous review preflight: 2026-11-12
+
+Execution of the [assumption and question prompt](../prompts/answer-assumptions-and-open-questions.md)
+stopped before templates 05/06 at the unexcepted preparation checks.
+[EX-AQ-PREFLIGHT-001](decision-receipts/EX-VSG-VER-001-migration-verification.md#assumption-and-question-review-preflight-2026-11-12)
+records the actual `v1` checkout, missing current suites on all six assigned
+cycle 2 branches, and validator error `TADP048` (the recorded scope effective
+point is absent from current history). Protection passed. All 36 assumptions
+and 37 questions remain unresolved; all six initiatives remain `Proposed`
+and none is ready for Stage 7. The prompt supplies bounded autonomous decision
+authority, but no preparation or protected-baseline installation waiver.
+User-authorized Stage 0/adoption recovery owns the blocker and recorded
+re-entry checks; no per-item approval is requested. The preflight tracking
+addenda remain uncommitted pending a valid execution/recovery checkout.
