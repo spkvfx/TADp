@@ -22,10 +22,12 @@ including operative versus inert text, positional settings, list scheduling,
 and required records. No directive or gate exception is activated by this
 prompt's reference to that specification.
 
-Describe rebuilding the example application in a separate fork as future work.
-The user will provide links when it is ready; until then, use a plain-text
-future-work note without invented URLs, placeholder links, availability claims,
-or a request for links. Missing links do not block this documentation task.
+Link the separate [example repository](https://github.com/spkvfx/TADp-example)
+and provide its clone URL, `https://github.com/spkvfx/TADp-example.git`, where
+useful in the entry-point and adoption documentation. These human-supplied
+links identify the example's location; they do not prove rebuild completion,
+feature parity, protocol adoption, or verified application behavior. Establish
+any such claim from inspected evidence, or leave it explicitly unverified.
 This task maintains the protocol and scoped repository documentation only;
 it must not synchronize, rebuild, or validate the example application. Follow
 the current target boundary in `prompts/AGENTS.md`, which supersedes earlier
