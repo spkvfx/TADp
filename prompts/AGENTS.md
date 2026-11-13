@@ -17,17 +17,16 @@ directory. They do not change the handling of work requested outside
 - Unless a prompt explicitly requests another target, perform its requested
   work only in `protocol/` and in repository-level support files that the
   prompt specifically requires.
-- Do not apply a repository prompt directly to `../_old/example/` or to any other
-  project, product, initiative, or evidence tree. Those locations may be read
-  when the prompt names them as evidence or a validation case.
-- Complete and verify the protocol change first. Then synchronize every
-  corresponding protocol-owned change to the same relative path under
-  `../_old/example/`, creating a new mirror path when the protocol change requires
-  one.
-- Treat `../_old/example/` as a downstream mirror during synchronization, not as a
-  second design source. Do not broaden synchronization into example-specific
-  product, initiative, lifecycle, acceptance, release, or completion claims
-  unless the prompt explicitly requests them.
+- The example application will be rebuilt in a separate fork. It is not a
+  maintained mirror or a required synchronization or validation target for
+  protocol maintenance in this repository.
+- Do not apply repository prompts to `_old/example/`, another scaffold, or the
+  separate example fork without a new explicit human instruction naming that
+  target. Historical examples may be read when named as contextual evidence;
+  they do not become the protocol's design source or adoption evidence.
+- Earlier stored prompts may still request example synchronization or mirror
+  parity. Those clauses are superseded by this target boundary; perform and
+  verify their authorized protocol work without example synchronization.
 
 ## Execution authority
 
@@ -46,20 +45,20 @@ directory. They do not change the handling of work requested outside
   fabricated evidence.
 - Treat affected lock files and edit guards as consistency mechanisms rather
   than permission gates. Reconcile or refresh only the locks affected by the
-  authorized change, after the protocol source is coherent and verified, and
-  then synchronize and verify the corresponding example locks.
+  authorized change, after the protocol source is coherent and verified.
 - Bypassing an edit gate does not create a lifecycle fact. Preserve source
   identity and prior state, and do not claim acceptance, implementation,
   completion, release, or verification unless the supporting evidence exists.
 
-## Safety, synchronization, and reporting
+## Safety, verification, and reporting
 
 - Inspect Git and preserve unrelated staged, unstaged, and untracked work.
-- Keep the protocol pass internally coherent before starting the example
-  synchronization pass.
-- Verify the changed protocol surfaces, the synchronized example surfaces,
-  and parity for every mirrored path. A failed check is evidence to repair or
-  report; it is not a reason to silently abandon the authorized edits.
-- Report the exact protocol paths changed, their example mirror paths, any
-  intentionally unmirrored repository-level support files, and the exact
-  verification results.
+- Keep protocol sources and their consumers internally coherent. Use
+  protocol-owned isolated fixtures for regression coverage rather than
+  requiring the example application.
+- Verify the changed protocol surfaces and scoped repository support files.
+  A failed check is evidence to repair or report; it is not a reason to
+  silently abandon the authorized edits.
+- Report the exact protocol and repository support paths changed and the
+  exact verification results. Preserve `.gitignore`; do not force-add ignored
+  historical examples or create a replacement mirror.

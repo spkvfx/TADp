@@ -22,6 +22,11 @@ including operative versus inert text, positional settings, list scheduling,
 and required records. No directive or gate exception is activated by this
 prompt's reference to that specification.
 
+The example application will be rebuilt in a separate fork. This task maintains
+the protocol and scoped repository documentation only; it must not synchronize,
+rebuild, or validate the example application. Follow the current target boundary
+in `prompts/AGENTS.md`, which supersedes earlier example-mirroring instructions.
+
 The following is a reference inventory of editable documentation, not a
 parallel action list:
 
@@ -71,7 +76,8 @@ inventories within a step are not independent action lists.
    directory instructions, and `.gitignore`. Preserve unrelated changes. Use
    the applicable traceable branch/commit workflow without assuming a branch
    name or performing integration. Inventory the documentation throughout the
-   scoped tree, including protected documents and ignored downstream copies.
+   scoped tree, including protected documents. Historical examples and the
+   separate example fork are outside the documentation-update target.
    Classify each relevant document as editable, protected, historical, or out
    of scope. Inspect the maintained protocol sources before using examples or
    historical records. Run the existing read-only protection and validation
@@ -122,7 +128,7 @@ inventories within a step are not independent action lists.
    honestly; documentation must not advertise planned functionality as present
    or legitimize behavior that conflicts with an invariant.
 
-4. **Verify the protocol documentation first.** Use the project's configured
+4. **Verify the protocol documentation.** Use the project's configured
    Python environment and existing verification tools. Inspect a documented
    command before running it; use help, read-only checks, or isolated disposable
    fixtures when a real invocation could alter records, Git configuration,
@@ -135,25 +141,14 @@ inventories within a step are not independent action lists.
    report pre-existing failures or required executable fixes separately. Do not
    change tools, fixtures, assertions, or evidence merely to obtain a pass.
 
-5. **Synchronize the downstream documentation.** After the protocol pass is
-   coherent and verified, follow `prompts/AGENTS.md`. Its `../_old/example/`
-   mirror path is relative to the repository-level `prompts/` directory:
-   resolve it explicitly as `<repository-root>/_old/example/` and verify its
-   actual location and instructions before writing. Synchronize each changed
-   protocol-owned document to the same relative mirror path, creating the
-   corresponding document path when required. Preserve example-specific
-   records, claims, and unrelated local changes; report conflicting local
-   customization instead of overwriting it. Do not redesign from the mirror,
-   edit another scaffold such as `TADp-v1/`, or extend the pass to live project
-   work. If the mirror is absent or outside the permitted boundary, report the
-   exact unmet synchronization requirement without substituting another tree.
-   Honor `.gitignore`: do not change ignore rules or force-add `_old/`.
-   Determine tracking status per path with Git; an ignore rule does not
-   untrack an existing file. Keep already tracked mirror changes visible in
-   the scoped diff and report genuinely ignored, untracked changes separately.
-   Verify mirrored content and links and run applicable mirror checks. The
-   repository README is an intentionally unmirrored repository-level support
-   file.
+5. **Verify the repository boundary.** Confirm that all changes are within the
+   authorized documentation paths. Do not synchronize to `_old/example/`, create
+   a replacement mirror, edit another scaffold such as `TADp-v1/`, or access
+   the separate example fork as an update target. Honor `.gitignore`: do not
+   change ignore rules or force-add `_old/`. Example presence, parity, and
+   application validation are not completion gates for this documentation task.
+   Preserve historical records and report stale references that require
+   separately authorized corrections without rewriting their source identity.
 
 6. **Review coverage and the final diff.** Revisit every inventoried document
    and topic. Assign a truthful disposition: updated, reviewed and current,
@@ -161,7 +156,7 @@ inventories within a step are not independent action lists.
    with the exact missing authority/evidence. Confirm that navigation reaches
    every added guide, no source identity or historical claim was rewritten, and
    no excluded file or unrelated work entered the change. Inspect whitespace,
-   the complete scoped diff, and mirror parity, including ignored files. Use
+   the complete scoped diff, and target-boundary compliance. Use
    traceable commits as required by repository instructions, staging only this
    task's files.
    Do not push, merge, create a pull request, release, or deploy from this task.
@@ -172,9 +167,8 @@ inventories within a step are not independent action lists.
 
 Report the documentation areas brought up to date and the evidence used to
 establish current usage and supported features. Include the coverage inventory
-and dispositions, exact changed protocol paths and mirror paths, intentionally
-unmirrored repository files, and the actual tracked or ignored/untracked status
-of mirror updates.
+and dispositions and exact changed protocol and repository support paths.
+Confirm that no example synchronization or separate-fork work was performed.
 
 Give the actual verification commands, roots, exit results, and limitations;
 distinguish baseline findings, introduced findings, and checks not performed.

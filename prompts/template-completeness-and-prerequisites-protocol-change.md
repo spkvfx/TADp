@@ -36,8 +36,10 @@ required by an inspected governing requirement. This is not authority to invent
 new document obligations or relax unrelated invariants. Preserve specification
 11's registry, directive semantics, and list scheduling unchanged.
 
-Perform and verify the protocol pass first. Then synchronize corresponding
-protocol-owned paths to the downstream mirror required by `prompts/AGENTS.md`.
+Perform and verify the protocol change in this repository. The example
+application will be rebuilt in a separate fork; it is not a maintained mirror,
+synchronization target, or completion gate. Follow the current target boundary
+in `prompts/AGENTS.md`, which supersedes earlier example-mirroring instructions.
 Do not apply the change to live initiatives, products, decisions, source
 realizations, or another scaffold. Preserve historical claims and existing
 project adoption boundaries. Record actual maintenance authority and revision
@@ -252,26 +254,20 @@ The numbered steps are serial. Tables and coverage inventories are descriptive.
    regression checks, and a whitespace/path review. Separate baseline findings,
    introduced findings, expected pre-refresh lock drift, and unperformed checks.
 
-6. **Synchronize and verify the mirror.** Follow `prompts/AGENTS.md` only after
-   the protocol pass is coherent and verified. Resolve its `../_old/example/`
-   relative to the repository-level `prompts/` directory, yielding
-   `<repository-root>/_old/example/`; inspect its actual instructions and
-   location before writing. Mirror every corresponding protocol-owned changed
-   path, including new sources and authorized locks, at the same relative path.
-   Preserve example-specific records, customization, and unrelated work; report
-   conflicting customization rather than overwriting it. If unavailable, report
-   the exact unmet mirror requirement without substituting another scaffold.
-   Honor `.gitignore`: do not change it or force-add `_old/`. Determine tracking
-   per path; tracked paths stay reviewable even under an ignore rule. Report
-   ignored untracked updates separately. Verify parity, links, locks, and
-   applicable mirror validation without migrating live work or changing claims.
+6. **Verify the repository boundary.** Confirm that the change is confined to
+   authorized protocol and repository support paths. Do not synchronize to
+   `_old/example/`, create a replacement mirror, or update the separate example
+   fork. Honor `.gitignore`: do not change it or force-add `_old/`. Use isolated
+   protocol-owned fixtures for validation and regression coverage. Historical
+   example references may expose pre-existing findings; preserve their source
+   identity and report corrections outside this task's authority separately.
 
 7. **Review completeness and record the change.** Give every coverage row and
    prompt a final evidence-backed disposition. Review the complete scoped diff
-   and mirror parity, preserve unrelated work, and make only traceable commits
-   for this task as required. Use a protected-update commit mechanism only for
-   the specifically authorized coherent protected changes and matching lock
-   authority. Do not weaken guards, stage unrelated files, or claim an unrun
+   and target-boundary compliance, preserve unrelated work, and make only
+   traceable commits for this task as required. Use a protected-update commit
+   mechanism only for the specifically authorized coherent protected changes
+   and matching lock authority. Do not weaken guards, stage unrelated files, or claim an unrun
    check passed. Do not push, integrate branches, create a pull request,
    release, deploy, or remove refs from this maintenance task.
 
@@ -282,8 +278,8 @@ templates added or reused, prerequisite behavior for every prompt, and exact
 invariant clauses added or reconciled. Identify remaining missing facts,
 authority, or templates, and any unresolved conflicts.
 
-List changed protocol paths, mirror paths, intentionally unmirrored repository
-support files, actual tracking/ignore status, revision and lock authority,
+List changed protocol and repository support paths, revision and lock authority,
 compatibility/adoption guidance, Git records, and actual verification commands,
 roots, exit results, and limitations. Distinguish protocol maintenance from
-project adoption, human acceptance, lifecycle completion, and release.
+project adoption, human acceptance, lifecycle completion, and release. Confirm
+that no example synchronization or separate-fork work was performed.
