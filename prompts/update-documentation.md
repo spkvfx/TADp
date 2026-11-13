@@ -22,10 +22,14 @@ including operative versus inert text, positional settings, list scheduling,
 and required records. No directive or gate exception is activated by this
 prompt's reference to that specification.
 
-The example application will be rebuilt in a separate fork. This task maintains
-the protocol and scoped repository documentation only; it must not synchronize,
-rebuild, or validate the example application. Follow the current target boundary
-in `prompts/AGENTS.md`, which supersedes earlier example-mirroring instructions.
+Describe rebuilding the example application in a separate fork as future work.
+The user will provide links when it is ready; until then, use a plain-text
+future-work note without invented URLs, placeholder links, availability claims,
+or a request for links. Missing links do not block this documentation task.
+This task maintains the protocol and scoped repository documentation only;
+it must not synchronize, rebuild, or validate the example application. Follow
+the current target boundary in `prompts/AGENTS.md`, which supersedes earlier
+example-mirroring instructions.
 
 The following is a reference inventory of editable documentation, not a
 parallel action list:
