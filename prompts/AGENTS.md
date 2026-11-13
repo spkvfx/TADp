@@ -17,14 +17,14 @@ directory. They do not change the handling of work requested outside
 - Unless a prompt explicitly requests another target, perform its requested
   work only in `protocol/` and in repository-level support files that the
   prompt specifically requires.
-- Do not apply a repository prompt directly to `example/` or to any other
+- Do not apply a repository prompt directly to `../_old/example/` or to any other
   project, product, initiative, or evidence tree. Those locations may be read
   when the prompt names them as evidence or a validation case.
 - Complete and verify the protocol change first. Then synchronize every
   corresponding protocol-owned change to the same relative path under
-  `example/`, creating a new mirror path when the protocol change requires
+  `../_old/example/`, creating a new mirror path when the protocol change requires
   one.
-- Treat `example/` as a downstream mirror during synchronization, not as a
+- Treat `../_old/example/` as a downstream mirror during synchronization, not as a
   second design source. Do not broaden synchronization into example-specific
   product, initiative, lifecycle, acceptance, release, or completion claims
   unless the prompt explicitly requests them.

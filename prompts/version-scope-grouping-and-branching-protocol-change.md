@@ -17,7 +17,7 @@ referenced source becomes an operative directive through this prompt.
 This is a repository-maintenance prompt. Creating, reading, or reviewing it
 does not execute it. Perform the changes below only when the human explicitly
 instructs execution. Verify the protocol pass before synchronizing its
-corresponding paths into `example/`, as required by `prompts/AGENTS.md`.
+corresponding paths into `../_old/example/`, as required by `prompts/AGENTS.md`.
 
 ## Exact revision authority and boundaries
 
@@ -466,7 +466,7 @@ requirements, relationships, or examples rather than independent action jobs.
    Python environment for any Python checks. Do not refresh locks to conceal
    unexplained drift; refresh only authorized coherent sources after their
    substantive verification, then rerun integrity and structural checks.
-4. Synchronize every corresponding protocol-owned path into `example/` and
+4. Synchronize every corresponding protocol-owned path into `../_old/example/` and
    verify mirrors, locks, and parity. Leave example-specific initiatives and
    evidence unchanged; report their actual migration needs.
 5. Run the repository-defined protected-source checks, validator, relevant
