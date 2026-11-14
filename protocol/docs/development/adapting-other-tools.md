@@ -79,8 +79,11 @@ safe editing and review procedure.
 
 ### Git integration
 
-- Verify the actual repository root, current branch, base branch, and full
-  worktree state.
+- Verify project installation root `P`, actual Git worktree root `G` and
+  their path prefix, current branch, base branch and full worktree state under
+  [specification 05](../../evidence/authoritative/LLM/05_Codex_Git_Workflow_Specification.md#requirement).
+  Preserve parent instructions and shared refs/index/hook coordination without
+  expanding file authority to parents, siblings or nested projects.
 - Verify the recorded dedicated or shared scope execution assignment, exact
   branch roles, immutable captured base, and per-member attribution. A dedicated
   child belongs to its scope; directly hosted members retain independent

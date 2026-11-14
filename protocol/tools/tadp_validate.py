@@ -15,6 +15,8 @@ from pathlib import Path, PurePosixPath
 from typing import Iterable
 from urllib.parse import unquote
 
+sys.dont_write_bytecode = True  # Read-only CLI checks must not create target caches.
+
 from tadp_keywords import SPECIFICATION as KEYWORD_SPECIFICATION, load_registry
 from tadp_scopes import adopted as scopes_adopted, adopted_for_record, validate_version_scopes
 from tadp_templates import project_layout_installed, validate_contract as validate_template_contract
@@ -293,34 +295,19 @@ def initiative_directory(path: Path) -> Path:
 
 
 def git_directory(root: Path) -> Path | None:
-    for candidate in (root, *root.parents):
-        entry = candidate / ".git"
-        if entry.is_dir():
-            return entry.resolve()
-        if entry.is_file():
-            content = entry.read_text(encoding="utf-8", errors="replace").strip()
-            if content.startswith("gitdir:"):
-                target = content.split(":", 1)[1].strip()
-                return (candidate / target).resolve()
-    return None
+    try:
+        return Path(coherence_git(root, "rev-parse", "--absolute-git-dir").decode().strip()).resolve()
+    except (OSError, ValueError):
+        return None
 
 
 def local_branch_exists(root: Path, branch: str) -> bool:
-    directory = git_directory(root)
-    if directory is None:
-        return False
-    ref = directory / "refs" / "heads" / Path(*branch.split("/"))
-    if ref.is_file():
+    try:
+        coherence_git(root, "check-ref-format", "refs/heads/" + branch)
+        coherence_git(root, "rev-parse", "--verify", "--end-of-options", "refs/heads/" + branch)
         return True
-    packed = directory / "packed-refs"
-    if packed.is_file():
-        suffix = f" refs/heads/{branch}"
-        return any(
-            line.rstrip().endswith(suffix)
-            for line in packed.read_text(encoding="utf-8", errors="replace").splitlines()
-            if line and not line.startswith(("#", "^"))
-        )
-    return False
+    except (OSError, ValueError):
+        return False
 
 
 def first_code_span(cell: str) -> str | None:
@@ -423,6 +410,8 @@ def build_protected_lock(
     source_root = root / protected_root
     if not source_root.is_dir():
         raise ValueError(f"protected root does not exist: {protected_root}")
+    if not resolves_within(source_root, root):
+        raise ValueError(f"protected root escapes the selected project: {protected_root}")
     authority = authority.strip()
     if not authority:
         raise ValueError("authority reference must not be empty")
@@ -453,6 +442,11 @@ def validate_protected_sources(root: Path) -> list[Finding]:
         source_root = root / protected_root
         lock_path = protected_lock_path(root, protected_root)
         lock_display = relative(lock_path, root)
+
+        if not resolves_within(source_root, root):
+            findings.append(Finding("error", "TADP027", protected_root,
+                                    "protected root escapes the selected project"))
+            continue
 
         if not lock_path.is_file():
             findings.append(
@@ -599,35 +593,27 @@ def validate_protected_sources(root: Path) -> list[Finding]:
 
 def validate_required_paths(root: Path) -> list[Finding]:
     findings: list[Finding] = []
-    valid_git_root: Path | None = None
-    for candidate in (root, *root.parents):
-        git_entry = candidate / ".git"
-        if git_entry.is_dir() and (git_entry / "HEAD").is_file() and (
-            git_entry / "config"
-        ).is_file():
-            valid_git_root = candidate
-            break
-        if git_entry.is_file() and git_entry.read_text(
-            encoding="utf-8", errors="replace"
-        ).lstrip().startswith("gitdir:"):
-            valid_git_root = candidate
-            break
-    if valid_git_root is None:
+    try:
+        if coherence_git(root, "rev-parse", "--is-inside-work-tree").strip() != b"true":
+            raise ValueError("a Git worktree is required")
+        git_root = Path(coherence_git(root, "rev-parse", "--show-toplevel").decode().strip()).resolve()
+        root.resolve().relative_to(git_root)
+    except (OSError, ValueError):
         findings.append(
             Finding(
                 "error",
                 "TADP012",
                 ".git",
-                "TADp root is not contained in a valid Git repository",
+                "TADp project root is not contained in a valid Git worktree",
             )
         )
-    elif not (valid_git_root / "AGENTS.md").is_file():
+    if not (root / "AGENTS.md").is_file():
         findings.append(
             Finding(
                 "error",
                 "TADP022",
-                relative(valid_git_root / "AGENTS.md", root),
-                "TADp Git repository root has no Codex AGENTS.md entry point",
+                "AGENTS.md",
+                "TADp project root has no Codex AGENTS.md entry point",
             )
         )
     project_baseline = project_layout_installed(root)
@@ -1968,9 +1954,13 @@ def validate_coherence(root: Path, base_ref: str = "HEAD") -> list[Finding]:
     previously_active = False
     try:
         git_root = Path(coherence_git(root, "rev-parse", "--show-toplevel").decode("utf-8").strip()).resolve()
+        root.resolve().relative_to(git_root)
+        # All following pathspecs and snapshot keys are worktree-relative.
+        # Git interprets pathspecs relative to cwd, including below G.
+        git_context = git_root
         head = coherence_commit(root, "HEAD")
         profile_name = relative(profile, git_root)
-        history = coherence_git(root, "log", "--format=%H", head, "--", profile_name).decode("ascii").splitlines()
+        history = coherence_git(git_context, "log", "--format=%H", head, "--", profile_name).decode("ascii").splitlines()
         previous_baselines: set[str] = set()
         # The selected CI base may predate adoption. Inspect HEAD history too,
         # so deleting the declaration cannot disable a previously adopted rule.
@@ -2011,8 +2001,8 @@ def validate_coherence(root: Path, base_ref: str = "HEAD") -> list[Finding]:
         elif common != adoption_commit:
             raise ValueError("comparison and adoption baselines must be on the same ancestry")
         prefix = relative(root / "initiatives", git_root).rstrip("/") + "/"
-        adoption = coherence_snapshot(root, adoption_commit, prefix)
-        comparison = adoption if comparison_commit == adoption_commit else coherence_snapshot(root, comparison_commit, prefix)
+        adoption = coherence_snapshot(git_context, adoption_commit, prefix)
+        comparison = adoption if comparison_commit == adoption_commit else coherence_snapshot(git_context, comparison_commit, prefix)
         # In CI a range may contain both completion and a later closed edit.
         # Check each parent-to-commit snapshot, not just the range's endpoints.
         if comparison_commit != head:
@@ -2024,10 +2014,10 @@ def validate_coherence(root: Path, base_ref: str = "HEAD") -> list[Finding]:
             for revision in revisions:
                 parents = coherence_git(root, "rev-list", "--parents", "-n", "1", revision).decode("ascii").split()[1:]
                 if revision not in snapshots:
-                    snapshots[revision] = coherence_snapshot(root, revision, prefix)
+                    snapshots[revision] = coherence_snapshot(git_context, revision, prefix)
                 for parent in parents:
                     if parent not in snapshots:
-                        snapshots[parent] = coherence_snapshot(root, parent, prefix)
+                        snapshots[parent] = coherence_snapshot(git_context, parent, prefix)
                     for finding in validate_terminal_changes(root, git_root, snapshots[parent], snapshots[revision]):
                         findings.append(Finding(
                             finding.severity, finding.code, finding.path,
@@ -2119,6 +2109,12 @@ def validate(root: Path, *, base_ref: str = "HEAD") -> list[Finding]:
     root = root.resolve()
     findings: list[Finding] = []
     findings.extend(validate_required_paths(root))
+    escaping = [name for name in ("AGENTS.md", "evidence", "initiatives", "products", "prompts", "template", "tools")
+                if not resolves_within(root / name, root)]
+    if escaping:
+        findings.extend(Finding("error", "TADP039", name,
+                                "project path escapes the selected project root") for name in escaping)
+        return findings
     findings.extend(validate_protected_sources(root))
     findings.extend(validate_project_prompt_scaffold(root))
     findings.extend(validate_links(root))
@@ -2135,7 +2131,7 @@ def validate(root: Path, *, base_ref: str = "HEAD") -> list[Finding]:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("root", nargs="?", default=".", help="TADp repository root")
+    parser.add_argument("root", nargs="?", default=".", help="installed TADp project root (default: current directory)")
     parser.add_argument("--json", action="store_true", help="emit a JSON report")
     parser.add_argument(
         "--base-ref", default="HEAD",

@@ -191,7 +191,9 @@ prove that the product is correct or ready for production.
 2. Review [architecture and authority](protocol/docs/development/architecture-and-authority.md)
    to learn which records can govern a decision.
 3. Follow [getting started](protocol/docs/development/getting-started.md) to
-   set up TADp in a Git repository.
+   install the project scaffold at a selected directory inside a Git worktree.
+   The [installation-root guide](protocol/docs/guides/project-root-installation-migration.md)
+   explains project root versus Git root and prospective adoption.
 4. Enable the tracked hook and verify the template and invariant locks before
    specializing any copied records.
 5. Use the [initiative workflow](protocol/docs/development/initiative-workflow.md)
@@ -207,7 +209,9 @@ validates and guards `protocol/`. From the repository root, its setup command
 is `git config core.hooksPath protocol/.githooks`; inspect existing hook
 configuration and validation findings before making that local change.
 Set `TADP_PYTHON` to the configured Python executable when it differs from the
-shell default. Adopted standalone projects use their own `.githooks/` path.
+shell default. A nested project's hook path includes its prefix relative to the
+Git root. All projects in one worktree share hook configuration; coordinate
+existing hooks manually before explicit activation. Copying installs no hooks.
 The older [root hook](.githooks/pre-commit) still expects a local `example/`
 tree and needs separately authorized executable maintenance. Examples are
 outside this repository's protocol-maintenance validation target.

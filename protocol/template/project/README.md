@@ -29,7 +29,10 @@ The project directory is the clean baseline for an adopting repository.
 It contains reusable record shapes and directly copied operating files,
 not TADp's own initiatives, decisions, products, adoption or test results.
 
-1. Select an immutable distribution revision and the target Git root.
+1. Select an immutable distribution revision and project installation directory
+   `P` inside a valid Git worktree with discovered root `G`. `P` may equal
+   `G` or be beneath it under
+   [specification 05](evidence/authoritative/LLM/05_Codex_Git_Workflow_Specification.md#requirement).
    Inspect existing files and preserve all existing project work.
 2. Copy the contents of the distribution's template/project/ to the target
    root. Keep original names and contents: .template.md files remain reusable
@@ -54,6 +57,13 @@ not TADp's own initiatives, decisions, products, adoption or test results.
 7. Run the installed protection and validation tools from the project root.
    Review existing hooks before explicitly enabling .githooks. Record actual
    results and remaining gates; installation alone is not project adoption.
+
+[The root adoption guide](docs/guides/project-root-installation-migration.md)
+explains prospective adoption, shared refs/index/hooks and preservation of
+existing paths and governing revisions. Synchronization selects an existing
+`--target DIRECTORY` or exact cwd and reports both absolute roots; files,
+state, backups and locks remain under `P`. It never enables parent hooks,
+creates a nested Git repository or establishes adoption automatically.
 
 ## Copying versus instantiating
 
@@ -242,8 +252,8 @@ the assumption that the conflict has been resolved.
 
 - [ ] The complete template and LLM invariant trees retain their scoped
       `AGENTS.md` instructions and valid `.tadp-lock.json` files.
-- [ ] `.githooks/pre-commit` is tracked and `core.hooksPath` points to
-      `.githooks`.
+- [ ] `.githooks/pre-commit` is tracked; existing hooks are manually coordinated
+      at `G` before explicitly enabling the shared Git-relative hook path.
 - [ ] Root `prompts/AGENTS.md` and `prompts/README.md` preserve the
       project-local scaffold boundary, and any additional prompt files remain
       non-authoritative working material.

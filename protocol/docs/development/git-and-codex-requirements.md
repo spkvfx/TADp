@@ -15,14 +15,22 @@ Python is additionally required when using the bundled validator.
 
 ## Git contract
 
-Every TADp project must have its own `.git` metadata entry at the project root.
-Being nested somewhere inside an unrelated parent repository does not provide
-the required project identity.
+The project root is its resolved scaffold installation directory `P`, contained
+in a valid Git worktree rooted at `G`. `P` may equal `G` or be nested
+beneath it. Git supplies identity and history without expanding the project
+file boundary; a separate `.git` entry at `P` is unnecessary. Linked
+worktrees with a `.git` file are supported. See the
+[owning definition](../../evidence/authoritative/LLM/05_Codex_Git_Workflow_Specification.md#requirement)
+and [prospective adoption guide](../guides/project-root-installation-migration.md).
+The reference distribution at `protocol/` is checked against enclosing Git
+without becoming an adopted live project by shape or installation alone.
 
-The validator also accepts a protocol distribution or isolated fixture inside
-an enclosing Git root. That structural capability does not make an embedded
-directory an adopted governed project. Keep the checked protocol root distinct
-from the Git root and from an external example repository.
+Map project paths through the verified `P`-relative-to-`G` prefix for Git
+history, staging and commits. Refs, index, worktree state and hook configuration
+are shared across projects. Preserve existing branch rules and detect
+incompatible roles; a nested project has no independent namespace. Necessary
+metadata operations for authorized commits do not authorize outside-project
+file changes or commits. Preserve parent and sibling work.
 
 ### Initiative and scope branches
 
@@ -58,8 +66,12 @@ user work.
 
 ### Protected-source commit gate
 
-Every adopted repository tracks `.githooks/pre-commit` and configures
-`core.hooksPath=.githooks` in each clone or worktree. The hook runs structural
+Every adopted project tracks `.githooks/pre-commit`. Inspect the enclosing
+worktree's existing hooks and coordinate a dispatcher before explicitly
+configuring one shared `core.hooksPath`. Paths are relative to `G`: use
+`.githooks` for `P=G` or, for example, `projects/widget/.githooks` for a
+nested project. Copying files never enables hooks or overwrites parent hooks.
+The hook runs structural
 and SHA-256 integrity validation, then blocks staged changes under `template/`
 or `evidence/authoritative/LLM/` by default.
 
@@ -87,7 +99,7 @@ and [correlation specification](../../evidence/authoritative/LLM/09_Codex_Versio
 
 ## Codex contract
 
-The repository-root `../../AGENTS.md` is the persistent instruction entry point.
+The project-root `../../AGENTS.md` is the persistent instruction entry point; parent instructions remain applicable.
 Codex reads it before repository work and is directed to the authoritative LLM
 suite. Official OpenAI guidance describes `../../AGENTS.md` as repository guidance
 that Codex discovers and merges by directory scope; see the

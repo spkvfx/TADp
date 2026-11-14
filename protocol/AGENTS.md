@@ -77,6 +77,12 @@ check; missing authority, identity, actual work, and verification remain blocker
 Preserve accepted/closed claims and reuse records idempotently. Stage 9 must
 disclose preceding preparation changes and keep its assessment itself read-only.
 
+The TADp project root is the scaffold installation directory under
+[specification 05](evidence/authoritative/LLM/05_Codex_Git_Workflow_Specification.md#requirement).
+It may equal or lie beneath the Git worktree root; enclosing Git identity does
+not enlarge file authority. Resolve the invoked target without ancestor or
+sibling redirection, retain parent instructions and coordinate shared Git state.
+
 Preserve source identity, distinguish observed evidence from accepted
 authority, and report only outcomes supported by verification.
 

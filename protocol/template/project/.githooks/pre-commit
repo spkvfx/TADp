@@ -5,6 +5,15 @@ HOOK_DIRECTORY=$(CDPATH= cd "$(dirname "$0")" && pwd)
 TADP_ROOT=$(dirname "$HOOK_DIRECTORY")
 TADP_PYTHON_BIN=${TADP_PYTHON:-python}
 
+# Git hooks may provide relative Git/index paths. Anchor them before entering
+# a project below the shared worktree root; preserve the supplied index.
+TADP_GIT_DIRECTORY=$(git rev-parse --absolute-git-dir)
+TADP_GIT_WORKTREE=$(git rev-parse --show-toplevel)
+TADP_GIT_INDEX=$(git rev-parse --path-format=absolute --git-path index)
+export GIT_DIR="$TADP_GIT_DIRECTORY"
+export GIT_WORK_TREE="$TADP_GIT_WORKTREE"
+export GIT_INDEX_FILE="$TADP_GIT_INDEX"
+
 cd "$TADP_ROOT"
 "$TADP_PYTHON_BIN" tools/tadp_validate.py .
 "$TADP_PYTHON_BIN" tools/tadp_protect.py guard-staged .

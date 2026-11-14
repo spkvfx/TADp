@@ -211,12 +211,15 @@ not inspected or validated its contents, rebuild status, parity, or adoption.
 The example is a separate application target; protocol maintenance here does
 not synchronize or validate it.
 
-1. Start with a repository root that has its own Git history.
+1. Select a scaffold installation directory inside a valid Git worktree.
+   This project root may equal or lie beneath the Git root under
+   [specification 05](evidence/authoritative/LLM/05_Codex_Git_Workflow_Specification.md#requirement).
+   Git history and metadata do not widen the project file boundary.
 2. Copy the complete protected [`template/`](template/README.md) tree into the
    target, preserving its `AGENTS.md` and `.tadp-lock.json`.
 3. Copy the contents of [`template/project/`](template/project/README.md),
    including `.gitattributes`, `.githooks/`, and the canonical
-   `prompts/AGENTS.md` and `prompts/README.md`, into the repository root.
+   `prompts/AGENTS.md` and `prompts/README.md`, into the selected project root.
    Specialize only destination copies, never the reusable source tree, and do
    not confuse root project-local `prompts/` with the protected numbered
    workflow at `template/prompts/`.
@@ -225,11 +228,19 @@ not synchronize or validate it.
    Preserve the distribution decision receipts linked by that suite under
    `decisions/`; they retain their historical source identity and do not
    constitute decisions for the adopting project's work.
-5. Copy the developer documentation, tools, and tests; run the protection check
-   and configure `core.hooksPath=.githooks` in each clone or worktree.
+5. Copy the developer documentation, tools and tests; run the protection check
+   for that project root. Inspect and coordinate shared hooks at the Git root
+   before explicit activation, using the correct project-prefixed hook path.
+   Copying files never enables hooks or overwrites parent configuration.
 6. Complete `project-profile.md`, assign ownership for each source of evidence,
    and create the initiative index, status record, and work-conflict register.
    Capture the pre-adoption Git commit in the coherence baseline field.
+
+The [installation-root adoption guide](docs/guides/project-root-installation-migration.md)
+explains the effective revision, prospective adoption and preservation of earlier
+paths and claims. Sync selects an existing `--target` or exact cwd; its state,
+backups, locks and installed files stay in that project. Installation alone
+changes no live adoption or lifecycle claim. See the [tool reference](tools/README.md).
 
 See [Getting started](docs/development/getting-started.md) for prerequisites,
 setup options, and the first validation run.

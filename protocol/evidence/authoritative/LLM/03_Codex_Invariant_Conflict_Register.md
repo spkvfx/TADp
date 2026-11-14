@@ -139,3 +139,37 @@ TADp's active conflict entries.
   intact. The clean copied project conflict register starts empty; this TADp
   maintenance finding is not copied into a new project's history.
 - **Owner:** User; finding captured and correction authored by Codex.
+
+### INV-CONFLICT-004 — Project root and enclosing Git worktree
+
+- **Detected:** 2026-11-13, installation-root maintenance audit, source baseline
+  `fc0c8e3ea01471d3a35f06a29d96f837070afd70`.
+- **Prior governing claim:** Specification 05, Requirement: "Every TADp project
+  must be the root of a Git repository."
+- **Conflicting source and behavior:** `tools/README.md`, Project root and
+  installation directory, describes the scaffold installation directory as
+  the project root while acknowledging the own-Git-root restriction;
+  `tools/tadp_sync.py:main` rejects any cwd other than Git top level.
+  `tools/tadp_validate.py:validate_required_paths` requires the enclosing
+  Git root's `AGENTS.md` rather than the checked project's entry point.
+  Together these prevent an installation destination beneath the worktree
+  from satisfying the requested single root contract. The prior restriction
+  was authoritative until this specifically authorized revision; earlier
+  enclosing-worktree exceptions and historical claims retain their identity.
+- **Scope and immediate disposition:** Protocol sources and isolated fixtures
+  only; no live initiative or project adoption is changed. Preserve baseline
+  behavior and authority in Git while reconciling only the authorized revision.
+- **Resolution authority:** User's 2026-11-13 explicit execution of
+  `prompts/project-root-installation-directory-protocol-change.md`, captured
+  in ROOT-DR-001, [maintenance record](../../../docs/development/project-root-installation-maintenance.md).
+- **Selected resolution and rationale:** Specifically revise specification 05
+  to require containment in a valid Git worktree and define project root as
+  scaffold installation destination. Reconcile tools, instructions, reusable
+  sources and guidance. Git remains required and enclosing Git cannot expand
+  the authorized file boundary.
+- **Status and verification:** Resolution authorized; implementation and
+  verification are recorded in ROOT-DR-001 before the coherent revision commit.
+  Final disposition applies only at that effective event. This record does
+  not close INV-CONFLICT-001/002 or migrate historical projects.
+- **Compatibility and owner:** Protocol maintainer/User; explicit prospective
+  adoption, no file moves or changed initiative acceptance/lifecycle facts.

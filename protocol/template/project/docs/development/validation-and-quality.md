@@ -1,6 +1,11 @@
 # Validation and quality
 
-Use the configured Python interpreter and run checks from the project Git root.
+Use the configured Python interpreter and run checks from the project
+installation root `P`. Explicit root arguments override cwd; defaults use
+exact cwd without redirecting to Git root `G`. `P` may be beneath `G`.
+Historical comparisons and staged guards map paths through the verified prefix
+and preserve parent and sibling work; Git state and hooks remain shared.
+See [root adoption](../guides/project-root-installation-migration.md).
 These inert examples do not execute when this guide is read:
 
 ~~~text

@@ -34,6 +34,10 @@ Read these documents in order when first adopting or maintaining TADp:
 
 ## Operating guides
 
+- [Project installation root and adoption](guides/project-root-installation-migration.md)
+  distinguishes project root from Git root, documents target selection and
+  shared Git coordination, and preserves earlier revisions during adoption.
+
 - [Canonical templates and prerequisite recovery](guides/template-prerequisites-migration.md)
   explains prospective adoption, canonical source selection, evidence-backed
   owning-stage recovery, genuine blockers, and Stage 9's read-only assessment.

@@ -12,7 +12,7 @@ from pathlib import Path
 PROTOCOL = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PROTOCOL / "tools"))
 
-from tadp_sync import Asset, apply_plan, digest, load_assets, load_state, make_plan  # noqa: E402
+from tadp_sync import Asset, apply_plan, digest, load_assets, load_state, make_plan, select_destination  # noqa: E402
 
 
 class SynchronizationSafetyTests(unittest.TestCase):
@@ -438,6 +438,280 @@ class CommittedDistributionTests(unittest.TestCase):
         self.git(root, "add", "--", ".")
         self.git(root, "commit", "--quiet", "-m", "isolated template source")
         return self.git(root, "rev-parse", "HEAD").decode().strip()
+
+    def sync(self, cwd: Path, source: Path, revision: str, *arguments: str):
+        return subprocess.run(
+            (sys.executable, str(PROTOCOL / "tools/tadp_sync.py"), "--source", str(source),
+             "--ref", revision, "--json", *arguments),
+            cwd=cwd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=False,
+        )
+
+    def installation_fixture_files(self) -> dict[str, bytes]:
+        files = self.fixture_files()
+        for name in ("prompts/AGENTS.md", "prompts/README.md", "initiatives/README.md", "products/README.md"):
+            files["protocol/template/project/" + name] = b"# Installed fixture marker\n"
+        files["protocol/evidence/authoritative/LLM/00_Codex_Invariant_Suite_Index.md"] = b"# Suite fixture marker\n"
+        self.refresh_fixture_locks(files)
+        return files
+
+    def test_nested_default_and_explicit_target_preserve_parent_sibling_and_index(self):
+        with tempfile.TemporaryDirectory() as source_dir, tempfile.TemporaryDirectory() as target_dir:
+            source, outer = Path(source_dir).resolve(), Path(target_dir).resolve()
+            revision = self.commit_fixture(source, self.installation_fixture_files())
+            self.git(outer, "init", "--quiet")
+            parent = outer / "AGENTS.md"
+            parent.write_bytes(b"parent instructions\n")
+            sibling = outer / "sibling/AGENTS.md"
+            sibling.parent.mkdir()
+            sibling.write_bytes(b"sibling instructions\n")
+            staged = outer / "unrelated.txt"
+            staged.write_bytes(b"unrelated staged work\n")
+            self.git(outer, "add", "--", "unrelated.txt")
+            index_before = self.git(outer, "diff", "--cached", "--binary")
+            project = outer / "projects/nested"
+            project.mkdir(parents=True)
+            before = sorted(p.relative_to(outer).as_posix() for p in outer.rglob("*") if ".git" not in p.parts)
+            preview = self.sync(project, source, revision)
+            self.assertEqual(0, preview.returncode, preview.stderr.decode())
+            result = json.loads(preview.stdout)
+            self.assertEqual(str(project), result["project_root"])
+            self.assertEqual(str(outer), result["git_root"])
+            self.assertFalse(result["applied"])
+            self.assertEqual(before, sorted(p.relative_to(outer).as_posix() for p in outer.rglob("*") if ".git" not in p.parts))
+            applied = self.sync(outer, source, revision, "--target", "projects/nested", "--apply")
+            self.assertEqual(0, applied.returncode, applied.stderr.decode())
+            self.assertTrue(json.loads(applied.stdout)["applied"])
+            state = load_state(project)
+            self.assertEqual(str(project), state["project_root"])
+            self.assertEqual(str(outer), state["git_root"])
+            self.assertTrue((project / "template/.tadp-lock.json").is_file())
+            self.assertFalse((outer / ".tadp-sync.json").exists())
+            self.assertFalse((project / ".tadp-sync.lock").exists())
+            state_bytes = (project / ".tadp-sync.json").read_bytes()
+            repeated = self.sync(project, source, revision, "--apply")
+            self.assertEqual(0, repeated.returncode, repeated.stderr.decode())
+            self.assertEqual(state_bytes, (project / ".tadp-sync.json").read_bytes())
+            self.assertFalse((project / ".tadp-sync-backups").exists())
+            self.assertEqual(b"parent instructions\n", parent.read_bytes())
+            self.assertEqual(b"sibling instructions\n", sibling.read_bytes())
+            self.assertEqual(index_before, self.git(outer, "diff", "--cached", "--binary"))
+
+    def test_git_root_installation_cli_remains_supported(self):
+        with tempfile.TemporaryDirectory() as source_dir, tempfile.TemporaryDirectory() as target_dir:
+            source, root = Path(source_dir).resolve(), Path(target_dir).resolve()
+            revision = self.commit_fixture(source, self.installation_fixture_files())
+            self.git(root, "init", "--quiet")
+            result = self.sync(root, source, revision, "--apply")
+            self.assertEqual(0, result.returncode, result.stderr.decode())
+            payload = json.loads(result.stdout)
+            self.assertEqual(str(root), payload["project_root"])
+            self.assertEqual(str(root), payload["git_root"])
+            self.assertTrue((root / ".tadp-sync.json").is_file())
+
+    def test_destination_selection_never_redirects_and_requires_git_and_existing_directory(self):
+        with tempfile.TemporaryDirectory() as directory:
+            outer = Path(directory).resolve()
+            empty = outer / "empty"
+            empty.mkdir()
+            with self.assertRaises(ValueError):
+                select_destination(empty)
+            self.git(outer, "init", "--quiet")
+            self.assertEqual((empty, outer), select_destination(empty))
+            with self.assertRaisesRegex(ValueError, "existing directory"):
+                select_destination(outer / "missing")
+            self.assertFalse((outer / "missing").exists())
+
+    def test_linked_worktree_supports_nested_installation(self):
+        with tempfile.TemporaryDirectory() as directory, tempfile.TemporaryDirectory() as source_dir:
+            base = Path(directory).resolve()
+            original = base / "original"
+            original.mkdir()
+            self.commit_fixture(original, {"sentinel.txt": b"worktree fixture\n"})
+            linked = base / "linked"
+            self.git(original, "worktree", "add", "--quiet", "--detach", str(linked), "HEAD")
+            self.assertTrue((linked / ".git").is_file())
+            sentinel = (linked / "sentinel.txt").read_bytes()
+            project = linked / "projects/p"
+            project.mkdir(parents=True)
+            self.assertEqual((project, linked), select_destination(project))
+            source = Path(source_dir).resolve()
+            revision = self.commit_fixture(source, self.installation_fixture_files())
+            result = self.sync(original, source, revision, "--target", str(project), "--apply")
+            self.assertEqual(0, result.returncode, result.stderr.decode())
+            self.assertEqual(str(linked), json.loads(result.stdout)["git_root"])
+            self.assertTrue((project / ".tadp-sync.json").is_file())
+            self.assertEqual(sentinel, (linked / "sentinel.txt").read_bytes())
+
+    def test_nested_updates_keep_backups_and_metadata_beneath_project(self):
+        with tempfile.TemporaryDirectory() as source_dir, tempfile.TemporaryDirectory() as target_dir:
+            source, outer = Path(source_dir).resolve(), Path(target_dir).resolve()
+            files = self.installation_fixture_files()
+            revision = self.commit_fixture(source, files)
+            self.git(outer, "init", "--quiet")
+            project = outer / "nested"
+            project.mkdir()
+            first = self.sync(outer, source, revision, "--target", "nested", "--apply")
+            self.assertEqual(0, first.returncode, first.stderr.decode())
+            prior = (project / "tools/tadp_validate.py").read_bytes()
+            files["protocol/tools/tadp_validate.py"] = b"# updated runtime fixture\n"
+            updated_revision = self.commit_fixture(source, files)
+            update = self.sync(outer, source, updated_revision, "--target", "nested", "--apply")
+            self.assertEqual(0, update.returncode, update.stderr.decode())
+            state = load_state(project)
+            backup = project / ".tadp-sync-backups" / state["backup"] / "tools/tadp_validate.py"
+            self.assertEqual(prior, backup.read_bytes())
+            self.assertEqual(b"# updated runtime fixture\n", (project / "tools/tadp_validate.py").read_bytes())
+            self.assertFalse((outer / ".tadp-sync-backups").exists())
+            self.assertFalse((outer / ".tadp-sync.lock").exists())
+            self.assertFalse((project / ".tadp-sync.lock").exists())
+
+    def test_installed_context_rejects_ambiguous_cwd_and_missing_markers(self):
+        with tempfile.TemporaryDirectory() as source_dir, tempfile.TemporaryDirectory() as target_dir:
+            source, root = Path(source_dir).resolve(), Path(target_dir).resolve()
+            revision = self.commit_fixture(source, self.installation_fixture_files())
+            self.git(root, "init", "--quiet")
+            install = self.sync(root, source, revision, "--apply")
+            self.assertEqual(0, install.returncode, install.stderr.decode())
+            child = root / "new-child"
+            child.mkdir()
+            ambiguous = self.sync(child, source, revision)
+            self.assertEqual(2, ambiguous.returncode)
+            self.assertIn(b"beneath an installed project", ambiguous.stderr)
+            self.assertFalse(list(child.iterdir()))
+            # An explicit target is a deliberate independent installation choice.
+            explicit = self.sync(root, source, revision, "--target", "new-child")
+            self.assertEqual(0, explicit.returncode, explicit.stderr.decode())
+            installed = self.sync(root, source, revision, "--target", "new-child", "--apply")
+            self.assertEqual(0, installed.returncode, installed.stderr.decode())
+            nested_default = self.sync(child, source, revision)
+            self.assertEqual(0, nested_default.returncode, nested_default.stderr.decode())
+            self.assertEqual(str(child), json.loads(nested_default.stdout)["project_root"])
+            (root / "prompts/README.md").unlink()
+            malformed = self.sync(root, source, revision)
+            self.assertEqual(2, malformed.returncode)
+            self.assertIn(b"malformed installed scaffold", malformed.stderr)
+            self.assertFalse((root / "prompts/README.md").exists())
+
+    def test_current_distribution_nested_install_validates_and_preserves_sibling_index(self):
+        # Exercise the actual locked distribution and its installed runtime,
+        # rather than promoting the reference project's live records to fixtures.
+        files = {}
+        for prefix in ("template", "evidence/authoritative/LLM"):
+            for path in (PROTOCOL / prefix).rglob("*"):
+                if path.is_file() and "__pycache__" not in path.parts:
+                    files["protocol/" + path.relative_to(PROTOCOL).as_posix()] = path.read_bytes()
+        for path in (PROTOCOL / "tools").glob("tadp_*.py"):
+            files["protocol/tools/" + path.name] = path.read_bytes()
+        with tempfile.TemporaryDirectory() as source_dir, tempfile.TemporaryDirectory() as target_dir:
+            source, outer = Path(source_dir).resolve(), Path(target_dir).resolve()
+            revision = self.commit_fixture(source, files)
+            self.git(outer, "init", "--quiet")
+            sibling = outer / "sibling/sentinel.txt"
+            sibling.parent.mkdir()
+            sibling.write_bytes(b"unrelated staged sibling\n")
+            self.git(outer, "add", "--", "sibling/sentinel.txt")
+            staged = self.git(outer, "diff", "--cached", "--binary")
+            sentinel = sibling.read_bytes()
+            project = outer / "projects/current"
+            project.mkdir(parents=True)
+            preview = self.sync(outer, source, revision, "--target", "projects/current")
+            self.assertEqual(0, preview.returncode, preview.stderr.decode())
+            self.assertFalse(list(project.iterdir()))
+            apply = self.sync(outer, source, revision, "--target", "projects/current", "--apply")
+            self.assertEqual(0, apply.returncode, apply.stderr.decode())
+            self.assertFalse((outer / "AGENTS.md").exists())
+            self.assertFalse((outer / ".tadp-sync.json").exists())
+            for tool, arguments in (("tadp_protect.py", ("check", ".")), ("tadp_validate.py", (".",))):
+                result = subprocess.run((sys.executable, str(project / "tools" / tool), *arguments),
+                                        cwd=project, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                self.assertEqual(0, result.returncode, result.stdout.decode() + result.stderr.decode())
+            state = (project / ".tadp-sync.json").read_bytes()
+            repeat = self.sync(project, source, revision, "--apply")
+            self.assertEqual(0, repeat.returncode, repeat.stderr.decode())
+            self.assertEqual(state, (project / ".tadp-sync.json").read_bytes())
+            self.assertEqual(sentinel, sibling.read_bytes())
+            self.assertEqual(staged, self.git(outer, "diff", "--cached", "--binary"))
+
+    def test_conflicting_installation_identity_blocks_before_writes(self):
+        with tempfile.TemporaryDirectory() as directory:
+            outer = Path(directory).resolve()
+            self.git(outer, "init", "--quiet")
+            project = outer / "project"
+            project.mkdir()
+            state = dict(schema_version=1, source="source", revision="a" * 40,
+                         files={}, project_root=str(outer), git_root=str(outer))
+            path = project / ".tadp-sync.json"
+            path.write_text(json.dumps(state), encoding="utf-8")
+            before = path.read_bytes()
+            with self.assertRaisesRegex(ValueError, "contradicts"):
+                select_destination(project)
+            self.assertEqual(before, path.read_bytes())
+            state.pop("project_root")
+            state.pop("git_root")
+            path.write_text(json.dumps(state), encoding="utf-8")
+            self.assertEqual((project, outer), select_destination(project))
+
+    def test_protected_template_source_is_not_an_installation_destination(self):
+        with tempfile.TemporaryDirectory() as directory:
+            outer = Path(directory).resolve()
+            self.commit_fixture(outer, self.fixture_files())
+            with self.assertRaisesRegex(ValueError, "protected reusable source"):
+                select_destination(outer / "protocol/template/project")
+
+    def test_manually_installed_scaffold_requires_complete_markers_without_sync_state(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory).resolve()
+            self.git(root, "init", "--quiet")
+            (root / "AGENTS.md").write_bytes(b"unrelated project instructions\n")
+            self.assertEqual((root, root), select_destination(root))
+            index = root / "evidence/authoritative/LLM/00_Codex_Invariant_Suite_Index.md"
+            index.parent.mkdir(parents=True)
+            index.write_bytes(b"installed suite marker\n")
+            with self.assertRaisesRegex(ValueError, "malformed installed scaffold"):
+                select_destination(root)
+            for name in ("prompts/AGENTS.md", "prompts/README.md"):
+                path = root / name
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_bytes(b"installed marker\n")
+            for name in ("initiatives", "products", "template", "tools"):
+                (root / name).mkdir()
+            self.assertEqual((root, root), select_destination(root))
+            self.assertFalse((root / ".tadp-sync.json").exists())
+            index.unlink()
+            with self.assertRaisesRegex(ValueError, "malformed installed scaffold"):
+                select_destination(root)
+
+    def test_destination_symlink_is_rejected_without_touching_target(self):
+        with tempfile.TemporaryDirectory() as directory:
+            outer = Path(directory).resolve()
+            self.git(outer, "init", "--quiet")
+            real = outer / "real"
+            real.mkdir()
+            alias = outer / "alias"
+            try:
+                alias.symlink_to(real, target_is_directory=True)
+            except OSError:
+                self.skipTest("symlinks unavailable on this platform")
+            with self.assertRaisesRegex(ValueError, "symlink or junction"):
+                select_destination(alias)
+            self.assertFalse(list(real.iterdir()))
+
+    def test_managed_paths_cannot_cross_nested_repository_or_scaffold(self):
+        for boundary in ("git", "scaffold"):
+            with self.subTest(boundary=boundary), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                other = root / "tools"
+                other.mkdir()
+                if boundary == "git":
+                    (other / ".git").write_text("gitdir: elsewhere\n", encoding="utf-8")
+                else:
+                    for name in ("AGENTS.md", "prompts/AGENTS.md", "evidence/authoritative/LLM/00_Codex_Invariant_Suite_Index.md"):
+                        path = other / name
+                        path.parent.mkdir(parents=True, exist_ok=True)
+                        path.write_bytes(b"other project\n")
+                with self.assertRaisesRegex(ValueError, "nested Git|another installed scaffold"):
+                    make_plan(root, {"tools/runtime.py": Asset(b"runtime\n")}, None)
+                self.assertFalse((other / "runtime.py").exists())
 
     def test_load_selects_template_and_runtime_without_development_records(self):
         with tempfile.TemporaryDirectory() as directory:

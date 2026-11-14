@@ -34,6 +34,12 @@ captured integration or merge base explicitly:
 python tools/tadp_validate.py . --base-ref <captured-base-commit>
 ```
 
+The explicit/default checked root is the scaffold installation directory, not
+an inferred Git top level. Git operations discover `G` and map project paths
+through the verified prefix; nested historical comparisons and staged guards
+exclude parent and sibling paths. Shared worktree state and hooks still require
+coordination. See [root adoption](../guides/project-root-installation-migration.md).
+
 The default comparison is `HEAD`, which checks local changes against the latest
 commit. An explicit comparison base covers terminal-record edits across a
 branch, including changes already committed on that branch.
@@ -86,8 +92,8 @@ The current validator checks:
 - SHA-256 integrity locks for every file under `template/` and
   `evidence/authoritative/LLM/`, including detection of missing locks,
   unexpected files, removed files, content drift, and symbolic links;
-- containment in a valid TADp Git repository and a repository-root
-  `AGENTS.md` entry point;
+- containment of the project installation directory in a valid Git worktree
+  and a project-root `AGENTS.md` entry point;
 - required repository, authoritative-suite, template, prompt, and developer
   documentation paths;
 - a direct project-local `prompts/` directory with `AGENTS.md` and
@@ -222,14 +228,19 @@ does not create false drift; binary content is hashed as stored.
 
 The tracked `.githooks/pre-commit` first runs full validation and then blocks
 staged changes to either protected root. This describes the hook inside the
-protocol/adopted project. Configure the hook path from the actual Git root:
+protocol/adopted project. Inspect and coordinate existing hooks at the actual
+Git root before explicitly configuring its shared hook path. This inert example
+applies to a Git-root installation only:
 
 ```powershell
 git config core.hooksPath .githooks
 ```
 
-In this reference repository the protocol hook is at `protocol/.githooks`, so
-its project-relative configuration is `core.hooksPath=protocol/.githooks`.
+For a nested project at `projects/widget`, the Git-relative setting would be
+`core.hooksPath=projects/widget/.githooks`. In this reference repository the
+protocol hook is at `protocol/.githooks`, so the setting relative to `G` is
+`core.hooksPath=protocol/.githooks`. Do not overwrite or enable parent hooks
+implicitly; installation performs no configuration change.
 The repository-root `.githooks/pre-commit` is an older combined hook that still
 targets `protocol` and `example`; it does not reflect the current separate
 example boundary. Correcting that executable requires separately authorized

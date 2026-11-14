@@ -10,6 +10,8 @@ import subprocess
 import sys
 from pathlib import Path
 
+sys.dont_write_bytecode = True  # Importing the validator must remain read-only.
+
 from tadp_validate import (
     PROTECTED_LOCK_NAME,
     PROTECTED_ROOTS,
@@ -134,6 +136,7 @@ def guard_staged(root: Path) -> int:
                 "diff",
                 "--cached",
                 "--name-only",
+                "--no-renames",
                 "-z",
                 "--diff-filter=ACDMRTUXB",
             )
@@ -143,6 +146,7 @@ def guard_staged(root: Path) -> int:
                 git_root,
                 "diff",
                 "--name-only",
+                "--no-renames",
                 "-z",
                 "--diff-filter=ACDMRTUXB",
             )
@@ -220,7 +224,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument(
         "action", choices=("check", "initialize", "refresh", "guard-staged")
     )
-    parser.add_argument("root", nargs="?", default=".", help="TADp repository root")
+    parser.add_argument("root", nargs="?", default=".", help="installed TADp project root (default: current directory)")
     parser.add_argument(
         "--protected-root",
         action="append",

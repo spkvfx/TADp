@@ -7,28 +7,42 @@ commands and do not execute when this document is read.
 
 ## Project root and installation directory
 
-The project/scaffold root used by these commands is the directory receiving
-the installed TADp project scaffold. Its direct children include `AGENTS.md`,
-`evidence/`, `initiatives/`, `products/`, `prompts/`, `template/`, and `tools/`.
-The installed `template/` directory is the reusable library within that root;
-the upstream `protocol/template/project/` directory supplies scaffold sources.
-Neither template directory is the installed project's root.
+[Specification 05](../evidence/authoritative/LLM/05_Codex_Git_Workflow_Specification.md#requirement)
+defines project root `P` as the resolved scaffold installation directory.
+Its direct children include `AGENTS.md`, `evidence/`, `initiatives/`,
+`products/`, `prompts/`, `template/` and `tools/`. The installed
+`P/template/` is the reusable library; upstream `protocol/template/project/`
+is a protected source. Neither template directory selects an active project.
 
-Keep this directory distinct from the Git worktree root. Validation and
-protection commands take the protocol or installed scaffold root as their
-`root` argument, defaulting to the current directory. They can check a tree
-inside an enclosing Git repository, as with `protocol/` in this distribution.
-That structural capability does not establish project adoption or compliance.
-The current authoritative
-[Git requirement](../evidence/authoritative/LLM/05_Codex_Git_Workflow_Specification.md#requirement)
-still requires a governed TADp project to be a Git repository root.
+Git remains mandatory. Its discovered worktree root `G` may equal `P` or
+contain it. Git metadata may be a directory or linked-worktree `.git` file;
+no separate metadata entry is required at a nested `P`. Checks of `protocol/`
+in this distribution use that checked root with Git rooted above it, without
+establishing live project adoption.
 
-Currently, `tadp_sync.py` installs only at the adopting repository's Git root
-and rejects execution from a nested directory. For that tool, the installation
-directory and Git worktree root therefore coincide. The script's own location
-does not select the destination. Its state, backups, and sync lock live in the
-target directory. Checking a nested scaffold with another tool does not make
-nested synchronization supported.
+Validation and protection take an explicit `root`, defaulting to the exact
+current directory. Sync selects an existing `--target DIRECTORY` or the exact
+current directory when omitted. Relative targets are cwd-relative; the script
+location and Git top level never redirect the destination. Sync prints absolute
+`project_root` and `git_root` in text and JSON preview/apply output. Unsafe
+or contradictory targets fail before writes; no ancestor or sibling lookup
+selects a different project. If default cwd is not itself an identified
+installation but lies beneath an installed project, the ambiguous default is
+rejected; use explicit `--target` for a deliberate independent nested
+installation. A verified installed nested project remains a valid default.
+Ancestor inspection rejects ambiguity and never redirects. Installed markers and state, when available, corroborate the
+target; malformed identified installations fail. Valid manual installations
+need no sync-state file. New sync state records absolute root evidence while
+older state without those fields remains compatible.
+A project-local prompt instead derives `P` from its verified installed
+`prompts/AGENTS.md`. Reconcile conflicting target evidence before action.
+
+Files, runtime tools, installed library, `.tadp-sync.json`, backups at
+`.tadp-sync-backups/`, temporary `.tadp-sync.lock` and protected locks all
+stay under `P`. Preview creates none of them. Parent instructions remain
+applicable; sibling projects and nested repositories, worktrees, submodules or
+scaffolds remain outside project authority. Reject escaping links/junctions.
+See [prospective adoption](../docs/guides/project-root-installation-migration.md).
 
 ## Command reference
 
@@ -38,7 +52,7 @@ nested synchronization supported.
 | `python tools/tadp_protect.py check [root]` | Root defaults to `.`; text findings for both protected roots. | Read-only. `0`: locks match; `1`: integrity findings; `2`: invalid root or arguments. |
 | `python tools/tadp_protect.py guard-staged [root]` | Inspects actual staged/unstaged protected paths and matching recorded update authority. | Read-only commit gate. `0`: permitted; `1`: blocked; `2`: inspection or argument error. |
 | `python tools/tadp_keywords.py root --prompt-id ID --text TEXT` | Explicit prompt text and identity; reads the canonical registry and emits JSON interpretation blocks. | Read-only. `0`: interpreted; `2`: invalid arguments or registry/input error. It performs no requested work. |
-| `python tools/tadp_sync.py [--ref REVISION] [--apply] [--authority REFERENCE] [--json]` | Run from the target Git root; fetches the canonical GitHub template and pins its actual commit. Defaults to a preview. | `0`: conflict-free preview or successful apply; `1`: conflicts, no target writes; `2`: invalid input, unsafe source/destination, missing authority, Git or I/O error. An I/O failure during apply can leave partial writes and retained backups. |
+| `python tools/tadp_sync.py [--target DIRECTORY] [--ref REVISION] [--apply] [--authority REFERENCE] [--json]` | Select an existing target directory, default exact cwd, contained in a valid Git worktree; fetches the canonical GitHub template and pins its actual commit. Defaults to a preview. | `0`: conflict-free preview or successful apply; `1`: conflicts, no target writes; `2`: invalid input, unsafe source/destination, missing authority, Git or I/O error. An I/O failure during apply can leave partial writes and retained backups. |
 | `python tools/tadp_reset.py [--json]` | Preview a reset of the TADp project directly above this script's `tools/` directory. `--apply` also requires `--confirm` with that exact absolute project path and `--backup` with a new external directory. | `0`: preview or verified reset; `2`: invalid input, protected drift, unsafe paths, changed files or I/O error. A failure during apply may leave partial changes; retain the backup. |
 | `tadp_scopes.py`, `tadp_templates.py` | Python library APIs described below; called by the validator where applicable. | No standalone CLI. Integration helpers have their own explicit side effects and authority requirements. |
 
@@ -108,9 +122,10 @@ checks. A clean scaffold still needs real ownership and adoption records.
 
 ## Synchronize template sources into a project
 
-Use `tadp_sync.py` with Python 3.11 or later and Git. Run it from the Git root
-of the **adopting repository**, using an absolute path to the script if it has
-not been installed there. It defaults to `https://github.com/spkvfx/TADp.git`
+Use `tadp_sync.py` with Python 3.11 or later and Git. Run from the selected
+project installation directory, or name its existing directory with
+`--target` from any working directory. Use an absolute script path if it is
+not installed there. It defaults to `https://github.com/spkvfx/TADp.git`
 and the upstream default branch (`HEAD`). `--source` accepts another trusted
 HTTPS Git repository or a local fixture repository; it must retain the
 `protocol/` distribution layout. `--ref` can pin a branch, tag or commit.
@@ -121,8 +136,12 @@ These are inert command examples. Here `python` denotes the configured
 interpreter, and `UPSTREAM_COMMIT` is the exact hash printed by the preview:
 
 ```powershell
+# Git-root installation: run from C:/work/repository (P = G).
 python C:/path/to/TADp/protocol/tools/tadp_sync.py --json
 python C:/path/to/TADp/protocol/tools/tadp_sync.py --ref UPSTREAM_COMMIT --apply
+# Nested installation: existing C:/work/repository/projects/widget is P.
+python C:/path/to/TADp/protocol/tools/tadp_sync.py --target C:/work/repository/projects/widget --json
+python C:/path/to/TADp/protocol/tools/tadp_sync.py --target C:/work/repository/projects/widget --ref UPSTREAM_COMMIT --apply
 ```
 
 The payload contains the complete upstream `protocol/template/` library at
@@ -229,7 +248,7 @@ machine consumer. The protection tool's output is text. A directory that
 exists but lacks a valid TADp/Git scaffold produces validator findings and
 exit `1`; a nonexistent root produces exit `2`.
 
-The validator checks the Git and repository-root `AGENTS.md` requirements,
+The validator checks the Git worktree and project-root `AGENTS.md` requirements,
 protocol structure, protected template and authoritative-LLM SHA-256 locks,
 the project-local prompt boundary and its reusable-source alignment, required
 developer documentation, local Markdown links, unresolved
@@ -267,7 +286,14 @@ The path supplied to the validator must be the protocol or adopted TADp root
 and must be contained in a valid Git repository. The Git metadata may be at
 that path or an ancestor, as it is in this reference repository where
 `protocol/` is the distributable protocol tree and the parent directory is the
-Git root.
+Git root. Git operations use `G` and map project paths through the verified
+`P`-relative-to-`G` prefix for staged protection and historical comparisons.
+They do not include parent or sibling changes. Refs, index, worktree state and
+hooks are shared: existing branch-role rules remain, and incompatible roles or
+outside-project changes may block integration. Project-scoped commit authority
+permits necessary Git metadata operations, never outside-project file changes
+or commits. Coordinate hooks manually at `G`; a nested hook path includes its
+project prefix. Installation does not change configuration or enable hooks.
 
 `tadp_protect.py` owns deliberate lock creation and refresh. `initialize`
 refuses to replace an existing lock, `refresh` refuses to create a missing

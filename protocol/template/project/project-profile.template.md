@@ -12,7 +12,10 @@ evidence, an accepted initiative, or a product contract.
 **Project owner:** {{human_or_team}}  
 **Technical owner:** {{human_or_team}}  
 **Human authority model:** {{solo_project_owner_or_named_review_authorities}}  
-**Git repository root:** {{repository_root}}  
+**TADp project root:** {{resolved_scaffold_installation_directory}}
+**Git worktree root:** {{repository_root}}
+**Project path relative to Git root:** {{verified_prefix_or_dot}}
+**Project-root revision:** {{coherent_revision_commit_or_not_yet_adopted}}
 **Default integration branch:** {{actual_branch_or_not_assumed}}  
 **Remote operations:** {{separate_authority_and_external_constraints}}
 **Version scope revision effective point:** {{coherent_revision_commit_or_not_yet_adopted}}
@@ -104,6 +107,10 @@ and incompatible type/owner/authority boundaries require separate initiatives.
 
 ## Git workflow
 
+The project root is the installed scaffold directory, contained in a valid Git
+worktree under specification 05. The Git root supplies shared refs, index,
+worktree state and hook configuration without widening file ownership.
+Record hook coordination and any incompatible branch roles before action.
 This project requires Git and recorded dedicated/shared execution per cycle.
 Use exact scope branches, major from captured project integration base, minor
 from matching major, patch from matching minor, and dedicated member from scope.

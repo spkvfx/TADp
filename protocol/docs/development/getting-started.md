@@ -9,9 +9,11 @@ are adopting TADp in a repository or changing the TADp reference implementation.
 
 TADp has two explicit platform requirements:
 
-1. **Git** must be available, and the TADp project must be the root of its own
-   Git repository or Git worktree. Git provides the branch and history evidence
-   used by the initiative workflow.
+1. **Git** must be available, and the TADp installation directory must be
+   contained in a valid Git worktree. Project root `P` may equal Git root
+   `G` or be beneath it. Git supplies branch and history evidence without
+   widening the project's file boundary; see
+   [specification 05](../../evidence/authoritative/LLM/05_Codex_Git_Workflow_Specification.md#requirement).
 2. **Codex** must be able to open and modify the repository, read `../../AGENTS.md`,
    inspect Git state, pause for human decisions, edit files, and run validation.
 
@@ -25,8 +27,9 @@ Other agents and tools are outside the guaranteed execution environment. Read
 ## Choose an adoption path
 
 This reference repository stores the distributable protocol under `protocol/`
-inside the enclosing Git repository. An adopted product project normally puts
-that structure at its own Git root. Paths in links below are relative to this
+inside the enclosing Git repository. An adopted project installs its scaffold
+at a selected directory inside a valid Git worktree, including the Git root.
+Paths in links below are relative to this
 guide; command paths are relative to the explicitly named working directory.
 Inspect the recorded governing revision before applying installed capabilities
 to existing work. Installation alone is not adoption or acceptance.
@@ -64,7 +67,7 @@ perform them. Set `TADP_PYTHON` to the configured interpreter for hook execution
 
 Use this path when TADp will govern work in another repository:
 
-1. Confirm that the target directory is its own Git repository root.
+1. Select the resolved project installation directory inside a valid Git worktree; discover the actual Git root and verified relative prefix. Preserve parent and sibling boundaries.
 2. Copy the complete `../../template` tree to `template/` in the target. Keep
    its scoped `AGENTS.md` and `.tadp-lock.json` intact. If the project instead
    uses an external template distribution, pin an immutable revision and
@@ -85,9 +88,11 @@ Use this path when TADp will govern work in another repository:
    Preserve historical distribution receipts linked by the suite under
    `decisions/`; these are source-provenance records, not decisions for your
    project's work.
-7. Run `python tools/tadp_protect.py check .`, then activate the tracked hook
-   with `git config core.hooksPath .githooks`. The hook is local Git
-   configuration and therefore must be enabled in every clone or worktree.
+7. From the project root run `python tools/tadp_protect.py check .`.
+   Inspect existing hooks at `G` and coordinate them manually before explicit
+   activation. `core.hooksPath` is shared and relative to `G`; for example,
+   use `.githooks` at a Git-root installation or `projects/widget/.githooks`
+   at that nested project. Do not overwrite or enable parent hooks implicitly.
 8. Create `project-profile.md` from its template and record owners, boundaries,
    Git conventions, evidence locations, approval authority, and the exact
    adopted scope-revision commit, with predecessor revision retained for legacy work.
@@ -97,6 +102,12 @@ Use this path when TADp will govern work in another repository:
 10. Give every pre-effective record a complete `Unmigrated`, `Deferred`, or
     separately authorized migration disposition. Do not infer a partial tuple.
 11. Run a narrow pilot initiative before migrating a large body of work.
+
+Adopt the installation-root revision through the
+[prospective adoption guide](../guides/project-root-installation-migration.md).
+Existing root installations retain their paths and earlier governing revisions
+until recorded adoption. Synchronization supports an existing `--target`
+directory or defaults to exact cwd; see the [tool commands](../../tools/README.md).
 
 An existing adoption without locks must use the
 [protected-source integrity migration](../guides/protected-source-integrity-migration.md).
@@ -181,8 +192,8 @@ weaken the invariant baseline.
 - Require review ownership or branch rules for `template/**`,
   `evidence/authoritative/LLM/**`, and their `.tadp-lock.json` files on the
   chosen Git host.
-- Confirm that every clone or worktree has configured
-  `core.hooksPath=.githooks`.
+- Confirm every clone or worktree has coordinated its shared hook dispatcher
+  using the selected project's correct Git-relative hook path.
 - Ensure contributors can run the validator and product-specific checks.
 - Explain that `..` is explanatory while `../../evidence/authoritative` is
   binding.

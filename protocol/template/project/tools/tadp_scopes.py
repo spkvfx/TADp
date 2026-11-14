@@ -128,9 +128,13 @@ def integrate_closed_child(root: Path, request: IntegrationRequest, verify: Call
     r = request
     before = after = r.target_tip
     try:
+        root = root.resolve()
+        git_root = Path(git(root, "rev-parse", "--show-toplevel")).resolve()
+        project_prefix = root.relative_to(git_root).as_posix()
         if not r.closed or not r.parent_open:
             raise ValueError("closure and open immediate parent are required")
-        if not r.closure_instruction.strip() or not r.authority_record.strip() or not (root / r.authority_record).is_file():
+        authority = (root / r.authority_record).resolve()
+        if not authority.is_relative_to(root) or not r.closure_instruction.strip() or not r.authority_record.strip() or not authority.is_file():
             raise ValueError("persisted bounded closure authority required")
         if r.target != r.recorded_parent or r.source.startswith("-") or r.target.startswith("-"):
             raise ValueError("integration must target the recorded immediate parent")
@@ -144,6 +148,55 @@ def integrate_closed_child(root: Path, request: IntegrationRequest, verify: Call
         before = commit(root, "refs/heads/" + r.target)
         if source != r.source_tip or before != r.target_tip:
             raise ValueError("branch-tip drift requires renewed inspection and verification")
+        # A branch is shared by every project in G. Whole-tip integration
+        # cannot import parent/sibling changes under P-only authority.
+        revisions = git(git_root, "rev-list", f"{before}..{source}").splitlines()
+        changed = set()
+        source_names = set()
+        gitlinks = set()
+        imported_symlinks = set()
+        inspected_trees = {before, *revisions}
+        for revision in revisions:
+            # Inspect imported history too: an outside-P edit then revert still
+            # imports outside-project commits despite a clean final diff.
+            raw = subprocess.run(("git", "-C", str(git_root), "diff-tree", "--root", "-r", "-m", "--no-commit-id", "--name-only", "--no-renames", "-z", revision),
+                                 capture_output=True, check=True).stdout
+            changed.update(filter(None, raw.decode("utf-8", errors="surrogateescape").split("\0")))
+            inspected_trees.update(git(git_root, "rev-list", "--parents", "-n", "1", revision).split()[1:])
+        for revision in inspected_trees:
+            raw = subprocess.run(("git", "-C", str(git_root), "ls-tree", "-r", "-z", revision),
+                                 capture_output=True, check=True).stdout
+            for entry in filter(None, raw.split(b"\0")):
+                metadata, raw_name = entry.split(b"\t", 1)
+                name = raw_name.decode("utf-8", errors="surrogateescape")
+                source_names.add(name)
+                if metadata.startswith(b"160000 "):
+                    gitlinks.add(name)
+                if revision in revisions and metadata.startswith(b"120000 "):
+                    imported_symlinks.add(name)
+        for name in changed:
+            if project_prefix != "." and not name.startswith(project_prefix + "/"):
+                raise ValueError("source branch includes changes outside the selected TADp project root; separate coordination authority required")
+            path = git_root / name
+            if not path.resolve().is_relative_to(root):
+                raise ValueError("source change escapes the selected TADp project root")
+            if name in gitlinks:
+                raise ValueError("source change crosses a submodule ownership boundary")
+            if name in imported_symlinks:
+                raise ValueError("source change introduces or changes a symbolic link; resolved project containment requires separate review")
+            for parent in (path, *path.parents):
+                if parent == root:
+                    break
+                if (parent / ".git").exists():
+                    raise ValueError("source change crosses a nested Git ownership boundary")
+                # Reusable project-shaped library sources are not installations.
+                if parent.is_relative_to(root / "template"):
+                    continue
+                prefix = parent.relative_to(git_root).as_posix()
+                if ((parent / "prompts/AGENTS.md").is_file() and (parent / "evidence/authoritative/LLM/00_Codex_Invariant_Suite_Index.md").is_file()) or (
+                    prefix + "/prompts/AGENTS.md" in source_names and prefix + "/evidence/authoritative/LLM/00_Codex_Invariant_Suite_Index.md" in source_names
+                ):
+                    raise ValueError("source change crosses another scaffold ownership boundary")
         if not verify():
             raise ValueError("pre-integration verification failed")
         after = commit(root, "refs/heads/" + r.target)
@@ -164,7 +217,7 @@ def integrate_closed_child(root: Path, request: IntegrationRequest, verify: Call
             after = commit(root, "refs/heads/" + r.target)
             return IntegrationResult("Blocked", source, before, after, "Fast-forward" if fast_forward else "Merge", "post-integration verification failed; retain actual integration and failure")
         return IntegrationResult("Fast-forward" if fast_forward else "Merged", source, before, after, "Fast-forward" if fast_forward else "Merge")
-    except (ValueError, OSError) as error:
+    except (ValueError, OSError, subprocess.SubprocessError) as error:
         return IntegrationResult("Blocked", r.source_tip, before, after, "No merge", str(error))
 
 
@@ -186,7 +239,7 @@ def validate_version_scopes(root: Path) -> list:
     try:
         git_root = Path(git(root, "rev-parse", "--show-toplevel")).resolve()
         profile_name = profile.resolve().relative_to(git_root).as_posix()
-        history = git(root, "log", "--format=%H", "--", profile_name).splitlines()
+        history = git(git_root, "log", "--format=%H", "--", profile_name).splitlines()
         prior_effective = set()
         for revision in history:
             try:

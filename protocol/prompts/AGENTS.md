@@ -49,16 +49,20 @@ candidate `S`, every affected resolved path, and the relationship between
 is missing, candidates are ambiguous, a path escapes, or the Git relationship
 is ambiguous.
 
-A complete governed TADp project must still satisfy the authoritative Git-root
-requirement. A scaffold embedded in a larger repository for distribution,
-testing, or another non-governed purpose gains no project compliance,
-lifecycle standing, or authority from its shape. Git metadata above `S` never
-expands prompt scope.
+The installation root `P` defined by
+[specification 05](../evidence/authoritative/LLM/05_Codex_Git_Workflow_Specification.md#requirement)
+is this verified scaffold root `S`. It must be contained in a valid Git
+worktree with root `G`; `P` may equal `G` or be beneath it. Git metadata
+may be a directory or a linked-worktree file at `G`; no separate metadata
+entry at `P` is required. The installed `P/template/` library and upstream
+`template/project/` source are not active project roots. Scaffold shape or
+synchronization alone creates no adoption, compliance or lifecycle standing.
+Git metadata above `S` never expands prompt scope.
 
 ## Scope and project subject
 
 - Limit file creation, editing, renaming, moving, deletion, generated output,
-  Git pathspecs, staging, commits, and all other side effects to `S` and to
+  Git file pathspecs, staged/committed file changes and generated side effects to `S` and to
   the exact narrower boundary declared by the invoked prompt.
 - Treat `S` as a maximum boundary, not blanket authority. The prompt,
   initiative, workflow stage, protected-source rule, or human decision may
@@ -67,7 +71,9 @@ expands prompt scope.
   as evidence and repository policy permits the read. Preserve source identity
   and standing. A read never authorizes a write or promotes the material.
 - Stop and request separately scoped human authority when completion requires a
-  change to another scaffold or any side effect outside `S`.
+  change to another scaffold or outside-project file change. Necessary Git
+  metadata operations for authorized project commits follow the bounded rule
+  below.
 - Permit work about the current project's realizations, evidence, initiatives,
   products, and other project-owned material only through its applicable
   authority and workflow gates.
@@ -142,8 +148,14 @@ expands prompt scope.
   untracked paths before mutation. Preserve unrelated work and never absorb it
   into the invoked prompt's change.
 - Scope every diff, pathspec, staging operation, commit, and report to `S`
-  and the prompt's narrower boundary. An enclosing repository grants no access
-  to another scaffold.
+  and the prompt's narrower boundary. Discover `G` through Git and map
+  project-relative paths through the verified `P`-relative-to-`G` prefix.
+  Necessary Git metadata operations for an authorized project commit may use
+  `G`; this supplies no authority to modify or commit parent or sibling files.
+- Refs, the index, worktree state and hook configuration are shared across
+  projects in one worktree. Preserve recorded branch rules, detect incompatible
+  roles and report coordination limits. Never infer independent project
+  branches, invent a naming scheme or overwrite or enable parent hooks.
 - Follow the authoritative branch and history rules. Do not rewrite shared
   history, force-push, merge, delete a branch, deploy, or publish unless exact
   human authority and the applicable workflow stage both permit it.

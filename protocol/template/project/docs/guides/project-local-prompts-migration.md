@@ -61,8 +61,10 @@ applicable project-owned verification. Confirm that:
 - existing local prompt files remain present and outside the protected template
   file set;
 - no resolved prompt or side-effect path crosses the scaffold boundary; and
-- the enclosing Git root, when the scaffold is an embedded distribution or
-  fixture, has not been treated as project-work authority.
+- the enclosing Git root has not been treated as wider project-work authority.
+  Project root `P` is the installation directory and may be beneath Git root
+  `G` under [specification 05](../../evidence/authoritative/LLM/05_Codex_Git_Workflow_Specification.md#requirement);
+  necessary Git metadata operations retain project-scoped file boundaries.
 
 A passing validator proves only the checked structure and content relationship.
 It does not establish prompt authority, initiative standing, lifecycle state,

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Preview or safely install the canonical TADp template in the current Git root.
+"""Preview or safely install the canonical TADp template at a selected project root.
 
 Standard library only; Git is required. No upstream code is executed. Installation
 does not adopt a protocol revision, migrate work, enable hooks, or commit files.
@@ -86,6 +86,16 @@ def safe_target(root: Path, name: str) -> Path:
             # Reject aliases on case-sensitive systems as well as Windows.
             if not current.is_dir():
                 raise SyncError(f"parent is not a directory: {current}")
+            if current != root:
+                if os.path.lexists(current / ".git"):
+                    raise SyncError(f"nested Git repository/worktree destination: {current}")
+                # The reusable project source in the installed library is
+                # intentionally scaffold-shaped, but is not an active project.
+                if (current.relative_to(root).parts[0] != "template"
+                        and (current / "AGENTS.md").is_file()
+                        and (current / "prompts/AGENTS.md").is_file()
+                        and (current / "evidence/authoritative/LLM/00_Codex_Invariant_Suite_Index.md").is_file()):
+                    raise SyncError(f"another installed scaffold owns destination: {current}")
             aliases = [p.name for p in current.iterdir() if p.name.casefold() == part.casefold()]
             if len(aliases) > 1 or (aliases and part not in aliases):
                 raise SyncError(f"case-colliding destination: {name}")
@@ -156,6 +166,60 @@ def git(repo: Path, *args: str, data: bytes | None = None) -> bytes:
     if result.returncode:
         raise SyncError(result.stderr.decode("utf-8", errors="replace").strip() or "Git failed")
     return result.stdout
+
+
+def select_destination(target: str | Path | None = None) -> tuple[Path, Path]:
+    """Select exactly the supplied directory or cwd, without ancestor redirection.
+
+    Installation is deliberately limited to an existing directory. Reject path
+    indirection before resolving, so a symlink cannot silently select a sibling.
+    Git supplies history and identity, never a replacement installation target.
+    """
+    selected = Path(os.path.abspath(Path(target or Path.cwd()).expanduser()))
+    for component in (*reversed(selected.parents), selected):
+        if os.path.lexists(component) and linked(component):
+            raise SyncError(f"symlink or junction in installation destination: {component}")
+    root = selected.resolve()
+    if not root.is_dir():
+        raise SyncError(f"installation destination must be an existing directory: {root}")
+    git_root = Path(git(root, "rev-parse", "--show-toplevel").decode().strip()).resolve()
+    if root != git_root and git_root not in root.parents:
+        raise SyncError("installation destination must be inside its Git worktree")
+    for component in (root, *root.parents):
+        if (component / ".tadp-lock.json").exists() or (
+                component.name == "template" and (component / "project/AGENTS.md").is_file()):
+            raise SyncError(f"protected reusable source is not an installation destination: {root}")
+        if component == git_root:
+            break
+    state = load_state(root)
+    if state and "project_root" in state:
+        recorded = state["project_root"]
+        if not isinstance(recorded, str) or Path(recorded) != root:
+            raise SyncError("recorded installation project_root contradicts selected destination; reconcile identity manually")
+    if state and "git_root" in state:
+        recorded = state["git_root"]
+        if not isinstance(recorded, str) or Path(recorded) != git_root:
+            raise SyncError("recorded installation git_root contradicts selected worktree; reconcile identity manually")
+    required_files = ("AGENTS.md", "prompts/AGENTS.md", "prompts/README.md",
+                      "evidence/authoritative/LLM/00_Codex_Invariant_Suite_Index.md")
+    required_directories = ("initiatives", "products", "template", "tools")
+    installed = (bool(state and "project_root" in state)
+                 or (root / required_files[-1]).is_file()
+                 or ((root / "prompts/AGENTS.md").is_file()
+                     and (state is not None or (root / "evidence/authoritative/LLM").is_dir()
+                          or (root / "template/project").is_dir())))
+    if installed:
+        missing = [name for name in required_files if not (root / name).is_file()]
+        missing += [name for name in required_directories if not (root / name).is_dir()]
+        if missing:
+            raise SyncError("malformed installed scaffold; missing markers: " + ", ".join(missing))
+    if target is None and not installed and root != git_root:
+        for ancestor in root.parents:
+            if (ancestor / "prompts/AGENTS.md").is_file() and (ancestor / required_files[-1]).is_file():
+                raise SyncError("cwd is beneath an installed project; use --target to select an independent installation explicitly")
+            if ancestor == git_root:
+                break
+    return root, git_root
 
 
 def fetch_source(directory: Path, source: str, ref: str) -> str:
@@ -339,24 +403,27 @@ def make_plan(root: Path, assets: dict[str, Asset], state: dict | None) -> dict:
 
 
 def apply_plan(root: Path, assets: dict[str, Asset], plan: dict, *, source: str,
-               revision: str, authority: str = "") -> None:
+               revision: str, authority: str = "", git_root: Path | None = None) -> None:
     # Serialize cooperating sync processes. Never replace/remove someone else's
     # lock, including a stale lock left by interruption; that requires inspection.
     if plan["conflicts"]:
         raise SyncError("conflicts block all writes; reconcile manually and preview again")
+    if git_root is not None and select_destination(root) != (root, git_root):
+        raise SyncError("installation/Git context changed after preview")
     lock = safe_target(root, RUN_LOCK)
     token = uuid.uuid4().hex.encode()
     with lock.open("xb") as stream:
         stream.write(token)
     try:
-        _apply_plan(root, assets, plan, source=source, revision=revision, authority=authority)
+        _apply_plan(root, assets, plan, source=source, revision=revision, authority=authority,
+                    git_root=git_root)
     finally:
         if snapshot(root, RUN_LOCK) == digest(token):
             lock.unlink()  # Only our own temporary coordination file, never payload.
 
 
 def _apply_plan(root: Path, assets: dict[str, Asset], plan: dict, *, source: str,
-                revision: str, authority: str = "") -> None:
+                revision: str, authority: str = "", git_root: Path | None = None) -> None:
     if plan["conflicts"]:
         raise SyncError("conflicts block all writes; reconcile manually and preview again")
     if plan["_assets"] != {name: (digest(a.content), a.mode, a.kind) for name, a in assets.items()}:
@@ -427,6 +494,10 @@ def _apply_plan(root: Path, assets: dict[str, Asset], plan: dict, *, source: str
     payload = dict(schema_version=1, source=source, revision=revision, authority=authority,
                    backup=backup_id if any(a["action"] == "update" for a in updates) else None,
                    files=files, history=history)
+    if git_root is not None:
+        payload.update(project_root=str(root), git_root=str(git_root))
+    elif old_state:
+        payload.update({key: old_state[key] for key in ("project_root", "git_root") if key in old_state})
     if snapshot(root, STATE) != plan["_expected"][STATE]:
         raise SyncError("sync state changed during apply; earlier writes/backups retained")
     # Metadata replacement is atomic; payload writes are deliberately not described
@@ -442,15 +513,13 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--source", default=DEFAULT_SOURCE, help="HTTPS Git URL or local fixture repository")
     parser.add_argument("--ref", default="HEAD", help="upstream branch/tag/commit; HEAD discovers the default branch")
+    parser.add_argument("--target", help="existing installation directory inside a Git worktree; defaults to exact cwd")
     parser.add_argument("--apply", action="store_true", help="write a conflict-free plan; default is preview")
     parser.add_argument("--authority", default="", help="exact human authority for existing protected-source updates")
     parser.add_argument("--json", action="store_true", help="emit the plan and pinned commit as JSON")
     args = parser.parse_args(argv)
     try:
-        root = Path.cwd().resolve()
-        git_root = Path(git(root, "rev-parse", "--show-toplevel").decode().strip()).resolve()
-        if root != git_root:
-            raise SyncError("run from the target repository's Git root (no implicit parent or protocol/ target)")
+        root, git_root = select_destination(args.target)
         state = load_state(root)
         if state and state["source"] != args.source:
             raise SyncError("source differs from recorded installation; reconcile source identity manually")
@@ -463,14 +532,18 @@ def main(argv: list[str] | None = None) -> int:
                     "Source synchronization is not template completeness or protocol adoption; run project validation and review any references to excluded records.",
                     "No deletion, pruning, automatic merge, hook activation, staging or commit is performed."]
         result = dict(source=args.source, revision=revision, mode="apply" if args.apply else "preview",
+                      project_root=str(root), git_root=str(git_root),
                       actions=plan["actions"], conflicts=plan["conflicts"], warnings=warnings, applied=False)
         if args.apply and not plan["conflicts"]:
-            apply_plan(root, assets, plan, source=args.source, revision=revision, authority=args.authority)
+            apply_plan(root, assets, plan, source=args.source, revision=revision,
+                       authority=args.authority, git_root=git_root)
             result["applied"] = True
         if args.json:
             print(json.dumps(result, indent=2))
         else:
             print(f"TADp {result['mode']}: {args.source} @ {revision}")
+            print(f"Project root: {root}")
+            print(f"Git root: {git_root}")
             for item in plan["actions"]:
                 print(f"{item['action']:10} {item['path']}: {item['reason']}")
             for warning in warnings:

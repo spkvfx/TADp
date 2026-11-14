@@ -13,7 +13,12 @@ installation, then instantiate only the selected source at its declared
 destination and owning trigger. Remove `.template` from actual record names
 and populate evidence-backed fields; a source file creates no live work.
 
-Every project also receives this entire library at its root `template/`.
+Every project also receives this entire library at `P/template/`, where
+project root `P` is the scaffold installation directory defined by
+[specification 05](../evidence/authoritative/LLM/05_Codex_Git_Workflow_Specification.md#requirement).
+`P` may equal or lie beneath the Git worktree root. The source `project/`
+scaffold and installed library are protected reusable material, never active
+project targets merely because they contain project-shaped files.
 `project/template/README.md` documents that destination without embedding the
 library recursively. During installation the complete outer library supplies
 that destination; do not overwrite its README with the placeholder.

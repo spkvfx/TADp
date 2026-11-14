@@ -192,6 +192,36 @@ to locate reusable sources. Binding use rules are in
 and the shared preparation procedure is in
 [specification 08](08_Codex_Initiative_Workflow_Specification.md#documentary-prerequisite-preparation).
 
+### Scaffold installation-root revision record
+
+- **Authority:** The User's 2026-11-13 explicit invocation of
+  `prompts/project-root-installation-directory-protocol-change.md`, captured
+  in ROOT-DR-001, distribution source
+  `docs/development/project-root-installation-maintenance.md`.
+- **Reason and scope:** Specification 05 now defines project root `P` as the
+  resolved scaffold installation destination contained in valid Git worktree
+  `G`; `P` may equal or be beneath `G`. Necessary root/path consumers,
+  reusable copies, runtime tools, tests, guidance and affected locks follow
+  that definition. Git remains mandatory and does not enlarge file ownership.
+- **Effective event:** The first coherent Git commit containing this revision,
+  reconciled consumers, verification and authorized locks, discoverable through
+  ROOT-DR-001's Git history.
+- **Compatibility and migration:** Prospective explicit adoption records the
+  governing commit, authority, actual project baseline and affected work.
+  Earlier governing revisions and claims are preserved; root installations
+  retain their paths. Installation or synchronization alone adopts nothing.
+  No live project is moved, reopened, accepted, completed or released here.
+- **Predecessor relationship:** Supersedes only specification 05's former
+  project-equals-Git-root requirement and directly contradictory path consumers.
+  Git preserves predecessor revision
+  `fc0c8e3ea01471d3a35f06a29d96f837070afd70`. Identity, lifecycle, decision,
+  acceptance, branch, evidence, coherence and keyword rules remain unchanged.
+
+The [owning root requirement](05_Codex_Git_Workflow_Specification.md#requirement)
+distinguishes installed projects, Git worktrees, the source distribution and
+protected scaffold libraries. See the
+[prospective adoption guide](../../../docs/guides/project-root-installation-migration.md).
+
 ## Documents
 
 1. [Codex evidence authority specification](01_Codex_Evidence_Authority_Specification.md)
@@ -226,7 +256,7 @@ and the shared preparation procedure is in
     interpretation, positional settings, action-list scheduling, explicit
     exceptions, confirmation, locks, and keyword registration.
 
-The repository-root `../../../AGENTS.md` is the Codex entry point because Codex loads
+The project-root `../../../AGENTS.md` is the Codex entry point because Codex loads
 repository guidance from that standard location. It summarizes this suite but
 does not replace it. When the summary and this suite differ, this suite governs
 the evidence protocol and the more restrictive instruction applies.

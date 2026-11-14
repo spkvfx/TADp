@@ -79,7 +79,7 @@ must still check semantic completeness, source authority, and actual evidence.
       "kind": "file",
       "owner": "Project adoption",
       "trigger": "Record project boundary and authority model",
-      "evidence": "Project Git root, actual owners and integration configuration",
+      "evidence": "Resolved project installation root, enclosing Git worktree root and verified prefix, actual owners and integration configuration",
       "governing_requirement": "template/project/README.md#start-a-project-from-this-template",
       "conditional": "Required when establishing the applicable scaffold or new governed work; reuse valid existing instances.",
       "use": "Copy to the declared project-root-relative destination outside template/, then populate only the instance.",

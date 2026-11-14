@@ -214,9 +214,14 @@ the nested `protocol/prompts/` remains the distributable project-local
 workspace. Neither location becomes the protected workflow library merely
 because it contains Markdown instructions.
 
-When the scaffold is embedded in a larger Git repository for distribution or
-testing, the enclosing Git root does not enlarge the project-local boundary or
-make the embedded scaffold a compliant governed project.
+The scaffold installation directory is project root `P` under
+[specification 05](../../evidence/authoritative/LLM/05_Codex_Git_Workflow_Specification.md#requirement).
+It may equal Git worktree root `G` or lie beneath it. Project paths are
+relative to `P`; Git paths use its verified prefix within `G`. The enclosing
+Git root never enlarges the project boundary. Shape, copying or synchronization
+alone establishes no compliance or live project adoption. Source distribution
+`protocol/`, source `template/project/` and installed `P/template/` are
+separate roles, with the latter two remaining protected reusable material.
 
 ## Templates
 

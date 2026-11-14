@@ -28,9 +28,7 @@ from tadp_validate import (  # noqa: E402
 class ValidatorTests(unittest.TestCase):
     def make_repository(self, root: Path) -> None:
         git_directory = root / ".git"
-        git_directory.mkdir()
-        (git_directory / "HEAD").write_text("ref: refs/heads/main\n", encoding="utf-8")
-        (git_directory / "config").write_text("[core]\n\trepositoryformatversion = 0\n", encoding="utf-8")
+        subprocess.run(("git", "init", "--quiet", "--initial-branch=main", str(root)), check=True)
         files = {
             ".gitattributes": "/template/** text eol=lf\n",
             "README.md": "# Project\n",
@@ -533,9 +531,7 @@ class ValidatorTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             self.make_repository(root)
-            (root / ".git" / "HEAD").unlink()
-            (root / ".git" / "config").unlink()
-            (root / ".git").rmdir()
+            shutil.rmtree(root / ".git")  # Isolated fixture's Git metadata only.
             self.assertIn("TADP012", {item.code for item in validate(root)})
 
     def test_protocol_root_may_be_contained_in_parent_git_repository(self) -> None:
@@ -544,17 +540,9 @@ class ValidatorTests(unittest.TestCase):
             protocol = repository / "protocol"
             protocol.mkdir()
             self.make_repository(protocol)
-            for path in (protocol / ".git").iterdir():
-                path.unlink()
-            (protocol / ".git").rmdir()
+            shutil.rmtree(protocol / ".git")
             git_directory = repository / ".git"
-            git_directory.mkdir()
-            (git_directory / "HEAD").write_text(
-                "ref: refs/heads/main\n", encoding="utf-8"
-            )
-            (git_directory / "config").write_text(
-                "[core]\n\trepositoryformatversion = 0\n", encoding="utf-8"
-            )
+            subprocess.run(("git", "init", "--quiet", str(repository)), check=True)
             (repository / "AGENTS.md").write_text(
                 "# Repository instructions\n", encoding="utf-8"
             )
@@ -566,17 +554,9 @@ class ValidatorTests(unittest.TestCase):
             protocol = repository / "protocol"
             protocol.mkdir()
             self.make_repository(protocol)
-            for path in (protocol / ".git").iterdir():
-                path.unlink()
-            (protocol / ".git").rmdir()
+            shutil.rmtree(protocol / ".git")
             git_directory = repository / ".git"
-            git_directory.mkdir()
-            (git_directory / "HEAD").write_text(
-                "ref: refs/heads/main\n", encoding="utf-8"
-            )
-            (git_directory / "config").write_text(
-                "[core]\n\trepositoryformatversion = 0\n", encoding="utf-8"
-            )
+            subprocess.run(("git", "init", "--quiet", str(repository)), check=True)
             (repository / "AGENTS.md").write_text(
                 "# Repository instructions\n", encoding="utf-8"
             )
@@ -598,24 +578,19 @@ class ValidatorTests(unittest.TestCase):
                 any(item.code == "TADP038" and item.path == "prompts" for item in findings)
             )
 
-    def test_parent_git_repository_requires_root_agents_entry_point(self) -> None:
+    def test_nested_project_requires_its_own_agents_entry_point(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             repository = Path(directory)
             protocol = repository / "protocol"
             protocol.mkdir()
             self.make_repository(protocol)
-            for path in (protocol / ".git").iterdir():
-                path.unlink()
-            (protocol / ".git").rmdir()
+            shutil.rmtree(protocol / ".git")
             git_directory = repository / ".git"
-            git_directory.mkdir()
-            (git_directory / "HEAD").write_text(
-                "ref: refs/heads/main\n", encoding="utf-8"
-            )
-            (git_directory / "config").write_text(
-                "[core]\n\trepositoryformatversion = 0\n", encoding="utf-8"
-            )
-            self.assertIn("TADP022", {item.code for item in validate(protocol)})
+            subprocess.run(("git", "init", "--quiet", str(repository)), check=True)
+            self.assertNotIn("TADP022", {item.code for item in validate_required_paths(protocol)})
+            (repository / "AGENTS.md").write_text("# Parent instructions\n", encoding="utf-8")
+            (protocol / "AGENTS.md").unlink()
+            self.assertIn("TADP022", {item.code for item in validate_required_paths(protocol)})
 
     def test_illegal_lifecycle_transition_is_reported(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
