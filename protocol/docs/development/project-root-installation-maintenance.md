@@ -16,8 +16,8 @@ review=false. No gate exception or live initiative decision is inferred.
 The selected maintenance root is `protocol/`, in Git worktree
 `C:/Users/User/PycharmProjects/TADp`, branch `v1`, baseline commit above.
 Git identity is Shawn Kearney, `shawn@splicehere.com`; no configured hooksPath
-was returned. The baseline has 276 unstaged tracked deletions under
-`_old/example/`, no staged paths, and no nonignored untracked files. These
+was returned. The baseline has 276 unstaged tracked deletions in the archived
+example tree, no staged paths, and no nonignored untracked files. These
 unrelated deletions and `.gitignore` are preserved. Specification 05 requires
 a clean worktree for new branch creation, so this bounded maintenance uses the
 existing branch and path-specific commits; no branch switch, merge or push

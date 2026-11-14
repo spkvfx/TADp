@@ -255,9 +255,9 @@ The numbered steps are serial. Tables and coverage inventories are descriptive.
    introduced findings, expected pre-refresh lock drift, and unperformed checks.
 
 6. **Verify the repository boundary.** Confirm that the change is confined to
-   authorized protocol and repository support paths. Do not synchronize to
-   `_old/example/`, create a replacement mirror, or update the separate example
-   fork. Honor `.gitignore`: do not change it or force-add `_old/`. Use isolated
+   authorized protocol and repository support paths. Do not create a replacement
+   mirror or update the separate example fork. Honor `.gitignore`: do not change
+   it or force-add ignored material. Use isolated
    protocol-owned fixtures for validation and regression coverage. Historical
    example references may expose pre-existing findings; preserve their source
    identity and report corrections outside this task's authority separately.

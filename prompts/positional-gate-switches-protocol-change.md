@@ -43,8 +43,8 @@ Carry the same entry-point instruction into
 `protocol/template/project/AGENTS.md` so newly instantiated projects inherit
 it. Reconcile repository-root `AGENTS.md` and affected prompt instruction files
 to reference the canonical contract without duplicating its definitions or
-broadening their existing target and authority boundaries. Synchronize the
-corresponding protocol-owned paths under `../_old/example/` after verification.
+broadening their existing target and authority boundaries. Verify the
+protocol-owned paths within the target boundary in `prompts/AGENTS.md`.
 
 ## User-defined keyword registration
 
@@ -425,15 +425,11 @@ changes, after those changes are coherent and verified. The authority is this
 explicit maintenance instruction, not the keywords. Do not absorb unrelated
 working-tree changes into that authority or refresh locks for unrelated drift.
 
-Complete and verify the protocol pass before synchronizing each corresponding
-protocol-owned path under `../_old/example/`. Synchronization does not authorize
-example-specific product, question, acceptance, lifecycle, or completion edits.
-
-The referenced file
-`../_old/example/initiatives/implementation/INIT-IMP-001-contract-documentation/open-questions.md`
-is contextual evidence only. Its recommendations remain proposals and its
-`DOC-*` questions remain unresolved. Do not place this prompt in that file,
-answer its questions, or change its initiative while implementing the feature.
+Complete and verify the protocol pass within the target boundary in
+`prompts/AGENTS.md`. Example-specific products, questions, acceptance,
+lifecycle, and completion records remain outside this work. Historical example
+recommendations remain contextual proposals; this maintenance instruction does
+not resolve their questions or authorize changes to their initiatives.
 
 ## Verification and acceptance
 

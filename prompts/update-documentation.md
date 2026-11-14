@@ -148,10 +148,10 @@ inventories within a step are not independent action lists.
    change tools, fixtures, assertions, or evidence merely to obtain a pass.
 
 5. **Verify the repository boundary.** Confirm that all changes are within the
-   authorized documentation paths. Do not synchronize to `_old/example/`, create
-   a replacement mirror, edit another scaffold such as `TADp-v1/`, or access
+   authorized documentation paths. Do not create a replacement mirror,
+   edit another scaffold such as `TADp-v1/`, or access
    the separate example fork as an update target. Honor `.gitignore`: do not
-   change ignore rules or force-add `_old/`. Example presence, parity, and
+   change ignore rules or force-add ignored material. Example presence, parity, and
    application validation are not completion gates for this documentation task.
    Preserve historical records and report stale references that require
    separately authorized corrections without rewriting their source identity.

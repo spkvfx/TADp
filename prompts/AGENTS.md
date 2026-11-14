@@ -20,8 +20,8 @@ directory. They do not change the handling of work requested outside
 - The example application will be rebuilt in a separate fork. It is not a
   maintained mirror or a required synchronization or validation target for
   protocol maintenance in this repository.
-- Do not apply repository prompts to `_old/example/`, another scaffold, or the
-  separate example fork without a new explicit human instruction naming that
+- Do not apply repository prompts to another scaffold or the separate example
+  fork without a new explicit human instruction naming that
   target. Historical examples may be read when named as contextual evidence;
   they do not become the protocol's design source or adoption evidence.
 - Earlier stored prompts may still request example synchronization or mirror

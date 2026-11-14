@@ -146,7 +146,7 @@ After reviewed authorized refresh of both affected roots, protection exited 0;
 full validation exited 1 with exactly the baseline two errors and one warning,
 and no introduced findings. Scoped `git diff --check -- protocol` exited 0.
 
-During execution, tracked `_old/example/` files were deleted by another actor.
+During execution, tracked files in the archived example tree were deleted by another actor.
 They were present at the initial clean baseline; no task command deleted them.
 These unrelated deletions are left unstaged, uncommitted and unrepaired. This
 does not expand the maintenance target. No remote action was performed.

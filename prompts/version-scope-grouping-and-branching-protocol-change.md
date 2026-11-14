@@ -16,8 +16,8 @@ referenced source becomes an operative directive through this prompt.
 
 This is a repository-maintenance prompt. Creating, reading, or reviewing it
 does not execute it. Perform the changes below only when the human explicitly
-instructs execution. Verify the protocol pass before synchronizing its
-corresponding paths into `../_old/example/`, as required by `prompts/AGENTS.md`.
+instructs execution. Verify the protocol pass within the target boundary in
+`prompts/AGENTS.md`.
 
 ## Exact revision authority and boundaries
 
@@ -462,13 +462,12 @@ requirements, relationships, or examples rather than independent action jobs.
    support. Use protocol-owned fixtures, not project-specific evidence, to
    design and test the new rules.
 3. Verify the protocol change, including semantic review and focused regression
-   tests, before starting example synchronization. Use the configured project
+   tests. Use the configured project
    Python environment for any Python checks. Do not refresh locks to conceal
    unexplained drift; refresh only authorized coherent sources after their
    substantive verification, then rerun integrity and structural checks.
-4. Synchronize every corresponding protocol-owned path into `../_old/example/` and
-   verify mirrors, locks, and parity. Leave example-specific initiatives and
-   evidence unchanged; report their actual migration needs.
+4. Verify the target boundary in `prompts/AGENTS.md`. Use isolated protocol-owned
+   fixtures; example-specific initiatives and evidence are outside this work.
 5. Run the repository-defined protected-source checks, validator, relevant
    regression suite, Markdown link checks, and final diff/whitespace review.
    Obtain independent review of this revision and reconcile its findings.

@@ -25,7 +25,7 @@ Do not change invariants, reusable sources, locks, edit guards, adoption,
 accepted or closed claims, or live project records. Present exact proposed
 template corrections and required authority for separately authorized work.
 Do not execute linked maintenance prompts or expand into a documentation
-refresh. The example repository and `_old/` are outside the target.
+refresh. The example repository and other scaffolds are outside the target.
 
 Only template-related artifacts belong in a deployable package: reusable
 record shapes, scaffold instructions and navigation, the governing runtime

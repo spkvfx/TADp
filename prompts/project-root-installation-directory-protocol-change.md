@@ -47,7 +47,7 @@ existing projects, creating nested Git repositories, changing Git configuration,
 enabling hooks, merges, pushes, branch deletion, releases, or deployment.
 
 Maintain `protocol/` and the named repository support surfaces only. Do not
-update `_old/example/`, another scaffold, or the separate example fork. Use
+update another scaffold or the separate example fork. Use
 protocol-owned isolated fixtures rather than a maintained example mirror.
 
 ## Required root definition
