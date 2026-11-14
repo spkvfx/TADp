@@ -38,8 +38,7 @@ reference inventory, not a parallel action list.
 | Development protocol scope `C` | `P/protocol/`, an explicitly declared candidate product workspace. Develop protocol work here before introducing it into reusable sources. It is not another installed project or an authoritative baseline. |
 | Development project's template `D` | `P/template/`, the project's protected reusable library. Candidate drafts and experiments belong outside this directory. |
 | Actual protocol `U` | Existing `R/protocol/`. This remains the actual distributable protocol and is not the development workspace. |
-| Protocol's template `S` | `R/protocol/template/`, the sole upstream write destination in the promotion workflow described here. |
-| Downstream template target `T` | The exact template distribution or installation explicitly identified by a later rollout instruction. Do not assume a repository-root `template/`, another repository, a remote branch, or an installed project. |
+| Protocol's template `S` | `R/protocol/template/`, the destination for proven development work before rollout into the actual protocol `U`. |
 
 Use the project-root definition in
 [specification 05](../protocol/evidence/authoritative/LLM/05_Codex_Git_Workflow_Specification.md#requirement).
@@ -51,11 +50,12 @@ overwrite or silently adopt an unrelated directory.
 
 **Do not modify `U` directly during setup or development.** This includes its
 working files, authoritative suite, tools, tests, documentation, live records,
-and reusable sources. Later, separately identified promotion may change only
-`S` through the proven-work route below. That is a controlled exception to the
-development write boundary, not permission to experiment in `U` or change its
-other paths. If a coherent revision needs other upstream changes, report the
-exact dependency and obtain a separately scoped instruction before promotion.
+and reusable sources. Later, separately identified promotion may change `S`
+through the proven-work route below. Once introduced into the protocol's
+template, work may be rolled out appropriately into the protocol. That rollout
+may update only the exact applicable paths in `U` identified by its instruction
+and verified source-to-destination mapping. These controlled steps do not permit
+experimental development in `U` or bypass protected-source authority.
 
 ## Conformant development and context handling
 
@@ -103,7 +103,7 @@ or promote a feature during project setup.
 1. **Develop in protocol scope.** Create and revise candidate work in `C`
    under the applicable initiative, specific change authority, and workflow
    gates. Keep experiments, proposal drafts, logs, and temporary outputs out
-   of `D`, `S`, and `T`. A proposed invariant change remains a proposal until
+   of `D`, `S`, and `U`. A proposed invariant change remains a proposal until
    its exact revision is authorized; candidate status cannot bypass an
    applicable governing invariant.
 2. **Validate and test before template introduction.** Verify candidate
@@ -131,17 +131,22 @@ or promote a feature during project setup.
    those sanitized deliverables. Verify the resulting protocol template and
    its installable output with isolated fixtures. Update only affected locks
    under the same exact authority after coherent verification. Keep `U`
-   unchanged outside `S`. A dependency outside `S` blocks this promotion until
-   separately authorized and verified; do not ship an incoherent template.
-5. **Roll out from `S` to `T`.** Only after successful promotion, process an
-   explicit rollout instruction naming the target and pinned promoted source
-   revision. Preview the exact mapping and conflicts before apply. Follow the
-   existing installation or synchronization contract, preserving local work,
-   protected-source authority, backups, and migration boundaries. Do not
-   substitute an unpromoted candidate or assume an available tool can consume
-   the intended local source. Publication, remote writes, and release require
-   their separate authority. Rollout does not adopt a revision, migrate live
-   work, accept an initiative, or prove downstream conformance automatically.
+   unchanged outside `S` during this step. Identify the protocol consumers
+   requiring subsequent rollout; do not claim protocol-wide coherence until
+   those consumers are reconciled and verified.
+5. **Roll out from `S` appropriately into `U`.** Only after successful
+   promotion, process an explicit rollout instruction naming the applicable
+   protocol paths and pinned promoted source revision. Preview the exact
+   source-to-destination mapping and conflicts before applying the sanitized
+   work product. Update the appropriate protocol files and consumers from
+   that proven template source, preserving unrelated work, source identity,
+   protected-source authority, recovery evidence, and migration boundaries.
+   Do not copy the template tree wholesale over the protocol or substitute an
+   unpromoted candidate. Reconcile affected consumers and specifically
+   authorized locks, then run protocol validation, protection checks, and
+   applicable regressions. Publication, remote writes, and release require
+   their separate authority. Rollout does not automatically adopt a revision,
+   migrate live work, accept an initiative, or establish protocol conformance.
 
 At every boundary, retain a traceable source-to-destination manifest, exact
 authority, verification evidence, and recovery procedure outside the clean
@@ -208,4 +213,4 @@ results, independent-review findings, and remaining gates or required human
 decisions. State whether setup is actually conformant or still incomplete.
 Confirm the observed upstream preservation result. Distinguish establishing
 this development project from feature completion, reusable-source promotion,
-downstream rollout, adoption, and release; claim only events that occurred.
+protocol rollout, adoption, and release; claim only events that occurred.
