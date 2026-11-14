@@ -1,0 +1,782 @@
+﻿[
+    {
+        "path":  "protocol/.gitattributes",
+        "sha256":  "255a9338064f408a0b670bba8af75c4e3059b3de0ecfdf15aa3da17c290d133d"
+    },
+    {
+        "path":  "protocol/.githooks/pre-commit",
+        "sha256":  "4f052fd38c9cb906b7ef2e9480766099f513e88ed89af61f8a7ab14136122e8e"
+    },
+    {
+        "path":  "protocol/AGENTS.md",
+        "sha256":  "2c534d64e2f28fdd034dc723a4c148aaf41e583904e0885d0fae43d8ec38cd9c"
+    },
+    {
+        "path":  "protocol/decisions/README.md",
+        "sha256":  "877531ea1a6075b0012d19f7bfb373c89143efaf9d27fef7c0cee75a9b1577e8"
+    },
+    {
+        "path":  "protocol/docs/development/adapting-other-tools.md",
+        "sha256":  "f9a2f9bf9d1a02a7efe6f626e273e1c9db709753b649df046743b297e191c556"
+    },
+    {
+        "path":  "protocol/docs/development/architecture-and-authority.md",
+        "sha256":  "85777dcf8e89aa10c61bc0a1e3a74aaec4c0cea60f9b6f93ed7c0ad1bab3bd37"
+    },
+    {
+        "path":  "protocol/docs/development/developing-tadp.md",
+        "sha256":  "8ea1cca52320fb57cd5d05215f45fd6e8a03279cd44068e297cd3d86f679ae69"
+    },
+    {
+        "path":  "protocol/docs/development/getting-started.md",
+        "sha256":  "8cb77134373c4c200a3f7bf20d7b1e69bd6ff44116f5e4a741e2888a7f6d15a1"
+    },
+    {
+        "path":  "protocol/docs/development/git-and-codex-requirements.md",
+        "sha256":  "92f6483d19181c91f96944d8febc052c59158b9247a368d4aaa6da8647b160b3"
+    },
+    {
+        "path":  "protocol/docs/development/initiative-workflow.md",
+        "sha256":  "82ff337efa834599b9fde5a0c88da1255fd5054dcfdb4721b3d239fdf9a54704"
+    },
+    {
+        "path":  "protocol/docs/development/repository-layout.md",
+        "sha256":  "24c9b04becc32ee0bcfa56b8ae2655ccb03db7fbd2f59462607508b824c047ea"
+    },
+    {
+        "path":  "protocol/docs/development/validation-and-quality.md",
+        "sha256":  "4c4de77967c6e5808cb350ac074328a5fd0a9aab1589dc7d6b81e59efb525313"
+    },
+    {
+        "path":  "protocol/docs/guides/initiative-coherence-migration.md",
+        "sha256":  "c72022ced0fcc9b7dd6c3f839b4184f453c0da715e4eefb530ef7bd5b8e8cfc7"
+    },
+    {
+        "path":  "protocol/docs/guides/legacy-initiative-decomposition.md",
+        "sha256":  "f46553ee699bb9f3452d05ff105507921bbc48e56c1ba2436e86739ca5fef923"
+    },
+    {
+        "path":  "protocol/docs/guides/project-local-prompts-migration.md",
+        "sha256":  "b91fbd449ed12503ea9152eb88a8c5415c725c2892af63584156a0d797fcf403"
+    },
+    {
+        "path":  "protocol/docs/guides/project-root-installation-migration.md",
+        "sha256":  "4c1df35563c51b8cb28d70ce8f5356518e097bf940f42a204147b6688be54ee1"
+    },
+    {
+        "path":  "protocol/docs/guides/prompt-keywords-migration.md",
+        "sha256":  "0940830acf5e67b0d96f2fdc3000afe5f145d3c47a817cc78a0149cacc26fc1c"
+    },
+    {
+        "path":  "protocol/docs/guides/protected-source-integrity-migration.md",
+        "sha256":  "f4ea1d93d29f200239634c9cbb3012dd0f8f05311b7e12e8a21c3b92a4724a1a"
+    },
+    {
+        "path":  "protocol/docs/guides/template-prerequisites-migration.md",
+        "sha256":  "df299340502e0ebbeb6b0940749a9552bf72e5e1a1661167ac8dea468bf901a0"
+    },
+    {
+        "path":  "protocol/docs/guides/version-realization-correlation-migration.md",
+        "sha256":  "4c4ae08a530081ba63be955b2f1a7e30448e5b1567094e544b1823c0e0f3b768"
+    },
+    {
+        "path":  "protocol/docs/guides/version-scope-migration.md",
+        "sha256":  "615c8e5aef37f330e4022bd598bd6cd6fedaeb543de8f079b254e04e1765845e"
+    },
+    {
+        "path":  "protocol/docs/guides/workflow-stage-0-13-migration.md",
+        "sha256":  "3240e16bc13e08ae9d914f2fb92a51035baf26cc4fb124079b2ca0785cda40ad"
+    },
+    {
+        "path":  "protocol/docs/README.md",
+        "sha256":  "b2827b62eb5eec9ca36a9828ddbc1ccb691b9b7658c73e5bcc4ba76c9458b0d6"
+    },
+    {
+        "path":  "protocol/evidence/authoritative/architecture/README.md",
+        "sha256":  "420a658b05ab6aa44f954946fde03b1f71d835444202646f7b13f910b8dd8ae5"
+    },
+    {
+        "path":  "protocol/evidence/authoritative/LLM/.tadp-lock.json",
+        "sha256":  "8b3edd995bc64a1bec78e7999c46b0ae5a53affdac33846084479ec2b9802057"
+    },
+    {
+        "path":  "protocol/evidence/authoritative/LLM/00_Codex_Invariant_Suite_Index.md",
+        "sha256":  "06889b85f3c3525f1029bcaab7c214ba1d2c526f147a528258bd8ec5a14508be"
+    },
+    {
+        "path":  "protocol/evidence/authoritative/LLM/01_Codex_Evidence_Authority_Specification.md",
+        "sha256":  "15eca5fe2555f6887bfcab9d3f65b8dba0d7a5c9c292988c14f65a9025df2360"
+    },
+    {
+        "path":  "protocol/evidence/authoritative/LLM/02_Codex_Initiative_Governance_Specification.md",
+        "sha256":  "6ad7ae7f3cfecf5cda4bcbad6f118cc416525fb1e6a4ae0f8f604df6f5967934"
+    },
+    {
+        "path":  "protocol/evidence/authoritative/LLM/03_Codex_Invariant_Conflict_Register.md",
+        "sha256":  "deb6eb1ba3011e5072a4c03c5df64e08feb2aa2338efb18ea7325f9091b36072"
+    },
+    {
+        "path":  "protocol/evidence/authoritative/LLM/04_Codex_Initiative_Lifecycle_Specification.md",
+        "sha256":  "a3bfde36d178ad7a86efb01785b81b357ea45577295aca0e9dc2f727fc9a479a"
+    },
+    {
+        "path":  "protocol/evidence/authoritative/LLM/05_Codex_Git_Workflow_Specification.md",
+        "sha256":  "59f4c4ecb04022a53ef5640700929064f42e1d963ebfa7bc6001db8b8eb8d4b5"
+    },
+    {
+        "path":  "protocol/evidence/authoritative/LLM/06_Codex_Initiative_Scope_Specification.md",
+        "sha256":  "1d4e8881890284299649f368f2600961591f6ee016a855ca4b3d1c0398a247a3"
+    },
+    {
+        "path":  "protocol/evidence/authoritative/LLM/07_Codex_Human_Decision_Receipt_Specification.md",
+        "sha256":  "f4bfbdf51b067e0744aff9670d212a933a5e048edbd778e6cfb7c755e45b79a9"
+    },
+    {
+        "path":  "protocol/evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md",
+        "sha256":  "270f50e92f92fdbf37abba95dc881b9c8d81322370dc5c545991fa72d2210504"
+    },
+    {
+        "path":  "protocol/evidence/authoritative/LLM/09_Codex_Version_Realization_Initiative_Correlation_Specification.md",
+        "sha256":  "d50fccb79c7526d2aaeaa1f81d0efa4c45cec7902e42c9c15ba82af9b1783d14"
+    },
+    {
+        "path":  "protocol/evidence/authoritative/LLM/10_Codex_Initiative_Coherence_Specification.md",
+        "sha256":  "30dcaaa84e322cad0604ac2af2610b54fbb0486cd3dee3ad6c33395267533cb8"
+    },
+    {
+        "path":  "protocol/evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md",
+        "sha256":  "58bb057f4fb54c5813d662cfcb5a7ddc0cec33e37e42f46507fcc5e18d051a41"
+    },
+    {
+        "path":  "protocol/evidence/authoritative/LLM/AGENTS.md",
+        "sha256":  "0f4995562ec74054f02ccce453ee2458b283eb13210816599f11156f98eb95ee"
+    },
+    {
+        "path":  "protocol/evidence/authoritative/README.md",
+        "sha256":  "69dcf6283e01cf56a5b27ecbc12356ef3b94f8454eb911e9438b1e804d166f00"
+    },
+    {
+        "path":  "protocol/evidence/authoritative/rules/README.md",
+        "sha256":  "54e287b03db3ac15856bc91e89b77c0e2eba6a682aeeaca43c23e4c40a31e8da"
+    },
+    {
+        "path":  "protocol/evidence/non-authoritative/README.md",
+        "sha256":  "409f9e0574162ff81d4b94a58d72b2d9f1efe3697484de3fc8abaf142a15fc1a"
+    },
+    {
+        "path":  "protocol/evidence/non-authoritative/realizations/README.md",
+        "sha256":  "7f8ab670bad6c24ca1d390a51adc40ac91c814a0727e11141c216e410154a12b"
+    },
+    {
+        "path":  "protocol/evidence/README.md",
+        "sha256":  "bd79d963fc24d09656a7fb1294ac72f5e7ad8c46dded1a8bd28b1cd2136a1a7e"
+    },
+    {
+        "path":  "protocol/initiatives/decision-receipts/README.md",
+        "sha256":  "eba6908cb8a86b7149250647ab35e27d85a67e4a8d777063a9c79e2a6fbfca4b"
+    },
+    {
+        "path":  "protocol/initiatives/design/README.md",
+        "sha256":  "34d22695e4dbbb93654b310d09649b3f8e2e3a3a794e644814730f2ab82d0f97"
+    },
+    {
+        "path":  "protocol/initiatives/implementation/README.md",
+        "sha256":  "a38b4f2636fea41097eeb60382c52c3bfbc295630ec4bda755db9648a4753a6d"
+    },
+    {
+        "path":  "protocol/initiatives/planning/README.md",
+        "sha256":  "887c7089f574d5040996e2a8f08e0e5017d9d97541bd8946943e0eb13546dc8f"
+    },
+    {
+        "path":  "protocol/initiatives/proposal/README.md",
+        "sha256":  "42e04d2f020a2e5c194b49212552592cf10e9699129417d969a84f0575422ca5"
+    },
+    {
+        "path":  "protocol/initiatives/README.md",
+        "sha256":  "1cd45fc2a350bab851f65fee3db99b4671abe6d89ed818ebf3383cd8d1dfb1ea"
+    },
+    {
+        "path":  "protocol/products/README.md",
+        "sha256":  "ab4f775f67d8081b910ca902ee791818ec6f2e76067bdce2d90f42dab734c9be"
+    },
+    {
+        "path":  "protocol/prompts/AGENTS.md",
+        "sha256":  "220c7251d06a208a313860b163da0af56ef025cecc28f9b1f3547c2f2e7aaf5c"
+    },
+    {
+        "path":  "protocol/prompts/README.md",
+        "sha256":  "66e7c3c536fc0ce4a338ecad165adda31612d9846d3ad86ebf3b50033b34c500"
+    },
+    {
+        "path":  "protocol/README.md",
+        "sha256":  "edaf0bd30fcac3d06e16ff793073fc40cf857b054cc2c06e8fe77bbd6d80e957"
+    },
+    {
+        "path":  "protocol/template/.tadp-lock.json",
+        "sha256":  "72a22a876838426e37672b31f416bd25ae0cea53862cd952d31cf20078ff3efb"
+    },
+    {
+        "path":  "protocol/template/AGENTS.md",
+        "sha256":  "abf5bacc278a8681c0bff9adf7a213eca0a1743c9dfbffbf00443e2472fe66c4"
+    },
+    {
+        "path":  "protocol/template/project/.gitattributes",
+        "sha256":  "e0e54d154882795470f911877f581def026f48ab58df415e801dfcfeae9608ca"
+    },
+    {
+        "path":  "protocol/template/project/.githooks/pre-commit",
+        "sha256":  "4f052fd38c9cb906b7ef2e9480766099f513e88ed89af61f8a7ab14136122e8e"
+    },
+    {
+        "path":  "protocol/template/project/.githooks/README.md",
+        "sha256":  "c4a19e213d1b049e847215c8d0ff68c7af003e488c02ff4bb58c757ffa52a25f"
+    },
+    {
+        "path":  "protocol/template/project/AGENTS.md",
+        "sha256":  "46cc2daf03e33b7f1b943b91695df63a269af332c189f9b3c3549c0c5d74b2d0"
+    },
+    {
+        "path":  "protocol/template/project/decisions/README.md",
+        "sha256":  "847240ca6d5358dc50e999eaad20495f339172517349157c613b3ee9989666be"
+    },
+    {
+        "path":  "protocol/template/project/docs/development/adapting-other-tools.md",
+        "sha256":  "e77e0b96a20ea9db043d61ef66c5c1c32ac98d4f9827f474592428a62264a4bb"
+    },
+    {
+        "path":  "protocol/template/project/docs/development/architecture-and-authority.md",
+        "sha256":  "a7a96afd16899f835a105c2cfcb6cf018c7e446cfc33e4e2cc5b22ed8265d075"
+    },
+    {
+        "path":  "protocol/template/project/docs/development/getting-started.md",
+        "sha256":  "84f4cc03fe989219961f5853c644264c74949b8864b5fcf94c3ffab9006ea85c"
+    },
+    {
+        "path":  "protocol/template/project/docs/development/git-and-codex-requirements.md",
+        "sha256":  "a0427971f3755208d2a2202f3c67b23a1088f09703e640500cc598a30014bb16"
+    },
+    {
+        "path":  "protocol/template/project/docs/development/initiative-workflow.md",
+        "sha256":  "3da7880a398a427ca64eecf071e319947ed37b1d8b111f03eda38fd156675f20"
+    },
+    {
+        "path":  "protocol/template/project/docs/development/README.md",
+        "sha256":  "2083d1799050c7240beba6cf44e3bbda48eedddf01c18793bfcead2af2c4a5c2"
+    },
+    {
+        "path":  "protocol/template/project/docs/development/repository-layout.md",
+        "sha256":  "2fd2eb8cb7b1ed1afd3494bc8271808482b3cf3cba4be5882805c7804ef2edf7"
+    },
+    {
+        "path":  "protocol/template/project/docs/development/validation-and-quality.md",
+        "sha256":  "e535d4268f59da37906b3d7ee2ecfb4083896bbf885c1cc27a96bc043307a82e"
+    },
+    {
+        "path":  "protocol/template/project/docs/guides/initiative-coherence-migration.md",
+        "sha256":  "845584934a42af1b0ceea6fc5aab20f05f021d08c539230c731fb328289be380"
+    },
+    {
+        "path":  "protocol/template/project/docs/guides/legacy-initiative-decomposition.md",
+        "sha256":  "a025188bca86bf66ad0d78b5bfa7a5fb145e268a71f863c8c2f122124034dee5"
+    },
+    {
+        "path":  "protocol/template/project/docs/guides/project-local-prompts-migration.md",
+        "sha256":  "25aef1bf88d412fbec4e4a2222ad9cd2cfc0544b3db0078b31336f9fd67b79ac"
+    },
+    {
+        "path":  "protocol/template/project/docs/guides/project-root-installation-migration.md",
+        "sha256":  "7da7bcb8b988631ae001afb2cdbc6b6980159be1c0243bee13cf3d8da1da5290"
+    },
+    {
+        "path":  "protocol/template/project/docs/guides/prompt-keywords-migration.md",
+        "sha256":  "1e1fcfe238ab74887daf18900833484569976cab8084b09c7c589398025a5e17"
+    },
+    {
+        "path":  "protocol/template/project/docs/guides/protected-source-integrity-migration.md",
+        "sha256":  "4de0af88bceb121a87c4066b12985a22d34c0873f2258bdaec97700213949da8"
+    },
+    {
+        "path":  "protocol/template/project/docs/guides/README.md",
+        "sha256":  "f0f513fb4c1f9db34d9edb0b7afb8a7cc61748f26ec75f8e56df005e65004ea1"
+    },
+    {
+        "path":  "protocol/template/project/docs/guides/template-prerequisites-migration.md",
+        "sha256":  "ac75322244a1432cd3411ff6d0705c0ec2e232296a9c0ea69679b3b398e23f4e"
+    },
+    {
+        "path":  "protocol/template/project/docs/guides/version-realization-correlation-migration.md",
+        "sha256":  "f5fbc5f32ac4f5316a1c46e915ab4a0122591358e92ce2699ef9568d2a3060f3"
+    },
+    {
+        "path":  "protocol/template/project/docs/guides/version-scope-migration.md",
+        "sha256":  "fd155ec9f82928c09656196ba65cc5a12d7c840d8d175025fd28af522fe4a7c5"
+    },
+    {
+        "path":  "protocol/template/project/docs/guides/workflow-stage-0-13-migration.md",
+        "sha256":  "a04c373fbbf0753ce61d61b3b30250e4fec211976c681137dcd9c55352f710a5"
+    },
+    {
+        "path":  "protocol/template/project/docs/README.md",
+        "sha256":  "5a92adc8c3533fd37e19db34f62510a0d9901938fd3c646c5c3e01a00f54f611"
+    },
+    {
+        "path":  "protocol/template/project/evidence/authoritative/architecture/architecture-decision.template.md",
+        "sha256":  "6f255f248497b5e8c4e9bfecb90d69c80ca095ce20d8caf8a606b34b6f316020"
+    },
+    {
+        "path":  "protocol/template/project/evidence/authoritative/architecture/component-contract.template.md",
+        "sha256":  "052b43bb1da88b7b2bd768679134eabab566bc1821d03927deacbbacb3530cdd"
+    },
+    {
+        "path":  "protocol/template/project/evidence/authoritative/architecture/README.md",
+        "sha256":  "f0b73fcefaa9f92f7400788df3a2962ded95d1997957e4741ed9d3d1db6820bf"
+    },
+    {
+        "path":  "protocol/template/project/evidence/authoritative/architecture/system-boundary.template.md",
+        "sha256":  "f767e344ae35befc89315c86b6ba9da5172c13339e9be965fed4b5078e4fd14c"
+    },
+    {
+        "path":  "protocol/template/project/evidence/authoritative/authoritative-evidence.template.md",
+        "sha256":  "2ba6fe75ef6f8461b939ef99431783ea041092c37c89a223536d26984899ef9c"
+    },
+    {
+        "path":  "protocol/template/project/evidence/authoritative/LLM/.tadp-lock.json",
+        "sha256":  "f9660b613a23b0ba34422180378ead48d3662a1cb3284e10ffae6e0e337d5f71"
+    },
+    {
+        "path":  "protocol/template/project/evidence/authoritative/LLM/00_Codex_Invariant_Suite_Index.md",
+        "sha256":  "adbbea3f9d8f3b421f40c6515564741a0548a441a5b5bff12cdb61e441cfad13"
+    },
+    {
+        "path":  "protocol/template/project/evidence/authoritative/LLM/01_Codex_Evidence_Authority_Specification.md",
+        "sha256":  "17a32f12823724d4972d2f2af79fcdfa97a1e986b3af3f1d644f4ba20795e4d0"
+    },
+    {
+        "path":  "protocol/template/project/evidence/authoritative/LLM/02_Codex_Initiative_Governance_Specification.md",
+        "sha256":  "822a7b0683b5ecf519751203844eff1acac45232b08ed585a4114a39340bccc8"
+    },
+    {
+        "path":  "protocol/template/project/evidence/authoritative/LLM/03_Codex_Invariant_Conflict_Register.md",
+        "sha256":  "deb6eb1ba3011e5072a4c03c5df64e08feb2aa2338efb18ea7325f9091b36072"
+    },
+    {
+        "path":  "protocol/template/project/evidence/authoritative/LLM/04_Codex_Initiative_Lifecycle_Specification.md",
+        "sha256":  "2cd1587650062b2677e3b537c25ff5e9715e1ee7a6d8881756b3ba46b590f6f2"
+    },
+    {
+        "path":  "protocol/template/project/evidence/authoritative/LLM/05_Codex_Git_Workflow_Specification.md",
+        "sha256":  "59f4c4ecb04022a53ef5640700929064f42e1d963ebfa7bc6001db8b8eb8d4b5"
+    },
+    {
+        "path":  "protocol/template/project/evidence/authoritative/LLM/06_Codex_Initiative_Scope_Specification.md",
+        "sha256":  "2fcfe32f6d7221ab329725478f03cc4d00f18cd674e6ec53b8a43e924cc64be3"
+    },
+    {
+        "path":  "protocol/template/project/evidence/authoritative/LLM/07_Codex_Human_Decision_Receipt_Specification.md",
+        "sha256":  "1c94946e9154d1383a685e96a538a29d99e048710d5e8813fa8247dcb6e5307b"
+    },
+    {
+        "path":  "protocol/template/project/evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md",
+        "sha256":  "270f50e92f92fdbf37abba95dc881b9c8d81322370dc5c545991fa72d2210504"
+    },
+    {
+        "path":  "protocol/template/project/evidence/authoritative/LLM/09_Codex_Version_Realization_Initiative_Correlation_Specification.md",
+        "sha256":  "d50fccb79c7526d2aaeaa1f81d0efa4c45cec7902e42c9c15ba82af9b1783d14"
+    },
+    {
+        "path":  "protocol/template/project/evidence/authoritative/LLM/10_Codex_Initiative_Coherence_Specification.md",
+        "sha256":  "30dcaaa84e322cad0604ac2af2610b54fbb0486cd3dee3ad6c33395267533cb8"
+    },
+    {
+        "path":  "protocol/template/project/evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md",
+        "sha256":  "58bb057f4fb54c5813d662cfcb5a7ddc0cec33e37e42f46507fcc5e18d051a41"
+    },
+    {
+        "path":  "protocol/template/project/evidence/authoritative/LLM/AGENTS.md",
+        "sha256":  "0f4995562ec74054f02ccce453ee2458b283eb13210816599f11156f98eb95ee"
+    },
+    {
+        "path":  "protocol/template/project/evidence/authoritative/LLM/README.md",
+        "sha256":  "f2dec453304e8d016da742a1f05a354b1ff7da3ad224a317b25ec206dfcd6d05"
+    },
+    {
+        "path":  "protocol/template/project/evidence/authoritative/README.md",
+        "sha256":  "4212077b23b8839ebc7744ffa424ab02c3064a301830ac1c2c556379b5c8b75a"
+    },
+    {
+        "path":  "protocol/template/project/evidence/authoritative/rules/README.md",
+        "sha256":  "b13d303d8083c812dddcbf415713e4288d3e637e4e610b7a1f228eb944cd8428"
+    },
+    {
+        "path":  "protocol/template/project/evidence/authoritative/rules/rule.template.md",
+        "sha256":  "d402207f21f43557de430ed112cfcf3568e74d240ec35b6920849681a93df91f"
+    },
+    {
+        "path":  "protocol/template/project/evidence/evidence-register.template.md",
+        "sha256":  "91d6551c8cd988c35fb71e5a7808f68129b612daa1e14523292bca66e3d471b1"
+    },
+    {
+        "path":  "protocol/template/project/evidence/non-authoritative/contextual-evidence.template.md",
+        "sha256":  "5967a7a282a5f605b2eca1bc9edcbfec36621a740411128d866896ca8c276d41"
+    },
+    {
+        "path":  "protocol/template/project/evidence/non-authoritative/README.md",
+        "sha256":  "87f82f63139546529f542ff29db649c8ab79fb6b280dc4f8f5befc0064172c01"
+    },
+    {
+        "path":  "protocol/template/project/evidence/non-authoritative/realizations/README.md",
+        "sha256":  "f26af5507bdf4b7527e8e6e6e630587926a9e5f301177b391f249ded2f7e6fc3"
+    },
+    {
+        "path":  "protocol/template/project/evidence/non-authoritative/realizations/realization.template.md",
+        "sha256":  "901e3b72383253430cf3a322d7b264edf158766e466fd7acddc0e0a154deed67"
+    },
+    {
+        "path":  "protocol/template/project/evidence/non-authoritative/realizations/realization-suite-index.template.md",
+        "sha256":  "9eaab4801a2aae937de7ae843a169a7bf9bf11b849b55e44ccb9492fe7cd899d"
+    },
+    {
+        "path":  "protocol/template/project/evidence/README.md",
+        "sha256":  "33ee35cce3838fe5ee4b19adbb2dd44dbc3c206356aed4658118ac732ebe9563"
+    },
+    {
+        "path":  "protocol/template/project/initiatives/architecture.template.md",
+        "sha256":  "48b708ef2763a90a6e9fc628e3b956efe9fcf049f91cb3307209719d4a8a1c01"
+    },
+    {
+        "path":  "protocol/template/project/initiatives/assumption.template.md",
+        "sha256":  "073a5ee0db5a761f5402ba6e41af5226dc184fdc088c3d8b55b22fc395fcb16a"
+    },
+    {
+        "path":  "protocol/template/project/initiatives/completion-evidence.template.md",
+        "sha256":  "f2c7cabad946f6eac9c2320339a90e61d0600f6d19d3469fb54b8d06f6ce8deb"
+    },
+    {
+        "path":  "protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+        "sha256":  "32124a658eaa4b81dab39635038c2652dfe05aecbef10dbfe3a3152d2ec7b1d1"
+    },
+    {
+        "path":  "protocol/template/project/initiatives/decision-receipts/gate-exception.template.md",
+        "sha256":  "4d9aeee5e2a69741862345a3c1878e5981080e236dec70fe16972960e73276c9"
+    },
+    {
+        "path":  "protocol/template/project/initiatives/decision-receipts/README.md",
+        "sha256":  "1f47573458e119ab52abc9d3b2a15e3a84399533d685543b31c57e04acda00ae"
+    },
+    {
+        "path":  "protocol/template/project/initiatives/decision-receipts/README.template.md",
+        "sha256":  "3ac5d299d5cabf7fa6c17f9fe4ba1e47ff7c05c5687d6cdf1f346be064c03cb7"
+    },
+    {
+        "path":  "protocol/template/project/initiatives/delivery-record.template.md",
+        "sha256":  "f1b8c8d785b51746fdbee822a3439377d5d5d3b196978a4d33e891e63b12fdcc"
+    },
+    {
+        "path":  "protocol/template/project/initiatives/design/README.md",
+        "sha256":  "803c4426de2c2dc23265c17bd3beae9e14638cd619a644367a61e1460eb80c51"
+    },
+    {
+        "path":  "protocol/template/project/initiatives/execution-record.template.md",
+        "sha256":  "4fef60e5beeb5723df73fdb9cece407dd2b482fd10ae84a267f4bc548d3661a8"
+    },
+    {
+        "path":  "protocol/template/project/initiatives/implementation/README.md",
+        "sha256":  "f88811c861a7155f0cd16512dece01846eaba897e57c826d26864a2afde3207a"
+    },
+    {
+        "path":  "protocol/template/project/initiatives/implementation-readiness.template.md",
+        "sha256":  "e5e42794a7ff9428655392000fb05d30a3a2f8a408d48a7e5a264814878b86af"
+    },
+    {
+        "path":  "protocol/template/project/initiatives/implementation-roadmap.template.md",
+        "sha256":  "61b9b6fe63501442d44a50ae773e3e79b539f5e2adea2ccc0fbf65a7bdd8b4fa"
+    },
+    {
+        "path":  "protocol/template/project/initiatives/implementation-steps.template.md",
+        "sha256":  "97afb470f707d0fdb6232e4219697fde2b1bfb177baa127ee4c819554ac529ed"
+    },
+    {
+        "path":  "protocol/template/project/initiatives/initiative-index.template.md",
+        "sha256":  "e5995a9f656caa95b10e3ed27fa20e5f159063e3446932fe6a7dcad2e418c034"
+    },
+    {
+        "path":  "protocol/template/project/initiatives/initiative-README.template.md",
+        "sha256":  "ce13d838977d10aaf0e0c9c18d4eb0fa77e9eeb0ad1351b4c789b22cbf2db3fc"
+    },
+    {
+        "path":  "protocol/template/project/initiatives/integration-receipt.template.md",
+        "sha256":  "cf8edc582691ab92258cdc3a9e95f75b4300286a3f2ba8b49b8ef34d4101e017"
+    },
+    {
+        "path":  "protocol/template/project/initiatives/open-questions.template.md",
+        "sha256":  "f141b1059cd83a55bbcb0961200b11999716650ca561520ec0cfb399060fbd93"
+    },
+    {
+        "path":  "protocol/template/project/initiatives/planning/README.md",
+        "sha256":  "1ff8350fca6737872369edee33533dae5d7c8a284a8efc96e776f4f83719ac52"
+    },
+    {
+        "path":  "protocol/template/project/initiatives/preparation-README.template.md",
+        "sha256":  "734c22dd3c6ea9e9a685220150234481abff00452e928661c9238c500b825c8c"
+    },
+    {
+        "path":  "protocol/template/project/initiatives/proposal/preparation-README.template.md",
+        "sha256":  "78a1febe5c171223cef2fd1b4ea504390531d5da20d3300dd221828396c191fa"
+    },
+    {
+        "path":  "protocol/template/project/initiatives/proposal/proposal.template.md",
+        "sha256":  "f4c9c42750280e04e0d9f2bf8b7e859580b57e9171fc4f01dee2740bc35340cb"
+    },
+    {
+        "path":  "protocol/template/project/initiatives/proposal/README.md",
+        "sha256":  "b45d54773ff618ab6ca0eaa82eb4f9c547212a851d4bfcbdd755606cd060398d"
+    },
+    {
+        "path":  "protocol/template/project/initiatives/proposal/README.template.md",
+        "sha256":  "b82eb71c20c26ad9ce6a2d7444e36c30c9841d2cb354b5837d7cd6e5a83ff3d8"
+    },
+    {
+        "path":  "protocol/template/project/initiatives/README.md",
+        "sha256":  "c6d79cc74bb19f68606038a31bedbd94638dfe75da6d7347d477e9bc13dbd206"
+    },
+    {
+        "path":  "protocol/template/project/initiatives/scope-assessment.template.md",
+        "sha256":  "f38bd65f47739255b34a99053f292deb63d7056345b26faba7064f583367f305"
+    },
+    {
+        "path":  "protocol/template/project/initiatives/scope-README.template.md",
+        "sha256":  "6a21936a427266d908e2532876030deb950b37f12aedaa1c0dedfccfe409c2a8"
+    },
+    {
+        "path":  "protocol/template/project/initiatives/source-mapping.template.md",
+        "sha256":  "02026e74921c8fc9d50daa66d5b9ae4a042b9ec30c9d2bbe97c4cc0d650db974"
+    },
+    {
+        "path":  "protocol/template/project/initiatives/status.template.md",
+        "sha256":  "8bee5ec2b6279c6e4ac6b28b3caa0965a6ccfa7a4456c09264e372afeaf9aa36"
+    },
+    {
+        "path":  "protocol/template/project/initiatives/version-correlation-migration-ledger.template.md",
+        "sha256":  "b336dfc69961b9ef5013fb84ee4486410980610957d56ae4397002b9e0380ba0"
+    },
+    {
+        "path":  "protocol/template/project/initiatives/version-scope-migration-ledger.template.md",
+        "sha256":  "c9f7efcdb998b1ad874adcecaf635b2e3bc9f08f9506eddcf2dadf69c0e67fd6"
+    },
+    {
+        "path":  "protocol/template/project/initiatives/version-scopes.template.md",
+        "sha256":  "92adc4d9cda8b336502a1eb2efa4a1782fcc8afd3f9ea4209eb0de8cfa443646"
+    },
+    {
+        "path":  "protocol/template/project/initiatives/work-conflicts.template.md",
+        "sha256":  "fd515195c0633bc55045ca8248c67342107bf436107d57ac4d4698d35152f879"
+    },
+    {
+        "path":  "protocol/template/project/products/product-record.template.md",
+        "sha256":  "e065309c48e13fe02667c3ba3d6b1472897e681b6f14afdae023d30d0b2ebab5"
+    },
+    {
+        "path":  "protocol/template/project/products/README.md",
+        "sha256":  "6329c13db12aa39a40dfdf429097e4ac380d30efed237e69b25d9a99dda940d1"
+    },
+    {
+        "path":  "protocol/template/project/project-profile.template.md",
+        "sha256":  "c34b83f85bf10e847fb69ead7aa2ce920aee1e9d5a06bc08ba6be4fbbd0e4452"
+    },
+    {
+        "path":  "protocol/template/project/prompts/AGENTS.md",
+        "sha256":  "ce59c53e0eba2ae6b0517f3fa2c3bfe4902546f3857156384f48105a9e93dcf6"
+    },
+    {
+        "path":  "protocol/template/project/prompts/README.md",
+        "sha256":  "e5717875a9f8dc1906ce70693f6dab2d8adea740849bd9991119254dd9ff6349"
+    },
+    {
+        "path":  "protocol/template/project/README.md",
+        "sha256":  "eb419733b7fbc17d189aac26cef194ea9d66286d9f451126832ff57a6e34c1ba"
+    },
+    {
+        "path":  "protocol/template/project/template/README.md",
+        "sha256":  "f9559aba03ac3cad9128bdebbdd6b8e4916e8514610a049b0158e175db4707f1"
+    },
+    {
+        "path":  "protocol/template/project/tests/README.md",
+        "sha256":  "9723de71e5092aaf5827bbb8e7a2d5e30d5d66f68e700eddeae53a3556c03266"
+    },
+    {
+        "path":  "protocol/template/project/tools/README.md",
+        "sha256":  "e617af0596400ff299b0ed5f5ca7bbbc55fdb9ba4c74315aeba1867db7fab202"
+    },
+    {
+        "path":  "protocol/template/project/tools/tadp_keywords.py",
+        "sha256":  "fde6d0f6cb6b44a46dfd446e91d1fcbb595e50a01d84bc2a9ffe4d36942236d3"
+    },
+    {
+        "path":  "protocol/template/project/tools/tadp_protect.py",
+        "sha256":  "7abb44b91a4e6890e0c30a7955b9619ea2f29a21ecb5d5e2d16e9a23e1e9f070"
+    },
+    {
+        "path":  "protocol/template/project/tools/tadp_scopes.py",
+        "sha256":  "f928f3b4c7c89de589aed84d373b7dbec5552f65558e4e41883d04c81479a0fa"
+    },
+    {
+        "path":  "protocol/template/project/tools/tadp_sync.py",
+        "sha256":  "dde1504f342a37f13bbe7b8536127219ec5f7cd85c8cfaf61916c781322b683d"
+    },
+    {
+        "path":  "protocol/template/project/tools/tadp_templates.py",
+        "sha256":  "0076683cbff675da2b0f2d41fc61363d959ef734f19fbe97c22cf063a92cd455"
+    },
+    {
+        "path":  "protocol/template/project/tools/tadp_validate.py",
+        "sha256":  "b9e82cae2074ba8c216bfa7ad43db3f0f15cc830aadc6bb2e0785df4a453586f"
+    },
+    {
+        "path":  "protocol/template/prompts/00_initiative_preparation.md",
+        "sha256":  "7d243958e2297b146377d49e137aab828bafba74f5126d66c60df68cf35efe00"
+    },
+    {
+        "path":  "protocol/template/prompts/01_proposal_creation.md",
+        "sha256":  "aa98bef7435e1acc815f052bfb5078c6ebac1fd3d45538c429ef17aeee1adea2"
+    },
+    {
+        "path":  "protocol/template/prompts/02_proposal_alignment.md",
+        "sha256":  "e94231f8f6684be24ccd02933016e9bb0c1dd066dcbdf3737689b99acfe6a7be"
+    },
+    {
+        "path":  "protocol/template/prompts/03_initiative_creation.md",
+        "sha256":  "53fffacb3cfb8122863472089a9a4d0a723e0d3ecbcf083fddf5f0b54cb8709b"
+    },
+    {
+        "path":  "protocol/template/prompts/04_initiative_alignment.md",
+        "sha256":  "c29d43d64a69e2a9710e325bff6cac009f2ffc4df3171f4a68e125a18df84694"
+    },
+    {
+        "path":  "protocol/template/prompts/05_initiative_assumption_review.md",
+        "sha256":  "eaee8e2330f5786c8442df9057c2da4ab443310176868d5561faefae2445771f"
+    },
+    {
+        "path":  "protocol/template/prompts/06_initiative_open_question_review.md",
+        "sha256":  "0e574a24117f7aee2403b3d3f8574f477d523c172aefb4a7d1bc7df454c637e9"
+    },
+    {
+        "path":  "protocol/template/prompts/07_initiative_acceptance.md",
+        "sha256":  "9179e1fe28e470b3fc2bacc521689bc02512917274c0eb9962bac39a8855a15d"
+    },
+    {
+        "path":  "protocol/template/prompts/08_initiative_sdk_api_alignment.md",
+        "sha256":  "f5f84257f122007e68ce58350f60eb4a9dc8b844b3629ef62ae187c8895e0f73"
+    },
+    {
+        "path":  "protocol/template/prompts/09_initiative_implementation_readiness_review.md",
+        "sha256":  "3b7239e45f9d988b500b0a5478151c47b7242341822fe8cf719b5c3e19fd6cb5"
+    },
+    {
+        "path":  "protocol/template/prompts/10_initiative_execution.md",
+        "sha256":  "fd97048ad6a41369065728cf9d444d087aeeb78a583796374fb9c2694b18e0d5"
+    },
+    {
+        "path":  "protocol/template/prompts/11_design_delivery.md",
+        "sha256":  "33418c09e818d12b32346e0e0ad2ded33bbe93b512b0351c4bde7a7288803b9d"
+    },
+    {
+        "path":  "protocol/template/prompts/12_planning_delivery.md",
+        "sha256":  "9c4735586f7b397b8c02e47d48874c4a08058e373223e543482eeb64938c2397"
+    },
+    {
+        "path":  "protocol/template/prompts/13_initiative_finalization.md",
+        "sha256":  "b276df03503057b005647f6599fc76e0fdcaeefb815027054b2f8de7f592aab4"
+    },
+    {
+        "path":  "protocol/template/prompts/README.md",
+        "sha256":  "dcd82ece7aa50b3481e77741562ecc7f18f9985f74e4de030676c3bde81de286"
+    },
+    {
+        "path":  "protocol/template/prompts/scope_closure.md",
+        "sha256":  "47f75c9517d96c0108f81eb380b1d39c61d1f3d2280590fed8e84a175ecd2a32"
+    },
+    {
+        "path":  "protocol/template/prompts/WORKFLOW-CONTRACT.md",
+        "sha256":  "79808741d57e64eede24dec30bec415d397a829776bc0efaeef1df73a084b4f5"
+    },
+    {
+        "path":  "protocol/template/README.md",
+        "sha256":  "e6341046c0e191c4297ad0dcf85eb4cdbf17c4ec61944e63cc5b67373e92ed85"
+    },
+    {
+        "path":  "protocol/template/TEMPLATE-COVERAGE.md",
+        "sha256":  "da47cbab60edcaaf8a41cc9078273eaff911a69ba6886f0a83a42bb118d6575c"
+    },
+    {
+        "path":  "protocol/tests/test_tadp_keywords.py",
+        "sha256":  "55f423a66ea6da2a07cf171356b920351b14b312bf82f0bf21fc7acbde9e0365"
+    },
+    {
+        "path":  "protocol/tests/test_tadp_project_roots.py",
+        "sha256":  "edf73ec18fcfbe12d6d38acedaab0473ef96de74e3098ea07a63c33c0a70b5fe"
+    },
+    {
+        "path":  "protocol/tests/test_tadp_protect.py",
+        "sha256":  "777c5ce860215b6f83e353a79a379d501546c690c7f1a15c6385d91489980a6d"
+    },
+    {
+        "path":  "protocol/tests/test_tadp_reset.py",
+        "sha256":  "0b5d50f3cd81e13963284d5d54fa3d59e6a705cef76e27ae323a8fe95ff4c0e8"
+    },
+    {
+        "path":  "protocol/tests/test_tadp_scope_topology.py",
+        "sha256":  "d1845f73ae8ca6bbd50a0b3c434a761d0d160d1da8853b8ab1e716dbb3264091"
+    },
+    {
+        "path":  "protocol/tests/test_tadp_scopes.py",
+        "sha256":  "c9fa54e58d4e8823775c6eebe34d91b728b90b8f4d1c5bde9ea121beeab67945"
+    },
+    {
+        "path":  "protocol/tests/test_tadp_sync.py",
+        "sha256":  "3125519bbe409af59f5bacf07f0fbbb3f7950c2fc1c6c496b6e93cad780800f9"
+    },
+    {
+        "path":  "protocol/tests/test_tadp_sync_local.py",
+        "sha256":  "f448b660c63c60e1a7b1b0c378732abeb55eacb3b4ce0651a91c67cc96bf1d1e"
+    },
+    {
+        "path":  "protocol/tests/test_tadp_templates.py",
+        "sha256":  "4dd88a8a4dc5bbd646e1394431785e2ac81b59ce4745c6a8a3ef83bcab608cb3"
+    },
+    {
+        "path":  "protocol/tests/test_tadp_validate.py",
+        "sha256":  "e8583fa8ec9b1288d4fc5f7d4c9f1877d7271f6d0beb5a7b256fcebea31ecdba"
+    },
+    {
+        "path":  "protocol/tools/README.md",
+        "sha256":  "c2a1608f4103c47362896db0c14896b7ae7c7e84961032437abdea226e17d74f"
+    },
+    {
+        "path":  "protocol/tools/tadp_keywords.py",
+        "sha256":  "b8df39e2b6f3a4d2b64a5bb39bab957e379338080018fbd36947449463c26f13"
+    },
+    {
+        "path":  "protocol/tools/tadp_protect.py",
+        "sha256":  "505d3664443cfb129552814e4d604966f94e924f7d2d6764faa02913a140feca"
+    },
+    {
+        "path":  "protocol/tools/tadp_reset.py",
+        "sha256":  "87d7b9c6cabaa87c3f29e0dd0207025131fa6c1f276cb9420929f482dddaeb8f"
+    },
+    {
+        "path":  "protocol/tools/tadp_scopes.py",
+        "sha256":  "637d22faed33d35c6a70362e2fcebd539f6c3d350cadc5ae5098d0ca8c26d98a"
+    },
+    {
+        "path":  "protocol/tools/tadp_sync.py",
+        "sha256":  "765faa53f144bac4991e88ea430e2593e384fbcb058ee98b21633eafd32f0895"
+    },
+    {
+        "path":  "protocol/tools/tadp_templates.py",
+        "sha256":  "f8e620aa9a7358fc62b02fae62359c0ba73ca0de3222d4fe44ffa32bcdcbea0e"
+    },
+    {
+        "path":  "protocol/tools/tadp_validate.py",
+        "sha256":  "5732e7e80331364f655c3f9b96a0560e2d6f9c211ff00e90b58bf9a87e61f727"
+    }
+]

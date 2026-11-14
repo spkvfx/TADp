@@ -1,0 +1,30 @@
+[
+    {
+        "cwd":  "C:\\Users\\User\\PycharmProjects\\TADp",
+        "project":  "C:\\Users\\User\\PycharmProjects\\TADp\\TADp",
+        "git_root":  "C:/Users/User/PycharmProjects/TADp",
+        "prefix":  "TADp/",
+        "candidate":  "C:\\Users\\User\\PycharmProjects\\TADp\\TADp\\protocol",
+        "library":  "C:\\Users\\User\\PycharmProjects\\TADp\\TADp\\template",
+        "upstream":  "C:\\Users\\User\\PycharmProjects\\TADp\\protocol",
+        "upstream_library":  "C:\\Users\\User\\PycharmProjects\\TADp\\protocol\\template",
+        "suite":  "C:\\Users\\User\\PycharmProjects\\TADp\\TADp\\evidence\\authoritative\\LLM",
+        "local_prompt":  "C:\\Users\\User\\PycharmProjects\\TADp\\TADp\\prompts\\AGENTS.md",
+        "nested_git":  false,
+        "candidate_profile":  false
+    },
+    {
+        "cwd":  "C:\\Users\\User\\PycharmProjects\\TADp\\TADp",
+        "project":  "C:\\Users\\User\\PycharmProjects\\TADp\\TADp",
+        "git_root":  "C:/Users/User/PycharmProjects/TADp",
+        "prefix":  "TADp/",
+        "candidate":  "C:\\Users\\User\\PycharmProjects\\TADp\\TADp\\protocol",
+        "library":  "C:\\Users\\User\\PycharmProjects\\TADp\\TADp\\template",
+        "upstream":  "C:\\Users\\User\\PycharmProjects\\TADp\\protocol",
+        "upstream_library":  "C:\\Users\\User\\PycharmProjects\\TADp\\protocol\\template",
+        "suite":  "C:\\Users\\User\\PycharmProjects\\TADp\\TADp\\evidence\\authoritative\\LLM",
+        "local_prompt":  "C:\\Users\\User\\PycharmProjects\\TADp\\TADp\\prompts\\AGENTS.md",
+        "nested_git":  false,
+        "candidate_profile":  false
+    }
+]

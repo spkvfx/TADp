@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "algorithm": "sha256-canonical-v1",
+  "protected_root": "evidence/authoritative/LLM",
+  "authority": "User instruction: completely clean protocol without any historical references",
+  "files": {
+    "00_Codex_Invariant_Suite_Index.md": "adbbea3f9d8f3b421f40c6515564741a0548a441a5b5bff12cdb61e441cfad13",
+    "01_Codex_Evidence_Authority_Specification.md": "17a32f12823724d4972d2f2af79fcdfa97a1e986b3af3f1d644f4ba20795e4d0",
+    "02_Codex_Initiative_Governance_Specification.md": "822a7b0683b5ecf519751203844eff1acac45232b08ed585a4114a39340bccc8",
+    "03_Codex_Invariant_Conflict_Register.md": "deb6eb1ba3011e5072a4c03c5df64e08feb2aa2338efb18ea7325f9091b36072",
+    "04_Codex_Initiative_Lifecycle_Specification.md": "2cd1587650062b2677e3b537c25ff5e9715e1ee7a6d8881756b3ba46b590f6f2",
+    "05_Codex_Git_Workflow_Specification.md": "59f4c4ecb04022a53ef5640700929064f42e1d963ebfa7bc6001db8b8eb8d4b5",
+    "06_Codex_Initiative_Scope_Specification.md": "2fcfe32f6d7221ab329725478f03cc4d00f18cd674e6ec53b8a43e924cc64be3",
+    "07_Codex_Human_Decision_Receipt_Specification.md": "1c94946e9154d1383a685e96a538a29d99e048710d5e8813fa8247dcb6e5307b",
+    "08_Codex_Initiative_Workflow_Specification.md": "270f50e92f92fdbf37abba95dc881b9c8d81322370dc5c545991fa72d2210504",
+    "09_Codex_Version_Realization_Initiative_Correlation_Specification.md": "d50fccb79c7526d2aaeaa1f81d0efa4c45cec7902e42c9c15ba82af9b1783d14",
+    "10_Codex_Initiative_Coherence_Specification.md": "30dcaaa84e322cad0604ac2af2610b54fbb0486cd3dee3ad6c33395267533cb8",
+    "11_Codex_Prompt_Keyword_Specification.md": "58bb057f4fb54c5813d662cfcb5a7ddc0cec33e37e42f46507fcc5e18d051a41",
+    "AGENTS.md": "0f4995562ec74054f02ccce453ee2458b283eb13210816599f11156f98eb95ee",
+    "README.md": "f2dec453304e8d016da742a1f05a354b1ff7da3ad224a317b25ec206dfcd6d05"
+  }
+}

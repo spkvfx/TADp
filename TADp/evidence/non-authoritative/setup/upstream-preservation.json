@@ -1,0 +1,11 @@
+{
+    "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+    "before_files":  195,
+    "after_files":  195,
+    "changed_added_removed":  0,
+    "reparse_points":  0,
+    "upstream_git_diff":  [
+
+                          ],
+    "result":  "All upstream bytes and locks preserved"
+}

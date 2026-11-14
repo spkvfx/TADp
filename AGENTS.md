@@ -1,5 +1,32 @@
 # TADp repository instructions for Codex
 
+## Development project and distribution
+
+The installed development home is [TADp/](TADp/README.md), with its own
+[profile](TADp/project-profile.md) and
+[development workflow](TADp/docs/development/tadp-development-workflow.md).
+For new TADp development, resolve project `P=R/TADp/` and candidate workspace
+`C=P/protocol/` explicitly from either repository or project context. Do not
+develop directly in `R/protocol/`; it is the implementation-ready distribution.
+The candidate directory is not another scaffold or governing baseline.
+
+Keep project governance and history at `P`, candidate work at `C`, and the
+protected installed library at `P/template/`. Preserve the full serial route:
+develop and qualify in `C`, introduce exact authorized proven work into
+`P/template/`, complete the development work, promote its sanitized output into
+`R/protocol/template/`, then roll out to specifically mapped `R/protocol/`
+consumers. Each later boundary requires sufficient exact authority and evidence;
+the project setup grants no future protected-source change, promotion or rollout.
+
+An invoked repository-level maintenance instruction must identify the exact
+candidate work and target before generic development begins. Do not silently
+retarget an older prompt or use its distribution target for experimental work.
+Keep `P/prompts/AGENTS.md` unchanged: project-local prompts cannot gain generic
+protocol-maintenance or outside-project authority through a cwd change. Existing
+governing requirements below remain binding. Ownership follows the current
+repository-owner role, including each fork's respective owner; prospective
+adoption is recorded separately in the profile. Setup creates no initiative acceptance.
+
 For every TADp task, read and apply the canonical
 [prompt keyword specification](protocol/evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md),
 including ordinary requests, analysis, and all prompt types. Its registry owns

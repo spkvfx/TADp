@@ -1,0 +1,2036 @@
+[
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/.gitattributes",
+        "source_sha256":  "e0e54d154882795470f911877f581def026f48ab58df415e801dfcfeae9608ca",
+        "destination":  "TADp/.gitattributes",
+        "installed_sha256":  "e0e54d154882795470f911877f581def026f48ab58df415e801dfcfeae9608ca",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/.githooks/pre-commit",
+        "source_sha256":  "4f052fd38c9cb906b7ef2e9480766099f513e88ed89af61f8a7ab14136122e8e",
+        "destination":  "TADp/.githooks/pre-commit",
+        "installed_sha256":  "4f052fd38c9cb906b7ef2e9480766099f513e88ed89af61f8a7ab14136122e8e",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/.githooks/README.md",
+        "source_sha256":  "c4a19e213d1b049e847215c8d0ff68c7af003e488c02ff4bb58c757ffa52a25f",
+        "destination":  "TADp/.githooks/README.md",
+        "installed_sha256":  "c4a19e213d1b049e847215c8d0ff68c7af003e488c02ff4bb58c757ffa52a25f",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/AGENTS.md",
+        "source_sha256":  "46cc2daf03e33b7f1b943b91695df63a269af332c189f9b3c3549c0c5d74b2d0",
+        "destination":  "TADp/AGENTS.md",
+        "installed_sha256":  "a6606808ed4a7d64e48fe4aec6f3e3b0ee4f4d5234c39bd8823df63951031ac8",
+        "disposition":  "Working entry point customized for authorized setup",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/decisions/README.md",
+        "source_sha256":  "847240ca6d5358dc50e999eaad20495f339172517349157c613b3ee9989666be",
+        "destination":  "TADp/decisions/README.md",
+        "installed_sha256":  "847240ca6d5358dc50e999eaad20495f339172517349157c613b3ee9989666be",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/docs/development/adapting-other-tools.md",
+        "source_sha256":  "e77e0b96a20ea9db043d61ef66c5c1c32ac98d4f9827f474592428a62264a4bb",
+        "destination":  "TADp/docs/development/adapting-other-tools.md",
+        "installed_sha256":  "e77e0b96a20ea9db043d61ef66c5c1c32ac98d4f9827f474592428a62264a4bb",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/docs/development/architecture-and-authority.md",
+        "source_sha256":  "a7a96afd16899f835a105c2cfcb6cf018c7e446cfc33e4e2cc5b22ed8265d075",
+        "destination":  "TADp/docs/development/architecture-and-authority.md",
+        "installed_sha256":  "a7a96afd16899f835a105c2cfcb6cf018c7e446cfc33e4e2cc5b22ed8265d075",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/docs/development/getting-started.md",
+        "source_sha256":  "84f4cc03fe989219961f5853c644264c74949b8864b5fcf94c3ffab9006ea85c",
+        "destination":  "TADp/docs/development/getting-started.md",
+        "installed_sha256":  "84f4cc03fe989219961f5853c644264c74949b8864b5fcf94c3ffab9006ea85c",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/docs/development/git-and-codex-requirements.md",
+        "source_sha256":  "a0427971f3755208d2a2202f3c67b23a1088f09703e640500cc598a30014bb16",
+        "destination":  "TADp/docs/development/git-and-codex-requirements.md",
+        "installed_sha256":  "a0427971f3755208d2a2202f3c67b23a1088f09703e640500cc598a30014bb16",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/docs/development/initiative-workflow.md",
+        "source_sha256":  "3da7880a398a427ca64eecf071e319947ed37b1d8b111f03eda38fd156675f20",
+        "destination":  "TADp/docs/development/initiative-workflow.md",
+        "installed_sha256":  "3da7880a398a427ca64eecf071e319947ed37b1d8b111f03eda38fd156675f20",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/docs/development/README.md",
+        "source_sha256":  "2083d1799050c7240beba6cf44e3bbda48eedddf01c18793bfcead2af2c4a5c2",
+        "destination":  "TADp/docs/development/README.md",
+        "installed_sha256":  "2083d1799050c7240beba6cf44e3bbda48eedddf01c18793bfcead2af2c4a5c2",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/docs/development/repository-layout.md",
+        "source_sha256":  "2fd2eb8cb7b1ed1afd3494bc8271808482b3cf3cba4be5882805c7804ef2edf7",
+        "destination":  "TADp/docs/development/repository-layout.md",
+        "installed_sha256":  "2fd2eb8cb7b1ed1afd3494bc8271808482b3cf3cba4be5882805c7804ef2edf7",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/docs/development/validation-and-quality.md",
+        "source_sha256":  "e535d4268f59da37906b3d7ee2ecfb4083896bbf885c1cc27a96bc043307a82e",
+        "destination":  "TADp/docs/development/validation-and-quality.md",
+        "installed_sha256":  "e535d4268f59da37906b3d7ee2ecfb4083896bbf885c1cc27a96bc043307a82e",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/docs/guides/initiative-coherence-migration.md",
+        "source_sha256":  "845584934a42af1b0ceea6fc5aab20f05f021d08c539230c731fb328289be380",
+        "destination":  "TADp/docs/guides/initiative-coherence-migration.md",
+        "installed_sha256":  "845584934a42af1b0ceea6fc5aab20f05f021d08c539230c731fb328289be380",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/docs/guides/legacy-initiative-decomposition.md",
+        "source_sha256":  "a025188bca86bf66ad0d78b5bfa7a5fb145e268a71f863c8c2f122124034dee5",
+        "destination":  "TADp/docs/guides/legacy-initiative-decomposition.md",
+        "installed_sha256":  "a025188bca86bf66ad0d78b5bfa7a5fb145e268a71f863c8c2f122124034dee5",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/docs/guides/project-local-prompts-migration.md",
+        "source_sha256":  "25aef1bf88d412fbec4e4a2222ad9cd2cfc0544b3db0078b31336f9fd67b79ac",
+        "destination":  "TADp/docs/guides/project-local-prompts-migration.md",
+        "installed_sha256":  "25aef1bf88d412fbec4e4a2222ad9cd2cfc0544b3db0078b31336f9fd67b79ac",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/docs/guides/project-root-installation-migration.md",
+        "source_sha256":  "7da7bcb8b988631ae001afb2cdbc6b6980159be1c0243bee13cf3d8da1da5290",
+        "destination":  "TADp/docs/guides/project-root-installation-migration.md",
+        "installed_sha256":  "7da7bcb8b988631ae001afb2cdbc6b6980159be1c0243bee13cf3d8da1da5290",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/docs/guides/prompt-keywords-migration.md",
+        "source_sha256":  "1e1fcfe238ab74887daf18900833484569976cab8084b09c7c589398025a5e17",
+        "destination":  "TADp/docs/guides/prompt-keywords-migration.md",
+        "installed_sha256":  "1e1fcfe238ab74887daf18900833484569976cab8084b09c7c589398025a5e17",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/docs/guides/protected-source-integrity-migration.md",
+        "source_sha256":  "4de0af88bceb121a87c4066b12985a22d34c0873f2258bdaec97700213949da8",
+        "destination":  "TADp/docs/guides/protected-source-integrity-migration.md",
+        "installed_sha256":  "4de0af88bceb121a87c4066b12985a22d34c0873f2258bdaec97700213949da8",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/docs/guides/README.md",
+        "source_sha256":  "f0f513fb4c1f9db34d9edb0b7afb8a7cc61748f26ec75f8e56df005e65004ea1",
+        "destination":  "TADp/docs/guides/README.md",
+        "installed_sha256":  "f0f513fb4c1f9db34d9edb0b7afb8a7cc61748f26ec75f8e56df005e65004ea1",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/docs/guides/template-prerequisites-migration.md",
+        "source_sha256":  "ac75322244a1432cd3411ff6d0705c0ec2e232296a9c0ea69679b3b398e23f4e",
+        "destination":  "TADp/docs/guides/template-prerequisites-migration.md",
+        "installed_sha256":  "ac75322244a1432cd3411ff6d0705c0ec2e232296a9c0ea69679b3b398e23f4e",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/docs/guides/version-realization-correlation-migration.md",
+        "source_sha256":  "f5fbc5f32ac4f5316a1c46e915ab4a0122591358e92ce2699ef9568d2a3060f3",
+        "destination":  "TADp/docs/guides/version-realization-correlation-migration.md",
+        "installed_sha256":  "f5fbc5f32ac4f5316a1c46e915ab4a0122591358e92ce2699ef9568d2a3060f3",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/docs/guides/version-scope-migration.md",
+        "source_sha256":  "fd155ec9f82928c09656196ba65cc5a12d7c840d8d175025fd28af522fe4a7c5",
+        "destination":  "TADp/docs/guides/version-scope-migration.md",
+        "installed_sha256":  "fd155ec9f82928c09656196ba65cc5a12d7c840d8d175025fd28af522fe4a7c5",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/docs/guides/workflow-stage-0-13-migration.md",
+        "source_sha256":  "a04c373fbbf0753ce61d61b3b30250e4fec211976c681137dcd9c55352f710a5",
+        "destination":  "TADp/docs/guides/workflow-stage-0-13-migration.md",
+        "installed_sha256":  "a04c373fbbf0753ce61d61b3b30250e4fec211976c681137dcd9c55352f710a5",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/docs/README.md",
+        "source_sha256":  "5a92adc8c3533fd37e19db34f62510a0d9901938fd3c646c5c3e01a00f54f611",
+        "destination":  "TADp/docs/README.md",
+        "installed_sha256":  "5a92adc8c3533fd37e19db34f62510a0d9901938fd3c646c5c3e01a00f54f611",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/architecture/architecture-decision.template.md",
+        "source_sha256":  "6f255f248497b5e8c4e9bfecb90d69c80ca095ce20d8caf8a606b34b6f316020",
+        "destination":  "TADp/evidence/authoritative/architecture/architecture-decision.template.md",
+        "installed_sha256":  "6f255f248497b5e8c4e9bfecb90d69c80ca095ce20d8caf8a606b34b6f316020",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/architecture/component-contract.template.md",
+        "source_sha256":  "052b43bb1da88b7b2bd768679134eabab566bc1821d03927deacbbacb3530cdd",
+        "destination":  "TADp/evidence/authoritative/architecture/component-contract.template.md",
+        "installed_sha256":  "052b43bb1da88b7b2bd768679134eabab566bc1821d03927deacbbacb3530cdd",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/architecture/README.md",
+        "source_sha256":  "f0b73fcefaa9f92f7400788df3a2962ded95d1997957e4741ed9d3d1db6820bf",
+        "destination":  "TADp/evidence/authoritative/architecture/README.md",
+        "installed_sha256":  "f0b73fcefaa9f92f7400788df3a2962ded95d1997957e4741ed9d3d1db6820bf",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/architecture/system-boundary.template.md",
+        "source_sha256":  "f767e344ae35befc89315c86b6ba9da5172c13339e9be965fed4b5078e4fd14c",
+        "destination":  "TADp/evidence/authoritative/architecture/system-boundary.template.md",
+        "installed_sha256":  "f767e344ae35befc89315c86b6ba9da5172c13339e9be965fed4b5078e4fd14c",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/authoritative-evidence.template.md",
+        "source_sha256":  "2ba6fe75ef6f8461b939ef99431783ea041092c37c89a223536d26984899ef9c",
+        "destination":  "TADp/evidence/authoritative/authoritative-evidence.template.md",
+        "installed_sha256":  "2ba6fe75ef6f8461b939ef99431783ea041092c37c89a223536d26984899ef9c",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/LLM/.tadp-lock.json",
+        "source_sha256":  "f9660b613a23b0ba34422180378ead48d3662a1cb3284e10ffae6e0e337d5f71",
+        "destination":  "TADp/evidence/authoritative/LLM/.tadp-lock.json",
+        "installed_sha256":  "f9660b613a23b0ba34422180378ead48d3662a1cb3284e10ffae6e0e337d5f71",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/LLM/00_Codex_Invariant_Suite_Index.md",
+        "source_sha256":  "adbbea3f9d8f3b421f40c6515564741a0548a441a5b5bff12cdb61e441cfad13",
+        "destination":  "TADp/evidence/authoritative/LLM/00_Codex_Invariant_Suite_Index.md",
+        "installed_sha256":  "adbbea3f9d8f3b421f40c6515564741a0548a441a5b5bff12cdb61e441cfad13",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/LLM/01_Codex_Evidence_Authority_Specification.md",
+        "source_sha256":  "17a32f12823724d4972d2f2af79fcdfa97a1e986b3af3f1d644f4ba20795e4d0",
+        "destination":  "TADp/evidence/authoritative/LLM/01_Codex_Evidence_Authority_Specification.md",
+        "installed_sha256":  "17a32f12823724d4972d2f2af79fcdfa97a1e986b3af3f1d644f4ba20795e4d0",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/LLM/02_Codex_Initiative_Governance_Specification.md",
+        "source_sha256":  "822a7b0683b5ecf519751203844eff1acac45232b08ed585a4114a39340bccc8",
+        "destination":  "TADp/evidence/authoritative/LLM/02_Codex_Initiative_Governance_Specification.md",
+        "installed_sha256":  "822a7b0683b5ecf519751203844eff1acac45232b08ed585a4114a39340bccc8",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/LLM/03_Codex_Invariant_Conflict_Register.md",
+        "source_sha256":  "deb6eb1ba3011e5072a4c03c5df64e08feb2aa2338efb18ea7325f9091b36072",
+        "destination":  "TADp/evidence/authoritative/LLM/03_Codex_Invariant_Conflict_Register.md",
+        "installed_sha256":  "deb6eb1ba3011e5072a4c03c5df64e08feb2aa2338efb18ea7325f9091b36072",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/LLM/04_Codex_Initiative_Lifecycle_Specification.md",
+        "source_sha256":  "2cd1587650062b2677e3b537c25ff5e9715e1ee7a6d8881756b3ba46b590f6f2",
+        "destination":  "TADp/evidence/authoritative/LLM/04_Codex_Initiative_Lifecycle_Specification.md",
+        "installed_sha256":  "2cd1587650062b2677e3b537c25ff5e9715e1ee7a6d8881756b3ba46b590f6f2",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/LLM/05_Codex_Git_Workflow_Specification.md",
+        "source_sha256":  "59f4c4ecb04022a53ef5640700929064f42e1d963ebfa7bc6001db8b8eb8d4b5",
+        "destination":  "TADp/evidence/authoritative/LLM/05_Codex_Git_Workflow_Specification.md",
+        "installed_sha256":  "59f4c4ecb04022a53ef5640700929064f42e1d963ebfa7bc6001db8b8eb8d4b5",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/LLM/06_Codex_Initiative_Scope_Specification.md",
+        "source_sha256":  "2fcfe32f6d7221ab329725478f03cc4d00f18cd674e6ec53b8a43e924cc64be3",
+        "destination":  "TADp/evidence/authoritative/LLM/06_Codex_Initiative_Scope_Specification.md",
+        "installed_sha256":  "2fcfe32f6d7221ab329725478f03cc4d00f18cd674e6ec53b8a43e924cc64be3",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/LLM/07_Codex_Human_Decision_Receipt_Specification.md",
+        "source_sha256":  "1c94946e9154d1383a685e96a538a29d99e048710d5e8813fa8247dcb6e5307b",
+        "destination":  "TADp/evidence/authoritative/LLM/07_Codex_Human_Decision_Receipt_Specification.md",
+        "installed_sha256":  "1c94946e9154d1383a685e96a538a29d99e048710d5e8813fa8247dcb6e5307b",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md",
+        "source_sha256":  "270f50e92f92fdbf37abba95dc881b9c8d81322370dc5c545991fa72d2210504",
+        "destination":  "TADp/evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md",
+        "installed_sha256":  "270f50e92f92fdbf37abba95dc881b9c8d81322370dc5c545991fa72d2210504",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/LLM/09_Codex_Version_Realization_Initiative_Correlation_Specification.md",
+        "source_sha256":  "d50fccb79c7526d2aaeaa1f81d0efa4c45cec7902e42c9c15ba82af9b1783d14",
+        "destination":  "TADp/evidence/authoritative/LLM/09_Codex_Version_Realization_Initiative_Correlation_Specification.md",
+        "installed_sha256":  "d50fccb79c7526d2aaeaa1f81d0efa4c45cec7902e42c9c15ba82af9b1783d14",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/LLM/10_Codex_Initiative_Coherence_Specification.md",
+        "source_sha256":  "30dcaaa84e322cad0604ac2af2610b54fbb0486cd3dee3ad6c33395267533cb8",
+        "destination":  "TADp/evidence/authoritative/LLM/10_Codex_Initiative_Coherence_Specification.md",
+        "installed_sha256":  "30dcaaa84e322cad0604ac2af2610b54fbb0486cd3dee3ad6c33395267533cb8",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md",
+        "source_sha256":  "58bb057f4fb54c5813d662cfcb5a7ddc0cec33e37e42f46507fcc5e18d051a41",
+        "destination":  "TADp/evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md",
+        "installed_sha256":  "58bb057f4fb54c5813d662cfcb5a7ddc0cec33e37e42f46507fcc5e18d051a41",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/LLM/AGENTS.md",
+        "source_sha256":  "0f4995562ec74054f02ccce453ee2458b283eb13210816599f11156f98eb95ee",
+        "destination":  "TADp/evidence/authoritative/LLM/AGENTS.md",
+        "installed_sha256":  "0f4995562ec74054f02ccce453ee2458b283eb13210816599f11156f98eb95ee",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/LLM/README.md",
+        "source_sha256":  "f2dec453304e8d016da742a1f05a354b1ff7da3ad224a317b25ec206dfcd6d05",
+        "destination":  "TADp/evidence/authoritative/LLM/README.md",
+        "installed_sha256":  "f2dec453304e8d016da742a1f05a354b1ff7da3ad224a317b25ec206dfcd6d05",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/README.md",
+        "source_sha256":  "4212077b23b8839ebc7744ffa424ab02c3064a301830ac1c2c556379b5c8b75a",
+        "destination":  "TADp/evidence/authoritative/README.md",
+        "installed_sha256":  "4212077b23b8839ebc7744ffa424ab02c3064a301830ac1c2c556379b5c8b75a",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/rules/README.md",
+        "source_sha256":  "b13d303d8083c812dddcbf415713e4288d3e637e4e610b7a1f228eb944cd8428",
+        "destination":  "TADp/evidence/authoritative/rules/README.md",
+        "installed_sha256":  "b13d303d8083c812dddcbf415713e4288d3e637e4e610b7a1f228eb944cd8428",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/rules/rule.template.md",
+        "source_sha256":  "d402207f21f43557de430ed112cfcf3568e74d240ec35b6920849681a93df91f",
+        "destination":  "TADp/evidence/authoritative/rules/rule.template.md",
+        "installed_sha256":  "d402207f21f43557de430ed112cfcf3568e74d240ec35b6920849681a93df91f",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/evidence-register.template.md",
+        "source_sha256":  "91d6551c8cd988c35fb71e5a7808f68129b612daa1e14523292bca66e3d471b1",
+        "destination":  "TADp/evidence/evidence-register.template.md",
+        "installed_sha256":  "91d6551c8cd988c35fb71e5a7808f68129b612daa1e14523292bca66e3d471b1",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/non-authoritative/contextual-evidence.template.md",
+        "source_sha256":  "5967a7a282a5f605b2eca1bc9edcbfec36621a740411128d866896ca8c276d41",
+        "destination":  "TADp/evidence/non-authoritative/contextual-evidence.template.md",
+        "installed_sha256":  "5967a7a282a5f605b2eca1bc9edcbfec36621a740411128d866896ca8c276d41",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/non-authoritative/README.md",
+        "source_sha256":  "87f82f63139546529f542ff29db649c8ab79fb6b280dc4f8f5befc0064172c01",
+        "destination":  "TADp/evidence/non-authoritative/README.md",
+        "installed_sha256":  "87f82f63139546529f542ff29db649c8ab79fb6b280dc4f8f5befc0064172c01",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/non-authoritative/realizations/README.md",
+        "source_sha256":  "f26af5507bdf4b7527e8e6e6e630587926a9e5f301177b391f249ded2f7e6fc3",
+        "destination":  "TADp/evidence/non-authoritative/realizations/README.md",
+        "installed_sha256":  "f26af5507bdf4b7527e8e6e6e630587926a9e5f301177b391f249ded2f7e6fc3",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/non-authoritative/realizations/realization.template.md",
+        "source_sha256":  "901e3b72383253430cf3a322d7b264edf158766e466fd7acddc0e0a154deed67",
+        "destination":  "TADp/evidence/non-authoritative/realizations/realization.template.md",
+        "installed_sha256":  "901e3b72383253430cf3a322d7b264edf158766e466fd7acddc0e0a154deed67",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/non-authoritative/realizations/realization-suite-index.template.md",
+        "source_sha256":  "9eaab4801a2aae937de7ae843a169a7bf9bf11b849b55e44ccb9492fe7cd899d",
+        "destination":  "TADp/evidence/non-authoritative/realizations/realization-suite-index.template.md",
+        "installed_sha256":  "9eaab4801a2aae937de7ae843a169a7bf9bf11b849b55e44ccb9492fe7cd899d",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/README.md",
+        "source_sha256":  "33ee35cce3838fe5ee4b19adbb2dd44dbc3c206356aed4658118ac732ebe9563",
+        "destination":  "TADp/evidence/README.md",
+        "installed_sha256":  "33ee35cce3838fe5ee4b19adbb2dd44dbc3c206356aed4658118ac732ebe9563",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/architecture.template.md",
+        "source_sha256":  "48b708ef2763a90a6e9fc628e3b956efe9fcf049f91cb3307209719d4a8a1c01",
+        "destination":  "TADp/initiatives/architecture.template.md",
+        "installed_sha256":  "48b708ef2763a90a6e9fc628e3b956efe9fcf049f91cb3307209719d4a8a1c01",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/assumption.template.md",
+        "source_sha256":  "073a5ee0db5a761f5402ba6e41af5226dc184fdc088c3d8b55b22fc395fcb16a",
+        "destination":  "TADp/initiatives/assumption.template.md",
+        "installed_sha256":  "073a5ee0db5a761f5402ba6e41af5226dc184fdc088c3d8b55b22fc395fcb16a",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/completion-evidence.template.md",
+        "source_sha256":  "f2c7cabad946f6eac9c2320339a90e61d0600f6d19d3469fb54b8d06f6ce8deb",
+        "destination":  "TADp/initiatives/completion-evidence.template.md",
+        "installed_sha256":  "f2c7cabad946f6eac9c2320339a90e61d0600f6d19d3469fb54b8d06f6ce8deb",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+        "source_sha256":  "32124a658eaa4b81dab39635038c2652dfe05aecbef10dbfe3a3152d2ec7b1d1",
+        "destination":  "TADp/initiatives/decision-receipts/decision-receipt.template.md",
+        "installed_sha256":  "32124a658eaa4b81dab39635038c2652dfe05aecbef10dbfe3a3152d2ec7b1d1",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/decision-receipts/gate-exception.template.md",
+        "source_sha256":  "4d9aeee5e2a69741862345a3c1878e5981080e236dec70fe16972960e73276c9",
+        "destination":  "TADp/initiatives/decision-receipts/gate-exception.template.md",
+        "installed_sha256":  "4d9aeee5e2a69741862345a3c1878e5981080e236dec70fe16972960e73276c9",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/decision-receipts/README.md",
+        "source_sha256":  "1f47573458e119ab52abc9d3b2a15e3a84399533d685543b31c57e04acda00ae",
+        "destination":  "TADp/initiatives/decision-receipts/README.md",
+        "installed_sha256":  "1f47573458e119ab52abc9d3b2a15e3a84399533d685543b31c57e04acda00ae",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/decision-receipts/README.template.md",
+        "source_sha256":  "3ac5d299d5cabf7fa6c17f9fe4ba1e47ff7c05c5687d6cdf1f346be064c03cb7",
+        "destination":  "TADp/initiatives/decision-receipts/README.template.md",
+        "installed_sha256":  "3ac5d299d5cabf7fa6c17f9fe4ba1e47ff7c05c5687d6cdf1f346be064c03cb7",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/delivery-record.template.md",
+        "source_sha256":  "f1b8c8d785b51746fdbee822a3439377d5d5d3b196978a4d33e891e63b12fdcc",
+        "destination":  "TADp/initiatives/delivery-record.template.md",
+        "installed_sha256":  "f1b8c8d785b51746fdbee822a3439377d5d5d3b196978a4d33e891e63b12fdcc",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/design/README.md",
+        "source_sha256":  "803c4426de2c2dc23265c17bd3beae9e14638cd619a644367a61e1460eb80c51",
+        "destination":  "TADp/initiatives/design/README.md",
+        "installed_sha256":  "803c4426de2c2dc23265c17bd3beae9e14638cd619a644367a61e1460eb80c51",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/execution-record.template.md",
+        "source_sha256":  "4fef60e5beeb5723df73fdb9cece407dd2b482fd10ae84a267f4bc548d3661a8",
+        "destination":  "TADp/initiatives/execution-record.template.md",
+        "installed_sha256":  "4fef60e5beeb5723df73fdb9cece407dd2b482fd10ae84a267f4bc548d3661a8",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/implementation/README.md",
+        "source_sha256":  "f88811c861a7155f0cd16512dece01846eaba897e57c826d26864a2afde3207a",
+        "destination":  "TADp/initiatives/implementation/README.md",
+        "installed_sha256":  "f88811c861a7155f0cd16512dece01846eaba897e57c826d26864a2afde3207a",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/implementation-readiness.template.md",
+        "source_sha256":  "e5e42794a7ff9428655392000fb05d30a3a2f8a408d48a7e5a264814878b86af",
+        "destination":  "TADp/initiatives/implementation-readiness.template.md",
+        "installed_sha256":  "e5e42794a7ff9428655392000fb05d30a3a2f8a408d48a7e5a264814878b86af",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/implementation-roadmap.template.md",
+        "source_sha256":  "61b9b6fe63501442d44a50ae773e3e79b539f5e2adea2ccc0fbf65a7bdd8b4fa",
+        "destination":  "TADp/initiatives/implementation-roadmap.template.md",
+        "installed_sha256":  "61b9b6fe63501442d44a50ae773e3e79b539f5e2adea2ccc0fbf65a7bdd8b4fa",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/implementation-steps.template.md",
+        "source_sha256":  "97afb470f707d0fdb6232e4219697fde2b1bfb177baa127ee4c819554ac529ed",
+        "destination":  "TADp/initiatives/implementation-steps.template.md",
+        "installed_sha256":  "97afb470f707d0fdb6232e4219697fde2b1bfb177baa127ee4c819554ac529ed",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/initiative-index.template.md",
+        "source_sha256":  "e5995a9f656caa95b10e3ed27fa20e5f159063e3446932fe6a7dcad2e418c034",
+        "destination":  "TADp/initiatives/initiative-index.template.md",
+        "installed_sha256":  "e5995a9f656caa95b10e3ed27fa20e5f159063e3446932fe6a7dcad2e418c034",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/initiative-README.template.md",
+        "source_sha256":  "ce13d838977d10aaf0e0c9c18d4eb0fa77e9eeb0ad1351b4c789b22cbf2db3fc",
+        "destination":  "TADp/initiatives/initiative-README.template.md",
+        "installed_sha256":  "ce13d838977d10aaf0e0c9c18d4eb0fa77e9eeb0ad1351b4c789b22cbf2db3fc",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/integration-receipt.template.md",
+        "source_sha256":  "cf8edc582691ab92258cdc3a9e95f75b4300286a3f2ba8b49b8ef34d4101e017",
+        "destination":  "TADp/initiatives/integration-receipt.template.md",
+        "installed_sha256":  "cf8edc582691ab92258cdc3a9e95f75b4300286a3f2ba8b49b8ef34d4101e017",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/open-questions.template.md",
+        "source_sha256":  "f141b1059cd83a55bbcb0961200b11999716650ca561520ec0cfb399060fbd93",
+        "destination":  "TADp/initiatives/open-questions.template.md",
+        "installed_sha256":  "f141b1059cd83a55bbcb0961200b11999716650ca561520ec0cfb399060fbd93",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/planning/README.md",
+        "source_sha256":  "1ff8350fca6737872369edee33533dae5d7c8a284a8efc96e776f4f83719ac52",
+        "destination":  "TADp/initiatives/planning/README.md",
+        "installed_sha256":  "1ff8350fca6737872369edee33533dae5d7c8a284a8efc96e776f4f83719ac52",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/preparation-README.template.md",
+        "source_sha256":  "734c22dd3c6ea9e9a685220150234481abff00452e928661c9238c500b825c8c",
+        "destination":  "TADp/initiatives/preparation-README.template.md",
+        "installed_sha256":  "734c22dd3c6ea9e9a685220150234481abff00452e928661c9238c500b825c8c",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/proposal/preparation-README.template.md",
+        "source_sha256":  "78a1febe5c171223cef2fd1b4ea504390531d5da20d3300dd221828396c191fa",
+        "destination":  "TADp/initiatives/proposal/preparation-README.template.md",
+        "installed_sha256":  "78a1febe5c171223cef2fd1b4ea504390531d5da20d3300dd221828396c191fa",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/proposal/proposal.template.md",
+        "source_sha256":  "f4c9c42750280e04e0d9f2bf8b7e859580b57e9171fc4f01dee2740bc35340cb",
+        "destination":  "TADp/initiatives/proposal/proposal.template.md",
+        "installed_sha256":  "f4c9c42750280e04e0d9f2bf8b7e859580b57e9171fc4f01dee2740bc35340cb",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/proposal/README.md",
+        "source_sha256":  "b45d54773ff618ab6ca0eaa82eb4f9c547212a851d4bfcbdd755606cd060398d",
+        "destination":  "TADp/initiatives/proposal/README.md",
+        "installed_sha256":  "b45d54773ff618ab6ca0eaa82eb4f9c547212a851d4bfcbdd755606cd060398d",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/proposal/README.template.md",
+        "source_sha256":  "b82eb71c20c26ad9ce6a2d7444e36c30c9841d2cb354b5837d7cd6e5a83ff3d8",
+        "destination":  "TADp/initiatives/proposal/README.template.md",
+        "installed_sha256":  "b82eb71c20c26ad9ce6a2d7444e36c30c9841d2cb354b5837d7cd6e5a83ff3d8",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/README.md",
+        "source_sha256":  "c6d79cc74bb19f68606038a31bedbd94638dfe75da6d7347d477e9bc13dbd206",
+        "destination":  "TADp/initiatives/README.md",
+        "installed_sha256":  "c6d79cc74bb19f68606038a31bedbd94638dfe75da6d7347d477e9bc13dbd206",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/scope-assessment.template.md",
+        "source_sha256":  "f38bd65f47739255b34a99053f292deb63d7056345b26faba7064f583367f305",
+        "destination":  "TADp/initiatives/scope-assessment.template.md",
+        "installed_sha256":  "f38bd65f47739255b34a99053f292deb63d7056345b26faba7064f583367f305",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/scope-README.template.md",
+        "source_sha256":  "6a21936a427266d908e2532876030deb950b37f12aedaa1c0dedfccfe409c2a8",
+        "destination":  "TADp/initiatives/scope-README.template.md",
+        "installed_sha256":  "6a21936a427266d908e2532876030deb950b37f12aedaa1c0dedfccfe409c2a8",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/source-mapping.template.md",
+        "source_sha256":  "02026e74921c8fc9d50daa66d5b9ae4a042b9ec30c9d2bbe97c4cc0d650db974",
+        "destination":  "TADp/initiatives/source-mapping.template.md",
+        "installed_sha256":  "02026e74921c8fc9d50daa66d5b9ae4a042b9ec30c9d2bbe97c4cc0d650db974",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/status.template.md",
+        "source_sha256":  "8bee5ec2b6279c6e4ac6b28b3caa0965a6ccfa7a4456c09264e372afeaf9aa36",
+        "destination":  "TADp/initiatives/status.template.md",
+        "installed_sha256":  "8bee5ec2b6279c6e4ac6b28b3caa0965a6ccfa7a4456c09264e372afeaf9aa36",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/version-correlation-migration-ledger.template.md",
+        "source_sha256":  "b336dfc69961b9ef5013fb84ee4486410980610957d56ae4397002b9e0380ba0",
+        "destination":  "TADp/initiatives/version-correlation-migration-ledger.template.md",
+        "installed_sha256":  "b336dfc69961b9ef5013fb84ee4486410980610957d56ae4397002b9e0380ba0",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/version-scope-migration-ledger.template.md",
+        "source_sha256":  "c9f7efcdb998b1ad874adcecaf635b2e3bc9f08f9506eddcf2dadf69c0e67fd6",
+        "destination":  "TADp/initiatives/version-scope-migration-ledger.template.md",
+        "installed_sha256":  "c9f7efcdb998b1ad874adcecaf635b2e3bc9f08f9506eddcf2dadf69c0e67fd6",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/version-scopes.template.md",
+        "source_sha256":  "92adc4d9cda8b336502a1eb2efa4a1782fcc8afd3f9ea4209eb0de8cfa443646",
+        "destination":  "TADp/initiatives/version-scopes.template.md",
+        "installed_sha256":  "92adc4d9cda8b336502a1eb2efa4a1782fcc8afd3f9ea4209eb0de8cfa443646",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/work-conflicts.template.md",
+        "source_sha256":  "fd515195c0633bc55045ca8248c67342107bf436107d57ac4d4698d35152f879",
+        "destination":  "TADp/initiatives/work-conflicts.template.md",
+        "installed_sha256":  "fd515195c0633bc55045ca8248c67342107bf436107d57ac4d4698d35152f879",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/products/product-record.template.md",
+        "source_sha256":  "e065309c48e13fe02667c3ba3d6b1472897e681b6f14afdae023d30d0b2ebab5",
+        "destination":  "TADp/products/product-record.template.md",
+        "installed_sha256":  "e065309c48e13fe02667c3ba3d6b1472897e681b6f14afdae023d30d0b2ebab5",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/products/README.md",
+        "source_sha256":  "6329c13db12aa39a40dfdf429097e4ac380d30efed237e69b25d9a99dda940d1",
+        "destination":  "TADp/products/README.md",
+        "installed_sha256":  "6329c13db12aa39a40dfdf429097e4ac380d30efed237e69b25d9a99dda940d1",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/project-profile.template.md",
+        "source_sha256":  "c34b83f85bf10e847fb69ead7aa2ce920aee1e9d5a06bc08ba6be4fbbd0e4452",
+        "destination":  "TADp/project-profile.template.md",
+        "installed_sha256":  "c34b83f85bf10e847fb69ead7aa2ce920aee1e9d5a06bc08ba6be4fbbd0e4452",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/prompts/AGENTS.md",
+        "source_sha256":  "ce59c53e0eba2ae6b0517f3fa2c3bfe4902546f3857156384f48105a9e93dcf6",
+        "destination":  "TADp/prompts/AGENTS.md",
+        "installed_sha256":  "ce59c53e0eba2ae6b0517f3fa2c3bfe4902546f3857156384f48105a9e93dcf6",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/prompts/README.md",
+        "source_sha256":  "e5717875a9f8dc1906ce70693f6dab2d8adea740849bd9991119254dd9ff6349",
+        "destination":  "TADp/prompts/README.md",
+        "installed_sha256":  "e5717875a9f8dc1906ce70693f6dab2d8adea740849bd9991119254dd9ff6349",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/README.md",
+        "source_sha256":  "eb419733b7fbc17d189aac26cef194ea9d66286d9f451126832ff57a6e34c1ba",
+        "destination":  "TADp/README.md",
+        "installed_sha256":  "dbef7213689c07006836c7382c3fa77953faa8639fe853fd3063713e9365d61f",
+        "disposition":  "Working entry point customized for authorized setup",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/.tadp-lock.json",
+        "source_sha256":  "72a22a876838426e37672b31f416bd25ae0cea53862cd952d31cf20078ff3efb",
+        "destination":  "TADp/template/.tadp-lock.json",
+        "installed_sha256":  "72a22a876838426e37672b31f416bd25ae0cea53862cd952d31cf20078ff3efb",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/AGENTS.md",
+        "source_sha256":  "abf5bacc278a8681c0bff9adf7a213eca0a1743c9dfbffbf00443e2472fe66c4",
+        "destination":  "TADp/template/AGENTS.md",
+        "installed_sha256":  "abf5bacc278a8681c0bff9adf7a213eca0a1743c9dfbffbf00443e2472fe66c4",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/.gitattributes",
+        "source_sha256":  "e0e54d154882795470f911877f581def026f48ab58df415e801dfcfeae9608ca",
+        "destination":  "TADp/template/project/.gitattributes",
+        "installed_sha256":  "e0e54d154882795470f911877f581def026f48ab58df415e801dfcfeae9608ca",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/.githooks/pre-commit",
+        "source_sha256":  "4f052fd38c9cb906b7ef2e9480766099f513e88ed89af61f8a7ab14136122e8e",
+        "destination":  "TADp/template/project/.githooks/pre-commit",
+        "installed_sha256":  "4f052fd38c9cb906b7ef2e9480766099f513e88ed89af61f8a7ab14136122e8e",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/.githooks/README.md",
+        "source_sha256":  "c4a19e213d1b049e847215c8d0ff68c7af003e488c02ff4bb58c757ffa52a25f",
+        "destination":  "TADp/template/project/.githooks/README.md",
+        "installed_sha256":  "c4a19e213d1b049e847215c8d0ff68c7af003e488c02ff4bb58c757ffa52a25f",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/AGENTS.md",
+        "source_sha256":  "46cc2daf03e33b7f1b943b91695df63a269af332c189f9b3c3549c0c5d74b2d0",
+        "destination":  "TADp/template/project/AGENTS.md",
+        "installed_sha256":  "46cc2daf03e33b7f1b943b91695df63a269af332c189f9b3c3549c0c5d74b2d0",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/decisions/README.md",
+        "source_sha256":  "847240ca6d5358dc50e999eaad20495f339172517349157c613b3ee9989666be",
+        "destination":  "TADp/template/project/decisions/README.md",
+        "installed_sha256":  "847240ca6d5358dc50e999eaad20495f339172517349157c613b3ee9989666be",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/docs/development/adapting-other-tools.md",
+        "source_sha256":  "e77e0b96a20ea9db043d61ef66c5c1c32ac98d4f9827f474592428a62264a4bb",
+        "destination":  "TADp/template/project/docs/development/adapting-other-tools.md",
+        "installed_sha256":  "e77e0b96a20ea9db043d61ef66c5c1c32ac98d4f9827f474592428a62264a4bb",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/docs/development/architecture-and-authority.md",
+        "source_sha256":  "a7a96afd16899f835a105c2cfcb6cf018c7e446cfc33e4e2cc5b22ed8265d075",
+        "destination":  "TADp/template/project/docs/development/architecture-and-authority.md",
+        "installed_sha256":  "a7a96afd16899f835a105c2cfcb6cf018c7e446cfc33e4e2cc5b22ed8265d075",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/docs/development/getting-started.md",
+        "source_sha256":  "84f4cc03fe989219961f5853c644264c74949b8864b5fcf94c3ffab9006ea85c",
+        "destination":  "TADp/template/project/docs/development/getting-started.md",
+        "installed_sha256":  "84f4cc03fe989219961f5853c644264c74949b8864b5fcf94c3ffab9006ea85c",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/docs/development/git-and-codex-requirements.md",
+        "source_sha256":  "a0427971f3755208d2a2202f3c67b23a1088f09703e640500cc598a30014bb16",
+        "destination":  "TADp/template/project/docs/development/git-and-codex-requirements.md",
+        "installed_sha256":  "a0427971f3755208d2a2202f3c67b23a1088f09703e640500cc598a30014bb16",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/docs/development/initiative-workflow.md",
+        "source_sha256":  "3da7880a398a427ca64eecf071e319947ed37b1d8b111f03eda38fd156675f20",
+        "destination":  "TADp/template/project/docs/development/initiative-workflow.md",
+        "installed_sha256":  "3da7880a398a427ca64eecf071e319947ed37b1d8b111f03eda38fd156675f20",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/docs/development/README.md",
+        "source_sha256":  "2083d1799050c7240beba6cf44e3bbda48eedddf01c18793bfcead2af2c4a5c2",
+        "destination":  "TADp/template/project/docs/development/README.md",
+        "installed_sha256":  "2083d1799050c7240beba6cf44e3bbda48eedddf01c18793bfcead2af2c4a5c2",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/docs/development/repository-layout.md",
+        "source_sha256":  "2fd2eb8cb7b1ed1afd3494bc8271808482b3cf3cba4be5882805c7804ef2edf7",
+        "destination":  "TADp/template/project/docs/development/repository-layout.md",
+        "installed_sha256":  "2fd2eb8cb7b1ed1afd3494bc8271808482b3cf3cba4be5882805c7804ef2edf7",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/docs/development/validation-and-quality.md",
+        "source_sha256":  "e535d4268f59da37906b3d7ee2ecfb4083896bbf885c1cc27a96bc043307a82e",
+        "destination":  "TADp/template/project/docs/development/validation-and-quality.md",
+        "installed_sha256":  "e535d4268f59da37906b3d7ee2ecfb4083896bbf885c1cc27a96bc043307a82e",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/docs/guides/initiative-coherence-migration.md",
+        "source_sha256":  "845584934a42af1b0ceea6fc5aab20f05f021d08c539230c731fb328289be380",
+        "destination":  "TADp/template/project/docs/guides/initiative-coherence-migration.md",
+        "installed_sha256":  "845584934a42af1b0ceea6fc5aab20f05f021d08c539230c731fb328289be380",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/docs/guides/legacy-initiative-decomposition.md",
+        "source_sha256":  "a025188bca86bf66ad0d78b5bfa7a5fb145e268a71f863c8c2f122124034dee5",
+        "destination":  "TADp/template/project/docs/guides/legacy-initiative-decomposition.md",
+        "installed_sha256":  "a025188bca86bf66ad0d78b5bfa7a5fb145e268a71f863c8c2f122124034dee5",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/docs/guides/project-local-prompts-migration.md",
+        "source_sha256":  "25aef1bf88d412fbec4e4a2222ad9cd2cfc0544b3db0078b31336f9fd67b79ac",
+        "destination":  "TADp/template/project/docs/guides/project-local-prompts-migration.md",
+        "installed_sha256":  "25aef1bf88d412fbec4e4a2222ad9cd2cfc0544b3db0078b31336f9fd67b79ac",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/docs/guides/project-root-installation-migration.md",
+        "source_sha256":  "7da7bcb8b988631ae001afb2cdbc6b6980159be1c0243bee13cf3d8da1da5290",
+        "destination":  "TADp/template/project/docs/guides/project-root-installation-migration.md",
+        "installed_sha256":  "7da7bcb8b988631ae001afb2cdbc6b6980159be1c0243bee13cf3d8da1da5290",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/docs/guides/prompt-keywords-migration.md",
+        "source_sha256":  "1e1fcfe238ab74887daf18900833484569976cab8084b09c7c589398025a5e17",
+        "destination":  "TADp/template/project/docs/guides/prompt-keywords-migration.md",
+        "installed_sha256":  "1e1fcfe238ab74887daf18900833484569976cab8084b09c7c589398025a5e17",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/docs/guides/protected-source-integrity-migration.md",
+        "source_sha256":  "4de0af88bceb121a87c4066b12985a22d34c0873f2258bdaec97700213949da8",
+        "destination":  "TADp/template/project/docs/guides/protected-source-integrity-migration.md",
+        "installed_sha256":  "4de0af88bceb121a87c4066b12985a22d34c0873f2258bdaec97700213949da8",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/docs/guides/README.md",
+        "source_sha256":  "f0f513fb4c1f9db34d9edb0b7afb8a7cc61748f26ec75f8e56df005e65004ea1",
+        "destination":  "TADp/template/project/docs/guides/README.md",
+        "installed_sha256":  "f0f513fb4c1f9db34d9edb0b7afb8a7cc61748f26ec75f8e56df005e65004ea1",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/docs/guides/template-prerequisites-migration.md",
+        "source_sha256":  "ac75322244a1432cd3411ff6d0705c0ec2e232296a9c0ea69679b3b398e23f4e",
+        "destination":  "TADp/template/project/docs/guides/template-prerequisites-migration.md",
+        "installed_sha256":  "ac75322244a1432cd3411ff6d0705c0ec2e232296a9c0ea69679b3b398e23f4e",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/docs/guides/version-realization-correlation-migration.md",
+        "source_sha256":  "f5fbc5f32ac4f5316a1c46e915ab4a0122591358e92ce2699ef9568d2a3060f3",
+        "destination":  "TADp/template/project/docs/guides/version-realization-correlation-migration.md",
+        "installed_sha256":  "f5fbc5f32ac4f5316a1c46e915ab4a0122591358e92ce2699ef9568d2a3060f3",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/docs/guides/version-scope-migration.md",
+        "source_sha256":  "fd155ec9f82928c09656196ba65cc5a12d7c840d8d175025fd28af522fe4a7c5",
+        "destination":  "TADp/template/project/docs/guides/version-scope-migration.md",
+        "installed_sha256":  "fd155ec9f82928c09656196ba65cc5a12d7c840d8d175025fd28af522fe4a7c5",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/docs/guides/workflow-stage-0-13-migration.md",
+        "source_sha256":  "a04c373fbbf0753ce61d61b3b30250e4fec211976c681137dcd9c55352f710a5",
+        "destination":  "TADp/template/project/docs/guides/workflow-stage-0-13-migration.md",
+        "installed_sha256":  "a04c373fbbf0753ce61d61b3b30250e4fec211976c681137dcd9c55352f710a5",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/docs/README.md",
+        "source_sha256":  "5a92adc8c3533fd37e19db34f62510a0d9901938fd3c646c5c3e01a00f54f611",
+        "destination":  "TADp/template/project/docs/README.md",
+        "installed_sha256":  "5a92adc8c3533fd37e19db34f62510a0d9901938fd3c646c5c3e01a00f54f611",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/architecture/architecture-decision.template.md",
+        "source_sha256":  "6f255f248497b5e8c4e9bfecb90d69c80ca095ce20d8caf8a606b34b6f316020",
+        "destination":  "TADp/template/project/evidence/authoritative/architecture/architecture-decision.template.md",
+        "installed_sha256":  "6f255f248497b5e8c4e9bfecb90d69c80ca095ce20d8caf8a606b34b6f316020",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/architecture/component-contract.template.md",
+        "source_sha256":  "052b43bb1da88b7b2bd768679134eabab566bc1821d03927deacbbacb3530cdd",
+        "destination":  "TADp/template/project/evidence/authoritative/architecture/component-contract.template.md",
+        "installed_sha256":  "052b43bb1da88b7b2bd768679134eabab566bc1821d03927deacbbacb3530cdd",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/architecture/README.md",
+        "source_sha256":  "f0b73fcefaa9f92f7400788df3a2962ded95d1997957e4741ed9d3d1db6820bf",
+        "destination":  "TADp/template/project/evidence/authoritative/architecture/README.md",
+        "installed_sha256":  "f0b73fcefaa9f92f7400788df3a2962ded95d1997957e4741ed9d3d1db6820bf",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/architecture/system-boundary.template.md",
+        "source_sha256":  "f767e344ae35befc89315c86b6ba9da5172c13339e9be965fed4b5078e4fd14c",
+        "destination":  "TADp/template/project/evidence/authoritative/architecture/system-boundary.template.md",
+        "installed_sha256":  "f767e344ae35befc89315c86b6ba9da5172c13339e9be965fed4b5078e4fd14c",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/authoritative-evidence.template.md",
+        "source_sha256":  "2ba6fe75ef6f8461b939ef99431783ea041092c37c89a223536d26984899ef9c",
+        "destination":  "TADp/template/project/evidence/authoritative/authoritative-evidence.template.md",
+        "installed_sha256":  "2ba6fe75ef6f8461b939ef99431783ea041092c37c89a223536d26984899ef9c",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/LLM/.tadp-lock.json",
+        "source_sha256":  "f9660b613a23b0ba34422180378ead48d3662a1cb3284e10ffae6e0e337d5f71",
+        "destination":  "TADp/template/project/evidence/authoritative/LLM/.tadp-lock.json",
+        "installed_sha256":  "f9660b613a23b0ba34422180378ead48d3662a1cb3284e10ffae6e0e337d5f71",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/LLM/00_Codex_Invariant_Suite_Index.md",
+        "source_sha256":  "adbbea3f9d8f3b421f40c6515564741a0548a441a5b5bff12cdb61e441cfad13",
+        "destination":  "TADp/template/project/evidence/authoritative/LLM/00_Codex_Invariant_Suite_Index.md",
+        "installed_sha256":  "adbbea3f9d8f3b421f40c6515564741a0548a441a5b5bff12cdb61e441cfad13",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/LLM/01_Codex_Evidence_Authority_Specification.md",
+        "source_sha256":  "17a32f12823724d4972d2f2af79fcdfa97a1e986b3af3f1d644f4ba20795e4d0",
+        "destination":  "TADp/template/project/evidence/authoritative/LLM/01_Codex_Evidence_Authority_Specification.md",
+        "installed_sha256":  "17a32f12823724d4972d2f2af79fcdfa97a1e986b3af3f1d644f4ba20795e4d0",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/LLM/02_Codex_Initiative_Governance_Specification.md",
+        "source_sha256":  "822a7b0683b5ecf519751203844eff1acac45232b08ed585a4114a39340bccc8",
+        "destination":  "TADp/template/project/evidence/authoritative/LLM/02_Codex_Initiative_Governance_Specification.md",
+        "installed_sha256":  "822a7b0683b5ecf519751203844eff1acac45232b08ed585a4114a39340bccc8",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/LLM/03_Codex_Invariant_Conflict_Register.md",
+        "source_sha256":  "deb6eb1ba3011e5072a4c03c5df64e08feb2aa2338efb18ea7325f9091b36072",
+        "destination":  "TADp/template/project/evidence/authoritative/LLM/03_Codex_Invariant_Conflict_Register.md",
+        "installed_sha256":  "deb6eb1ba3011e5072a4c03c5df64e08feb2aa2338efb18ea7325f9091b36072",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/LLM/04_Codex_Initiative_Lifecycle_Specification.md",
+        "source_sha256":  "2cd1587650062b2677e3b537c25ff5e9715e1ee7a6d8881756b3ba46b590f6f2",
+        "destination":  "TADp/template/project/evidence/authoritative/LLM/04_Codex_Initiative_Lifecycle_Specification.md",
+        "installed_sha256":  "2cd1587650062b2677e3b537c25ff5e9715e1ee7a6d8881756b3ba46b590f6f2",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/LLM/05_Codex_Git_Workflow_Specification.md",
+        "source_sha256":  "59f4c4ecb04022a53ef5640700929064f42e1d963ebfa7bc6001db8b8eb8d4b5",
+        "destination":  "TADp/template/project/evidence/authoritative/LLM/05_Codex_Git_Workflow_Specification.md",
+        "installed_sha256":  "59f4c4ecb04022a53ef5640700929064f42e1d963ebfa7bc6001db8b8eb8d4b5",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/LLM/06_Codex_Initiative_Scope_Specification.md",
+        "source_sha256":  "2fcfe32f6d7221ab329725478f03cc4d00f18cd674e6ec53b8a43e924cc64be3",
+        "destination":  "TADp/template/project/evidence/authoritative/LLM/06_Codex_Initiative_Scope_Specification.md",
+        "installed_sha256":  "2fcfe32f6d7221ab329725478f03cc4d00f18cd674e6ec53b8a43e924cc64be3",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/LLM/07_Codex_Human_Decision_Receipt_Specification.md",
+        "source_sha256":  "1c94946e9154d1383a685e96a538a29d99e048710d5e8813fa8247dcb6e5307b",
+        "destination":  "TADp/template/project/evidence/authoritative/LLM/07_Codex_Human_Decision_Receipt_Specification.md",
+        "installed_sha256":  "1c94946e9154d1383a685e96a538a29d99e048710d5e8813fa8247dcb6e5307b",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md",
+        "source_sha256":  "270f50e92f92fdbf37abba95dc881b9c8d81322370dc5c545991fa72d2210504",
+        "destination":  "TADp/template/project/evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md",
+        "installed_sha256":  "270f50e92f92fdbf37abba95dc881b9c8d81322370dc5c545991fa72d2210504",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/LLM/09_Codex_Version_Realization_Initiative_Correlation_Specification.md",
+        "source_sha256":  "d50fccb79c7526d2aaeaa1f81d0efa4c45cec7902e42c9c15ba82af9b1783d14",
+        "destination":  "TADp/template/project/evidence/authoritative/LLM/09_Codex_Version_Realization_Initiative_Correlation_Specification.md",
+        "installed_sha256":  "d50fccb79c7526d2aaeaa1f81d0efa4c45cec7902e42c9c15ba82af9b1783d14",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/LLM/10_Codex_Initiative_Coherence_Specification.md",
+        "source_sha256":  "30dcaaa84e322cad0604ac2af2610b54fbb0486cd3dee3ad6c33395267533cb8",
+        "destination":  "TADp/template/project/evidence/authoritative/LLM/10_Codex_Initiative_Coherence_Specification.md",
+        "installed_sha256":  "30dcaaa84e322cad0604ac2af2610b54fbb0486cd3dee3ad6c33395267533cb8",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md",
+        "source_sha256":  "58bb057f4fb54c5813d662cfcb5a7ddc0cec33e37e42f46507fcc5e18d051a41",
+        "destination":  "TADp/template/project/evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md",
+        "installed_sha256":  "58bb057f4fb54c5813d662cfcb5a7ddc0cec33e37e42f46507fcc5e18d051a41",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/LLM/AGENTS.md",
+        "source_sha256":  "0f4995562ec74054f02ccce453ee2458b283eb13210816599f11156f98eb95ee",
+        "destination":  "TADp/template/project/evidence/authoritative/LLM/AGENTS.md",
+        "installed_sha256":  "0f4995562ec74054f02ccce453ee2458b283eb13210816599f11156f98eb95ee",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/LLM/README.md",
+        "source_sha256":  "f2dec453304e8d016da742a1f05a354b1ff7da3ad224a317b25ec206dfcd6d05",
+        "destination":  "TADp/template/project/evidence/authoritative/LLM/README.md",
+        "installed_sha256":  "f2dec453304e8d016da742a1f05a354b1ff7da3ad224a317b25ec206dfcd6d05",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/README.md",
+        "source_sha256":  "4212077b23b8839ebc7744ffa424ab02c3064a301830ac1c2c556379b5c8b75a",
+        "destination":  "TADp/template/project/evidence/authoritative/README.md",
+        "installed_sha256":  "4212077b23b8839ebc7744ffa424ab02c3064a301830ac1c2c556379b5c8b75a",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/rules/README.md",
+        "source_sha256":  "b13d303d8083c812dddcbf415713e4288d3e637e4e610b7a1f228eb944cd8428",
+        "destination":  "TADp/template/project/evidence/authoritative/rules/README.md",
+        "installed_sha256":  "b13d303d8083c812dddcbf415713e4288d3e637e4e610b7a1f228eb944cd8428",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/authoritative/rules/rule.template.md",
+        "source_sha256":  "d402207f21f43557de430ed112cfcf3568e74d240ec35b6920849681a93df91f",
+        "destination":  "TADp/template/project/evidence/authoritative/rules/rule.template.md",
+        "installed_sha256":  "d402207f21f43557de430ed112cfcf3568e74d240ec35b6920849681a93df91f",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/evidence-register.template.md",
+        "source_sha256":  "91d6551c8cd988c35fb71e5a7808f68129b612daa1e14523292bca66e3d471b1",
+        "destination":  "TADp/template/project/evidence/evidence-register.template.md",
+        "installed_sha256":  "91d6551c8cd988c35fb71e5a7808f68129b612daa1e14523292bca66e3d471b1",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/non-authoritative/contextual-evidence.template.md",
+        "source_sha256":  "5967a7a282a5f605b2eca1bc9edcbfec36621a740411128d866896ca8c276d41",
+        "destination":  "TADp/template/project/evidence/non-authoritative/contextual-evidence.template.md",
+        "installed_sha256":  "5967a7a282a5f605b2eca1bc9edcbfec36621a740411128d866896ca8c276d41",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/non-authoritative/README.md",
+        "source_sha256":  "87f82f63139546529f542ff29db649c8ab79fb6b280dc4f8f5befc0064172c01",
+        "destination":  "TADp/template/project/evidence/non-authoritative/README.md",
+        "installed_sha256":  "87f82f63139546529f542ff29db649c8ab79fb6b280dc4f8f5befc0064172c01",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/non-authoritative/realizations/README.md",
+        "source_sha256":  "f26af5507bdf4b7527e8e6e6e630587926a9e5f301177b391f249ded2f7e6fc3",
+        "destination":  "TADp/template/project/evidence/non-authoritative/realizations/README.md",
+        "installed_sha256":  "f26af5507bdf4b7527e8e6e6e630587926a9e5f301177b391f249ded2f7e6fc3",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/non-authoritative/realizations/realization.template.md",
+        "source_sha256":  "901e3b72383253430cf3a322d7b264edf158766e466fd7acddc0e0a154deed67",
+        "destination":  "TADp/template/project/evidence/non-authoritative/realizations/realization.template.md",
+        "installed_sha256":  "901e3b72383253430cf3a322d7b264edf158766e466fd7acddc0e0a154deed67",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/non-authoritative/realizations/realization-suite-index.template.md",
+        "source_sha256":  "9eaab4801a2aae937de7ae843a169a7bf9bf11b849b55e44ccb9492fe7cd899d",
+        "destination":  "TADp/template/project/evidence/non-authoritative/realizations/realization-suite-index.template.md",
+        "installed_sha256":  "9eaab4801a2aae937de7ae843a169a7bf9bf11b849b55e44ccb9492fe7cd899d",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/evidence/README.md",
+        "source_sha256":  "33ee35cce3838fe5ee4b19adbb2dd44dbc3c206356aed4658118ac732ebe9563",
+        "destination":  "TADp/template/project/evidence/README.md",
+        "installed_sha256":  "33ee35cce3838fe5ee4b19adbb2dd44dbc3c206356aed4658118ac732ebe9563",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/architecture.template.md",
+        "source_sha256":  "48b708ef2763a90a6e9fc628e3b956efe9fcf049f91cb3307209719d4a8a1c01",
+        "destination":  "TADp/template/project/initiatives/architecture.template.md",
+        "installed_sha256":  "48b708ef2763a90a6e9fc628e3b956efe9fcf049f91cb3307209719d4a8a1c01",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/assumption.template.md",
+        "source_sha256":  "073a5ee0db5a761f5402ba6e41af5226dc184fdc088c3d8b55b22fc395fcb16a",
+        "destination":  "TADp/template/project/initiatives/assumption.template.md",
+        "installed_sha256":  "073a5ee0db5a761f5402ba6e41af5226dc184fdc088c3d8b55b22fc395fcb16a",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/completion-evidence.template.md",
+        "source_sha256":  "f2c7cabad946f6eac9c2320339a90e61d0600f6d19d3469fb54b8d06f6ce8deb",
+        "destination":  "TADp/template/project/initiatives/completion-evidence.template.md",
+        "installed_sha256":  "f2c7cabad946f6eac9c2320339a90e61d0600f6d19d3469fb54b8d06f6ce8deb",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+        "source_sha256":  "32124a658eaa4b81dab39635038c2652dfe05aecbef10dbfe3a3152d2ec7b1d1",
+        "destination":  "TADp/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+        "installed_sha256":  "32124a658eaa4b81dab39635038c2652dfe05aecbef10dbfe3a3152d2ec7b1d1",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/decision-receipts/gate-exception.template.md",
+        "source_sha256":  "4d9aeee5e2a69741862345a3c1878e5981080e236dec70fe16972960e73276c9",
+        "destination":  "TADp/template/project/initiatives/decision-receipts/gate-exception.template.md",
+        "installed_sha256":  "4d9aeee5e2a69741862345a3c1878e5981080e236dec70fe16972960e73276c9",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/decision-receipts/README.md",
+        "source_sha256":  "1f47573458e119ab52abc9d3b2a15e3a84399533d685543b31c57e04acda00ae",
+        "destination":  "TADp/template/project/initiatives/decision-receipts/README.md",
+        "installed_sha256":  "1f47573458e119ab52abc9d3b2a15e3a84399533d685543b31c57e04acda00ae",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/decision-receipts/README.template.md",
+        "source_sha256":  "3ac5d299d5cabf7fa6c17f9fe4ba1e47ff7c05c5687d6cdf1f346be064c03cb7",
+        "destination":  "TADp/template/project/initiatives/decision-receipts/README.template.md",
+        "installed_sha256":  "3ac5d299d5cabf7fa6c17f9fe4ba1e47ff7c05c5687d6cdf1f346be064c03cb7",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/delivery-record.template.md",
+        "source_sha256":  "f1b8c8d785b51746fdbee822a3439377d5d5d3b196978a4d33e891e63b12fdcc",
+        "destination":  "TADp/template/project/initiatives/delivery-record.template.md",
+        "installed_sha256":  "f1b8c8d785b51746fdbee822a3439377d5d5d3b196978a4d33e891e63b12fdcc",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/design/README.md",
+        "source_sha256":  "803c4426de2c2dc23265c17bd3beae9e14638cd619a644367a61e1460eb80c51",
+        "destination":  "TADp/template/project/initiatives/design/README.md",
+        "installed_sha256":  "803c4426de2c2dc23265c17bd3beae9e14638cd619a644367a61e1460eb80c51",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/execution-record.template.md",
+        "source_sha256":  "4fef60e5beeb5723df73fdb9cece407dd2b482fd10ae84a267f4bc548d3661a8",
+        "destination":  "TADp/template/project/initiatives/execution-record.template.md",
+        "installed_sha256":  "4fef60e5beeb5723df73fdb9cece407dd2b482fd10ae84a267f4bc548d3661a8",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/implementation/README.md",
+        "source_sha256":  "f88811c861a7155f0cd16512dece01846eaba897e57c826d26864a2afde3207a",
+        "destination":  "TADp/template/project/initiatives/implementation/README.md",
+        "installed_sha256":  "f88811c861a7155f0cd16512dece01846eaba897e57c826d26864a2afde3207a",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/implementation-readiness.template.md",
+        "source_sha256":  "e5e42794a7ff9428655392000fb05d30a3a2f8a408d48a7e5a264814878b86af",
+        "destination":  "TADp/template/project/initiatives/implementation-readiness.template.md",
+        "installed_sha256":  "e5e42794a7ff9428655392000fb05d30a3a2f8a408d48a7e5a264814878b86af",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/implementation-roadmap.template.md",
+        "source_sha256":  "61b9b6fe63501442d44a50ae773e3e79b539f5e2adea2ccc0fbf65a7bdd8b4fa",
+        "destination":  "TADp/template/project/initiatives/implementation-roadmap.template.md",
+        "installed_sha256":  "61b9b6fe63501442d44a50ae773e3e79b539f5e2adea2ccc0fbf65a7bdd8b4fa",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/implementation-steps.template.md",
+        "source_sha256":  "97afb470f707d0fdb6232e4219697fde2b1bfb177baa127ee4c819554ac529ed",
+        "destination":  "TADp/template/project/initiatives/implementation-steps.template.md",
+        "installed_sha256":  "97afb470f707d0fdb6232e4219697fde2b1bfb177baa127ee4c819554ac529ed",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/initiative-index.template.md",
+        "source_sha256":  "e5995a9f656caa95b10e3ed27fa20e5f159063e3446932fe6a7dcad2e418c034",
+        "destination":  "TADp/template/project/initiatives/initiative-index.template.md",
+        "installed_sha256":  "e5995a9f656caa95b10e3ed27fa20e5f159063e3446932fe6a7dcad2e418c034",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/initiative-README.template.md",
+        "source_sha256":  "ce13d838977d10aaf0e0c9c18d4eb0fa77e9eeb0ad1351b4c789b22cbf2db3fc",
+        "destination":  "TADp/template/project/initiatives/initiative-README.template.md",
+        "installed_sha256":  "ce13d838977d10aaf0e0c9c18d4eb0fa77e9eeb0ad1351b4c789b22cbf2db3fc",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/integration-receipt.template.md",
+        "source_sha256":  "cf8edc582691ab92258cdc3a9e95f75b4300286a3f2ba8b49b8ef34d4101e017",
+        "destination":  "TADp/template/project/initiatives/integration-receipt.template.md",
+        "installed_sha256":  "cf8edc582691ab92258cdc3a9e95f75b4300286a3f2ba8b49b8ef34d4101e017",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/open-questions.template.md",
+        "source_sha256":  "f141b1059cd83a55bbcb0961200b11999716650ca561520ec0cfb399060fbd93",
+        "destination":  "TADp/template/project/initiatives/open-questions.template.md",
+        "installed_sha256":  "f141b1059cd83a55bbcb0961200b11999716650ca561520ec0cfb399060fbd93",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/planning/README.md",
+        "source_sha256":  "1ff8350fca6737872369edee33533dae5d7c8a284a8efc96e776f4f83719ac52",
+        "destination":  "TADp/template/project/initiatives/planning/README.md",
+        "installed_sha256":  "1ff8350fca6737872369edee33533dae5d7c8a284a8efc96e776f4f83719ac52",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/preparation-README.template.md",
+        "source_sha256":  "734c22dd3c6ea9e9a685220150234481abff00452e928661c9238c500b825c8c",
+        "destination":  "TADp/template/project/initiatives/preparation-README.template.md",
+        "installed_sha256":  "734c22dd3c6ea9e9a685220150234481abff00452e928661c9238c500b825c8c",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/proposal/preparation-README.template.md",
+        "source_sha256":  "78a1febe5c171223cef2fd1b4ea504390531d5da20d3300dd221828396c191fa",
+        "destination":  "TADp/template/project/initiatives/proposal/preparation-README.template.md",
+        "installed_sha256":  "78a1febe5c171223cef2fd1b4ea504390531d5da20d3300dd221828396c191fa",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/proposal/proposal.template.md",
+        "source_sha256":  "f4c9c42750280e04e0d9f2bf8b7e859580b57e9171fc4f01dee2740bc35340cb",
+        "destination":  "TADp/template/project/initiatives/proposal/proposal.template.md",
+        "installed_sha256":  "f4c9c42750280e04e0d9f2bf8b7e859580b57e9171fc4f01dee2740bc35340cb",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/proposal/README.md",
+        "source_sha256":  "b45d54773ff618ab6ca0eaa82eb4f9c547212a851d4bfcbdd755606cd060398d",
+        "destination":  "TADp/template/project/initiatives/proposal/README.md",
+        "installed_sha256":  "b45d54773ff618ab6ca0eaa82eb4f9c547212a851d4bfcbdd755606cd060398d",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/proposal/README.template.md",
+        "source_sha256":  "b82eb71c20c26ad9ce6a2d7444e36c30c9841d2cb354b5837d7cd6e5a83ff3d8",
+        "destination":  "TADp/template/project/initiatives/proposal/README.template.md",
+        "installed_sha256":  "b82eb71c20c26ad9ce6a2d7444e36c30c9841d2cb354b5837d7cd6e5a83ff3d8",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/README.md",
+        "source_sha256":  "c6d79cc74bb19f68606038a31bedbd94638dfe75da6d7347d477e9bc13dbd206",
+        "destination":  "TADp/template/project/initiatives/README.md",
+        "installed_sha256":  "c6d79cc74bb19f68606038a31bedbd94638dfe75da6d7347d477e9bc13dbd206",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/scope-assessment.template.md",
+        "source_sha256":  "f38bd65f47739255b34a99053f292deb63d7056345b26faba7064f583367f305",
+        "destination":  "TADp/template/project/initiatives/scope-assessment.template.md",
+        "installed_sha256":  "f38bd65f47739255b34a99053f292deb63d7056345b26faba7064f583367f305",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/scope-README.template.md",
+        "source_sha256":  "6a21936a427266d908e2532876030deb950b37f12aedaa1c0dedfccfe409c2a8",
+        "destination":  "TADp/template/project/initiatives/scope-README.template.md",
+        "installed_sha256":  "6a21936a427266d908e2532876030deb950b37f12aedaa1c0dedfccfe409c2a8",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/source-mapping.template.md",
+        "source_sha256":  "02026e74921c8fc9d50daa66d5b9ae4a042b9ec30c9d2bbe97c4cc0d650db974",
+        "destination":  "TADp/template/project/initiatives/source-mapping.template.md",
+        "installed_sha256":  "02026e74921c8fc9d50daa66d5b9ae4a042b9ec30c9d2bbe97c4cc0d650db974",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/status.template.md",
+        "source_sha256":  "8bee5ec2b6279c6e4ac6b28b3caa0965a6ccfa7a4456c09264e372afeaf9aa36",
+        "destination":  "TADp/template/project/initiatives/status.template.md",
+        "installed_sha256":  "8bee5ec2b6279c6e4ac6b28b3caa0965a6ccfa7a4456c09264e372afeaf9aa36",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/version-correlation-migration-ledger.template.md",
+        "source_sha256":  "b336dfc69961b9ef5013fb84ee4486410980610957d56ae4397002b9e0380ba0",
+        "destination":  "TADp/template/project/initiatives/version-correlation-migration-ledger.template.md",
+        "installed_sha256":  "b336dfc69961b9ef5013fb84ee4486410980610957d56ae4397002b9e0380ba0",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/version-scope-migration-ledger.template.md",
+        "source_sha256":  "c9f7efcdb998b1ad874adcecaf635b2e3bc9f08f9506eddcf2dadf69c0e67fd6",
+        "destination":  "TADp/template/project/initiatives/version-scope-migration-ledger.template.md",
+        "installed_sha256":  "c9f7efcdb998b1ad874adcecaf635b2e3bc9f08f9506eddcf2dadf69c0e67fd6",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/version-scopes.template.md",
+        "source_sha256":  "92adc4d9cda8b336502a1eb2efa4a1782fcc8afd3f9ea4209eb0de8cfa443646",
+        "destination":  "TADp/template/project/initiatives/version-scopes.template.md",
+        "installed_sha256":  "92adc4d9cda8b336502a1eb2efa4a1782fcc8afd3f9ea4209eb0de8cfa443646",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/initiatives/work-conflicts.template.md",
+        "source_sha256":  "fd515195c0633bc55045ca8248c67342107bf436107d57ac4d4698d35152f879",
+        "destination":  "TADp/template/project/initiatives/work-conflicts.template.md",
+        "installed_sha256":  "fd515195c0633bc55045ca8248c67342107bf436107d57ac4d4698d35152f879",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/products/product-record.template.md",
+        "source_sha256":  "e065309c48e13fe02667c3ba3d6b1472897e681b6f14afdae023d30d0b2ebab5",
+        "destination":  "TADp/template/project/products/product-record.template.md",
+        "installed_sha256":  "e065309c48e13fe02667c3ba3d6b1472897e681b6f14afdae023d30d0b2ebab5",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/products/README.md",
+        "source_sha256":  "6329c13db12aa39a40dfdf429097e4ac380d30efed237e69b25d9a99dda940d1",
+        "destination":  "TADp/template/project/products/README.md",
+        "installed_sha256":  "6329c13db12aa39a40dfdf429097e4ac380d30efed237e69b25d9a99dda940d1",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/project-profile.template.md",
+        "source_sha256":  "c34b83f85bf10e847fb69ead7aa2ce920aee1e9d5a06bc08ba6be4fbbd0e4452",
+        "destination":  "TADp/template/project/project-profile.template.md",
+        "installed_sha256":  "c34b83f85bf10e847fb69ead7aa2ce920aee1e9d5a06bc08ba6be4fbbd0e4452",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/prompts/AGENTS.md",
+        "source_sha256":  "ce59c53e0eba2ae6b0517f3fa2c3bfe4902546f3857156384f48105a9e93dcf6",
+        "destination":  "TADp/template/project/prompts/AGENTS.md",
+        "installed_sha256":  "ce59c53e0eba2ae6b0517f3fa2c3bfe4902546f3857156384f48105a9e93dcf6",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/prompts/README.md",
+        "source_sha256":  "e5717875a9f8dc1906ce70693f6dab2d8adea740849bd9991119254dd9ff6349",
+        "destination":  "TADp/template/project/prompts/README.md",
+        "installed_sha256":  "e5717875a9f8dc1906ce70693f6dab2d8adea740849bd9991119254dd9ff6349",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/README.md",
+        "source_sha256":  "eb419733b7fbc17d189aac26cef194ea9d66286d9f451126832ff57a6e34c1ba",
+        "destination":  "TADp/template/project/README.md",
+        "installed_sha256":  "eb419733b7fbc17d189aac26cef194ea9d66286d9f451126832ff57a6e34c1ba",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/template/README.md",
+        "source_sha256":  "f9559aba03ac3cad9128bdebbdd6b8e4916e8514610a049b0158e175db4707f1",
+        "destination":  "TADp/template/project/template/README.md",
+        "installed_sha256":  "f9559aba03ac3cad9128bdebbdd6b8e4916e8514610a049b0158e175db4707f1",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/tests/README.md",
+        "source_sha256":  "9723de71e5092aaf5827bbb8e7a2d5e30d5d66f68e700eddeae53a3556c03266",
+        "destination":  "TADp/template/project/tests/README.md",
+        "installed_sha256":  "9723de71e5092aaf5827bbb8e7a2d5e30d5d66f68e700eddeae53a3556c03266",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/tools/README.md",
+        "source_sha256":  "e617af0596400ff299b0ed5f5ca7bbbc55fdb9ba4c74315aeba1867db7fab202",
+        "destination":  "TADp/template/project/tools/README.md",
+        "installed_sha256":  "e617af0596400ff299b0ed5f5ca7bbbc55fdb9ba4c74315aeba1867db7fab202",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/tools/tadp_keywords.py",
+        "source_sha256":  "fde6d0f6cb6b44a46dfd446e91d1fcbb595e50a01d84bc2a9ffe4d36942236d3",
+        "destination":  "TADp/template/project/tools/tadp_keywords.py",
+        "installed_sha256":  "fde6d0f6cb6b44a46dfd446e91d1fcbb595e50a01d84bc2a9ffe4d36942236d3",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/tools/tadp_protect.py",
+        "source_sha256":  "7abb44b91a4e6890e0c30a7955b9619ea2f29a21ecb5d5e2d16e9a23e1e9f070",
+        "destination":  "TADp/template/project/tools/tadp_protect.py",
+        "installed_sha256":  "7abb44b91a4e6890e0c30a7955b9619ea2f29a21ecb5d5e2d16e9a23e1e9f070",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/tools/tadp_scopes.py",
+        "source_sha256":  "f928f3b4c7c89de589aed84d373b7dbec5552f65558e4e41883d04c81479a0fa",
+        "destination":  "TADp/template/project/tools/tadp_scopes.py",
+        "installed_sha256":  "f928f3b4c7c89de589aed84d373b7dbec5552f65558e4e41883d04c81479a0fa",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/tools/tadp_sync.py",
+        "source_sha256":  "dde1504f342a37f13bbe7b8536127219ec5f7cd85c8cfaf61916c781322b683d",
+        "destination":  "TADp/template/project/tools/tadp_sync.py",
+        "installed_sha256":  "dde1504f342a37f13bbe7b8536127219ec5f7cd85c8cfaf61916c781322b683d",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/tools/tadp_templates.py",
+        "source_sha256":  "0076683cbff675da2b0f2d41fc61363d959ef734f19fbe97c22cf063a92cd455",
+        "destination":  "TADp/template/project/tools/tadp_templates.py",
+        "installed_sha256":  "0076683cbff675da2b0f2d41fc61363d959ef734f19fbe97c22cf063a92cd455",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/tools/tadp_validate.py",
+        "source_sha256":  "b9e82cae2074ba8c216bfa7ad43db3f0f15cc830aadc6bb2e0785df4a453586f",
+        "destination":  "TADp/template/project/tools/tadp_validate.py",
+        "installed_sha256":  "b9e82cae2074ba8c216bfa7ad43db3f0f15cc830aadc6bb2e0785df4a453586f",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/prompts/00_initiative_preparation.md",
+        "source_sha256":  "7d243958e2297b146377d49e137aab828bafba74f5126d66c60df68cf35efe00",
+        "destination":  "TADp/template/prompts/00_initiative_preparation.md",
+        "installed_sha256":  "7d243958e2297b146377d49e137aab828bafba74f5126d66c60df68cf35efe00",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/prompts/01_proposal_creation.md",
+        "source_sha256":  "aa98bef7435e1acc815f052bfb5078c6ebac1fd3d45538c429ef17aeee1adea2",
+        "destination":  "TADp/template/prompts/01_proposal_creation.md",
+        "installed_sha256":  "aa98bef7435e1acc815f052bfb5078c6ebac1fd3d45538c429ef17aeee1adea2",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/prompts/02_proposal_alignment.md",
+        "source_sha256":  "e94231f8f6684be24ccd02933016e9bb0c1dd066dcbdf3737689b99acfe6a7be",
+        "destination":  "TADp/template/prompts/02_proposal_alignment.md",
+        "installed_sha256":  "e94231f8f6684be24ccd02933016e9bb0c1dd066dcbdf3737689b99acfe6a7be",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/prompts/03_initiative_creation.md",
+        "source_sha256":  "53fffacb3cfb8122863472089a9a4d0a723e0d3ecbcf083fddf5f0b54cb8709b",
+        "destination":  "TADp/template/prompts/03_initiative_creation.md",
+        "installed_sha256":  "53fffacb3cfb8122863472089a9a4d0a723e0d3ecbcf083fddf5f0b54cb8709b",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/prompts/04_initiative_alignment.md",
+        "source_sha256":  "c29d43d64a69e2a9710e325bff6cac009f2ffc4df3171f4a68e125a18df84694",
+        "destination":  "TADp/template/prompts/04_initiative_alignment.md",
+        "installed_sha256":  "c29d43d64a69e2a9710e325bff6cac009f2ffc4df3171f4a68e125a18df84694",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/prompts/05_initiative_assumption_review.md",
+        "source_sha256":  "eaee8e2330f5786c8442df9057c2da4ab443310176868d5561faefae2445771f",
+        "destination":  "TADp/template/prompts/05_initiative_assumption_review.md",
+        "installed_sha256":  "eaee8e2330f5786c8442df9057c2da4ab443310176868d5561faefae2445771f",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/prompts/06_initiative_open_question_review.md",
+        "source_sha256":  "0e574a24117f7aee2403b3d3f8574f477d523c172aefb4a7d1bc7df454c637e9",
+        "destination":  "TADp/template/prompts/06_initiative_open_question_review.md",
+        "installed_sha256":  "0e574a24117f7aee2403b3d3f8574f477d523c172aefb4a7d1bc7df454c637e9",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/prompts/07_initiative_acceptance.md",
+        "source_sha256":  "9179e1fe28e470b3fc2bacc521689bc02512917274c0eb9962bac39a8855a15d",
+        "destination":  "TADp/template/prompts/07_initiative_acceptance.md",
+        "installed_sha256":  "9179e1fe28e470b3fc2bacc521689bc02512917274c0eb9962bac39a8855a15d",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/prompts/08_initiative_sdk_api_alignment.md",
+        "source_sha256":  "f5f84257f122007e68ce58350f60eb4a9dc8b844b3629ef62ae187c8895e0f73",
+        "destination":  "TADp/template/prompts/08_initiative_sdk_api_alignment.md",
+        "installed_sha256":  "f5f84257f122007e68ce58350f60eb4a9dc8b844b3629ef62ae187c8895e0f73",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/prompts/09_initiative_implementation_readiness_review.md",
+        "source_sha256":  "3b7239e45f9d988b500b0a5478151c47b7242341822fe8cf719b5c3e19fd6cb5",
+        "destination":  "TADp/template/prompts/09_initiative_implementation_readiness_review.md",
+        "installed_sha256":  "3b7239e45f9d988b500b0a5478151c47b7242341822fe8cf719b5c3e19fd6cb5",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/prompts/10_initiative_execution.md",
+        "source_sha256":  "fd97048ad6a41369065728cf9d444d087aeeb78a583796374fb9c2694b18e0d5",
+        "destination":  "TADp/template/prompts/10_initiative_execution.md",
+        "installed_sha256":  "fd97048ad6a41369065728cf9d444d087aeeb78a583796374fb9c2694b18e0d5",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/prompts/11_design_delivery.md",
+        "source_sha256":  "33418c09e818d12b32346e0e0ad2ded33bbe93b512b0351c4bde7a7288803b9d",
+        "destination":  "TADp/template/prompts/11_design_delivery.md",
+        "installed_sha256":  "33418c09e818d12b32346e0e0ad2ded33bbe93b512b0351c4bde7a7288803b9d",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/prompts/12_planning_delivery.md",
+        "source_sha256":  "9c4735586f7b397b8c02e47d48874c4a08058e373223e543482eeb64938c2397",
+        "destination":  "TADp/template/prompts/12_planning_delivery.md",
+        "installed_sha256":  "9c4735586f7b397b8c02e47d48874c4a08058e373223e543482eeb64938c2397",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/prompts/13_initiative_finalization.md",
+        "source_sha256":  "b276df03503057b005647f6599fc76e0fdcaeefb815027054b2f8de7f592aab4",
+        "destination":  "TADp/template/prompts/13_initiative_finalization.md",
+        "installed_sha256":  "b276df03503057b005647f6599fc76e0fdcaeefb815027054b2f8de7f592aab4",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/prompts/README.md",
+        "source_sha256":  "dcd82ece7aa50b3481e77741562ecc7f18f9985f74e4de030676c3bde81de286",
+        "destination":  "TADp/template/prompts/README.md",
+        "installed_sha256":  "dcd82ece7aa50b3481e77741562ecc7f18f9985f74e4de030676c3bde81de286",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/prompts/scope_closure.md",
+        "source_sha256":  "47f75c9517d96c0108f81eb380b1d39c61d1f3d2280590fed8e84a175ecd2a32",
+        "destination":  "TADp/template/prompts/scope_closure.md",
+        "installed_sha256":  "47f75c9517d96c0108f81eb380b1d39c61d1f3d2280590fed8e84a175ecd2a32",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/prompts/WORKFLOW-CONTRACT.md",
+        "source_sha256":  "79808741d57e64eede24dec30bec415d397a829776bc0efaeef1df73a084b4f5",
+        "destination":  "TADp/template/prompts/WORKFLOW-CONTRACT.md",
+        "installed_sha256":  "79808741d57e64eede24dec30bec415d397a829776bc0efaeef1df73a084b4f5",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/README.md",
+        "source_sha256":  "e6341046c0e191c4297ad0dcf85eb4cdbf17c4ec61944e63cc5b67373e92ed85",
+        "destination":  "TADp/template/README.md",
+        "installed_sha256":  "e6341046c0e191c4297ad0dcf85eb4cdbf17c4ec61944e63cc5b67373e92ed85",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/TEMPLATE-COVERAGE.md",
+        "source_sha256":  "da47cbab60edcaaf8a41cc9078273eaff911a69ba6886f0a83a42bb118d6575c",
+        "destination":  "TADp/template/TEMPLATE-COVERAGE.md",
+        "installed_sha256":  "da47cbab60edcaaf8a41cc9078273eaff911a69ba6886f0a83a42bb118d6575c",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  true
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/tests/README.md",
+        "source_sha256":  "9723de71e5092aaf5827bbb8e7a2d5e30d5d66f68e700eddeae53a3556c03266",
+        "destination":  "TADp/tests/README.md",
+        "installed_sha256":  "9723de71e5092aaf5827bbb8e7a2d5e30d5d66f68e700eddeae53a3556c03266",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/tools/README.md",
+        "source_sha256":  "e617af0596400ff299b0ed5f5ca7bbbc55fdb9ba4c74315aeba1867db7fab202",
+        "destination":  "TADp/tools/README.md",
+        "installed_sha256":  "e617af0596400ff299b0ed5f5ca7bbbc55fdb9ba4c74315aeba1867db7fab202",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/tools/tadp_keywords.py",
+        "source_sha256":  "fde6d0f6cb6b44a46dfd446e91d1fcbb595e50a01d84bc2a9ffe4d36942236d3",
+        "destination":  "TADp/tools/tadp_keywords.py",
+        "installed_sha256":  "fde6d0f6cb6b44a46dfd446e91d1fcbb595e50a01d84bc2a9ffe4d36942236d3",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/tools/tadp_protect.py",
+        "source_sha256":  "7abb44b91a4e6890e0c30a7955b9619ea2f29a21ecb5d5e2d16e9a23e1e9f070",
+        "destination":  "TADp/tools/tadp_protect.py",
+        "installed_sha256":  "7abb44b91a4e6890e0c30a7955b9619ea2f29a21ecb5d5e2d16e9a23e1e9f070",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/tools/tadp_scopes.py",
+        "source_sha256":  "f928f3b4c7c89de589aed84d373b7dbec5552f65558e4e41883d04c81479a0fa",
+        "destination":  "TADp/tools/tadp_scopes.py",
+        "installed_sha256":  "f928f3b4c7c89de589aed84d373b7dbec5552f65558e4e41883d04c81479a0fa",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/tools/tadp_sync.py",
+        "source_sha256":  "dde1504f342a37f13bbe7b8536127219ec5f7cd85c8cfaf61916c781322b683d",
+        "destination":  "TADp/tools/tadp_sync.py",
+        "installed_sha256":  "dde1504f342a37f13bbe7b8536127219ec5f7cd85c8cfaf61916c781322b683d",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/tools/tadp_templates.py",
+        "source_sha256":  "0076683cbff675da2b0f2d41fc61363d959ef734f19fbe97c22cf063a92cd455",
+        "destination":  "TADp/tools/tadp_templates.py",
+        "installed_sha256":  "0076683cbff675da2b0f2d41fc61363d959ef734f19fbe97c22cf063a92cd455",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    },
+    {
+        "source_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+        "source_path":  "protocol/template/project/tools/tadp_validate.py",
+        "source_sha256":  "b9e82cae2074ba8c216bfa7ad43db3f0f15cc830aadc6bb2e0785df4a453586f",
+        "destination":  "TADp/tools/tadp_validate.py",
+        "installed_sha256":  "b9e82cae2074ba8c216bfa7ad43db3f0f15cc830aadc6bb2e0785df4a453586f",
+        "disposition":  "Unchanged baseline copy",
+        "protected":  false
+    }
+]

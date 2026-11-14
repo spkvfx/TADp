@@ -14,6 +14,16 @@ small pilot to assess the record-keeping cost for a smaller project.
 The reference protocol and its complete documentation live in
 [`protocol/`](protocol/README.md).
 
+New TADp development belongs in the installed [TADp development project](TADp/README.md).
+Read its [profile](TADp/project-profile.md), [instructions](TADp/AGENTS.md), and
+[development workflow](TADp/docs/development/tadp-development-workflow.md) from
+either operating context. Candidate protocol work belongs in `TADp/protocol/`;
+`protocol/` remains the implementation-ready distribution. Proven work follows
+the controlled route through `TADp/template/`, then `protocol/template/`, then
+the applicable mapped protocol consumers. Setup has performed no feature
+promotion or rollout. Human ownership belongs to the current repository owner,
+including each fork's respective owner; prospective adoption is recorded separately.
+
 ## The problem TADp is trying to solve
 
 Software projects often lose the connection between architecture decisions and

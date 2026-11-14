@@ -1,0 +1,28 @@
+{
+    "contexts":  [
+                     {
+                         "cwd":  "C:\\Users\\User\\PycharmProjects\\TADp",
+                         "source_prompt":  "C:\\Users\\User\\PycharmProjects\\TADp\\prompts\\create-tadp-development-project.md",
+                         "repository":  "C:\\Users\\User\\PycharmProjects\\TADp",
+                         "reused_project":  "C:\\Users\\User\\PycharmProjects\\TADp\\TADp",
+                         "reused_records":  10,
+                         "adoption_baseline_preserved":  true,
+                         "duplicate_nested_project":  false,
+                         "writes_performed":  0
+                     },
+                     {
+                         "cwd":  "C:\\Users\\User\\PycharmProjects\\TADp\\TADp",
+                         "source_prompt":  "C:\\Users\\User\\PycharmProjects\\TADp\\prompts\\create-tadp-development-project.md",
+                         "repository":  "C:\\Users\\User\\PycharmProjects\\TADp",
+                         "reused_project":  "C:\\Users\\User\\PycharmProjects\\TADp\\TADp",
+                         "reused_records":  10,
+                         "adoption_baseline_preserved":  true,
+                         "duplicate_nested_project":  false,
+                         "writes_performed":  0
+                     }
+                 ],
+    "files_before":  253,
+    "files_after":  253,
+    "changed_during_inspection":  0,
+    "method":  "Read-only manual-prompt rerun target/prerequisite inspection; no installer or future workflow executed"
+}
