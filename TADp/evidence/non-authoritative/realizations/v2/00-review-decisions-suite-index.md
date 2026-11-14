@@ -25,7 +25,7 @@
 **Catalog boundary:** One requested candidate protocol outcome: permit both
 numbered decision reviews to define either kind of item and record authorized
 dispositions at proper initiative or project owners. The exact source is the
-[inert prompt snapshot](../../assumption-question-review/source-prompt.md),
+[inert prompt snapshot](../../assumption-question-review/source-prompt.txt),
 originally `prompts/assumption-and-open-question-review-protocol-change.md` at
 Git revision `4f05752755eb63e31d65c152a2e1dc9134db7de5`.
 

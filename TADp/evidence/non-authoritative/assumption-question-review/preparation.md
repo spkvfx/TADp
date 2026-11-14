@@ -10,7 +10,7 @@
 
 **Recorded date:** 2026-11-14
 
-**Original source:** Repository prompt `prompts/assumption-and-open-question-review-protocol-change.md` at `4f05752755eb63e31d65c152a2e1dc9134db7de5`; exact [source snapshot](source-prompt.md) retained on resume
+**Original source:** Repository prompt `prompts/assumption-and-open-question-review-protocol-change.md` at `4f05752755eb63e31d65c152a2e1dc9134db7de5`; exact [source snapshot](source-prompt.txt) retained on resume
 
 **Governing project revision:** `6120bd10bb2e368274fd5bd4ff5481d33f61c4c6`
 

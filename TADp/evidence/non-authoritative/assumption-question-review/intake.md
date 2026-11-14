@@ -12,12 +12,17 @@ The resumed human answer was `TADp v1`, captured before its use in
 continues to authorize processing the identified bounded candidate request;
 the answer appoints its missing project integration base only.
 
-The exact invoked prompt is preserved in [source-prompt.md](source-prompt.md)
+The exact invoked prompt is preserved in [source-prompt.txt](source-prompt.txt)
 as an inert source snapshot, never as a project-local maintenance prompt. Its
 original repository path is
 `prompts/assumption-and-open-question-review-protocol-change.md` at
 `4f05752755eb63e31d65c152a2e1dc9134db7de5`; Git blob
-`394e97ad00ca98fd5adb21f21b4ad61c7f6ba53e` matches the captured file exactly.
+`394e97ad00ca98fd5adb21f21b4ad61c7f6ba53e` matches its canonical Git content.
+After scoped reuse, Git applied its ordinary CRLF worktree conversion: raw
+snapshot SHA-256 is `cb987f2a9dfb73d68376d0b1edd7553d77940a23ebe110d3d398d70cf6cd3721`;
+UTF-8/LF SHA-256 is `85c3eb4dcad24a1d17a1b69375c667135abdffa108841c0f66b68394319740fc`,
+equal to the original prompt digest. This is line-ending conversion, not a
+change to the instruction or its original source identity.
 Its original relative links describe that original path/revision and are not
 retargeted or executed from the snapshot. The file does not exist on appointed
 `v1` at resumed preflight, so no outside-P prompt is restored.

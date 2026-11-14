@@ -8,7 +8,7 @@
 
 **Recorded date:** 2026-11-14
 
-**Source:** [Exact invoked prompt snapshot](../../assumption-question-review/source-prompt.md), original repository path `prompts/assumption-and-open-question-review-protocol-change.md` at `4f05752755eb63e31d65c152a2e1dc9134db7de5`; Git blob `394e97ad00ca98fd5adb21f21b4ad61c7f6ba53e`
+**Source:** [Exact invoked prompt snapshot](../../assumption-question-review/source-prompt.txt), original repository path `prompts/assumption-and-open-question-review-protocol-change.md` at `4f05752755eb63e31d65c152a2e1dc9134db7de5`; Git blob `394e97ad00ca98fd5adb21f21b4ad61c7f6ba53e`
 
 **Version scope:** v2
 
