@@ -1,0 +1,5 @@
+Invocation from R:
+& 'C:/Users/User/PycharmProjects/TADp/.venv/Scripts/python.exe' -B TADp/evidence/non-authoritative/documentation-refresh/qualify.py --final
+Exit: 1, before any final checks ran.
+SyntaxError: unmatched ')' at line 226 in the added final-baseline comparison.
+The extra closing parenthesis was removed; the final checks were then rerun.

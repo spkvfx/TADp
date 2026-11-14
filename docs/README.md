@@ -18,3 +18,8 @@ The portable documentation split is currently a preparation target,
 not a completed rollout. Its [owning preparation record](../TADp/evidence/non-authoritative/documentation-split/preparation.md)
 records the source map, evidence and pending decisions. Project decisions and
 verification history stay at `TADp/`, outside this repository index.
+
+The [current documentation coverage review](../TADp/evidence/non-authoritative/documentation-refresh/coverage.md)
+records the broader refresh and the [verification report](../TADp/evidence/non-authoritative/documentation-refresh/verification.md)
+identifies its tested candidate content and pending delivery boundaries.
+Continue to use distributed guides through the links above until actual rollout.

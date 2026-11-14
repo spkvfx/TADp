@@ -1,0 +1,14 @@
+{
+  "root": "C:\\Users\\User\\PycharmProjects\\TADp\\protocol",
+  "valid": false,
+  "errors": 1,
+  "warnings": 0,
+  "findings": [
+    {
+      "severity": "error",
+      "code": "TADP041",
+      "path": "project-profile.md",
+      "message": "cannot verify coherence Git baseline or comparison revision: adopted coherence baseline must not be removed or disabled"
+    }
+  ]
+}

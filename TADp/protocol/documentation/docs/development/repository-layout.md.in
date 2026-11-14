@@ -278,8 +278,11 @@ specific project name or filesystem location.
 This tree is copied when another repository adopts TADp. It provides project
 instructions, evidence structure, profile, initiative indexes, status, and
 product records, plus the canonical project-local `prompts/AGENTS.md` and
-`prompts/README.md`. The authoritative LLM suite is copied separately into
-the target's `../../evidence/authoritative/LLM` path.
+`prompts/README.md`. The complete embedded authoritative LLM suite and its
+matching lock arrive with these scaffold contents at the target's
+`evidence/authoritative/LLM/` path. Do not union it with a separately locked
+distribution suite; use the inspected component map in
+[getting started](getting-started.md#adopt-tadp-in-an-existing-product-repository).
 
 ## Documentation, tools, and tests
 

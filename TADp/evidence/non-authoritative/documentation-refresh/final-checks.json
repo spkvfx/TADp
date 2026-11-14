@@ -1,0 +1,71 @@
+{
+  "baseline": "345a05559afc177f50609ccc2bb819a050f284b3",
+  "checks": [
+    {
+      "cwd": "C:\\Users\\User\\PycharmProjects\\TADp",
+      "command": [
+        "C:\\Users\\User\\PycharmProjects\\TADp\\.venv\\Scripts\\python.exe",
+        "-B",
+        "C:\\Users\\User\\PycharmProjects\\TADp\\TADp\\tools\\tadp_protect.py",
+        "check",
+        "TADp"
+      ],
+      "exit": 0,
+      "log": "final-TADp-tadp_protect.log"
+    },
+    {
+      "cwd": "C:\\Users\\User\\PycharmProjects\\TADp",
+      "command": [
+        "C:\\Users\\User\\PycharmProjects\\TADp\\.venv\\Scripts\\python.exe",
+        "-B",
+        "C:\\Users\\User\\PycharmProjects\\TADp\\TADp\\tools\\tadp_validate.py",
+        "TADp",
+        "--json",
+        "--base-ref",
+        "345a05559afc177f50609ccc2bb819a050f284b3"
+      ],
+      "exit": 0,
+      "log": "final-TADp-tadp_validate.log"
+    },
+    {
+      "cwd": "C:\\Users\\User\\PycharmProjects\\TADp",
+      "command": [
+        "C:\\Users\\User\\PycharmProjects\\TADp\\.venv\\Scripts\\python.exe",
+        "-B",
+        "C:\\Users\\User\\PycharmProjects\\TADp\\protocol\\tools\\tadp_protect.py",
+        "check",
+        "protocol"
+      ],
+      "exit": 0,
+      "log": "final-protocol-tadp_protect.log"
+    },
+    {
+      "cwd": "C:\\Users\\User\\PycharmProjects\\TADp",
+      "command": [
+        "C:\\Users\\User\\PycharmProjects\\TADp\\.venv\\Scripts\\python.exe",
+        "-B",
+        "C:\\Users\\User\\PycharmProjects\\TADp\\protocol\\tools\\tadp_validate.py",
+        "protocol",
+        "--json",
+        "--base-ref",
+        "345a05559afc177f50609ccc2bb819a050f284b3"
+      ],
+      "exit": 1,
+      "log": "final-protocol-tadp_validate.log"
+    }
+  ],
+  "preservation": {
+    "checked_files": 358,
+    "changed": []
+  },
+  "candidate_drift": [],
+  "repository_links": {
+    "checked": 39,
+    "failures": []
+  },
+  "evidence_links": {
+    "checked": 13,
+    "failures": []
+  },
+  "distribution_findings_match_baseline": true
+}

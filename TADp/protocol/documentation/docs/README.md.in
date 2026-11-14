@@ -11,6 +11,8 @@ with the
 If explanatory documentation and authoritative evidence differ, the
 authoritative evidence governs and the documentation must be corrected.
 
+<a id="developer-documentation"></a>
+
 ## Project documentation
 
 Read these documents in order when adopting and operating TADp in a project:
@@ -70,7 +72,7 @@ Read these documents in order when adopting and operating TADp in a project:
 
 ## Documentation maintenance
 
-- Keep project-root orientation in `../../README.md`; put durable explanations here.
+- Keep project-root orientation in [the project README](../README.md); put durable explanations here.
 - Link to authoritative specifications instead of copying normative text when
   the exact rule matters.
 - Use repository-relative links and run the validator after changing them.

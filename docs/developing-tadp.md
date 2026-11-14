@@ -138,8 +138,10 @@ plus exact declared changes, without populated P records or R/docs. Check
 relative links and anchors, indexes, component maps, commands, protected
 identities, compatible consumers and sanitation; obtain independent review.
 Retain actual commands, environment, bytes/digests, findings and recovery in P.
-The [owning verification record](../TADp/evidence/non-authoritative/documentation-split/preparation.md#baseline-checks)
-records this task's baseline findings. A baseline failure is not permission
+The [split preparation](../TADp/evidence/non-authoritative/documentation-split/preparation.md#baseline-checks)
+and [current refresh verification](../TADp/evidence/non-authoritative/documentation-refresh/verification.md)
+record their own baseline findings and exact checked revisions. Recheck current
+content rather than treating historical results as a new pass. A baseline failure is not permission
 to repair profiles, weaken checks or refresh locks in a documentation task.
 
 For separately authorized validator development, identify the governing
@@ -178,3 +180,8 @@ Portable revisions are candidate preparation only; see the
 [exact map and pending gates](../TADp/evidence/non-authoritative/documentation-split/preparation.md).
 The distributed guides remain unchanged until authorized delivery, so the
 transition currently has historical overlap rather than a completed move.
+
+The later [documentation refresh](../TADp/evidence/non-authoritative/documentation-refresh/preparation.md)
+reuses compatible split drafts and prepares additional explanatory corrections.
+Its coverage, manifests, actual results and pending authority remain at P;
+neither this guide nor a candidate draft grants protected delivery authority.

@@ -1,0 +1,17 @@
+{
+  "cwd": "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-doc-refresh-b_gh31j6\\root-git",
+  "command": [
+    "C:\\Users\\User\\PycharmProjects\\TADp\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-v"
+  ],
+  "exit": 0,
+  "log": "fixture-regressions.log",
+  "baseline": "345a05559afc177f50609ccc2bb819a050f284b3",
+  "qualification_workspace": "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-doc-refresh-b_gh31j6"
+}

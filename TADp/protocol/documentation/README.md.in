@@ -21,6 +21,8 @@ questions:
 
 TADp requires both **Git** and **Codex**.
 
+Python 3 runs the bundled checks; synchronization requires Python 3.11 or later.
+
 - **Git is required** because it gives the repository a stable identity and
   tracks initiative branches, reviewable commits, change history, and
   finalization evidence. A copied folder or a separate change log cannot
@@ -146,7 +148,7 @@ quietly weakening a specification or completion claim.
 | [`template/project/`](template/project/README.md) | Reusable structure for adding TADp to another repository |
 | [`template/TEMPLATE-COVERAGE.md`](template/TEMPLATE-COVERAGE.md) | Canonical file, embedded-section, conditional, and response-shape sources with destinations and owning stages |
 | [`tools/`](tools/README.md) | Protocol validator and instructions for using it |
-| [`tests/`](tests/test_tadp_validate.py) | Tests for the validator |
+| [`tests/`](tests/test_tadp_validate.py) | Bundled regressions for validation, protection, synchronization, scope, keyword, and template behavior |
 | [`docs/`](docs/README.md) | Development and operating guides |
 
 See [Repository layout](docs/development/repository-layout.md) for the full
@@ -198,6 +200,8 @@ Compatibility entry point: protocol source maintainers use their own repository
 contributor documentation and exact maintenance authority. See the portable
 [change boundary](docs/development/README.md); project adoption continues below.
 
+<a id="adopt-tadp-in-another-repository"></a>
+
 ### Adopt TADp in a project
 
 Use the [complete portable installation procedure](docs/development/getting-started.md).
@@ -206,18 +210,21 @@ adoption, Git-root and nested installations, and the first narrow pilot.
 
 ## Validation
 
-The validator uses only the Python standard library. From the selected project installation root P, using its configured interpreter:
+The validator uses only the Python standard library. From the selected project
+installation root P, set `$TadpPython` to the actual configured executable
+returned by environment tooling. The following examples are reference-only;
+run applicable installed regressions and your project's product checks separately:
 
 ```powershell
-python tools/tadp_protect.py check .
-python tools/tadp_validate.py .
-python -m unittest discover -s tests -v
+& $TadpPython tools/tadp_protect.py check .
+& $TadpPython tools/tadp_validate.py .
+& $TadpPython -m unittest discover -s tests -v
 ```
 
 For machine-readable output:
 
 ```powershell
-python tools/tadp_validate.py . --json
+& $TadpPython tools/tadp_validate.py . --json
 ```
 
 Passing validation confirms that the checked records follow TADp's structure

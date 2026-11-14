@@ -1,0 +1,120 @@
+# Protected-source integrity migration
+
+## Purpose and standing
+
+This guide migrates an existing TADp adoption to the protected-source controls
+for reusable templates and the Codex invariant suite. It is procedural
+guidance. The authoritative evidence rules continue to determine whether a
+source may change, and this guide does not accept an existing local difference
+as authoritative.
+
+The protected roots are:
+
+- `template/`, which remains reusable source and must be copied before
+  specialization; and
+- `evidence/authoritative/LLM/`, which is the binding Codex invariant suite.
+
+Resolve the installation root `P` and actual enclosing Git worktree root `G`
+under the [root and adoption guide](project-root-installation-migration.md).
+Run relative tool commands from `P`; coordinate shared Git configuration at
+`G`. In the reference-only PowerShell examples below, `$TadpPython` denotes
+the project's configured Python executable and `$GitRoot` the verified `G`.
+Discover the interpreter before running Python commands. These examples create
+no authority to initialize locks or configure hooks.
+
+## Preconditions
+
+Before changing the adoption:
+
+1. Follow the project's traceable Git workflow and recorded dedicated or shared
+   execution assignment where applicable. Inspect staged, unstaged, and
+   untracked work and actual branch roles; coordinate shared Git state before
+   mutation. This guide does not allocate a branch or execution assignment.
+2. Record the TADp distribution revision from which the repository was adopted,
+   when it is known.
+3. Compare both protected roots with that distribution and classify every
+   difference as an intentional authorized revision, an instantiated record
+   stored in the wrong place, or unexplained drift.
+4. Obtain an explicit human decision identifying the exact baseline that may be
+   locked. Do not infer acceptance from the fact that files already exist.
+5. Preserve any prior invariant revision evidence and migration consequences.
+
+If a local invariant conflicts with the governing suite, use the invariant
+conflict procedure. If a file under `template/` is actually an instantiated
+record, move or recreate it at the proper non-template destination through an
+authorized change; do not legitimize the placement by locking it.
+
+## Migration
+
+1. Copy the current root and directory-scoped `AGENTS.md` instructions,
+   `tools/tadp_protect.py`, the updated validator and tests, and
+   `.githooks/pre-commit` from one pinned TADp revision.
+2. Ensure the complete reusable template tree is present at `template/` and
+   the complete invariant suite is present at
+   `evidence/authoritative/LLM/`.
+3. Run the ordinary validator. Expected missing-lock findings may remain, but
+   resolve every unrelated error before establishing the baseline.
+4. Initialize both locks with a durable reference to the human decision:
+
+   ```powershell
+   & $TadpPython tools/tadp_protect.py initialize . --authority "<decision record or explicit adoption authority>"
+   ```
+
+5. Review both generated `.tadp-lock.json` files. They must identify the
+   correct protected root, authority reference, and every source file except
+   the lock itself.
+6. Inspect existing hook configuration at `G` and manually coordinate shared
+   hooks before any explicit activation:
+
+   ```powershell
+   git -C $GitRoot config --show-origin --get core.hooksPath
+   ```
+
+   An unset `core.hooksPath` normally returns exit 1; inspect existing default
+   hooks as well. After a deliberate configuration decision, select the hook
+   path relative to `G`. The following activation example applies only when
+   `P=G` and existing hooks have been reconciled:
+
+   ```powershell
+   git -C $GitRoot config core.hooksPath .githooks
+   ```
+
+   For `P=G/projects/widget`, the Git-relative path is
+   `projects/widget/.githooks`. Installation must not implicitly overwrite or
+   enable parent hooks. Select the configured interpreter through `TADP_PYTHON`
+   when the hook's default `python` differs from it.
+7. Coordinate hook configuration deliberately for each future clone. Where
+   the project uses hosting, require source-owner review for both protected
+   roots and their locks under its actual hosting policy; do not assume a
+   remote or hosting service exists.
+8. Commit the migration as one reviewable baseline change. Because the initial
+   commit touches protected paths, use the documented one-commit environment
+   gate with the exact authority string stored in the locks.
+
+## Verification
+
+Run protection and validation from the verified installation root `P`:
+
+```powershell
+& $TadpPython tools/tadp_protect.py check .
+& $TadpPython tools/tadp_validate.py .
+# When the adopted revision's regression suite is installed at tests/:
+& $TadpPython -m unittest discover -s tests -v
+```
+
+Use the applicable regression suite and command documented by the pinned
+revision and [validation guide](../development/validation-and-quality.md).
+A scaffold `tests/` directory containing only navigation is not that suite;
+report missing or unperformed regressions explicitly. Run the adopting
+project's product checks separately where applicable.
+
+In an isolated disposable copy of the pinned baseline, verify that an ordinary
+staged edit under either protected root is rejected without the explicit
+protected-update gate. Preserve the live protected sources and locks. Do not
+leave the gate environment variables configured after the authorized commit.
+
+A successful migration proves canonical-content agreement with the recorded
+locks. UTF-8 line endings are normalized before hashing; binary files are
+hashed as stored. The result does not prove that an unidentified local
+difference was authorized, that the named human had decision authority, or
+that project-specific evidence is correct.

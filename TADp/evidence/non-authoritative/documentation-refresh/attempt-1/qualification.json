@@ -1,0 +1,210 @@
+{
+  "baseline": "345a05559afc177f50609ccc2bb819a050f284b3",
+  "python": "C:\\Users\\User\\PycharmProjects\\TADp\\.venv\\Scripts\\python.exe",
+  "python_version": "3.11.1 (tags/v3.11.1:a7a450f, Dec  6 2022, 19:58:39) [MSC v.1934 64 bit (AMD64)]",
+  "workspace": "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-doc-refresh-u8fc6_9d",
+  "fixtures": {
+    "root": {
+      "P": "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-doc-refresh-u8fc6_9d\\root-git",
+      "G": "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-doc-refresh-u8fc6_9d\\root-git",
+      "steps": [
+        {
+          "cwd": "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-doc-refresh-u8fc6_9d",
+          "command": [
+            "powershell",
+            "-NoProfile",
+            "-Command",
+            "$ErrorActionPreference = 'Stop'\n$GitRoot = 'C:\\Users\\User\\AppData\\Local\\Temp\\tadp-doc-refresh-u8fc6_9d\\root-git'\n$ProjectRoot = 'C:\\Users\\User\\AppData\\Local\\Temp\\tadp-doc-refresh-u8fc6_9d\\root-git'\n$Source = 'C:\\Users\\User\\AppData\\Local\\Temp\\tadp-doc-refresh-u8fc6_9d\\protocol'\ngit -C $GitRoot init --quiet\nif ($LASTEXITCODE) { throw 'git init failed' }\n[IO.File]::WriteAllText((Join-Path $GitRoot 'baseline.txt'), 'inert fixture only')\ngit -C $GitRoot add baseline.txt\ngit -C $GitRoot -c user.name=Fixture -c user.email=fixture@example.invalid commit --quiet -m 'fixture baseline'\nif ($LASTEXITCODE) { throw 'fixture baseline commit failed' }\nNew-Item -ItemType Directory -Force -Path $ProjectRoot | Out-Null\nGet-ChildItem -LiteralPath (Join-Path $Source 'template/project') -Force |\n    Where-Object Name -ne 'template' |\n    Copy-Item -Destination $ProjectRoot -Recurse -Force\nCopy-Item -LiteralPath (Join-Path $Source 'template') -Destination $ProjectRoot -Recurse\nforeach ($Component in @('docs', 'tools', 'tests')) {\n    New-Item -ItemType Directory -Force -Path (Join-Path $ProjectRoot $Component) | Out-Null\n    Get-ChildItem -LiteralPath (Join-Path $Source $Component) -Force |\n        Copy-Item -Destination (Join-Path $ProjectRoot $Component) -Recurse -Force\n}\n"
+          ],
+          "exit": 0,
+          "log": "root-assembly.log"
+        },
+        {
+          "cwd": "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-doc-refresh-u8fc6_9d\\root-git",
+          "command": [
+            "C:\\Users\\User\\PycharmProjects\\TADp\\.venv\\Scripts\\python.exe",
+            "-B",
+            "tools/tadp_protect.py",
+            "check",
+            "."
+          ],
+          "exit": 0,
+          "log": "root-tadp_protect.log"
+        },
+        {
+          "cwd": "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-doc-refresh-u8fc6_9d\\root-git",
+          "command": [
+            "C:\\Users\\User\\PycharmProjects\\TADp\\.venv\\Scripts\\python.exe",
+            "-B",
+            "tools/tadp_validate.py",
+            ".",
+            "--json"
+          ],
+          "exit": 0,
+          "log": "root-tadp_validate.log"
+        }
+      ],
+      "links": {
+        "checked": 205,
+        "failures": []
+      },
+      "dotfiles": {
+        ".gitattributes": true,
+        ".githooks/pre-commit": true,
+        "prompts/AGENTS.md": true,
+        "template/.tadp-lock.json": true,
+        "evidence/authoritative/LLM/.tadp-lock.json": true
+      },
+      "hook_configuration": "",
+      "payload_sha256": {
+        "docs/development/developing-tadp.md": "ab93b861e237a96d1905c7c973a85513b0f66a64346679c1bc5f0279ef0683a3",
+        "docs/development/README.md": "ab93b861e237a96d1905c7c973a85513b0f66a64346679c1bc5f0279ef0683a3",
+        "docs/development/getting-started.md": "f7a1911158bdf83f860a0bea12862ede3739677e61643c8ea28cfa2d23c0eedb",
+        "docs/development/git-and-codex-requirements.md": "7b3df7f5f953ccba746b7aba1e934871a1ec04419207a3bd1e81fe420f4dcf69",
+        "docs/development/repository-layout.md": "74cba7ff6774b260987ef9c22d6be8692b8e081151ecf22106e2d56aea06d976",
+        "docs/development/validation-and-quality.md": "abbf54fc7a74aa34948065f041c60c561a5b81fee37b3c049f49f14e54e6b639",
+        "docs/guides/project-local-prompts-migration.md": "c6437ccdc760114bf550f15fe09214b4e2278b3066fa92330186a78905f07873",
+        "docs/guides/protected-source-integrity-migration.md": "5a6798174a699fdf71d7a263bff5c8c7bfa940d3138df654b195f520b270461c",
+        "docs/guides/version-scope-migration.md": "d935f0224c96277ff4a996ccdaaafcede49528b5a0fb5b1573a43edc64b973f8",
+        "docs/README.md": "8d81c8f627fe4ac5dd7ead3486a8ad7d4510b98cf2f37a4bcd247542c54dc6cf",
+        "evidence/non-authoritative/README.md": "db22a0b8fb1a1d2585385e206ffc115ff14e4c75ae6d199608775bd6e1f558ca",
+        "evidence/non-authoritative/realizations/README.md": "1de447a66eae2d00b695ef230a25d9ed99f470c26fcde8e69d840a44307912f1",
+        "evidence/README.md": "2dc3db34facc525b9d8093ae9681282464e9002ad3a0e4351927122ea6807166",
+        "initiatives/design/README.md": "4644e04e5928f61438e5e8f747077287f3b03085d36270e9ba1311da4c63de10",
+        "initiatives/implementation/README.md": "23771f286c34d47a45ce769aea334151e9fddc5f2206686a1107b6c9105c94e9",
+        "initiatives/planning/README.md": "fba551be551eb72e7372895928c9d8c9e33e29c9d0d1152eace3efd7dbf831d3",
+        "initiatives/README.md": "7a72da6d531115b430b99d30c29524b9e43833511344fd8ccce05a357bfc5dc9",
+        "products/README.md": "28d29a73d79d4b69939e03f9255d6ec59f606557c376e76207acb2e1798c4e60",
+        "README.md": "c580af64b010001bbeb7c6dd616b12eb8b67d65ccdf97b0b8c468f8cd9d468a3",
+        "tools/README.md": "4ce2f6bc2e23f48903e053de0ac684b97f5a51680d1aa4a664ac62d0c3f0f047"
+      }
+    },
+    "nested": {
+      "P": "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-doc-refresh-u8fc6_9d\\nested-git\\projects\\widget",
+      "G": "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-doc-refresh-u8fc6_9d\\nested-git",
+      "steps": [
+        {
+          "cwd": "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-doc-refresh-u8fc6_9d",
+          "command": [
+            "powershell",
+            "-NoProfile",
+            "-Command",
+            "$ErrorActionPreference = 'Stop'\n$GitRoot = 'C:\\Users\\User\\AppData\\Local\\Temp\\tadp-doc-refresh-u8fc6_9d\\nested-git'\n$ProjectRoot = 'C:\\Users\\User\\AppData\\Local\\Temp\\tadp-doc-refresh-u8fc6_9d\\nested-git\\projects\\widget'\n$Source = 'C:\\Users\\User\\AppData\\Local\\Temp\\tadp-doc-refresh-u8fc6_9d\\protocol'\ngit -C $GitRoot init --quiet\nif ($LASTEXITCODE) { throw 'git init failed' }\n[IO.File]::WriteAllText((Join-Path $GitRoot 'baseline.txt'), 'inert fixture only')\ngit -C $GitRoot add baseline.txt\ngit -C $GitRoot -c user.name=Fixture -c user.email=fixture@example.invalid commit --quiet -m 'fixture baseline'\nif ($LASTEXITCODE) { throw 'fixture baseline commit failed' }\nNew-Item -ItemType Directory -Force -Path $ProjectRoot | Out-Null\nGet-ChildItem -LiteralPath (Join-Path $Source 'template/project') -Force |\n    Where-Object Name -ne 'template' |\n    Copy-Item -Destination $ProjectRoot -Recurse -Force\nCopy-Item -LiteralPath (Join-Path $Source 'template') -Destination $ProjectRoot -Recurse\nforeach ($Component in @('docs', 'tools', 'tests')) {\n    New-Item -ItemType Directory -Force -Path (Join-Path $ProjectRoot $Component) | Out-Null\n    Get-ChildItem -LiteralPath (Join-Path $Source $Component) -Force |\n        Copy-Item -Destination (Join-Path $ProjectRoot $Component) -Recurse -Force\n}\n"
+          ],
+          "exit": 0,
+          "log": "nested-assembly.log"
+        },
+        {
+          "cwd": "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-doc-refresh-u8fc6_9d\\nested-git\\projects\\widget",
+          "command": [
+            "C:\\Users\\User\\PycharmProjects\\TADp\\.venv\\Scripts\\python.exe",
+            "-B",
+            "tools/tadp_protect.py",
+            "check",
+            "."
+          ],
+          "exit": 0,
+          "log": "nested-tadp_protect.log"
+        },
+        {
+          "cwd": "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-doc-refresh-u8fc6_9d\\nested-git\\projects\\widget",
+          "command": [
+            "C:\\Users\\User\\PycharmProjects\\TADp\\.venv\\Scripts\\python.exe",
+            "-B",
+            "tools/tadp_validate.py",
+            ".",
+            "--json"
+          ],
+          "exit": 0,
+          "log": "nested-tadp_validate.log"
+        },
+        {
+          "cwd": "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-doc-refresh-u8fc6_9d\\nested-git",
+          "command": [
+            "C:\\Users\\User\\PycharmProjects\\TADp\\.venv\\Scripts\\python.exe",
+            "-B",
+            "projects/widget/tools/tadp_protect.py",
+            "check",
+            "projects/widget"
+          ],
+          "exit": 0,
+          "log": "nested-from-G-tadp_protect.log"
+        },
+        {
+          "cwd": "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-doc-refresh-u8fc6_9d\\nested-git",
+          "command": [
+            "C:\\Users\\User\\PycharmProjects\\TADp\\.venv\\Scripts\\python.exe",
+            "-B",
+            "projects/widget/tools/tadp_validate.py",
+            "projects/widget",
+            "--json"
+          ],
+          "exit": 0,
+          "log": "nested-from-G-tadp_validate.log"
+        }
+      ],
+      "links": {
+        "checked": 205,
+        "failures": []
+      },
+      "dotfiles": {
+        ".gitattributes": true,
+        ".githooks/pre-commit": true,
+        "prompts/AGENTS.md": true,
+        "template/.tadp-lock.json": true,
+        "evidence/authoritative/LLM/.tadp-lock.json": true
+      },
+      "hook_configuration": "",
+      "payload_sha256": {
+        "docs/development/developing-tadp.md": "ab93b861e237a96d1905c7c973a85513b0f66a64346679c1bc5f0279ef0683a3",
+        "docs/development/README.md": "ab93b861e237a96d1905c7c973a85513b0f66a64346679c1bc5f0279ef0683a3",
+        "docs/development/getting-started.md": "f7a1911158bdf83f860a0bea12862ede3739677e61643c8ea28cfa2d23c0eedb",
+        "docs/development/git-and-codex-requirements.md": "7b3df7f5f953ccba746b7aba1e934871a1ec04419207a3bd1e81fe420f4dcf69",
+        "docs/development/repository-layout.md": "74cba7ff6774b260987ef9c22d6be8692b8e081151ecf22106e2d56aea06d976",
+        "docs/development/validation-and-quality.md": "abbf54fc7a74aa34948065f041c60c561a5b81fee37b3c049f49f14e54e6b639",
+        "docs/guides/project-local-prompts-migration.md": "c6437ccdc760114bf550f15fe09214b4e2278b3066fa92330186a78905f07873",
+        "docs/guides/protected-source-integrity-migration.md": "5a6798174a699fdf71d7a263bff5c8c7bfa940d3138df654b195f520b270461c",
+        "docs/guides/version-scope-migration.md": "d935f0224c96277ff4a996ccdaaafcede49528b5a0fb5b1573a43edc64b973f8",
+        "docs/README.md": "8d81c8f627fe4ac5dd7ead3486a8ad7d4510b98cf2f37a4bcd247542c54dc6cf",
+        "evidence/non-authoritative/README.md": "db22a0b8fb1a1d2585385e206ffc115ff14e4c75ae6d199608775bd6e1f558ca",
+        "evidence/non-authoritative/realizations/README.md": "1de447a66eae2d00b695ef230a25d9ed99f470c26fcde8e69d840a44307912f1",
+        "evidence/README.md": "2dc3db34facc525b9d8093ae9681282464e9002ad3a0e4351927122ea6807166",
+        "initiatives/design/README.md": "4644e04e5928f61438e5e8f747077287f3b03085d36270e9ba1311da4c63de10",
+        "initiatives/implementation/README.md": "23771f286c34d47a45ce769aea334151e9fddc5f2206686a1107b6c9105c94e9",
+        "initiatives/planning/README.md": "fba551be551eb72e7372895928c9d8c9e33e29c9d0d1152eace3efd7dbf831d3",
+        "initiatives/README.md": "7a72da6d531115b430b99d30c29524b9e43833511344fd8ccce05a357bfc5dc9",
+        "products/README.md": "28d29a73d79d4b69939e03f9255d6ec59f606557c376e76207acb2e1798c4e60",
+        "README.md": "c580af64b010001bbeb7c6dd616b12eb8b67d65ccdf97b0b8c468f8cd9d468a3",
+        "tools/README.md": "4ce2f6bc2e23f48903e053de0ac684b97f5a51680d1aa4a664ac62d0c3f0f047"
+      }
+    }
+  },
+  "preservation": {
+    "checked_files": 358,
+    "changed": []
+  },
+  "headings_lost": {
+    "TADp/protocol/documentation/docs/README.md.in": [
+      "developer-documentation"
+    ],
+    "TADp/protocol/documentation/README.md.in": [
+      "adopt-tadp-in-another-repository"
+    ]
+  },
+  "patch_check": {
+    "cwd": "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-doc-refresh-u8fc6_9d\\protocol",
+    "command": [
+      "git",
+      "apply",
+      "--check",
+      "--unidiff-zero",
+      "C:\\Users\\User\\PycharmProjects\\TADp\\TADp\\protocol\\documentation-refresh.patch"
+    ],
+    "exit": 0,
+    "log": "candidate-patch-check.log"
+  },
+  "repository_links": {
+    "checked": 39,
+    "failures": []
+  }
+}

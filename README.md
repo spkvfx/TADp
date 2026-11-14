@@ -31,6 +31,11 @@ lead to the current distributed guides. See the
 [preparation and delivery map](TADp/evidence/non-authoritative/documentation-split/preparation.md)
 for exact status and boundaries.
 
+The [current documentation review](TADp/evidence/non-authoritative/documentation-refresh/coverage.md)
+also prepares corrections to tool, evidence, workflow, and migration explanations.
+Those candidate revisions are not yet distributed; their verification and
+remaining delivery decisions stay with the development project.
+
 ## Example repository
 
 The example has a separate [repository](https://github.com/spkvfx/TADp-example).

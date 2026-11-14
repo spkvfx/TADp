@@ -1,0 +1,46 @@
+{
+  "cwd": "C:/Users/User/PycharmProjects/TADp",
+  "baseline": "345a05559afc177f50609ccc2bb819a050f284b3",
+  "checks": [
+    {
+      "root": "TADp",
+      "file": "tadp_protect.py",
+      "command": "& 'C:/Users/User/PycharmProjects/TADp/.venv/Scripts/python.exe' -B TADp/tools/tadp_protect.py check TADp",
+      "chunk_id": "993f34",
+      "wall_time_seconds": 0.0000236,
+      "exit_code": 0,
+      "original_token_count": 11,
+      "output": "TADp protected-source check: 0 error(s)\r\n"
+    },
+    {
+      "root": "TADp",
+      "file": "tadp_validate.py",
+      "command": "& 'C:/Users/User/PycharmProjects/TADp/.venv/Scripts/python.exe' -B TADp/tools/tadp_validate.py TADp --json",
+      "chunk_id": "ae2c39",
+      "wall_time_seconds": 3.0877886,
+      "exit_code": 0,
+      "original_token_count": 34,
+      "output": "{\r\n  \"root\": \"C:\\\\Users\\\\User\\\\PycharmProjects\\\\TADp\\\\TADp\",\r\n  \"valid\": true,\r\n  \"errors\": 0,\r\n  \"warnings\": 0,\r\n  \"findings\": []\r\n}\r\n"
+    },
+    {
+      "root": "protocol",
+      "file": "tadp_protect.py",
+      "command": "& 'C:/Users/User/PycharmProjects/TADp/.venv/Scripts/python.exe' -B protocol/tools/tadp_protect.py check protocol",
+      "chunk_id": "f9313a",
+      "wall_time_seconds": 0.0000268,
+      "exit_code": 0,
+      "original_token_count": 11,
+      "output": "TADp protected-source check: 0 error(s)\r\n"
+    },
+    {
+      "root": "protocol",
+      "file": "tadp_validate.py",
+      "command": "& 'C:/Users/User/PycharmProjects/TADp/.venv/Scripts/python.exe' -B protocol/tools/tadp_validate.py protocol --json",
+      "chunk_id": "5e7a88",
+      "wall_time_seconds": 3.1988128,
+      "exit_code": 1,
+      "original_token_count": 98,
+      "output": "{\r\n  \"root\": \"C:\\\\Users\\\\User\\\\PycharmProjects\\\\TADp\\\\protocol\",\r\n  \"valid\": false,\r\n  \"errors\": 1,\r\n  \"warnings\": 0,\r\n  \"findings\": [\r\n    {\r\n      \"severity\": \"error\",\r\n      \"code\": \"TADP041\",\r\n      \"path\": \"project-profile.md\",\r\n      \"message\": \"cannot verify coherence Git baseline or comparison revision: adopted coherence baseline must not be removed or disabled\"\r\n    }\r\n  ]\r\n}\r\n"
+    }
+  ]
+}
