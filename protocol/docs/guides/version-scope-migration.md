@@ -3,7 +3,6 @@
 This guide explains the prospectively adopted
 [scope specification](../../evidence/authoritative/LLM/09_Codex_Version_Realization_Initiative_Correlation_Specification.md)
 and [Git contract](../../evidence/authoritative/LLM/05_Codex_Git_Workflow_Specification.md).
-The maintenance authority is [VSG-DR-001](../../decisions/VSG-DR-001-version-scope-grouping.md).
 Installation alone migrates no initiative and authorizes no live merge.
 
 ## Identity and placement

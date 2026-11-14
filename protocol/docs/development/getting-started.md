@@ -58,10 +58,9 @@ Use this path when maintaining the protocol itself:
 
 Run checks from `protocol/`. To configure the protocol-owned hook from the
 enclosing Git root, inspect existing configuration first, then use
-`git config core.hooksPath protocol/.githooks`. The old root hook still targets
-both `protocol/` and absent `example/`; it is not the current maintenance check
-boundary. Setup changes local Git configuration; reading this guide does not
-perform them. Set `TADP_PYTHON` to the configured interpreter for hook execution.
+`git config core.hooksPath protocol/.githooks`. Setup changes local Git
+configuration; reading this guide does not perform them. Set `TADP_PYTHON` to
+the configured interpreter for hook execution.
 
 ### Adopt TADp in an existing product repository
 
@@ -85,9 +84,6 @@ Use this path when TADp will govern work in another repository:
    weaken the authoritative TADp rules.
 6. Copy `../../docs`, `../../tools`, and `../../tests`. This preserves the
    protection utility, validator, migration guidance, and regression coverage.
-   Preserve historical distribution receipts linked by the suite under
-   `decisions/`; these are source-provenance records, not decisions for your
-   project's work.
 7. From the project root run `python tools/tadp_protect.py check .`.
    Inspect existing hooks at `G` and coordinate them manually before explicit
    activation. `core.hooksPath` is shared and relative to `G`; for example,
@@ -205,11 +201,3 @@ revision's real immutable delivery commit in the profile. Legacy work remains
 under its recorded compatible revision until explicitly migrated; predecessor
 adoption steps above do not allocate a new scope or rename historical versions.
 See [scope migration](../guides/version-scope-migration.md).
-
-## Separate example
-
-The example is maintained in the separate
-[TADp-example repository](https://github.com/spkvfx/TADp-example), with clone URL
-`https://github.com/spkvfx/TADp-example.git`. Its current rebuild, adoption and
-application behavior are unverified here. Cloning it is optional and does not
-replace the adoption steps or make it a protocol synchronization target.

@@ -26,20 +26,17 @@ that destination; do not overwrite its README with the placeholder.
 The baseline contains navigation, applicable record shapes, runtime support,
 governing protocol rules and project-use guides. It contains no TADp live
 initiatives, development reports, decisions, delivered project products or
-test results. The empty project conflict register does not inherit TADp's
-active conflicts. Protocol revision history identifies upstream provenance;
-it is not the adopting project's history or adoption evidence.
+test results. The conflict register is an uninstantiated record shape;
+project-specific entries belong to the adopting project. Each project records
+its own governing revision and adoption evidence.
 
-## Layout revision and compatibility
+## Compatibility
 
-The user's 2026-11-13 instruction explicitly requests this consolidation,
-complete folder navigation, nonrecursive library placeholder and clean
-baseline. Git preserves the former sibling `initiatives/` source and original
-filenames. The coverage map and necessarily affected prompts, source links,
-tools and integrity locks follow the new source locations. Substantive
-protocol rules, stage ownership, instance destinations and lifecycle claims
-do not change. Existing projects retain their sources and work until an
-authorized update; synchronization never deletes retired or user-owned files.
+Reusable source locations, filenames and consumers must agree with the
+canonical coverage map. Stage ownership, instance destinations, lifecycle
+meanings and substantive protocol rules govern every copied record.
+Existing projects retain their sources and work until an authorized update;
+synchronization never deletes retired or user-owned files.
 
 The [canonical coverage and use map](TEMPLATE-COVERAGE.md) identifies the
 source, destination, applicability, owning activity, evidence, and checks for
@@ -61,8 +58,8 @@ template edit.
 
 ## Protocol vocabulary
 
-- `../evidence/authoritative` replaces the former `invariants` label. It identifies
-  binding evidence that governs a specification or product decision.
+- `../evidence/authoritative` identifies binding evidence that governs a
+  specification or product decision.
 - `../evidence/non-authoritative` identifies contextual, exploratory, or supporting
   evidence. It can inform a decision but cannot by itself override
   `../evidence/authoritative`.

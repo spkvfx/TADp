@@ -9,32 +9,22 @@ compatibility, release, or collective completion claims. Each initiative owns
 one narrow outcome and its independent lifecycle, type-specific suite,
 decisions, acceptance, delivery records, and completion evidence.
 
-### Version-scope revision record
+### Adoption and compatibility
 
-- **Authority:** The User's 2026-11-12 instruction to execute
-  `prompts/version-scope-grouping-and-branching-protocol-change.md`, captured in
-  [VSG-DR-001](../../../decisions/VSG-DR-001-version-scope-grouping.md).
-- **Reason:** Group several independently acceptable initiatives by realization
-  scope, permit coherent revision and delegated intake routing, and record
-  major/minor/patch integration without conflating identity with acceptance.
-- **Affected scope:** Specifications 01 through 10 and necessary specification
-  11 cross-references, entry points, realization and initiative templates,
-  Stage 0 and Stage 13, scope closure, indexes, Git records, validation,
-  regression tests, adoption guidance, and affected protected locks.
-- **Effective event:** The first Git commit containing this coherent revision,
-  reconciled consumers, verification, downstream mirrors, and authorized locks.
-  An adopter records that exact commit and its own adoption baseline before
-  allocating or routing under this model.
-- **Compatibility and migration:** Prospective explicit adoption. Earlier
-  tuples, paths, branches, accepted claims and governing revisions remain
-  historical. A complete migration-ledger disposition is required; adoption
-  alone does not move, rename, reparent, reopen, accept, merge or close work.
-- **Successor relationship:** Replaces this specification's earlier bijection,
-  two-component-only syntax, single-outcome suite, exclusive branch and
-  mandatory substantive-successor rules. Reconciles specifications 02, 04,
-  05, 06, 07, 08 and 10 only for the named routing, reopening, placement and
-  integration changes. Git preserves earlier revisions. All other evidence,
-  scope, human acceptance, delivery and completion invariants remain binding.
+Apply this scope model prospectively after explicit adoption. Record its
+coherent governing Git commit and the project's actual adoption baseline
+before allocating or routing work under it. The governing commit must contain
+the authorized sources, reconciled consumers, verification and protected locks.
+
+Preserve earlier tuples, source notes, paths, branches, accepted claims and
+compatible governing revisions until their complete evidence-backed
+migration-ledger dispositions are recorded. Adoption alone does not move,
+rename, reparent, reopen, accept, merge or close work.
+
+The current scope, provenance, revision, execution-placement and integration
+rules govern adopted work. Source identity, evidence standing, narrow scope,
+human acceptance, type-specific delivery and truthful completion requirements
+remain binding. Git preserves prior source revisions.
 
 ## Documentary sources
 

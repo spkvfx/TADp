@@ -66,7 +66,7 @@ binding record. Do not log routine formatting edits that do not alter meaning.
 ## Cite evidence correctly
 
 A useful citation lets another person find exactly the claim that matters.
-Use a form such as `EVD-004, §2.3 “Retention”, revision 2026-10-30`, followed
+Use a form such as `EVD-004, §2.3 “Retention”, revision <source-revision>`, followed
 by a path or link. In an initiative, state how the claim affects the scope,
 specification, decision, or verification. In a product record, state which
 behavior or release gate proves compliance.

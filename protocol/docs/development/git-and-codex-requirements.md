@@ -158,12 +158,8 @@ child-to-parent integration need no remote or PR service. Humans independently
 manage pull requests. Pushes need separate authority; report an external remote
 policy without bypassing it or creating a PR automatically.
 
-The installed Stage 5 and 6 prompt endings still request an unconditional
-push. This known consumer contradiction is recorded as `INV-CONFLICT-002` in
-the [invariant conflict register](../../evidence/authoritative/LLM/03_Codex_Invariant_Conflict_Register.md).
-Those clauses do not supply the required separate remote authority. Correcting
-the protected sources needs specific maintenance authorization; this guide
-does not certify them as reconciled.
+A workflow prompt does not itself supply separate remote authority. Check the
+applicable human instruction before performing a remote operation.
 
 ## Other tools
 

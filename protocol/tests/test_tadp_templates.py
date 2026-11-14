@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import re
+import shutil
 import sys
 import tempfile
 import unittest
@@ -250,7 +251,7 @@ class CleanProjectCorpusTests(unittest.TestCase):
     def test_baseline_contains_record_shapes_without_live_work_or_development_products(self):
         for name in ("project-profile.md", "initiatives/status.md", "initiatives/initiative-index.md",
                      "initiatives/work-conflicts.md", "docs/development/developing-tadp.md",
-                     "docs/development/documentation-review-20261113.md",
+                     "docs/development/development-report.md",
                      "docs/development/template-prerequisites-maintenance.md"):
             with self.subTest(name=name):
                 self.assertFalse((self.project / name).exists())
@@ -261,19 +262,37 @@ class CleanProjectCorpusTests(unittest.TestCase):
         self.assertEqual([], list(self.project.rglob("test_tadp*.py")))
 
     def test_clean_conflict_register_does_not_inherit_distribution_conflicts(self):
+        from tadp_sync import Asset, deployment_assets
+
         name = "evidence/authoritative/LLM/03_Codex_Invariant_Conflict_Register.md"
-        copied = (self.project / name).read_text(encoding="utf-8")
-        active = copied.split("## Active conflicts", 1)[1].split("<!--", 1)[0]
-        self.assertNotRegex(active, r"INV-CONFLICT-\d+")
-        self.assertIn("No active conflicts", active)
-        self.assertIn("{{short title}}", copied.split("<!--", 1)[1])
-        original = (PROTOCOL / name).read_text(encoding="utf-8")
-        original_active = original.split("## Active conflicts", 1)[1].split("<!--", 1)[0]
-        for identity in ("INV-CONFLICT-001", "INV-CONFLICT-002"):
-            with self.subTest(identity=identity):
-                entry = re.search(r"(?ms)^### " + identity + r"\b(.*?)(?=^### |\Z)", original_active)
-                self.assertIsNotNone(entry)
-                self.assertRegex(entry.group(1), r"\*\*Status:\*\*\s+Open\b")
+        for root in (PROTOCOL, self.project):
+            with self.subTest(root=root.relative_to(PROTOCOL).as_posix()):
+                copied = (root / name).read_text(encoding="utf-8")
+                active = copied.split("## Active conflicts", 1)[1].split("<!--", 1)[0]
+                self.assertNotRegex(active, r"INV-CONFLICT-\d+")
+                self.assertIn("Record project-specific conflicts here", active)
+                self.assertIn("{{short title}}", copied.split("<!--", 1)[1])
+                uncommented = re.sub(r"<!--.*?-->", "", copied, flags=re.S)
+                self.assertNotRegex(uncommented, r"(?m)^#{2,6}[^\n]*INV-CONFLICT-\d+")
+
+        with tempfile.TemporaryDirectory() as directory:
+            distribution = Path(directory)
+            shutil.copytree(PROTOCOL / "template", distribution / "template")
+            register = distribution / name
+            register.parent.mkdir(parents=True)
+            synthetic_history = (
+                "# Synthetic distribution conflict\n\n## Active conflicts\n\n"
+                "### INV-CONFLICT-987\n\n**Status:** Open\n"
+            ).encode()
+            register.write_bytes(synthetic_history)
+            sources = {
+                "protocol/" + path.relative_to(distribution).as_posix(): Asset(path.read_bytes())
+                for path in distribution.rglob("*") if path.is_file()
+            }
+            assets = deployment_assets(sources)
+            self.assertEqual((self.project / name).read_bytes(), assets[name].content)
+            self.assertNotIn(b"INV-CONFLICT-987", assets[name].content)
+            self.assertEqual(synthetic_history, register.read_bytes())
 
     def test_entry_guidance_excludes_tadp_regression_work_from_project_baseline(self):
         for name in ("README.md", "docs/README.md"):
