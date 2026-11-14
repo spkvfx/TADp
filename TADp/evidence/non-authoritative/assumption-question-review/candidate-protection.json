@@ -1,0 +1,24 @@
+[
+    {
+        "candidate_root":  "TADp/protocol",
+        "protected_root":  "template",
+        "files":  19,
+        "lock_sha256_utf8_lf":  "cae2ff7e519214eb399e3a811ad968a29bbbffbe285c64603e42c97f144fd605",
+        "problems":  [
+
+                     ],
+        "result":  "passed",
+        "scope":  "Exact partial overlay integrity, not installed/scaffold conformance"
+    },
+    {
+        "candidate_root":  "TADp/protocol/template/project",
+        "protected_root":  "evidence/authoritative/LLM",
+        "files":  4,
+        "lock_sha256_utf8_lf":  "bd9b398e407c98087706b1d833898f9899db11aac530e9b35eb2b9dae70f28b5",
+        "problems":  [
+
+                     ],
+        "result":  "passed",
+        "scope":  "Exact partial overlay integrity, not installed/scaffold conformance"
+    }
+]

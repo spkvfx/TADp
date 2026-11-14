@@ -17,7 +17,7 @@ verification.
 
 | Scope | Initiative ID | Realization suite | Type | Status | Current milestone | Next gate | Blockers or holds | Status evidence | Owner | Last updated |
 |---|---|---|---|---|---|---|---|---|---|---|
-| v2 | TADP-001 | RZN-SUITE-001 | implementation | Accepted | Exact candidate scope accepted by explicit implementation request | Stage 9 read-only readiness, then actual candidate start | Later installed introduction, completion, promotion and rollout remain separate | [Initiative](v2/implementation/tadp-001-owned-review-decisions/README.md), [ACCEPT-001](v2/implementation/tadp-001-owned-review-decisions/decision-receipts/ACCEPT-001.md) | Current repository owner | 2026-11-14 |
+| v2 | TADP-001 | RZN-SUITE-001 | implementation | In progress | Candidate implemented; exact assembled trial and independent review passed | Exact manifest authority and fresh checks before protected D introduction | Raw live P46 partial-overlay link findings retained; no project-wide completion/conformance claim; later boundaries separate | [Initiative](v2/implementation/tadp-001-owned-review-decisions/README.md), [execution](v2/implementation/tadp-001-owned-review-decisions/execution-record.md), [manifest](../evidence/non-authoritative/assumption-question-review/manifest.json) | Current repository owner | 2026-11-14 |
 
 ## Portfolio gates
 

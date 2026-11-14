@@ -2,7 +2,7 @@
 
 **Initiative:** Owned assumption and question review decisions
 **Initiative ID:** TADP-001
-**Status:** Accepted
+**Status:** In progress
 **Last updated:** 2026-11-14
 **Initiative type:** `implementation`
 **Decision prefix:** `TADP001`
@@ -36,7 +36,7 @@ explicit.
 
 Develop and qualify one candidate TADp behavior: both numbered decision reviews may independently define assumptions and open questions and record sufficiently authorized dispositions at their canonical initiative or project owners. Definition remains distinct from resolution, and an external decision does not expand the reviewed initiative's accepted work.
 
-This accepted implementation claim is confined to the declared C=P/protocol candidate slice under ACCEPT-001. Candidate product start follows read-only readiness. Candidate qualification does not authorize or prove ordinary Completed, development completion, installed-library introduction, promotion, rollout, adoption, integration or release. The [aligned proposal](proposal/proposal.md) and [source map](../../../../evidence/non-authoritative/assumption-question-review/source-map.json) bound the work.
+This accepted implementation claim is confined to the declared C=P/protocol candidate slice under ACCEPT-001. Product work began after read-only readiness and is recorded in the [execution record](execution-record.md); the [product record](../../../../products/owned-review-decisions.md) links actual output and exact verification. Candidate qualification does not authorize or prove ordinary Completed, development completion, installed-library introduction, promotion, rollout, adoption, integration or release. The [aligned proposal](proposal/proposal.md) and [source map](../../../../evidence/non-authoritative/assumption-question-review/source-map.json) bound the work.
 
 ## Correlation and identity
 
@@ -373,6 +373,7 @@ branch removal and link that removal evidence from the canonical row.
 |---|---|---|---|---|---|---|
 | 2026-11-14 | Initial | Proposed | [realization suite](../../../../evidence/non-authoritative/realizations/v2/00-review-decisions-suite-index.md) and [canonical correlation row](../../../initiative-index.md#initiative-and-correlation-register) | Preparation skeleton | Allocate independent initiative membership and open the initiative for proposal work; no acceptance or delivery authority | 7b38e61 |
 | 2026-11-14 implementation request | Proposed | Accepted | [ACCEPT-001](decision-receipts/ACCEPT-001.md), requesting human under repository-owner role | 294d70d1b7b313bd46cab481b714c8cbb5c0e612 | Exact candidate implementation and qualification accepted after clarification | Scoped acceptance commit |
+| 2026-11-14 candidate dependency copies | Accepted | In progress | Stage9 read-only GO and [execution record](execution-record.md) | 294d70d1b7b313bd46cab481b714c8cbb5c0e612 | Actual C product work began with declared protection dependencies | See scoped implementation commit |
 
 ### Preparation events
 

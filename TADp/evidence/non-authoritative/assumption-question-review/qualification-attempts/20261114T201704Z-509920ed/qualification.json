@@ -1,0 +1,336 @@
+{
+  "attempt": "20261114T201704Z-509920ed",
+  "recorded_by": "Codex qualification evidence helper",
+  "baseline": "294d70d1b7b313bd46cab481b714c8cbb5c0e612",
+  "baseline_library": "TADp/template",
+  "baseline_tree": "2119cb5c968a059f0d898c780f9d74adfae15372",
+  "python": "C:\\Users\\User\\PycharmProjects\\TADp\\.venv\\Scripts\\python.exe",
+  "python_version": "3.11.1 (tags/v3.11.1:a7a450f, Dec  6 2022, 19:58:39) [MSC v.1934 64 bit (AMD64)]",
+  "workspace": "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire",
+  "fixture": "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed",
+  "commands": [
+    {
+      "label": "fixture-git-init",
+      "command": [
+        "git",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed",
+      "exit": 0,
+      "expected_exit": 0,
+      "log": "qualification-attempts/20261114T201704Z-509920ed/fixture-git-init.log",
+      "extra_environment": {}
+    },
+    {
+      "label": "fixture-git-add",
+      "command": [
+        "git",
+        "add",
+        ".fixture-baseline"
+      ],
+      "cwd": "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed",
+      "exit": 0,
+      "expected_exit": 0,
+      "log": "qualification-attempts/20261114T201704Z-509920ed/fixture-git-add.log",
+      "extra_environment": {}
+    },
+    {
+      "label": "fixture-git-baseline",
+      "command": [
+        "git",
+        "-c",
+        "user.name=TADp Fixture",
+        "-c",
+        "user.email=fixture@example.invalid",
+        "commit",
+        "--quiet",
+        "-m",
+        "Inert isolated fixture baseline"
+      ],
+      "cwd": "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed",
+      "exit": 0,
+      "expected_exit": 0,
+      "log": "qualification-attempts/20261114T201704Z-509920ed/fixture-git-baseline.log",
+      "extra_environment": {}
+    },
+    {
+      "label": "fixture-embedded-suite-lock",
+      "command": [
+        "C:\\Users\\User\\PycharmProjects\\TADp\\.venv\\Scripts\\python.exe",
+        "-B",
+        "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\tools\\tadp_protect.py",
+        "refresh",
+        "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\template\\project",
+        "--protected-root",
+        "evidence/authoritative/LLM",
+        "--authority",
+        "Isolated fixture only: invoked assumption-and-open-question-review-protocol-change prompt, exact candidate revision and fixture-lock authority; TADP-001 ACCEPT-001; no live library introduction or adoption"
+      ],
+      "cwd": "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed",
+      "exit": 0,
+      "expected_exit": 0,
+      "log": "qualification-attempts/20261114T201704Z-509920ed/fixture-embedded-suite-lock.log",
+      "extra_environment": {}
+    },
+    {
+      "label": "fixture-outer-library-lock",
+      "command": [
+        "C:\\Users\\User\\PycharmProjects\\TADp\\.venv\\Scripts\\python.exe",
+        "-B",
+        "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\tools\\tadp_protect.py",
+        "refresh",
+        "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed",
+        "--protected-root",
+        "template",
+        "--authority",
+        "Isolated fixture only: invoked assumption-and-open-question-review-protocol-change prompt, exact candidate revision and fixture-lock authority; TADP-001 ACCEPT-001; no live library introduction or adoption"
+      ],
+      "cwd": "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed",
+      "exit": 0,
+      "expected_exit": 0,
+      "log": "qualification-attempts/20261114T201704Z-509920ed/fixture-outer-library-lock.log",
+      "extra_environment": {}
+    },
+    {
+      "label": "fixture-runtime-suite-lock",
+      "command": [
+        "C:\\Users\\User\\PycharmProjects\\TADp\\.venv\\Scripts\\python.exe",
+        "-B",
+        "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\tools\\tadp_protect.py",
+        "refresh",
+        "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed",
+        "--protected-root",
+        "evidence/authoritative/LLM",
+        "--authority",
+        "Isolated fixture only: invoked assumption-and-open-question-review-protocol-change prompt, exact candidate revision and fixture-lock authority; TADP-001 ACCEPT-001; no live library introduction or adoption"
+      ],
+      "cwd": "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed",
+      "exit": 0,
+      "expected_exit": 0,
+      "log": "qualification-attempts/20261114T201704Z-509920ed/fixture-runtime-suite-lock.log",
+      "extra_environment": {}
+    },
+    {
+      "label": "fixture-protection",
+      "command": [
+        "C:\\Users\\User\\PycharmProjects\\TADp\\.venv\\Scripts\\python.exe",
+        "-B",
+        "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\tools\\tadp_protect.py",
+        "check",
+        "."
+      ],
+      "cwd": "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed",
+      "exit": 0,
+      "expected_exit": 0,
+      "log": "qualification-attempts/20261114T201704Z-509920ed/fixture-protection.log",
+      "extra_environment": {}
+    },
+    {
+      "label": "fixture-validation",
+      "command": [
+        "C:\\Users\\User\\PycharmProjects\\TADp\\.venv\\Scripts\\python.exe",
+        "-B",
+        "tools/tadp_validate.py",
+        ".",
+        "--json"
+      ],
+      "cwd": "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed",
+      "exit": 0,
+      "expected_exit": 0,
+      "log": "qualification-attempts/20261114T201704Z-509920ed/fixture-validation.log",
+      "extra_environment": {}
+    },
+    {
+      "label": "fixture-focused-contracts",
+      "command": [
+        "C:\\Users\\User\\PycharmProjects\\TADp\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_assumption_question_review.py",
+        "-v"
+      ],
+      "cwd": "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed",
+      "exit": 0,
+      "expected_exit": 0,
+      "log": "qualification-attempts/20261114T201704Z-509920ed/fixture-focused-contracts.log",
+      "extra_environment": {
+        "TADP_REVIEW_ROOT": "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed"
+      }
+    },
+    {
+      "label": "fixture-deliberate-tamper-rejected",
+      "command": [
+        "C:\\Users\\User\\PycharmProjects\\TADp\\.venv\\Scripts\\python.exe",
+        "-B",
+        "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\tools\\tadp_protect.py",
+        "check",
+        "."
+      ],
+      "cwd": "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed",
+      "exit": 1,
+      "expected_exit": 1,
+      "log": "qualification-attempts/20261114T201704Z-509920ed/fixture-deliberate-tamper-rejected.log",
+      "extra_environment": {}
+    },
+    {
+      "label": "fixture-restored-protection",
+      "command": [
+        "C:\\Users\\User\\PycharmProjects\\TADp\\.venv\\Scripts\\python.exe",
+        "-B",
+        "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\tools\\tadp_protect.py",
+        "check",
+        "."
+      ],
+      "cwd": "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed",
+      "exit": 0,
+      "expected_exit": 0,
+      "log": "qualification-attempts/20261114T201704Z-509920ed/fixture-restored-protection.log",
+      "extra_environment": {}
+    }
+  ],
+  "result": "passed structural, protection, isolated-install and document-contract checks",
+  "limitations": [
+    "One representative clean installation; no live project or example dependency",
+    "Document-contract tests do not authenticate authority or prove future LLM behavior",
+    "Synthetic scenario inputs/expected outcomes require separate semantic walkthrough",
+    "Fixture-only locks are regenerated for the complete isolated installed context",
+    "No library introduction, adoption, development completion, promotion or rollout"
+  ],
+  "preservation_before": {
+    "baseline": "294d70d1b7b313bd46cab481b714c8cbb5c0e612",
+    "checked_files": 358,
+    "changed_content": [],
+    "git_diff": [],
+    "untracked_in_preserved_scope": []
+  },
+  "candidate_manifest": {
+    "files": {
+      "template/.tadp-lock.json": {
+        "sha256_utf8_lf": "cae2ff7e519214eb399e3a811ad968a29bbbffbe285c64603e42c97f144fd605",
+        "bytes": 2690
+      },
+      "template/AGENTS.md": {
+        "sha256_utf8_lf": "abf5bacc278a8681c0bff9adf7a213eca0a1743c9dfbffbf00443e2472fe66c4",
+        "bytes": 1135
+      },
+      "template/TEMPLATE-COVERAGE.md": {
+        "sha256_utf8_lf": "cb8f9aec5f022fbd12f7763fe039475ff563f3adf59bcd99c2f181893344927a",
+        "bytes": 78916
+      },
+      "template/project/README.md": {
+        "sha256_utf8_lf": "a1e7fdd6c8a58972171a71ee9f8dd8fac7bffa59aa23fb39861e221e1613e4fc",
+        "bytes": 17837
+      },
+      "template/project/decisions/README.md": {
+        "sha256_utf8_lf": "3a8b9dd4ad44fa4b6514c49cec14b199dc285374fe7433edf43082dc5baef30a",
+        "bytes": 2973
+      },
+      "template/project/decisions/assumptions-and-open-questions.template.md": {
+        "sha256_utf8_lf": "c58131f35b2361afeb8d2dbb0a7bed461e31a56b8080197f46da0f4ebcd00e7a",
+        "bytes": 7624
+      },
+      "template/project/evidence/authoritative/LLM/.tadp-lock.json": {
+        "sha256_utf8_lf": "bd9b398e407c98087706b1d833898f9899db11aac530e9b35eb2b9dae70f28b5",
+        "bytes": 843
+      },
+      "template/project/evidence/authoritative/LLM/02_Codex_Initiative_Governance_Specification.md": {
+        "sha256_utf8_lf": "46bfd0ee8abb37cdb31489097021cba4ad80539333bfdfbdcd4a3d7fe725ed9c",
+        "bytes": 20551
+      },
+      "template/project/evidence/authoritative/LLM/07_Codex_Human_Decision_Receipt_Specification.md": {
+        "sha256_utf8_lf": "f9588957da4c4a92889842ab61d676ba27b308242883ac3b117354c926718e9f",
+        "bytes": 9928
+      },
+      "template/project/evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md": {
+        "sha256_utf8_lf": "a8359ce3541805cbe4c8f45f0f58fde6379d19e19bb3f937950b19aad12e3ad5",
+        "bytes": 33474
+      },
+      "template/project/evidence/authoritative/LLM/AGENTS.md": {
+        "sha256_utf8_lf": "0f4995562ec74054f02ccce453ee2458b283eb13210816599f11156f98eb95ee",
+        "bytes": 922
+      },
+      "template/project/initiatives/README.md": {
+        "sha256_utf8_lf": "4d6c0e9aa088015aa72563c756420128d241e204d6005907ca06f9a1907c6a4c",
+        "bytes": 9995
+      },
+      "template/project/initiatives/assumption.template.md": {
+        "sha256_utf8_lf": "498682a27a8bf11a1b15b0b0bf423191f2a09911ef75ae62938b49ecf339b295",
+        "bytes": 8459
+      },
+      "template/project/initiatives/decision-receipts/README.md": {
+        "sha256_utf8_lf": "bd1f6c53f62bdaecfde98d4549c81926fea2fb9b02f994fea6a692a693ede520",
+        "bytes": 1254
+      },
+      "template/project/initiatives/decision-receipts/README.template.md": {
+        "sha256_utf8_lf": "fe82bfc53628879df352d997cd0d0d1b7064f24db5378544708b06a9d468d5ee",
+        "bytes": 2429
+      },
+      "template/project/initiatives/decision-receipts/decision-receipt.template.md": {
+        "sha256_utf8_lf": "b48c45bfc343bb2cb2e5154f957b3d0e9eeec6f7f356723fcf27c35935337055",
+        "bytes": 8586
+      },
+      "template/project/initiatives/open-questions.template.md": {
+        "sha256_utf8_lf": "cd58175ac58a3d0a60a451df51d37f062bc164c8b53f0b75749c8ef9901043c8",
+        "bytes": 7478
+      },
+      "template/prompts/05_initiative_assumption_review.md": {
+        "sha256_utf8_lf": "099cc070696660ebde585387f71f188369931fbf5343aa3d8b7e87b999779c55",
+        "bytes": 22005
+      },
+      "template/prompts/06_initiative_open_question_review.md": {
+        "sha256_utf8_lf": "d0a063c42ae3e0ff1697d7f800157fe849bacc2fc635d18080322f50c26be245",
+        "bytes": 22162
+      },
+      "template/prompts/WORKFLOW-CONTRACT.md": {
+        "sha256_utf8_lf": "b5bed3c70008cd2be5642cef52899eaf865b14a7a40cb64d1acdceb915575456",
+        "bytes": 26116
+      },
+      "tests/fixtures/README.md": {
+        "sha256_utf8_lf": "c4545ed9f5806c51feffb5ed7b48a425e4448e1429d4863c64d26578144f5eed",
+        "bytes": 405
+      },
+      "tests/fixtures/owned_review_scenarios.json": {
+        "sha256_utf8_lf": "454a99235890e69cc98f066d37346919a39360dfd63c8ecfb32fe0906bb2b72b",
+        "bytes": 4867
+      },
+      "tests/test_assumption_question_review.py": {
+        "sha256_utf8_lf": "532100207f2ad236b94efbb5bd10c5357d4434f83abd7a69ca70abd83b9eee7d",
+        "bytes": 7638
+      }
+    },
+    "conditional_absence": [
+      {
+        "candidate": "TADp/protocol/template/project/tools/tadp_validate.py",
+        "reason": "Conditional change not needed"
+      }
+    ]
+  },
+  "hook_configuration": "",
+  "changed_source_links": {
+    "checked": 77,
+    "dynamic_placeholders_not_instantiated": 2,
+    "external_references_not_accessed": 0,
+    "failures": [],
+    "context": "Runtime copies for project/*; outer-library prompts and coverage"
+  },
+  "fixture_generated_locks": {
+    "template/project/evidence/authoritative/LLM/.tadp-lock.json": "42185417d97f2f1802c1b7d9a44826f02cbbe92dd2a2c50467568fc0dbad0bab",
+    "evidence/authoritative/LLM/.tadp-lock.json": "42185417d97f2f1802c1b7d9a44826f02cbbe92dd2a2c50467568fc0dbad0bab",
+    "template/.tadp-lock.json": "4f7d9ee40dc77a31aca707ab6de566fdfdce8f4db42ebc957cec605e222d1c81"
+  },
+  "candidate_drift": [],
+  "preservation_after": {
+    "baseline": "294d70d1b7b313bd46cab481b714c8cbb5c0e612",
+    "checked_files": 358,
+    "changed_content": [],
+    "git_diff": [],
+    "untracked_in_preserved_scope": []
+  },
+  "independent_semantic_review": "separate required review; not performed by this helper"
+}

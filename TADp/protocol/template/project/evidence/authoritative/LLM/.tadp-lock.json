@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "algorithm": "sha256-canonical-v1",
+  "protected_root": "evidence/authoritative/LLM",
+  "authority": "Candidate only: invoked assumption-and-open-question-review-protocol-change prompt blob394e97ad00ca98fd5adb21f21b4ad61c7f6ba53e; TADP-001 ACCEPT-001; coherent content checks and isolated trial passed; no installed lock authority",
+  "files": {
+    "02_Codex_Initiative_Governance_Specification.md": "46bfd0ee8abb37cdb31489097021cba4ad80539333bfdfbdcd4a3d7fe725ed9c",
+    "07_Codex_Human_Decision_Receipt_Specification.md": "f9588957da4c4a92889842ab61d676ba27b308242883ac3b117354c926718e9f",
+    "08_Codex_Initiative_Workflow_Specification.md": "a8359ce3541805cbe4c8f45f0f58fde6379d19e19bb3f937950b19aad12e3ad5",
+    "AGENTS.md": "0f4995562ec74054f02ccce453ee2458b283eb13210816599f11156f98eb95ee"
+  }
+}

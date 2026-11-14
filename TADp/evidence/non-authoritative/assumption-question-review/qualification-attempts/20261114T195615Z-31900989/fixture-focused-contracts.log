@@ -1,0 +1,15 @@
+test_both_reviews_explicitly_allow_independent_either_kind_discovery (test_assumption_question_review.OwnedReviewContract.test_both_reviews_explicitly_allow_independent_either_kind_discovery) ... ok
+test_conditional_project_register_has_one_canonical_coverage_destination (test_assumption_question_review.OwnedReviewContract.test_conditional_project_register_has_one_canonical_coverage_destination) ... ok
+test_each_review_retains_authority_and_independent_dispositions (test_assumption_question_review.OwnedReviewContract.test_each_review_retains_authority_and_independent_dispositions) ... ok
+test_external_preedit_and_separate_project_boundaries (test_assumption_question_review.OwnedReviewContract.test_external_preedit_and_separate_project_boundaries) ... ok
+test_governing_consumers_do_not_restore_context_only_scope_rule (test_assumption_question_review.OwnedReviewContract.test_governing_consumers_do_not_restore_context_only_scope_rule) ... ok
+test_isolated_scenario_inventory_covers_both_reviews_without_live_authority (test_assumption_question_review.OwnedReviewContract.test_isolated_scenario_inventory_covers_both_reviews_without_live_authority) ... ok
+test_item_shapes_preserve_definition_provenance_and_disposition (test_assumption_question_review.OwnedReviewContract.test_item_shapes_preserve_definition_provenance_and_disposition) ... ok
+test_no_blanket_initiative_scope_or_prior_answer_rejection (test_assumption_question_review.OwnedReviewContract.test_no_blanket_initiative_scope_or_prior_answer_rejection) ... ok
+test_preservation_and_coverage_limits_survive_both_entry_points (test_assumption_question_review.OwnedReviewContract.test_preservation_and_coverage_limits_survive_both_entry_points) ... ok
+test_receipt_distinguishes_review_owner_and_actual_decision_author (test_assumption_question_review.OwnedReviewContract.test_receipt_distinguishes_review_owner_and_actual_decision_author) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.020s
+
+OK

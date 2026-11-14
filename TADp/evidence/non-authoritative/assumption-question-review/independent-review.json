@@ -1,0 +1,746 @@
+{
+    "schema_version":  1,
+    "recorded_by":  "Codex independent agent /root/final_candidate_review",
+    "evidence_subset_reviewer":  "Codex independent agent /root/final_candidate_review/review_evidence",
+    "event":  "2026-11-14, original invoked prompt execution item4, complete scoped candidate review after exact qualification",
+    "role":  "Independent reviewer; no role producing candidate sources or tests; only this review evidence file written",
+    "result":  "Passed independent candidate review; no material findings remain",
+    "source_instruction_revision":  "4f05752755eb63e31d65c152a2e1dc9134db7de5",
+    "source_instruction_blob":  "394e97ad00ca98fd5adb21f21b4ad61c7f6ba53e",
+    "accepted_baseline":  "294d70d1b7b313bd46cab481b714c8cbb5c0e612",
+    "acceptance_receipt":  "TADp/initiatives/v2/implementation/tadp-001-owned-review-decisions/decision-receipts/ACCEPT-001.md",
+    "reviewed_files":  [
+                           {
+                               "path":  "TADp/protocol/template/.tadp-lock.json",
+                               "algorithm":  "sha256-canonical-v1",
+                               "sha256":  "cae2ff7e519214eb399e3a811ad968a29bbbffbe285c64603e42c97f144fd605"
+                           },
+                           {
+                               "path":  "TADp/protocol/template/AGENTS.md",
+                               "algorithm":  "sha256-canonical-v1",
+                               "sha256":  "abf5bacc278a8681c0bff9adf7a213eca0a1743c9dfbffbf00443e2472fe66c4"
+                           },
+                           {
+                               "path":  "TADp/protocol/template/TEMPLATE-COVERAGE.md",
+                               "algorithm":  "sha256-canonical-v1",
+                               "sha256":  "cb8f9aec5f022fbd12f7763fe039475ff563f3adf59bcd99c2f181893344927a"
+                           },
+                           {
+                               "path":  "TADp/protocol/template/project/README.md",
+                               "algorithm":  "sha256-canonical-v1",
+                               "sha256":  "a1e7fdd6c8a58972171a71ee9f8dd8fac7bffa59aa23fb39861e221e1613e4fc"
+                           },
+                           {
+                               "path":  "TADp/protocol/template/project/decisions/README.md",
+                               "algorithm":  "sha256-canonical-v1",
+                               "sha256":  "3a8b9dd4ad44fa4b6514c49cec14b199dc285374fe7433edf43082dc5baef30a"
+                           },
+                           {
+                               "path":  "TADp/protocol/template/project/decisions/assumptions-and-open-questions.template.md",
+                               "algorithm":  "sha256-canonical-v1",
+                               "sha256":  "c58131f35b2361afeb8d2dbb0a7bed461e31a56b8080197f46da0f4ebcd00e7a"
+                           },
+                           {
+                               "path":  "TADp/protocol/template/project/evidence/authoritative/LLM/.tadp-lock.json",
+                               "algorithm":  "sha256-canonical-v1",
+                               "sha256":  "bd9b398e407c98087706b1d833898f9899db11aac530e9b35eb2b9dae70f28b5"
+                           },
+                           {
+                               "path":  "TADp/protocol/template/project/evidence/authoritative/LLM/02_Codex_Initiative_Governance_Specification.md",
+                               "algorithm":  "sha256-canonical-v1",
+                               "sha256":  "46bfd0ee8abb37cdb31489097021cba4ad80539333bfdfbdcd4a3d7fe725ed9c"
+                           },
+                           {
+                               "path":  "TADp/protocol/template/project/evidence/authoritative/LLM/07_Codex_Human_Decision_Receipt_Specification.md",
+                               "algorithm":  "sha256-canonical-v1",
+                               "sha256":  "f9588957da4c4a92889842ab61d676ba27b308242883ac3b117354c926718e9f"
+                           },
+                           {
+                               "path":  "TADp/protocol/template/project/evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md",
+                               "algorithm":  "sha256-canonical-v1",
+                               "sha256":  "a8359ce3541805cbe4c8f45f0f58fde6379d19e19bb3f937950b19aad12e3ad5"
+                           },
+                           {
+                               "path":  "TADp/protocol/template/project/evidence/authoritative/LLM/AGENTS.md",
+                               "algorithm":  "sha256-canonical-v1",
+                               "sha256":  "0f4995562ec74054f02ccce453ee2458b283eb13210816599f11156f98eb95ee"
+                           },
+                           {
+                               "path":  "TADp/protocol/template/project/initiatives/README.md",
+                               "algorithm":  "sha256-canonical-v1",
+                               "sha256":  "4d6c0e9aa088015aa72563c756420128d241e204d6005907ca06f9a1907c6a4c"
+                           },
+                           {
+                               "path":  "TADp/protocol/template/project/initiatives/assumption.template.md",
+                               "algorithm":  "sha256-canonical-v1",
+                               "sha256":  "498682a27a8bf11a1b15b0b0bf423191f2a09911ef75ae62938b49ecf339b295"
+                           },
+                           {
+                               "path":  "TADp/protocol/template/project/initiatives/decision-receipts/README.md",
+                               "algorithm":  "sha256-canonical-v1",
+                               "sha256":  "bd1f6c53f62bdaecfde98d4549c81926fea2fb9b02f994fea6a692a693ede520"
+                           },
+                           {
+                               "path":  "TADp/protocol/template/project/initiatives/decision-receipts/README.template.md",
+                               "algorithm":  "sha256-canonical-v1",
+                               "sha256":  "fe82bfc53628879df352d997cd0d0d1b7064f24db5378544708b06a9d468d5ee"
+                           },
+                           {
+                               "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                               "algorithm":  "sha256-canonical-v1",
+                               "sha256":  "b48c45bfc343bb2cb2e5154f957b3d0e9eeec6f7f356723fcf27c35935337055"
+                           },
+                           {
+                               "path":  "TADp/protocol/template/project/initiatives/open-questions.template.md",
+                               "algorithm":  "sha256-canonical-v1",
+                               "sha256":  "cd58175ac58a3d0a60a451df51d37f062bc164c8b53f0b75749c8ef9901043c8"
+                           },
+                           {
+                               "path":  "TADp/protocol/template/prompts/05_initiative_assumption_review.md",
+                               "algorithm":  "sha256-canonical-v1",
+                               "sha256":  "099cc070696660ebde585387f71f188369931fbf5343aa3d8b7e87b999779c55"
+                           },
+                           {
+                               "path":  "TADp/protocol/template/prompts/06_initiative_open_question_review.md",
+                               "algorithm":  "sha256-canonical-v1",
+                               "sha256":  "d0a063c42ae3e0ff1697d7f800157fe849bacc2fc635d18080322f50c26be245"
+                           },
+                           {
+                               "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                               "algorithm":  "sha256-canonical-v1",
+                               "sha256":  "b5bed3c70008cd2be5642cef52899eaf865b14a7a40cb64d1acdceb915575456"
+                           },
+                           {
+                               "path":  "TADp/protocol/tests/fixtures/README.md",
+                               "algorithm":  "sha256-canonical-v1",
+                               "sha256":  "c4545ed9f5806c51feffb5ed7b48a425e4448e1429d4863c64d26578144f5eed"
+                           },
+                           {
+                               "path":  "TADp/protocol/tests/fixtures/owned_review_scenarios.json",
+                               "algorithm":  "sha256-canonical-v1",
+                               "sha256":  "454a99235890e69cc98f066d37346919a39360dfd63c8ecfb32fe0906bb2b72b"
+                           },
+                           {
+                               "path":  "TADp/protocol/tests/test_assumption_question_review.py",
+                               "algorithm":  "sha256-canonical-v1",
+                               "sha256":  "532100207f2ad236b94efbb5bd10c5357d4434f83abd7a69ca70abd83b9eee7d"
+                           }
+                       ],
+    "semantic_scope":  [
+                           "Both numbered reviews, shared contract and candidate specifications02/07/08",
+                           "Independent either-kind definition before any answer; default unresolved creation and same-review per-ID dispositions",
+                           "Proper canonical initiative/project owners, exact external target/current state/revision/branch/write-decision authority and owned missing-authority handoffs",
+                           "Conditional combined project register, existing receipt/index reuse and no unused mandatory register",
+                           "Human defaults and one-ready-item presentation; actual agent attribution and specifically covered delegated IDs only",
+                           "Exact source/options/receipt history, dormant/retry/derived-item independence, closed-claim reopening, invariant conflicts, independent-outcome routing and separate acceptance/resulting-work authority",
+                           "Original/new coverage and actual blocking dependencies without absorbing external deliverables",
+                           "Full payload/source provenance, copied protection, generic tests/fixtures and later D/S/U mappings/authority limits"
+                       ],
+    "findings":  [
+                     {
+                         "id":  "REVIEW-001",
+                         "severity":  "Medium",
+                         "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                         "original_lines":  "84–86 before correction",
+                         "issue":  "New unqualified statement that this answer neither accepts an initiative nor reopens a closed claim also appeared in the generic shape used for actual lifecycle receipts, conflicting with that existing role.",
+                         "disposition":  "Resolved",
+                         "correction":  "Restrict the prohibition to an assumption/question disposition by itself and explicitly preserve separately authorized lifecycle/exception events under their own exact governing requirements.",
+                         "verified_current_lines":  "84–89",
+                         "verification":  "Independent reviewer read corrected wording and focused regression. Final isolated trial passes11tests. Walkthrough agent preserved the missed-defect/original-hash history and added3positive receipt probes."
+                     }
+                 ],
+    "exact_content_checks":  {
+                                 "qualification_attempt":  "20261114T201704Z-509920ed",
+                                 "qualification_result":  "passed structural, protection, isolated-install and document-contract checks",
+                                 "fixture":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed",
+                                 "current_candidate_vs_latest_qualification":  "23 files; zero canonical digest mismatches",
+                                 "current_candidate_vs_manifest":  "23 files; zero canonical digest mismatches",
+                                 "walkthrough_source_identities":  "18 current canonical source hashes; zero mismatches; original observation/reconciliation history retained",
+                                 "scoped_candidate_protection":  "Outer19entries/19files and embedded4entries/4files; zero digest/inventory mismatches",
+                                 "installed_source_preservation":  "All20 pinned raw source/dependency hashes match; excluded installed/distribution/instruction/ignore Git diff is empty",
+                                 "qualification_preservation":  "358 pinned excluded files unchanged; no preserved-scope Git diff or untracked additions"
+                             },
+    "inspected_actual_logs":  {
+                                  "fixture_validation":  "Exit0; valid=true;0errors;0warnings",
+                                  "document_contract_tests":  "Ran11tests;OK",
+                                  "deliberate_integrity_probe":  "Exit1 expected; TADP024 specifically identifies changed template/prompts/05_initiative_assumption_review.md",
+                                  "restored_protection":  "Exit0 expected",
+                                  "changed_source_links":  "77 checked;0failures"
+                              },
+    "evidence_methods":  "Read source instruction/governance, compare candidate files with pinned installed reusable sources, inspect complete candidate tests/fixtures/helper/manifests and actual logs, independently hash current candidate/walkthrough/lock/source identities. Reviewer did not execute Python or run live reviews.",
+    "limitations":  [
+                        "Document-contract regressions are structural guards, not authority authentication or proof every future LLM follows instructions",
+                        "22 abstract scenario interpretations plus3receipt probes are model-assisted semantic evidence; they contain no real human dispositions or external write authority",
+                        "One representative clean isolated installation was tested; no additional platform/nested-install claim",
+                        "Candidate locks describe a partial overlay; they are not exportable full installed locks and must be regenerated at any separately authorized destination boundary",
+                        "No installed introduction, adoption, ordinary completion, promotion, rollout, merge, push or example-fork mutation is established by this review",
+                        "Raw live P validator exits1 with46 TADP002 findings from partial C source in-place; all46 resolve in qualified complete assembly. This failed project check remains reported, not a pass or project-wide conformance claim."
+                    ],
+    "remaining_gate":  "Finalize actual candidate records/commit while preserving exact reviewed bytes; stop before protected D introduction lacking its own exact authority and evidence.",
+    "live_project_validation_context":  {
+                                            "recorded_by":  "Codex independent agent /root/final_candidate_review",
+                                            "event":  "2026-11-14 post-review raw live-project validation context audit",
+                                            "raw_report":  "final-project-validation.json",
+                                            "raw_command":  "Configured Python -B TADp/tools/tadp_validate.py TADp --json",
+                                            "actual_exit":  1,
+                                            "errors":  46,
+                                            "warnings":  0,
+                                            "finding_codes":  [
+                                                                  "TADP002"
+                                                              ],
+                                            "affected_scope":  "All findings are under protocol/template within P; no governance/lifecycle finding in this report",
+                                            "resolution_audit_count":  46,
+                                            "unresolved_assembly_targets":  0,
+                                            "qualification_attempt":  "20261114T201704Z-509920ed",
+                                            "finding_resolutions":  [
+                                                                        {
+                                                                            "live_finding":  "protocol/template/project/README.md:152",
+                                                                            "reference":  "template/TEMPLATE-COVERAGE.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\README.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\template\\TEMPLATE-COVERAGE.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/project/README.md:160",
+                                                                            "reference":  "template/prompts/WORKFLOW-CONTRACT.md#documentary-prerequisite-preparation",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\README.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\template\\prompts\\WORKFLOW-CONTRACT.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/project/README.md:288",
+                                                                            "reference":  "initiatives/version-scopes.template.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\README.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\initiatives\\version-scopes.template.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/project/README.md:289",
+                                                                            "reference":  "initiatives/scope-README.template.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\README.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\initiatives\\scope-README.template.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/project/README.md:290",
+                                                                            "reference":  "initiatives/version-scope-migration-ledger.template.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\README.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\initiatives\\version-scope-migration-ledger.template.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/project/README.md:35",
+                                                                            "reference":  "evidence/authoritative/LLM/05_Codex_Git_Workflow_Specification.md#requirement",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\README.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\evidence\\authoritative\\LLM\\05_Codex_Git_Workflow_Specification.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/project/README.md:50",
+                                                                            "reference":  "template/TEMPLATE-COVERAGE.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\README.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\template\\TEMPLATE-COVERAGE.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/project/README.md:61",
+                                                                            "reference":  "docs/guides/project-root-installation-migration.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\README.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\docs\\guides\\project-root-installation-migration.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/project/README.md:88",
+                                                                            "reference":  "evidence/README.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\README.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\evidence\\README.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/project/README.md:89",
+                                                                            "reference":  "evidence/authoritative/README.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\README.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\evidence\\authoritative\\README.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/project/README.md:90",
+                                                                            "reference":  "evidence/non-authoritative/README.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\README.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\evidence\\non-authoritative\\README.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/project/README.md:93",
+                                                                            "reference":  "products/README.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\README.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\products\\README.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/project/README.md:94",
+                                                                            "reference":  "prompts/README.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\README.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\prompts\\README.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/project/evidence/authoritative/LLM/02_Codex_Initiative_Governance_Specification.md:257",
+                                                                            "reference":  "09_Codex_Version_Realization_Initiative_Correlation_Specification.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\evidence\\authoritative\\LLM\\02_Codex_Initiative_Governance_Specification.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\evidence\\authoritative\\LLM\\09_Codex_Version_Realization_Initiative_Correlation_Specification.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/project/evidence/authoritative/LLM/02_Codex_Initiative_Governance_Specification.md:282",
+                                                                            "reference":  "10_Codex_Initiative_Coherence_Specification.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\evidence\\authoritative\\LLM\\02_Codex_Initiative_Governance_Specification.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\evidence\\authoritative\\LLM\\10_Codex_Initiative_Coherence_Specification.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/project/evidence/authoritative/LLM/02_Codex_Initiative_Governance_Specification.md:67",
+                                                                            "reference":  "../../../template/TEMPLATE-COVERAGE.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\evidence\\authoritative\\LLM\\02_Codex_Initiative_Governance_Specification.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\template\\TEMPLATE-COVERAGE.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/project/evidence/authoritative/LLM/02_Codex_Initiative_Governance_Specification.md:9",
+                                                                            "reference":  "11_Codex_Prompt_Keyword_Specification.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\evidence\\authoritative\\LLM\\02_Codex_Initiative_Governance_Specification.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\evidence\\authoritative\\LLM\\11_Codex_Prompt_Keyword_Specification.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/project/evidence/authoritative/LLM/07_Codex_Human_Decision_Receipt_Specification.md:110",
+                                                                            "reference":  "10_Codex_Initiative_Coherence_Specification.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\evidence\\authoritative\\LLM\\07_Codex_Human_Decision_Receipt_Specification.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\evidence\\authoritative\\LLM\\10_Codex_Initiative_Coherence_Specification.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/project/evidence/authoritative/LLM/07_Codex_Human_Decision_Receipt_Specification.md:19",
+                                                                            "reference":  "11_Codex_Prompt_Keyword_Specification.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\evidence\\authoritative\\LLM\\07_Codex_Human_Decision_Receipt_Specification.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\evidence\\authoritative\\LLM\\11_Codex_Prompt_Keyword_Specification.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/project/evidence/authoritative/LLM/07_Codex_Human_Decision_Receipt_Specification.md:32",
+                                                                            "reference":  "../../../template/project/initiatives/decision-receipts/gate-exception.template.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\evidence\\authoritative\\LLM\\07_Codex_Human_Decision_Receipt_Specification.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\template\\project\\initiatives\\decision-receipts\\gate-exception.template.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/project/evidence/authoritative/LLM/07_Codex_Human_Decision_Receipt_Specification.md:53",
+                                                                            "reference":  "../../../template/TEMPLATE-COVERAGE.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\evidence\\authoritative\\LLM\\07_Codex_Human_Decision_Receipt_Specification.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\template\\TEMPLATE-COVERAGE.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/project/evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md:112",
+                                                                            "reference":  "10_Codex_Initiative_Coherence_Specification.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\evidence\\authoritative\\LLM\\08_Codex_Initiative_Workflow_Specification.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\evidence\\authoritative\\LLM\\10_Codex_Initiative_Coherence_Specification.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/project/evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md:152",
+                                                                            "reference":  "../../../template/TEMPLATE-COVERAGE.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\evidence\\authoritative\\LLM\\08_Codex_Initiative_Workflow_Specification.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\template\\TEMPLATE-COVERAGE.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/project/evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md:17",
+                                                                            "reference":  "11_Codex_Prompt_Keyword_Specification.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\evidence\\authoritative\\LLM\\08_Codex_Initiative_Workflow_Specification.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\evidence\\authoritative\\LLM\\11_Codex_Prompt_Keyword_Specification.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/project/evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md:86",
+                                                                            "reference":  "09_Codex_Version_Realization_Initiative_Correlation_Specification.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\evidence\\authoritative\\LLM\\08_Codex_Initiative_Workflow_Specification.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\evidence\\authoritative\\LLM\\09_Codex_Version_Realization_Initiative_Correlation_Specification.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/project/initiatives/README.md:20",
+                                                                            "reference":  "version-scopes.template.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\initiatives\\README.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\initiatives\\version-scopes.template.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/project/initiatives/README.md:21",
+                                                                            "reference":  "scope-README.template.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\initiatives\\README.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\initiatives\\scope-README.template.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/project/initiatives/README.md:22",
+                                                                            "reference":  "initiative-index.template.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\initiatives\\README.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\initiatives\\initiative-index.template.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/project/initiatives/README.md:23",
+                                                                            "reference":  "status.template.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\initiatives\\README.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\initiatives\\status.template.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/project/initiatives/README.md:25",
+                                                                            "reference":  "version-scope-migration-ledger.template.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\initiatives\\README.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\initiatives\\version-scope-migration-ledger.template.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/project/initiatives/README.md:31",
+                                                                            "reference":  "initiative-README.template.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\initiatives\\README.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\initiatives\\initiative-README.template.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/project/initiatives/README.md:33",
+                                                                            "reference":  "work-conflicts.template.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\initiatives\\README.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\initiatives\\work-conflicts.template.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/project/initiatives/README.md:63",
+                                                                            "reference":  "design/README.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\initiatives\\README.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\initiatives\\design\\README.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/project/initiatives/README.md:64",
+                                                                            "reference":  "implementation/README.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\initiatives\\README.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\initiatives\\implementation\\README.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/project/initiatives/README.md:65",
+                                                                            "reference":  "planning/README.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\initiatives\\README.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\initiatives\\planning\\README.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/project/initiatives/assumption.template.md:17",
+                                                                            "reference":  "architecture.template.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\initiatives\\assumption.template.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\initiatives\\architecture.template.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/project/initiatives/assumption.template.md:65",
+                                                                            "reference":  "source-mapping.template.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\initiatives\\assumption.template.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\initiatives\\source-mapping.template.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/project/initiatives/decision-receipts/README.md:9",
+                                                                            "reference":  "gate-exception.template.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\initiatives\\decision-receipts\\README.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\initiatives\\decision-receipts\\gate-exception.template.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/project/initiatives/open-questions.template.md:16",
+                                                                            "reference":  "architecture.template.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\initiatives\\open-questions.template.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\initiatives\\architecture.template.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/project/initiatives/open-questions.template.md:17",
+                                                                            "reference":  "source-mapping.template.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\initiatives\\open-questions.template.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\initiatives\\source-mapping.template.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/project/initiatives/open-questions.template.md:18",
+                                                                            "reference":  "implementation-roadmap.template.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\initiatives\\open-questions.template.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\initiatives\\implementation-roadmap.template.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/project/initiatives/open-questions.template.md:19",
+                                                                            "reference":  "implementation-steps.template.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\initiatives\\open-questions.template.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\initiatives\\implementation-steps.template.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/prompts/WORKFLOW-CONTRACT.md:13",
+                                                                            "reference":  "../../evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\template\\prompts\\WORKFLOW-CONTRACT.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\evidence\\authoritative\\LLM\\08_Codex_Initiative_Workflow_Specification.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/prompts/WORKFLOW-CONTRACT.md:185",
+                                                                            "reference":  "../../evidence/authoritative/LLM/10_Codex_Initiative_Coherence_Specification.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\template\\prompts\\WORKFLOW-CONTRACT.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\evidence\\authoritative\\LLM\\10_Codex_Initiative_Coherence_Specification.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/prompts/WORKFLOW-CONTRACT.md:20",
+                                                                            "reference":  "../../evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\template\\prompts\\WORKFLOW-CONTRACT.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\evidence\\authoritative\\LLM\\11_Codex_Prompt_Keyword_Specification.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        },
+                                                                        {
+                                                                            "live_finding":  "protocol/template/prompts/WORKFLOW-CONTRACT.md:30",
+                                                                            "reference":  "../project/initiatives/decision-receipts/gate-exception.template.md",
+                                                                            "installed_source":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\template\\prompts\\WORKFLOW-CONTRACT.md",
+                                                                            "installed_target":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed\\template\\project\\initiatives\\decision-receipts\\gate-exception.template.md",
+                                                                            "target_exists":  true,
+                                                                            "fragment_exists":  true,
+                                                                            "classification":  "Partial overlay context; target resolves in final qualified complete assembly"
+                                                                        }
+                                                                    ],
+                                            "conclusion":  "Reportable live-project validation limitation. All46 references resolve in the pinned complete clean assembly at their declared runtime/library destinations. They are not intrinsic missing links in that qualified artifact. The raw P validator remains failed; this review does not relabel it passed or establish project-wide conformance/completion.",
+                                            "required_handling":  "Retain failed JSON/exit and this context audit. Preserve runtime-relative source links and installed validator. Candidate qualification applies only to exact tested clean assembly. Any later project-wide completion/integration/conformance gate must assess and disposition the raw live validation failure under its own authority.",
+                                            "previous_audit_qualification_attempt":  "20261114T200403Z-9d5ded0f"
+                                        },
+    "nonsemantic_reconciliations":  [
+                                        {
+                                            "reviewer":  "Codex independent agent /root/final_candidate_review",
+                                            "event":  "2026-11-14 final staged-whitespace reconciliation",
+                                            "prior_qualification_attempt":  "20261114T200403Z-9d5ded0f",
+                                            "prior_reviewed_files":  [
+                                                                         {
+                                                                             "path":  "TADp/protocol/template/.tadp-lock.json",
+                                                                             "algorithm":  "sha256-canonical-v1",
+                                                                             "sha256":  "00ddfa81f93bb29056e71bd0d8aa768a55997e90397767350c3b8f0c6364e63c"
+                                                                         },
+                                                                         {
+                                                                             "path":  "TADp/protocol/template/AGENTS.md",
+                                                                             "algorithm":  "sha256-canonical-v1",
+                                                                             "sha256":  "abf5bacc278a8681c0bff9adf7a213eca0a1743c9dfbffbf00443e2472fe66c4"
+                                                                         },
+                                                                         {
+                                                                             "path":  "TADp/protocol/template/TEMPLATE-COVERAGE.md",
+                                                                             "algorithm":  "sha256-canonical-v1",
+                                                                             "sha256":  "cb8f9aec5f022fbd12f7763fe039475ff563f3adf59bcd99c2f181893344927a"
+                                                                         },
+                                                                         {
+                                                                             "path":  "TADp/protocol/template/project/README.md",
+                                                                             "algorithm":  "sha256-canonical-v1",
+                                                                             "sha256":  "a1e7fdd6c8a58972171a71ee9f8dd8fac7bffa59aa23fb39861e221e1613e4fc"
+                                                                         },
+                                                                         {
+                                                                             "path":  "TADp/protocol/template/project/decisions/README.md",
+                                                                             "algorithm":  "sha256-canonical-v1",
+                                                                             "sha256":  "3a8b9dd4ad44fa4b6514c49cec14b199dc285374fe7433edf43082dc5baef30a"
+                                                                         },
+                                                                         {
+                                                                             "path":  "TADp/protocol/template/project/decisions/assumptions-and-open-questions.template.md",
+                                                                             "algorithm":  "sha256-canonical-v1",
+                                                                             "sha256":  "c58131f35b2361afeb8d2dbb0a7bed461e31a56b8080197f46da0f4ebcd00e7a"
+                                                                         },
+                                                                         {
+                                                                             "path":  "TADp/protocol/template/project/evidence/authoritative/LLM/.tadp-lock.json",
+                                                                             "algorithm":  "sha256-canonical-v1",
+                                                                             "sha256":  "bd9b398e407c98087706b1d833898f9899db11aac530e9b35eb2b9dae70f28b5"
+                                                                         },
+                                                                         {
+                                                                             "path":  "TADp/protocol/template/project/evidence/authoritative/LLM/02_Codex_Initiative_Governance_Specification.md",
+                                                                             "algorithm":  "sha256-canonical-v1",
+                                                                             "sha256":  "46bfd0ee8abb37cdb31489097021cba4ad80539333bfdfbdcd4a3d7fe725ed9c"
+                                                                         },
+                                                                         {
+                                                                             "path":  "TADp/protocol/template/project/evidence/authoritative/LLM/07_Codex_Human_Decision_Receipt_Specification.md",
+                                                                             "algorithm":  "sha256-canonical-v1",
+                                                                             "sha256":  "f9588957da4c4a92889842ab61d676ba27b308242883ac3b117354c926718e9f"
+                                                                         },
+                                                                         {
+                                                                             "path":  "TADp/protocol/template/project/evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md",
+                                                                             "algorithm":  "sha256-canonical-v1",
+                                                                             "sha256":  "a8359ce3541805cbe4c8f45f0f58fde6379d19e19bb3f937950b19aad12e3ad5"
+                                                                         },
+                                                                         {
+                                                                             "path":  "TADp/protocol/template/project/evidence/authoritative/LLM/AGENTS.md",
+                                                                             "algorithm":  "sha256-canonical-v1",
+                                                                             "sha256":  "0f4995562ec74054f02ccce453ee2458b283eb13210816599f11156f98eb95ee"
+                                                                         },
+                                                                         {
+                                                                             "path":  "TADp/protocol/template/project/initiatives/README.md",
+                                                                             "algorithm":  "sha256-canonical-v1",
+                                                                             "sha256":  "4d6c0e9aa088015aa72563c756420128d241e204d6005907ca06f9a1907c6a4c"
+                                                                         },
+                                                                         {
+                                                                             "path":  "TADp/protocol/template/project/initiatives/assumption.template.md",
+                                                                             "algorithm":  "sha256-canonical-v1",
+                                                                             "sha256":  "498682a27a8bf11a1b15b0b0bf423191f2a09911ef75ae62938b49ecf339b295"
+                                                                         },
+                                                                         {
+                                                                             "path":  "TADp/protocol/template/project/initiatives/decision-receipts/README.md",
+                                                                             "algorithm":  "sha256-canonical-v1",
+                                                                             "sha256":  "bd1f6c53f62bdaecfde98d4549c81926fea2fb9b02f994fea6a692a693ede520"
+                                                                         },
+                                                                         {
+                                                                             "path":  "TADp/protocol/template/project/initiatives/decision-receipts/README.template.md",
+                                                                             "algorithm":  "sha256-canonical-v1",
+                                                                             "sha256":  "fe82bfc53628879df352d997cd0d0d1b7064f24db5378544708b06a9d468d5ee"
+                                                                         },
+                                                                         {
+                                                                             "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                             "algorithm":  "sha256-canonical-v1",
+                                                                             "sha256":  "b48c45bfc343bb2cb2e5154f957b3d0e9eeec6f7f356723fcf27c35935337055"
+                                                                         },
+                                                                         {
+                                                                             "path":  "TADp/protocol/template/project/initiatives/open-questions.template.md",
+                                                                             "algorithm":  "sha256-canonical-v1",
+                                                                             "sha256":  "cd58175ac58a3d0a60a451df51d37f062bc164c8b53f0b75749c8ef9901043c8"
+                                                                         },
+                                                                         {
+                                                                             "path":  "TADp/protocol/template/prompts/05_initiative_assumption_review.md",
+                                                                             "algorithm":  "sha256-canonical-v1",
+                                                                             "sha256":  "885e7cfc9875b5242ec18b0815a5b68f518dee56b99f08233e96e178d293d4aa"
+                                                                         },
+                                                                         {
+                                                                             "path":  "TADp/protocol/template/prompts/06_initiative_open_question_review.md",
+                                                                             "algorithm":  "sha256-canonical-v1",
+                                                                             "sha256":  "a1849bf4546fe21681d163a8c0fb5b63cf841849354fe2ab619477fa91c437cd"
+                                                                         },
+                                                                         {
+                                                                             "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                                                                             "algorithm":  "sha256-canonical-v1",
+                                                                             "sha256":  "b5bed3c70008cd2be5642cef52899eaf865b14a7a40cb64d1acdceb915575456"
+                                                                         },
+                                                                         {
+                                                                             "path":  "TADp/protocol/tests/fixtures/README.md",
+                                                                             "algorithm":  "sha256-canonical-v1",
+                                                                             "sha256":  "c4545ed9f5806c51feffb5ed7b48a425e4448e1429d4863c64d26578144f5eed"
+                                                                         },
+                                                                         {
+                                                                             "path":  "TADp/protocol/tests/fixtures/owned_review_scenarios.json",
+                                                                             "algorithm":  "sha256-canonical-v1",
+                                                                             "sha256":  "454a99235890e69cc98f066d37346919a39360dfd63c8ecfb32fe0906bb2b72b"
+                                                                         },
+                                                                         {
+                                                                             "path":  "TADp/protocol/tests/test_assumption_question_review.py",
+                                                                             "algorithm":  "sha256-canonical-v1",
+                                                                             "sha256":  "532100207f2ad236b94efbb5bd10c5357d4434f83abd7a69ca70abd83b9eee7d"
+                                                                         }
+                                                                     ],
+                                            "prior_result":  "Passed independent candidate review; no material findings remain",
+                                            "change":  "Removed one terminal LF byte from each candidate prompt05/06; body text and referenced lines unchanged; outer partial-overlay lock regenerated",
+                                            "semantic_verification":  "Independently compared each prompt with prior qualified fixture; exact equality after trimming terminal LF only. No other semantic source changed.",
+                                            "current_qualification_attempt":  "20261114T201704Z-509920ed",
+                                            "current_fixture":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed",
+                                            "current_evidence":  "23 manifest and qualification hashes,18 walkthrough hashes,19/4 scoped lock inventories/digests and20 installed rawsource hashes independently match. All46 raw live-P link findings also resolve in this final complete fixture."
+                                        }
+                                    ],
+    "final_exact_content_result":  "Independent candidate review passed for final23digests after nonsemanticEOF reconciliation; raw live-P validation remains failed46errors, with all46 references resolved in the qualified assembly."
+}

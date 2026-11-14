@@ -1,0 +1,284 @@
+{
+  "root": "C:\\Users\\User\\PycharmProjects\\TADp\\TADp",
+  "valid": false,
+  "errors": 46,
+  "warnings": 0,
+  "findings": [
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/project/README.md:152",
+      "message": "local Markdown target does not exist: template/TEMPLATE-COVERAGE.md"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/project/README.md:160",
+      "message": "local Markdown target does not exist: template/prompts/WORKFLOW-CONTRACT.md#documentary-prerequisite-preparation"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/project/README.md:288",
+      "message": "local Markdown target does not exist: initiatives/version-scopes.template.md"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/project/README.md:289",
+      "message": "local Markdown target does not exist: initiatives/scope-README.template.md"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/project/README.md:290",
+      "message": "local Markdown target does not exist: initiatives/version-scope-migration-ledger.template.md"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/project/README.md:35",
+      "message": "local Markdown target does not exist: evidence/authoritative/LLM/05_Codex_Git_Workflow_Specification.md#requirement"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/project/README.md:50",
+      "message": "local Markdown target does not exist: template/TEMPLATE-COVERAGE.md"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/project/README.md:61",
+      "message": "local Markdown target does not exist: docs/guides/project-root-installation-migration.md"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/project/README.md:88",
+      "message": "local Markdown target does not exist: evidence/README.md"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/project/README.md:89",
+      "message": "local Markdown target does not exist: evidence/authoritative/README.md"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/project/README.md:90",
+      "message": "local Markdown target does not exist: evidence/non-authoritative/README.md"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/project/README.md:93",
+      "message": "local Markdown target does not exist: products/README.md"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/project/README.md:94",
+      "message": "local Markdown target does not exist: prompts/README.md"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/project/evidence/authoritative/LLM/02_Codex_Initiative_Governance_Specification.md:257",
+      "message": "local Markdown target does not exist: 09_Codex_Version_Realization_Initiative_Correlation_Specification.md"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/project/evidence/authoritative/LLM/02_Codex_Initiative_Governance_Specification.md:282",
+      "message": "local Markdown target does not exist: 10_Codex_Initiative_Coherence_Specification.md"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/project/evidence/authoritative/LLM/02_Codex_Initiative_Governance_Specification.md:67",
+      "message": "local Markdown target does not exist: ../../../template/TEMPLATE-COVERAGE.md"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/project/evidence/authoritative/LLM/02_Codex_Initiative_Governance_Specification.md:9",
+      "message": "local Markdown target does not exist: 11_Codex_Prompt_Keyword_Specification.md"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/project/evidence/authoritative/LLM/07_Codex_Human_Decision_Receipt_Specification.md:110",
+      "message": "local Markdown target does not exist: 10_Codex_Initiative_Coherence_Specification.md"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/project/evidence/authoritative/LLM/07_Codex_Human_Decision_Receipt_Specification.md:19",
+      "message": "local Markdown target does not exist: 11_Codex_Prompt_Keyword_Specification.md"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/project/evidence/authoritative/LLM/07_Codex_Human_Decision_Receipt_Specification.md:32",
+      "message": "local Markdown target does not exist: ../../../template/project/initiatives/decision-receipts/gate-exception.template.md"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/project/evidence/authoritative/LLM/07_Codex_Human_Decision_Receipt_Specification.md:53",
+      "message": "local Markdown target does not exist: ../../../template/TEMPLATE-COVERAGE.md"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/project/evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md:112",
+      "message": "local Markdown target does not exist: 10_Codex_Initiative_Coherence_Specification.md"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/project/evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md:152",
+      "message": "local Markdown target does not exist: ../../../template/TEMPLATE-COVERAGE.md"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/project/evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md:17",
+      "message": "local Markdown target does not exist: 11_Codex_Prompt_Keyword_Specification.md"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/project/evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md:86",
+      "message": "local Markdown target does not exist: 09_Codex_Version_Realization_Initiative_Correlation_Specification.md"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/project/initiatives/README.md:20",
+      "message": "local Markdown target does not exist: version-scopes.template.md"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/project/initiatives/README.md:21",
+      "message": "local Markdown target does not exist: scope-README.template.md"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/project/initiatives/README.md:22",
+      "message": "local Markdown target does not exist: initiative-index.template.md"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/project/initiatives/README.md:23",
+      "message": "local Markdown target does not exist: status.template.md"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/project/initiatives/README.md:25",
+      "message": "local Markdown target does not exist: version-scope-migration-ledger.template.md"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/project/initiatives/README.md:31",
+      "message": "local Markdown target does not exist: initiative-README.template.md"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/project/initiatives/README.md:33",
+      "message": "local Markdown target does not exist: work-conflicts.template.md"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/project/initiatives/README.md:63",
+      "message": "local Markdown target does not exist: design/README.md"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/project/initiatives/README.md:64",
+      "message": "local Markdown target does not exist: implementation/README.md"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/project/initiatives/README.md:65",
+      "message": "local Markdown target does not exist: planning/README.md"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/project/initiatives/assumption.template.md:17",
+      "message": "local Markdown target does not exist: architecture.template.md"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/project/initiatives/assumption.template.md:65",
+      "message": "local Markdown target does not exist: source-mapping.template.md"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/project/initiatives/decision-receipts/README.md:9",
+      "message": "local Markdown target does not exist: gate-exception.template.md"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/project/initiatives/open-questions.template.md:16",
+      "message": "local Markdown target does not exist: architecture.template.md"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/project/initiatives/open-questions.template.md:17",
+      "message": "local Markdown target does not exist: source-mapping.template.md"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/project/initiatives/open-questions.template.md:18",
+      "message": "local Markdown target does not exist: implementation-roadmap.template.md"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/project/initiatives/open-questions.template.md:19",
+      "message": "local Markdown target does not exist: implementation-steps.template.md"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/prompts/WORKFLOW-CONTRACT.md:13",
+      "message": "local Markdown target does not exist: ../../evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/prompts/WORKFLOW-CONTRACT.md:185",
+      "message": "local Markdown target does not exist: ../../evidence/authoritative/LLM/10_Codex_Initiative_Coherence_Specification.md"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/prompts/WORKFLOW-CONTRACT.md:20",
+      "message": "local Markdown target does not exist: ../../evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md"
+    },
+    {
+      "severity": "error",
+      "code": "TADP002",
+      "path": "protocol/template/prompts/WORKFLOW-CONTRACT.md:30",
+      "message": "local Markdown target does not exist: ../project/initiatives/decision-receipts/gate-exception.template.md"
+    }
+  ]
+}

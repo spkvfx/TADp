@@ -13,6 +13,14 @@ proposed contracts, candidate destinations and planned Verification evidence.
 It replaces no canonical specification, assumption or question record and
 claims no acceptance, product execution or passing candidate check.
 
+**Current execution evidence:** The paragraphs and planned checks below retain
+the accepted baseline's original source interpretation. Actual acceptance/start
+and the now qualified exact candidate are recorded in [execution-record.md](execution-record.md)
+and the [manifest](../../../../evidence/non-authoritative/assumption-question-review/manifest.json).
+Independent review passed after the recorded receipt correction. These current
+facts do not adopt the proposed reusable rules or change the accepted scope;
+the raw P partial-overlay scan limitation remains explicit in those records.
+
 ## Evidence inventory
 
 | Evidence ID | Source | Precise locator | Revision or date | Evidence label | Governs | Limitations | Conflict rule |

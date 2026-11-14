@@ -17,7 +17,7 @@ non-authoritative. Correlation creates no acceptance, delivery or release.
 
 | Scope | Initiative ID | Type | Record location | Source notes | Execution branch | Execution mode | Captured base ref | Captured base commit | Integration target | Revision cycle | Lifecycle evidence | Integration evidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| v2 | TADP-001 | implementation | [Owned assumption and question review decisions](v2/implementation/tadp-001-owned-review-decisions/README.md) | [RZN-001](../evidence/non-authoritative/realizations/v2/RZN-001-owned-review-decisions.md) | initiative/v2-tadp-001-owned-review-decisions | Dedicated | v2 | 9c9fd1daad655fd58349c005f8d31a4f52790cc9 | v2 | 1 | [Proposed history](v2/implementation/tadp-001-owned-review-decisions/README.md#lifecycle-history) | Not integrated; no closure authority |
+| v2 | TADP-001 | implementation | [Owned assumption and question review decisions](v2/implementation/tadp-001-owned-review-decisions/README.md) | [RZN-001](../evidence/non-authoritative/realizations/v2/RZN-001-owned-review-decisions.md) | initiative/v2-tadp-001-owned-review-decisions | Dedicated | v2 | 9c9fd1daad655fd58349c005f8d31a4f52790cc9 | v2 | 1 | [Lifecycle history](v2/implementation/tadp-001-owned-review-decisions/README.md#lifecycle-history) | Not integrated; no closure authority |
 
 Each initiative has one immutable scope, one narrow claim and one active
 execution assignment per revision cycle. Multiple initiatives may share scope,

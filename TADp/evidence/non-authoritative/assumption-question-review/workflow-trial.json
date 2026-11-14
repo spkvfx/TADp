@@ -1,0 +1,1556 @@
+{
+    "schema_version":  1,
+    "recorded_by":  "Codex agent /root/workflow_walkthrough",
+    "capture_event":  "2026-11-14 Stage3 semantic qualification of exact candidate",
+    "method":  "Model-assisted bounded dry-run interpretation of both numbered entrypoints for every synthetic fixture input, assessed against original source requirements and candidate shared/rule/shape contracts",
+    "standing":  "Observed interpretation evidence, not executable runtime automation, actual human authority or proof of future model compliance",
+    "source_instruction_revision":  "4f05752755eb63e31d65c152a2e1dc9134db7de5",
+    "source_instruction_blob":  "394e97ad00ca98fd5adb21f21b4ad61c7f6ba53e",
+    "pinned_clean_assembly_baseline":  "294d70d1b7b313bd46cab481b714c8cbb5c0e612",
+    "isolated_installation_relation":  "Final EOF-normalized exact-source assembly; fixture C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-ren3pire\\installed; attempt 20261114T201704Z-509920ed; passed structural, protection, isolated-install and document-contract checks. Semantic evidence retains receipt and whitespace reconciliation histories; expected inputs alone prove no execution.",
+    "sources":  [
+                    {
+                        "path":  "TADp/evidence/non-authoritative/assumption-question-review/source-prompt.txt",
+                        "algorithm":  "sha256-canonical-v1",
+                        "sha256":  "85c3eb4dcad24a1d17a1b69375c667135abdffa108841c0f66b68394319740fc"
+                    },
+                    {
+                        "path":  "TADp/protocol/tests/fixtures/owned_review_scenarios.json",
+                        "algorithm":  "sha256-canonical-v1",
+                        "sha256":  "454a99235890e69cc98f066d37346919a39360dfd63c8ecfb32fe0906bb2b72b"
+                    },
+                    {
+                        "path":  "TADp/protocol/template/prompts/05_initiative_assumption_review.md",
+                        "algorithm":  "sha256-canonical-v1",
+                        "sha256":  "099cc070696660ebde585387f71f188369931fbf5343aa3d8b7e87b999779c55"
+                    },
+                    {
+                        "path":  "TADp/protocol/template/prompts/06_initiative_open_question_review.md",
+                        "algorithm":  "sha256-canonical-v1",
+                        "sha256":  "d0a063c42ae3e0ff1697d7f800157fe849bacc2fc635d18080322f50c26be245"
+                    },
+                    {
+                        "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                        "algorithm":  "sha256-canonical-v1",
+                        "sha256":  "b5bed3c70008cd2be5642cef52899eaf865b14a7a40cb64d1acdceb915575456"
+                    },
+                    {
+                        "path":  "TADp/protocol/template/project/evidence/authoritative/LLM/02_Codex_Initiative_Governance_Specification.md",
+                        "algorithm":  "sha256-canonical-v1",
+                        "sha256":  "46bfd0ee8abb37cdb31489097021cba4ad80539333bfdfbdcd4a3d7fe725ed9c"
+                    },
+                    {
+                        "path":  "TADp/protocol/template/project/evidence/authoritative/LLM/07_Codex_Human_Decision_Receipt_Specification.md",
+                        "algorithm":  "sha256-canonical-v1",
+                        "sha256":  "f9588957da4c4a92889842ab61d676ba27b308242883ac3b117354c926718e9f"
+                    },
+                    {
+                        "path":  "TADp/protocol/template/project/evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md",
+                        "algorithm":  "sha256-canonical-v1",
+                        "sha256":  "a8359ce3541805cbe4c8f45f0f58fde6379d19e19bb3f937950b19aad12e3ad5"
+                    },
+                    {
+                        "path":  "TADp/protocol/template/project/initiatives/assumption.template.md",
+                        "algorithm":  "sha256-canonical-v1",
+                        "sha256":  "498682a27a8bf11a1b15b0b0bf423191f2a09911ef75ae62938b49ecf339b295"
+                    },
+                    {
+                        "path":  "TADp/protocol/template/project/initiatives/open-questions.template.md",
+                        "algorithm":  "sha256-canonical-v1",
+                        "sha256":  "cd58175ac58a3d0a60a451df51d37f062bc164c8b53f0b75749c8ef9901043c8"
+                    },
+                    {
+                        "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                        "algorithm":  "sha256-canonical-v1",
+                        "sha256":  "b48c45bfc343bb2cb2e5154f957b3d0e9eeec6f7f356723fcf27c35935337055"
+                    },
+                    {
+                        "path":  "TADp/protocol/template/project/initiatives/decision-receipts/README.template.md",
+                        "algorithm":  "sha256-canonical-v1",
+                        "sha256":  "fe82bfc53628879df352d997cd0d0d1b7064f24db5378544708b06a9d468d5ee"
+                    },
+                    {
+                        "path":  "TADp/protocol/template/project/initiatives/decision-receipts/README.md",
+                        "algorithm":  "sha256-canonical-v1",
+                        "sha256":  "bd1f6c53f62bdaecfde98d4549c81926fea2fb9b02f994fea6a692a693ede520"
+                    },
+                    {
+                        "path":  "TADp/protocol/template/TEMPLATE-COVERAGE.md",
+                        "algorithm":  "sha256-canonical-v1",
+                        "sha256":  "cb8f9aec5f022fbd12f7763fe039475ff563f3adf59bcd99c2f181893344927a"
+                    },
+                    {
+                        "path":  "TADp/protocol/template/project/decisions/README.md",
+                        "algorithm":  "sha256-canonical-v1",
+                        "sha256":  "3a8b9dd4ad44fa4b6514c49cec14b199dc285374fe7433edf43082dc5baef30a"
+                    },
+                    {
+                        "path":  "TADp/protocol/template/project/README.md",
+                        "algorithm":  "sha256-canonical-v1",
+                        "sha256":  "a1e7fdd6c8a58972171a71ee9f8dd8fac7bffa59aa23fb39861e221e1613e4fc"
+                    },
+                    {
+                        "path":  "TADp/protocol/template/project/initiatives/README.md",
+                        "algorithm":  "sha256-canonical-v1",
+                        "sha256":  "4d6c0e9aa088015aa72563c756420128d241e204d6005907ca06f9a1907c6a4c"
+                    },
+                    {
+                        "path":  "TADp/protocol/template/project/decisions/assumptions-and-open-questions.template.md",
+                        "algorithm":  "sha256-canonical-v1",
+                        "sha256":  "c58131f35b2361afeb8d2dbb0a7bed461e31a56b8080197f46da0f4ebcd00e7a"
+                    }
+                ],
+    "review_entry_points":  [
+                                "05",
+                                "06"
+                            ],
+    "scenario_count":  11,
+    "interpretation_count":  22,
+    "observed_interpretations":  [
+                                     {
+                                         "review_entry_point":  "05",
+                                         "case_id":  "REV-01",
+                                         "input":  "An existing in-scope assumption A-01 and question Q-01 have exact source text. The fixture human explicitly confirms A-01 and answers Q-01.",
+                                         "fixture_expected":  "Present one ready item at a time; preserve both exact texts and answers in receipts before separate source dispositions; no initiative acceptance.",
+                                         "observed_allowed_next_action":  "Validate the supplied fixture responses cover A-01 and Q-01 and their actual canonical owner. Capture or reuse exact sufficient receipts before independently confirming A-01 and accepting the final Q-01 answer. Any missing response is presented as one ready item at a time, without re-asking an already sufficiently recorded answer.",
+                                         "canonical_owner":  "Reviewed initiative canonical assumption and open-question records, with its receipt index",
+                                         "observed_disposition":  "Separate Confirmed and Accepted dispositions only after the fixture response/authority and receipt checks; no initiative acceptance",
+                                         "remaining_gate":  "Actual exact source text, answer, responder and authority must exist in a real execution; resulting implementation and initiative acceptance remain separate",
+                                         "requirement_comparison":  "Consistent with the original requested permission and retained gates; no material mismatch found",
+                                         "supporting_references":  [
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/05_initiative_assumption_review.md",
+                                                                           "line":  97,
+                                                                           "exact_line":  "Apply the shared contract\u0027s decision-item rules for Stage 5 and 6. Both the",
+                                                                           "selected_by":  "Apply the shared contract\u0027s decision-item rules"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                                                                           "line":  255,
+                                                                           "exact_line":  "## Decision items in Stage 5 and 6 reviews",
+                                                                           "selected_by":  "## Decision items in Stage 5 and 6 reviews"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/evidence/authoritative/LLM/07_Codex_Human_Decision_Receipt_Specification.md",
+                                                                           "line":  114,
+                                                                           "exact_line":  "before changing the source disposition. It must link the receipt from the",
+                                                                           "selected_by":  "before changing the source disposition"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                                                                           "line":  290,
+                                                                           "exact_line":  "- The ordinary human path presents one ready item at a time, with its exact",
+                                                                           "selected_by":  "The ordinary human path presents one ready item"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  84,
+                                                                           "exact_line":  "rewriting history. Recording an assumption/question disposition neither expands",
+                                                                           "selected_by":  "Recording an assumption/question disposition neither expands"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  87,
+                                                                           "exact_line":  "also records separately authorized lifecycle and exception events under their",
+                                                                           "selected_by":  "also records separately authorized lifecycle and exception events"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  88,
+                                                                           "exact_line":  "own exact governing requirements; identify that event and its actual authority",
+                                                                           "selected_by":  "own exact governing requirements; identify that event and its actual authority"
+                                                                       }
+                                                                   ],
+                                         "comparison_result":  "pass",
+                                         "actual_scope":  "Model-assisted dry-run interpretation only; no synthetic answer was applied to a live record",
+                                         "receipt_recheck":  "Re-evaluated after shared-receipt lifecycle wording correction. This fixture supplies no separate lifecycle/exception authorization; item-answer outcomes therefore remain unchanged. Separately authorized lifecycle events can use the same receipt under their own governing requirements."
+                                     },
+                                     {
+                                         "review_entry_point":  "05",
+                                         "case_id":  "REV-02",
+                                         "input":  "Before any answer, evidence independently reveals a new assumption A-02 and a new open question Q-02 during either review.",
+                                         "fixture_expected":  "Define both with unique stable IDs, exact text, origin, canonical owner/location, scope, dependencies, affected records and unresolved standing. No preceding correction is needed.",
+                                         "observed_allowed_next_action":  "Define A-02 and Q-02 now from the evidence, without waiting for a correction or answer; give each a unique ID, exact original text, origin, canonical owner/location, scope, dependencies and affected records. Label any recommendation unaccepted and append both to complete coverage.",
+                                         "canonical_owner":  "The identified actual item owner; no owner is invented from proximity to the originating review",
+                                         "observed_disposition":  "Both newly defined items remain unresolved",
+                                         "remaining_gate":  "Their own sufficient human or specifically covered alternative dispositions and receipts; external write authority before any external record edit",
+                                         "requirement_comparison":  "Consistent with the original requested permission and retained gates; no material mismatch found",
+                                         "supporting_references":  [
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/05_initiative_assumption_review.md",
+                                                                           "line":  97,
+                                                                           "exact_line":  "Apply the shared contract\u0027s decision-item rules for Stage 5 and 6. Both the",
+                                                                           "selected_by":  "Apply the shared contract\u0027s decision-item rules"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                                                                           "line":  255,
+                                                                           "exact_line":  "## Decision items in Stage 5 and 6 reviews",
+                                                                           "selected_by":  "## Decision items in Stage 5 and 6 reviews"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/evidence/authoritative/LLM/02_Codex_Initiative_Governance_Specification.md",
+                                                                           "line":  141,
+                                                                           "exact_line":  "from the review and its evidence. A preceding correction, answer or existing",
+                                                                           "selected_by":  "A preceding correction, answer or existing"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/evidence/authoritative/LLM/02_Codex_Initiative_Governance_Specification.md",
+                                                                           "line":  148,
+                                                                           "exact_line":  "Every new item requires a unique stable ID, exact source text, originating",
+                                                                           "selected_by":  "Every new item requires a unique stable ID"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/assumption.template.md",
+                                                                           "line":  31,
+                                                                           "exact_line":  "preceding answer, correction or existing source ID. Each new item begins",
+                                                                           "selected_by":  "Each new item begins"
+                                                                       }
+                                                                   ],
+                                         "comparison_result":  "pass",
+                                         "actual_scope":  "Model-assisted dry-run interpretation only; no synthetic answer was applied to a live record",
+                                         "receipt_recheck":  "Re-evaluated after shared-receipt lifecycle wording correction. This fixture supplies no separate lifecycle/exception authorization; item-answer outcomes therefore remain unchanged. Separately authorized lifecycle events can use the same receipt under their own governing requirements."
+                                     },
+                                     {
+                                         "review_entry_point":  "05",
+                                         "case_id":  "REV-03",
+                                         "input":  "During that same review the fixture human explicitly confirms A-02 and answers Q-02, unambiguously naming each item and its outcome.",
+                                         "fixture_expected":  "Capture sufficient exact authority and receipts, then record each disposition in the same review. A new item does not require a separate review solely because it is new or of the other kind.",
+                                         "observed_allowed_next_action":  "Receive the explicitly named A-02 and Q-02 outcomes in this same review; preserve their exact input and actual authority, then create or reuse sufficient receipts before each source disposition. A single coherent receipt may cover the complete set only when both IDs and outcomes are explicit and unambiguous.",
+                                         "canonical_owner":  "Each item actual canonical initiative or project record; receipt location follows that owner",
+                                         "observed_disposition":  "Each new item receives its own authorized disposition, without a forced separate review merely because it is new or of the other kind",
+                                         "remaining_gate":  "Per-item sufficient authority and canonical-target permission; an answer remains distinct from initiative acceptance or resulting work",
+                                         "requirement_comparison":  "Consistent with the original requested permission and retained gates; no material mismatch found",
+                                         "supporting_references":  [
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/05_initiative_assumption_review.md",
+                                                                           "line":  97,
+                                                                           "exact_line":  "Apply the shared contract\u0027s decision-item rules for Stage 5 and 6. Both the",
+                                                                           "selected_by":  "Apply the shared contract\u0027s decision-item rules"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                                                                           "line":  255,
+                                                                           "exact_line":  "## Decision items in Stage 5 and 6 reviews",
+                                                                           "selected_by":  "## Decision items in Stage 5 and 6 reviews"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                                                                           "line":  259,
+                                                                           "exact_line":  "answer or disposition during the same review. Codex may independently identify",
+                                                                           "selected_by":  "answer or disposition during the same review"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/evidence/authoritative/LLM/07_Codex_Human_Decision_Receipt_Specification.md",
+                                                                           "line":  141,
+                                                                           "exact_line":  "affected records and history. One response covers several IDs only when the",
+                                                                           "selected_by":  "One response covers several IDs only"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  80,
+                                                                           "exact_line":  "One response covers multiple IDs only when it explicitly and unambiguously",
+                                                                           "selected_by":  "One response covers multiple IDs only"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  84,
+                                                                           "exact_line":  "rewriting history. Recording an assumption/question disposition neither expands",
+                                                                           "selected_by":  "Recording an assumption/question disposition neither expands"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  87,
+                                                                           "exact_line":  "also records separately authorized lifecycle and exception events under their",
+                                                                           "selected_by":  "also records separately authorized lifecycle and exception events"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  88,
+                                                                           "exact_line":  "own exact governing requirements; identify that event and its actual authority",
+                                                                           "selected_by":  "own exact governing requirements; identify that event and its actual authority"
+                                                                       }
+                                                                   ],
+                                         "comparison_result":  "pass",
+                                         "actual_scope":  "Model-assisted dry-run interpretation only; no synthetic answer was applied to a live record",
+                                         "receipt_recheck":  "Re-evaluated after shared-receipt lifecycle wording correction. This fixture supplies no separate lifecycle/exception authorization; item-answer outcomes therefore remain unchanged. Separately authorized lifecycle events can use the same receipt under their own governing requirements."
+                                     },
+                                     {
+                                         "review_entry_point":  "05",
+                                         "case_id":  "REV-04",
+                                         "input":  "The human answers Q-03 with an option absent from the original options, addressing a project-wide decision outside the reviewed initiative.",
+                                         "fixture_expected":  "Preserve the original options and exact human words; assess destination and actual decision/write authority. Do not reject solely for initiative scope or invent authority.",
+                                         "observed_allowed_next_action":  "Preserve the outside-option answer and original source options. Assess its project-wide canonical owner, exact destination and actual write/decision authority; request the precise missing authority or clarification if needed rather than rejecting solely for scope.",
+                                         "canonical_owner":  "Proper project owner and canonical project record if the authority assessment succeeds",
+                                         "observed_disposition":  "Outside-option/scope answer is eligible to govern the proper target; it is not automatically accepted from this abstract fixture description",
+                                         "remaining_gate":  "Exact answer words, target/current state/revision/branch/owner and sufficient authority; receipt before disposition; no scope or work expansion",
+                                         "requirement_comparison":  "Consistent with the original requested permission and retained gates; no material mismatch found",
+                                         "supporting_references":  [
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/05_initiative_assumption_review.md",
+                                                                           "line":  97,
+                                                                           "exact_line":  "Apply the shared contract\u0027s decision-item rules for Stage 5 and 6. Both the",
+                                                                           "selected_by":  "Apply the shared contract\u0027s decision-item rules"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                                                                           "line":  255,
+                                                                           "exact_line":  "## Decision items in Stage 5 and 6 reviews",
+                                                                           "selected_by":  "## Decision items in Stage 5 and 6 reviews"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/evidence/authoritative/LLM/07_Codex_Human_Decision_Receipt_Specification.md",
+                                                                           "line":  118,
+                                                                           "exact_line":  "An answer outside the original options or the reviewed initiative\u0027s boundary",
+                                                                           "selected_by":  "An answer outside the original options"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                                                                           "line":  262,
+                                                                           "exact_line":  "or reviewed initiative scope. Assess its actual authority and destination",
+                                                                           "selected_by":  "or reviewed initiative scope"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/open-questions.template.md",
+                                                                           "line":  34,
+                                                                           "exact_line":  "answer outside the original options or reviewed initiative\u0027s scope. Assess the",
+                                                                           "selected_by":  "answer outside the original options"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  84,
+                                                                           "exact_line":  "rewriting history. Recording an assumption/question disposition neither expands",
+                                                                           "selected_by":  "Recording an assumption/question disposition neither expands"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  87,
+                                                                           "exact_line":  "also records separately authorized lifecycle and exception events under their",
+                                                                           "selected_by":  "also records separately authorized lifecycle and exception events"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  88,
+                                                                           "exact_line":  "own exact governing requirements; identify that event and its actual authority",
+                                                                           "selected_by":  "own exact governing requirements; identify that event and its actual authority"
+                                                                       }
+                                                                   ],
+                                         "comparison_result":  "pass",
+                                         "actual_scope":  "Model-assisted dry-run interpretation only; no synthetic answer was applied to a live record",
+                                         "receipt_recheck":  "Re-evaluated after shared-receipt lifecycle wording correction. This fixture supplies no separate lifecycle/exception authorization; item-answer outcomes therefore remain unchanged. Separately authorized lifecycle events can use the same receipt under their own governing requirements."
+                                     },
+                                     {
+                                         "review_entry_point":  "05",
+                                         "case_id":  "REV-05",
+                                         "input":  "Q-04 belongs to a named other open initiative; Q-05 is project-wide with no suitable initiative owner. Exact current targets, governing revisions, branches, owners and sufficient write/decision authority are recorded.",
+                                         "fixture_expected":  "Define/answer Q-04 at that initiative\u0027s canonical register and Q-05 at the conditional project register with receipts. Link originating effects/dependencies without absorbing resulting work or inventing an umbrella initiative.",
+                                         "observed_allowed_next_action":  "Use Q-04 other named open initiative canonical register and Q-05 conditional project register. Define the items under the recorded sufficient target/write/decision authority. Obtain or capture each actual exact answer and receipt before governing disposition; do not ask another approval solely because ownership is external.",
+                                         "canonical_owner":  "Q-04: named other initiative; Q-05: project decision steward with no suitable initiative owner",
+                                         "observed_disposition":  "Definition is unresolved until an actual sufficient exact answer exists; same-review governing answers are permitted at both proper owners",
+                                         "remaining_gate":  "This fixture asserts sufficient authority but supplies no literal answer payload; real resolution still needs that payload and receipt. Originating initiative only links effects/dependencies; no umbrella or resulting work is created",
+                                         "requirement_comparison":  "Consistent with the original requested permission and retained gates; no material mismatch found",
+                                         "supporting_references":  [
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/05_initiative_assumption_review.md",
+                                                                           "line":  97,
+                                                                           "exact_line":  "Apply the shared contract\u0027s decision-item rules for Stage 5 and 6. Both the",
+                                                                           "selected_by":  "Apply the shared contract\u0027s decision-item rules"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                                                                           "line":  255,
+                                                                           "exact_line":  "## Decision items in Stage 5 and 6 reviews",
+                                                                           "selected_by":  "## Decision items in Stage 5 and 6 reviews"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/evidence/authoritative/LLM/02_Codex_Initiative_Governance_Specification.md",
+                                                                           "line":  189,
+                                                                           "exact_line":  "An item owned by another named initiative belongs in that initiative\u0027s",
+                                                                           "selected_by":  "An item owned by another named initiative"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/evidence/authoritative/LLM/02_Codex_Initiative_Governance_Specification.md",
+                                                                           "line":  200,
+                                                                           "exact_line":  "authorized disposition there during the review without another approval solely",
+                                                                           "selected_by":  "without another approval solely"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/TEMPLATE-COVERAGE.md",
+                                                                           "line":  778,
+                                                                           "exact_line":  "\"id\": \"project-owned-items\",",
+                                                                           "selected_by":  "\"id\": \"project-owned-items\""
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/decisions/assumptions-and-open-questions.template.md",
+                                                                           "line":  101,
+                                                                           "exact_line":  "## Authority and external routing",
+                                                                           "selected_by":  "## Authority and external routing"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  84,
+                                                                           "exact_line":  "rewriting history. Recording an assumption/question disposition neither expands",
+                                                                           "selected_by":  "Recording an assumption/question disposition neither expands"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  87,
+                                                                           "exact_line":  "also records separately authorized lifecycle and exception events under their",
+                                                                           "selected_by":  "also records separately authorized lifecycle and exception events"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  88,
+                                                                           "exact_line":  "own exact governing requirements; identify that event and its actual authority",
+                                                                           "selected_by":  "own exact governing requirements; identify that event and its actual authority"
+                                                                       }
+                                                                   ],
+                                         "comparison_result":  "pass",
+                                         "actual_scope":  "Model-assisted dry-run interpretation only; no synthetic answer was applied to a live record",
+                                         "receipt_recheck":  "Re-evaluated after shared-receipt lifecycle wording correction. This fixture supplies no separate lifecycle/exception authorization; item-answer outcomes therefore remain unchanged. Separately authorized lifecycle events can use the same receipt under their own governing requirements."
+                                     },
+                                     {
+                                         "review_entry_point":  "05",
+                                         "case_id":  "REV-06",
+                                         "input":  "Q-06 belongs to another scaffold. Its source is linked, but target-naming authority and the external owner\u0027s permission are missing.",
+                                         "fixture_expected":  "Preserve exact input and an owned handoff with proposed target/owner, blocker and re-entry condition. Do not edit or claim resolution there; continue independent authorized work.",
+                                         "observed_allowed_next_action":  "Do not edit the other scaffold. Preserve the exact input in a linked owned handoff with proposed canonical target/owner, missing target-naming and owner authority, blocker and re-entry condition; continue independent authorized review work.",
+                                         "canonical_owner":  "Proposed external scaffold owner remains the destination; origin retains its handoff/dependency only",
+                                         "observed_disposition":  "Q-06 remains unresolved; no external governing answer or write is claimed",
+                                         "remaining_gate":  "Separate authority naming that scaffold and sufficient actual owner/write/decision permission, plus exact evidence and receipt before later disposition",
+                                         "requirement_comparison":  "Consistent with the original requested permission and retained gates; no material mismatch found",
+                                         "supporting_references":  [
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/05_initiative_assumption_review.md",
+                                                                           "line":  97,
+                                                                           "exact_line":  "Apply the shared contract\u0027s decision-item rules for Stage 5 and 6. Both the",
+                                                                           "selected_by":  "Apply the shared contract\u0027s decision-item rules"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                                                                           "line":  255,
+                                                                           "exact_line":  "## Decision items in Stage 5 and 6 reviews",
+                                                                           "selected_by":  "## Decision items in Stage 5 and 6 reviews"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                                                                           "line":  287,
+                                                                           "exact_line":  "- Another scaffold, repository, fork or external service retains its separate",
+                                                                           "selected_by":  "Another scaffold, repository, fork or external service"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/evidence/authoritative/LLM/02_Codex_Initiative_Governance_Specification.md",
+                                                                           "line":  205,
+                                                                           "exact_line":  "When ownership, permission or evidence is missing, preserve the exact input and",
+                                                                           "selected_by":  "When ownership, permission or evidence is missing"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/decisions/assumptions-and-open-questions.template.md",
+                                                                           "line":  107,
+                                                                           "exact_line":  "initiative ownership. When they do not, preserve exact input in a linked owned",
+                                                                           "selected_by":  "linked owned"
+                                                                       }
+                                                                   ],
+                                         "comparison_result":  "pass",
+                                         "actual_scope":  "Model-assisted dry-run interpretation only; no synthetic answer was applied to a live record",
+                                         "receipt_recheck":  "Re-evaluated after shared-receipt lifecycle wording correction. This fixture supplies no separate lifecycle/exception authorization; item-answer outcomes therefore remain unchanged. Separately authorized lifecycle events can use the same receipt under their own governing requirements."
+                                     },
+                                     {
+                                         "review_entry_point":  "05",
+                                         "case_id":  "REV-07",
+                                         "input":  "A recorded authority receipt and rule-specific exception delegate a method for Q-07 only. The same review discovers Q-08.",
+                                         "fixture_expected":  "Record Q-07\u0027s actual agent author, method/evidence/result/limits under its covered authority. Q-08 stays unresolved on the human path unless separately and sufficiently covered.",
+                                         "observed_allowed_next_action":  "Check the recorded authority receipt and rule-specific exception cover Q-07 and the actual method. Apply that covered method and preserve its actual agent author/evidence/result/limits. Independently define Q-08 with provenance and route it to the ordinary human path.",
+                                         "canonical_owner":  "Each Q ID stays at its own canonical owner; delegation does not transfer ownership",
+                                         "observed_disposition":  "Q-07 may receive the covered actual agent disposition; Q-08 remains unresolved and inherits no coverage",
+                                         "remaining_gate":  "Q-08 needs its own human response or a sufficiently explicit new covered delegation, with required records before reliance; no agent answer is labelled human",
+                                         "requirement_comparison":  "Consistent with the original requested permission and retained gates; no material mismatch found",
+                                         "supporting_references":  [
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/05_initiative_assumption_review.md",
+                                                                           "line":  97,
+                                                                           "exact_line":  "Apply the shared contract\u0027s decision-item rules for Stage 5 and 6. Both the",
+                                                                           "selected_by":  "Apply the shared contract\u0027s decision-item rules"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                                                                           "line":  255,
+                                                                           "exact_line":  "## Decision items in Stage 5 and 6 reviews",
+                                                                           "selected_by":  "## Decision items in Stage 5 and 6 reviews"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                                                                           "line":  296,
+                                                                           "exact_line":  "- An alternative method resolves only items covered by its sufficient recorded",
+                                                                           "selected_by":  "An alternative method resolves only items covered"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/evidence/authoritative/LLM/07_Codex_Human_Decision_Receipt_Specification.md",
+                                                                           "line":  149,
+                                                                           "exact_line":  "New IDs outside that recorded coverage remain on the ordinary human path;",
+                                                                           "selected_by":  "New IDs outside that recorded coverage"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  118,
+                                                                           "exact_line":  "The Exact human response above is the actual authorization, not a fabricated",
+                                                                           "selected_by":  "actual authorization, not a fabricated"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  84,
+                                                                           "exact_line":  "rewriting history. Recording an assumption/question disposition neither expands",
+                                                                           "selected_by":  "Recording an assumption/question disposition neither expands"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  87,
+                                                                           "exact_line":  "also records separately authorized lifecycle and exception events under their",
+                                                                           "selected_by":  "also records separately authorized lifecycle and exception events"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  88,
+                                                                           "exact_line":  "own exact governing requirements; identify that event and its actual authority",
+                                                                           "selected_by":  "own exact governing requirements; identify that event and its actual authority"
+                                                                       }
+                                                                   ],
+                                         "comparison_result":  "pass",
+                                         "actual_scope":  "Model-assisted dry-run interpretation only; no synthetic answer was applied to a live record",
+                                         "receipt_recheck":  "Re-evaluated after shared-receipt lifecycle wording correction. This fixture supplies no separate lifecycle/exception authorization; item-answer outcomes therefore remain unchanged. Separately authorized lifecycle events can use the same receipt under their own governing requirements."
+                                     },
+                                     {
+                                         "review_entry_point":  "05",
+                                         "case_id":  "REV-08",
+                                         "input":  "An answered Q-09 suggests separate derived assumption A-03. A related dormant Q-10 has an unmet trigger. Retry also encounters a duplicate representation of an already settled ID.",
+                                         "fixture_expected":  "A-03 needs its own disposition; Q-10 retains dormant trigger/re-entry state; deduplicate the settled ID without changing original texts/options/receipts or reopening it merely for a related discovery.",
+                                         "observed_allowed_next_action":  "Define A-03 as a separate unresolved assumption. Keep Q-10 dormant because its trigger is unmet. Deduplicate the settled ID by linking its canonical original and existing sufficient receipts; retain all prior words/options, dispositions and re-entry conditions.",
+                                         "canonical_owner":  "A-03 and Q-10 actual canonical owners; the already settled ID retains its original owner",
+                                         "observed_disposition":  "A-03 unresolved; Q-10 remains dormant; settled ID remains settled without automatic reopening",
+                                         "remaining_gate":  "A-03 own sufficient disposition; Q-10 recorded trigger or explicit authorized change; substantive closed-claim refinement still needs reopening authority",
+                                         "requirement_comparison":  "Consistent with the original requested permission and retained gates; no material mismatch found",
+                                         "supporting_references":  [
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/05_initiative_assumption_review.md",
+                                                                           "line":  97,
+                                                                           "exact_line":  "Apply the shared contract\u0027s decision-item rules for Stage 5 and 6. Both the",
+                                                                           "selected_by":  "Apply the shared contract\u0027s decision-item rules"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                                                                           "line":  255,
+                                                                           "exact_line":  "## Decision items in Stage 5 and 6 reviews",
+                                                                           "selected_by":  "## Decision items in Stage 5 and 6 reviews"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                                                                           "line":  300,
+                                                                           "exact_line":  "a standing delegation. A question answer never confirms a separate derived",
+                                                                           "selected_by":  "A question answer never confirms a separate derived"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                                                                           "line":  302,
+                                                                           "exact_line":  "- Preserve dormant/deferred triggers and settled decisions; related discovery",
+                                                                           "selected_by":  "Preserve dormant/deferred triggers and settled decisions"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/assumption.template.md",
+                                                                           "line":  78,
+                                                                           "exact_line":  "review. Do not reopen settled items solely because a related matter is found.",
+                                                                           "selected_by":  "Do not reopen settled items solely"
+                                                                       }
+                                                                   ],
+                                         "comparison_result":  "pass",
+                                         "actual_scope":  "Model-assisted dry-run interpretation only; no synthetic answer was applied to a live record",
+                                         "receipt_recheck":  "Re-evaluated after shared-receipt lifecycle wording correction. This fixture supplies no separate lifecycle/exception authorization; item-answer outcomes therefore remain unchanged. Separately authorized lifecycle events can use the same receipt under their own governing requirements."
+                                     },
+                                     {
+                                         "review_entry_point":  "05",
+                                         "case_id":  "REV-09",
+                                         "input":  "One answer conflicts with protected architecture, another would refine a closed initiative claim, and a third proposes an independent outcome.",
+                                         "fixture_expected":  "Preserve exact conflict and change-control boundary; require recorded authorized reopening and renewed acceptance where applicable; route the independent outcome to separately bounded Stage0 work. No answer alone revises invariants or implements consequences.",
+                                         "observed_allowed_next_action":  "Preserve the invariant-conflicting item answer as exact conflict input and use the governing conflict/revision route without applying a contradictory disposition. Keep the closed claim unchanged until its separately authorized reopening event is recorded in the shared receipt under the exact applicable requirements. An assumption/question disposition by itself supplies no reopening. Route the independent outcome to separately bounded Stage0 work and preserve frozen/prior claims.",
+                                         "canonical_owner":  "Invariant conflict/change-control authority; closed initiative owner; newly allocated independent-outcome owner via Stage0, each distinct",
+                                         "observed_disposition":  "No item answer alone changes protected architecture, a closed claim or acceptance/work boundary. The same generic receipt remains valid for an actual independently authorized lifecycle or exception event.",
+                                         "remaining_gate":  "Exact invariant revision authority where needed; actual recorded authorized reopening before closed-claim refinement and renewed acceptance for changed accepted claims. When those distinct events are sufficiently authorized, record them with their exact event/authority fields in the shared receipt; independent initiative gates remain.",
+                                         "requirement_comparison":  "Consistent after receipt correction: preserve the item-answer boundary while permitting the separately authorized lifecycle receipt explicitly required for reopening/acceptance.",
+                                         "supporting_references":  [
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/05_initiative_assumption_review.md",
+                                                                           "line":  97,
+                                                                           "exact_line":  "Apply the shared contract\u0027s decision-item rules for Stage 5 and 6. Both the",
+                                                                           "selected_by":  "Apply the shared contract\u0027s decision-item rules"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                                                                           "line":  255,
+                                                                           "exact_line":  "## Decision items in Stage 5 and 6 reviews",
+                                                                           "selected_by":  "## Decision items in Stage 5 and 6 reviews"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/evidence/authoritative/LLM/07_Codex_Human_Decision_Receipt_Specification.md",
+                                                                           "line":  152,
+                                                                           "exact_line":  "An authorized decision-record disposition does not implement resulting work,",
+                                                                           "selected_by":  "An authorized decision-record disposition does not implement"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                                                                           "line":  303,
+                                                                           "exact_line":  "alone does not reopen them. Closed claims need recorded authorized reopening",
+                                                                           "selected_by":  "Closed claims need recorded authorized reopening"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md",
+                                                                           "line":  322,
+                                                                           "exact_line":  "independent outcomes to Stage 0, retain coherent same-outcome revision and",
+                                                                           "selected_by":  "independent outcomes to Stage 0"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  84,
+                                                                           "exact_line":  "rewriting history. Recording an assumption/question disposition neither expands",
+                                                                           "selected_by":  "Recording an assumption/question disposition neither expands"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  87,
+                                                                           "exact_line":  "also records separately authorized lifecycle and exception events under their",
+                                                                           "selected_by":  "also records separately authorized lifecycle and exception events"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  88,
+                                                                           "exact_line":  "own exact governing requirements; identify that event and its actual authority",
+                                                                           "selected_by":  "own exact governing requirements; identify that event and its actual authority"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  162,
+                                                                           "exact_line":  "For a reopening retain **Disposition:** Reopened and the actual human authority",
+                                                                           "selected_by":  "For a reopening retain **Disposition:** Reopened"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  169,
+                                                                           "exact_line":  "For acceptance, Revision cycle and Claim revision identify the exact current",
+                                                                           "selected_by":  "For acceptance, Revision cycle and Claim revision identify"
+                                                                       }
+                                                                   ],
+                                         "comparison_result":  "pass",
+                                         "actual_scope":  "Model-assisted dry-run interpretation only; no synthetic answer was applied to a live record",
+                                         "receipt_recheck":  "Re-evaluated after shared-receipt lifecycle wording correction. This fixture supplies no separate lifecycle/exception authorization; item-answer outcomes therefore remain unchanged. Separately authorized lifecycle events can use the same receipt under their own governing requirements."
+                                     },
+                                     {
+                                         "review_entry_point":  "05",
+                                         "case_id":  "REV-10",
+                                         "input":  "An external pending dependency blocks one initiative handoff; unrelated external items are pending or explicitly deferred with triggers.",
+                                         "fixture_expected":  "Keep complete original/new coverage, owner distinctions and answered/unresolved/deferred/transferred/blocked states. Block the handoff actually dependent on the unresolved item. Distinguish finishing bounded review coverage from resolving every external matter.",
+                                         "observed_allowed_next_action":  "Report complete original and new-item coverage by canonical owner and actual answered/unresolved/deferred/transferred/blocked state. Preserve explicit deferral triggers. Keep the handoff that actually depends on the unresolved external item blocked while allowing independent authorized coverage work to finish truthfully.",
+                                         "canonical_owner":  "Each external item owner remains external; origin owns only its linked actual dependency/effect and bounded review result",
+                                         "observed_disposition":  "Pending remains pending; explicit Deferred remains deferred with trigger; no unrelated in-scope deliverable or false universal-resolution claim",
+                                         "remaining_gate":  "The actual blocked dependency must meet its re-entry condition before that handoff; applicable blocking decisions still gate initiative acceptance",
+                                         "requirement_comparison":  "Consistent with the original requested permission and retained gates; no material mismatch found",
+                                         "supporting_references":  [
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/05_initiative_assumption_review.md",
+                                                                           "line":  97,
+                                                                           "exact_line":  "Apply the shared contract\u0027s decision-item rules for Stage 5 and 6. Both the",
+                                                                           "selected_by":  "Apply the shared contract\u0027s decision-item rules"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                                                                           "line":  255,
+                                                                           "exact_line":  "## Decision items in Stage 5 and 6 reviews",
+                                                                           "selected_by":  "## Decision items in Stage 5 and 6 reviews"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                                                                           "line":  310,
+                                                                           "exact_line":  "transferred dependencies and blocked handoffs. Finishing bounded review",
+                                                                           "selected_by":  "Finishing bounded review"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/evidence/authoritative/LLM/02_Codex_Initiative_Governance_Specification.md",
+                                                                           "line":  218,
+                                                                           "exact_line":  "truthful bounded-review result. Any unresolved dependency that actually blocks",
+                                                                           "selected_by":  "Any unresolved dependency that actually blocks"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md",
+                                                                           "line":  327,
+                                                                           "exact_line":  "A bounded review result requires complete original and appended coverage with",
+                                                                           "selected_by":  "A bounded review result requires complete original"
+                                                                       }
+                                                                   ],
+                                         "comparison_result":  "pass",
+                                         "actual_scope":  "Model-assisted dry-run interpretation only; no synthetic answer was applied to a live record",
+                                         "receipt_recheck":  "Re-evaluated after shared-receipt lifecycle wording correction. This fixture supplies no separate lifecycle/exception authorization; item-answer outcomes therefore remain unchanged. Separately authorized lifecycle events can use the same receipt under their own governing requirements."
+                                     },
+                                     {
+                                         "review_entry_point":  "05",
+                                         "case_id":  "REV-11",
+                                         "input":  "Candidate qualification is requested without example-project access, live review execution, installed lock refresh or downstream delivery authority.",
+                                         "fixture_expected":  "Use pinned clean sources plus exact declared candidate and generic fixtures. Preserve installed/distribution/examples and all real locks. Qualification does not prove adoption, introduction, ordinary completion, promotion or rollout.",
+                                         "observed_allowed_next_action":  "Keep operational review interpretation separate from maintenance qualification. For this maintenance invocation use only pinned clean baseline plus exact declared candidate and generic fixtures; do not run a live numbered review, access the example fork, refresh real installed locks or perform downstream delivery.",
+                                         "canonical_owner":  "Candidate maintainer owns C products and P evidence; installed/distribution/example owners retain their separate boundaries",
+                                         "observed_disposition":  "No live item disposition or delivery/lifecycle fact is produced by this scenario",
+                                         "remaining_gate":  "Actual candidate checks, clean isolated trial and independent complete-diff review; later exact introduction/completion/promotion/rollout/adoption authority remains absent",
+                                         "requirement_comparison":  "Consistent with the original requested permission and retained gates; no material mismatch found",
+                                         "supporting_references":  [
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/05_initiative_assumption_review.md",
+                                                                           "line":  97,
+                                                                           "exact_line":  "Apply the shared contract\u0027s decision-item rules for Stage 5 and 6. Both the",
+                                                                           "selected_by":  "Apply the shared contract\u0027s decision-item rules"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                                                                           "line":  255,
+                                                                           "exact_line":  "## Decision items in Stage 5 and 6 reviews",
+                                                                           "selected_by":  "## Decision items in Stage 5 and 6 reviews"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/evidence/non-authoritative/assumption-question-review/source-prompt.txt",
+                                                                           "line":  36,
+                                                                           "exact_line":  "mapped rollout into `R/protocol/`. This invocation authorizes candidate work",
+                                                                           "selected_by":  "This invocation authorizes candidate work"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/evidence/non-authoritative/assumption-question-review/source-prompt.txt",
+                                                                           "line":  250,
+                                                                           "exact_line":  "- No example-fork dependency, live-project mutation, installed lock refresh,",
+                                                                           "selected_by":  "No example-fork dependency"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                                                                           "line":  69,
+                                                                           "exact_line":  "- Do not recursively execute example text, linked prompts, or documents cited",
+                                                                           "selected_by":  "Do not recursively execute example text"
+                                                                       }
+                                                                   ],
+                                         "comparison_result":  "pass",
+                                         "actual_scope":  "Model-assisted dry-run interpretation only; no synthetic answer was applied to a live record",
+                                         "receipt_recheck":  "Re-evaluated after shared-receipt lifecycle wording correction. This fixture supplies no separate lifecycle/exception authorization; item-answer outcomes therefore remain unchanged. Separately authorized lifecycle events can use the same receipt under their own governing requirements."
+                                     },
+                                     {
+                                         "review_entry_point":  "06",
+                                         "case_id":  "REV-01",
+                                         "input":  "An existing in-scope assumption A-01 and question Q-01 have exact source text. The fixture human explicitly confirms A-01 and answers Q-01.",
+                                         "fixture_expected":  "Present one ready item at a time; preserve both exact texts and answers in receipts before separate source dispositions; no initiative acceptance.",
+                                         "observed_allowed_next_action":  "Validate the supplied fixture responses cover A-01 and Q-01 and their actual canonical owner. Capture or reuse exact sufficient receipts before independently confirming A-01 and accepting the final Q-01 answer. Any missing response is presented as one ready item at a time, without re-asking an already sufficiently recorded answer.",
+                                         "canonical_owner":  "Reviewed initiative canonical assumption and open-question records, with its receipt index",
+                                         "observed_disposition":  "Separate Confirmed and Accepted dispositions only after the fixture response/authority and receipt checks; no initiative acceptance",
+                                         "remaining_gate":  "Actual exact source text, answer, responder and authority must exist in a real execution; resulting implementation and initiative acceptance remain separate",
+                                         "requirement_comparison":  "Consistent with the original requested permission and retained gates; no material mismatch found",
+                                         "supporting_references":  [
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/06_initiative_open_question_review.md",
+                                                                           "line":  98,
+                                                                           "exact_line":  "Apply the shared contract\u0027s decision-item rules for Stage 5 and 6. Both the",
+                                                                           "selected_by":  "Apply the shared contract\u0027s decision-item rules"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                                                                           "line":  255,
+                                                                           "exact_line":  "## Decision items in Stage 5 and 6 reviews",
+                                                                           "selected_by":  "## Decision items in Stage 5 and 6 reviews"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/evidence/authoritative/LLM/07_Codex_Human_Decision_Receipt_Specification.md",
+                                                                           "line":  114,
+                                                                           "exact_line":  "before changing the source disposition. It must link the receipt from the",
+                                                                           "selected_by":  "before changing the source disposition"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                                                                           "line":  290,
+                                                                           "exact_line":  "- The ordinary human path presents one ready item at a time, with its exact",
+                                                                           "selected_by":  "The ordinary human path presents one ready item"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  84,
+                                                                           "exact_line":  "rewriting history. Recording an assumption/question disposition neither expands",
+                                                                           "selected_by":  "Recording an assumption/question disposition neither expands"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  87,
+                                                                           "exact_line":  "also records separately authorized lifecycle and exception events under their",
+                                                                           "selected_by":  "also records separately authorized lifecycle and exception events"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  88,
+                                                                           "exact_line":  "own exact governing requirements; identify that event and its actual authority",
+                                                                           "selected_by":  "own exact governing requirements; identify that event and its actual authority"
+                                                                       }
+                                                                   ],
+                                         "comparison_result":  "pass",
+                                         "actual_scope":  "Model-assisted dry-run interpretation only; no synthetic answer was applied to a live record",
+                                         "receipt_recheck":  "Re-evaluated after shared-receipt lifecycle wording correction. This fixture supplies no separate lifecycle/exception authorization; item-answer outcomes therefore remain unchanged. Separately authorized lifecycle events can use the same receipt under their own governing requirements."
+                                     },
+                                     {
+                                         "review_entry_point":  "06",
+                                         "case_id":  "REV-02",
+                                         "input":  "Before any answer, evidence independently reveals a new assumption A-02 and a new open question Q-02 during either review.",
+                                         "fixture_expected":  "Define both with unique stable IDs, exact text, origin, canonical owner/location, scope, dependencies, affected records and unresolved standing. No preceding correction is needed.",
+                                         "observed_allowed_next_action":  "Define A-02 and Q-02 now from the evidence, without waiting for a correction or answer; give each a unique ID, exact original text, origin, canonical owner/location, scope, dependencies and affected records. Label any recommendation unaccepted and append both to complete coverage.",
+                                         "canonical_owner":  "The identified actual item owner; no owner is invented from proximity to the originating review",
+                                         "observed_disposition":  "Both newly defined items remain unresolved",
+                                         "remaining_gate":  "Their own sufficient human or specifically covered alternative dispositions and receipts; external write authority before any external record edit",
+                                         "requirement_comparison":  "Consistent with the original requested permission and retained gates; no material mismatch found",
+                                         "supporting_references":  [
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/06_initiative_open_question_review.md",
+                                                                           "line":  98,
+                                                                           "exact_line":  "Apply the shared contract\u0027s decision-item rules for Stage 5 and 6. Both the",
+                                                                           "selected_by":  "Apply the shared contract\u0027s decision-item rules"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                                                                           "line":  255,
+                                                                           "exact_line":  "## Decision items in Stage 5 and 6 reviews",
+                                                                           "selected_by":  "## Decision items in Stage 5 and 6 reviews"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/evidence/authoritative/LLM/02_Codex_Initiative_Governance_Specification.md",
+                                                                           "line":  141,
+                                                                           "exact_line":  "from the review and its evidence. A preceding correction, answer or existing",
+                                                                           "selected_by":  "A preceding correction, answer or existing"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/evidence/authoritative/LLM/02_Codex_Initiative_Governance_Specification.md",
+                                                                           "line":  148,
+                                                                           "exact_line":  "Every new item requires a unique stable ID, exact source text, originating",
+                                                                           "selected_by":  "Every new item requires a unique stable ID"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/assumption.template.md",
+                                                                           "line":  31,
+                                                                           "exact_line":  "preceding answer, correction or existing source ID. Each new item begins",
+                                                                           "selected_by":  "Each new item begins"
+                                                                       }
+                                                                   ],
+                                         "comparison_result":  "pass",
+                                         "actual_scope":  "Model-assisted dry-run interpretation only; no synthetic answer was applied to a live record",
+                                         "receipt_recheck":  "Re-evaluated after shared-receipt lifecycle wording correction. This fixture supplies no separate lifecycle/exception authorization; item-answer outcomes therefore remain unchanged. Separately authorized lifecycle events can use the same receipt under their own governing requirements."
+                                     },
+                                     {
+                                         "review_entry_point":  "06",
+                                         "case_id":  "REV-03",
+                                         "input":  "During that same review the fixture human explicitly confirms A-02 and answers Q-02, unambiguously naming each item and its outcome.",
+                                         "fixture_expected":  "Capture sufficient exact authority and receipts, then record each disposition in the same review. A new item does not require a separate review solely because it is new or of the other kind.",
+                                         "observed_allowed_next_action":  "Receive the explicitly named A-02 and Q-02 outcomes in this same review; preserve their exact input and actual authority, then create or reuse sufficient receipts before each source disposition. A single coherent receipt may cover the complete set only when both IDs and outcomes are explicit and unambiguous.",
+                                         "canonical_owner":  "Each item actual canonical initiative or project record; receipt location follows that owner",
+                                         "observed_disposition":  "Each new item receives its own authorized disposition, without a forced separate review merely because it is new or of the other kind",
+                                         "remaining_gate":  "Per-item sufficient authority and canonical-target permission; an answer remains distinct from initiative acceptance or resulting work",
+                                         "requirement_comparison":  "Consistent with the original requested permission and retained gates; no material mismatch found",
+                                         "supporting_references":  [
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/06_initiative_open_question_review.md",
+                                                                           "line":  98,
+                                                                           "exact_line":  "Apply the shared contract\u0027s decision-item rules for Stage 5 and 6. Both the",
+                                                                           "selected_by":  "Apply the shared contract\u0027s decision-item rules"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                                                                           "line":  255,
+                                                                           "exact_line":  "## Decision items in Stage 5 and 6 reviews",
+                                                                           "selected_by":  "## Decision items in Stage 5 and 6 reviews"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                                                                           "line":  259,
+                                                                           "exact_line":  "answer or disposition during the same review. Codex may independently identify",
+                                                                           "selected_by":  "answer or disposition during the same review"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/evidence/authoritative/LLM/07_Codex_Human_Decision_Receipt_Specification.md",
+                                                                           "line":  141,
+                                                                           "exact_line":  "affected records and history. One response covers several IDs only when the",
+                                                                           "selected_by":  "One response covers several IDs only"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  80,
+                                                                           "exact_line":  "One response covers multiple IDs only when it explicitly and unambiguously",
+                                                                           "selected_by":  "One response covers multiple IDs only"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  84,
+                                                                           "exact_line":  "rewriting history. Recording an assumption/question disposition neither expands",
+                                                                           "selected_by":  "Recording an assumption/question disposition neither expands"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  87,
+                                                                           "exact_line":  "also records separately authorized lifecycle and exception events under their",
+                                                                           "selected_by":  "also records separately authorized lifecycle and exception events"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  88,
+                                                                           "exact_line":  "own exact governing requirements; identify that event and its actual authority",
+                                                                           "selected_by":  "own exact governing requirements; identify that event and its actual authority"
+                                                                       }
+                                                                   ],
+                                         "comparison_result":  "pass",
+                                         "actual_scope":  "Model-assisted dry-run interpretation only; no synthetic answer was applied to a live record",
+                                         "receipt_recheck":  "Re-evaluated after shared-receipt lifecycle wording correction. This fixture supplies no separate lifecycle/exception authorization; item-answer outcomes therefore remain unchanged. Separately authorized lifecycle events can use the same receipt under their own governing requirements."
+                                     },
+                                     {
+                                         "review_entry_point":  "06",
+                                         "case_id":  "REV-04",
+                                         "input":  "The human answers Q-03 with an option absent from the original options, addressing a project-wide decision outside the reviewed initiative.",
+                                         "fixture_expected":  "Preserve the original options and exact human words; assess destination and actual decision/write authority. Do not reject solely for initiative scope or invent authority.",
+                                         "observed_allowed_next_action":  "Preserve the outside-option answer and original source options. Assess its project-wide canonical owner, exact destination and actual write/decision authority; request the precise missing authority or clarification if needed rather than rejecting solely for scope.",
+                                         "canonical_owner":  "Proper project owner and canonical project record if the authority assessment succeeds",
+                                         "observed_disposition":  "Outside-option/scope answer is eligible to govern the proper target; it is not automatically accepted from this abstract fixture description",
+                                         "remaining_gate":  "Exact answer words, target/current state/revision/branch/owner and sufficient authority; receipt before disposition; no scope or work expansion",
+                                         "requirement_comparison":  "Consistent with the original requested permission and retained gates; no material mismatch found",
+                                         "supporting_references":  [
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/06_initiative_open_question_review.md",
+                                                                           "line":  98,
+                                                                           "exact_line":  "Apply the shared contract\u0027s decision-item rules for Stage 5 and 6. Both the",
+                                                                           "selected_by":  "Apply the shared contract\u0027s decision-item rules"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                                                                           "line":  255,
+                                                                           "exact_line":  "## Decision items in Stage 5 and 6 reviews",
+                                                                           "selected_by":  "## Decision items in Stage 5 and 6 reviews"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/evidence/authoritative/LLM/07_Codex_Human_Decision_Receipt_Specification.md",
+                                                                           "line":  118,
+                                                                           "exact_line":  "An answer outside the original options or the reviewed initiative\u0027s boundary",
+                                                                           "selected_by":  "An answer outside the original options"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                                                                           "line":  262,
+                                                                           "exact_line":  "or reviewed initiative scope. Assess its actual authority and destination",
+                                                                           "selected_by":  "or reviewed initiative scope"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/open-questions.template.md",
+                                                                           "line":  34,
+                                                                           "exact_line":  "answer outside the original options or reviewed initiative\u0027s scope. Assess the",
+                                                                           "selected_by":  "answer outside the original options"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  84,
+                                                                           "exact_line":  "rewriting history. Recording an assumption/question disposition neither expands",
+                                                                           "selected_by":  "Recording an assumption/question disposition neither expands"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  87,
+                                                                           "exact_line":  "also records separately authorized lifecycle and exception events under their",
+                                                                           "selected_by":  "also records separately authorized lifecycle and exception events"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  88,
+                                                                           "exact_line":  "own exact governing requirements; identify that event and its actual authority",
+                                                                           "selected_by":  "own exact governing requirements; identify that event and its actual authority"
+                                                                       }
+                                                                   ],
+                                         "comparison_result":  "pass",
+                                         "actual_scope":  "Model-assisted dry-run interpretation only; no synthetic answer was applied to a live record",
+                                         "receipt_recheck":  "Re-evaluated after shared-receipt lifecycle wording correction. This fixture supplies no separate lifecycle/exception authorization; item-answer outcomes therefore remain unchanged. Separately authorized lifecycle events can use the same receipt under their own governing requirements."
+                                     },
+                                     {
+                                         "review_entry_point":  "06",
+                                         "case_id":  "REV-05",
+                                         "input":  "Q-04 belongs to a named other open initiative; Q-05 is project-wide with no suitable initiative owner. Exact current targets, governing revisions, branches, owners and sufficient write/decision authority are recorded.",
+                                         "fixture_expected":  "Define/answer Q-04 at that initiative\u0027s canonical register and Q-05 at the conditional project register with receipts. Link originating effects/dependencies without absorbing resulting work or inventing an umbrella initiative.",
+                                         "observed_allowed_next_action":  "Use Q-04 other named open initiative canonical register and Q-05 conditional project register. Define the items under the recorded sufficient target/write/decision authority. Obtain or capture each actual exact answer and receipt before governing disposition; do not ask another approval solely because ownership is external.",
+                                         "canonical_owner":  "Q-04: named other initiative; Q-05: project decision steward with no suitable initiative owner",
+                                         "observed_disposition":  "Definition is unresolved until an actual sufficient exact answer exists; same-review governing answers are permitted at both proper owners",
+                                         "remaining_gate":  "This fixture asserts sufficient authority but supplies no literal answer payload; real resolution still needs that payload and receipt. Originating initiative only links effects/dependencies; no umbrella or resulting work is created",
+                                         "requirement_comparison":  "Consistent with the original requested permission and retained gates; no material mismatch found",
+                                         "supporting_references":  [
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/06_initiative_open_question_review.md",
+                                                                           "line":  98,
+                                                                           "exact_line":  "Apply the shared contract\u0027s decision-item rules for Stage 5 and 6. Both the",
+                                                                           "selected_by":  "Apply the shared contract\u0027s decision-item rules"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                                                                           "line":  255,
+                                                                           "exact_line":  "## Decision items in Stage 5 and 6 reviews",
+                                                                           "selected_by":  "## Decision items in Stage 5 and 6 reviews"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/evidence/authoritative/LLM/02_Codex_Initiative_Governance_Specification.md",
+                                                                           "line":  189,
+                                                                           "exact_line":  "An item owned by another named initiative belongs in that initiative\u0027s",
+                                                                           "selected_by":  "An item owned by another named initiative"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/evidence/authoritative/LLM/02_Codex_Initiative_Governance_Specification.md",
+                                                                           "line":  200,
+                                                                           "exact_line":  "authorized disposition there during the review without another approval solely",
+                                                                           "selected_by":  "without another approval solely"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/TEMPLATE-COVERAGE.md",
+                                                                           "line":  778,
+                                                                           "exact_line":  "\"id\": \"project-owned-items\",",
+                                                                           "selected_by":  "\"id\": \"project-owned-items\""
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/decisions/assumptions-and-open-questions.template.md",
+                                                                           "line":  101,
+                                                                           "exact_line":  "## Authority and external routing",
+                                                                           "selected_by":  "## Authority and external routing"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  84,
+                                                                           "exact_line":  "rewriting history. Recording an assumption/question disposition neither expands",
+                                                                           "selected_by":  "Recording an assumption/question disposition neither expands"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  87,
+                                                                           "exact_line":  "also records separately authorized lifecycle and exception events under their",
+                                                                           "selected_by":  "also records separately authorized lifecycle and exception events"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  88,
+                                                                           "exact_line":  "own exact governing requirements; identify that event and its actual authority",
+                                                                           "selected_by":  "own exact governing requirements; identify that event and its actual authority"
+                                                                       }
+                                                                   ],
+                                         "comparison_result":  "pass",
+                                         "actual_scope":  "Model-assisted dry-run interpretation only; no synthetic answer was applied to a live record",
+                                         "receipt_recheck":  "Re-evaluated after shared-receipt lifecycle wording correction. This fixture supplies no separate lifecycle/exception authorization; item-answer outcomes therefore remain unchanged. Separately authorized lifecycle events can use the same receipt under their own governing requirements."
+                                     },
+                                     {
+                                         "review_entry_point":  "06",
+                                         "case_id":  "REV-06",
+                                         "input":  "Q-06 belongs to another scaffold. Its source is linked, but target-naming authority and the external owner\u0027s permission are missing.",
+                                         "fixture_expected":  "Preserve exact input and an owned handoff with proposed target/owner, blocker and re-entry condition. Do not edit or claim resolution there; continue independent authorized work.",
+                                         "observed_allowed_next_action":  "Do not edit the other scaffold. Preserve the exact input in a linked owned handoff with proposed canonical target/owner, missing target-naming and owner authority, blocker and re-entry condition; continue independent authorized review work.",
+                                         "canonical_owner":  "Proposed external scaffold owner remains the destination; origin retains its handoff/dependency only",
+                                         "observed_disposition":  "Q-06 remains unresolved; no external governing answer or write is claimed",
+                                         "remaining_gate":  "Separate authority naming that scaffold and sufficient actual owner/write/decision permission, plus exact evidence and receipt before later disposition",
+                                         "requirement_comparison":  "Consistent with the original requested permission and retained gates; no material mismatch found",
+                                         "supporting_references":  [
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/06_initiative_open_question_review.md",
+                                                                           "line":  98,
+                                                                           "exact_line":  "Apply the shared contract\u0027s decision-item rules for Stage 5 and 6. Both the",
+                                                                           "selected_by":  "Apply the shared contract\u0027s decision-item rules"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                                                                           "line":  255,
+                                                                           "exact_line":  "## Decision items in Stage 5 and 6 reviews",
+                                                                           "selected_by":  "## Decision items in Stage 5 and 6 reviews"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                                                                           "line":  287,
+                                                                           "exact_line":  "- Another scaffold, repository, fork or external service retains its separate",
+                                                                           "selected_by":  "Another scaffold, repository, fork or external service"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/evidence/authoritative/LLM/02_Codex_Initiative_Governance_Specification.md",
+                                                                           "line":  205,
+                                                                           "exact_line":  "When ownership, permission or evidence is missing, preserve the exact input and",
+                                                                           "selected_by":  "When ownership, permission or evidence is missing"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/decisions/assumptions-and-open-questions.template.md",
+                                                                           "line":  107,
+                                                                           "exact_line":  "initiative ownership. When they do not, preserve exact input in a linked owned",
+                                                                           "selected_by":  "linked owned"
+                                                                       }
+                                                                   ],
+                                         "comparison_result":  "pass",
+                                         "actual_scope":  "Model-assisted dry-run interpretation only; no synthetic answer was applied to a live record",
+                                         "receipt_recheck":  "Re-evaluated after shared-receipt lifecycle wording correction. This fixture supplies no separate lifecycle/exception authorization; item-answer outcomes therefore remain unchanged. Separately authorized lifecycle events can use the same receipt under their own governing requirements."
+                                     },
+                                     {
+                                         "review_entry_point":  "06",
+                                         "case_id":  "REV-07",
+                                         "input":  "A recorded authority receipt and rule-specific exception delegate a method for Q-07 only. The same review discovers Q-08.",
+                                         "fixture_expected":  "Record Q-07\u0027s actual agent author, method/evidence/result/limits under its covered authority. Q-08 stays unresolved on the human path unless separately and sufficiently covered.",
+                                         "observed_allowed_next_action":  "Check the recorded authority receipt and rule-specific exception cover Q-07 and the actual method. Apply that covered method and preserve its actual agent author/evidence/result/limits. Independently define Q-08 with provenance and route it to the ordinary human path.",
+                                         "canonical_owner":  "Each Q ID stays at its own canonical owner; delegation does not transfer ownership",
+                                         "observed_disposition":  "Q-07 may receive the covered actual agent disposition; Q-08 remains unresolved and inherits no coverage",
+                                         "remaining_gate":  "Q-08 needs its own human response or a sufficiently explicit new covered delegation, with required records before reliance; no agent answer is labelled human",
+                                         "requirement_comparison":  "Consistent with the original requested permission and retained gates; no material mismatch found",
+                                         "supporting_references":  [
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/06_initiative_open_question_review.md",
+                                                                           "line":  98,
+                                                                           "exact_line":  "Apply the shared contract\u0027s decision-item rules for Stage 5 and 6. Both the",
+                                                                           "selected_by":  "Apply the shared contract\u0027s decision-item rules"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                                                                           "line":  255,
+                                                                           "exact_line":  "## Decision items in Stage 5 and 6 reviews",
+                                                                           "selected_by":  "## Decision items in Stage 5 and 6 reviews"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                                                                           "line":  296,
+                                                                           "exact_line":  "- An alternative method resolves only items covered by its sufficient recorded",
+                                                                           "selected_by":  "An alternative method resolves only items covered"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/evidence/authoritative/LLM/07_Codex_Human_Decision_Receipt_Specification.md",
+                                                                           "line":  149,
+                                                                           "exact_line":  "New IDs outside that recorded coverage remain on the ordinary human path;",
+                                                                           "selected_by":  "New IDs outside that recorded coverage"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  118,
+                                                                           "exact_line":  "The Exact human response above is the actual authorization, not a fabricated",
+                                                                           "selected_by":  "actual authorization, not a fabricated"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  84,
+                                                                           "exact_line":  "rewriting history. Recording an assumption/question disposition neither expands",
+                                                                           "selected_by":  "Recording an assumption/question disposition neither expands"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  87,
+                                                                           "exact_line":  "also records separately authorized lifecycle and exception events under their",
+                                                                           "selected_by":  "also records separately authorized lifecycle and exception events"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  88,
+                                                                           "exact_line":  "own exact governing requirements; identify that event and its actual authority",
+                                                                           "selected_by":  "own exact governing requirements; identify that event and its actual authority"
+                                                                       }
+                                                                   ],
+                                         "comparison_result":  "pass",
+                                         "actual_scope":  "Model-assisted dry-run interpretation only; no synthetic answer was applied to a live record",
+                                         "receipt_recheck":  "Re-evaluated after shared-receipt lifecycle wording correction. This fixture supplies no separate lifecycle/exception authorization; item-answer outcomes therefore remain unchanged. Separately authorized lifecycle events can use the same receipt under their own governing requirements."
+                                     },
+                                     {
+                                         "review_entry_point":  "06",
+                                         "case_id":  "REV-08",
+                                         "input":  "An answered Q-09 suggests separate derived assumption A-03. A related dormant Q-10 has an unmet trigger. Retry also encounters a duplicate representation of an already settled ID.",
+                                         "fixture_expected":  "A-03 needs its own disposition; Q-10 retains dormant trigger/re-entry state; deduplicate the settled ID without changing original texts/options/receipts or reopening it merely for a related discovery.",
+                                         "observed_allowed_next_action":  "Define A-03 as a separate unresolved assumption. Keep Q-10 dormant because its trigger is unmet. Deduplicate the settled ID by linking its canonical original and existing sufficient receipts; retain all prior words/options, dispositions and re-entry conditions.",
+                                         "canonical_owner":  "A-03 and Q-10 actual canonical owners; the already settled ID retains its original owner",
+                                         "observed_disposition":  "A-03 unresolved; Q-10 remains dormant; settled ID remains settled without automatic reopening",
+                                         "remaining_gate":  "A-03 own sufficient disposition; Q-10 recorded trigger or explicit authorized change; substantive closed-claim refinement still needs reopening authority",
+                                         "requirement_comparison":  "Consistent with the original requested permission and retained gates; no material mismatch found",
+                                         "supporting_references":  [
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/06_initiative_open_question_review.md",
+                                                                           "line":  98,
+                                                                           "exact_line":  "Apply the shared contract\u0027s decision-item rules for Stage 5 and 6. Both the",
+                                                                           "selected_by":  "Apply the shared contract\u0027s decision-item rules"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                                                                           "line":  255,
+                                                                           "exact_line":  "## Decision items in Stage 5 and 6 reviews",
+                                                                           "selected_by":  "## Decision items in Stage 5 and 6 reviews"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                                                                           "line":  300,
+                                                                           "exact_line":  "a standing delegation. A question answer never confirms a separate derived",
+                                                                           "selected_by":  "A question answer never confirms a separate derived"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                                                                           "line":  302,
+                                                                           "exact_line":  "- Preserve dormant/deferred triggers and settled decisions; related discovery",
+                                                                           "selected_by":  "Preserve dormant/deferred triggers and settled decisions"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/assumption.template.md",
+                                                                           "line":  78,
+                                                                           "exact_line":  "review. Do not reopen settled items solely because a related matter is found.",
+                                                                           "selected_by":  "Do not reopen settled items solely"
+                                                                       }
+                                                                   ],
+                                         "comparison_result":  "pass",
+                                         "actual_scope":  "Model-assisted dry-run interpretation only; no synthetic answer was applied to a live record",
+                                         "receipt_recheck":  "Re-evaluated after shared-receipt lifecycle wording correction. This fixture supplies no separate lifecycle/exception authorization; item-answer outcomes therefore remain unchanged. Separately authorized lifecycle events can use the same receipt under their own governing requirements."
+                                     },
+                                     {
+                                         "review_entry_point":  "06",
+                                         "case_id":  "REV-09",
+                                         "input":  "One answer conflicts with protected architecture, another would refine a closed initiative claim, and a third proposes an independent outcome.",
+                                         "fixture_expected":  "Preserve exact conflict and change-control boundary; require recorded authorized reopening and renewed acceptance where applicable; route the independent outcome to separately bounded Stage0 work. No answer alone revises invariants or implements consequences.",
+                                         "observed_allowed_next_action":  "Preserve the invariant-conflicting item answer as exact conflict input and use the governing conflict/revision route without applying a contradictory disposition. Keep the closed claim unchanged until its separately authorized reopening event is recorded in the shared receipt under the exact applicable requirements. An assumption/question disposition by itself supplies no reopening. Route the independent outcome to separately bounded Stage0 work and preserve frozen/prior claims.",
+                                         "canonical_owner":  "Invariant conflict/change-control authority; closed initiative owner; newly allocated independent-outcome owner via Stage0, each distinct",
+                                         "observed_disposition":  "No item answer alone changes protected architecture, a closed claim or acceptance/work boundary. The same generic receipt remains valid for an actual independently authorized lifecycle or exception event.",
+                                         "remaining_gate":  "Exact invariant revision authority where needed; actual recorded authorized reopening before closed-claim refinement and renewed acceptance for changed accepted claims. When those distinct events are sufficiently authorized, record them with their exact event/authority fields in the shared receipt; independent initiative gates remain.",
+                                         "requirement_comparison":  "Consistent after receipt correction: preserve the item-answer boundary while permitting the separately authorized lifecycle receipt explicitly required for reopening/acceptance.",
+                                         "supporting_references":  [
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/06_initiative_open_question_review.md",
+                                                                           "line":  98,
+                                                                           "exact_line":  "Apply the shared contract\u0027s decision-item rules for Stage 5 and 6. Both the",
+                                                                           "selected_by":  "Apply the shared contract\u0027s decision-item rules"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                                                                           "line":  255,
+                                                                           "exact_line":  "## Decision items in Stage 5 and 6 reviews",
+                                                                           "selected_by":  "## Decision items in Stage 5 and 6 reviews"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/evidence/authoritative/LLM/07_Codex_Human_Decision_Receipt_Specification.md",
+                                                                           "line":  152,
+                                                                           "exact_line":  "An authorized decision-record disposition does not implement resulting work,",
+                                                                           "selected_by":  "An authorized decision-record disposition does not implement"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                                                                           "line":  303,
+                                                                           "exact_line":  "alone does not reopen them. Closed claims need recorded authorized reopening",
+                                                                           "selected_by":  "Closed claims need recorded authorized reopening"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md",
+                                                                           "line":  322,
+                                                                           "exact_line":  "independent outcomes to Stage 0, retain coherent same-outcome revision and",
+                                                                           "selected_by":  "independent outcomes to Stage 0"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  84,
+                                                                           "exact_line":  "rewriting history. Recording an assumption/question disposition neither expands",
+                                                                           "selected_by":  "Recording an assumption/question disposition neither expands"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  87,
+                                                                           "exact_line":  "also records separately authorized lifecycle and exception events under their",
+                                                                           "selected_by":  "also records separately authorized lifecycle and exception events"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  88,
+                                                                           "exact_line":  "own exact governing requirements; identify that event and its actual authority",
+                                                                           "selected_by":  "own exact governing requirements; identify that event and its actual authority"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  162,
+                                                                           "exact_line":  "For a reopening retain **Disposition:** Reopened and the actual human authority",
+                                                                           "selected_by":  "For a reopening retain **Disposition:** Reopened"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                           "line":  169,
+                                                                           "exact_line":  "For acceptance, Revision cycle and Claim revision identify the exact current",
+                                                                           "selected_by":  "For acceptance, Revision cycle and Claim revision identify"
+                                                                       }
+                                                                   ],
+                                         "comparison_result":  "pass",
+                                         "actual_scope":  "Model-assisted dry-run interpretation only; no synthetic answer was applied to a live record",
+                                         "receipt_recheck":  "Re-evaluated after shared-receipt lifecycle wording correction. This fixture supplies no separate lifecycle/exception authorization; item-answer outcomes therefore remain unchanged. Separately authorized lifecycle events can use the same receipt under their own governing requirements."
+                                     },
+                                     {
+                                         "review_entry_point":  "06",
+                                         "case_id":  "REV-10",
+                                         "input":  "An external pending dependency blocks one initiative handoff; unrelated external items are pending or explicitly deferred with triggers.",
+                                         "fixture_expected":  "Keep complete original/new coverage, owner distinctions and answered/unresolved/deferred/transferred/blocked states. Block the handoff actually dependent on the unresolved item. Distinguish finishing bounded review coverage from resolving every external matter.",
+                                         "observed_allowed_next_action":  "Report complete original and new-item coverage by canonical owner and actual answered/unresolved/deferred/transferred/blocked state. Preserve explicit deferral triggers. Keep the handoff that actually depends on the unresolved external item blocked while allowing independent authorized coverage work to finish truthfully.",
+                                         "canonical_owner":  "Each external item owner remains external; origin owns only its linked actual dependency/effect and bounded review result",
+                                         "observed_disposition":  "Pending remains pending; explicit Deferred remains deferred with trigger; no unrelated in-scope deliverable or false universal-resolution claim",
+                                         "remaining_gate":  "The actual blocked dependency must meet its re-entry condition before that handoff; applicable blocking decisions still gate initiative acceptance",
+                                         "requirement_comparison":  "Consistent with the original requested permission and retained gates; no material mismatch found",
+                                         "supporting_references":  [
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/06_initiative_open_question_review.md",
+                                                                           "line":  98,
+                                                                           "exact_line":  "Apply the shared contract\u0027s decision-item rules for Stage 5 and 6. Both the",
+                                                                           "selected_by":  "Apply the shared contract\u0027s decision-item rules"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                                                                           "line":  255,
+                                                                           "exact_line":  "## Decision items in Stage 5 and 6 reviews",
+                                                                           "selected_by":  "## Decision items in Stage 5 and 6 reviews"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                                                                           "line":  310,
+                                                                           "exact_line":  "transferred dependencies and blocked handoffs. Finishing bounded review",
+                                                                           "selected_by":  "Finishing bounded review"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/evidence/authoritative/LLM/02_Codex_Initiative_Governance_Specification.md",
+                                                                           "line":  218,
+                                                                           "exact_line":  "truthful bounded-review result. Any unresolved dependency that actually blocks",
+                                                                           "selected_by":  "Any unresolved dependency that actually blocks"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/project/evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md",
+                                                                           "line":  327,
+                                                                           "exact_line":  "A bounded review result requires complete original and appended coverage with",
+                                                                           "selected_by":  "A bounded review result requires complete original"
+                                                                       }
+                                                                   ],
+                                         "comparison_result":  "pass",
+                                         "actual_scope":  "Model-assisted dry-run interpretation only; no synthetic answer was applied to a live record",
+                                         "receipt_recheck":  "Re-evaluated after shared-receipt lifecycle wording correction. This fixture supplies no separate lifecycle/exception authorization; item-answer outcomes therefore remain unchanged. Separately authorized lifecycle events can use the same receipt under their own governing requirements."
+                                     },
+                                     {
+                                         "review_entry_point":  "06",
+                                         "case_id":  "REV-11",
+                                         "input":  "Candidate qualification is requested without example-project access, live review execution, installed lock refresh or downstream delivery authority.",
+                                         "fixture_expected":  "Use pinned clean sources plus exact declared candidate and generic fixtures. Preserve installed/distribution/examples and all real locks. Qualification does not prove adoption, introduction, ordinary completion, promotion or rollout.",
+                                         "observed_allowed_next_action":  "Keep operational review interpretation separate from maintenance qualification. For this maintenance invocation use only pinned clean baseline plus exact declared candidate and generic fixtures; do not run a live numbered review, access the example fork, refresh real installed locks or perform downstream delivery.",
+                                         "canonical_owner":  "Candidate maintainer owns C products and P evidence; installed/distribution/example owners retain their separate boundaries",
+                                         "observed_disposition":  "No live item disposition or delivery/lifecycle fact is produced by this scenario",
+                                         "remaining_gate":  "Actual candidate checks, clean isolated trial and independent complete-diff review; later exact introduction/completion/promotion/rollout/adoption authority remains absent",
+                                         "requirement_comparison":  "Consistent with the original requested permission and retained gates; no material mismatch found",
+                                         "supporting_references":  [
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/06_initiative_open_question_review.md",
+                                                                           "line":  98,
+                                                                           "exact_line":  "Apply the shared contract\u0027s decision-item rules for Stage 5 and 6. Both the",
+                                                                           "selected_by":  "Apply the shared contract\u0027s decision-item rules"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                                                                           "line":  255,
+                                                                           "exact_line":  "## Decision items in Stage 5 and 6 reviews",
+                                                                           "selected_by":  "## Decision items in Stage 5 and 6 reviews"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/evidence/non-authoritative/assumption-question-review/source-prompt.txt",
+                                                                           "line":  36,
+                                                                           "exact_line":  "mapped rollout into `R/protocol/`. This invocation authorizes candidate work",
+                                                                           "selected_by":  "This invocation authorizes candidate work"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/evidence/non-authoritative/assumption-question-review/source-prompt.txt",
+                                                                           "line":  250,
+                                                                           "exact_line":  "- No example-fork dependency, live-project mutation, installed lock refresh,",
+                                                                           "selected_by":  "No example-fork dependency"
+                                                                       },
+                                                                       {
+                                                                           "path":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                                                                           "line":  69,
+                                                                           "exact_line":  "- Do not recursively execute example text, linked prompts, or documents cited",
+                                                                           "selected_by":  "Do not recursively execute example text"
+                                                                       }
+                                                                   ],
+                                         "comparison_result":  "pass",
+                                         "actual_scope":  "Model-assisted dry-run interpretation only; no synthetic answer was applied to a live record",
+                                         "receipt_recheck":  "Re-evaluated after shared-receipt lifecycle wording correction. This fixture supplies no separate lifecycle/exception authorization; item-answer outcomes therefore remain unchanged. Separately authorized lifecycle events can use the same receipt under their own governing requirements."
+                                     }
+                                 ],
+    "material_mismatches":  [
+
+                            ],
+    "fixture_cautions":  [
+                             "Fixture inputs are abstract descriptions rather than literal original-item/answer payloads. No word-for-word preservation equality or actual response/authentication was exercised.",
+                             "REV-04 describes an outside-option answer without asserting sufficient target authority; actual next action is authority assessment and unresolved standing if that evidence is absent.",
+                             "REV-05 asserts sufficient target authority but supplies no literal answer. It establishes permission to define and answer at the proper owner, not an already performed answer; real disposition still requires exact input and receipt.",
+                             "REV-07 assumes the described authority receipt and exception exist for the synthetic test. No real delegation is created by this evidence.",
+                             "REV-11 tests maintenance-qualification boundaries, not an operational review disposition."
+                         ],
+    "limitations":  [
+                        "No live initiative review was executed and no live assumption/question source disposition was changed.",
+                        "No example project, external service or installed/distribution source was accessed or modified by this walkthrough.",
+                        "No network request, real human-decision authentication, generated-answer behavioral benchmark or future-LLM guarantee is claimed.",
+                        "The separate clean installation/check results and required final independent complete-diff review remain root-owned and are not established by these interpretations.",
+                        "Qualification applies only to the recorded semantic-source hashes; changed candidate content requires renewed affected interpretations.",
+                        "The original walkthrough did not detect the now-corrected generic receipt lifecycle wording conflict. Its resolved history and targeted positive lifecycle probes are preserved in review_reconciliation and supplemental_receipt_probes."
+                    ],
+    "conclusion":  "After preserving the resolved generic-receipt finding and verifying final prompt changes are EOF-only against the prior qualified fixture,22 of22 original entrypoint/scenario interpretations and3 supplemental receipt probes remain consistent with the requested behavior and retained boundaries. No unresolved material mismatch remains; exact current semantic hashes are recorded. These remain model-assisted interpretation results, not live decisions or future-model guarantees.",
+    "review_reconciliation":  [
+                                  {
+                                      "event":  "2026-11-14 independent receipt recheck after final-review finding",
+                                      "finding":  "The initial generic receipt wording stated that recording this answer neither accepts an initiative nor reopens a closed claim without qualifying assumption/question dispositions. Because the same shape records lifecycle events, the final reviewer correctly identified a contradictory blanket prohibition.",
+                                      "earlier_walkthrough_limit":  "The initial22-case interpretation emphasized negative answer-alone boundaries and did not expose the generic-shape conflict through a positive authorized-lifecycle receipt probe. This recheck preserves that limitation instead of claiming the original receipt was already coherent.",
+                                      "changed_sources":  [
+                                                              {
+                                                                  "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                  "prior_sha256":  "87fc8128c6332ccf2ef50360440fba44b43abb61067d24070d776a9665dae518",
+                                                                  "current_sha256":  "b48c45bfc343bb2cb2e5154f957b3d0e9eeec6f7f356723fcf27c35935337055"
+                                                              }
+                                                          ],
+                                      "correction_observed":  "The prohibition now expressly applies to an assumption/question disposition by itself, and the following sentence preserves this shared shape for separately authorized lifecycle/exception events under their own exact requirements.",
+                                      "affected_original_cases":  [
+                                                                      "05/REV-01",
+                                                                      "06/REV-01",
+                                                                      "05/REV-03",
+                                                                      "06/REV-03",
+                                                                      "05/REV-04",
+                                                                      "06/REV-04",
+                                                                      "05/REV-05",
+                                                                      "06/REV-05",
+                                                                      "05/REV-07",
+                                                                      "06/REV-07",
+                                                                      "05/REV-09",
+                                                                      "06/REV-09"
+                                                                  ],
+                                      "recheck":  "Re-read corrected shared receipt and its existing reopening/acceptance/exception sections, refreshed all18 hashes and all exact line references, re-evaluated all22 original interpretations; REV09 observations explicitly distinguish item answers from authorized lifecycle events.",
+                                      "current_disposition":  "Resolved; no remaining material mismatch in the rechecked candidate",
+                                      "supporting_references":  [
+                                                                    {
+                                                                        "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                        "line":  84,
+                                                                        "exact_line":  "rewriting history. Recording an assumption/question disposition neither expands",
+                                                                        "selected_by":  "Recording an assumption/question disposition neither expands"
+                                                                    },
+                                                                    {
+                                                                        "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                        "line":  87,
+                                                                        "exact_line":  "also records separately authorized lifecycle and exception events under their",
+                                                                        "selected_by":  "also records separately authorized lifecycle and exception events"
+                                                                    },
+                                                                    {
+                                                                        "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                        "line":  88,
+                                                                        "exact_line":  "own exact governing requirements; identify that event and its actual authority",
+                                                                        "selected_by":  "own exact governing requirements; identify that event and its actual authority"
+                                                                    },
+                                                                    {
+                                                                        "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                        "line":  162,
+                                                                        "exact_line":  "For a reopening retain **Disposition:** Reopened and the actual human authority",
+                                                                        "selected_by":  "For a reopening retain **Disposition:** Reopened"
+                                                                    },
+                                                                    {
+                                                                        "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                        "line":  169,
+                                                                        "exact_line":  "For acceptance, Revision cycle and Claim revision identify the exact current",
+                                                                        "selected_by":  "For acceptance, Revision cycle and Claim revision identify"
+                                                                    }
+                                                                ]
+                                  }
+                              ],
+    "supplemental_receipt_probe_count":  3,
+    "supplemental_receipt_probes":  [
+                                        {
+                                            "id":  "RECEIPT-PROBE-01",
+                                            "input":  "Synthetic item answer only: a reviewer answers an assumption/question without separate initiative acceptance or reopening authority.",
+                                            "observed":  "Record only the item disposition after sufficient authority and receipt checks; no initiative acceptance or reopening is inferred.",
+                                            "result":  "pass",
+                                            "supporting_references":  [
+                                                                          {
+                                                                              "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                              "line":  84,
+                                                                              "exact_line":  "rewriting history. Recording an assumption/question disposition neither expands",
+                                                                              "selected_by":  "Recording an assumption/question disposition neither expands"
+                                                                          }
+                                                                      ]
+                                        },
+                                        {
+                                            "id":  "RECEIPT-PROBE-02",
+                                            "input":  "Synthetic separately authorized initiative acceptance: actual human event identifies the exact current claim/cycle and all ordinary acceptance prerequisites are satisfied.",
+                                            "observed":  "The shared receipt may record that actual acceptance event under its own exact governing requirements, including matching Revision cycle and Claim revision; the item-answer prohibition does not invalidate the lifecycle receipt.",
+                                            "result":  "pass",
+                                            "supporting_references":  [
+                                                                          {
+                                                                              "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                              "line":  87,
+                                                                              "exact_line":  "also records separately authorized lifecycle and exception events under their",
+                                                                              "selected_by":  "also records separately authorized lifecycle and exception events"
+                                                                          },
+                                                                          {
+                                                                              "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                              "line":  88,
+                                                                              "exact_line":  "own exact governing requirements; identify that event and its actual authority",
+                                                                              "selected_by":  "own exact governing requirements; identify that event and its actual authority"
+                                                                          },
+                                                                          {
+                                                                              "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                              "line":  169,
+                                                                              "exact_line":  "For acceptance, Revision cycle and Claim revision identify the exact current",
+                                                                              "selected_by":  "For acceptance, Revision cycle and Claim revision identify"
+                                                                          }
+                                                                      ]
+                                        },
+                                        {
+                                            "id":  "RECEIPT-PROBE-03",
+                                            "input":  "Synthetic separately authorized reopening: actual sufficient reopening authority identifies the closed claim and exact change boundary; ordinary applicable reopening requirements hold.",
+                                            "observed":  "The shared receipt records Disposition: Reopened and actual authority/delegation with required event fields; ordinary return is Proposed, while direct Accepted return still requires the separately explicit unchanged-claim exception. An ordinary item answer alone does none of this.",
+                                            "result":  "pass",
+                                            "supporting_references":  [
+                                                                          {
+                                                                              "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                              "line":  87,
+                                                                              "exact_line":  "also records separately authorized lifecycle and exception events under their",
+                                                                              "selected_by":  "also records separately authorized lifecycle and exception events"
+                                                                          },
+                                                                          {
+                                                                              "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                              "line":  88,
+                                                                              "exact_line":  "own exact governing requirements; identify that event and its actual authority",
+                                                                              "selected_by":  "own exact governing requirements; identify that event and its actual authority"
+                                                                          },
+                                                                          {
+                                                                              "path":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                                                                              "line":  162,
+                                                                              "exact_line":  "For a reopening retain **Disposition:** Reopened and the actual human authority",
+                                                                              "selected_by":  "For a reopening retain **Disposition:** Reopened"
+                                                                          }
+                                                                      ]
+                                        }
+                                    ],
+    "whitespace_identity_reconciliation":  [
+                                               {
+                                                   "event":  "2026-11-14 final-staging EOF whitespace identity reconciliation",
+                                                   "author":  "Codex agent /root/workflow_walkthrough",
+                                                   "scope":  "Only terminal blank-line removal in candidate prompts05 and06",
+                                                   "comparison_fixture":  "C:/Users/User/AppData/Local/Temp/tadp-owned-review-aylo_osw/installed",
+                                                   "changes":  [
+                                                                   {
+                                                                       "path":  "TADp/protocol/template/prompts/05_initiative_assumption_review.md",
+                                                                       "prior_fixture_path":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-aylo_osw\\installed\\template\\prompts\\05_initiative_assumption_review.md",
+                                                                       "prior_sha256":  "885e7cfc9875b5242ec18b0815a5b68f518dee56b99f08233e96e178d293d4aa",
+                                                                       "current_sha256":  "099cc070696660ebde585387f71f188369931fbf5343aa3d8b7e87b999779c55",
+                                                                       "algorithm":  "sha256-canonical-v1",
+                                                                       "equality_check":  "Case-sensitive canonical text comparison after removing terminal newline characters only",
+                                                                       "content_equal_modulo_eof_blank_lines":  true,
+                                                                       "prior_terminal_newline_count":  2,
+                                                                       "current_terminal_newline_count":  1,
+                                                                       "character_delta":  -1
+                                                                   },
+                                                                   {
+                                                                       "path":  "TADp/protocol/template/prompts/06_initiative_open_question_review.md",
+                                                                       "prior_fixture_path":  "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-owned-review-aylo_osw\\installed\\template\\prompts\\06_initiative_open_question_review.md",
+                                                                       "prior_sha256":  "a1849bf4546fe21681d163a8c0fb5b63cf841849354fe2ab619477fa91c437cd",
+                                                                       "current_sha256":  "d0a063c42ae3e0ff1697d7f800157fe849bacc2fc635d18080322f50c26be245",
+                                                                       "algorithm":  "sha256-canonical-v1",
+                                                                       "equality_check":  "Case-sensitive canonical text comparison after removing terminal newline characters only",
+                                                                       "content_equal_modulo_eof_blank_lines":  true,
+                                                                       "prior_terminal_newline_count":  2,
+                                                                       "current_terminal_newline_count":  1,
+                                                                       "character_delta":  -1
+                                                                   }
+                                                               ],
+                                                   "observed_result":  "Each prompt now has one terminal newline instead of two. All other canonical characters compare exactly with the prior qualified fixture; the prior fixture hashes match the previously recorded semantic identities.",
+                                                   "source_hashes_rechecked":  18,
+                                                   "nonprompt_source_changes":  0,
+                                                   "exact_references_rechecked":  162,
+                                                   "reference_mismatches":  0,
+                                                   "semantic_interpretation_effect":  "No semantic text or referenced line changed. The original22 interpretations,3 supplemental receipt probes and historical resolved-review finding remain unchanged; only the two current prompt identities are refreshed.",
+                                                   "clean_installation_relation":  "Root is rerunning the exact clean installation after the EOF-only change; this reconciliation records the prior-fixture content comparison, not a claim that the new installation checks have run.",
+                                                   "locks":  "No candidate or installed lock was written by this agent"
+                                               }
+                                           ]
+}

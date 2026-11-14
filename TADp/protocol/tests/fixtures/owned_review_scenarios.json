@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "standing": "Synthetic isolated workflow inputs and acceptance expectations; no actual human decisions or live-project authority",
+  "review_entry_points": ["05", "06"],
+  "cases": [
+    {
+      "id": "REV-01",
+      "input": "An existing in-scope assumption A-01 and question Q-01 have exact source text. The fixture human explicitly confirms A-01 and answers Q-01.",
+      "expected": "Present one ready item at a time; preserve both exact texts and answers in receipts before separate source dispositions; no initiative acceptance."
+    },
+    {
+      "id": "REV-02",
+      "input": "Before any answer, evidence independently reveals a new assumption A-02 and a new open question Q-02 during either review.",
+      "expected": "Define both with unique stable IDs, exact text, origin, canonical owner/location, scope, dependencies, affected records and unresolved standing. No preceding correction is needed."
+    },
+    {
+      "id": "REV-03",
+      "input": "During that same review the fixture human explicitly confirms A-02 and answers Q-02, unambiguously naming each item and its outcome.",
+      "expected": "Capture sufficient exact authority and receipts, then record each disposition in the same review. A new item does not require a separate review solely because it is new or of the other kind."
+    },
+    {
+      "id": "REV-04",
+      "input": "The human answers Q-03 with an option absent from the original options, addressing a project-wide decision outside the reviewed initiative.",
+      "expected": "Preserve the original options and exact human words; assess destination and actual decision/write authority. Do not reject solely for initiative scope or invent authority."
+    },
+    {
+      "id": "REV-05",
+      "input": "Q-04 belongs to a named other open initiative; Q-05 is project-wide with no suitable initiative owner. Exact current targets, governing revisions, branches, owners and sufficient write/decision authority are recorded.",
+      "expected": "Define/answer Q-04 at that initiative's canonical register and Q-05 at the conditional project register with receipts. Link originating effects/dependencies without absorbing resulting work or inventing an umbrella initiative."
+    },
+    {
+      "id": "REV-06",
+      "input": "Q-06 belongs to another scaffold. Its source is linked, but target-naming authority and the external owner's permission are missing.",
+      "expected": "Preserve exact input and an owned handoff with proposed target/owner, blocker and re-entry condition. Do not edit or claim resolution there; continue independent authorized work."
+    },
+    {
+      "id": "REV-07",
+      "input": "A recorded authority receipt and rule-specific exception delegate a method for Q-07 only. The same review discovers Q-08.",
+      "expected": "Record Q-07's actual agent author, method/evidence/result/limits under its covered authority. Q-08 stays unresolved on the human path unless separately and sufficiently covered."
+    },
+    {
+      "id": "REV-08",
+      "input": "An answered Q-09 suggests separate derived assumption A-03. A related dormant Q-10 has an unmet trigger. Retry also encounters a duplicate representation of an already settled ID.",
+      "expected": "A-03 needs its own disposition; Q-10 retains dormant trigger/re-entry state; deduplicate the settled ID without changing original texts/options/receipts or reopening it merely for a related discovery."
+    },
+    {
+      "id": "REV-09",
+      "input": "One answer conflicts with protected architecture, another would refine a closed initiative claim, and a third proposes an independent outcome.",
+      "expected": "Preserve exact conflict and change-control boundary; require recorded authorized reopening and renewed acceptance where applicable; route the independent outcome to separately bounded Stage0 work. No answer alone revises invariants or implements consequences."
+    },
+    {
+      "id": "REV-10",
+      "input": "An external pending dependency blocks one initiative handoff; unrelated external items are pending or explicitly deferred with triggers.",
+      "expected": "Keep complete original/new coverage, owner distinctions and answered/unresolved/deferred/transferred/blocked states. Block the handoff actually dependent on the unresolved item. Distinguish finishing bounded review coverage from resolving every external matter."
+    },
+    {
+      "id": "REV-11",
+      "input": "Candidate qualification is requested without example-project access, live review execution, installed lock refresh or downstream delivery authority.",
+      "expected": "Use pinned clean sources plus exact declared candidate and generic fixtures. Preserve installed/distribution/examples and all real locks. Qualification does not prove adoption, introduction, ordinary completion, promotion or rollout."
+    }
+  ]
+}

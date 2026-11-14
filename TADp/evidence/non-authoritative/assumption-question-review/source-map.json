@@ -1,6 +1,6 @@
 {
     "schema_version":  1,
-    "status":  "pre-edit inventory, not a qualified or accepted manifest",
+    "status":  "Candidate implemented and qualified within exact assembled context; independent review passed; installed delivery not performed",
     "date":  "2026-11-14",
     "author":  "Codex primary agent",
     "repository_revision":  "4f05752755eb63e31d65c152a2e1dc9134db7de5",
@@ -13,192 +13,208 @@
                         "source_revision":  "4f05752755eb63e31d65c152a2e1dc9134db7de5",
                         "source_sha256":  "eaee8e2330f5786c8442df9057c2da4ab443310176868d5561faefae2445771f",
                         "candidate":  "TADp/protocol/template/prompts/05_initiative_assumption_review.md",
-                        "operation":  "proposed update; not performed",
+                        "operation":  "Pinned source copied and exact authorized candidate change implemented/qualified in C; installed source unchanged",
                         "downstream_installed":  "TADp/template/prompts/05_initiative_assumption_review.md",
                         "downstream_upstream_library":  "protocol/template/prompts/05_initiative_assumption_review.md",
                         "downstream_distribution":  "protocol/template/prompts/05_initiative_assumption_review.md",
                         "later_boundary_authority":  "not granted",
-                        "conditional":  false
+                        "conditional":  false,
+                        "initial_operation":  "proposed update; not performed"
                     },
                     {
                         "source":  "TADp/template/prompts/06_initiative_open_question_review.md",
                         "source_revision":  "4f05752755eb63e31d65c152a2e1dc9134db7de5",
                         "source_sha256":  "0e574a24117f7aee2403b3d3f8574f477d523c172aefb4a7d1bc7df454c637e9",
                         "candidate":  "TADp/protocol/template/prompts/06_initiative_open_question_review.md",
-                        "operation":  "proposed update; not performed",
+                        "operation":  "Pinned source copied and exact authorized candidate change implemented/qualified in C; installed source unchanged",
                         "downstream_installed":  "TADp/template/prompts/06_initiative_open_question_review.md",
                         "downstream_upstream_library":  "protocol/template/prompts/06_initiative_open_question_review.md",
                         "downstream_distribution":  "protocol/template/prompts/06_initiative_open_question_review.md",
                         "later_boundary_authority":  "not granted",
-                        "conditional":  false
+                        "conditional":  false,
+                        "initial_operation":  "proposed update; not performed"
                     },
                     {
                         "source":  "TADp/template/prompts/WORKFLOW-CONTRACT.md",
                         "source_revision":  "4f05752755eb63e31d65c152a2e1dc9134db7de5",
                         "source_sha256":  "79808741d57e64eede24dec30bec415d397a829776bc0efaeef1df73a084b4f5",
                         "candidate":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
-                        "operation":  "proposed update; not performed",
+                        "operation":  "Pinned source copied and exact authorized candidate change implemented/qualified in C; installed source unchanged",
                         "downstream_installed":  "TADp/template/prompts/WORKFLOW-CONTRACT.md",
                         "downstream_upstream_library":  "protocol/template/prompts/WORKFLOW-CONTRACT.md",
                         "downstream_distribution":  "protocol/template/prompts/WORKFLOW-CONTRACT.md",
                         "later_boundary_authority":  "not granted",
-                        "conditional":  false
+                        "conditional":  false,
+                        "initial_operation":  "proposed update; not performed"
                     },
                     {
                         "source":  "TADp/template/project/evidence/authoritative/LLM/02_Codex_Initiative_Governance_Specification.md",
                         "source_revision":  "4f05752755eb63e31d65c152a2e1dc9134db7de5",
                         "source_sha256":  "822a7b0683b5ecf519751203844eff1acac45232b08ed585a4114a39340bccc8",
                         "candidate":  "TADp/protocol/template/project/evidence/authoritative/LLM/02_Codex_Initiative_Governance_Specification.md",
-                        "operation":  "proposed update; not performed",
+                        "operation":  "Pinned source copied and exact authorized candidate change implemented/qualified in C; installed source unchanged",
                         "downstream_installed":  "TADp/template/project/evidence/authoritative/LLM/02_Codex_Initiative_Governance_Specification.md",
                         "downstream_upstream_library":  "protocol/template/project/evidence/authoritative/LLM/02_Codex_Initiative_Governance_Specification.md",
                         "downstream_distribution":  "protocol/evidence/authoritative/LLM/02_Codex_Initiative_Governance_Specification.md",
                         "later_boundary_authority":  "not granted",
-                        "conditional":  false
+                        "conditional":  false,
+                        "initial_operation":  "proposed update; not performed"
                     },
                     {
                         "source":  "TADp/template/project/evidence/authoritative/LLM/07_Codex_Human_Decision_Receipt_Specification.md",
                         "source_revision":  "4f05752755eb63e31d65c152a2e1dc9134db7de5",
                         "source_sha256":  "1c94946e9154d1383a685e96a538a29d99e048710d5e8813fa8247dcb6e5307b",
                         "candidate":  "TADp/protocol/template/project/evidence/authoritative/LLM/07_Codex_Human_Decision_Receipt_Specification.md",
-                        "operation":  "proposed update; not performed",
+                        "operation":  "Pinned source copied and exact authorized candidate change implemented/qualified in C; installed source unchanged",
                         "downstream_installed":  "TADp/template/project/evidence/authoritative/LLM/07_Codex_Human_Decision_Receipt_Specification.md",
                         "downstream_upstream_library":  "protocol/template/project/evidence/authoritative/LLM/07_Codex_Human_Decision_Receipt_Specification.md",
                         "downstream_distribution":  "protocol/evidence/authoritative/LLM/07_Codex_Human_Decision_Receipt_Specification.md",
                         "later_boundary_authority":  "not granted",
-                        "conditional":  false
+                        "conditional":  false,
+                        "initial_operation":  "proposed update; not performed"
                     },
                     {
                         "source":  "TADp/template/project/evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md",
                         "source_revision":  "4f05752755eb63e31d65c152a2e1dc9134db7de5",
                         "source_sha256":  "270f50e92f92fdbf37abba95dc881b9c8d81322370dc5c545991fa72d2210504",
                         "candidate":  "TADp/protocol/template/project/evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md",
-                        "operation":  "proposed update; not performed",
+                        "operation":  "Pinned source copied and exact authorized candidate change implemented/qualified in C; installed source unchanged",
                         "downstream_installed":  "TADp/template/project/evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md",
                         "downstream_upstream_library":  "protocol/template/project/evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md",
                         "downstream_distribution":  "protocol/evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md",
                         "later_boundary_authority":  "not granted",
-                        "conditional":  false
+                        "conditional":  false,
+                        "initial_operation":  "proposed update; not performed"
                     },
                     {
                         "source":  "TADp/template/project/initiatives/assumption.template.md",
                         "source_revision":  "4f05752755eb63e31d65c152a2e1dc9134db7de5",
                         "source_sha256":  "073a5ee0db5a761f5402ba6e41af5226dc184fdc088c3d8b55b22fc395fcb16a",
                         "candidate":  "TADp/protocol/template/project/initiatives/assumption.template.md",
-                        "operation":  "proposed update; not performed",
+                        "operation":  "Pinned source copied and exact authorized candidate change implemented/qualified in C; installed source unchanged",
                         "downstream_installed":  "TADp/template/project/initiatives/assumption.template.md",
                         "downstream_upstream_library":  "protocol/template/project/initiatives/assumption.template.md",
                         "downstream_distribution":  "protocol/initiatives/assumption.template.md",
                         "later_boundary_authority":  "not granted",
-                        "conditional":  false
+                        "conditional":  false,
+                        "initial_operation":  "proposed update; not performed"
                     },
                     {
                         "source":  "TADp/template/project/initiatives/open-questions.template.md",
                         "source_revision":  "4f05752755eb63e31d65c152a2e1dc9134db7de5",
                         "source_sha256":  "f141b1059cd83a55bbcb0961200b11999716650ca561520ec0cfb399060fbd93",
                         "candidate":  "TADp/protocol/template/project/initiatives/open-questions.template.md",
-                        "operation":  "proposed update; not performed",
+                        "operation":  "Pinned source copied and exact authorized candidate change implemented/qualified in C; installed source unchanged",
                         "downstream_installed":  "TADp/template/project/initiatives/open-questions.template.md",
                         "downstream_upstream_library":  "protocol/template/project/initiatives/open-questions.template.md",
                         "downstream_distribution":  "protocol/initiatives/open-questions.template.md",
                         "later_boundary_authority":  "not granted",
-                        "conditional":  false
+                        "conditional":  false,
+                        "initial_operation":  "proposed update; not performed"
                     },
                     {
                         "source":  "TADp/template/project/initiatives/decision-receipts/decision-receipt.template.md",
                         "source_revision":  "4f05752755eb63e31d65c152a2e1dc9134db7de5",
                         "source_sha256":  "32124a658eaa4b81dab39635038c2652dfe05aecbef10dbfe3a3152d2ec7b1d1",
                         "candidate":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
-                        "operation":  "proposed update; not performed",
+                        "operation":  "Pinned source copied and exact authorized candidate change implemented/qualified in C; installed source unchanged",
                         "downstream_installed":  "TADp/template/project/initiatives/decision-receipts/decision-receipt.template.md",
                         "downstream_upstream_library":  "protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
                         "downstream_distribution":  "protocol/initiatives/decision-receipts/decision-receipt.template.md",
                         "later_boundary_authority":  "not granted",
-                        "conditional":  false
+                        "conditional":  false,
+                        "initial_operation":  "proposed update; not performed"
                     },
                     {
                         "source":  "TADp/template/project/initiatives/decision-receipts/README.template.md",
                         "source_revision":  "4f05752755eb63e31d65c152a2e1dc9134db7de5",
                         "source_sha256":  "3ac5d299d5cabf7fa6c17f9fe4ba1e47ff7c05c5687d6cdf1f346be064c03cb7",
                         "candidate":  "TADp/protocol/template/project/initiatives/decision-receipts/README.template.md",
-                        "operation":  "proposed update; not performed",
+                        "operation":  "Pinned source copied and exact authorized candidate change implemented/qualified in C; installed source unchanged",
                         "downstream_installed":  "TADp/template/project/initiatives/decision-receipts/README.template.md",
                         "downstream_upstream_library":  "protocol/template/project/initiatives/decision-receipts/README.template.md",
                         "downstream_distribution":  "protocol/initiatives/decision-receipts/README.template.md",
                         "later_boundary_authority":  "not granted",
-                        "conditional":  false
+                        "conditional":  false,
+                        "initial_operation":  "proposed update; not performed"
                     },
                     {
                         "source":  "TADp/template/project/initiatives/decision-receipts/README.md",
                         "source_revision":  "4f05752755eb63e31d65c152a2e1dc9134db7de5",
                         "source_sha256":  "1f47573458e119ab52abc9d3b2a15e3a84399533d685543b31c57e04acda00ae",
                         "candidate":  "TADp/protocol/template/project/initiatives/decision-receipts/README.md",
-                        "operation":  "proposed update; not performed",
+                        "operation":  "Pinned source copied and exact authorized candidate change implemented/qualified in C; installed source unchanged",
                         "downstream_installed":  "TADp/template/project/initiatives/decision-receipts/README.md",
                         "downstream_upstream_library":  "protocol/template/project/initiatives/decision-receipts/README.md",
                         "downstream_distribution":  "protocol/initiatives/decision-receipts/README.md",
                         "later_boundary_authority":  "not granted",
-                        "conditional":  false
+                        "conditional":  false,
+                        "initial_operation":  "proposed update; not performed"
                     },
                     {
                         "source":  "TADp/template/TEMPLATE-COVERAGE.md",
                         "source_revision":  "4f05752755eb63e31d65c152a2e1dc9134db7de5",
                         "source_sha256":  "da47cbab60edcaaf8a41cc9078273eaff911a69ba6886f0a83a42bb118d6575c",
                         "candidate":  "TADp/protocol/template/TEMPLATE-COVERAGE.md",
-                        "operation":  "proposed update; not performed",
+                        "operation":  "Pinned source copied and exact authorized candidate change implemented/qualified in C; installed source unchanged",
                         "downstream_installed":  "TADp/template/TEMPLATE-COVERAGE.md",
                         "downstream_upstream_library":  "protocol/template/TEMPLATE-COVERAGE.md",
                         "downstream_distribution":  "protocol/template/TEMPLATE-COVERAGE.md",
                         "later_boundary_authority":  "not granted",
-                        "conditional":  false
+                        "conditional":  false,
+                        "initial_operation":  "proposed update; not performed"
                     },
                     {
                         "source":  "TADp/template/project/decisions/README.md",
                         "source_revision":  "4f05752755eb63e31d65c152a2e1dc9134db7de5",
                         "source_sha256":  "847240ca6d5358dc50e999eaad20495f339172517349157c613b3ee9989666be",
                         "candidate":  "TADp/protocol/template/project/decisions/README.md",
-                        "operation":  "proposed update; not performed",
+                        "operation":  "Pinned source copied and exact authorized candidate change implemented/qualified in C; installed source unchanged",
                         "downstream_installed":  "TADp/template/project/decisions/README.md",
                         "downstream_upstream_library":  "protocol/template/project/decisions/README.md",
                         "downstream_distribution":  "protocol/decisions/README.md",
                         "later_boundary_authority":  "not granted",
-                        "conditional":  false
+                        "conditional":  false,
+                        "initial_operation":  "proposed update; not performed"
                     },
                     {
                         "source":  "TADp/template/project/README.md",
                         "source_revision":  "4f05752755eb63e31d65c152a2e1dc9134db7de5",
                         "source_sha256":  "eb419733b7fbc17d189aac26cef194ea9d66286d9f451126832ff57a6e34c1ba",
                         "candidate":  "TADp/protocol/template/project/README.md",
-                        "operation":  "proposed update; not performed",
+                        "operation":  "Pinned source copied and exact authorized candidate change implemented/qualified in C; installed source unchanged",
                         "downstream_installed":  "TADp/template/project/README.md",
                         "downstream_upstream_library":  "protocol/template/project/README.md",
                         "downstream_distribution":  "protocol/README.md",
                         "later_boundary_authority":  "not granted",
-                        "conditional":  false
+                        "conditional":  false,
+                        "initial_operation":  "proposed update; not performed"
                     },
                     {
                         "source":  "TADp/template/project/initiatives/README.md",
                         "source_revision":  "4f05752755eb63e31d65c152a2e1dc9134db7de5",
                         "source_sha256":  "c6d79cc74bb19f68606038a31bedbd94638dfe75da6d7347d477e9bc13dbd206",
                         "candidate":  "TADp/protocol/template/project/initiatives/README.md",
-                        "operation":  "proposed update; not performed",
+                        "operation":  "Pinned source copied and exact authorized candidate change implemented/qualified in C; installed source unchanged",
                         "downstream_installed":  "TADp/template/project/initiatives/README.md",
                         "downstream_upstream_library":  "protocol/template/project/initiatives/README.md",
                         "downstream_distribution":  "protocol/initiatives/README.md",
                         "later_boundary_authority":  "not granted",
-                        "conditional":  false
+                        "conditional":  false,
+                        "initial_operation":  "proposed update; not performed"
                     },
                     {
                         "source":  "TADp/template/project/tools/tadp_validate.py",
                         "source_revision":  "4f05752755eb63e31d65c152a2e1dc9134db7de5",
                         "source_sha256":  "b9e82cae2074ba8c216bfa7ad43db3f0f15cc830aadc6bb2e0785df4a453586f",
                         "candidate":  "TADp/protocol/template/project/tools/tadp_validate.py",
-                        "operation":  "proposed update; not performed",
+                        "operation":  "Conditional validator update not needed; installed runtime unchanged",
                         "downstream_installed":  "TADp/template/project/tools/tadp_validate.py",
                         "downstream_upstream_library":  "protocol/template/project/tools/tadp_validate.py",
                         "downstream_distribution":  "protocol/tools/tadp_validate.py",
                         "later_boundary_authority":  "not granted",
-                        "conditional":  true
+                        "conditional":  true,
+                        "initial_operation":  "proposed update; not performed"
                     }
                 ],
     "proposed_additions":  [
@@ -211,13 +227,35 @@
                                    "downstream_installed":  "TADp/template/project/decisions/assumptions-and-open-questions.template.md",
                                    "downstream_upstream_library":  "protocol/template/project/decisions/assumptions-and-open-questions.template.md",
                                    "downstream_distribution":  "protocol/decisions/assumptions-and-open-questions.template.md",
-                                   "status":  "proposed only; coverage declaration required before use"
+                                   "status":  "proposed only; coverage declaration required before use",
+                                   "current_disposition":  "Created as declared candidate product/support; exact tested identity in manifest; no installed delivery or live record created"
                                },
                                {
                                    "candidate":  "TADp/protocol/tests/test_assumption_question_review.py",
                                    "source":  "new focused isolated scenarios from required verification cases in pinned prompt",
                                    "status":  "proposed; no tests created or run",
-                                   "downstream":  "must be mapped exactly in owning accepted suite before implementation"
+                                   "downstream":  "must be mapped exactly in owning accepted suite before implementation",
+                                   "current_disposition":  "Created as declared candidate product/support; exact tested identity in manifest; no installed delivery or live record created"
+                               },
+                               {
+                                   "candidate":  "TADp/protocol/tests/fixtures/owned_review_scenarios.json",
+                                   "source":  "Synthetic isolated scenarios derived from REV-01 through REV-11 in pinned invoked prompt",
+                                   "trigger":  "Candidate qualification only",
+                                   "owner":  "Candidate regression maintainer",
+                                   "scope":  "Synthetic fixture inputs and expected record outcomes; no live human authority or behavior evidence",
+                                   "downstream":  "Not authorized for installed delivery; future exact manifest required",
+                                   "current_disposition":  "Created as declared candidate product/support; exact tested identity in manifest; no installed delivery or live record created"
+                               },
+                               {
+                                   "candidate":  "TADp/protocol/tests/fixtures/README.md",
+                                   "source":  "New minimal generic navigation for reusable isolated fixture directory",
+                                   "trigger":  "Regression fixture directory exists; future project baseline directory requires README",
+                                   "owner":  "Candidate regression maintainer",
+                                   "downstream_installed":  "TADp/template/project/tests/fixtures/README.md",
+                                   "downstream_upstream_library":  "protocol/template/project/tests/fixtures/README.md",
+                                   "downstream_distribution":  "protocol/tests/fixtures/README.md",
+                                   "status":  "Candidate support only; no later write authority",
+                                   "current_disposition":  "Created as declared candidate product/support; exact tested identity in manifest; no installed delivery or live record created"
                                }
                            ],
     "exclusions":  [
@@ -228,8 +266,8 @@
                        "live review records",
                        "examples and separate forks"
                    ],
-    "qualification":  "not performed",
-    "next_gate":  "Stage 7 explicit acceptance of the complete aligned TADP-001 Proposed baseline before candidate execution; later D/S/U authority remains separate",
+    "qualification":  "Final qualification attempt20261114T201704Z-509920ed passes11 tests/77 links/validation/protection;22 semantic cases and3 receipt probes; raw live P46 link-context errors retained/audited",
+    "next_gate":  "Exact reviewed-manifest authority for protected D introduction plus fresh drift/packaging/protection/install checks; no automatic development completion or S/U writes",
     "protection_dependencies":  [
                                     {
                                         "source":  "TADp/template/AGENTS.md",
@@ -237,11 +275,12 @@
                                         "source_sha256":  "abf5bacc278a8681c0bff9adf7a213eca0a1743c9dfbffbf00443e2472fe66c4",
                                         "candidate":  "TADp/protocol/template/AGENTS.md",
                                         "role":  "Protection dependency; no rule revision",
-                                        "operation":  "proposed unchanged guard copy or derived scoped candidate lock; no copy or lock refresh performed",
+                                        "operation":  "Declared guard copied unchanged into C; no authority rule revised",
                                         "downstream_installed":  "TADp/template/AGENTS.md",
                                         "downstream_upstream_library":  "protocol/template/AGENTS.md",
                                         "later_boundary_authority":  "not granted",
-                                        "constraint":  "Only candidate or isolated fixture locks covered by exact prompt may be reconciled after coherent content verification; installed/distribution locks preserved"
+                                        "constraint":  "Only candidate or isolated fixture locks covered by exact prompt may be reconciled after coherent content verification; installed/distribution locks preserved",
+                                        "initial_operation":  "proposed unchanged guard copy or derived scoped candidate lock; no copy or lock refresh performed"
                                     },
                                     {
                                         "source":  "TADp/template/.tadp-lock.json",
@@ -249,11 +288,12 @@
                                         "source_sha256":  "72a22a876838426e37672b31f416bd25ae0cea53862cd952d31cf20078ff3efb",
                                         "candidate":  "TADp/protocol/template/.tadp-lock.json",
                                         "role":  "Protection dependency; no rule revision",
-                                        "operation":  "proposed unchanged guard copy or derived scoped candidate lock; no copy or lock refresh performed",
+                                        "operation":  "Pinned lock dependency copied, then only scoped candidate inventory refreshed after coherent checks; installed lock unchanged",
                                         "downstream_installed":  "TADp/template/.tadp-lock.json",
                                         "downstream_upstream_library":  "protocol/template/.tadp-lock.json",
                                         "later_boundary_authority":  "not granted",
-                                        "constraint":  "Only candidate or isolated fixture locks covered by exact prompt may be reconciled after coherent content verification; installed/distribution locks preserved"
+                                        "constraint":  "Only candidate or isolated fixture locks covered by exact prompt may be reconciled after coherent content verification; installed/distribution locks preserved",
+                                        "initial_operation":  "proposed unchanged guard copy or derived scoped candidate lock; no copy or lock refresh performed"
                                     },
                                     {
                                         "source":  "TADp/template/project/evidence/authoritative/LLM/AGENTS.md",
@@ -261,11 +301,12 @@
                                         "source_sha256":  "0f4995562ec74054f02ccce453ee2458b283eb13210816599f11156f98eb95ee",
                                         "candidate":  "TADp/protocol/template/project/evidence/authoritative/LLM/AGENTS.md",
                                         "role":  "Protection dependency; no rule revision",
-                                        "operation":  "proposed unchanged guard copy or derived scoped candidate lock; no copy or lock refresh performed",
+                                        "operation":  "Declared guard copied unchanged into C; no authority rule revised",
                                         "downstream_installed":  "TADp/template/project/evidence/authoritative/LLM/AGENTS.md",
                                         "downstream_upstream_library":  "protocol/template/project/evidence/authoritative/LLM/AGENTS.md",
                                         "later_boundary_authority":  "not granted",
-                                        "constraint":  "Only candidate or isolated fixture locks covered by exact prompt may be reconciled after coherent content verification; installed/distribution locks preserved"
+                                        "constraint":  "Only candidate or isolated fixture locks covered by exact prompt may be reconciled after coherent content verification; installed/distribution locks preserved",
+                                        "initial_operation":  "proposed unchanged guard copy or derived scoped candidate lock; no copy or lock refresh performed"
                                     },
                                     {
                                         "source":  "TADp/template/project/evidence/authoritative/LLM/.tadp-lock.json",
@@ -273,14 +314,16 @@
                                         "source_sha256":  "f9660b613a23b0ba34422180378ead48d3662a1cb3284e10ffae6e0e337d5f71",
                                         "candidate":  "TADp/protocol/template/project/evidence/authoritative/LLM/.tadp-lock.json",
                                         "role":  "Protection dependency; no rule revision",
-                                        "operation":  "proposed unchanged guard copy or derived scoped candidate lock; no copy or lock refresh performed",
+                                        "operation":  "Pinned lock dependency copied, then only scoped candidate inventory refreshed after coherent checks; installed lock unchanged",
                                         "downstream_installed":  "TADp/template/project/evidence/authoritative/LLM/.tadp-lock.json",
                                         "downstream_upstream_library":  "protocol/template/project/evidence/authoritative/LLM/.tadp-lock.json",
                                         "later_boundary_authority":  "not granted",
-                                        "constraint":  "Only candidate or isolated fixture locks covered by exact prompt may be reconciled after coherent content verification; installed/distribution locks preserved"
+                                        "constraint":  "Only candidate or isolated fixture locks covered by exact prompt may be reconciled after coherent content verification; installed/distribution locks preserved",
+                                        "initial_operation":  "proposed unchanged guard copy or derived scoped candidate lock; no copy or lock refresh performed"
                                     }
                                 ],
     "resumed_source_snapshot":  "TADp/evidence/non-authoritative/assumption-question-review/source-prompt.txt",
     "resumed_routing":  "TADp/evidence/non-authoritative/assumption-question-review/intake.md",
-    "initial_next_gate":  "explicit project integration-base appointment before allocation; complete Proposed suite before separate Stage 7 acceptance"
+    "initial_next_gate":  "explicit project integration-base appointment before allocation; complete Proposed suite before separate Stage 7 acceptance",
+    "initial_status":  "pre-edit inventory, not a qualified or accepted manifest"
 }

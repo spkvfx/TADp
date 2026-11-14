@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "algorithm": "sha256-canonical-v1",
+  "protected_root": "template",
+  "authority": "Candidate only: exact invoked prompt blob394e97ad00ca98fd5adb21f21b4ad61c7f6ba53e and ACCEPT-001; semantic review corrected and EOF whitespace normalized; exact isolated recheck follows; no installed lock authority",
+  "files": {
+    "AGENTS.md": "abf5bacc278a8681c0bff9adf7a213eca0a1743c9dfbffbf00443e2472fe66c4",
+    "project/decisions/assumptions-and-open-questions.template.md": "c58131f35b2361afeb8d2dbb0a7bed461e31a56b8080197f46da0f4ebcd00e7a",
+    "project/decisions/README.md": "3a8b9dd4ad44fa4b6514c49cec14b199dc285374fe7433edf43082dc5baef30a",
+    "project/evidence/authoritative/LLM/.tadp-lock.json": "bd9b398e407c98087706b1d833898f9899db11aac530e9b35eb2b9dae70f28b5",
+    "project/evidence/authoritative/LLM/02_Codex_Initiative_Governance_Specification.md": "46bfd0ee8abb37cdb31489097021cba4ad80539333bfdfbdcd4a3d7fe725ed9c",
+    "project/evidence/authoritative/LLM/07_Codex_Human_Decision_Receipt_Specification.md": "f9588957da4c4a92889842ab61d676ba27b308242883ac3b117354c926718e9f",
+    "project/evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md": "a8359ce3541805cbe4c8f45f0f58fde6379d19e19bb3f937950b19aad12e3ad5",
+    "project/evidence/authoritative/LLM/AGENTS.md": "0f4995562ec74054f02ccce453ee2458b283eb13210816599f11156f98eb95ee",
+    "project/initiatives/assumption.template.md": "498682a27a8bf11a1b15b0b0bf423191f2a09911ef75ae62938b49ecf339b295",
+    "project/initiatives/decision-receipts/decision-receipt.template.md": "b48c45bfc343bb2cb2e5154f957b3d0e9eeec6f7f356723fcf27c35935337055",
+    "project/initiatives/decision-receipts/README.md": "bd1f6c53f62bdaecfde98d4549c81926fea2fb9b02f994fea6a692a693ede520",
+    "project/initiatives/decision-receipts/README.template.md": "fe82bfc53628879df352d997cd0d0d1b7064f24db5378544708b06a9d468d5ee",
+    "project/initiatives/open-questions.template.md": "cd58175ac58a3d0a60a451df51d37f062bc164c8b53f0b75749c8ef9901043c8",
+    "project/initiatives/README.md": "4d6c0e9aa088015aa72563c756420128d241e204d6005907ca06f9a1907c6a4c",
+    "project/README.md": "a1e7fdd6c8a58972171a71ee9f8dd8fac7bffa59aa23fb39861e221e1613e4fc",
+    "prompts/05_initiative_assumption_review.md": "099cc070696660ebde585387f71f188369931fbf5343aa3d8b7e87b999779c55",
+    "prompts/06_initiative_open_question_review.md": "d0a063c42ae3e0ff1697d7f800157fe849bacc2fc635d18080322f50c26be245",
+    "prompts/WORKFLOW-CONTRACT.md": "b5bed3c70008cd2be5642cef52899eaf865b14a7a40cb64d1acdceb915575456",
+    "TEMPLATE-COVERAGE.md": "cb8f9aec5f022fbd12f7763fe039475ff563f3adf59bcd99c2f181893344927a"
+  }
+}
