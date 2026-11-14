@@ -1,0 +1,187 @@
+{
+  "base": "014d455e3d99213e0dc4a156cb198ac1a4a85747",
+  "python": "C:\\Users\\User\\PycharmProjects\\TADp\\.venv\\Scripts\\python.exe",
+  "python_version": "3.11.1 (tags/v3.11.1:a7a450f, Dec  6 2022, 19:58:39) [MSC v.1934 64 bit (AMD64)]",
+  "fixture_workspace": "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-doc-split-z2xftf32",
+  "fixtures": {
+    "root": {
+      "P": "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-doc-split-z2xftf32\\root-git",
+      "G": "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-doc-split-z2xftf32\\root-git",
+      "steps": [
+        {
+          "cwd": "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-doc-split-z2xftf32",
+          "command": [
+            "powershell",
+            "-NoProfile",
+            "-Command",
+            "\n$ErrorActionPreference = 'Stop'\n$GitRoot = 'C:\\Users\\User\\AppData\\Local\\Temp\\tadp-doc-split-z2xftf32\\root-git'\n$ProjectRoot = 'C:\\Users\\User\\AppData\\Local\\Temp\\tadp-doc-split-z2xftf32\\root-git'\n$Source = 'C:\\Users\\User\\AppData\\Local\\Temp\\tadp-doc-split-z2xftf32\\protocol'\ngit -C $GitRoot init --quiet\n[IO.File]::WriteAllText((Join-Path $GitRoot 'baseline.txt'), 'fixture only')\ngit -C $GitRoot add baseline.txt\ngit -C $GitRoot -c user.name=Fixture -c user.email=fixture@example.invalid commit --quiet -m 'fixture baseline'\nNew-Item -ItemType Directory -Force -Path $ProjectRoot | Out-Null\nGet-ChildItem -LiteralPath (Join-Path $Source 'template/project') -Force |\n    Where-Object Name -ne 'template' |\n    Copy-Item -Destination $ProjectRoot -Recurse -Force\nCopy-Item -LiteralPath (Join-Path $Source 'template') -Destination $ProjectRoot -Recurse\n# The scaffold copy retains its complete embedded authoritative suite/lock.\nforeach ($Component in @('docs', 'tools', 'tests')) {\n    New-Item -ItemType Directory -Force -Path (Join-Path $ProjectRoot $Component) | Out-Null\n    Get-ChildItem -LiteralPath (Join-Path $Source $Component) -Force |\n        Copy-Item -Destination (Join-Path $ProjectRoot $Component) -Recurse -Force\n}\n"
+          ],
+          "exit": 0,
+          "log": "root-assembly.log"
+        },
+        {
+          "cwd": "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-doc-split-z2xftf32\\root-git",
+          "command": [
+            "C:\\Users\\User\\PycharmProjects\\TADp\\.venv\\Scripts\\python.exe",
+            "tools/tadp_protect.py",
+            "check",
+            "."
+          ],
+          "exit": 0,
+          "log": "root-tadp_protect.log"
+        },
+        {
+          "cwd": "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-doc-split-z2xftf32\\root-git",
+          "command": [
+            "C:\\Users\\User\\PycharmProjects\\TADp\\.venv\\Scripts\\python.exe",
+            "tools/tadp_validate.py",
+            ".",
+            "--json"
+          ],
+          "exit": 0,
+          "log": "root-tadp_validate.log"
+        }
+      ],
+      "links": {
+        "checked": 144,
+        "failures": []
+      },
+      "hook_configuration": "",
+      "dotfiles": {
+        ".gitattributes": true,
+        ".githooks/pre-commit": true,
+        "prompts/AGENTS.md": true,
+        "template/.tadp-lock.json": true,
+        "evidence/authoritative/LLM/.tadp-lock.json": true
+      },
+      "payload_sha256": {
+        "docs/development/developing-tadp.md": "ab93b861e237a96d1905c7c973a85513b0f66a64346679c1bc5f0279ef0683a3",
+        "docs/development/README.md": "ab93b861e237a96d1905c7c973a85513b0f66a64346679c1bc5f0279ef0683a3",
+        "docs/development/getting-started.md": "f7a1911158bdf83f860a0bea12862ede3739677e61643c8ea28cfa2d23c0eedb",
+        "docs/development/git-and-codex-requirements.md": "654cc0a070e3ec4b7f9a9900d79f8f91bbf5332694415c81c6c49b49b4ec2b73",
+        "docs/development/repository-layout.md": "1558bc7ac10338f53c74282dd1c029d69fbbe6e92755a3c1f872a22e39f507ba",
+        "docs/development/validation-and-quality.md": "f54d6bdbd646a55687b5a0a145e3894af4e9130b094cdef9c539a85e1d45e6dc",
+        "docs/README.md": "05997bf5527c0d236486398a06e8fd5e5bb4dc2592bcdb48a2fff31c7c40f819",
+        "README.md": "c4ea413b05a9cf077516454e4d6a383f050221337d87c0e613cd46cadcbd11a6"
+      }
+    },
+    "nested": {
+      "P": "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-doc-split-z2xftf32\\nested-git\\projects\\widget",
+      "G": "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-doc-split-z2xftf32\\nested-git",
+      "steps": [
+        {
+          "cwd": "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-doc-split-z2xftf32",
+          "command": [
+            "powershell",
+            "-NoProfile",
+            "-Command",
+            "\n$ErrorActionPreference = 'Stop'\n$GitRoot = 'C:\\Users\\User\\AppData\\Local\\Temp\\tadp-doc-split-z2xftf32\\nested-git'\n$ProjectRoot = 'C:\\Users\\User\\AppData\\Local\\Temp\\tadp-doc-split-z2xftf32\\nested-git\\projects\\widget'\n$Source = 'C:\\Users\\User\\AppData\\Local\\Temp\\tadp-doc-split-z2xftf32\\protocol'\ngit -C $GitRoot init --quiet\n[IO.File]::WriteAllText((Join-Path $GitRoot 'baseline.txt'), 'fixture only')\ngit -C $GitRoot add baseline.txt\ngit -C $GitRoot -c user.name=Fixture -c user.email=fixture@example.invalid commit --quiet -m 'fixture baseline'\nNew-Item -ItemType Directory -Force -Path $ProjectRoot | Out-Null\nGet-ChildItem -LiteralPath (Join-Path $Source 'template/project') -Force |\n    Where-Object Name -ne 'template' |\n    Copy-Item -Destination $ProjectRoot -Recurse -Force\nCopy-Item -LiteralPath (Join-Path $Source 'template') -Destination $ProjectRoot -Recurse\n# The scaffold copy retains its complete embedded authoritative suite/lock.\nforeach ($Component in @('docs', 'tools', 'tests')) {\n    New-Item -ItemType Directory -Force -Path (Join-Path $ProjectRoot $Component) | Out-Null\n    Get-ChildItem -LiteralPath (Join-Path $Source $Component) -Force |\n        Copy-Item -Destination (Join-Path $ProjectRoot $Component) -Recurse -Force\n}\n"
+          ],
+          "exit": 0,
+          "log": "nested-assembly.log"
+        },
+        {
+          "cwd": "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-doc-split-z2xftf32\\nested-git\\projects\\widget",
+          "command": [
+            "C:\\Users\\User\\PycharmProjects\\TADp\\.venv\\Scripts\\python.exe",
+            "tools/tadp_protect.py",
+            "check",
+            "."
+          ],
+          "exit": 0,
+          "log": "nested-tadp_protect.log"
+        },
+        {
+          "cwd": "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-doc-split-z2xftf32\\nested-git\\projects\\widget",
+          "command": [
+            "C:\\Users\\User\\PycharmProjects\\TADp\\.venv\\Scripts\\python.exe",
+            "tools/tadp_validate.py",
+            ".",
+            "--json"
+          ],
+          "exit": 0,
+          "log": "nested-tadp_validate.log"
+        }
+      ],
+      "links": {
+        "checked": 144,
+        "failures": []
+      },
+      "hook_configuration": "",
+      "dotfiles": {
+        ".gitattributes": true,
+        ".githooks/pre-commit": true,
+        "prompts/AGENTS.md": true,
+        "template/.tadp-lock.json": true,
+        "evidence/authoritative/LLM/.tadp-lock.json": true
+      },
+      "payload_sha256": {
+        "docs/development/developing-tadp.md": "ab93b861e237a96d1905c7c973a85513b0f66a64346679c1bc5f0279ef0683a3",
+        "docs/development/README.md": "ab93b861e237a96d1905c7c973a85513b0f66a64346679c1bc5f0279ef0683a3",
+        "docs/development/getting-started.md": "f7a1911158bdf83f860a0bea12862ede3739677e61643c8ea28cfa2d23c0eedb",
+        "docs/development/git-and-codex-requirements.md": "654cc0a070e3ec4b7f9a9900d79f8f91bbf5332694415c81c6c49b49b4ec2b73",
+        "docs/development/repository-layout.md": "1558bc7ac10338f53c74282dd1c029d69fbbe6e92755a3c1f872a22e39f507ba",
+        "docs/development/validation-and-quality.md": "f54d6bdbd646a55687b5a0a145e3894af4e9130b094cdef9c539a85e1d45e6dc",
+        "docs/README.md": "05997bf5527c0d236486398a06e8fd5e5bb4dc2592bcdb48a2fff31c7c40f819",
+        "README.md": "c4ea413b05a9cf077516454e4d6a383f050221337d87c0e613cd46cadcbd11a6"
+      }
+    }
+  },
+  "note": "Runtime docs trial only; protected reusable library/locks retain baseline. No live adoption or lifecycle event.",
+  "repository_links": {
+    "checked": 34,
+    "failures": []
+  },
+  "final": {
+    "final-TADp-tadp_protect": {
+      "cwd": "C:\\Users\\User\\PycharmProjects\\TADp",
+      "command": [
+        "C:\\Users\\User\\PycharmProjects\\TADp\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\User\\PycharmProjects\\TADp\\TADp\\tools\\tadp_protect.py",
+        "check",
+        "TADp"
+      ],
+      "exit": 0,
+      "log": "final-TADp-tadp_protect.log"
+    },
+    "final-TADp-tadp_validate": {
+      "cwd": "C:\\Users\\User\\PycharmProjects\\TADp",
+      "command": [
+        "C:\\Users\\User\\PycharmProjects\\TADp\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\User\\PycharmProjects\\TADp\\TADp\\tools\\tadp_validate.py",
+        "TADp",
+        "--json"
+      ],
+      "exit": 0,
+      "log": "final-TADp-tadp_validate.log"
+    },
+    "final-protocol-tadp_protect": {
+      "cwd": "C:\\Users\\User\\PycharmProjects\\TADp",
+      "command": [
+        "C:\\Users\\User\\PycharmProjects\\TADp\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\User\\PycharmProjects\\TADp\\protocol\\tools\\tadp_protect.py",
+        "check",
+        "protocol"
+      ],
+      "exit": 0,
+      "log": "final-protocol-tadp_protect.log"
+    },
+    "final-protocol-tadp_validate": {
+      "cwd": "C:\\Users\\User\\PycharmProjects\\TADp",
+      "command": [
+        "C:\\Users\\User\\PycharmProjects\\TADp\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\User\\PycharmProjects\\TADp\\protocol\\tools\\tadp_validate.py",
+        "protocol",
+        "--json"
+      ],
+      "exit": 1,
+      "log": "final-protocol-tadp_validate.log"
+    },
+    "repository_links": {
+      "checked": 34,
+      "failures": []
+    },
+    "content_drift": [],
+    "excluded_tree_drift": {}
+  }
+}

@@ -1,0 +1,271 @@
+# Getting started with TADp
+
+## Audience
+
+This is the complete portable procedure for installing TADp and operating it
+in a new or existing project. It is explanatory; the
+[governing suite](../../evidence/authoritative/LLM/00_Codex_Invariant_Suite_Index.md)
+owns requirements. Examples are reference-only: they create no actual project,
+owner appointment, decision, adoption, acceptance, execution or verification.
+
+## Required software and access
+
+Use **Git and Codex**, with access to project instructions, evidence, Git state,
+human decision makers and permitted edits/checks. Python 3 runs bundled checks;
+synchronization requires Python 3.11 or later. Other tools need a recorded
+[compatibility assessment](adapting-other-tools.md).
+
+Select installation root `P` explicitly and discover enclosing Git root `G`.
+P can equal G or be nested, such as `G/projects/widget`. A nested installation
+uses the enclosing Git history and needs no nested repository. Resolve paths,
+reject escaping links/junctions and preserve parent/sibling instructions and
+files. Git identity does not broaden project authority. See
+[specification 05](../../evidence/authoritative/LLM/05_Codex_Git_Workflow_Specification.md#requirement).
+
+## Choose an adoption path
+
+Installation, adoption and migration are distinct events. Existing projects
+retain recorded compatible revisions and claims until explicitly migrated.
+Every TADp task applies the
+[keyword contract](../../evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md);
+reading its examples activates no directive or gate exception.
+
+### Use this repository as the TADp reference implementation
+
+Compatibility entry point: maintaining a protocol source repository follows
+that repository's contributor documentation and expressly authorized
+candidate/delivery boundaries. This project-use guide grants no generic
+maintenance authority. Continue below to install TADp in a consuming project.
+
+### Adopt TADp in an existing product repository
+
+Inspect existing instructions, Git state, actual branches, integration
+configuration, hooks and selected P contents first. Pin the actual immutable
+distribution commit and inspect its component set. Review collisions before
+copying; reconcile instructions without weakening either set and preserve
+unrelated files. Keep recovery bytes outside the intended overwrite set.
+
+For a new empty destination the following manual mapping applies. Existing
+destinations need file-by-file reconciliation; these examples are not a merge
+algorithm. `SOURCE` is the inspected distribution directory at that pinned
+commit, wherever obtained, not a development project's populated records.
+
+| Source relative to SOURCE | Destination relative to P | Handling |
+|---|---|---|
+| `template/` (complete) | `template/` | Preserve every file, scoped AGENTS.md, workflow prompts and outer .tadp-lock.json; do not specialize |
+| Contents of `template/project/` | `.` | Include dotfiles, .githooks/, .gitattributes, project AGENTS.md, prompts/AGENTS.md and prompts/README.md, and .template.md sources |
+| `template/project/template/README.md` | Remains inside the copied library | Nonrecursive placeholder; do not overwrite the complete installed template/README.md with it |
+| `template/project/evidence/authoritative/LLM/` | `evidence/authoritative/LLM/` (already in scaffold contents) | Keep the complete embedded suite, scoped guard and matching .tadp-lock.json unchanged; do not overlay a different suite |
+| `docs/` | `docs/` | Portable adoption, operating and migration guides |
+| `tools/` | `tools/` | Protection, validation and all imported runtime modules and tool documentation |
+| `tests/` | `tests/` | Applicable distribution regressions and fixtures; a scaffold's tests/README alone is not coverage |
+
+Copy scaffold contents first except its placeholder `template/` directory;
+then the complete outer library and other mapped components. The embedded
+authoritative suite is installed by the scaffold copy. Do not union it with
+the distribution's separately locked suite: even a leftover README changes
+the protected file set. An older source without a complete embedded suite
+needs its own reviewed exact assembly plan. Select sources
+at one coherent pinned revision. Keep licenses and provenance. Specialize
+working record copies outside protected sources. No populated profile,
+decision, realization, initiative, product or test outcome is inherited.
+
+The inspected synchronization tool supports existing selected targets;
+consult [the tool reference](../../tools/README.md). Its default authority is
+the local locked template; remote refresh is explicit. It does not install the
+distribution's full regression tree. Manual copying here is the demonstrated
+complete documentation/regression assembly; another command need not install
+the same payload. Never refresh locks to conceal unexplained drift. Existing
+unlocked installations use [integrity migration](../guides/protected-source-integrity-migration.md).
+
+### Start a new repository
+
+Initialize Git in G and retain an initial baseline commit before initiative
+work. Select P within that worktree, then follow the same component map and
+adoption process. Discover actual branch names rather than assuming main/master
+or a hosting provider.
+
+## Worked installation example
+
+Reference-only PowerShell for an empty P. Replace placeholders before running.
+`$TadpPython` is the actual configured interpreter returned by environment
+tooling. `$Source` is an already inspected local distribution at the verified
+commit. No network, hook activation or protected-source revision is implied.
+
+```powershell
+# Working directory: inspected source Git worktree, outside the target.
+$DistributionCommit = '<actual immutable commit>'
+git rev-parse HEAD
+# Compare that output to DistributionCommit; inspect status before copying.
+$Source = '<absolute distribution directory at that commit>'
+$GitRoot = '<absolute target Git worktree>'
+$ProjectRoot = $GitRoot   # Root installation: P = G
+# Nested variant instead: $ProjectRoot = Join-Path $GitRoot 'projects/widget'
+$TadpPython = '<configured Python executable>'
+
+# Working directory: target G. NEW project only, if not already in Git:
+# git init
+# Create/review your initial files; stage and commit the selected baseline.
+# Existing projects retain history; do not initialize nested Git inside P.
+Set-Location -LiteralPath $GitRoot
+git rev-parse --show-toplevel
+git status --short --branch
+git config --show-origin --get core.hooksPath
+# No configured value makes that command exit 1; inspect default hooks too.
+New-Item -ItemType Directory -Force -Path $ProjectRoot | Out-Null
+
+# Only after collision review establishes an EMPTY destination:
+Get-ChildItem -LiteralPath (Join-Path $Source 'template/project') -Force |
+    Where-Object Name -ne 'template' |
+    Copy-Item -Destination $ProjectRoot -Recurse -Force
+Copy-Item -LiteralPath (Join-Path $Source 'template') -Destination $ProjectRoot -Recurse
+# The complete embedded authoritative suite and its lock are already copied.
+# Do not overlay the separately locked distribution suite.
+foreach ($Component in @('docs', 'tools', 'tests')) {
+    New-Item -ItemType Directory -Force -Path (Join-Path $ProjectRoot $Component) | Out-Null
+    Get-ChildItem -LiteralPath (Join-Path $Source $Component) -Force |
+        Copy-Item -Destination (Join-Path $ProjectRoot $Component) -Recurse -Force
+}
+
+# Working directory: selected P, not an inferred Git root.
+Set-Location -LiteralPath $ProjectRoot
+& $TadpPython tools/tadp_protect.py check .
+& $TadpPython tools/tadp_validate.py .
+& $TadpPython -m unittest discover -s tests
+```
+
+These commands include dotfiles and copy contents into existing component
+directories, avoiding extra `docs/docs` or `tools/tools` levels. For populated
+P plan individual merges instead. Retain source identity and hashes in actual
+installation evidence; the example's placeholders are not a provenance record.
+
+## Project layout and ownership
+
+```text
+G/                                  actual Git root
+`-- [optional project prefix]/      P; empty prefix means P = G
+    |-- AGENTS.md and README.md
+    |-- project-profile.md          actual ownership and adoption
+    |-- evidence/evidence-register.md
+    |-- evidence/authoritative/LLM/ guarded suite and lock
+    |-- evidence/non-authoritative/realizations/
+    |-- initiatives/
+    |   |-- version-scopes.md, initiative-index.md, status.md
+    |   |-- version-scope-migration-ledger.md
+    |   |-- version-correlation-migration-ledger.md
+    |   |-- work-conflicts.md
+    |   `-- <scope>/<type>/<id-and-slug>/
+    |-- products/                   records link actual deliverables
+    |-- prompts/                    project-local instructions
+    |-- template/                   protected library and lock
+    |   `-- prompts/                protected stages 0 through 13
+    `-- docs/, tools/, tests/, .githooks/
+```
+
+Create live records from their canonical sources only when triggered; the tree
+does not invent events. The [coverage map](../../template/TEMPLATE-COVERAGE.md)
+selects profiles, evidence registers, scope/membership/status records, ledgers,
+products and decisions. Record actual human owners and approval roles; no
+source-repository appointment is inherited. Evidence sources retain their
+named authorities. See [project layout](repository-layout.md).
+
+Project-local `prompts/` preserves its installed guard. It is distinct from
+protected `template/prompts/` and any source repository's maintenance prompts.
+Copying or changing cwd confers no generic maintenance/outside-project authority.
+
+## Adoption and migration
+
+Record the distribution commit, installed baseline, actual Git root/prefix,
+project boundary, owners, integration conventions and authority in the profile
+and linked evidence. Obtain explicit human prospective adoption of the actual
+governing commit; capture the pre-adoption coherence baseline separately.
+Establish applicable ledgers and coordination records before scope allocation.
+Give every legacy record a complete Unmigrated, Deferred or separately
+authorized migration disposition. Preserve prior claims, revisions, sources,
+branches and paths. Installation and adoption accept no initiative, change no
+lifecycle, and release no product.
+
+Consult [installation-root adoption](../guides/project-root-installation-migration.md),
+[scope operation](../guides/version-scope-migration.md),
+[correlation migration](../guides/version-realization-correlation-migration.md),
+[coherence adoption](../guides/initiative-coherence-migration.md),
+[keyword adoption](../guides/prompt-keywords-migration.md) and
+[local prompt migration](../guides/project-local-prompts-migration.md) as applicable.
+
+For the worked example, the following record sketch is reference-only. Replace
+each value from actual evidence and use the canonical profile/decision sources;
+the sketch supplies no human response or live adoption event.
+
+| Example record | Illustrative content to obtain and record |
+|---|---|
+| `project-profile.md`: roots | P=`<selected project directory>`; G=`<Git-reported root>`; prefix=`<empty or projects/widget>` |
+| Profile: source | Governing revision=`<verified immutable distribution commit>`; installation evidence=`<component map and actual hashes>` |
+| Profile: people and Git | Owner/approval authority=`<actual human appointment or delegation>`; integration base=`<discovered and coordinated branch>` |
+| Adoption receipt | Authority=`<actual human responder and role>`; exact instruction=`<actual prospective adoption response>`; effective event=`<actual event/date>` |
+| Coherence baseline | `<actual pre-adoption Git commit>`, retained separately from the distribution source revision |
+| Migration ledgers | `<each actual legacy record>` -> `Unmigrated`, `Deferred` or explicitly authorized migration with its evidence; new projects record the actual empty legacy inventory |
+
+For example, a nested installation's prefix could be `projects/widget` while
+its distribution commit identifies an entirely different source repository.
+The project retains its own Git baseline and appointments. Create and reconcile
+these records only after their real decisions/evidence exist; none accepts the
+first pilot initiative.
+
+## First validation
+
+Run the checks from P using the configured interpreter, against that exact
+installation, pinned locks, Git history and actual records. Protection should
+exit 0 with zero errors. Structural validation exits 0 without errors, 1 with
+errors, or 2 for invalid inputs; warnings remain visible. Regressions report
+actual pass/fail/skip counts. Run project-specific product checks separately,
+recording commands/results against the pilot's accepted claim. Structural
+checks prove neither human acceptance nor product correctness. Tests cannot
+supply missing facts, authority or actual work.
+
+Investigate failures before allocating governed work. Compare with the pinned
+baseline and distinguish inherited findings. Never disable checks or refresh
+locks to hide drift. See [validation and quality](validation-and-quality.md).
+
+## Git and hooks
+
+Discover branches, shared Git configuration and existing default/custom hooks
+at G. Coordinate dispatch manually before explicit activation. Root P uses
+Git-relative `.githooks`; nested `projects/widget` uses
+`projects/widget/.githooks`. An explicitly authorized
+`git -C <G> config core.hooksPath <verified-relative-hook-path>` changes shared
+configuration; copying files does not activate it. Set `TADP_PYTHON` to the
+configured executable if needed. See [Git and Codex](git-and-codex-requirements.md).
+
+## First initiative
+
+Choose one narrow pilot outcome, owner, authority boundary and acceptance claim.
+Capture non-authoritative realization notes with precise provenance; a human
+intake instruction delegates adopted fit/routing, not acceptance. Use the
+[numbered workflow](../../template/prompts/README.md) in order: 0 realization
+fit/preparation; 1 proposal; 2 proposal alignment; 3 initial suite; 4 initiative
+alignment; 5 human assumption review; 6 human question review; 7 explicit human
+acceptance of the exact baseline. Retain answers in linked receipts. Apply
+[prerequisite recovery](../guides/template-prerequisites-migration.md) without
+inventing missing decisions or identity.
+
+After acceptance follow exactly one declared path: implementation 8 through 10
+(including separately read-only readiness), design 11, or planning 12.
+Implementation changes products; design changes its declared specifications;
+planning creates initiative-local evidence. Completion requires type-specific
+execution/delivery records, exact verification, coherence feedback and completion
+evidence. Stage 13 finalizes a truthfully completed initiative and creates no
+acceptance/completion by itself. See [initiative operation](initiative-workflow.md).
+
+## Before inviting contributors
+
+Record integration and dedicated/shared scope execution assignments, captured
+bases, initiative-specific commits and verification. Coordinate shared Git
+state and preserve unrelated work. Include proposed/partial work in coherence
+reviews, record conflicts and require authorized reopening before refining
+closed claims. See [scope operation](../guides/version-scope-migration.md) and
+[coherence guidance](../guides/initiative-coherence-migration.md).
+
+Confirm approval roles, evidence owners, protected-source review and product
+checks. Local child-to-parent integration needs its identified close/finalize
+authority and passed gates. Further integration, remote writes, publication
+and release retain separate authority. A pilot does not silently migrate other work.

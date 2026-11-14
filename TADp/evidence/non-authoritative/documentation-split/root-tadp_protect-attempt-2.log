@@ -1,0 +1,2 @@
+ERROR TADP025 evidence/authoritative/LLM/README.md: protected source is not recorded in its lock
+TADp protected-source check: 1 error(s)

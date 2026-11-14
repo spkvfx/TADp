@@ -1,0 +1,77 @@
+# Developing TADp
+
+This compatibility guide now points installed projects to their operating
+guides. Detailed contributor procedures belong to the TADp source repository's
+repository documentation. That optional context is not required to install or
+operate this project. Copying framework reports or maintenance prompts does
+not create project history, adoption, acceptance or maintenance authority.
+
+The original headings remain so existing links continue to resolve. These
+explanations are non-authoritative; the
+[governing suite](../../evidence/authoritative/LLM/00_Codex_Invariant_Suite_Index.md)
+owns the rules.
+
+## Change classification
+
+For ordinary project work, start with [getting started](getting-started.md),
+[architecture and authority](architecture-and-authority.md) and
+[initiative operation](initiative-workflow.md). Generic framework changes need
+separately scoped source-repository maintenance authority.
+
+## Before editing
+
+Read the installed project instructions and applicable suite, inspect Git,
+identify the exact project boundary, and preserve unrelated work. See
+[Git and Codex requirements](git-and-codex-requirements.md). A nested project
+uses its enclosing Git worktree without inheriting authority over it.
+
+## Coordinated update surfaces
+
+Use the [project layout](repository-layout.md) to find canonical record owners.
+Record source provenance and affected consumers. Installation, synchronization
+and prospective adoption are distinct; preserve legacy records under their
+recorded revision until an authorized migration.
+
+## Template rules
+
+Use the [coverage map](../../template/TEMPLATE-COVERAGE.md) to select record
+sources. Specialize destination copies outside the protected library.
+The [prerequisite guide](../guides/template-prerequisites-migration.md)
+explains evidence-backed preparation without inventing missing facts or gates.
+
+## Protected-source changes
+
+Run the ordinary [integrity checks](validation-and-quality.md#protected-source-workflow).
+Unexpected drift is evidence to investigate, not permission to refresh a lock.
+Exact reusable-source or invariant changes require explicit human authority;
+ordinary project work cannot modify the protected source in place.
+
+## Prompt rules
+
+Installed project-local `prompts/` is distinct from the protected numbered
+workflow in `template/prompts/` and from a source repository's maintenance
+prompts. Copying a prompt or changing cwd grants no generic maintenance
+authority. Apply the [keyword contract](../../evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md)
+to every task; referenced examples remain inert.
+
+## Git workflow for TADp changes
+
+Project execution follows its actual scope and branch assignments, captured
+bases and traceable commits. See [scope operation](../guides/version-scope-migration.md)
+and [Git requirements](git-and-codex-requirements.md). A source repository's
+branch names and contributor procedures are not assignments for this project.
+
+## Verification checklist
+
+Use [validation and quality](validation-and-quality.md) for configured-interpreter
+commands, structural checks, regressions and limitations. Run the project's
+own product checks as required by its accepted work. Passing a structural
+check supplies neither human acceptance nor proof of product correctness.
+
+## Releasing a protocol revision
+
+Source-repository publication and release are separately authorized operations.
+An installed project records its actual governing revision and adoption
+authority; copied files, validation or initiative completion establish no
+protocol release. Preserve the earlier baseline when adopting a revision,
+following the applicable [migration guides](../README.md#operating-guides).

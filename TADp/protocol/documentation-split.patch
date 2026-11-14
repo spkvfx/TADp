@@ -1,0 +1,954 @@
+--- a/docs/development/developing-tadp.md
++++ b/docs/development/developing-tadp.md
+@@ -1,0 +2,11 @@
++
++This compatibility guide now points installed projects to their operating
++guides. Detailed contributor procedures belong to the TADp source repository's
++repository documentation. That optional context is not required to install or
++operate this project. Copying framework reports or maintenance prompts does
++not create project history, adoption, acceptance or maintenance authority.
++
++The original headings remain so existing links continue to resolve. These
++explanations are non-authoritative; the
++[governing suite](../../evidence/authoritative/LLM/00_Codex_Invariant_Suite_Index.md)
++owns the rules.
+@@ -5,14 +16,4 @@
+-Classify a proposed change before editing. The classification determines the
+-authority and reconciliation required.
+-
+-| Change class | Examples | Required handling |
+-|---|---|---|
+-| Authoritative protocol change | Evidence precedence, lifecycle transition, Git rule, scope trigger, human-decision rule | Explicit human instruction, preserved prior state, affected-scope analysis, and coordinated consumer updates |
+-| Reusable workflow change | Prompt precondition, template field, standard record, project scaffold | Compatibility check against all authoritative specifications and updates to prompts, templates, docs, validator, and tests as applicable |
+-| Validator change | New structural rule, finding code, parsing behavior | Documented protocol basis and regression coverage |
+-| Explanatory documentation | Clarification, tutorial, example, developer guidance | Must remain compatible with authority and must not create a new rule implicitly |
+-| Focused guide | Migration or decomposition procedure | Preserve evidence standing and link to the governing specification |
+-
+-Do not place an authoritative rule in a guide to avoid the invariant revision
+-process. Do not change an invariant merely because an existing template or
+-implementation is inconvenient.
++For ordinary project work, start with [getting started](getting-started.md),
++[architecture and authority](architecture-and-authority.md) and
++[initiative operation](initiative-workflow.md). Generic framework changes need
++separately scoped source-repository maintenance authority.
+@@ -22,11 +23,4 @@
+-1. Read `../../AGENTS.md` and the suite index.
+-2. Read every authoritative specification that governs the intended change.
+-3. Inspect Git branch and complete worktree state.
+-4. Search for every consumer of the term, path, status, field, or workflow
+-   being changed.
+-5. Decide whether existing initiatives, projects, or products require a
+-   migration note.
+-6. Confirm that the requested scope authorizes any authoritative change.
+-
+-If authorization is missing, limit work to analysis or a proposal and ask for
+-the required human decision.
++Read the installed project instructions and applicable suite, inspect Git,
++identify the exact project boundary, and preserve unrelated work. See
++[Git and Codex requirements](git-and-codex-requirements.md). A nested project
++uses its enclosing Git worktree without inheriting authority over it.
+@@ -36,17 +30,4 @@
+-A material protocol change may affect:
+-
+-- `../../evidence/authoritative/LLM` specifications and index;
+-- root and reusable `../../AGENTS.md` instructions;
+-- canonical initiative templates;
+-- project templates and profile fields;
+-- the shared workflow contract;
+-- one or more numbered prompts;
+-- the validator and regression tests;
+-- root and developer documentation;
+-- migration or decomposition guidance; and
+-- canonical version, realization-suite, initiative, and branch correlation
+-  records, including any pre-effective migration ledger; and
+-- existing initiative records that explicitly adopt the changed revision.
+-
+-Not every change touches every surface. Review them all and document why an
+-apparently related consumer is unaffected.
++Use the [project layout](repository-layout.md) to find canonical record owners.
++Record source provenance and affected consumers. Installation, synchronization
++and prospective adoption are distinct; preserve legacy records under their
++recorded revision until an authorized migration.
+@@ -56,15 +37,4 @@
+-- Select the existing reusable source from the
+-  [canonical coverage and use map](../../template/TEMPLATE-COVERAGE.md),
+-  including README templates, embedded sections and conditional records.
+-  Add a source only for a requirement established by its owning specification;
+-  keep the map's source, destination, trigger, owner, evidence and verification
+-  locators coherent. Instances belong outside protected `template/`.
+-- Maintain one canonical initiative suite for all initiative types.
+-- Preserve required sections; use an explicit not-applicable explanation
+-  instead of deleting a field.
+-- Keep later-stage records out of initial initiative creation.
+-- Use double-braced tokens in record templates and single-braced placeholders
+-  in executable prompt blocks according to existing conventions.
+-- Never add a project-specific name, path, decision ID, or authority assumption
+-  to a reusable template.
+-- Keep subinitiatives supported without reintroducing umbrella initiatives.
++Use the [coverage map](../../template/TEMPLATE-COVERAGE.md) to select record
++sources. Specialize destination copies outside the protected library.
++The [prerequisite guide](../guides/template-prerequisites-migration.md)
++explains evidence-backed preparation without inventing missing facts or gates.
+@@ -74,22 +44,4 @@
+-`template/**` and `evidence/authoritative/LLM/**` are protected source trees.
+-Their scoped `AGENTS.md` files and SHA-256 locks apply even when the intended
+-change is otherwise authorized. Before editing either tree:
+-
+-1. Confirm an explicit human instruction identifies the exact reusable
+-   template or invariant change. A request to use the source is not permission
+-   to revise it.
+-2. Capture the prior lock, Git revision, affected consumers, compatibility and
+-   migration effects, and required verification.
+-3. Make the coherent source and consumer changes without weakening unrelated
+-   rules or overwriting historical authority.
+-4. Run regression tests and full validation except for the expected stale-lock
+-   findings.
+-5. Refresh only the affected lock with `tadp_protect.py refresh`, using the
+-   human instruction or decision record as its `--authority` value.
+-6. Re-run the protected-source check, validator, and regression tests.
+-7. Commit through the staged guard using the same authority value. Do not leave
+-   the override environment variables set for later work.
+-
+-The lock refresh is the final recording step, not a way to decide whether a
+-change was authorized. Existing adopters use the protected-source migration
+-guide; do not silently rewrite their baseline.
++Run the ordinary [integrity checks](validation-and-quality.md#protected-source-workflow).
++Unexpected drift is evidence to investigate, not permission to refresh a lock.
++Exact reusable-source or invariant changes require explicit human authority;
++ordinary project work cannot modify the protected source in place.
+@@ -99,35 +51,5 @@
+-The canonical
+-[prompt keyword specification](../../evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md)
+-owns recognized names and interpretation for every TADp request. New names
+-require precise human revision authority, a complete **Adding a keyword**
+-entry, consumer reconciliation, verification, and governed lock refresh.
+-Keep machine consumers registry-driven; no competing allowlist or unprotected
+-override registry may redefine behavior. An inferred keyword or invariant
+-exception needs explicit confirmation before use. Distinguish numbered
+-workflow stages and reference inventories from operative action lists.
+-
+-Every numbered prompt must:
+-
+-- link and apply `WORKFLOW-CONTRACT.md`;
+-- declare its documentary prerequisite roles and apply the shared preparation
+-  procedure before substantive entry checks; recover earlier paperwork only
+-  through its owning activity and actual gates, then validate and recheck;
+-- include a clearly marked reference-only example;
+-- use “attached initiative” in example invocation language;
+-- use the `&#123;initiative&#125;` placeholder and other declared placeholders in
+-  the executable block;
+-- preserve stage-specific preconditions, edit boundaries, verification, and
+-  reporting;
+-- distinguish evidence from human decisions; and
+-- stop instead of silently expanding authority.
+-
+-Centralize only genuinely shared rules. Do not shorten a prompt until the
+-result still defines the task with enough detail to behave consistently.
+-
+-Preserve the distinction between constructible paperwork and missing facts,
+-identity, decisions, work or verification. Stage 9 may have preceding
+-owning-stage preparation; the readiness assessment itself remains read-only
+-and uses its source as a response shape. Review the actual prompt semantics
+-alongside the structural checks in `tadp_templates.py`; passing fixture cases
+-cannot establish genuine authority or complete evidence. See the
+-[prerequisite revision guide](../guides/template-prerequisites-migration.md).
++Installed project-local `prompts/` is distinct from the protected numbered
++workflow in `template/prompts/` and from a source repository's maintenance
++prompts. Copying a prompt or changing cwd grants no generic maintenance
++authority. Apply the [keyword contract](../../evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md)
++to every task; referenced examples remain inert.
+@@ -137,23 +59,4 @@
+-Use a dedicated branch for material protocol work. Preserve existing user
+-changes, commit coherent updates, and include validator results in review
+-evidence. Do not combine unrelated protocol revisions merely because they touch
+-the same README or prompt directory.
+-
+-When an authoritative revision is accepted, the commit and review description
+-should identify the prior rule, new rule, human authority, affected consumers,
+-migration consequence, and verification.
+-
+-When a revision defines a Git commit as its effective point, keep the
+-authoritative rule, all affected reusable consumers, validator coverage,
+-scoped distribution documentation and refreshed protected locks in that coherent
+-commit. Repository maintenance targets the protocol; the separate example
+-repository is not a synchronization or verification target. Its presence,
+-parity or adoption is not established by a protocol commit.
+-Record the resulting immutable commit ID in a follow-up traceability commit; do
+-not guess or predeclare the self-referential identifier.
+-
+-When the revision adds, removes, renumbers, or changes a workflow stage,
+-publish a migration guide for active initiatives. Preserve historical prompt
+-identity and require an explicit change record before an active initiative
+-mixes workflow revisions. Never rewrite a prior stage number as though the
+-initiative originally used the current workflow.
++Project execution follows its actual scope and branch assignments, captured
++bases and traceable commits. See [scope operation](../guides/version-scope-migration.md)
++and [Git requirements](git-and-codex-requirements.md). A source repository's
++branch names and contributor procedures are not assignments for this project.
+@@ -163,17 +66,4 @@
+-- [ ] Applicable authoritative specifications were read.
+-- [ ] The change classification and authority are explicit.
+-- [ ] All affected consumers were inspected.
+-- [ ] Repository-relative links resolve.
+-- [ ] Prompt examples and executable placeholders remain separated.
+-- [ ] No umbrella or multi-purpose initiative construct was introduced.
+-- [ ] Scope identity, initiative membership, exact per-note routing, active cycle,
+-      branch roles and immutable creation bases are reciprocal; legacy work has
+-      a complete disposition under its recorded compatible revision.
+-- [ ] Git and Codex requirements remain explicit.
+-- [ ] Non-Codex compatibility is not claimed without an adapter review.
+-- [ ] Protected-source locks match the reviewed template and invariant suite.
+-- [ ] Any protected-source change cites its explicit authority and migration
+-      consequence.
+-- [ ] Validator regression tests pass.
+-- [ ] Full repository validation reports zero errors.
+-- [ ] Documentation indexes reflect added, renamed, or removed documents.
++Use [validation and quality](validation-and-quality.md) for configured-interpreter
++commands, structural checks, regressions and limitations. Run the project's
++own product checks as required by its accepted work. Passing a structural
++check supplies neither human acceptance nor proof of product correctness.
+@@ -183,6 +73,5 @@
+-Before a formal TADp release, record a version or revision identifier, summarize
+-authoritative changes, identify migration requirements, preserve the earlier
+-baseline, and test the workflow on a representative narrow initiative. A
+-template edit is not complete merely because all Markdown renders correctly;
+-the workflow must remain executable and evidence-preserving.
+-
++Source-repository publication and release are separately authorized operations.
++An installed project records its actual governing revision and adoption
++authority; copied files, validation or initiative completion establish no
++protocol release. Preserve the earlier baseline when adopting a revision,
++following the applicable [migration guides](../README.md#operating-guides).
+--- /dev/null
++++ b/docs/development/README.md
+@@ -0,0 +1,77 @@
++# Developing TADp
++
++This compatibility guide now points installed projects to their operating
++guides. Detailed contributor procedures belong to the TADp source repository's
++repository documentation. That optional context is not required to install or
++operate this project. Copying framework reports or maintenance prompts does
++not create project history, adoption, acceptance or maintenance authority.
++
++The original headings remain so existing links continue to resolve. These
++explanations are non-authoritative; the
++[governing suite](../../evidence/authoritative/LLM/00_Codex_Invariant_Suite_Index.md)
++owns the rules.
++
++## Change classification
++
++For ordinary project work, start with [getting started](getting-started.md),
++[architecture and authority](architecture-and-authority.md) and
++[initiative operation](initiative-workflow.md). Generic framework changes need
++separately scoped source-repository maintenance authority.
++
++## Before editing
++
++Read the installed project instructions and applicable suite, inspect Git,
++identify the exact project boundary, and preserve unrelated work. See
++[Git and Codex requirements](git-and-codex-requirements.md). A nested project
++uses its enclosing Git worktree without inheriting authority over it.
++
++## Coordinated update surfaces
++
++Use the [project layout](repository-layout.md) to find canonical record owners.
++Record source provenance and affected consumers. Installation, synchronization
++and prospective adoption are distinct; preserve legacy records under their
++recorded revision until an authorized migration.
++
++## Template rules
++
++Use the [coverage map](../../template/TEMPLATE-COVERAGE.md) to select record
++sources. Specialize destination copies outside the protected library.
++The [prerequisite guide](../guides/template-prerequisites-migration.md)
++explains evidence-backed preparation without inventing missing facts or gates.
++
++## Protected-source changes
++
++Run the ordinary [integrity checks](validation-and-quality.md#protected-source-workflow).
++Unexpected drift is evidence to investigate, not permission to refresh a lock.
++Exact reusable-source or invariant changes require explicit human authority;
++ordinary project work cannot modify the protected source in place.
++
++## Prompt rules
++
++Installed project-local `prompts/` is distinct from the protected numbered
++workflow in `template/prompts/` and from a source repository's maintenance
++prompts. Copying a prompt or changing cwd grants no generic maintenance
++authority. Apply the [keyword contract](../../evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md)
++to every task; referenced examples remain inert.
++
++## Git workflow for TADp changes
++
++Project execution follows its actual scope and branch assignments, captured
++bases and traceable commits. See [scope operation](../guides/version-scope-migration.md)
++and [Git requirements](git-and-codex-requirements.md). A source repository's
++branch names and contributor procedures are not assignments for this project.
++
++## Verification checklist
++
++Use [validation and quality](validation-and-quality.md) for configured-interpreter
++commands, structural checks, regressions and limitations. Run the project's
++own product checks as required by its accepted work. Passing a structural
++check supplies neither human acceptance nor proof of product correctness.
++
++## Releasing a protocol revision
++
++Source-repository publication and release are separately authorized operations.
++An installed project records its actual governing revision and adoption
++authority; copied files, validation or initiative completion establish no
++protocol release. Preserve the earlier baseline when adopting a revision,
++following the applicable [migration guides](../README.md#operating-guides).
+--- a/docs/development/getting-started.md
++++ b/docs/development/getting-started.md
+@@ -5,2 +5,5 @@
+-This guide is for developers, architects, maintainers, and project owners who
+-are adopting TADp in a repository or changing the TADp reference implementation.
++This is the complete portable procedure for installing TADp and operating it
++in a new or existing project. It is explanatory; the
++[governing suite](../../evidence/authoritative/LLM/00_Codex_Invariant_Suite_Index.md)
++owns requirements. Examples are reference-only: they create no actual project,
++owner appointment, decision, adoption, acceptance, execution or verification.
+@@ -10,16 +13,11 @@
+-TADp has two explicit platform requirements:
+-
+-1. **Git** must be available, and the TADp installation directory must be
+-   contained in a valid Git worktree. Project root `P` may equal Git root
+-   `G` or be beneath it. Git supplies branch and history evidence without
+-   widening the project's file boundary; see
+-   [specification 05](../../evidence/authoritative/LLM/05_Codex_Git_Workflow_Specification.md#requirement).
+-2. **Codex** must be able to open and modify the repository, read `../../AGENTS.md`,
+-   inspect Git state, pause for human decisions, edit files, and run validation.
+-
+-Python 3 is required to run the bundled validator and regression tests. The
+-validator itself uses only the Python standard library. Local finalization requires no hosting connection. Humans independently manage
+-pull requests; pushes require separate authority.
+-
+-Other agents and tools are outside the guaranteed execution environment. Read
+-[Adapting TADp to other tools](adapting-other-tools.md) before substituting one.
++Use **Git and Codex**, with access to project instructions, evidence, Git state,
++human decision makers and permitted edits/checks. Python 3 runs bundled checks;
++synchronization requires Python 3.11 or later. Other tools need a recorded
++[compatibility assessment](adapting-other-tools.md).
++
++Select installation root `P` explicitly and discover enclosing Git root `G`.
++P can equal G or be nested, such as `G/projects/widget`. A nested installation
++uses the enclosing Git history and needs no nested repository. Resolve paths,
++reject escaping links/junctions and preserve parent/sibling instructions and
++files. Git identity does not broaden project authority. See
++[specification 05](../../evidence/authoritative/LLM/05_Codex_Git_Workflow_Specification.md#requirement).
+@@ -29,13 +27,5 @@
+-This reference repository stores the distributable protocol under `protocol/`
+-inside the enclosing Git repository. An adopted project installs its scaffold
+-at a selected directory inside a valid Git worktree, including the Git root.
+-Paths in links below are relative to this
+-guide; command paths are relative to the explicitly named working directory.
+-Inspect the recorded governing revision before applying installed capabilities
+-to existing work. Installation alone is not adoption or acceptance.
+-
+-Every TADp task applies the canonical
+-[prompt keyword contract](../../evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md),
+-even when no stored prompt is invoked. Existing installations use the
+-[keyword migration guide](../guides/prompt-keywords-migration.md) before
+-claiming adoption; installing the capability grants no live exception.
++Installation, adoption and migration are distinct events. Existing projects
++retain recorded compatible revisions and claims until explicitly migrated.
++Every TADp task applies the
++[keyword contract](../../evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md);
++reading its examples activates no directive or gate exception.
+@@ -45,19 +35,4 @@
+-Use this path when maintaining the protocol itself:
+-
+-1. Open the repository root in Codex.
+-2. Read the enclosing repository's `AGENTS.md`, `protocol/AGENTS.md`, and
+-   applicable directory instructions.
+-3. Read the applicable specifications under
+-   `../../evidence/authoritative/LLM`, starting with the suite index.
+-4. Inspect the Git branch, staged changes, unstaged changes, and untracked
+-   paths before editing.
+-5. Classify the intended change as an authoritative protocol change, a
+-   reusable template or prompt change, validator work, or explanatory
+-   documentation.
+-6. Update every consumer of the changed contract and run validation.
+-
+-Run checks from `protocol/`. To configure the protocol-owned hook from the
+-enclosing Git root, inspect existing configuration first, then use
+-`git config core.hooksPath protocol/.githooks`. Setup changes local Git
+-configuration; reading this guide does not perform them. Set `TADP_PYTHON` to
+-the configured interpreter for hook execution.
++Compatibility entry point: maintaining a protocol source repository follows
++that repository's contributor documentation and expressly authorized
++candidate/delivery boundaries. This project-use guide grants no generic
++maintenance authority. Continue below to install TADp in a consuming project.
+@@ -67,53 +42,38 @@
+-Use this path when TADp will govern work in another repository:
+-
+-1. Select the resolved project installation directory inside a valid Git worktree; discover the actual Git root and verified relative prefix. Preserve parent and sibling boundaries.
+-2. Copy the complete `../../template` tree to `template/` in the target. Keep
+-   its scoped `AGENTS.md` and `.tadp-lock.json` intact. If the project instead
+-   uses an external template distribution, pin an immutable revision and
+-   record it in the project profile.
+-3. Copy the contents of `../../template/project`, including `.gitattributes`,
+-   `.githooks/`, `prompts/AGENTS.md`, and `prompts/README.md`, into the
+-   target root without overwriting established project files blindly. The root
+-   copies are working scaffold files; the copies under `template/` remain
+-   protected reusable sources. Reconcile pre-existing prompt-directory
+-   instructions without weakening either set.
+-4. Copy the authoritative `../../evidence/authoritative/LLM` suite, including
+-   its scoped `AGENTS.md` and `.tadp-lock.json`, to the same path in the target.
+-5. Merge the copied `template/project/AGENTS.md` requirements with existing repository
+-   instructions. More local instructions may be stricter, but they must not
+-   weaken the authoritative TADp rules.
+-6. Copy `../../docs`, `../../tools`, and `../../tests`. This preserves the
+-   protection utility, validator, migration guidance, and regression coverage.
+-7. From the project root run `python tools/tadp_protect.py check .`.
+-   Inspect existing hooks at `G` and coordinate them manually before explicit
+-   activation. `core.hooksPath` is shared and relative to `G`; for example,
+-   use `.githooks` at a Git-root installation or `projects/widget/.githooks`
+-   at that nested project. Do not overwrite or enable parent hooks implicitly.
+-8. Create `project-profile.md` from its template and record owners, boundaries,
+-   Git conventions, evidence locations, approval authority, and the exact
+-   adopted scope-revision commit, with predecessor revision retained for legacy work.
+-9. Establish the evidence register, canonical initiative and correlation
+-   index, status view, scope registry and version-scope migration ledger before
+-   allocating the first governed scope member.
+-10. Give every pre-effective record a complete `Unmigrated`, `Deferred`, or
+-    separately authorized migration disposition. Do not infer a partial tuple.
+-11. Run a narrow pilot initiative before migrating a large body of work.
+-
+-Adopt the installation-root revision through the
+-[prospective adoption guide](../guides/project-root-installation-migration.md).
+-Existing root installations retain their paths and earlier governing revisions
+-until recorded adoption. Synchronization supports an existing `--target`
+-directory or defaults to exact cwd; see the [tool commands](../../tools/README.md).
+-
+-An existing adoption without locks must use the
+-[protected-source integrity migration](../guides/protected-source-integrity-migration.md).
+-Do not initialize a lock until a human has identified the exact template and
+-invariant baseline being accepted.
+-An existing scaffold without the root project-local prompt boundary must use
+-the [project-local prompts migration guide](../guides/project-local-prompts-migration.md).
+-The migration copies only the canonical project-local files from
+-`template/project/prompts/`; it does not copy the numbered workflow from
+-`template/prompts/`.
+-Use the
+-[version-realization-initiative correlation migration guide](../guides/version-realization-correlation-migration.md)
+-for effective-point and legacy-ledger adoption.
++Inspect existing instructions, Git state, actual branches, integration
++configuration, hooks and selected P contents first. Pin the actual immutable
++distribution commit and inspect its component set. Review collisions before
++copying; reconcile instructions without weakening either set and preserve
++unrelated files. Keep recovery bytes outside the intended overwrite set.
++
++For a new empty destination the following manual mapping applies. Existing
++destinations need file-by-file reconciliation; these examples are not a merge
++algorithm. `SOURCE` is the inspected distribution directory at that pinned
++commit, wherever obtained, not a development project's populated records.
++
++| Source relative to SOURCE | Destination relative to P | Handling |
++|---|---|---|
++| `template/` (complete) | `template/` | Preserve every file, scoped AGENTS.md, workflow prompts and outer .tadp-lock.json; do not specialize |
++| Contents of `template/project/` | `.` | Include dotfiles, .githooks/, .gitattributes, project AGENTS.md, prompts/AGENTS.md and prompts/README.md, and .template.md sources |
++| `template/project/template/README.md` | Remains inside the copied library | Nonrecursive placeholder; do not overwrite the complete installed template/README.md with it |
++| `template/project/evidence/authoritative/LLM/` | `evidence/authoritative/LLM/` (already in scaffold contents) | Keep the complete embedded suite, scoped guard and matching .tadp-lock.json unchanged; do not overlay a different suite |
++| `docs/` | `docs/` | Portable adoption, operating and migration guides |
++| `tools/` | `tools/` | Protection, validation and all imported runtime modules and tool documentation |
++| `tests/` | `tests/` | Applicable distribution regressions and fixtures; a scaffold's tests/README alone is not coverage |
++
++Copy scaffold contents first except its placeholder `template/` directory;
++then the complete outer library and other mapped components. The embedded
++authoritative suite is installed by the scaffold copy. Do not union it with
++the distribution's separately locked suite: even a leftover README changes
++the protected file set. An older source without a complete embedded suite
++needs its own reviewed exact assembly plan. Select sources
++at one coherent pinned revision. Keep licenses and provenance. Specialize
++working record copies outside protected sources. No populated profile,
++decision, realization, initiative, product or test outcome is inherited.
++
++The inspected synchronization tool supports existing selected targets;
++consult [the tool reference](../../tools/README.md). Its default authority is
++the local locked template; remote refresh is explicit. It does not install the
++distribution's full regression tree. Manual copying here is the demonstrated
++complete documentation/regression assembly; another command need not install
++the same payload. Never refresh locks to conceal unexplained drift. Existing
++unlocked installations use [integrity migration](../guides/protected-source-integrity-migration.md).
+@@ -123,4 +83,130 @@
+-Create the project directory, initialize Git, and make an initial baseline
+-commit before beginning initiative work. Then follow the existing-repository
+-adoption path. Do not begin from an untracked directory and later attempt to
+-reconstruct the base branch or original evidence state.
++Initialize Git in G and retain an initial baseline commit before initiative
++work. Select P within that worktree, then follow the same component map and
++adoption process. Discover actual branch names rather than assuming main/master
++or a hosting provider.
++
++## Worked installation example
++
++Reference-only PowerShell for an empty P. Replace placeholders before running.
++`$TadpPython` is the actual configured interpreter returned by environment
++tooling. `$Source` is an already inspected local distribution at the verified
++commit. No network, hook activation or protected-source revision is implied.
++
++```powershell
++# Working directory: inspected source Git worktree, outside the target.
++$DistributionCommit = '<actual immutable commit>'
++git rev-parse HEAD
++# Compare that output to DistributionCommit; inspect status before copying.
++$Source = '<absolute distribution directory at that commit>'
++$GitRoot = '<absolute target Git worktree>'
++$ProjectRoot = $GitRoot   # Root installation: P = G
++# Nested variant instead: $ProjectRoot = Join-Path $GitRoot 'projects/widget'
++$TadpPython = '<configured Python executable>'
++
++# Working directory: target G. NEW project only, if not already in Git:
++# git init
++# Create/review your initial files; stage and commit the selected baseline.
++# Existing projects retain history; do not initialize nested Git inside P.
++Set-Location -LiteralPath $GitRoot
++git rev-parse --show-toplevel
++git status --short --branch
++git config --show-origin --get core.hooksPath
++# No configured value makes that command exit 1; inspect default hooks too.
++New-Item -ItemType Directory -Force -Path $ProjectRoot | Out-Null
++
++# Only after collision review establishes an EMPTY destination:
++Get-ChildItem -LiteralPath (Join-Path $Source 'template/project') -Force |
++    Where-Object Name -ne 'template' |
++    Copy-Item -Destination $ProjectRoot -Recurse -Force
++Copy-Item -LiteralPath (Join-Path $Source 'template') -Destination $ProjectRoot -Recurse
++# The complete embedded authoritative suite and its lock are already copied.
++# Do not overlay the separately locked distribution suite.
++foreach ($Component in @('docs', 'tools', 'tests')) {
++    New-Item -ItemType Directory -Force -Path (Join-Path $ProjectRoot $Component) | Out-Null
++    Get-ChildItem -LiteralPath (Join-Path $Source $Component) -Force |
++        Copy-Item -Destination (Join-Path $ProjectRoot $Component) -Recurse -Force
++}
++
++# Working directory: selected P, not an inferred Git root.
++Set-Location -LiteralPath $ProjectRoot
++& $TadpPython tools/tadp_protect.py check .
++& $TadpPython tools/tadp_validate.py .
++& $TadpPython -m unittest discover -s tests
++```
++
++These commands include dotfiles and copy contents into existing component
++directories, avoiding extra `docs/docs` or `tools/tools` levels. For populated
++P plan individual merges instead. Retain source identity and hashes in actual
++installation evidence; the example's placeholders are not a provenance record.
++
++## Project layout and ownership
++
++```text
++G/                                  actual Git root
++`-- [optional project prefix]/      P; empty prefix means P = G
++    |-- AGENTS.md and README.md
++    |-- project-profile.md          actual ownership and adoption
++    |-- evidence/evidence-register.md
++    |-- evidence/authoritative/LLM/ guarded suite and lock
++    |-- evidence/non-authoritative/realizations/
++    |-- initiatives/
++    |   |-- version-scopes.md, initiative-index.md, status.md
++    |   |-- version-scope-migration-ledger.md
++    |   |-- version-correlation-migration-ledger.md
++    |   |-- work-conflicts.md
++    |   `-- <scope>/<type>/<id-and-slug>/
++    |-- products/                   records link actual deliverables
++    |-- prompts/                    project-local instructions
++    |-- template/                   protected library and lock
++    |   `-- prompts/                protected stages 0 through 13
++    `-- docs/, tools/, tests/, .githooks/
++```
++
++Create live records from their canonical sources only when triggered; the tree
++does not invent events. The [coverage map](../../template/TEMPLATE-COVERAGE.md)
++selects profiles, evidence registers, scope/membership/status records, ledgers,
++products and decisions. Record actual human owners and approval roles; no
++source-repository appointment is inherited. Evidence sources retain their
++named authorities. See [project layout](repository-layout.md).
++
++Project-local `prompts/` preserves its installed guard. It is distinct from
++protected `template/prompts/` and any source repository's maintenance prompts.
++Copying or changing cwd confers no generic maintenance/outside-project authority.
++
++## Adoption and migration
++
++Record the distribution commit, installed baseline, actual Git root/prefix,
++project boundary, owners, integration conventions and authority in the profile
++and linked evidence. Obtain explicit human prospective adoption of the actual
++governing commit; capture the pre-adoption coherence baseline separately.
++Establish applicable ledgers and coordination records before scope allocation.
++Give every legacy record a complete Unmigrated, Deferred or separately
++authorized migration disposition. Preserve prior claims, revisions, sources,
++branches and paths. Installation and adoption accept no initiative, change no
++lifecycle, and release no product.
++
++Consult [installation-root adoption](../guides/project-root-installation-migration.md),
++[scope operation](../guides/version-scope-migration.md),
++[correlation migration](../guides/version-realization-correlation-migration.md),
++[coherence adoption](../guides/initiative-coherence-migration.md),
++[keyword adoption](../guides/prompt-keywords-migration.md) and
++[local prompt migration](../guides/project-local-prompts-migration.md) as applicable.
++
++For the worked example, the following record sketch is reference-only. Replace
++each value from actual evidence and use the canonical profile/decision sources;
++the sketch supplies no human response or live adoption event.
++
++| Example record | Illustrative content to obtain and record |
++|---|---|
++| `project-profile.md`: roots | P=`<selected project directory>`; G=`<Git-reported root>`; prefix=`<empty or projects/widget>` |
++| Profile: source | Governing revision=`<verified immutable distribution commit>`; installation evidence=`<component map and actual hashes>` |
++| Profile: people and Git | Owner/approval authority=`<actual human appointment or delegation>`; integration base=`<discovered and coordinated branch>` |
++| Adoption receipt | Authority=`<actual human responder and role>`; exact instruction=`<actual prospective adoption response>`; effective event=`<actual event/date>` |
++| Coherence baseline | `<actual pre-adoption Git commit>`, retained separately from the distribution source revision |
++| Migration ledgers | `<each actual legacy record>` -> `Unmigrated`, `Deferred` or explicitly authorized migration with its evidence; new projects record the actual empty legacy inventory |
++
++For example, a nested installation's prefix could be `projects/widget` while
++its distribution commit identifies an entirely different source repository.
++The project retains its own Git baseline and appointments. Create and reconcile
++these records only after their real decisions/evidence exist; none accepts the
++first pilot initiative.
+@@ -130,27 +216,22 @@
+-The following commands are reference procedures, not instructions activated by
+-reading this guide. Select the project's configured Python interpreter (the
+-`python` spelling below is illustrative) before running them.
+-
+-From the protocol root (`protocol/` in the reference repository and normally
+-the project root in an adopted repository), run:
+-
+-```powershell
+-python tools/tadp_protect.py check .
+-python tools/tadp_validate.py .
+-python -m unittest discover -s tests -v
+-```
+-
+-Use the configured interpreter's actual executable when the shell default
+-differs. Protection should report zero errors; the validator exits 0 with no
+-errors, 1 with errors, and 2 for an invalid root. Warnings remain visible and
+-do not alone cause exit 1. Tests report their actual passing/failing results.
+-
+-The validator should report zero errors before an initiative is prepared. If it
+-reports missing protocol files, complete the adoption structure rather than
+-disabling the check. A passing result establishes structural conformance only;
+-it does not accept evidence or an initiative.
+-
+-Protected-source findings are not fixed by automatically refreshing a lock.
+-Unexpected changes under `template/` or `evidence/authoritative/LLM/` must be
+-reverted or investigated. Refresh is reserved for an explicitly authorized
+-change to the named reusable source or invariant.
++Run the checks from P using the configured interpreter, against that exact
++installation, pinned locks, Git history and actual records. Protection should
++exit 0 with zero errors. Structural validation exits 0 without errors, 1 with
++errors, or 2 for invalid inputs; warnings remain visible. Regressions report
++actual pass/fail/skip counts. Run project-specific product checks separately,
++recording commands/results against the pilot's accepted claim. Structural
++checks prove neither human acceptance nor product correctness. Tests cannot
++supply missing facts, authority or actual work.
++
++Investigate failures before allocating governed work. Compare with the pinned
++baseline and distinguish inherited findings. Never disable checks or refresh
++locks to hide drift. See [validation and quality](validation-and-quality.md).
++
++## Git and hooks
++
++Discover branches, shared Git configuration and existing default/custom hooks
++at G. Coordinate dispatch manually before explicit activation. Root P uses
++Git-relative `.githooks`; nested `projects/widget` uses
++`projects/widget/.githooks`. An explicitly authorized
++`git -C <G> config core.hooksPath <verified-relative-hook-path>` changes shared
++configuration; copying files does not activate it. Set `TADP_PYTHON` to the
++configured executable if needed. See [Git and Codex](git-and-codex-requirements.md).
+@@ -160,21 +241,17 @@
+-Use the [canonical coverage map](../../template/TEMPLATE-COVERAGE.md) for source
+-selection and [prerequisite recovery guide](../guides/template-prerequisites-migration.md)
+-for evidence-backed preparation before a stage's entry check. Existing adopters
+-record the revision explicitly; installing sources does not migrate live work.
+-
+-Choose a small outcome with one owner, one authority boundary, and an
+-independent acceptance claim. Use numbered stages 0 through 7 in
+-`../../template/prompts` in order, beginning with preparation. After explicit
+-acceptance, use exactly one delivery path for the declared initiative type:
+-stages 8 through 10 for implementation, stage 11 for design, or stage 12 for
+-planning. Use stage 13 only after evidence-backed completion. Do not begin with
+-a portfolio-wide or multi-outcome effort.
+-
+-Stage 0 assesses realization fit before allocation, recording append, revision,
+-reopening or new initiative placement with a shared/dedicated branch assignment.
+-Adopt the [scope revision](../guides/version-scope-migration.md) explicitly and
+-preserve every legacy disposition. Later stages verify recorded identity.
+-
+-During the pilot, record friction rather than bypassing it. A repeated friction
+-point may justify a later TADp change, but a local convenience must not silently
+-weaken the invariant baseline.
++Choose one narrow pilot outcome, owner, authority boundary and acceptance claim.
++Capture non-authoritative realization notes with precise provenance; a human
++intake instruction delegates adopted fit/routing, not acceptance. Use the
++[numbered workflow](../../template/prompts/README.md) in order: 0 realization
++fit/preparation; 1 proposal; 2 proposal alignment; 3 initial suite; 4 initiative
++alignment; 5 human assumption review; 6 human question review; 7 explicit human
++acceptance of the exact baseline. Retain answers in linked receipts. Apply
++[prerequisite recovery](../guides/template-prerequisites-migration.md) without
++inventing missing decisions or identity.
++
++After acceptance follow exactly one declared path: implementation 8 through 10
++(including separately read-only readiness), design 11, or planning 12.
++Implementation changes products; design changes its declared specifications;
++planning creates initiative-local evidence. Completion requires type-specific
++execution/delivery records, exact verification, coherence feedback and completion
++evidence. Stage 13 finalizes a truthfully completed initiative and creates no
++acceptance/completion by itself. See [initiative operation](initiative-workflow.md).
+@@ -184,20 +261,11 @@
+-- Ensure Git identity, branch protections, review ownership, and the intended
+-  integration branch are documented.
+-- Confirm who may accept initiatives and resolve human decision gates.
+-- Confirm which paths are authoritative and who may revise them.
+-- Require review ownership or branch rules for `template/**`,
+-  `evidence/authoritative/LLM/**`, and their `.tadp-lock.json` files on the
+-  chosen Git host.
+-- Confirm every clone or worktree has coordinated its shared hook dispatcher
+-  using the selected project's correct Git-relative hook path.
+-- Ensure contributors can run the validator and product-specific checks.
+-- Explain that `..` is explanatory while `../../evidence/authoritative` is
+-  binding.
+-
+-
+-For scope-revision adoption, establish the scope registry, membership index and
+-complete version-scope migration ledger before allocation. Record the coherent
+-revision's real immutable delivery commit in the profile. Legacy work remains
+-under its recorded compatible revision until explicitly migrated; predecessor
+-adoption steps above do not allocate a new scope or rename historical versions.
+-See [scope migration](../guides/version-scope-migration.md).
++Record integration and dedicated/shared scope execution assignments, captured
++bases, initiative-specific commits and verification. Coordinate shared Git
++state and preserve unrelated work. Include proposed/partial work in coherence
++reviews, record conflicts and require authorized reopening before refining
++closed claims. See [scope operation](../guides/version-scope-migration.md) and
++[coherence guidance](../guides/initiative-coherence-migration.md).
++
++Confirm approval roles, evidence owners, protected-source review and product
++checks. Local child-to-parent integration needs its identified close/finalize
++authority and passed gates. Further integration, remote writes, publication
++and release retain separate authority. A pilot does not silently migrate other work.
+--- a/docs/development/git-and-codex-requirements.md
++++ b/docs/development/git-and-codex-requirements.md
+@@ -25,2 +25,3 @@
+-The reference distribution at `protocol/` is checked against enclosing Git
+-without becoming an adopted live project by shape or installation alone.
++A source distribution is not an adopted live project merely because its shape
++passes the installed checks. Installation and explicit prospective adoption
++remain separate events.
+@@ -175 +175,0 @@
+-
+--- a/docs/development/repository-layout.md
++++ b/docs/development/repository-layout.md
+@@ -12,4 +12,6 @@
+-The tree below describes a project after adoption of the current scope model.
+-In the reference checkout these paths live under `protocol/`; its enclosing
+-repository also has maintenance prompts. A legacy project keeps its recorded
+-paths and compatible revision until explicitly migrated.
++The tree below is illustrative: it describes the selected project installation
++root `P` after explicit adoption of the current scope model. `P` can equal the
++Git worktree root `G` or be nested beneath it; a nested installation needs no
++separate Git repository. A legacy project keeps its recorded paths and
++compatible revision until explicitly migrated. Live records appear only when
++actual decisions and workflow events require them.
+@@ -22,0 +25,2 @@
++|-- project-profile.md
++|-- decisions/
+@@ -27,0 +32 @@
++|   |-- evidence-register.md
+@@ -83,2 +88,5 @@
+-does not activate tracked hooks automatically; every clone or worktree must set
+-`core.hooksPath` to `.githooks`.
++does not activate tracked hooks automatically. Inspect shared Git configuration
++and coordinate existing hooks manually before explicit activation. Hook paths
++are relative to `G`: `.githooks` for `P=G`, or, for example,
++`projects/widget/.githooks` for that nested installation. Copying the scaffold
++never enables hooks or overwrites parent configuration.
+@@ -90,0 +99,6 @@
++
++The project profile records real project owners, approval roles, installed source
++revision and prospective adoption. The evidence register records source
++standing and provenance. Neither copied example values nor source-repository
++appointments become this project's authority. Record the actual human owner
++and decision maker for this project, preserving prior claims and revisions.
+@@ -211,5 +225,5 @@
+-In this reference repository, outer repository-level `prompts/` contains
+-maintenance requests for TADp itself. Its instructions determine that target;
+-the nested `protocol/prompts/` remains the distributable project-local
+-workspace. Neither location becomes the protected workflow library merely
+-because it contains Markdown instructions.
++A source repository may separately provide maintenance prompts for TADp itself.
++Those belong to that repository and require its explicitly invoked maintenance
++authority. They are not installed project-local prompts. Copying a maintenance
++prompt into a project, or changing the working directory, grants no generic
++protocol-maintenance authority.
+@@ -222,3 +236,3 @@
+-alone establishes no compliance or live project adoption. Source distribution
+-`protocol/`, source `template/project/` and installed `P/template/` are
+-separate roles, with the latter two remaining protected reusable material.
++alone establishes no compliance or live project adoption. The pinned source
++distribution, its source `template/project/`, and installed `P/template/` are
++separate roles; the latter two remain protected reusable material.
+@@ -272 +286 @@
+-- `docs/` explains adoption and maintenance.
++- `docs/` explains project installation, adoption and operation.
+@@ -279,4 +293,3 @@
+-Do not move binding rules into `..` merely because prose is easier to edit.
+-Do not add validator behavior without a documented protocol reason and a
+-regression test.
+-
++These guides remain explanatory. Binding rules stay in the authoritative
++evidence hierarchy. Changes to the generic protocol, its tools or protected
++sources require separately scoped maintenance authority.
+--- a/docs/development/validation-and-quality.md
++++ b/docs/development/validation-and-quality.md
+@@ -13,2 +13 @@
+-From the protocol root (`protocol/` in the reference repository and normally
+-the project root in an adopted repository), use the project's configured
++From the resolved project installation root `P`, use the project's configured
+@@ -240,4 +239,2 @@
+-`core.hooksPath=projects/widget/.githooks`. In this reference repository the
+-protocol hook is at `protocol/.githooks`, so the setting relative to `G` is
+-`core.hooksPath=protocol/.githooks`. Do not overwrite or enable parent hooks
+-implicitly; installation performs no configuration change.
++`core.hooksPath=projects/widget/.githooks`. Do not overwrite or enable parent
++hooks implicitly; installation performs no configuration change.
+@@ -279,16 +276,6 @@
+-Add a rule only when the protocol defines an objective condition that can be
+-checked without inventing semantic authority.
+-
+-For every new rule:
+-
+-1. Identify the authoritative or template contract it enforces.
+-2. Choose a stable finding code and a precise path and message.
+-3. Avoid false authority; warn or stop when the validator cannot know the
+-   semantic answer.
+-4. Add one passing test and at least one failing regression test.
+-5. Update `../../tools/README.md` and this document.
+-6. Run the full validator and test suite.
+-
+-Do not make the validator silently repair records. Repairs can destroy evidence
+-or imply decisions. It should report the exact discrepancy and leave the
+-governed correction to the appropriate workflow.
++Generic validator development belongs to a separately authorized protocol
++maintenance task in its source repository. An installed project runs the
++bundled checks and records deficiencies with their governing requirement;
++a local convenience is not authority to change the protocol contract.
++This heading remains for existing links. For running checks and understanding
++their limits, use the sections above and the [tool reference](../../tools/README.md).
+@@ -299,3 +286,2 @@
+-pipeline should run both the validator and regression tests from `protocol/`
+-in this distribution, or the adopted project's root, using its configured
+-Python interpreter. Record the interpreter version and actual results for each
++pipeline should run both the validator and regression tests from `P` using its
++configured Python interpreter. Record the interpreter version and actual results for each
+@@ -325 +310,0 @@
+-
+--- a/docs/README.md
++++ b/docs/README.md
+@@ -3 +3 @@
+-This directory contains developer documentation and operating guides for the
++This directory contains project adoption documentation and operating guides for the
+@@ -6 +6 @@
+-These documents explain how to use and maintain TADp. They are not a second
++These documents explain how to adopt and operate TADp. They are not a second
+@@ -14 +14 @@
+-## Developer documentation
++## Project documentation
+@@ -16 +16 @@
+-Read these documents in order when first adopting or maintaining TADp:
++Read these documents in order when adopting and operating TADp in a project:
+@@ -19 +19 @@
+-   setup, adoption choices, and the first validation run.
++   setup, component mapping, explicit adoption, and first checks.
+@@ -30,2 +30 @@
+-7. [Developing TADp](development/developing-tadp.md) — changing protocol
+-   specifications, templates, prompts, documentation, and validation.
++7. [Protocol change boundary](development/README.md) — project use and separately authorized changes to reusable protocol sources.
+@@ -74 +73 @@
+-- Keep root-level orientation in `../../README.md`; put durable explanations here.
++- Keep project-root orientation in `../../README.md`; put durable explanations here.
+@@ -82 +80,0 @@
+-
+--- a/README.md
++++ b/README.md
+@@ -197,41 +197,9 @@
+-1. Open this repository with Codex at the repository root.
+-2. Read `AGENTS.md` and the authoritative LLM rules that apply to the work.
+-3. Confirm the current Git branch and inspect the complete worktree before
+-   editing.
+-4. Make the smallest coherent change, then update every document, template,
+-   prompt, test, and validator rule that depends on it.
+-5. Run the validator and its regression tests before review.
+-
+-### Adopt TADp in another repository
+-
+-1. Select a scaffold installation directory inside a valid Git worktree.
+-   This project root may equal or lie beneath the Git root under
+-   [specification 05](evidence/authoritative/LLM/05_Codex_Git_Workflow_Specification.md#requirement).
+-   Git history and metadata do not widen the project file boundary.
+-2. Copy the complete protected [`template/`](template/README.md) tree into the
+-   target, preserving its `AGENTS.md` and `.tadp-lock.json`.
+-3. Copy the contents of [`template/project/`](template/project/README.md),
+-   including `.gitattributes`, `.githooks/`, and the canonical
+-   `prompts/AGENTS.md` and `prompts/README.md`, into the selected project root.
+-   Specialize only destination copies, never the reusable source tree, and do
+-   not confuse root project-local `prompts/` with the protected numbered
+-   workflow at `template/prompts/`.
+-4. Copy the protected authoritative `evidence/authoritative/LLM/` suite into
+-   the same path in the target, preserving its scoped instructions and lock.
+-5. Copy the developer documentation, tools and tests; run the protection check
+-   for that project root. Inspect and coordinate shared hooks at the Git root
+-   before explicit activation, using the correct project-prefixed hook path.
+-   Copying files never enables hooks or overwrites parent configuration.
+-6. Instantiate [the project profile source](template/project/project-profile.template.md)
+-   as `project-profile.md`, assign ownership for each source of evidence,
+-   and create the initiative index, status record, and work-conflict register.
+-   Capture the pre-adoption Git commit in the coherence baseline field.
+-
+-The [installation-root adoption guide](docs/guides/project-root-installation-migration.md)
+-explains the effective revision, prospective adoption and preservation of earlier
+-paths and claims. Sync selects an existing `--target` or exact cwd; its state,
+-backups, locks and installed files stay in that project. Installation alone
+-changes no live adoption or lifecycle claim. See the [tool reference](tools/README.md).
+-
+-See [Getting started](docs/development/getting-started.md) for prerequisites,
+-setup options, and the first validation run.
++Compatibility entry point: protocol source maintainers use their own repository
++contributor documentation and exact maintenance authority. See the portable
++[change boundary](docs/development/README.md); project adoption continues below.
++
++### Adopt TADp in a project
++
++Use the [complete portable installation procedure](docs/development/getting-started.md).
++It covers new and existing projects, the component map, explicit prospective
++adoption, Git-root and nested installations, and the first narrow pilot.
+@@ -241,3 +209 @@
+-The validator uses only the Python standard library. From the protocol root
+-(`protocol/` in the reference repository and normally the project root in an
+-adopted repository):
++The validator uses only the Python standard library. From the selected project installation root P, using its configured interpreter:
+@@ -275 +241 @@
+-| [Developing TADp](docs/development/developing-tadp.md) | How to change TADp and its supporting files |
++| [Protocol change boundary](docs/development/README.md) | Project use versus separately authorized protocol maintenance |
+@@ -289,8 +255,4 @@
+-Authoritative specifications set TADp's rules, while developer guides explain
+-them. A guide cannot weaken or replace a rule. Because many files depend on the
+-workflow contract, changing it usually requires matching updates to the
+-specification, Codex instructions, templates, prompts, validator, tests, and
+-documentation.
+-
+-Read [Developing TADp](docs/development/developing-tadp.md) before changing the
+-protocol itself.
++Project-local work follows the adopted governing suite. Changes to the reusable
++protocol require separately scoped authority, preservation and compatibility
++review; a project-local prompt cannot grant generic maintenance authority.
++See the [protocol change boundary](docs/development/README.md).
+@@ -300,4 +262,3 @@
+-This repository is TADp's reference implementation and reusable template. Its
+-validator checks the protocol structure and traceability rules. Even so,
+-developers should begin with one small trial initiative before using the
+-workflow for many initiatives.
++This is a reusable protocol distribution. Begin with one small pilot initiative.
++Installation, checks and source availability establish no project adoption,
++initiative acceptance, completion or release.

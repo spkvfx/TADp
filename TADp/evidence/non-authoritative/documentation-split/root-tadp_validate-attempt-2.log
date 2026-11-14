@@ -1,0 +1,14 @@
+{
+  "root": "C:\\Users\\User\\AppData\\Local\\Temp\\tadp-doc-split-v7y26urg\\root-git",
+  "valid": false,
+  "errors": 1,
+  "warnings": 0,
+  "findings": [
+    {
+      "severity": "error",
+      "code": "TADP025",
+      "path": "evidence/authoritative/LLM/README.md",
+      "message": "protected source is not recorded in its lock"
+    }
+  ]
+}

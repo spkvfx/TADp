@@ -1,0 +1,156 @@
+{
+  "source_revision": "014d455e3d99213e0dc4a156cb198ac1a4a85747",
+  "digest": "SHA-256 of UTF-8 canonical LF bytes",
+  "payload": [
+    {
+      "candidate": "TADp/protocol/documentation/docs/development/developing-tadp.md.in",
+      "candidate_sha256": "ab93b861e237a96d1905c7c973a85513b0f66a64346679c1bc5f0279ef0683a3",
+      "original_source": "protocol/docs/development/developing-tadp.md",
+      "source_revision": "014d455e3d99213e0dc4a156cb198ac1a4a85747",
+      "transformation": "Strip .in suffix; canonical UTF-8/LF; bytes otherwise unchanged",
+      "D": "TADp/template/project/docs/development/README.md",
+      "S": "protocol/template/project/docs/development/README.md",
+      "consumers": [
+        "protocol/docs/development/developing-tadp.md",
+        "protocol/docs/development/README.md"
+      ],
+      "boundary_status": "Prepared only; no acceptance/introduction/promotion/rollout authority",
+      "original_source_baseline_sha256": "cc6af954b9621ec961a9d1cbf900b5d990d6fd7dba1830b6c539e29bee0e18ef",
+      "D_baseline_sha256": "2083d1799050c7240beba6cf44e3bbda48eedddf01c18793bfcead2af2c4a5c2",
+      "S_baseline_sha256": "2083d1799050c7240beba6cf44e3bbda48eedddf01c18793bfcead2af2c4a5c2"
+    },
+    {
+      "candidate": "TADp/protocol/documentation/docs/development/getting-started.md.in",
+      "candidate_sha256": "f7a1911158bdf83f860a0bea12862ede3739677e61643c8ea28cfa2d23c0eedb",
+      "original_source": "protocol/docs/development/getting-started.md",
+      "source_revision": "014d455e3d99213e0dc4a156cb198ac1a4a85747",
+      "transformation": "Strip .in suffix; canonical UTF-8/LF; bytes otherwise unchanged",
+      "D": "TADp/template/project/docs/development/getting-started.md",
+      "S": "protocol/template/project/docs/development/getting-started.md",
+      "consumers": [
+        "protocol/docs/development/getting-started.md"
+      ],
+      "boundary_status": "Prepared only; no acceptance/introduction/promotion/rollout authority",
+      "original_source_baseline_sha256": "f9c308f396256784bf45df10e725290907d279d6fae4ef3e18c463fe9e208bcf",
+      "D_baseline_sha256": "84f4cc03fe989219961f5853c644264c74949b8864b5fcf94c3ffab9006ea85c",
+      "S_baseline_sha256": "84f4cc03fe989219961f5853c644264c74949b8864b5fcf94c3ffab9006ea85c"
+    },
+    {
+      "candidate": "TADp/protocol/documentation/docs/development/git-and-codex-requirements.md.in",
+      "candidate_sha256": "7b3df7f5f953ccba746b7aba1e934871a1ec04419207a3bd1e81fe420f4dcf69",
+      "original_source": "protocol/docs/development/git-and-codex-requirements.md",
+      "source_revision": "014d455e3d99213e0dc4a156cb198ac1a4a85747",
+      "transformation": "Strip .in suffix; canonical UTF-8/LF; bytes otherwise unchanged",
+      "D": "TADp/template/project/docs/development/git-and-codex-requirements.md",
+      "S": "protocol/template/project/docs/development/git-and-codex-requirements.md",
+      "consumers": [
+        "protocol/docs/development/git-and-codex-requirements.md"
+      ],
+      "boundary_status": "Prepared only; no acceptance/introduction/promotion/rollout authority",
+      "original_source_baseline_sha256": "94e98f2a73bb22a4ec03cc2f7c397794e606642ef7cd979ec3a51ee8777666d8",
+      "D_baseline_sha256": "a0427971f3755208d2a2202f3c67b23a1088f09703e640500cc598a30014bb16",
+      "S_baseline_sha256": "a0427971f3755208d2a2202f3c67b23a1088f09703e640500cc598a30014bb16"
+    },
+    {
+      "candidate": "TADp/protocol/documentation/docs/development/repository-layout.md.in",
+      "candidate_sha256": "994b7ec4b282f628ea2287caee69e8e59428e89a53edcd0f1773f0dab1b2acf7",
+      "original_source": "protocol/docs/development/repository-layout.md",
+      "source_revision": "014d455e3d99213e0dc4a156cb198ac1a4a85747",
+      "transformation": "Strip .in suffix; canonical UTF-8/LF; bytes otherwise unchanged",
+      "D": "TADp/template/project/docs/development/repository-layout.md",
+      "S": "protocol/template/project/docs/development/repository-layout.md",
+      "consumers": [
+        "protocol/docs/development/repository-layout.md"
+      ],
+      "boundary_status": "Prepared only; no acceptance/introduction/promotion/rollout authority",
+      "original_source_baseline_sha256": "bcb795e5371b49c8630ea2acfce93833943d399f437f32dad5a46b5612577d1b",
+      "D_baseline_sha256": "2fd2eb8cb7b1ed1afd3494bc8271808482b3cf3cba4be5882805c7804ef2edf7",
+      "S_baseline_sha256": "2fd2eb8cb7b1ed1afd3494bc8271808482b3cf3cba4be5882805c7804ef2edf7"
+    },
+    {
+      "candidate": "TADp/protocol/documentation/docs/development/validation-and-quality.md.in",
+      "candidate_sha256": "abbf54fc7a74aa34948065f041c60c561a5b81fee37b3c049f49f14e54e6b639",
+      "original_source": "protocol/docs/development/validation-and-quality.md",
+      "source_revision": "014d455e3d99213e0dc4a156cb198ac1a4a85747",
+      "transformation": "Strip .in suffix; canonical UTF-8/LF; bytes otherwise unchanged",
+      "D": "TADp/template/project/docs/development/validation-and-quality.md",
+      "S": "protocol/template/project/docs/development/validation-and-quality.md",
+      "consumers": [
+        "protocol/docs/development/validation-and-quality.md"
+      ],
+      "boundary_status": "Prepared only; no acceptance/introduction/promotion/rollout authority",
+      "original_source_baseline_sha256": "ce6a78c0910a1ca1d937d88a423b54d85a664634251d24220a320c31b4e2944b",
+      "D_baseline_sha256": "e535d4268f59da37906b3d7ee2ecfb4083896bbf885c1cc27a96bc043307a82e",
+      "S_baseline_sha256": "e535d4268f59da37906b3d7ee2ecfb4083896bbf885c1cc27a96bc043307a82e"
+    },
+    {
+      "candidate": "TADp/protocol/documentation/docs/README.md.in",
+      "candidate_sha256": "29db306f2455baa62fd8d06e6140aa06521f3e7be7fdbdc1e7a3d5119279d40e",
+      "original_source": "protocol/docs/README.md",
+      "source_revision": "014d455e3d99213e0dc4a156cb198ac1a4a85747",
+      "transformation": "Strip .in suffix; canonical UTF-8/LF; bytes otherwise unchanged",
+      "D": "TADp/template/project/docs/README.md",
+      "S": "protocol/template/project/docs/README.md",
+      "consumers": [
+        "protocol/docs/README.md"
+      ],
+      "boundary_status": "Prepared only; no acceptance/introduction/promotion/rollout authority",
+      "original_source_baseline_sha256": "46405197664107a138dd50a9356d8d4213da163edfe0750bd18280a2c62f50c6",
+      "D_baseline_sha256": "5a92adc8c3533fd37e19db34f62510a0d9901938fd3c646c5c3e01a00f54f611",
+      "S_baseline_sha256": "5a92adc8c3533fd37e19db34f62510a0d9901938fd3c646c5c3e01a00f54f611"
+    },
+    {
+      "candidate": "TADp/protocol/documentation/README.md.in",
+      "candidate_sha256": "c4ea413b05a9cf077516454e4d6a383f050221337d87c0e613cd46cadcbd11a6",
+      "original_source": "protocol/README.md",
+      "source_revision": "014d455e3d99213e0dc4a156cb198ac1a4a85747",
+      "transformation": "Strip .in suffix; canonical UTF-8/LF; bytes otherwise unchanged",
+      "D": "TADp/template/project/README.md",
+      "S": "protocol/template/project/README.md",
+      "consumers": [
+        "protocol/README.md"
+      ],
+      "boundary_status": "Prepared only; no acceptance/introduction/promotion/rollout authority",
+      "original_source_baseline_sha256": "d235463b294e28121193a91c25eeab4c7f294522e2569375aafacd162b16cf04",
+      "D_baseline_sha256": "eb419733b7fbc17d189aac26cef194ea9d66286d9f451126832ff57a6e34c1ba",
+      "S_baseline_sha256": "eb419733b7fbc17d189aac26cef194ea9d66286d9f451126832ff57a6e34c1ba"
+    }
+  ],
+  "repository_support": [
+    {
+      "path": "README.md",
+      "sha256": "a54678213efa31536afcd4d0a93dfbcc6726d6531d3e6ed7c7694da3f1361fea",
+      "baseline_sha256": "d9220e711500f4a83d61cc27b9189d0474a3e587f47aa1cab14df3397351380e"
+    },
+    {
+      "path": "docs/developing-tadp.md",
+      "sha256": "89e0257336d6ee9c325b1ad29d547972197d168bb6d9d5e98fa4ce7b4cb1c9d3",
+      "baseline_sha256": null
+    },
+    {
+      "path": "docs/implementing-tadp-in-projects.md",
+      "sha256": "ec6ff87afe1d1b0866ace23c6196d235708ab62cc88a73cbd56074a0b5c75406",
+      "baseline_sha256": null
+    },
+    {
+      "path": "docs/README.md",
+      "sha256": "d1f737dc66c8dc94a3b5b39a0a0c19aadeca93be7ab7f289b0e98aa119489f26",
+      "baseline_sha256": null
+    },
+    {
+      "path": "docs/repository-layout.md",
+      "sha256": "5cee92e3352b502ffed4a19cc8f6ff5beca0bbc0f8c30c094d0582cc04508f19",
+      "baseline_sha256": null
+    }
+  ],
+  "excluded": [
+    "populated P records",
+    "R/docs",
+    "AGENTS.md revisions",
+    "invariants",
+    "tools/tests/hooks/configuration revisions",
+    "locks",
+    "examples"
+  ],
+  "recovery": "Compare exact current bytes; restore only declared paths from pinned prior blobs; preserve subsequent work"
+}
