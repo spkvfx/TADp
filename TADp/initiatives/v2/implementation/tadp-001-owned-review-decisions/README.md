@@ -2,7 +2,7 @@
 
 **Initiative:** Owned assumption and question review decisions
 **Initiative ID:** TADP-001
-**Status:** Proposed
+**Status:** Accepted
 **Last updated:** 2026-11-14
 **Initiative type:** `implementation`
 **Decision prefix:** `TADP001`
@@ -20,7 +20,11 @@
 **Captured base commit:** 9c9fd1daad655fd58349c005f8d31a4f52790cc9
 **Integration target:** v2
 **Revision cycle:** 1
-**Claim revision:** 2 (Proposed; exact baseline is commit containing aligned complete suite)
+**Claim revision:** 294d70d1b7b313bd46cab481b714c8cbb5c0e612
+
+**Acceptance receipt:** [ACCEPT-001](decision-receipts/ACCEPT-001.md)
+
+**Accepted baseline:** 294d70d1b7b313bd46cab481b714c8cbb5c0e612
 **Prior revision record:** Initial
 **Revision history:** [Routing and execution history](#routing-and-execution-history)
 **Predecessor or successor:** None
@@ -32,7 +36,7 @@ explicit.
 
 Develop and qualify one candidate TADp behavior: both numbered decision reviews may independently define assumptions and open questions and record sufficiently authorized dispositions at their canonical initiative or project owners. Definition remains distinct from resolution, and an external decision does not expand the reviewed initiative's accepted work.
 
-This Proposed implementation claim is confined to the declared C=P/protocol candidate slice. The complete suite is being prepared for human acceptance; no candidate product work has begun. Candidate qualification does not authorize or prove ordinary Completed, development completion, installed-library introduction, promotion, rollout, adoption, integration or release. The [aligned proposal](proposal/proposal.md) and [source map](../../../../evidence/non-authoritative/assumption-question-review/source-map.json) bound the work.
+This accepted implementation claim is confined to the declared C=P/protocol candidate slice under ACCEPT-001. Candidate product start follows read-only readiness. Candidate qualification does not authorize or prove ordinary Completed, development completion, installed-library introduction, promotion, rollout, adoption, integration or release. The [aligned proposal](proposal/proposal.md) and [source map](../../../../evidence/non-authoritative/assumption-question-review/source-map.json) bound the work.
 
 ## Correlation and identity
 
@@ -368,6 +372,7 @@ branch removal and link that removal evidence from the canonical row.
 | Effective date or event | From | To | Authority or evidence | Claim revision | Reason and affected scope | Git commit |
 |---|---|---|---|---|---|---|
 | 2026-11-14 | Initial | Proposed | [realization suite](../../../../evidence/non-authoritative/realizations/v2/00-review-decisions-suite-index.md) and [canonical correlation row](../../../initiative-index.md#initiative-and-correlation-register) | Preparation skeleton | Allocate independent initiative membership and open the initiative for proposal work; no acceptance or delivery authority | 7b38e61 |
+| 2026-11-14 implementation request | Proposed | Accepted | [ACCEPT-001](decision-receipts/ACCEPT-001.md), requesting human under repository-owner role | 294d70d1b7b313bd46cab481b714c8cbb5c0e612 | Exact candidate implementation and qualification accepted after clarification | Scoped acceptance commit |
 
 ### Preparation events
 
