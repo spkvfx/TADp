@@ -204,13 +204,6 @@ For the full sequence and the ownership of each record, see
 
 ### Adopt TADp in another repository
 
-The human-supplied link identifies the separate
-[TADp example repository](https://github.com/spkvfx/TADp-example); its clone URL is
-`https://github.com/spkvfx/TADp-example.git`. This documentation refresh has
-not inspected or validated its contents, rebuild status, parity, or adoption.
-The example is a separate application target; protocol maintenance here does
-not synchronize or validate it.
-
 1. Select a scaffold installation directory inside a valid Git worktree.
    This project root may equal or lie beneath the Git root under
    [specification 05](evidence/authoritative/LLM/05_Codex_Git_Workflow_Specification.md#requirement).
@@ -225,9 +218,6 @@ not synchronize or validate it.
    workflow at `template/prompts/`.
 4. Copy the protected authoritative `evidence/authoritative/LLM/` suite into
    the same path in the target, preserving its scoped instructions and lock.
-   Preserve the distribution decision receipts linked by that suite under
-   `decisions/`; they retain their historical source identity and do not
-   constitute decisions for the adopting project's work.
 5. Copy the developer documentation, tools and tests; run the protection check
    for that project root. Inspect and coordinate shared hooks at the Git root
    before explicit activation, using the correct project-prefixed hook path.

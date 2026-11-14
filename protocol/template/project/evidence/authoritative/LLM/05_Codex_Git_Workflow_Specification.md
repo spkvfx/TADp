@@ -56,32 +56,22 @@ the branch rules below, detect incompatible roles, and report coordination
 limits rather than inventing names or silently sharing assignments. Hook
 coordination is manual; installation must not overwrite or enable parent hooks.
 
-### Installation-root revision record
+### Adoption and compatibility
 
-- **Authority:** The User's 2026-11-13 explicit invocation of
-  `prompts/project-root-installation-directory-protocol-change.md`, captured
-  as ROOT-DR-001 in the distribution source
-  `docs/development/project-root-installation-maintenance.md`.
-- **Reason:** Make the scaffold installation destination the project boundary
-  while retaining mandatory Git traceability in an enclosing worktree.
-- **Affected scope:** This requirement and necessary root/path consumers in
-  the suite index, instructions, scaffold, tools, fixtures, documentation and
-  affected protected locks. No other evidence, identity, lifecycle, acceptance,
-  branch-assignment, coherence or keyword rule is revised.
-- **Effective event:** The first coherent Git commit containing the revision,
-  reconciled consumers, verification and authorized locks. Locate that commit
-  through ROOT-DR-001's Git history; do not invent its hash before committing.
-- **Compatibility and migration:** Prospective explicit project adoption with
-  recorded governing commit, actual baseline, authority and impact assessment.
-  Preserve earlier governing revisions and historical records. Existing root
-  installations retain their paths. Installation or synchronization alone
-  adopts nothing, moves no files, reopens no work and establishes no compliance,
-  initiative acceptance, lifecycle completion or release. See the
-  [adoption guide](../../../docs/guides/project-root-installation-migration.md).
-- **Predecessor relationship:** Supersedes only the former requirement that
-  every project itself be a Git repository root and its directly contradictory
-  root/path consumers. Git preserves that predecessor at revision
-  `fc0c8e3ea01471d3a35f06a29d96f837070afd70`; all other rules remain binding.
+Adopt this root contract prospectively with explicit human authority and a
+recorded governing commit, actual project baseline and impact assessment.
+Preserve earlier compatible governing revisions, source identities and
+accepted claims. Existing root installations retain their paths.
+
+Installation or synchronization alone does not adopt a protocol revision,
+move files, reopen work, change initiative acceptance or lifecycle, establish
+compliance, complete work or authorize a release. See the
+[adoption guide](../../../docs/guides/project-root-installation-migration.md).
+
+Git remains mandatory. The installation directory defines the project file
+boundary; an enclosing Git worktree does not enlarge it. Evidence, identity,
+lifecycle, decision, acceptance, branch, coherence and keyword requirements
+remain binding.
 
 ## Documentary sources
 

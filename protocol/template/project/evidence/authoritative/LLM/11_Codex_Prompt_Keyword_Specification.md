@@ -9,34 +9,24 @@ repository-maintenance prompts. Reading this document does not activate its
 examples, the registry, or any switch. These rules govern interpretation;
 they do not expand a task's target, edit boundary, or authority.
 
-### Revision record
+### Adoption and compatibility
 
-- **Authority:** The User's 2026-11-12 instruction to execute
-  `prompts/positional-gate-switches-protocol-change.md`, preserved in
-  KWD-DR-001 (TADp distribution source `decisions/KWD-DR-001-positional-keywords.md`; not a project decision or work record), authorizes
-  this exact addition and its necessarily affected protected-source consumers.
-- **Reason:** Make positional prompt settings, declared list scheduling, and
-  specifically authorized exceptions explicit without losing lock protection
-  or truthful evidence.
-- **Affected scope:** This registry; the suite index and specifications 01, 02,
-  04, 07, 08, and 10; universal entry points; workflow and decision templates;
-  prompt consumers; machine interpretation, validation, tests, and guidance.
-- **Effective event:** The first Git commit containing this coherent revision,
-  reconciled consumers, verification, and specifically authorized locks.
-  Adoption records identify that commit and the project's governing revision.
-- **Compatibility and migration:** Apply prospectively after recorded adoption.
-  Existing projects and initiatives retain their recorded governing revision
-  until the applicable adoption and exception authority are recorded. Do not
-  reinterpret historical prompts, waive an existing gate, answer a question,
-  accept an initiative, reopen a claim, or change a lifecycle record merely
-  because the vocabulary is installed. See the
-  [migration guide](../../../docs/guides/prompt-keywords-migration.md).
-- **Successor relationship:** This specification succeeds earlier clauses only
-  for directive interpretation, list scheduling, and the documented exception
-  route. Earlier rules remain the default and govern every unexcepted matter.
-  Git retains their source identity and prior revisions. Stage numbering,
-  initiative types, substantive-successor rules, and ordinary lifecycle
-  meanings are unchanged.
+Apply this registry prospectively after recorded adoption. The governing
+revision is the coherent Git commit containing authorized sources,
+reconciled consumers, verification and protected locks. Adoption records
+identify that actual commit and the project's governing revision.
+
+Existing projects and initiatives retain their recorded governing revision
+until applicable adoption and exception authority are recorded. Installing
+the vocabulary does not reinterpret a prompt, waive an existing gate, answer
+a question, accept an initiative, reopen a claim or change a lifecycle record.
+See the [migration guide](../../../docs/guides/prompt-keywords-migration.md).
+
+This specification governs directive interpretation, list scheduling and
+the documented exception route. Unexcepted rules remain the default. Git
+retains source identities and prior revisions. Stage numbering, initiative
+types, specification 09's current revision and successor rules, and ordinary
+lifecycle meanings remain binding.
 
 ## Syntax and operative instruction boundaries
 
@@ -183,9 +173,8 @@ ungated leaves a prior preview, local, or review setting unchanged.
 
 ### Common definition metadata and examples
 
-KWD-001 through KWD-005 are revision 1, authorized together by KWD-DR-001 and
-effective at the coherent revision commit defined above. Their implementation
-and consumer links are [the shared interpreter](../../../tools/tadp_keywords.py),
+KWD-001 through KWD-005 are revision 1. Their implementation and consumer
+links are [the shared interpreter](../../../tools/tadp_keywords.py),
 [workflow contract](../../../template/prompts/WORKFLOW-CONTRACT.md), and
 [exception source](../../../template/project/initiatives/decision-receipts/gate-exception.template.md).
 Their compatibility consequences are prospective interpretation only, with

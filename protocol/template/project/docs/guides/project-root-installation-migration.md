@@ -46,7 +46,7 @@ not adoption, acceptance, reopening, completion or release.
 
 The revision becomes available at the first coherent commit containing the
 authorized invariant, consumers, verification and affected locks, identified
-by the specification's revision record and Git history. Do not infer a future
+by the reviewed specification snapshot and Git commit. Do not infer a future
 hash or replace an earlier governing revision merely because files arrived.
 
 1. Capture current Git identity, commit, branch and all worktree/index changes.

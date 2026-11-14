@@ -241,14 +241,11 @@ For a nested project at `projects/widget`, the Git-relative setting would be
 protocol hook is at `protocol/.githooks`, so the setting relative to `G` is
 `core.hooksPath=protocol/.githooks`. Do not overwrite or enable parent hooks
 implicitly; installation performs no configuration change.
-The repository-root `.githooks/pre-commit` is an older combined hook that still
-targets `protocol` and `example`; it does not reflect the current separate
-example boundary. Correcting that executable requires separately authorized
-support-file maintenance. Inspect an existing hook configuration before
-changing it. The supported protocol hook uses `TADP_PYTHON` when set and
-otherwise resolves `python`; select the configured interpreter explicitly
-when the shell default differs. Hook installation changes local Git
-configuration and is not performed by a validation command.
+Inspect an existing hook configuration before changing it. The supported
+protocol hook uses `TADP_PYTHON` when set and otherwise resolves `python`;
+select the configured interpreter explicitly when the shell default differs.
+Hook installation changes local Git configuration and is not performed by a
+validation command.
 
 An authorized protected-source commit must set
 `TADP_ALLOW_PROTECTED_UPDATE=1` and set
@@ -301,8 +298,8 @@ governed correction to the appropriate workflow.
 The JSON mode is suitable for CI or a repository-specific wrapper. A minimal
 pipeline should run both the validator and regression tests from `protocol/`
 in this distribution, or the adopted project's root, using its configured
-Python interpreter. The interpreter verified for this maintenance was Python
-3.11.1; this does not certify other interpreter versions.
+Python interpreter. Record the interpreter version and actual results for each
+run; results from one environment do not certify other interpreter versions.
 
 CI should fail on validator errors. It must not automatically accept an
 initiative, resolve a question, or promote a lifecycle state merely because the

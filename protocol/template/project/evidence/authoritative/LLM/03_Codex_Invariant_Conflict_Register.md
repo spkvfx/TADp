@@ -18,7 +18,7 @@ authority stated by the governing invariant or an explicit human instruction.
 
 ## Active conflicts
 
-No active conflicts have been recorded for this project.
+Record project-specific conflicts here when direct evidence demonstrates a contradiction.
 
 <!--
 When a conflict is discovered, replace the statement above with the first
@@ -42,7 +42,7 @@ resolved entries under the resolution history.
 
 ## Resolution history
 
-No invariant conflicts have been resolved.
+Record project-specific resolutions here only after the required authority and verification exist.
 
 For each resolved entry, retain the original conflict text and add:
 

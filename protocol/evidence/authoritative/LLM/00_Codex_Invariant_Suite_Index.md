@@ -32,183 +32,53 @@ evidence, not authority to revise an invariant. It may be refreshed only after
 the authorized revision has satisfied the preservation, impact, compatibility,
 migration, and consumer-reconciliation requirements of this suite.
 
-### Protection revision record
+## Adoption and compatibility
 
-- **Authority:** Explicit human instruction on 2026-11-10 to protect reusable
-  templates and the authoritative LLM invariant suite from inadvertent LLM
-  edits.
-- **Reason:** A copied TADp project needs a durable distinction between
-  read-only reusable sources and editable instantiated records.
-- **Affected scope:** Codex edit instructions, template and invariant integrity
-  locks, validation, the local commit gate, adoption guidance, and migration
-  guidance. The substantive meaning of specifications 01 through 08 is
-  unchanged.
-- **Effective point:** The Git commit that introduces the complete
-  protected-source control set.
-- **Compatibility and migration:** Existing initiatives and accepted claims do
-  not change. Existing adopters must use the protected-source integrity
-  migration guide before claiming the new controls are active; initializing a
-  lock does not accept unexplained drift.
-- **Successor relationship:** This protection revision succeeds the prior
-  suite-index revision only for source-integrity handling. Git history
-  preserves the predecessor and every earlier substantive invariant.
+A governing revision takes effect at the coherent Git commit containing its
+authorized sources, reconciled consumers, verification and protected locks.
+Record the actual immutable commit; never invent a future identifier.
 
-### Version-realization-initiative correlation revision record
+Adoption is prospective and explicit. Record the governing revision, human
+authority, actual project baseline, affected active work and required migration
+dispositions in the adopting project's profile and applicable ledgers.
+Installation, synchronization or a lock initialization does not establish
+adoption, accept unexplained drift, or change a live initiative's decisions,
+acceptance, lifecycle, execution assignment, integration or release status.
 
-- **Authority:** The User's explicit
-  `prompts/version-realization-initiative-correlation-protocol-change.md`
-  instruction, executed on 2026-11-11, authorizes the exact correlation
-  invariant and affected protected-source revisions.
-- **Reason:** Give every governed work unit one immutable project-local version,
-  one realization suite, one self-contained initiative, and one dedicated Git
-  branch with reciprocal traceability.
-- **Affected scope:** Work identity, realization-suite structure, initiative
-  metadata and scope, branch traceability, workflow Stage 0 and later handoffs,
-  legacy compatibility, reusable sources, validation, and adoption guidance.
-- **Effective point:** The first Git commit containing the coherent
-  specification 09 revision, every necessarily affected consumer, validation
-  behavior, regression tests, and authorized protected-source locks. Each
-  project records that commit before allocating governed tuples.
-- **Compatibility and migration:** The revision governs post-effective
-  allocations, explicitly migrated pre-effective tuples, and post-effective
-  successors or mandatory splits. Pre-effective records require a complete
-  non-inferred migration-ledger disposition and may otherwise remain under
-  their recorded earlier compatible workflow revision.
-- **Successor relationship:** Specification 09 succeeds the earlier suite only
-  for work identity and correlation. Specifications 01 through 08 continue to
-  govern evidence, governance, conflicts, lifecycle, Git, scope, human
-  decisions, and workflow except where they expressly reference this revision.
+Preserve existing sources, compatible governing revisions, versions, notes,
+initiatives, paths, branches and accepted claims until an authorized,
+evidence-backed migration. Adoption never retroactively interprets prompts,
+waives gates, resolves questions, accepts work, reopens claims or manufactures
+completion evidence.
+Use the protected-source integrity migration procedure before claiming source
+protection is active.
 
-### Initiative coherence and completion-feedback revision record
+Specification 09 governs major, minor and patch scopes, precise many-note and
+many-initiative provenance, coherent same-initiative revision, bounded intake
+placement and necessary reopening, and dedicated or shared execution. Each
+initiative retains independent human acceptance and ordinary completion
+evidence. Specification 05 permits child-to-immediate-parent local integration
+only after recorded closure authority and required checks; scope closure,
+remote actions and branch deletion retain their own authority.
 
-- **Authority:** The User's exact 2026-11-12 instructions preserved in
-  [COH-DR-001](../../../decisions/COH-DR-001-initiative-coherence.md).
-- **Reason:** Count open effort as work, document incompatible efforts,
-  route completion learning to open initiatives, and require explicit
-  reopening before refining closed claims.
-- **Affected scope:** Specifications 02, 04, 07, and 08, new specification 10,
-  reusable sources for every initiative type, validation, tests, documentation,
-  and the protocol and installed example adoption records and locks.
-- **Effective event:** Coherent adoption with a captured pre-revision Git
-  baseline. Earlier closed claims remain historical; no retrospective
-  acceptance, completion review, or reopening is invented.
-- **Successor relationship:** Specification 10 strengthens coherence and
-  feedback handling without changing evidence precedence, type boundaries,
-  human decision gates, stage numbering, or specification 09 successor rules.
+For coherence adoption, capture the immutable Git snapshot immediately before
+adoption as the project's Coherence revision baseline. Unchanged terminal
+initiatives at that baseline need no retrospective completion review. New
+work, completion and later refinement follow specification 10, including
+open-effort inventory, conflict recording and authorized reopening.
 
-### Positional prompt keyword revision record
-
-- **Authority:** The User's 2026-11-12 instruction to execute
-  `prompts/positional-gate-switches-protocol-change.md`, captured in
-  [KWD-DR-001](../../../decisions/KWD-DR-001-positional-keywords.md).
-- **Reason and scope:** Establish canonical extensible directive vocabulary,
-  positional composition, list execution, preview, local access, independent
-  review, and precise recorded exceptions across instructions and consumers.
-- **Effective event:** The first coherent specification 11 revision commit,
-  including reconciled consumers, verification, and authorized locks.
-- **Compatibility and migration:** Prospective adoption only; no historical
-  prompt, decision, gate, question, initiative, or lifecycle claim changes.
-  Existing adopters retain their recorded revision until adoption and any
-  applicable exception authority are recorded.
-- **Successor relationship:** Specification 11 qualifies earlier gate clauses
-  only through its specific authority and documentation process. Unexcepted
-  rules, protected sources, locks, evidence truth, ordinary lifecycle meanings,
-  type boundaries, and substantive-successor requirements remain binding.
-
-### Version-scope grouping, delegated intake and closure integration revision
-
-- **Authority:** The User's 2026-11-12 instruction to execute
-  `prompts/version-scope-grouping-and-branching-protocol-change.md`, captured in
-  [VSG-DR-001](../../../decisions/VSG-DR-001-version-scope-grouping.md).
-- **Reason:** Several narrow initiatives may share an immutable realization
-  scope while retaining precise provenance and independent acceptance.
-- **Affected clauses:** Specification 09's bijection, two-component-only
-  version syntax, single-outcome suite, exclusive branch and mandatory
-  substantive-successor requirements; specifications 02, 04, 07, 08 and 10's
-  necessary per-target human reopening clauses; specification 05's hierarchy,
-  finalization and local integration contract; necessary specification 01/06
-  references, reusable sources, entry points, consumers, validation, tests,
-  guidance, adoption records and locks. Specification 11 changes only its
-  affected reopening/successor cross-reference, preserving registry semantics.
-- **Effective event:** The first coherent Git commit containing reconciled
-  sources and consumers, verification, mirrors and authorized lock updates.
-  Projects adopt explicitly with their governing commit, baseline and ledger.
-- **Compatibility:** Preserve legacy versions, suites/notes, initiatives,
-  paths, branches and claims under their recorded compatible revision until
-  evidence-backed migration. Distribution synchronization does not migrate
-  live work. Historical PR evidence remains preserved.
-- **Successor relationship:** This revision supersedes only the named clauses.
-  The earlier revision records above preserve their historical contracts; their
-  old tuple and mandatory-successor descriptions do not govern new allocations
-  after explicit version-scope adoption. Git preserves prior invariant text.
-
-The current specification 09 permits major, minor and patch scopes, many-note
-and many-initiative provenance, coherent same-initiative revision, bounded LLM
-intake placement/reopening and dedicated/shared placement. Human acceptance
-and ordinary completion evidence remain required. Specification 05 defines
-child-to-immediate-parent local integration after recorded closure authority,
-separate scope closure and human-managed PRs. No protocol adoption itself
-reopens, accepts, closes, merges or migrates live work.
-### Canonical templates and documentary prerequisites revision record
-
-- **Authority:** The User's 2026-11-13 instruction, "2) execute the template
-  completeness prompt", explicitly invokes
-  `prompts/template-completeness-and-prerequisites-protocol-change.md`.
-  [The maintenance record](../../../docs/development/template-prerequisites-maintenance.md)
-  preserves the exact request, baseline, boundaries, and verification.
-- **Reason and affected clauses:** Specification 02 owns canonical selection,
-  instantiation, evidence population, and validation. Specification 08 permits
-  bounded preceding owning-stage documentary recovery before ordinary entry
-  checks, reconciles handoff/retry behavior, and separates Stage 9 preparation
-  from its read-only assessment. Specifications 01, 04, 05, 06, 07, 09, and 10
-  receive template-use cross-references only. Reusable sources, workflow prompts,
-  summaries, coverage navigation, tools, tests, and affected locks are reconciled.
-- **Effective event:** The first coherent Git commit containing this revision,
-  reconciled consumers, verification evidence, and specifically authorized locks.
-  Locate that immutable commit through the maintenance record's Git history;
-  do not invent a future hash or treat installation as project adoption.
-- **Compatibility and migration:** Prospective adoption recorded in the adopting
-  project's profile change record with the exact revision, authority, baseline,
-  and affected active work. Preserve earlier compatible governing revisions and
-  historical claims. See the
-  [adoption and recovery guide](../../../docs/guides/template-prerequisites-migration.md).
-  No live initiative, decision, adoption, or lifecycle event is changed here.
-- **Successor relationship:** Supersedes only contradictory documentary
-  no-create/entry/handoff/read-only clauses to permit the bounded preparation
-  activity. Stage ownership, numbering, actual gates, separate human acceptance,
-  type boundaries, immutable identity, closed-claim preservation, and
-  specification 11 semantics remain unchanged. Git preserves predecessor text.
+Specification 11 governs directive interpretation, list scheduling and
+specifically documented exceptions. Unexcepted gates, truthful evidence,
+protected sources, stage numbering, initiative types and ordinary lifecycle
+meanings remain binding.
 
 Use the [canonical coverage and use map](../../../template/TEMPLATE-COVERAGE.md)
 to locate reusable sources. Binding use rules are in
 [specification 02](02_Codex_Initiative_Governance_Specification.md#canonical-template-selection-and-use),
-and the shared preparation procedure is in
+and the shared preceding-stage preparation procedure is in
 [specification 08](08_Codex_Initiative_Workflow_Specification.md#documentary-prerequisite-preparation).
-
-### Scaffold installation-root revision record
-
-- **Authority:** The User's 2026-11-13 explicit invocation of
-  `prompts/project-root-installation-directory-protocol-change.md`, captured
-  in ROOT-DR-001, distribution source
-  `docs/development/project-root-installation-maintenance.md`.
-- **Reason and scope:** Specification 05 now defines project root `P` as the
-  resolved scaffold installation destination contained in valid Git worktree
-  `G`; `P` may equal or be beneath `G`. Necessary root/path consumers,
-  reusable copies, runtime tools, tests, guidance and affected locks follow
-  that definition. Git remains mandatory and does not enlarge file ownership.
-- **Effective event:** The first coherent Git commit containing this revision,
-  reconciled consumers, verification and authorized locks, discoverable through
-  ROOT-DR-001's Git history.
-- **Compatibility and migration:** Prospective explicit adoption records the
-  governing commit, authority, actual project baseline and affected work.
-  Earlier governing revisions and claims are preserved; root installations
-  retain their paths. Installation or synchronization alone adopts nothing.
-  No live project is moved, reopened, accepted, completed or released here.
-- **Predecessor relationship:** Supersedes only specification 05's former
-  project-equals-Git-root requirement and directly contradictory path consumers.
-  Git preserves predecessor revision
-  `fc0c8e3ea01471d3a35f06a29d96f837070afd70`. Identity, lifecycle, decision,
-  acceptance, branch, evidence, coherence and keyword rules remain unchanged.
+Preparation does not supply missing identity, authority, actual work or
+verification and does not change stage ownership or acceptance requirements.
 
 The [owning root requirement](05_Codex_Git_Workflow_Specification.md#requirement)
 distinguishes installed projects, Git worktrees, the source distribution and

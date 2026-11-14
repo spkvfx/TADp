@@ -93,8 +93,7 @@ are distinct from artifacts in the repository `../../evidence` directory; they d
 not create, alter, reclassify, or otherwise modify repository invariants.
 
 - `../../evidence/authoritative` identifies binding repository evidence that governs
-  an initiative specification or product decision. It is the current repository
-  label for the former `invariants` classification. An initiative may cite it
+  an initiative specification or product decision. An initiative may cite it
   but cannot modify it.
 - `../../evidence/non-authoritative` identifies contextual, exploratory, or
   supporting repository evidence. It may inform a decision but cannot by itself

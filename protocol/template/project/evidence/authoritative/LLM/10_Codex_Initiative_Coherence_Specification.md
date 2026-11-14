@@ -22,28 +22,20 @@ does not establish ordinary initiative completion. Restored gates require
 current checks when later work depends on excepted output. Locks and
 historical source identities remain enforced.
 
-### Revision record
+### Adoption and compatibility
 
-- **Authority:** The User's exact 2026-11-12 instructions preserved in
-  COH-DR-001 (TADp distribution source `decisions/COH-DR-001-initiative-coherence.md`; not a project decision or work record).
-- **Reason:** Make completion feedback, recognition of open effort,
-  work-conflict recording, and closed-claim preservation explicit.
-- **Affected scope:** Governance, lifecycle, decisions, workflow handoffs,
-  common and type-specific reusable sources, validation, tests, documentation,
-  the reference protocol, and the installed example.
-- **Effective event:** Adoption of this coherent revision and its consumers.
-  Each adopting project records a `Coherence revision baseline` in its project
-  profile: the immutable Git snapshot immediately before adoption, not an
-  invented future effective commit.
-- **Compatibility and migration:** Preserve earlier claims and their evidence.
-  Unchanged terminal initiatives at the adoption baseline need no retrospective
-  completion review. All new work, completion, and later refinement follow
-  this rule. Adoption must not silently accept an open initiative, settle a
-  question, or change a historical claim.
-- **Successor relationship:** This specification strengthens specifications
-  02, 04, 07, and 08 for coherence and feedback. Evidence precedence, human
-  gates, type-specific output boundaries, scope, and specification 09's
-  substantive-successor requirement remain binding. Git retains predecessors.
+Adopt the coherence rules with a captured project baseline. Record the
+Coherence revision baseline in the project profile as the immutable Git
+snapshot immediately before adoption, never an invented future commit.
+
+Preserve earlier claims and their evidence. Unchanged terminal initiatives at
+the adoption baseline need no retrospective completion review. All new work,
+completion and later refinement follow these rules. Adoption does not accept
+an open initiative, settle a question, authorize reopening or change a claim.
+
+Evidence precedence, human decision gates, type-specific output boundaries,
+narrow scope, stage numbering and specification 09's current revision and
+successor requirements remain binding.
 
 ## Documentary sources
 
