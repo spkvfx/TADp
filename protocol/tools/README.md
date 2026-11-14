@@ -39,6 +39,7 @@ nested synchronization supported.
 | `python tools/tadp_protect.py guard-staged [root]` | Inspects actual staged/unstaged protected paths and matching recorded update authority. | Read-only commit gate. `0`: permitted; `1`: blocked; `2`: inspection or argument error. |
 | `python tools/tadp_keywords.py root --prompt-id ID --text TEXT` | Explicit prompt text and identity; reads the canonical registry and emits JSON interpretation blocks. | Read-only. `0`: interpreted; `2`: invalid arguments or registry/input error. It performs no requested work. |
 | `python tools/tadp_sync.py [--ref REVISION] [--apply] [--authority REFERENCE] [--json]` | Run from the target Git root; fetches the canonical GitHub template and pins its actual commit. Defaults to a preview. | `0`: conflict-free preview or successful apply; `1`: conflicts, no target writes; `2`: invalid input, unsafe source/destination, missing authority, Git or I/O error. An I/O failure during apply can leave partial writes and retained backups. |
+| `python tools/tadp_reset.py [--json]` | Preview a reset of the TADp project directly above this script's `tools/` directory. `--apply` also requires `--confirm` with that exact absolute project path and `--backup` with a new external directory. | `0`: preview or verified reset; `2`: invalid input, protected drift, unsafe paths, changed files or I/O error. A failure during apply may leave partial changes; retain the backup. |
 | `tadp_scopes.py`, `tadp_templates.py` | Python library APIs described below; called by the validator where applicable. | No standalone CLI. Integration helpers have their own explicit side effects and authority requirements. |
 
 `initialize` and `refresh` are the protection tool's separately authorized
@@ -48,6 +49,62 @@ selectors and require `--authority`; without selectors they address both
 roots. They write locks, return `0` on success and `2` for rejected input or
 baseline conditions. See the governed procedure in
 [Validation and quality](../docs/development/validation-and-quality.md#protected-source-workflow).
+
+## Reset a TADp project to its installed template
+
+`tadp_reset.py` removes user work from the **TADp project directory**, located
+one level above the script's own `tools/` directory. The current working
+directory does not select the target. A repository may contain several TADp
+projects or have one at its Git root. Only the selected project is reset;
+siblings and the enclosing repository are left alone. Git is required.
+
+The local, locked `template/project/` supplies the clean scaffold. The command
+restores its files, including `.template.md` record sources, without filling
+them or creating live records. All other project files and empty directories
+are removed, including initiatives, evidence, products, code, tests, local
+prompts, sync state/backups, untracked files and ignored environments. It does
+not fetch a newer template. Existing runtime files are restored from the local
+scaffold. The complete `template/` library, installed
+`evidence/authoritative/LLM/` suite, and `tools/tadp_reset.py` itself are retained
+unchanged. The embedded invariant suite and nonrecursive `template/README.md`
+placeholder do not overwrite those retained sources.
+
+Both protected locks must pass before preview or apply. There is no lock
+refresh, gate override or protected-source reset option. A reset does not
+cancel, reopen, accept or complete initiatives, or establish adoption. Git
+metadata, history, branches, index and configuration remain in place; the
+resulting working-tree changes are not staged or committed. A root `.git`
+directory or linked-worktree `.git` file is retained. Nested repositories,
+links/junctions, hardlinks and unsafe or case-colliding paths block the command.
+
+Preview first. For this distribution the target is `protocol/`; in an adopted
+project it is wherever its `tools/` directory lives. These are inert examples;
+replace the confirmation with the exact `root` printed by your preview:
+
+```powershell
+python C:/path/to/project/tools/tadp_reset.py --json
+python C:/path/to/project/tools/tadp_reset.py --apply --confirm 'C:\path\to\project' --backup C:/backups/project-before-reset
+```
+
+`--backup` must name a new directory outside the entire enclosing Git worktree
+and its metadata, with an existing parent. Before any deletion, the tool saves
+all non-retained project files under `BACKUP/files/`, verifies their bytes and
+writes `BACKUP/reset-manifest.json` with original hashes, modes, directories and
+the planned changes. Protected sources and Git remain at their original paths.
+Use a Python interpreter outside the target project: a local environment inside
+the target is itself user work to remove. To use this standalone tool with an
+older installed template, copy it to that project's `tools/` beside
+`tadp_sync.py`; synchronization's current payload does not install it.
+
+Do not run concurrent writers. File changes detected during planning, backup
+or removal stop the operation. An exclusive `tadp-reset.lock` in the enclosing
+Git metadata serializes resets across sibling TADp projects. Inspect an
+interrupted run before manually removing a stale lock. Apply is not atomic:
+an I/O failure or late concurrent edit may leave partial changes. Keep the
+external backup and inspect the error and target before recovery; the command
+does not automatically restore files over subsequent edits. After a successful
+reset, review the Git diff and run the ordinary protection and validation
+checks. A clean scaffold still needs real ownership and adoption records.
 
 ## Synchronize template sources into a project
 
