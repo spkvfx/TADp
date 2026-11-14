@@ -125,12 +125,20 @@ checks. A clean scaffold still needs real ownership and adoption records.
 Use `tadp_sync.py` with Python 3.11 or later and Git. Run from the selected
 project installation directory, or name its existing directory with
 `--target` from any working directory. Use an absolute script path if it is
-not installed there. It defaults to `https://github.com/spkvfx/TADp.git`
-and the upstream default branch (`HEAD`). `--source` accepts another trusted
-HTTPS Git repository or a local fixture repository; it must retain the
-`protocol/` distribution layout. `--ref` can pin a branch, tag or commit.
-Upstream content is read from committed Git blobs; fetched programs and hooks
-are never executed during synchronization.
+not installed there. Every sync reads the local `template/` beside the script's
+`tools/` directory. Use `--local-template PATH` to select a different library.
+Default local authority uses current on-disk bytes and never fetches remote
+content. The library must have valid locks and contain its project suite and
+runtime tools; incomplete historical libraries need a complete refresh first.
+
+Choose `--refresh-template` to make the remote authoritative: preview replacement
+of the local library, then use `--apply` to back up and replace it before syncing
+from the replaced local files. Refresh defaults to
+`https://github.com/spkvfx/TADp.git` and upstream `HEAD`. `--source` accepts
+another trusted HTTPS Git repository or local repository with the `protocol/`
+distribution layout. `--ref` pins its branch, tag or commit. These arguments
+are used only with `--refresh-template`. Fetched programs and hooks are never
+executed during synchronization.
 
 These are inert command examples. Here `python` denotes the configured
 interpreter, and `UPSTREAM_COMMIT` is the exact hash printed by the preview:
@@ -138,18 +146,21 @@ interpreter, and `UPSTREAM_COMMIT` is the exact hash printed by the preview:
 ```powershell
 # Git-root installation: run from C:/work/repository (P = G).
 python C:/path/to/TADp/protocol/tools/tadp_sync.py --json
-python C:/path/to/TADp/protocol/tools/tadp_sync.py --ref UPSTREAM_COMMIT --apply
+python C:/path/to/TADp/protocol/tools/tadp_sync.py --apply
 # Nested installation: existing C:/work/repository/projects/widget is P.
 python C:/path/to/TADp/protocol/tools/tadp_sync.py --target C:/work/repository/projects/widget --json
-python C:/path/to/TADp/protocol/tools/tadp_sync.py --target C:/work/repository/projects/widget --ref UPSTREAM_COMMIT --apply
+python C:/path/to/TADp/protocol/tools/tadp_sync.py --target C:/work/repository/projects/widget --apply
+# Remote authority: preview first, then pin and authorize the exact replacement.
+python C:/path/to/TADp/protocol/tools/tadp_sync.py --refresh-template --json
+python C:/path/to/TADp/protocol/tools/tadp_sync.py --refresh-template --ref UPSTREAM_COMMIT --authority "Approved revision/change receipt" --apply
 ```
 
-The payload contains the complete upstream `protocol/template/` library at
+The payload contains the complete local library at
 `template/`, project scaffold files from `template/project/` at the target
 root, the runtime invariant suite, and the named `tadp_*.py` runtime tools.
-If the template embeds the suite, that copy is used; older templates use the
-distribution's canonical suite. Both source locks must match their complete
-trees. The script copies upstream locks unchanged and never refreshes them.
+The embedded suite and tools are authoritative, including when distribution
+development tools differ. Both source locks must match their complete trees.
+The script copies source locks unchanged and never refreshes them.
 It excludes the distribution's live initiatives, products, realizations,
 decisions, development reports and regression tests. The consolidated project
 baseline includes its own project-use guides and empty navigation folders;
@@ -170,22 +181,32 @@ Review existing instructions against newer scaffold sources under
 `template/project/` manually. A preserved root hook is not automatically
 upgraded or enabled.
 
-`.tadp-sync.json` records the installed source, commit and raw content hashes,
-plus history of sync revisions, authority references and backups.
+`.tadp-sync.json` records the local library path, content revision and raw hashes,
+plus history of authority choices, remote commit provenance and backups.
 Keep it with the project. Existing managed files update only when they still
 match their recorded installation; identical upstream files can establish a
 baseline on the first run. Unmanaged collisions, locally edited managed files,
 and locally removed installed files require manual reconciliation. Any
 conflict prevents all target writes. Preview does not create state or backups.
-Switching recorded source identity also requires manual reconciliation.
+Local and remote authority share the same local-library source identity, so
+switching between them is supported. A previous direct-remote installation
+can transition when its recorded source matches `--source`; choosing a
+different local-library path requires manual identity reconciliation.
 
 Existing protected-source updates additionally require `--authority` naming
 the human-approved revision and exact change, for example a project decision
 receipt. This argument records authority; it cannot create authorization.
 Review compatibility and adoption requirements before approving that update.
-Local additions or upstream removals that would contradict an incoming
-protected lock block the update. There is no force, prune or delete option.
-Upstream-retired files and user work remain in place. The tool never stages,
+Local additions or source removals that would contradict an incoming
+target protected lock block the sync. Target-retired files and user work remain
+in place. Remote replacement of an existing local library additionally needs
+`--authority`; its complete previous directory, including retired or modified
+files, is retained under `.tadp-template-backups/<run-id>/template` beside the
+local library. Locks are copied unchanged. Target conflicts and missing authority
+block both phases before writes. Preview changes neither tree. When the source
+is the target's own `template/`, only refresh manages that library; sync uses it
+to update runtime and missing scaffold files without copying it over itself.
+The tool never stages,
 commits, merges, changes Git configuration, enables hooks or deletes branches.
 
 Before replacing a managed file, the script saves its exact previous content
@@ -198,6 +219,12 @@ script never deletes work as rollback or restores backups over user edits.
 An exclusive `.tadp-sync.lock` serializes sync runs and is removed only by its
 own invocation. If interruption leaves it behind, inspect it before manually
 reconciling the stale lock; the tool never removes another run's lock.
+An additional `.tadp-template.lock` beside the local library serializes source
+replacement. Replacement uses a staged directory on the same filesystem and
+retains old bytes before switching directories. A later target-write failure
+can leave the refreshed library installed; inspect retained backups and any
+`.tadp-template-stage-*` directory before retrying. Neither phase automatically
+rolls back over later user changes.
 
 Source synchronization does not establish project adoption, migration,
 acceptance or lifecycle completion. A new clean baseline still needs actual

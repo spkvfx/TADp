@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-"""Preview or safely install the canonical TADp template at a selected project root.
+"""Sync a selected project root from the local TADp template.
 
+Use --refresh-template to replace the local library from a pinned remote first.
 Standard library only; Git is required. No upstream code is executed. Installation
 does not adopt a protocol revision, migrate work, enable hooks, or commit files.
 """
@@ -293,11 +294,16 @@ def load_assets(repo: Path, revision: str) -> dict[str, Asset]:
             raise SyncError("upstream template file exceeds 32 MiB")
         blobs.append(raw[end + 1:end + 1 + size])
         offset = end + 2 + size
+    return deployment_assets({name: Asset(content, mode)
+                              for (name, _, mode), content in zip(entries, blobs)})
+
+
+def deployment_assets(sources: dict[str, Asset]) -> dict[str, Asset]:
+    """Project a verified distribution into library, runtime and seed files."""
     assets: dict[str, Asset] = {}
     has_embedded_suite = any(name.startswith("protocol/template/project/evidence/authoritative/LLM/")
-                             for name, _, _ in entries)
-    has_project_baseline = any(name == "protocol/template/project/template/README.md"
-                               for name, _, _ in entries)
+                             for name in sources)
+    has_project_baseline = "protocol/template/project/template/README.md" in sources
 
     def add(name: str, content: bytes, mode: int, kind: str = "managed") -> None:
         asset = Asset(content, mode, kind)
@@ -305,7 +311,8 @@ def load_assets(repo: Path, revision: str) -> dict[str, Asset]:
             raise SyncError(f"conflicting upstream deployment sources: {name}")
         assets[name] = asset
 
-    for (name, _, mode), content in zip(entries, blobs):
+    for name, asset in sources.items():
+        content, mode = asset.content, asset.mode
         if name.startswith("protocol/template/"):
             relative = name[len("protocol/template/"):]
             if relative.startswith("project/docs/development/") and (
@@ -330,7 +337,11 @@ def load_assets(repo: Path, revision: str) -> dict[str, Asset]:
             if not has_embedded_suite:
                 add(name[len("protocol/"):], content, mode)
         else:
-            add(name[len("protocol/"):], content, mode)
+            # The embedded project runtime is authoritative when present.
+            # Distribution development tools must not override that template.
+            target = name[len("protocol/"):]
+            if "protocol/template/project/" + target not in sources:
+                add(target, content, mode)
     validate_names(assets)
     for required in ("template/AGENTS.md", "AGENTS.md", "README.md",
                      "evidence/authoritative/LLM/11_Codex_Prompt_Keyword_Specification.md",
@@ -356,9 +367,116 @@ def load_assets(repo: Path, revision: str) -> dict[str, Asset]:
     return assets
 
 
-def make_plan(root: Path, assets: dict[str, Asset], state: dict | None) -> dict:
+def read_template(template: Path) -> dict[str, Asset]:
+    """Snapshot regular local files without following links or project boundaries."""
+    for component in (*reversed(template.parents), template):
+        if os.path.lexists(component) and linked(component):
+            raise SyncError(f"symlink or junction in local template: {component}")
+    if not template.is_dir():
+        raise SyncError(f"local template directory is missing: {template}; use --refresh-template to install it")
+    files: dict[str, Asset] = {}
+
+    def visit(directory: Path) -> None:
+        for path in sorted(directory.iterdir()):
+            name = path.relative_to(template).as_posix()
+            safe_name(name)
+            if linked(path):
+                raise SyncError(f"symlink or junction in local template: {path}")
+            if path.is_dir():
+                visit(path)
+            elif path.is_file() and path.stat().st_nlink == 1:
+                if path.stat().st_size > 32 * 1024 * 1024:
+                    raise SyncError(f"local template file exceeds 32 MiB: {path}")
+                mode = 0o755 if path.stat().st_mode & stat.S_IXUSR else 0o644
+                files[name] = Asset(path.read_bytes(), mode)
+            else:
+                raise SyncError(f"local template is not an independent regular file: {path}")
+
+    visit(template)
+    validate_names(files)
+    return files
+
+
+def load_local_assets(template: Path) -> dict[str, Asset]:
+    """Use current local template bytes, including its embedded suite and tools.
+
+    Incomplete historical libraries need a complete remote refresh before they
+    can be the sole synchronization authority. Locks are copied, never generated.
+    """
+    sources = {"protocol/template/" + name: asset for name, asset in read_template(template).items()}
+    return deployment_assets(sources)
+
+
+def template_revision(assets: dict[str, Asset]) -> str:
+    manifest = [(name, digest(asset.content), asset.mode, asset.kind)
+                for name, asset in sorted(assets.items())]
+    return "sha256:" + digest(json.dumps(manifest, separators=(",", ":")).encode())
+
+
+def stage_template(directory: Path, assets: dict[str, Asset]) -> None:
+    """Materialize only the remote library; never execute fetched tools."""
+    directory.mkdir()
+    validate_names(assets)
+    for name, asset in assets.items():
+        if name.startswith("template/"):
+            path = directory.joinpath(*PurePosixPath(name[len("template/"):]).parts)
+            path.parent.mkdir(parents=True, exist_ok=True)
+            with path.open("xb") as stream:
+                stream.write(asset.content)
+            os.chmod(path, asset.mode)
+
+
+def replace_template(template: Path, incoming: Path, expected: dict[str, Asset] | None,
+                     authority: str) -> str | None:
+    """Retain the complete previous library before installing its replacement.
+
+    Directory renames preserve retired files in the backup, without pruning or
+    refreshing any lock. An I/O failure retains staging/backup for inspection.
+    """
+    if expected is not None and not authority.strip():
+        raise SyncError("replacing the local protected template requires --authority identifying the exact human-approved revision/change")
+    template.parent.mkdir(parents=True, exist_ok=True)
+    lock = safe_target(template.parent, ".tadp-template.lock")
+    token = uuid.uuid4().hex.encode()
+    with lock.open("xb") as stream:
+        stream.write(token)
+    try:
+        actual = read_template(template) if os.path.lexists(template) else None
+        if actual != expected:
+            raise SyncError("local template changed since preview; preview again before applying")
+        # Stage on the same filesystem as the destination so replacement uses
+        # renames, including when the system temporary directory is elsewhere.
+        staged = safe_target(template.parent, ".tadp-template-stage-" + uuid.uuid4().hex)
+        stage_template(staged, load_local_assets(incoming))
+        load_local_assets(staged)
+        if (read_template(template) if os.path.lexists(template) else None) != expected:
+            raise SyncError(f"local template changed during staging; staged library retained at {staged}")
+        backup = None
+        if expected is not None:
+            backup_path = safe_target(template.parent, ".tadp-template-backups/" + uuid.uuid4().hex + "/template")
+            backup_path.parent.mkdir(parents=True)
+            template.rename(backup_path)
+            backup = str(backup_path)
+        try:
+            staged.rename(template)
+        except OSError as error:
+            raise SyncError(f"could not install local template; staging retained at {staged}; previous library: {backup}") from error
+        return backup
+    finally:
+        if snapshot(template.parent, lock.name) == digest(token):
+            lock.unlink()
+
+
+def make_plan(root: Path, assets: dict[str, Asset], state: dict | None, *,
+              template_is_source: bool = False) -> dict:
+    # An installed library used as the authority is already in place. It is
+    # managed by the explicit refresh phase, never by the target sync phase.
+    if template_is_source:
+        assets = {name: asset for name, asset in assets.items() if not name.startswith("template/")}
     validate_names(assets)
     previous = state["files"] if state else {}
+    if template_is_source:
+        previous = {name: entry for name, entry in previous.items() if not name.startswith("template/")}
     actions = []
     expected = {STATE: snapshot(root, STATE)}
     for name in sorted(set(assets) | set(previous)):
@@ -384,6 +502,8 @@ def make_plan(root: Path, assets: dict[str, Asset], state: dict | None) -> dict:
         actions.append(dict(path=name, action=action, reason=reason))
     # A changed lock must never hide local additions or upstream removals.
     for prefix in PROTECTED:
+        if prefix == "template" and template_is_source:
+            continue
         if not any(a["action"] in ("create", "update") and a["path"].startswith(prefix + "/") for a in actions):
             continue
         directory = safe_target(root, prefix)
@@ -399,11 +519,13 @@ def make_plan(root: Path, assets: dict[str, Asset], state: dict | None) -> dict:
                                             reason="protected local/retired file would contradict upstream lock; retained"))
     conflicts = [a["path"] + ": " + a["reason"] for a in actions if a["action"] == "conflict"]
     return dict(actions=actions, conflicts=conflicts, _expected=expected,
+                _template_is_source=template_is_source,
                 _assets={name: (digest(a.content), a.mode, a.kind) for name, a in assets.items()})
 
 
 def apply_plan(root: Path, assets: dict[str, Asset], plan: dict, *, source: str,
-               revision: str, authority: str = "", git_root: Path | None = None) -> None:
+               revision: str, authority: str = "", git_root: Path | None = None,
+               template_origin: dict | None = None) -> None:
     # Serialize cooperating sync processes. Never replace/remove someone else's
     # lock, including a stale lock left by interruption; that requires inspection.
     if plan["conflicts"]:
@@ -416,16 +538,19 @@ def apply_plan(root: Path, assets: dict[str, Asset], plan: dict, *, source: str,
         stream.write(token)
     try:
         _apply_plan(root, assets, plan, source=source, revision=revision, authority=authority,
-                    git_root=git_root)
+                    git_root=git_root, template_origin=template_origin)
     finally:
         if snapshot(root, RUN_LOCK) == digest(token):
             lock.unlink()  # Only our own temporary coordination file, never payload.
 
 
 def _apply_plan(root: Path, assets: dict[str, Asset], plan: dict, *, source: str,
-                revision: str, authority: str = "", git_root: Path | None = None) -> None:
+                revision: str, authority: str = "", git_root: Path | None = None,
+                template_origin: dict | None = None) -> None:
     if plan["conflicts"]:
         raise SyncError("conflicts block all writes; reconcile manually and preview again")
+    if plan.get("_template_is_source"):
+        assets = {name: asset for name, asset in assets.items() if not name.startswith("template/")}
     if plan["_assets"] != {name: (digest(a.content), a.mode, a.kind) for name, a in assets.items()}:
         raise SyncError("payload changed after preview")
     updates = [a for a in plan["actions"] if a["action"] in ("create", "update")]
@@ -437,10 +562,12 @@ def _apply_plan(root: Path, assets: dict[str, Asset], plan: dict, *, source: str
         if snapshot(root, name) != expected:
             raise SyncError(f"destination changed since preview: {name}")
     old_state = load_state(root)
-    fresh = make_plan(root, assets, old_state)
+    fresh = make_plan(root, assets, old_state, template_is_source=plan.get("_template_is_source", False))
     if fresh["conflicts"] or fresh["actions"] != plan["actions"] or fresh["_expected"] != plan["_expected"]:
         raise SyncError("destination tree changed since preview; preview again before applying")
     files = dict(old_state["files"]) if old_state else {}
+    if plan.get("_template_is_source"):
+        files = {name: entry for name, entry in files.items() if not name.startswith("template/")}
     backup_id = uuid.uuid4().hex
     # Back up every replaceable file first, retaining exact bytes and permissions.
     for item in updates:
@@ -494,6 +621,9 @@ def _apply_plan(root: Path, assets: dict[str, Asset], plan: dict, *, source: str
     payload = dict(schema_version=1, source=source, revision=revision, authority=authority,
                    backup=backup_id if any(a["action"] == "update" for a in updates) else None,
                    files=files, history=history)
+    if template_origin is not None:
+        payload["template_origin"] = template_origin
+        history[-1]["template_origin"] = template_origin
     if git_root is not None:
         payload.update(project_root=str(root), git_root=str(git_root))
     elif old_state:
@@ -511,37 +641,115 @@ def _apply_plan(root: Path, assets: dict[str, Asset], plan: dict, *, source: str
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--source", default=DEFAULT_SOURCE, help="HTTPS Git URL or local fixture repository")
-    parser.add_argument("--ref", default="HEAD", help="upstream branch/tag/commit; HEAD discovers the default branch")
+    parser.add_argument("--local-template", default=str(Path(__file__).resolve().parents[1] / "template"),
+                        help="local authoritative library; defaults to template/ beside the script's tools/ directory")
+    parser.add_argument("--refresh-template", action="store_true",
+                        help="replace the local template from --source/--ref, then sync from that local copy")
+    parser.add_argument("--source", default=DEFAULT_SOURCE, help="HTTPS Git URL or local Git repository (refresh only)")
+    parser.add_argument("--ref", default="HEAD", help="upstream branch/tag/commit (refresh only); pin the previewed commit when applying")
     parser.add_argument("--target", help="existing installation directory inside a Git worktree; defaults to exact cwd")
     parser.add_argument("--apply", action="store_true", help="write a conflict-free plan; default is preview")
     parser.add_argument("--authority", default="", help="exact human authority for existing protected-source updates")
-    parser.add_argument("--json", action="store_true", help="emit the plan and pinned commit as JSON")
+    parser.add_argument("--json", action="store_true", help="emit local template identity, optional upstream commit and plans as JSON")
     args = parser.parse_args(argv)
     try:
         root, git_root = select_destination(args.target)
+        template = Path(os.path.abspath(Path(args.local_template).expanduser()))
+        # Check aliases before resolving; refreshing must never rename through
+        # an alias, or move a directory that contains the target project.
+        for component in (*reversed(template.parents), template):
+            if component.name.casefold() == ".git":
+                raise SyncError("Git metadata is not a local template destination")
+            if os.path.lexists(component) and linked(component):
+                raise SyncError(f"symlink or junction in local template: {component}")
+        template = template.resolve()
+        if template == root or template in root.parents:
+            raise SyncError("local template must not contain the installation destination")
+        template_is_source = template == root / "template"
+        if root in template.parents and not template_is_source:
+            raise SyncError("a local template inside the target must be its template/ directory")
+        if any((parent / ".tadp-lock.json").exists() for parent in template.parents):
+            raise SyncError("local template must not be nested inside another protected source")
         state = load_state(root)
-        if state and state["source"] != args.source:
+        source = str(template)
+        if state and state["source"] not in (source, args.source):
             raise SyncError("source differs from recorded installation; reconcile source identity manually")
+        upstream_revision = None
+        template_backup = None
         with tempfile.TemporaryDirectory(prefix="tadp-upstream-") as directory:
-            source_repo = Path(directory)
-            revision = fetch_source(source_repo, args.source, args.ref)
-            assets = load_assets(source_repo, revision)
-        plan = make_plan(root, assets, state)
-        warnings = ["Only template/scaffold, runtime suite and named runtime tools are included; project-use guides may be included, while development-only documents and live work are excluded.",
-                    "Source synchronization is not template completeness or protocol adoption; run project validation and review any references to excluded records.",
-                    "No deletion, pruning, automatic merge, hook activation, staging or commit is performed."]
-        result = dict(source=args.source, revision=revision, mode="apply" if args.apply else "preview",
-                      project_root=str(root), git_root=str(git_root),
-                      actions=plan["actions"], conflicts=plan["conflicts"], warnings=warnings, applied=False)
-        if args.apply and not plan["conflicts"]:
-            apply_plan(root, assets, plan, source=args.source, revision=revision,
-                       authority=args.authority, git_root=git_root)
-            result["applied"] = True
+            incoming = Path(directory) / "template"
+            if args.refresh_template:
+                source_repo = Path(directory) / "repository"
+                source_repo.mkdir()
+                upstream_revision = fetch_source(source_repo, args.source, args.ref)
+                stage_template(incoming, load_assets(source_repo, upstream_revision))
+                assets = load_local_assets(incoming)
+                local_before = read_template(template) if os.path.lexists(template) else None
+                if local_before and not {".tadp-lock.json", "AGENTS.md", "project/AGENTS.md"}.issubset(local_before):
+                    raise SyncError("refusing to replace a non-template directory; select a local template library")
+                remote_files = read_template(incoming)
+                template_actions = [dict(path=name,
+                    action="retain-backup" if name not in remote_files else
+                           "create" if local_before is None or name not in local_before else
+                           "unchanged" if local_before[name] == remote_files[name] else "replace")
+                    for name in sorted(set(local_before or {}) | set(remote_files))]
+            else:
+                assets = load_local_assets(template)
+                local_before = read_template(template)
+                template_actions = []
+            revision = template_revision(assets)
+            plan = make_plan(root, assets, state, template_is_source=template_is_source)
+            origin = dict(authority="remote" if args.refresh_template else "local", local_template=source)
+            if args.refresh_template:
+                origin.update(upstream_source=args.source, upstream_revision=upstream_revision)
+            warnings = ["All target files are synchronized from the local template; remote authority replaces that library first.",
+                        "Source synchronization is not template completeness or protocol adoption; run project validation and review any references to excluded records.",
+                        "Project work and retired target files are preserved; no automatic merge, hook activation, staging or commit is performed."]
+            result = dict(source=source, revision=revision, mode="apply" if args.apply else "preview",
+                          template_authority=origin["authority"], local_template=source,
+                          upstream_source=args.source if args.refresh_template else None,
+                          upstream_revision=upstream_revision, template_actions=template_actions,
+                          template_backup=None, template_refreshed=False,
+                          project_root=str(root), git_root=str(git_root),
+                          actions=plan["actions"], conflicts=plan["conflicts"], warnings=warnings, applied=False)
+            if args.apply and not plan["conflicts"]:
+                # Reject missing authority for either phase before any source or
+                # target writes. A flag records human authority; it creates none.
+                protected_updates = any(item["action"] == "update" and
+                    any(item["path"].startswith(prefix + "/") for prefix in PROTECTED)
+                    for item in plan["actions"])
+                if (protected_updates or args.refresh_template and local_before is not None) and not args.authority.strip():
+                    raise SyncError("protected updates/replacement require --authority identifying the exact human-approved revision/change")
+                if args.refresh_template:
+                    # Preflight destination drift and an existing target lock
+                    # before replacing the local source. Apply checks them again.
+                    if os.path.lexists(safe_target(root, RUN_LOCK)):
+                        raise SyncError("existing target sync lock blocks local template replacement")
+                    fresh = make_plan(root, assets, load_state(root), template_is_source=template_is_source)
+                    if fresh != plan:
+                        raise SyncError("destination changed since preview; local template was not replaced")
+                    template_backup = replace_template(template, incoming, local_before, args.authority)
+                    result.update(template_backup=template_backup, template_refreshed=True)
+                # Even refreshed syncs read the actual installed local copy. The
+                # fetched payload is never passed directly to the target writer.
+                assets = load_local_assets(template)
+                if template_revision(assets) != revision:
+                    raise SyncError("local template changed since preview; refusing target writes")
+                origin["backup"] = template_backup
+                apply_plan(root, assets, plan, source=source, revision=revision,
+                           authority=args.authority, git_root=git_root, template_origin=origin)
+                result["applied"] = True
         if args.json:
             print(json.dumps(result, indent=2))
         else:
-            print(f"TADp {result['mode']}: {args.source} @ {revision}")
+            print(f"TADp {result['mode']}: {source} @ {revision}")
+            print(f"Template authority: {result['template_authority']}")
+            if args.refresh_template:
+                print(f"Replace local template from: {args.source} @ {upstream_revision}")
+                for item in template_actions:
+                    print(f"{item['action']:14} local template/{item['path']}")
+            if template_backup:
+                print(f"Previous local template: {template_backup}")
             print(f"Project root: {root}")
             print(f"Git root: {git_root}")
             for item in plan["actions"]:
@@ -551,12 +759,18 @@ def main(argv: list[str] | None = None) -> int:
             if result["applied"]:
                 print(f"Applied. Baselines: {STATE}; previous managed bytes: {BACKUPS}/ (when updated).")
             elif plan["conflicts"]:
-                print("Blocked: conflicts; no target writes performed.")
+                print("Blocked: conflicts; no local template or target writes performed.")
             else:
-                print("Preview only; no target writes. Use --ref with the printed commit and --apply after review.")
+                print("Preview only; no local template or target writes. Use --apply after review.")
+                if args.refresh_template:
+                    print(f"Pin the reviewed remote revision with --ref {upstream_revision}.")
         return 1 if plan["conflicts"] else 0
     except (OSError, UnicodeError, SyncError, subprocess.SubprocessError) as error:
         print(f"error: {error}", file=sys.stderr)
+        if locals().get("template_backup"):
+            print(f"Local template was replaced; previous library retained at {template_backup}. Inspect before retrying.", file=sys.stderr)
+        elif locals().get("result", {}).get("template_refreshed"):
+            print("Local template was installed before the target error. Inspect both trees before retrying.", file=sys.stderr)
         return 2
 
 

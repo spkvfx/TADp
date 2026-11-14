@@ -439,10 +439,22 @@ class CommittedDistributionTests(unittest.TestCase):
         self.git(root, "commit", "--quiet", "-m", "isolated template source")
         return self.git(root, "rev-parse", "HEAD").decode().strip()
 
-    def sync(self, cwd: Path, source: Path, revision: str, *arguments: str):
+    def sync(self, cwd: Path, source: Path, revision: str, *arguments: str,
+             refresh_template: bool = True):
+        # Each CLI test gets an isolated persistent library for both authority
+        # modes. Never refresh this repository's actual protected template.
+        if not hasattr(self, "local_templates"):
+            self.local_templates = {}
+        source_key = str(source.resolve())
+        if source_key not in self.local_templates:
+            directory = tempfile.TemporaryDirectory(prefix="tadp-local-fixture-")
+            self.addCleanup(directory.cleanup)
+            self.local_templates[source_key] = Path(directory.name) / "template"
+        options = ("--refresh-template", "--authority", "Fixture human approves exact remote template revision") if refresh_template else ()
         return subprocess.run(
             (sys.executable, str(PROTOCOL / "tools/tadp_sync.py"), "--source", str(source),
-             "--ref", revision, "--json", *arguments),
+             "--ref", revision, "--local-template", str(self.local_templates[source_key]),
+             "--json", *options, *arguments),
             cwd=cwd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=False,
         )
 
@@ -451,6 +463,10 @@ class CommittedDistributionTests(unittest.TestCase):
         for name in ("prompts/AGENTS.md", "prompts/README.md", "initiatives/README.md", "products/README.md"):
             files["protocol/template/project/" + name] = b"# Installed fixture marker\n"
         files["protocol/evidence/authoritative/LLM/00_Codex_Invariant_Suite_Index.md"] = b"# Suite fixture marker\n"
+        self.refresh_fixture_locks(files)
+        for name, content in list(files.items()):
+            if name.startswith(("protocol/evidence/authoritative/LLM/", "protocol/tools/")):
+                files["protocol/template/project/" + name[len("protocol/"):]] = content
         self.refresh_fixture_locks(files)
         return files
 
@@ -488,7 +504,7 @@ class CommittedDistributionTests(unittest.TestCase):
             self.assertFalse((outer / ".tadp-sync.json").exists())
             self.assertFalse((project / ".tadp-sync.lock").exists())
             state_bytes = (project / ".tadp-sync.json").read_bytes()
-            repeated = self.sync(project, source, revision, "--apply")
+            repeated = self.sync(project, source, revision, "--apply", refresh_template=False)
             self.assertEqual(0, repeated.returncode, repeated.stderr.decode())
             self.assertEqual(state_bytes, (project / ".tadp-sync.json").read_bytes())
             self.assertFalse((project / ".tadp-sync-backups").exists())
@@ -554,6 +570,8 @@ class CommittedDistributionTests(unittest.TestCase):
             self.assertEqual(0, first.returncode, first.stderr.decode())
             prior = (project / "tools/tadp_validate.py").read_bytes()
             files["protocol/tools/tadp_validate.py"] = b"# updated runtime fixture\n"
+            files["protocol/template/project/tools/tadp_validate.py"] = files["protocol/tools/tadp_validate.py"]
+            self.refresh_fixture_locks(files)
             updated_revision = self.commit_fixture(source, files)
             update = self.sync(outer, source, updated_revision, "--target", "nested", "--apply")
             self.assertEqual(0, update.returncode, update.stderr.decode())
@@ -626,7 +644,7 @@ class CommittedDistributionTests(unittest.TestCase):
                                         cwd=project, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
                 self.assertEqual(0, result.returncode, result.stdout.decode() + result.stderr.decode())
             state = (project / ".tadp-sync.json").read_bytes()
-            repeat = self.sync(project, source, revision, "--apply")
+            repeat = self.sync(project, source, revision, "--apply", refresh_template=False)
             self.assertEqual(0, repeat.returncode, repeat.stderr.decode())
             self.assertEqual(state, (project / ".tadp-sync.json").read_bytes())
             self.assertEqual(sentinel, sibling.read_bytes())
