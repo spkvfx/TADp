@@ -5,6 +5,33 @@ adopted TADp project. `python` means that project's configured interpreter;
 the maintained checks were verified with Python 3.11.1. Examples are reference
 commands and do not execute when this document is read.
 
+## Project root and installation directory
+
+The project/scaffold root used by these commands is the directory receiving
+the installed TADp project scaffold. Its direct children include `AGENTS.md`,
+`evidence/`, `initiatives/`, `products/`, `prompts/`, `template/`, and `tools/`.
+The installed `template/` directory is the reusable library within that root;
+the upstream `protocol/template/project/` directory supplies scaffold sources.
+Neither template directory is the installed project's root.
+
+Keep this directory distinct from the Git worktree root. Validation and
+protection commands take the protocol or installed scaffold root as their
+`root` argument, defaulting to the current directory. They can check a tree
+inside an enclosing Git repository, as with `protocol/` in this distribution.
+That structural capability does not establish project adoption or compliance.
+The current authoritative
+[Git requirement](../evidence/authoritative/LLM/05_Codex_Git_Workflow_Specification.md#requirement)
+still requires a governed TADp project to be a Git repository root.
+
+Currently, `tadp_sync.py` installs only at the adopting repository's Git root
+and rejects execution from a nested directory. For that tool, the installation
+directory and Git worktree root therefore coincide. The script's own location
+does not select the destination. Its state, backups, and sync lock live in the
+target directory. Checking a nested scaffold with another tool does not make
+nested synchronization supported.
+
+## Command reference
+
 | Entry point | Inputs and output | Exit and effect |
 |---|---|---|
 | `python tools/tadp_validate.py [root]` | Root defaults to `.`; `--json` emits `root`, `valid`, error/warning counts and findings; `--base-ref` selects the closed-claim comparison revision, default `HEAD`. | Read-only. `0`: no errors, including warnings-only results; `1`: errors; `2`: nonexistent root or invalid CLI arguments. |
