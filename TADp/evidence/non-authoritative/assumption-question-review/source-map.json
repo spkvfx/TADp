@@ -1,0 +1,233 @@
+{
+    "schema_version":  1,
+    "status":  "pre-edit inventory, not a qualified or accepted manifest",
+    "date":  "2026-11-14",
+    "author":  "Codex primary agent",
+    "repository_revision":  "4f05752755eb63e31d65c152a2e1dc9134db7de5",
+    "governing_project_revision":  "6120bd10bb2e368274fd5bd4ff5481d33f61c4c6",
+    "prompt":  "prompts/assumption-and-open-question-review-protocol-change.md",
+    "prompt_sha256":  "85c3eb4dcad24a1d17a1b69375c667135abdffa108841c0f66b68394319740fc",
+    "sources":  [
+                    {
+                        "source":  "TADp/template/prompts/05_initiative_assumption_review.md",
+                        "source_revision":  "4f05752755eb63e31d65c152a2e1dc9134db7de5",
+                        "source_sha256":  "eaee8e2330f5786c8442df9057c2da4ab443310176868d5561faefae2445771f",
+                        "candidate":  "TADp/protocol/template/prompts/05_initiative_assumption_review.md",
+                        "operation":  "proposed update; not performed",
+                        "downstream_installed":  "TADp/template/prompts/05_initiative_assumption_review.md",
+                        "downstream_upstream_library":  "protocol/template/prompts/05_initiative_assumption_review.md",
+                        "downstream_distribution":  "protocol/template/prompts/05_initiative_assumption_review.md",
+                        "later_boundary_authority":  "not granted",
+                        "conditional":  false
+                    },
+                    {
+                        "source":  "TADp/template/prompts/06_initiative_open_question_review.md",
+                        "source_revision":  "4f05752755eb63e31d65c152a2e1dc9134db7de5",
+                        "source_sha256":  "0e574a24117f7aee2403b3d3f8574f477d523c172aefb4a7d1bc7df454c637e9",
+                        "candidate":  "TADp/protocol/template/prompts/06_initiative_open_question_review.md",
+                        "operation":  "proposed update; not performed",
+                        "downstream_installed":  "TADp/template/prompts/06_initiative_open_question_review.md",
+                        "downstream_upstream_library":  "protocol/template/prompts/06_initiative_open_question_review.md",
+                        "downstream_distribution":  "protocol/template/prompts/06_initiative_open_question_review.md",
+                        "later_boundary_authority":  "not granted",
+                        "conditional":  false
+                    },
+                    {
+                        "source":  "TADp/template/prompts/WORKFLOW-CONTRACT.md",
+                        "source_revision":  "4f05752755eb63e31d65c152a2e1dc9134db7de5",
+                        "source_sha256":  "79808741d57e64eede24dec30bec415d397a829776bc0efaeef1df73a084b4f5",
+                        "candidate":  "TADp/protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                        "operation":  "proposed update; not performed",
+                        "downstream_installed":  "TADp/template/prompts/WORKFLOW-CONTRACT.md",
+                        "downstream_upstream_library":  "protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                        "downstream_distribution":  "protocol/template/prompts/WORKFLOW-CONTRACT.md",
+                        "later_boundary_authority":  "not granted",
+                        "conditional":  false
+                    },
+                    {
+                        "source":  "TADp/template/project/evidence/authoritative/LLM/02_Codex_Initiative_Governance_Specification.md",
+                        "source_revision":  "4f05752755eb63e31d65c152a2e1dc9134db7de5",
+                        "source_sha256":  "822a7b0683b5ecf519751203844eff1acac45232b08ed585a4114a39340bccc8",
+                        "candidate":  "TADp/protocol/template/project/evidence/authoritative/LLM/02_Codex_Initiative_Governance_Specification.md",
+                        "operation":  "proposed update; not performed",
+                        "downstream_installed":  "TADp/template/project/evidence/authoritative/LLM/02_Codex_Initiative_Governance_Specification.md",
+                        "downstream_upstream_library":  "protocol/template/project/evidence/authoritative/LLM/02_Codex_Initiative_Governance_Specification.md",
+                        "downstream_distribution":  "protocol/evidence/authoritative/LLM/02_Codex_Initiative_Governance_Specification.md",
+                        "later_boundary_authority":  "not granted",
+                        "conditional":  false
+                    },
+                    {
+                        "source":  "TADp/template/project/evidence/authoritative/LLM/07_Codex_Human_Decision_Receipt_Specification.md",
+                        "source_revision":  "4f05752755eb63e31d65c152a2e1dc9134db7de5",
+                        "source_sha256":  "1c94946e9154d1383a685e96a538a29d99e048710d5e8813fa8247dcb6e5307b",
+                        "candidate":  "TADp/protocol/template/project/evidence/authoritative/LLM/07_Codex_Human_Decision_Receipt_Specification.md",
+                        "operation":  "proposed update; not performed",
+                        "downstream_installed":  "TADp/template/project/evidence/authoritative/LLM/07_Codex_Human_Decision_Receipt_Specification.md",
+                        "downstream_upstream_library":  "protocol/template/project/evidence/authoritative/LLM/07_Codex_Human_Decision_Receipt_Specification.md",
+                        "downstream_distribution":  "protocol/evidence/authoritative/LLM/07_Codex_Human_Decision_Receipt_Specification.md",
+                        "later_boundary_authority":  "not granted",
+                        "conditional":  false
+                    },
+                    {
+                        "source":  "TADp/template/project/evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md",
+                        "source_revision":  "4f05752755eb63e31d65c152a2e1dc9134db7de5",
+                        "source_sha256":  "270f50e92f92fdbf37abba95dc881b9c8d81322370dc5c545991fa72d2210504",
+                        "candidate":  "TADp/protocol/template/project/evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md",
+                        "operation":  "proposed update; not performed",
+                        "downstream_installed":  "TADp/template/project/evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md",
+                        "downstream_upstream_library":  "protocol/template/project/evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md",
+                        "downstream_distribution":  "protocol/evidence/authoritative/LLM/08_Codex_Initiative_Workflow_Specification.md",
+                        "later_boundary_authority":  "not granted",
+                        "conditional":  false
+                    },
+                    {
+                        "source":  "TADp/template/project/initiatives/assumption.template.md",
+                        "source_revision":  "4f05752755eb63e31d65c152a2e1dc9134db7de5",
+                        "source_sha256":  "073a5ee0db5a761f5402ba6e41af5226dc184fdc088c3d8b55b22fc395fcb16a",
+                        "candidate":  "TADp/protocol/template/project/initiatives/assumption.template.md",
+                        "operation":  "proposed update; not performed",
+                        "downstream_installed":  "TADp/template/project/initiatives/assumption.template.md",
+                        "downstream_upstream_library":  "protocol/template/project/initiatives/assumption.template.md",
+                        "downstream_distribution":  "protocol/initiatives/assumption.template.md",
+                        "later_boundary_authority":  "not granted",
+                        "conditional":  false
+                    },
+                    {
+                        "source":  "TADp/template/project/initiatives/open-questions.template.md",
+                        "source_revision":  "4f05752755eb63e31d65c152a2e1dc9134db7de5",
+                        "source_sha256":  "f141b1059cd83a55bbcb0961200b11999716650ca561520ec0cfb399060fbd93",
+                        "candidate":  "TADp/protocol/template/project/initiatives/open-questions.template.md",
+                        "operation":  "proposed update; not performed",
+                        "downstream_installed":  "TADp/template/project/initiatives/open-questions.template.md",
+                        "downstream_upstream_library":  "protocol/template/project/initiatives/open-questions.template.md",
+                        "downstream_distribution":  "protocol/initiatives/open-questions.template.md",
+                        "later_boundary_authority":  "not granted",
+                        "conditional":  false
+                    },
+                    {
+                        "source":  "TADp/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                        "source_revision":  "4f05752755eb63e31d65c152a2e1dc9134db7de5",
+                        "source_sha256":  "32124a658eaa4b81dab39635038c2652dfe05aecbef10dbfe3a3152d2ec7b1d1",
+                        "candidate":  "TADp/protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                        "operation":  "proposed update; not performed",
+                        "downstream_installed":  "TADp/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                        "downstream_upstream_library":  "protocol/template/project/initiatives/decision-receipts/decision-receipt.template.md",
+                        "downstream_distribution":  "protocol/initiatives/decision-receipts/decision-receipt.template.md",
+                        "later_boundary_authority":  "not granted",
+                        "conditional":  false
+                    },
+                    {
+                        "source":  "TADp/template/project/initiatives/decision-receipts/README.template.md",
+                        "source_revision":  "4f05752755eb63e31d65c152a2e1dc9134db7de5",
+                        "source_sha256":  "3ac5d299d5cabf7fa6c17f9fe4ba1e47ff7c05c5687d6cdf1f346be064c03cb7",
+                        "candidate":  "TADp/protocol/template/project/initiatives/decision-receipts/README.template.md",
+                        "operation":  "proposed update; not performed",
+                        "downstream_installed":  "TADp/template/project/initiatives/decision-receipts/README.template.md",
+                        "downstream_upstream_library":  "protocol/template/project/initiatives/decision-receipts/README.template.md",
+                        "downstream_distribution":  "protocol/initiatives/decision-receipts/README.template.md",
+                        "later_boundary_authority":  "not granted",
+                        "conditional":  false
+                    },
+                    {
+                        "source":  "TADp/template/project/initiatives/decision-receipts/README.md",
+                        "source_revision":  "4f05752755eb63e31d65c152a2e1dc9134db7de5",
+                        "source_sha256":  "1f47573458e119ab52abc9d3b2a15e3a84399533d685543b31c57e04acda00ae",
+                        "candidate":  "TADp/protocol/template/project/initiatives/decision-receipts/README.md",
+                        "operation":  "proposed update; not performed",
+                        "downstream_installed":  "TADp/template/project/initiatives/decision-receipts/README.md",
+                        "downstream_upstream_library":  "protocol/template/project/initiatives/decision-receipts/README.md",
+                        "downstream_distribution":  "protocol/initiatives/decision-receipts/README.md",
+                        "later_boundary_authority":  "not granted",
+                        "conditional":  false
+                    },
+                    {
+                        "source":  "TADp/template/TEMPLATE-COVERAGE.md",
+                        "source_revision":  "4f05752755eb63e31d65c152a2e1dc9134db7de5",
+                        "source_sha256":  "da47cbab60edcaaf8a41cc9078273eaff911a69ba6886f0a83a42bb118d6575c",
+                        "candidate":  "TADp/protocol/template/TEMPLATE-COVERAGE.md",
+                        "operation":  "proposed update; not performed",
+                        "downstream_installed":  "TADp/template/TEMPLATE-COVERAGE.md",
+                        "downstream_upstream_library":  "protocol/template/TEMPLATE-COVERAGE.md",
+                        "downstream_distribution":  "protocol/template/TEMPLATE-COVERAGE.md",
+                        "later_boundary_authority":  "not granted",
+                        "conditional":  false
+                    },
+                    {
+                        "source":  "TADp/template/project/decisions/README.md",
+                        "source_revision":  "4f05752755eb63e31d65c152a2e1dc9134db7de5",
+                        "source_sha256":  "847240ca6d5358dc50e999eaad20495f339172517349157c613b3ee9989666be",
+                        "candidate":  "TADp/protocol/template/project/decisions/README.md",
+                        "operation":  "proposed update; not performed",
+                        "downstream_installed":  "TADp/template/project/decisions/README.md",
+                        "downstream_upstream_library":  "protocol/template/project/decisions/README.md",
+                        "downstream_distribution":  "protocol/decisions/README.md",
+                        "later_boundary_authority":  "not granted",
+                        "conditional":  false
+                    },
+                    {
+                        "source":  "TADp/template/project/README.md",
+                        "source_revision":  "4f05752755eb63e31d65c152a2e1dc9134db7de5",
+                        "source_sha256":  "eb419733b7fbc17d189aac26cef194ea9d66286d9f451126832ff57a6e34c1ba",
+                        "candidate":  "TADp/protocol/template/project/README.md",
+                        "operation":  "proposed update; not performed",
+                        "downstream_installed":  "TADp/template/project/README.md",
+                        "downstream_upstream_library":  "protocol/template/project/README.md",
+                        "downstream_distribution":  "protocol/README.md",
+                        "later_boundary_authority":  "not granted",
+                        "conditional":  false
+                    },
+                    {
+                        "source":  "TADp/template/project/initiatives/README.md",
+                        "source_revision":  "4f05752755eb63e31d65c152a2e1dc9134db7de5",
+                        "source_sha256":  "c6d79cc74bb19f68606038a31bedbd94638dfe75da6d7347d477e9bc13dbd206",
+                        "candidate":  "TADp/protocol/template/project/initiatives/README.md",
+                        "operation":  "proposed update; not performed",
+                        "downstream_installed":  "TADp/template/project/initiatives/README.md",
+                        "downstream_upstream_library":  "protocol/template/project/initiatives/README.md",
+                        "downstream_distribution":  "protocol/initiatives/README.md",
+                        "later_boundary_authority":  "not granted",
+                        "conditional":  false
+                    },
+                    {
+                        "source":  "TADp/template/project/tools/tadp_validate.py",
+                        "source_revision":  "4f05752755eb63e31d65c152a2e1dc9134db7de5",
+                        "source_sha256":  "b9e82cae2074ba8c216bfa7ad43db3f0f15cc830aadc6bb2e0785df4a453586f",
+                        "candidate":  "TADp/protocol/template/project/tools/tadp_validate.py",
+                        "operation":  "proposed update; not performed",
+                        "downstream_installed":  "TADp/template/project/tools/tadp_validate.py",
+                        "downstream_upstream_library":  "protocol/template/project/tools/tadp_validate.py",
+                        "downstream_distribution":  "protocol/tools/tadp_validate.py",
+                        "later_boundary_authority":  "not granted",
+                        "conditional":  true
+                    }
+                ],
+    "proposed_additions":  [
+                               {
+                                   "candidate":  "TADp/protocol/template/project/decisions/assumptions-and-open-questions.template.md",
+                                   "destination":  "decisions/assumptions-and-open-questions.md",
+                                   "source":  "new shape expressly conditional in invoked prompt; reuse existing assumption, question and receipt fields",
+                                   "owner":  "recorded project decision steward",
+                                   "trigger":  "first actual project-owned item without a suitable initiative owner",
+                                   "downstream_installed":  "TADp/template/project/decisions/assumptions-and-open-questions.template.md",
+                                   "downstream_upstream_library":  "protocol/template/project/decisions/assumptions-and-open-questions.template.md",
+                                   "downstream_distribution":  "protocol/decisions/assumptions-and-open-questions.template.md",
+                                   "status":  "proposed only; coverage declaration required before use"
+                               },
+                               {
+                                   "candidate":  "TADp/protocol/tests/test_assumption_question_review.py",
+                                   "source":  "new focused isolated scenarios from required verification cases in pinned prompt",
+                                   "status":  "proposed; no tests created or run",
+                                   "downstream":  "must be mapped exactly in owning accepted suite before implementation"
+                               }
+                           ],
+    "exclusions":  [
+                       "all installed sources and locks",
+                       "all distribution sources and locks",
+                       "existing documentation candidates and history",
+                       "TADp/prompts/AGENTS.md",
+                       "live review records",
+                       "examples and separate forks"
+                   ],
+    "qualification":  "not performed",
+    "next_gate":  "explicit project integration-base appointment before allocation; complete Proposed suite before separate Stage 7 acceptance"
+}

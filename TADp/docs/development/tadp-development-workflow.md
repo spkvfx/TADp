@@ -37,12 +37,13 @@ pending-decision history on reruns. Adoption changes no protected source or
 lock and accepts no initiative. The upstream structural finding `TADP041`
 remains disclosed in setup verification; adoption neither repairs nor waives it.
 
-The project's integration branch remains unassigned. Enclosing preflight branch
-`v1` and current bootstrap branch `setup/tadp-development-project` are observed
-shared Git identities, not this project's allocated scopes. Before the first
-scope allocation, inspect actual integration configuration and coordinate any
-branch-role collision rather than assuming an independent branch namespace or
-inventing an assignment. No feature, initiative acceptance, development
+The project's integration branch is now `v1`, appointed by the exact human
+response in [INTEGRATION-001](../../decisions/INTEGRATION-001.md), with captured
+appointment tip `9c9fd1daad655fd58349c005f8d31a4f52790cc9`. The earlier unassigned
+state remains in setup and preflight history. This appointment does not allocate
+a scope or permit v1 to become its own child scope. Before allocation inspect
+actual integration configuration and coordinate branch-role collisions rather
+than assuming an independent namespace. No feature, initiative acceptance, development
 completion, reusable-source introduction, promotion, rollout or release is
 established by setup. No historical work is migrated.
 

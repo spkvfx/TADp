@@ -17,6 +17,7 @@ verification.
 
 | Scope | Initiative ID | Realization suite | Type | Status | Current milestone | Next gate | Blockers or holds | Status evidence | Owner | Last updated |
 |---|---|---|---|---|---|---|---|---|---|---|
+| v2 | TADP-001 | RZN-SUITE-001 | implementation | Proposed | Stage 0 allocated; prepare proposal and full suite | Complete stages 1–4, then distinct initiative acceptance | No product execution before acceptance | [Initiative](v2/implementation/tadp-001-owned-review-decisions/README.md) | Current repository owner | 2026-11-14 |
 
 ## Portfolio gates
 
@@ -48,6 +49,9 @@ acceptance or scope closure. Keep membership links and per-cycle integration
 history in their canonical owners.
 
 ## Installation inventory
+
+The original installation inventory below is historical. The first subsequent
+allocation is shown in the current-status row above.
 
 No scopes, realization notes, initiatives, prior decisions, products, or lifecycle
 claims were imported or allocated. The setup authority and verification records

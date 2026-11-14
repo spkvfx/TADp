@@ -9,7 +9,7 @@
 **Git worktree root:** R (C:/Users/User/PycharmProjects/TADp)
 **Project path relative to Git root:** TADp/
 **Project-root revision:** 6120bd10bb2e368274fd5bd4ff5481d33f61c4c6
-**Default integration branch:** Not appointed for this new project; enclosing branch at preflight was v1  
+**Default integration branch:** v1
 **Remote operations:** Separate explicit authority required; no remote action performed
 **Version scope revision effective point:** 6120bd10bb2e368274fd5bd4ff5481d33f61c4c6
 **Version scope migration ledger:** [Scope migration](initiatives/version-scope-migration-ledger.md)
@@ -20,6 +20,9 @@
 **Keyword revision effective point:** 6120bd10bb2e368274fd5bd4ff5481d33f61c4c6
 **Adoption authority:** [ADOPTION-001](decisions/ADOPTION-001.md), 2026-11-14; installation and adoption are separate events
 **Last reviewed:** 2026-11-14  
+
+Integration-base authority is [INTEGRATION-001](decisions/INTEGRATION-001.md),
+with captured appointment tip `9c9fd1daad655fd58349c005f8d31a4f52790cc9`.
 
 ## Purpose
 
@@ -43,12 +46,12 @@ Home for developing TADp with TADp: project evidence, narrow initiatives, candid
 |---|---|---|---|
 | Binding evidence | `evidence/authoritative` | Installed governing LLM suite, kept intact; no candidate replacement becomes authority automatically | Current repository owner; Codex records this setup only |
 | Contextual evidence | `evidence/non-authoritative` | Context, realization inputs, and observed setup evidence with original identity | Current repository owner; Codex records this setup only |
-| Initiative records | `initiatives` | Canonical independent initiative suites when actually allocated; currently none | Current repository owner; Codex records this setup only |
+| Initiative records | `initiatives` | Canonical independent suites; first allocation TADP-001 in v2 is Proposed | Current repository owner; Codex records actual preparation events |
 | Delivered products | `products` or protocol/ (candidate product workspace) | Candidate deliverables and product records when actual workflow events require them | Current repository owner; Codex records this setup only |
 
 ## Human ownership and approval
 
-The current repository owner is project owner, accountable technical steward and approval authority unless explicitly delegated. In a fork these roles belong to its respective repository owner. See [OWNERSHIP-001](decisions/OWNERSHIP-001.md) for the exact instruction. This policy is not tied to a personal name or Git author and changes no prior source authority. Record the actual responder and role authority for each future human decision. Prospective adoption is authorized in [ADOPTION-001](decisions/ADOPTION-001.md); the default integration branch must be coordinated before actual scope allocation.
+The current repository owner is project owner, accountable technical steward and approval authority unless explicitly delegated. In a fork these roles belong to its respective repository owner. See [OWNERSHIP-001](decisions/OWNERSHIP-001.md) for the exact instruction. This policy is not tied to a personal name or Git author and changes no prior source authority. Record the actual responder and role authority for each future human decision. Prospective adoption is authorized in [ADOPTION-001](decisions/ADOPTION-001.md); the default integration branch is appointed in [INTEGRATION-001](decisions/INTEGRATION-001.md). Scope branches retain distinct roles and captured bases.
 
 This convention applies only to human roles. Preserve every technical
 component owner, source authority, external-party dependency, placement,
@@ -129,9 +132,9 @@ preserved; installation did not activate or overwrite shared hooks. The installe
 hook is copied unchanged. It will treat bootstrap protected additions as changes;
 do not bypass it or refresh locks to commit unchanged copies. Coordinate any
 future hook activation explicitly at R with the correct P-relative path. Git
-user Shawn Kearney supplies commit attribution only. No integration branch or
-scope branch has been appointed for this new project; the pre-existing enclosing
-`v1` ref does not allocate a project scope.
+user Shawn Kearney supplies commit attribution only. The integration branch is
+now `v1` under INTEGRATION-001. That appointment does not allocate a project
+scope or authorize any merge; scope branches must have a distinct compatible role.
 
 The project root is the installed scaffold directory, contained in a valid Git
 worktree under specification 05. The Git root supplies shared refs, index,
@@ -156,3 +159,4 @@ authority after all gates; pushes require separate authority.
 | 2026-11-14 | Installed pinned clean project baseline and documented development boundaries; adoption remains pending | Explicit invocation of create-tadp-development-project.md, recorded in decisions/SETUP-001.md | Current repository owner; Codex records this setup only |
 | 2026-11-14 | Appointed the current repository-owner role, including respective fork owners | Exact human response in [OWNERSHIP-001](decisions/OWNERSHIP-001.md); prior authorship and source authority preserved | Current repository owner |
 | 2026-11-14 | Prospectively adopted source 6120bd10bb2e368274fd5bd4ff5481d33f61c4c6; captured actual pre-adoption HEAD at that same immutable commit | Explicit separate human decision in [ADOPTION-001](decisions/ADOPTION-001.md); no legacy initiatives or scopes to migrate | Current repository owner |
+| 2026-11-14 | Appointed v1 as project integration base; earlier unassigned configuration retained in Git and preflight evidence | Exact response `TADp v1` in [INTEGRATION-001](decisions/INTEGRATION-001.md); no scope, acceptance or merge inferred | Current repository owner |
