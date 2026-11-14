@@ -2,20 +2,20 @@
   "schema_version": 1,
   "algorithm": "sha256-canonical-v1",
   "protected_root": "evidence/authoritative/LLM",
-  "authority": "User 2026-11-13 item 2; prompts/template-completeness-and-prerequisites-protocol-change.md; docs/development/template-prerequisites-maintenance.md",
+  "authority": "User 2026-11-13 clean project baseline: consolidate initiatives, README/.template copy contract, nonrecursive library, exclude development-only copies and work products; necessary source-link and factual-conflict reconciliation; protocol/template/README.md#layout-revision-and-compatibility",
   "files": {
     "00_Codex_Invariant_Suite_Index.md": "c85bb8587e36611857047a65f506817c0f384c28af90007c93f27cd1367bba01",
     "01_Codex_Evidence_Authority_Specification.md": "15eca5fe2555f6887bfcab9d3f65b8dba0d7a5c9c292988c14f65a9025df2360",
     "02_Codex_Initiative_Governance_Specification.md": "6ad7ae7f3cfecf5cda4bcbad6f118cc416525fb1e6a4ae0f8f604df6f5967934",
-    "03_Codex_Invariant_Conflict_Register.md": "0549da498e89917f3f20211e34fb19fbf65ad911e387931b1ac2bb9483317845",
+    "03_Codex_Invariant_Conflict_Register.md": "1a92c43f6c40a8095a70082ea1782af9ca538fbe5b03de6c935cb54126043dbf",
     "04_Codex_Initiative_Lifecycle_Specification.md": "a3bfde36d178ad7a86efb01785b81b357ea45577295aca0e9dc2f727fc9a479a",
     "05_Codex_Git_Workflow_Specification.md": "2d363307504bed4c4c64f5627a4fc67cb4105a48f4ba1b15a95def93b8dfc0f1",
     "06_Codex_Initiative_Scope_Specification.md": "1d4e8881890284299649f368f2600961591f6ee016a855ca4b3d1c0398a247a3",
-    "07_Codex_Human_Decision_Receipt_Specification.md": "64c935b315cf5ac4862a3392e0a4e69032310b7c303a6fcc17a0704da18613c7",
+    "07_Codex_Human_Decision_Receipt_Specification.md": "f4bfbdf51b067e0744aff9670d212a933a5e048edbd778e6cfb7c755e45b79a9",
     "08_Codex_Initiative_Workflow_Specification.md": "270f50e92f92fdbf37abba95dc881b9c8d81322370dc5c545991fa72d2210504",
     "09_Codex_Version_Realization_Initiative_Correlation_Specification.md": "5de94170861b66ef685f9442331a3837b2e46b4cfeabb1cbe680f12dfd049de4",
     "10_Codex_Initiative_Coherence_Specification.md": "4b4b5e77b6855c3813814ad39c040eaec41aaadd8884da89fcdc9dca818963dd",
-    "11_Codex_Prompt_Keyword_Specification.md": "1a43353b7320306880f76b21d27fb8ab4849a29238286d1b34c9f53741adca06",
+    "11_Codex_Prompt_Keyword_Specification.md": "6b249f1ff9c7892475d17fa57d04e467e9d1e7059b2760ed8bd13875feb0f315",
     "AGENTS.md": "0f4995562ec74054f02ccce453ee2458b283eb13210816599f11156f98eb95ee"
   }
 }

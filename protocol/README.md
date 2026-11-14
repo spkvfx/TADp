@@ -141,7 +141,7 @@ quietly weakening a specification or completion claim.
 | [`initiatives/`](initiatives/README.md) | Focused specifications for proposed, accepted, or completed work |
 | [`products/`](products/README.md) | Locations and records for delivered products |
 | [`prompts/`](prompts/README.md) | Non-authoritative project-local instructions confined to this scaffold |
-| [`template/initiatives/`](template/initiatives/README.md) | Standard templates for initiative records |
+| [`template/project/initiatives/`](template/project/initiatives/README.md) | Shared initiative record sources within the clean project baseline |
 | [`template/prompts/`](template/prompts/README.md) | Numbered Codex prompts and the shared workflow rules |
 | [`template/project/`](template/project/README.md) | Reusable structure for adding TADp to another repository |
 | [`template/TEMPLATE-COVERAGE.md`](template/TEMPLATE-COVERAGE.md) | Canonical file, embedded-section, conditional, and response-shape sources with destinations and owning stages |

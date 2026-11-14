@@ -73,5 +73,3 @@ assessment itself read-only.
 
 Preserve source identity, distinguish observed evidence from accepted
 authority, and report only outcomes supported by verification.
-
-

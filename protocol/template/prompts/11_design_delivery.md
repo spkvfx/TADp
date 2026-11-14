@@ -66,7 +66,7 @@ Reusable source paths below are relative to {initiative_template_root};
 instantiate only at the map's declared project-relative destination.
 Required inputs: accepted design suite, exact baseline/receipt, named
 specification destinations/owners, observed product evidence and readable
-initiatives/delivery-record.md and initiatives/completion-evidence.md sources.
+project/initiatives/delivery-record.template.md and project/initiatives/completion-evidence.template.md sources.
 Use mapped initial-suite, decision and coherence sources for documentary
 recovery through owning activities from sufficient actual evidence. Missing
 acceptance, wrong type, immutable identity, destination authority or required

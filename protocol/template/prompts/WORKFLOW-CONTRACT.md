@@ -27,7 +27,7 @@ prompts describe the ordinary required path. A requested gate setting alone
 does not waive one of those requirements. Before relying on an exception,
 inventory each affected rule and gate, establish its exact sufficient human
 authority, and create its bounded record using the
-[gate-exception source](../initiatives/decision-receipts/gate-exception.template.md).
+[gate-exception source](../project/initiatives/decision-receipts/gate-exception.template.md).
 Link the governing human decision receipt and record effective settings for
 each source-position block before dispatch, retry, or handoff. Do not repeat
 already sufficient authorization merely to obtain paperwork. Covered autonomous

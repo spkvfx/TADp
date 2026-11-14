@@ -54,8 +54,8 @@ instantiate only at the map's declared project-relative destination.
 Required inputs: recorded profile/adoption, exact source suite/note and human
 intake instruction, scope registry, membership index and candidate initiatives.
 Use project/project-profile.template.md and registry sources, project/evidence/non-authoritative/realizations/
-realization-suite-index.template.md, initiatives/preparation-README.template.md and
-initiatives/proposal/preparation-README.template.md and initiatives/decision-receipts/
+realization-suite-index.template.md, project/initiatives/preparation-README.template.md and
+project/initiatives/proposal/preparation-README.template.md and project/initiatives/decision-receipts/
 from the canonical map. Recover missing documentary navigation, catalogs or
 receipts only from sufficient recorded identity and authority; new allocation
 and fit/reopening choices remain this Stage 0 substantive activity. Missing

@@ -43,10 +43,10 @@ evidence, an accepted initiative, or a product contract.
 
 | Logical record | Location | What belongs there | Owner |
 |---|---|---|---|
-| Binding evidence | `../../evidence/authoritative` | {{architecture_rules_or_other_binding_sources}} | {{owner}} |
-| Contextual evidence | `../../evidence/non-authoritative` | {{research_observations_or_realizations}} | {{owner}} |
-| Initiative records | `../../initiatives` | {{accepted_work_records}} | {{owner}} |
-| Delivered products | `../../products` or {{actual_destination}} | {{code_documentation_or_other_outputs}} | {{owner}} |
+| Binding evidence | `evidence/authoritative` | {{architecture_rules_or_other_binding_sources}} | {{owner}} |
+| Contextual evidence | `evidence/non-authoritative` | {{research_observations_or_realizations}} | {{owner}} |
+| Initiative records | `initiatives` | {{accepted_work_records}} | {{owner}} |
+| Delivered products | `products` or {{actual_destination}} | {{code_documentation_or_other_outputs}} | {{owner}} |
 
 ## Human ownership and approval
 
@@ -121,4 +121,3 @@ authority after all gates; pushes require separate authority.
 | Date | Change | Reason | Owner |
 |---|---|---|---|
 | {{yyyy-mm-dd}} | {{change_summary}} | {{reason}} | {{owner}} |
-

@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "algorithm": "sha256-canonical-v1",
+  "protected_root": "evidence/authoritative/LLM",
+  "authority": "User 2026-11-13 clean project baseline: consolidate initiatives, README/.template copy contract, nonrecursive library, exclude development-only copies and work products; necessary source-link and factual-conflict reconciliation; protocol/template/README.md#layout-revision-and-compatibility",
+  "files": {
+    "00_Codex_Invariant_Suite_Index.md": "761de622b59a2808daf627ed55383d7e9baaab7fab78a214de555eb8230c9650",
+    "01_Codex_Evidence_Authority_Specification.md": "17a32f12823724d4972d2f2af79fcdfa97a1e986b3af3f1d644f4ba20795e4d0",
+    "02_Codex_Initiative_Governance_Specification.md": "822a7b0683b5ecf519751203844eff1acac45232b08ed585a4114a39340bccc8",
+    "03_Codex_Invariant_Conflict_Register.md": "fd5f99812fcaa6328a1786e1b8dee1cbc791cf1fce990b372afac5af61d90177",
+    "04_Codex_Initiative_Lifecycle_Specification.md": "2cd1587650062b2677e3b537c25ff5e9715e1ee7a6d8881756b3ba46b590f6f2",
+    "05_Codex_Git_Workflow_Specification.md": "2d363307504bed4c4c64f5627a4fc67cb4105a48f4ba1b15a95def93b8dfc0f1",
+    "06_Codex_Initiative_Scope_Specification.md": "2fcfe32f6d7221ab329725478f03cc4d00f18cd674e6ec53b8a43e924cc64be3",
+    "07_Codex_Human_Decision_Receipt_Specification.md": "1c94946e9154d1383a685e96a538a29d99e048710d5e8813fa8247dcb6e5307b",
+    "08_Codex_Initiative_Workflow_Specification.md": "270f50e92f92fdbf37abba95dc881b9c8d81322370dc5c545991fa72d2210504",
+    "09_Codex_Version_Realization_Initiative_Correlation_Specification.md": "6b02093fb38125be6d126686bdf77e49456eaf8315bb3b2586b3ab977378e656",
+    "10_Codex_Initiative_Coherence_Specification.md": "2c96fcba39c018bb12c497a72893bb07f61c5ed3c786426ac03f3d8a00d3d5f4",
+    "11_Codex_Prompt_Keyword_Specification.md": "a7b8bcb9ef2be327a33af1161128993d02727d5a4130df7df4feb5254705e489",
+    "AGENTS.md": "0f4995562ec74054f02ccce453ee2458b283eb13210816599f11156f98eb95ee",
+    "README.md": "f2dec453304e8d016da742a1f05a354b1ff7da3ad224a317b25ec206dfcd6d05"
+  }
+}

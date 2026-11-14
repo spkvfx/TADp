@@ -28,6 +28,11 @@ RUN_LOCK = ".tadp-sync.lock"
 PROTECTED = ("template", "evidence/authoritative/LLM")
 RUNTIME_TOOLS = ("tadp_validate.py", "tadp_protect.py", "tadp_keywords.py",
                  "tadp_scopes.py", "tadp_templates.py", "tadp_sync.py")
+PROJECT_USE_GUIDES = frozenset((
+    "README.md", "getting-started.md", "architecture-and-authority.md",
+    "repository-layout.md", "initiative-workflow.md", "git-and-codex-requirements.md",
+    "validation-and-quality.md", "adapting-other-tools.md",
+))
 
 
 class SyncError(ValueError):
@@ -189,7 +194,11 @@ def load_assets(repo: Path, revision: str) -> dict[str, Asset]:
     """Read committed blobs, never a checkout or executable remote code.
 
     Only template/, the runtime invariant suite and the named runtime tools
-    are selected. No development docs, decisions or live work are imported.
+    are selected. New project baselines may include the named project-use
+    guides and decisions navigation, never development work or receipts.
+    The project's template/README.md is a nonrecursive placeholder: the full
+    distribution library supplies the installed template/ directory instead.
+    Record sources retain their .template names and are never instantiated.
     """
     entries = []
     for item in git(repo, "ls-tree", "-r", "-z", revision).split(b"\0"):
@@ -223,6 +232,8 @@ def load_assets(repo: Path, revision: str) -> dict[str, Asset]:
     assets: dict[str, Asset] = {}
     has_embedded_suite = any(name.startswith("protocol/template/project/evidence/authoritative/LLM/")
                              for name, _, _ in entries)
+    has_project_baseline = any(name == "protocol/template/project/template/README.md"
+                               for name, _, _ in entries)
 
     def add(name: str, content: bytes, mode: int, kind: str = "managed") -> None:
         asset = Asset(content, mode, kind)
@@ -233,11 +244,22 @@ def load_assets(repo: Path, revision: str) -> dict[str, Asset]:
     for (name, _, mode), content in zip(entries, blobs):
         if name.startswith("protocol/template/"):
             relative = name[len("protocol/template/"):]
-            if relative.startswith(("project/docs/development/", "project/decisions/")):
+            if relative.startswith("project/docs/development/") and (
+                    not has_project_baseline
+                    or relative[len("project/docs/development/"):] not in PROJECT_USE_GUIDES):
                 raise SyncError(f"template contains excluded development documents: {name}")
+            if relative.startswith("project/decisions/") and relative != "project/decisions/README.md":
+                raise SyncError(f"template contains excluded development documents: {name}")
+            if (relative == "project/template"
+                    or relative.startswith("project/template/") and relative != "project/template/README.md"):
+                raise SyncError(f"project template must contain only its nonrecursive template/README.md placeholder: {name}")
             add("template/" + relative, content, mode)
             if relative.startswith("project/"):
                 target = relative[len("project/"):]
+                if target == "template/README.md":
+                    # Keep the placeholder inside the reusable project source,
+                    # never overlay the installed complete library's README.
+                    continue
                 managed = target.startswith(("evidence/authoritative/LLM/", "tools/"))
                 add(target, content, mode, "managed" if managed else "seed")
         elif name.startswith("protocol/evidence/"):
@@ -437,8 +459,8 @@ def main(argv: list[str] | None = None) -> int:
             revision = fetch_source(source_repo, args.source, args.ref)
             assets = load_assets(source_repo, revision)
         plan = make_plan(root, assets, state)
-        warnings = ["Only template/scaffold, runtime suite and named runtime tools are included; development documents and live work are excluded.",
-                    "Fresh installs cannot pass the full validator's required development-document checks with this restricted payload; historical links also reference excluded records. Source synchronization is not template completeness or protocol adoption.",
+        warnings = ["Only template/scaffold, runtime suite and named runtime tools are included; project-use guides may be included, while development-only documents and live work are excluded.",
+                    "Source synchronization is not template completeness or protocol adoption; run project validation and review any references to excluded records.",
                     "No deletion, pruning, automatic merge, hook activation, staging or commit is performed."]
         result = dict(source=args.source, revision=revision, mode="apply" if args.apply else "preview",
                       actions=plan["actions"], conflicts=plan["conflicts"], warnings=warnings, applied=False)

@@ -1,11 +1,45 @@
-# Initiative templates
+# Project baseline and reusable library
 
-This directory groups reusable initiative material by purpose.
+This directory contains the complete TADp reusable library. Its `project/`
+directory is the clean project-shaped baseline; its `prompts/` directory is
+the operational workflow library. Initiative record sources belong under
+`project/initiatives/`, alongside that baseline's coordination sources.
+
+## Baseline copy contract
+
+Copy the project baseline's ordinary files directly, retaining their names.
+Files ending in `.template.md` are reusable record shapes: retain them during
+installation, then instantiate only the selected source at its declared
+destination and owning trigger. Remove `.template` from actual record names
+and populate evidence-backed fields; a source file creates no live work.
+
+Every project also receives this entire library at its root `template/`.
+`project/template/README.md` documents that destination without embedding the
+library recursively. During installation the complete outer library supplies
+that destination; do not overwrite its README with the placeholder.
+
+The baseline contains navigation, applicable record shapes, runtime support,
+governing protocol rules and project-use guides. It contains no TADp live
+initiatives, development reports, decisions, delivered project products or
+test results. The empty project conflict register does not inherit TADp's
+active conflicts. Protocol revision history identifies upstream provenance;
+it is not the adopting project's history or adoption evidence.
+
+## Layout revision and compatibility
+
+The user's 2026-11-13 instruction explicitly requests this consolidation,
+complete folder navigation, nonrecursive library placeholder and clean
+baseline. Git preserves the former sibling `initiatives/` source and original
+filenames. The coverage map and necessarily affected prompts, source links,
+tools and integrity locks follow the new source locations. Substantive
+protocol rules, stage ownership, instance destinations and lifecycle claims
+do not change. Existing projects retain their sources and work until an
+authorized update; synchronization never deletes retired or user-owned files.
 
 The [canonical coverage and use map](TEMPLATE-COVERAGE.md) identifies the
 source, destination, applicability, owning activity, evidence, and checks for
 each required record or embedded section. Read it before selecting a source;
-filenames ending in `.template.md` are not the only reusable templates.
+embedded sections and conditional response shapes retain their owning record.
 
 ## Protected source boundary
 
@@ -33,7 +67,7 @@ template edit.
   defines what a product must do is a **specification**, not a product merely
   because it is a document.
 
-- [Initiative templates](initiatives/README.md) define the standard initiative
+- [Initiative templates](project/initiatives/initiative-README.template.md) define the standard initiative
   record: proposal sources, assumptions, scope, specifications, evidence
   mapping, decisions, delivery roadmap, delivery steps, type-specific work
   records, completion evidence, and the minimal preparation skeletons used at

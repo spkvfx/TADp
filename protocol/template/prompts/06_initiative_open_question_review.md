@@ -67,8 +67,8 @@ Reusable source paths below are relative to {initiative_template_root};
 instantiate only at the map's declared project-relative destination.
 Required inputs: stable question IDs, exact original questions/options,
 assumptions and affected records, evidence, recorded assignment and prior
-human instructions/receipts. Use initiatives/open-questions.md,
-initiatives/assumption.md and initiatives/decision-receipts/decision-receipt.template.md
+human instructions/receipts. Use project/initiatives/open-questions.template.md,
+project/initiatives/assumption.template.md and project/initiatives/decision-receipts/decision-receipt.template.md
 with its README. Recover missing documentary inputs through owning stages;
 capture sufficient actual prior answers in receipts without re-asking them.
 Keep original event separate from capture time and preserve exact human text.
@@ -191,7 +191,7 @@ explicit answer for the exact stable source ID. If the human asks for more
 context, provide it and wait for a clear answer.
 
 After an explicit human answer, create one decision receipt from
-`{initiative_template_root}/initiatives/decision-receipts/decision-receipt.template.md`
+`{initiative_template_root}/project/initiatives/decision-receipts/decision-receipt.template.md`
 before changing the source status. If this is the initiative's first receipt,
 create `{initiative_path}/decision-receipts/README.md` from the shared template.
 Preserve the exact question, exact answer, human authority, evidence presented,

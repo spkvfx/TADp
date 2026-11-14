@@ -553,7 +553,7 @@ must still check semantic completeness, source authority, and actual evidence.
     },
     {
       "id": "preparation-skeleton",
-      "source": "template/initiatives/preparation-README.template.md",
+      "source": "template/project/initiatives/preparation-README.template.md",
       "section": "",
       "destination": "initiatives/<scope>/<type>/<id-and-slug>/README.md",
       "kind": "file",
@@ -568,7 +568,7 @@ must still check semantic completeness, source authority, and actual evidence.
     },
     {
       "id": "preparation-proposal-source",
-      "source": "template/initiatives/proposal/preparation-README.template.md",
+      "source": "template/project/initiatives/proposal/preparation-README.template.md",
       "section": "",
       "destination": "initiatives/<scope>/<type>/<id-and-slug>/proposal/README.md",
       "kind": "file",
@@ -583,7 +583,7 @@ must still check semantic completeness, source authority, and actual evidence.
     },
     {
       "id": "proposal-source",
-      "source": "template/initiatives/proposal/README.md",
+      "source": "template/project/initiatives/proposal/README.template.md",
       "section": "",
       "destination": "initiatives/<scope>/<type>/<id-and-slug>/proposal/README.md",
       "kind": "file",
@@ -598,7 +598,7 @@ must still check semantic completeness, source authority, and actual evidence.
     },
     {
       "id": "proposal",
-      "source": "template/initiatives/proposal/proposal.md",
+      "source": "template/project/initiatives/proposal/proposal.template.md",
       "section": "",
       "destination": "initiatives/<scope>/<type>/<id-and-slug>/proposal/proposal.md",
       "kind": "file",
@@ -613,7 +613,7 @@ must still check semantic completeness, source authority, and actual evidence.
     },
     {
       "id": "initial-suite",
-      "source": "template/initiatives/README.md",
+      "source": "template/project/initiatives/initiative-README.template.md",
       "section": "",
       "destination": "initiatives/<scope>/<type>/<id-and-slug>/README.md",
       "kind": "file",
@@ -640,7 +640,7 @@ must still check semantic completeness, source authority, and actual evidence.
     },
     {
       "id": "assumptions",
-      "source": "template/initiatives/assumption.md",
+      "source": "template/project/initiatives/assumption.template.md",
       "section": "",
       "destination": "initiatives/<scope>/<type>/<id-and-slug>/assumption.md",
       "kind": "file",
@@ -655,7 +655,7 @@ must still check semantic completeness, source authority, and actual evidence.
     },
     {
       "id": "scope-assessment",
-      "source": "template/initiatives/scope-assessment.md",
+      "source": "template/project/initiatives/scope-assessment.template.md",
       "section": "",
       "destination": "initiatives/<scope>/<type>/<id-and-slug>/scope-assessment.md",
       "kind": "file",
@@ -670,7 +670,7 @@ must still check semantic completeness, source authority, and actual evidence.
     },
     {
       "id": "initiative-architecture",
-      "source": "template/initiatives/architecture.md",
+      "source": "template/project/initiatives/architecture.template.md",
       "section": "",
       "destination": "initiatives/<scope>/<type>/<id-and-slug>/architecture.md",
       "kind": "file",
@@ -685,7 +685,7 @@ must still check semantic completeness, source authority, and actual evidence.
     },
     {
       "id": "source-mapping",
-      "source": "template/initiatives/source-mapping.md",
+      "source": "template/project/initiatives/source-mapping.template.md",
       "section": "",
       "destination": "initiatives/<scope>/<type>/<id-and-slug>/source-mapping.md",
       "kind": "file",
@@ -700,7 +700,7 @@ must still check semantic completeness, source authority, and actual evidence.
     },
     {
       "id": "questions",
-      "source": "template/initiatives/open-questions.md",
+      "source": "template/project/initiatives/open-questions.template.md",
       "section": "",
       "destination": "initiatives/<scope>/<type>/<id-and-slug>/open-questions.md",
       "kind": "file",
@@ -715,7 +715,7 @@ must still check semantic completeness, source authority, and actual evidence.
     },
     {
       "id": "roadmap",
-      "source": "template/initiatives/implementation-roadmap.md",
+      "source": "template/project/initiatives/implementation-roadmap.template.md",
       "section": "",
       "destination": "initiatives/<scope>/<type>/<id-and-slug>/implementation-roadmap.md",
       "kind": "file",
@@ -730,7 +730,7 @@ must still check semantic completeness, source authority, and actual evidence.
     },
     {
       "id": "steps",
-      "source": "template/initiatives/implementation-steps.md",
+      "source": "template/project/initiatives/implementation-steps.template.md",
       "section": "",
       "destination": "initiatives/<scope>/<type>/<id-and-slug>/implementation-steps.md",
       "kind": "file",
@@ -745,7 +745,7 @@ must still check semantic completeness, source authority, and actual evidence.
     },
     {
       "id": "lifecycle",
-      "source": "template/initiatives/README.md",
+      "source": "template/project/initiatives/initiative-README.template.md",
       "section": "Lifecycle history",
       "destination": "initiatives/<scope>/<type>/<id-and-slug>/README.md#lifecycle-history",
       "kind": "section",
@@ -760,7 +760,7 @@ must still check semantic completeness, source authority, and actual evidence.
     },
     {
       "id": "routing-history",
-      "source": "template/initiatives/README.md",
+      "source": "template/project/initiatives/initiative-README.template.md",
       "section": "Routing and execution history",
       "destination": "initiatives/<scope>/<type>/<id-and-slug>/README.md#routing-and-execution-history",
       "kind": "section",
@@ -775,7 +775,7 @@ must still check semantic completeness, source authority, and actual evidence.
     },
     {
       "id": "decision-index",
-      "source": "template/initiatives/decision-receipts/README.md",
+      "source": "template/project/initiatives/decision-receipts/README.template.md",
       "section": "",
       "destination": "initiatives/<scope>/<type>/<id-and-slug>/decision-receipts/README.md",
       "kind": "file",
@@ -790,7 +790,7 @@ must still check semantic completeness, source authority, and actual evidence.
     },
     {
       "id": "decision-receipt",
-      "source": "template/initiatives/decision-receipts/decision-receipt.template.md",
+      "source": "template/project/initiatives/decision-receipts/decision-receipt.template.md",
       "section": "",
       "destination": "initiatives/<scope>/<type>/<id-and-slug>/decision-receipts/<receipt-id>.md",
       "kind": "file",
@@ -805,7 +805,7 @@ must still check semantic completeness, source authority, and actual evidence.
     },
     {
       "id": "acceptance",
-      "source": "template/initiatives/decision-receipts/decision-receipt.template.md",
+      "source": "template/project/initiatives/decision-receipts/decision-receipt.template.md",
       "section": "",
       "destination": "initiatives/<scope>/<type>/<id-and-slug>/decision-receipts/<acceptance-id>.md",
       "kind": "file",
@@ -820,7 +820,7 @@ must still check semantic completeness, source authority, and actual evidence.
     },
     {
       "id": "gate-exception",
-      "source": "template/initiatives/decision-receipts/gate-exception.template.md",
+      "source": "template/project/initiatives/decision-receipts/gate-exception.template.md",
       "section": "",
       "destination": "initiatives/<scope>/<type>/<id-and-slug>/decision-receipts/<exception-id>.md",
       "kind": "file",
@@ -835,7 +835,7 @@ must still check semantic completeness, source authority, and actual evidence.
     },
     {
       "id": "readiness-response",
-      "source": "template/initiatives/implementation-readiness.md",
+      "source": "template/project/initiatives/implementation-readiness.template.md",
       "section": "",
       "destination": "response only",
       "kind": "response",
@@ -850,7 +850,7 @@ must still check semantic completeness, source authority, and actual evidence.
     },
     {
       "id": "execution",
-      "source": "template/initiatives/execution-record.md",
+      "source": "template/project/initiatives/execution-record.template.md",
       "section": "",
       "destination": "initiatives/<scope>/implementation/<id-and-slug>/execution-record.md",
       "kind": "file",
@@ -865,7 +865,7 @@ must still check semantic completeness, source authority, and actual evidence.
     },
     {
       "id": "delivery",
-      "source": "template/initiatives/delivery-record.md",
+      "source": "template/project/initiatives/delivery-record.template.md",
       "section": "",
       "destination": "initiatives/<scope>/<design-or-planning>/<id-and-slug>/delivery-record.md",
       "kind": "file",
@@ -895,7 +895,7 @@ must still check semantic completeness, source authority, and actual evidence.
     },
     {
       "id": "completion",
-      "source": "template/initiatives/completion-evidence.md",
+      "source": "template/project/initiatives/completion-evidence.template.md",
       "section": "",
       "destination": "initiatives/<scope>/<type>/<id-and-slug>/completion-evidence.md",
       "kind": "file",
@@ -910,7 +910,7 @@ must still check semantic completeness, source authority, and actual evidence.
     },
     {
       "id": "coherence",
-      "source": "template/initiatives/completion-evidence.md",
+      "source": "template/project/initiatives/completion-evidence.template.md",
       "section": "Cross-initiative coherence review",
       "destination": "initiatives/<scope>/<type>/<id-and-slug>/completion-evidence.md#cross-initiative-coherence-review",
       "kind": "section",

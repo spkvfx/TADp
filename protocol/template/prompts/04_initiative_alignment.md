@@ -85,7 +85,7 @@ Reusable source paths below are relative to {initiative_template_root};
 instantiate only at the map's declared project-relative destination.
 Required inputs: complete initial suite including scope assessment, canonical
 source inventory, recorded assignment and current open-effort/conflict evidence.
-Use initiatives/README.md and its constituent sources and
+Use project/initiatives/initiative-README.template.md and its constituent sources and
 project/initiatives/work-conflicts.template.md. Keep the open-effort inventory
 in the owning source mapping or review response, not a premature completion
 file. Recover missing initial documentation through Stage 3's

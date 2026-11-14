@@ -76,7 +76,7 @@ Reusable source paths below are relative to {initiative_template_root};
 instantiate only at the map's declared project-relative destination.
 Required inputs: accepted implementation suite/baseline/receipt, actual
 phase-specific readiness result, SDK/API/dependency evidence and readable
-initiatives/execution-record.md and initiatives/completion-evidence.md sources.
+project/initiatives/execution-record.template.md and project/initiatives/completion-evidence.template.md sources.
 Use the mapped initial-suite, decision and coherence sources to recover missing
 earlier documentary inputs through their owning activities. A missing current
 readiness result requires the owning Stage 9 assessment; do not invent Go,

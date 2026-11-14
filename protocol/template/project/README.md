@@ -25,61 +25,51 @@ made any required adaptations.
 
 ## Start a project from this template
 
-Follow this order when creating a new project. It creates a usable traceability
-chain before there is enough material for the directories to become confusing.
+The project directory is the clean baseline for an adopting repository.
+It contains reusable record shapes and directly copied operating files,
+not TADp's own initiatives, decisions, products, adoption or test results.
 
-1. Create or select the project root and initialize Git there. Confirm that the
-   root has its own `.git` entry; a parent repository is not a substitute.
-2. Copy the distribution's complete `template/` tree to `template/` in the
-   target repository. Preserve `template/AGENTS.md` and
-   `template/.tadp-lock.json`; do not specialize any file in that source tree.
-3. Copy the contents of `template/project/`, including `.gitattributes`,
-   `.githooks/`, and the canonical `prompts/AGENTS.md` and
-   `prompts/README.md`, to the target repository root without overwriting
-   established files blindly. The root copies are the working project
-   scaffold; `template/project/` remains protected reusable source. Reconcile
-   pre-existing prompt instructions without weakening either instruction set.
-4. Copy the distribution's authoritative `evidence/authoritative/LLM/` suite,
-   including its `AGENTS.md` and `.tadp-lock.json`, to the same path in the new
-   project. Keep the copied root `AGENTS.md`; it directs Codex to that suite.
-   Preserve distribution authority receipts linked by the copied suite under
-   `decisions/`, with their historical source identity. Those receipts do not
-   decide the adopting project's assumptions or authorize its delivery work.
-5. Copy the distribution's `docs/`, `tools/`, and `tests/` trees when using the
-   complete reference workflow. Run `python tools/tadp_protect.py check .`,
-   then enable the tracked guard with
-   `git config core.hooksPath .githooks`.
-6. Copy [project-profile.template.md](project-profile.template.md) to
-   `project-profile.md`. Replace every `{{double_brace_token}}`, remove the
-   instructional HTML comment, and record the project owner, boundary, review
-   cadence, version-scope revision effective commit, branch convention, and
-   scope-adoption migration-ledger link; preserve earlier correlation history. Capture the current Git commit as the coherence
-   revision baseline before adopting the coherence controls.
-7. Establish the binding sources in
-   [evidence/authoritative/](evidence/authoritative/README.md) before accepting
-   work that depends on them. Record contextual sources separately in
-   [evidence/non-authoritative/](evidence/non-authoritative/README.md).
-8. Create an [evidence register](evidence/evidence-register.template.md) once
-   there is more than a small number of sources. Assign stable evidence IDs and
-   cite a section or claim, not merely a directory.
-9. Register each proposed effort in
-   [initiatives/](initiatives/README.md), then create its type-specific record.
-   An initiative cannot use a product change to silently revise its governing
-   specification or evidence.
-   Copy both [the initiative index](initiatives/initiative-index.template.md)
-   and [the portfolio status record](initiatives/status.template.md) before
-   accepting the first initiative. Copy the
-   [version-correlation migration ledger](initiatives/version-correlation-migration-ledger.template.md)
-   when adopting the correlation revision. The index owns canonical initiative membership/provenance; the status record answers what is active, blocked, or gated next.
-   Copy [the work-conflict register](initiatives/work-conflicts.template.md) to
-   `initiatives/work-conflicts.md`; preserve both claims and effort when work
-   conflicts, including proposed open initiative work.
-10. Add a product record when an output has a declared destination, even if the
-   output itself lives outside `products/`. Link its governing initiative,
-   specification, binding evidence, and verification.
-11. At each review, reconcile changed evidence, initiative status, product
-   verification, unresolved conflicts, and ownership in the records that they
-   affect.
+1. Select an immutable distribution revision and the target Git root.
+   Inspect existing files and preserve all existing project work.
+2. Copy the contents of the distribution's template/project/ to the target
+   root. Keep original names and contents: .template.md files remain reusable
+   shapes; other files copy directly. Include hidden files and folders.
+3. Install the complete outer template/ library from that same revision at
+   the project's template/. The source project/template/README.md is only a
+   nonrecursive placeholder. Resolve it to the complete library once; retain
+   the library's own README and lock rather than copying the placeholder over it.
+4. The baseline already includes runtime tools, the governing suite and
+   project-use guides. Do not copy TADp development reports, development
+   decisions, regression fixtures, live initiatives or delivered products.
+   Source-history references in the suite identify distribution provenance,
+   not decisions or conflict records for this project.
+5. Select required .template.md files through
+   [the coverage map](template/TEMPLATE-COVERAGE.md). Copy the project profile
+   to project-profile.md and populate it from actual project authority,
+   ownership, Git evidence and revision-adoption decisions.
+6. Establish applicable evidence and coordination records through their owning
+   activities. For an initiative, use the sources already supplied under
+   [initiatives/](initiatives/README.md). A record shape creates no live record,
+   acceptance, delivery, completion or migration event by its presence.
+7. Run the installed protection and validation tools from the project root.
+   Review existing hooks before explicitly enabling .githooks. Record actual
+   results and remaining gates; installation alone is not project adoption.
+
+## Copying versus instantiating
+
+A .template.md filename denotes a record shape. Copy it to the declared
+destination only when its owning activity and trigger apply, remove .template
+from the instance filename, populate evidence-backed fields, and recompute
+links from the actual destination. For example, initiative-README.template.md
+becomes the selected initiative's README.md; architecture.template.md becomes
+architecture.md. A response shape remains response-only when the workflow
+requires no durable file.
+
+Other baseline files, including README.md, AGENTS.md, guides, tools and
+workflow-support files, copy directly. Do not fill them as project records or
+mistake their examples for actual project decisions. The complete installed
+template/ remains protected reusable source; specialize only declared working
+instances outside that source tree.
 
 ## Directory map and order of authority
 
@@ -138,15 +128,15 @@ and status evidence coherent without merging their acceptance claims.
 
 Select the canonical source by record role, declared initiative type, governing
 revision, and current stage using the
-[coverage and use map](../TEMPLATE-COVERAGE.md). Its destinations are relative
-to the adopting project root. A README or an embedded section may be the
+[coverage and use map](template/TEMPLATE-COVERAGE.md). Its destinations are relative
+to the adopting project root. A .template.md file or an embedded section may be the
 canonical template; keep an embedded section in its owning record instead of
 creating a competing file. A response shape, including ordinary Stage 9
 readiness, is populated in the response and creates no durable record unless
 an applicable governing requirement separately calls for one.
 
 Before a workflow step's substantive entry check, follow the shared
-[documentary prerequisite preparation procedure](../prompts/WORKFLOW-CONTRACT.md#documentary-prerequisite-preparation).
+[documentary prerequisite preparation procedure](template/prompts/WORKFLOW-CONTRACT.md#documentary-prerequisite-preparation).
 Reuse current records and recover only the missing documentary outputs needed
 by the invocation, through the earlier owning activity and its actual gates.
 Existing sufficient human instructions may be captured as receipts without

@@ -187,7 +187,7 @@ KWD-001 through KWD-005 are revision 1, authorized together by KWD-DR-001 and
 effective at the coherent revision commit defined above. Their implementation
 and consumer links are [the shared interpreter](../../../tools/tadp_keywords.py),
 [workflow contract](../../../template/prompts/WORKFLOW-CONTRACT.md), and
-[exception source](../../../template/initiatives/decision-receipts/gate-exception.template.md).
+[exception source](../../../template/project/initiatives/decision-receipts/gate-exception.template.md).
 Their compatibility consequences are prospective interpretation only, with
 no historical gate waiver. Each definition applies at source position to
 nested lists, parallel branches, retries, and resumed work under the common

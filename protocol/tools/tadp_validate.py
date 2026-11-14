@@ -17,7 +17,7 @@ from urllib.parse import unquote
 
 from tadp_keywords import SPECIFICATION as KEYWORD_SPECIFICATION, load_registry
 from tadp_scopes import adopted as scopes_adopted, adopted_for_record, validate_version_scopes
-from tadp_templates import validate_contract as validate_template_contract
+from tadp_templates import project_layout_installed, validate_contract as validate_template_contract
 
 
 MARKDOWN_LINK = re.compile(r"(?<!!)\[[^\]]+\]\(([^)]+)\)")
@@ -127,7 +127,6 @@ BASE_REQUIRED_PATHS = (
     "docs/development/initiative-workflow.md",
     "docs/development/git-and-codex-requirements.md",
     "docs/development/validation-and-quality.md",
-    "docs/development/developing-tadp.md",
     "docs/development/adapting-other-tools.md",
     "docs/guides/project-local-prompts-migration.md",
     "docs/guides/protected-source-integrity-migration.md",
@@ -150,9 +149,6 @@ BASE_REQUIRED_PATHS = (
     "initiatives/README.md",
     "products/README.md",
     "template/AGENTS.md",
-    "template/initiatives/README.md",
-    "template/initiatives/preparation-README.template.md",
-    "template/initiatives/proposal/preparation-README.template.md",
     "template/project/AGENTS.md",
     "template/project/.gitattributes",
     "template/project/.githooks/pre-commit",
@@ -162,6 +158,21 @@ BASE_REQUIRED_PATHS = (
     "template/prompts/WORKFLOW-CONTRACT.md",
     ".githooks/pre-commit",
     "tools/tadp_protect.py",
+)
+
+LEGACY_INITIATIVE_TEMPLATE_PATHS = (
+    "template/initiatives/README.md",
+    "template/initiatives/preparation-README.template.md",
+    "template/initiatives/proposal/preparation-README.template.md",
+)
+LEGACY_DEVELOPMENT_REQUIRED_PATHS = (
+    "docs/development/developing-tadp.md",
+)
+PROJECT_INITIATIVE_TEMPLATE_PATHS = (
+    "template/project/initiatives/initiative-README.template.md",
+    "template/project/initiatives/preparation-README.template.md",
+    "template/project/initiatives/proposal/preparation-README.template.md",
+    "template/project/template/README.md",
 )
 
 INITIAL_INITIATIVE_FILES = (
@@ -619,7 +630,11 @@ def validate_required_paths(root: Path) -> list[Finding]:
                 "TADp Git repository root has no Codex AGENTS.md entry point",
             )
         )
-    for item in BASE_REQUIRED_PATHS:
+    project_baseline = project_layout_installed(root)
+    initiative_paths = (PROJECT_INITIATIVE_TEMPLATE_PATHS if project_baseline
+                        else LEGACY_INITIATIVE_TEMPLATE_PATHS)
+    development_paths = () if project_baseline else LEGACY_DEVELOPMENT_REQUIRED_PATHS
+    for item in (*BASE_REQUIRED_PATHS, *initiative_paths, *development_paths):
         if not (root / item).exists():
             findings.append(Finding("error", "TADP001", item, "required path is missing"))
     return findings
@@ -735,6 +750,9 @@ def validate_project_prompt_scaffold(root: Path) -> list[Finding]:
 
 def validate_links(root: Path) -> list[Finding]:
     findings: list[Finding] = []
+    project_source = (root / "template/project").resolve()
+    template_placeholder = project_source / "template"
+    consolidated_layout = project_layout_installed(root)
     for path in markdown_files(root):
         text = path.read_text(encoding="utf-8")
         link_text = mask_markdown_code(text)
@@ -746,6 +764,17 @@ def validate_links(root: Path) -> list[Finding]:
             if not target_path:
                 continue
             resolved = (path.parent / unquote(target_path)).resolve()
+            # The project source contains only a nonrecursive template/README.md
+            # placeholder. At installation its template/ directory receives the
+            # complete outer library. Check these links against that real source
+            # overlay, keeping every other missing target an ordinary finding.
+            if consolidated_layout and path.resolve().is_relative_to(project_source):
+                try:
+                    library_target = resolved.relative_to(template_placeholder)
+                except ValueError:
+                    pass
+                else:
+                    resolved = (root / "template" / library_target).resolve()
             # Project instruction templates deliberately use the installed
             # project's direct canonical link. Resolve that one destination
             # against the adopting root, rather than duplicating authority
@@ -2146,4 +2175,3 @@ def main(argv: list[str] | None = None) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

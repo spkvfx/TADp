@@ -71,7 +71,7 @@ Reusable source paths below are relative to {initiative_template_root};
 instantiate only at the map's declared project-relative destination.
 Required inputs: one canonical editable proposal, source inventory, actual
 realization and governing evidence, target identity and recorded assignment.
-Use initiatives/proposal/README.md and initiatives/proposal/proposal.md and
+Use project/initiatives/proposal/README.template.md and project/initiatives/proposal/proposal.template.md and
 Stage 0 preparation-README sources from the map. A missing proposal may be prepared
 through Stage 1's documentary activity only after its real entry gates hold;
 reuse valid proposals and preserve frozen sources. Missing identity, ambiguous

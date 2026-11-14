@@ -14,6 +14,7 @@ from pathlib import Path, PurePosixPath
 
 COVERAGE = "template/TEMPLATE-COVERAGE.md"
 PROCEDURE = "WORKFLOW-CONTRACT.md#documentary-prerequisite-preparation"
+PROJECT_INITIATIVE_SOURCE = "template/project/initiatives/initiative-README.template.md"
 _COVERAGE = re.compile(r"<!-- tadp-template-coverage -->\s*```json\s*(.*?)\s*```", re.S)
 _PREREQUISITES = re.compile(r"<!--\s*tadp-prerequisites:\s*(.*?)\s*-->", re.S)
 _LINK = re.compile(r"(?<!!)\[[^\]]+\]\(([^)]+)\)")
@@ -79,15 +80,47 @@ def installed(root: Path) -> bool:
                for path in suite.glob("0[28]_*.md"))
 
 
+def project_layout_installed(root: Path) -> bool:
+    """Identify the consolidated project baseline without migrating legacy trees."""
+    return ((root / PROJECT_INITIATIVE_SOURCE).is_file()
+            or (root / "template/project/template/README.md").is_file())
+
+
+def validate_project_layout(root: Path) -> list[Issue]:
+    """Check the copied baseline and its nonrecursive template placeholder."""
+    if not project_layout_installed(root):
+        return []
+    issues = []
+    project = root / "template/project"
+    directories = [project, *(path for path in project.rglob("*")
+                               if path.is_dir() and not path.is_symlink()
+                               and not {".git", "__pycache__"}.intersection(path.relative_to(project).parts))]
+    for directory in directories:
+        if not (directory / "README.md").is_file():
+            issues.append(Issue("TADP052", (directory / "README.md").relative_to(root).as_posix(),
+                                "project baseline directory is missing its README.md"))
+    placeholder = project / "template"
+    if not (placeholder / "README.md").is_file():
+        issues.append(Issue("TADP052", "template/project/template/README.md",
+                            "project template library placeholder README.md is missing"))
+    elif any(path.name != "README.md" for path in placeholder.iterdir()):
+        issues.append(Issue("TADP052", "template/project/template",
+                            "project template library placeholder must contain only README.md; recursive copies are forbidden"))
+    if (root / "template/initiatives").exists():
+        issues.append(Issue("TADP052", "template/initiatives",
+                            "initiative templates belong in template/project/initiatives, not a sibling source tree"))
+    return issues
+
+
 def validate_contract(root: Path) -> list[Issue]:
     """Check installed source coverage and declarations; never repair files."""
+    issues = validate_project_layout(root)
     if not installed(root):
-        return []  # Earlier distributions retain their recorded contract.
-    issues = []
+        return issues  # Earlier distributions retain their recorded contract.
     try:
         records = load_coverage(root)
     except (OSError, UnicodeError, ValueError, TypeError) as error:
-        return [Issue("TADP050", COVERAGE, str(error))]
+        return [*issues, Issue("TADP050", COVERAGE, str(error))]
     ids = set()
     for record in records:
         try:

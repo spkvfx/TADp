@@ -72,8 +72,8 @@ Reusable source paths below are relative to {initiative_template_root};
 instantiate only at the map's declared project-relative destination.
 Required inputs: accepted implementation suite, exact baseline and acceptance
 receipt, resolved surface decisions and current in-scope SDK/API contracts,
-implementation and compatibility tests. Use initiatives/README.md and its
-constituent sources and initiatives/decision-receipts/decision-receipt.template.md from
+implementation and compatibility tests. Use project/initiatives/initiative-README.template.md and its
+constituent sources and project/initiatives/decision-receipts/decision-receipt.template.md from
 the map. Recover only missing documentary prerequisites from actual earlier
 events and authority. Missing acceptance, wrong type, unavailable contract or
 unverified compatibility still blocks affected product work. Validate type,

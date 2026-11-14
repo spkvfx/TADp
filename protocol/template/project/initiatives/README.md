@@ -28,10 +28,16 @@ earlier correlation migration history without retroactively relabeling it.
 Stage 0 prepares scope/ancestor records when needed and chooses dedicated child
 or existing shared scope execution. Create only the new initiative's minimal
 README skeletons there. Stage 1 creates its proposal and Stage 3 completes the
-[canonical initiative suite](../../initiatives/README.md). Later delivery records
+[canonical initiative suite](initiative-README.template.md). Later delivery records
 are created only when their respective stages begin. Use
 [work-conflicts.template.md](work-conflicts.template.md) for all relevant open
 and partial effort; preserve their original authority standing.
+The record shapes now belong to this project baseline. Files ending in
+.template.md are reusable sources, not live initiative records. Copy the chosen
+sources to the declared initiative destination, remove .template from record
+filenames and populate only evidence-backed fields through the owning stage.
+All other files, including this README, are copied directly as navigation.
+
 The type directories define output boundaries only. They do not carry separate
 initiative templates. Every design, implementation, and planning initiative
 uses the same canonical suite so structure and review gates cannot drift by
@@ -114,8 +120,8 @@ readiness.
 ## Evidence, conflicts, and cross-initiative work
 
 Every material requirement must cite evidence with a stable ID and precise
-locator. Binding claims come from `../../../evidence/authoritative`; research, proposal
-input, and observations are `../../../evidence/non-authoritative` until accepted
+locator. Binding claims come from `../evidence/authoritative`; research, proposal
+input, and observations are `../evidence/non-authoritative` until accepted
 elsewhere. Link an initiative to the product it governs, but do not describe an
 existing product as if the initiative already changed it.
 
@@ -138,4 +144,3 @@ one look coherent.
 - [ ] The initiative index and any dependent records reflect the final status.
 - [ ] The portfolio status record identifies the current gate and links the
       evidence supporting the status claim.
-

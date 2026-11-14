@@ -29,7 +29,7 @@ a human response. Once the authority and records cover the exact scope, no
 repeated confirmation is required solely to recreate that authority.
 
 Use the
-[gate-exception source](../../../template/initiatives/decision-receipts/gate-exception.template.md)
+[gate-exception source](../../../template/project/initiatives/decision-receipts/gate-exception.template.md)
 for the additional per-rule and per-block fields. A shared receipt may cover
 multiple named gates only when the actual human authority explicitly covers
 the complete bounded set. Inferred use or a further inferred invariant

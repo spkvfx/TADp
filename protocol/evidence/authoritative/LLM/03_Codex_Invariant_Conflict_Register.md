@@ -99,3 +99,43 @@ For each resolved entry, retain the original conflict text and add:
 - Keep the affected initiative and portfolio status synchronized with this
   register.
 
+
+## Reusable-source location note
+
+On 2026-11-13 the user explicitly requested consolidating initiative sources
+under template/project/initiatives and making a clean project baseline.
+INV-CONFLICT-001 retains its original detected source identity above. Its
+current reusable source is
+[the relocated proposal inventory](../../../template/project/initiatives/proposal/README.template.md).
+The move changes no conflicting clause, disposition or required resolution
+authority. The clean project register starts empty and does not inherit
+TADp's active conflict entries.
+
+## Subsequent baseline compatibility finding
+
+### INV-CONFLICT-003 — Type navigation allocation and record copying
+
+- **Detected:** 2026-11-13, Codex clean-project-baseline compatibility review.
+- **Status:** Resolved for the revised reusable type navigation; no live
+  initiative was changed. The earlier no-resolution statement above belongs
+  to the preserved preceding register snapshot.
+- **Governing claims:** Specification 09 owns scoped allocation at
+  `initiatives/<scope>/<type>/<id-and-slug>/`; specifications 02 and 08 own
+  stage-specific canonical selection and conditional record creation.
+- **Conflicting sources:** The design, implementation and planning READMEs at
+  `template/project/initiatives/<type>/README.md` in source revision `da87ad8`
+  instructed creation directly beneath the unscoped type directory and copying
+  the complete suite during initial preparation.
+- **Authority and correction:** The user's 2026-11-13 explicit instruction to
+  consolidate the project initiative sources and provide a completely clean
+  baseline authorizes this affected navigation correction. The type READMEs
+  now route allocation through Stage 0, name the scoped destination, and select
+  only the current activity's sources through the coverage map. The existing
+  protocol rules, stage ownership and live instance names are unchanged.
+- **Verification:** Protocol regression run: 222 tests, OK, two environment
+  skips. Review confirmed each corrected type README retains its output
+  boundary and no late-stage record is created by baseline copying.
+- **Scope and preservation:** Source history and INV-CONFLICT-001/002 remain
+  intact. The clean copied project conflict register starts empty; this TADp
+  maintenance finding is not copied into a new project's history.
+- **Owner:** User; finding captured and correction authored by Codex.

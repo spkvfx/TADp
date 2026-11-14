@@ -19,6 +19,8 @@ from tadp_validate import (  # noqa: E402
     protected_lock_path,
     validate,
     validate_coherence,
+    validate_links,
+    validate_required_paths,
     validate_version_correlation,
 )
 
@@ -264,6 +266,98 @@ class ValidatorTests(unittest.TestCase):
             root = Path(directory)
             self.make_repository(root)
             self.assertEqual([], validate(root))
+
+    def make_project_baseline_layout(self, root: Path) -> None:
+        self.make_repository(root)
+        sources = {
+            "README.md": "initiative-README.template.md",
+            "preparation-README.template.md": "preparation-README.template.md",
+            "proposal/preparation-README.template.md": "proposal/preparation-README.template.md",
+        }
+        for original, relocated in sources.items():
+            source = root / "template/initiatives" / original
+            destination = root / "template/project/initiatives" / relocated
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            source.replace(destination)
+        (root / "template/initiatives/proposal").rmdir()
+        (root / "template/initiatives").rmdir()
+        placeholder = root / "template/project/template"
+        placeholder.mkdir()
+        for directory in (root / "template/project", *(root / "template/project").rglob("*")):
+            if directory.is_dir() and not (directory / "README.md").exists():
+                (directory / "README.md").write_text("# Project baseline directory\n", encoding="utf-8")
+        lock = protected_lock_path(root, "template")
+        lock.write_text(json.dumps(build_protected_lock(root, "template", "new-layout fixture")), encoding="utf-8")
+
+    def test_consolidated_project_baseline_passes_without_legacy_source_tree(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_project_baseline_layout(root)
+            self.assertEqual([], validate(root))
+            self.assertFalse((root / "template/initiatives").exists())
+
+    def test_adopted_project_baseline_needs_operational_guides_not_protocol_development(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_project_baseline_layout(root)
+            (root / "docs/development/developing-tadp.md").unlink()
+            self.assertEqual([], validate(root))
+            (root / "docs/development/validation-and-quality.md").unlink()
+            self.assertTrue(any(item.code == "TADP001" and item.path == "docs/development/validation-and-quality.md"
+                                for item in validate_required_paths(root)))
+
+    def test_legacy_distribution_retains_its_protocol_development_guide_requirement(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_repository(root)
+            (root / "docs/development/developing-tadp.md").unlink()
+            self.assertTrue(any(item.code == "TADP001" and item.path == "docs/development/developing-tadp.md"
+                                for item in validate_required_paths(root)))
+
+    def test_consolidated_baseline_requires_its_relocated_preparation_source(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_project_baseline_layout(root)
+            source = root / "template/project/initiatives/proposal/preparation-README.template.md"
+            source.unlink()
+            findings = validate_required_paths(root)
+            self.assertTrue(any(item.code == "TADP001" and item.path == source.relative_to(root).as_posix()
+                                for item in findings))
+            self.assertFalse(any(item.path.startswith("template/initiatives/") for item in findings))
+
+    def test_copied_template_record_does_not_create_a_live_initiative(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_project_baseline_layout(root)
+            (root / "initiatives/initiative-README.template.md").write_text(
+                "# {{initiative}}\n\n**Status:** invalid until instantiated\n", encoding="utf-8")
+            self.assertEqual([], validate(root))
+
+    def test_project_baseline_links_resolve_against_installed_template_library(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_project_baseline_layout(root)
+            (root / "template/library.md").write_text("# Canonical library source\n", encoding="utf-8")
+            readme = root / "template/project/README.md"
+            readme.write_text("# Project\n\n[Library](template/library.md)\n", encoding="utf-8")
+            self.assertEqual([], validate_links(root))
+            self.assertFalse((root / "template/project/template/library.md").exists())
+            (root / "template/library.md").unlink()
+            self.assertTrue(any(item.code == "TADP002" and item.path.startswith("template/project/README.md:")
+                                for item in validate_links(root)))
+
+    def test_project_template_overlay_does_not_hide_other_missing_links(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_project_baseline_layout(root)
+            (root / "template/library.md").write_text("# Source\n", encoding="utf-8")
+            (root / "template/project/README.md").write_text(
+                "# Project\n\n[Missing](evidence/library.md)\n", encoding="utf-8")
+            (root / "README.md").write_text(
+                "# Live project\n\n[Missing](template/project/template/library.md)\n", encoding="utf-8")
+            findings = validate_links(root)
+            self.assertTrue(any(item.path.startswith("template/project/README.md:") for item in findings))
+            self.assertTrue(any(item.path.startswith("README.md:") for item in findings))
 
     def test_missing_project_prompt_directory_is_reported_precisely(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

@@ -71,7 +71,7 @@ Reusable source paths below are relative to {initiative_template_root};
 instantiate only at the map's declared project-relative destination.
 Required inputs: accepted implementation suite/baseline/receipt, exact phase
 plan, current SDK/API results, product/dependency/verification evidence and
-initiatives/implementation-readiness.md as response shape only. Use the mapped
+project/initiatives/implementation-readiness.template.md as response shape only. Use the mapped
 initial-suite and decision sources for preceding owning-stage documentary
 recovery from actual sufficient evidence. Do not reconstruct passing tests or
 human acceptance. Missing identity, wrong type, stale phase evidence, required
@@ -137,7 +137,7 @@ Before assessing readiness, verify that:
   implementation steps, and every supporting record linked by the index are
   readable, or their absence is explicitly documented as an existing
   initiative condition;
-- {initiative_template_root}/initiatives/implementation-readiness.md is readable;
+- {initiative_template_root}/project/initiatives/implementation-readiness.template.md is readable;
 - the reviewed phase or work set is unambiguous in the existing roadmap and
   implementation steps;
 - the initiative's evidence labels, precedence rules, dependencies, and
@@ -222,7 +222,7 @@ needed to resolve it. Actual repository evidence can expose an initiative drift;
 it does not silently override `evidence/authoritative` or authorize a change to the
 initiative.
 
-Use {initiative_template_root}/initiatives/implementation-readiness.md only as the
+Use {initiative_template_root}/project/initiatives/implementation-readiness.template.md only as the
 shape of the review response. Do not copy, create, populate, or update that
 document. Under the response's `## Evidence reviewed` section, add a
 `### Evidence coverage` table with these columns:

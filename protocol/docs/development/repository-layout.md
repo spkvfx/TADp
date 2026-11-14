@@ -47,8 +47,9 @@ paths and compatible revision until explicitly migrated.
 |   |-- .tadp-lock.json
 |   |-- AGENTS.md
 |   |-- TEMPLATE-COVERAGE.md
-|   |-- initiatives/
 |   |-- project/
+|   |   |-- initiatives/
+|   |   |-- template/ (README placeholder only)
 |   |   `-- prompts/
 |   `-- prompts/
 |-- tests/
@@ -232,7 +233,7 @@ evidence before a substantive step's entry check; it never invents identity,
 authority, work or verification. Recompute relative links from the instance's
 actual directory depth.
 
-### `../../template/initiatives`
+### `../../template/project/initiatives`
 
 This is the single canonical initiative template suite for implementation,
 design, and planning initiatives. Type changes what output is permitted, not

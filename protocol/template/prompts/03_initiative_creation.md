@@ -17,19 +17,19 @@ out of scope; verify the recorded assignment through read-only Git inspection.
 
 ## Structure and reference evidence
 
-The shared [initiative template](../initiatives/README.md) defines the required initiative
+The shared [initiative template](../project/initiatives/initiative-README.template.md) defines the required initiative
 structure, document roles, reading order, lifecycle, and maintenance rules. Use
 its individual document templates as the source format:
 
-- [`../../../README.md`](../initiatives/README.md)
-- [`proposal/README.md`](../initiatives/proposal/README.md)
-- [`assumption.md`](../initiatives/assumption.md)
-- [`scope-assessment.md`](../initiatives/scope-assessment.md)
-- [`architecture.md`](../initiatives/architecture.md)
-- [`source-mapping.md`](../initiatives/source-mapping.md)
-- [`open-questions.md`](../initiatives/open-questions.md)
-- [`implementation-roadmap.md`](../initiatives/implementation-roadmap.md)
-- [`implementation-steps.md`](../initiatives/implementation-steps.md)
+- [`README.md`](../project/initiatives/initiative-README.template.md)
+- [`proposal/README.md`](../project/initiatives/proposal/README.template.md)
+- [`assumption.md`](../project/initiatives/assumption.template.md)
+- [`scope-assessment.md`](../project/initiatives/scope-assessment.template.md)
+- [`architecture.md`](../project/initiatives/architecture.template.md)
+- [`source-mapping.md`](../project/initiatives/source-mapping.template.md)
+- [`open-questions.md`](../project/initiatives/open-questions.template.md)
+- [`implementation-roadmap.md`](../project/initiatives/implementation-roadmap.template.md)
+- [`implementation-steps.md`](../project/initiatives/implementation-steps.template.md)
 
 Some existing initiatives predate the current template or contain
 initiative-specific supporting records. Use them only to understand evidence
@@ -38,7 +38,7 @@ roles, and creation boundary remain authoritative; do not copy an example's
 legacy filename, additional record, or exception into a new initiative.
 
 The adjacent
-[implementation-readiness template](../initiatives/implementation-readiness.md)
+[implementation-readiness template](../project/initiatives/implementation-readiness.template.md)
 is deliberately not an initial initiative artifact. Do not create, copy, or
 link an implementation-readiness review when creating an initiative. Gather
 readiness evidence later, immediately before execution, with the
@@ -102,9 +102,9 @@ Reusable source paths below are relative to {initiative_template_root};
 instantiate only at the map's declared project-relative destination.
 Required inputs: recorded Stage 0 skeleton/identity/assignment, an aligned
 canonical proposal, project tracking and complete initial-suite sources.
-Use initiatives/README.md and its constituent sources, initiatives/preparation-README.template.md and
-initiatives/proposal/preparation-README.template.md
-and initiatives/proposal/ from the map. Recover missing earlier documentary
+Use project/initiatives/initiative-README.template.md and its constituent sources, project/initiatives/preparation-README.template.md and
+project/initiatives/proposal/preparation-README.template.md
+and project/initiatives/proposal/ from the map. Recover missing earlier documentary
 outputs in owning-stage order only when their actual entry gates and evidence
 hold. Reuse current initial records on retry and preserve customization; create
 only missing initial-suite outputs. No decision, readiness, execution, delivery
@@ -149,7 +149,7 @@ resolves human owner, reviewer, and approver roles as recorded for the target
 project. Preserve every technical component, profile, placement,
 external-party, contract, and evidence dependency.
 
-Use {initiative_template_root}/initiatives/README.md as the authoritative structure for the
+Use {initiative_template_root}/project/initiatives/initiative-README.template.md as the authoritative structure for the
 initiative. It defines the standard documents, their reading order, lifecycle,
 and maintenance rules. Base each new document on its corresponding file in
 {initiative_template_root}/initiatives. The shared template governs the new
@@ -172,7 +172,7 @@ Before writing, verify that:
   content and reuse completed records on retry instead of overwriting them;
 - {initiative_path}/proposal/proposal.md exists and is the intended canonical
   working proposal;
-- {initiative_template_root}/initiatives/README.md and each standard document template exist;
+- {initiative_template_root}/project/initiatives/initiative-README.template.md and each standard document template exist;
 - the target contains no initial-initiative artifact beyond the prepared README
   skeleton and canonical proposal that has not been inventoried for reuse;
   create only missing outputs and stop where unresolved conflicts would

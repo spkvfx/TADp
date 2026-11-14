@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 import sys
 import tempfile
 import unittest
@@ -13,6 +14,7 @@ sys.path.insert(0, str(PROTOCOL / "tools"))
 from tadp_templates import (  # noqa: E402
     COVERAGE, PROCEDURE, Evidence, Prerequisite, PreparationContext,
     assess_prerequisites, instance_link_issues, load_coverage, validate_contract,
+    validate_project_layout,
 )
 
 
@@ -152,6 +154,133 @@ class TemplateContractTests(unittest.TestCase):
             self.assertEqual((), instance_link_issues(root, destination))
             self.write(root, destination, "[source](../../evidence/source.md)\n")
             self.assertTrue(instance_link_issues(root, destination))
+
+
+class ProjectBaselineLayoutTests(unittest.TestCase):
+    def write(self, root: Path, name: str, text: str = "# Directory\n") -> None:
+        path = root / name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(text, encoding="utf-8")
+
+    def baseline(self, root: Path) -> None:
+        for name in ("README.md", "initiatives/README.md", "initiatives/proposal/README.md",
+                     "template/README.md", ".githooks/README.md"):
+            self.write(root, "template/project/" + name)
+        self.write(root, "template/project/initiatives/initiative-README.template.md",
+                   "# {{initiative_name}}\n\n**Status:** Proposed\n")
+        self.write(root, "template/project/initiatives/proposal/proposal.template.md", "# {{proposal}}\n")
+
+    def snapshot(self, root: Path) -> dict[str, bytes]:
+        return {path.relative_to(root).as_posix(): path.read_bytes()
+                for path in root.rglob("*") if path.is_file()}
+
+    def test_consolidated_baseline_and_placeholder_are_checked_read_only(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.baseline(root)
+            before = self.snapshot(root)
+            self.assertEqual([], validate_project_layout(root))
+            self.assertEqual([], validate_project_layout(root))
+            self.assertEqual(before, self.snapshot(root))
+
+    def test_missing_nested_readme_is_a_precise_finding_without_creation(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.baseline(root)
+            path = root / "template/project/.githooks/README.md"
+            path.unlink()
+            before = self.snapshot(root)
+            self.assertTrue(any(item.code == "TADP052" and item.path.endswith(".githooks/README.md")
+                                for item in validate_project_layout(root)))
+            self.assertEqual(before, self.snapshot(root))
+
+    def test_template_placeholder_refuses_recursive_tree_and_extra_files(self):
+        for name in ("template/project/template/project/README.md",
+                     "template/project/template/record.template.md"):
+            with self.subTest(name=name), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                self.baseline(root)
+                self.write(root, name)
+                self.assertTrue(any("only README.md" in item.message for item in validate_project_layout(root)))
+
+    def test_consolidated_baseline_rejects_a_second_initiative_template_owner(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.baseline(root)
+            self.write(root, "template/initiatives/README.md")
+            self.assertTrue(any(item.path == "template/initiatives" for item in validate_project_layout(root)))
+
+    def test_legacy_distributions_do_not_acquire_new_layout_requirements(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.write(root, "template/initiatives/README.md")
+            self.write(root, "template/project/README.md")
+            self.assertEqual([], validate_project_layout(root))
+
+
+class CleanProjectCorpusTests(unittest.TestCase):
+    """Guard the shipped baseline against accidental project/development work."""
+
+    project = PROTOCOL / "template/project"
+
+    def test_initial_and_conditional_initiative_sources_have_one_complete_owner(self):
+        self.assertFalse((PROTOCOL / "template/initiatives").exists())
+        expected = (
+            "initiative-README.template.md", "architecture.template.md", "assumption.template.md",
+            "scope-assessment.template.md", "source-mapping.template.md", "open-questions.template.md",
+            "implementation-roadmap.template.md", "implementation-steps.template.md",
+            "preparation-README.template.md", "proposal/preparation-README.template.md",
+            "proposal/README.template.md", "proposal/proposal.template.md",
+            "implementation-readiness.template.md", "execution-record.template.md",
+            "delivery-record.template.md", "completion-evidence.template.md",
+            "decision-receipts/README.template.md", "decision-receipts/decision-receipt.template.md",
+            "decision-receipts/gate-exception.template.md",
+        )
+        for name in expected:
+            with self.subTest(name=name):
+                self.assertTrue((self.project / "initiatives" / name).is_file())
+
+    def test_every_baseline_folder_has_navigation_and_library_is_not_recursive(self):
+        for directory in (self.project, *(path for path in self.project.rglob("*")
+                                         if path.is_dir() and "__pycache__" not in path.parts)):
+            with self.subTest(directory=directory.relative_to(self.project).as_posix()):
+                self.assertTrue((directory / "README.md").is_file())
+        self.assertEqual(["README.md"], sorted(path.name for path in (self.project / "template").iterdir()))
+
+    def test_baseline_contains_record_shapes_without_live_work_or_development_products(self):
+        for name in ("project-profile.md", "initiatives/status.md", "initiatives/initiative-index.md",
+                     "initiatives/work-conflicts.md", "docs/development/developing-tadp.md",
+                     "docs/development/documentation-review-20261113.md",
+                     "docs/development/template-prerequisites-maintenance.md"):
+            with self.subTest(name=name):
+                self.assertFalse((self.project / name).exists())
+        for family in ("initiatives", "products", "decisions", "evidence/non-authoritative/realizations"):
+            for path in (self.project / family).rglob("*.md"):
+                with self.subTest(path=path.relative_to(self.project).as_posix()):
+                    self.assertTrue(path.name == "README.md" or path.name.endswith(".template.md"))
+        self.assertEqual([], list(self.project.rglob("test_tadp*.py")))
+
+    def test_clean_conflict_register_does_not_inherit_distribution_conflicts(self):
+        name = "evidence/authoritative/LLM/03_Codex_Invariant_Conflict_Register.md"
+        copied = (self.project / name).read_text(encoding="utf-8")
+        active = copied.split("## Active conflicts", 1)[1].split("<!--", 1)[0]
+        self.assertNotRegex(active, r"INV-CONFLICT-\d+")
+        self.assertIn("No active conflicts", active)
+        self.assertIn("{{short title}}", copied.split("<!--", 1)[1])
+        original = (PROTOCOL / name).read_text(encoding="utf-8")
+        original_active = original.split("## Active conflicts", 1)[1].split("<!--", 1)[0]
+        for identity in ("INV-CONFLICT-001", "INV-CONFLICT-002"):
+            with self.subTest(identity=identity):
+                entry = re.search(r"(?ms)^### " + identity + r"\b(.*?)(?=^### |\Z)", original_active)
+                self.assertIsNotNone(entry)
+                self.assertRegex(entry.group(1), r"\*\*Status:\*\*\s+Open\b")
+
+    def test_entry_guidance_excludes_tadp_regression_work_from_project_baseline(self):
+        for name in ("README.md", "docs/README.md"):
+            with self.subTest(name=name):
+                text = " ".join((self.project / name).read_text(encoding="utf-8").split())
+                self.assertIn("regression fixtures", text)
+        self.assertFalse((self.project / "tests/test_tadp_validate.py").exists())
 
 
 class PrerequisiteAssessmentTests(unittest.TestCase):

@@ -9,11 +9,15 @@ demonstrate that the specification is correct.
 
 ## Start a design initiative
 
-1. Create a unique directory such as
-   `INIT-DSN-001-payment-state-model/` beneath this directory.
-2. Copy the complete
-   [canonical initiative template suite](../../../initiatives/README.md) into
-   it. Every design initiative uses the canonical suite.
+1. Use Stage 0 to select or allocate the exact
+   initiatives/<scope>/<type>/<id-and-slug>/ destination under the adopted
+   workflow. This baseline type folder explains the output boundary; it does
+   not own unscoped live initiatives or allocate identity.
+2. Use the [coverage map](../../template/TEMPLATE-COVERAGE.md) and
+   [common initiative sources](../initiative-README.template.md) to instantiate
+   only the records owned by the current activity. Remove .template from
+   instance names and recalculate links. Do not copy conditional late-stage
+   records during initial creation.
 3. Record the **observed product baseline** before stating the intended design.
    Cite actual code, tests, APIs, configuration, operational evidence, or
    product records; do not infer current behavior from a proposal.

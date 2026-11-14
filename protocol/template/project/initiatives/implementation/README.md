@@ -9,11 +9,15 @@ reveals a gap.
 
 ## Start an implementation initiative
 
-1. Create a unique directory such as
-   `INIT-IMP-001-payment-retries/` beneath this directory.
-2. Copy the complete
-   [canonical initiative template suite](../../../initiatives/README.md) into
-   it. Every implementation initiative uses the canonical suite.
+1. Use Stage 0 to select or allocate the exact
+   initiatives/<scope>/<type>/<id-and-slug>/ destination under the adopted
+   workflow. This baseline type folder explains the output boundary; it does
+   not own unscoped live initiatives or allocate identity.
+2. Use the [coverage map](../../template/TEMPLATE-COVERAGE.md) and
+   [common initiative sources](../initiative-README.template.md) to instantiate
+   only the records owned by the current activity. Remove .template from
+   instance names and recalculate links. Do not copy conditional late-stage
+   records during initial creation.
 3. Link the accepted governing specification and precise sections. If no
    accepted specification exists, create or route a design initiative first.
 4. List every product destination: repository path, package, API route,

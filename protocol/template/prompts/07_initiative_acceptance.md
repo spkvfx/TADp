@@ -69,8 +69,8 @@ Reusable source paths below are relative to {initiative_template_root};
 instantiate only at the map's declared project-relative destination.
 Required inputs: complete aligned suite, scope assessment, resolved blocking
 decisions/receipts, exact proposed baseline, acceptance authority and coherence
-inventory. Use initiatives/README.md and its constituent sources plus
-initiatives/decision-receipts/decision-receipt.template.md and
+inventory. Use project/initiatives/initiative-README.template.md and its constituent sources plus
+project/initiatives/decision-receipts/decision-receipt.template.md and
 project/initiatives/work-conflicts.template.md. Retain the pre-acceptance
 open-work inventory in existing owning records or the acceptance packet;
 create no completion-evidence file. Recover earlier documentary inputs through owning
@@ -168,7 +168,7 @@ silence, likely intent, an earlier broad approval, or permission to implement as
 acceptance.
 
 After the explicit response, create a decision receipt from
-{initiative_template_root}/initiatives/decision-receipts/decision-receipt.template.md.
+{initiative_template_root}/project/initiatives/decision-receipts/decision-receipt.template.md.
 Preserve the complete acceptance packet or its stable link, the exact question,
 exact response, human authority, date or event, accepted revision, scope, and
 affected records.

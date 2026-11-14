@@ -13,7 +13,7 @@ prepared README skeleton, after bounded documentary prerequisite preparation;
 it does not create a branch or scaffold the initiative's full record.
 
 **Proposal template:**
-the shared [`proposal/proposal.md`](../initiatives/proposal/proposal.md) template
+the shared [`proposal/proposal.md`](../project/initiatives/proposal/proposal.template.md) template
 
 ## Shared workflow contract
 
@@ -70,9 +70,9 @@ Reusable source paths below are relative to {initiative_template_root};
 instantiate only at the map's declared project-relative destination.
 Required inputs: exact scoped realization sources, Stage 0 skeleton, proposal
 source inventory, recorded membership/assignment/base and readable proposal
-source. Use initiatives/preparation-README.template.md and
-initiatives/proposal/preparation-README.template.md, initiatives/proposal/README.md and
-initiatives/proposal/proposal.md plus the mapped project registry sources.
+source. Use project/initiatives/preparation-README.template.md and
+project/initiatives/proposal/preparation-README.template.md, project/initiatives/proposal/README.template.md and
+project/initiatives/proposal/proposal.template.md plus the mapped project registry sources.
 Recover a missing Stage 0 documentary output only from sufficient actual
 allocation evidence after its entry gates hold. Do not allocate or invent
 identity. Missing source, authority or immutable assignment remains a blocker.
@@ -110,7 +110,7 @@ Before writing, verify that:
 - any existing {initiative_path}/proposal/proposal.md is identified and
   preserved; reuse a valid completed proposal on retry rather than overwrite
   it or create a duplicate; and
-- {initiative_template_root}/initiatives/proposal/proposal.md exists and is the applicable
+- {initiative_template_root}/project/initiatives/proposal/proposal.template.md exists and is the applicable
   proposal template.
 
 After preceding preparation, if any precondition still fails or the target
@@ -122,7 +122,7 @@ index; earlier documentary preparation retains its owning-stage boundary.
 Create only a missing {initiative_path}/proposal/proposal.md in the prepared
 directory, or report the existing valid proposal as reused.
 Base that file on
-{initiative_template_root}/initiatives/proposal/proposal.md.
+{initiative_template_root}/project/initiatives/proposal/proposal.md.
 During substantive proposal creation, do not copy the complete initiative
 template or create any other initiative
 document, including an initiative README, proposal-source README, assumption,

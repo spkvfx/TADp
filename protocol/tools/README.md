@@ -48,9 +48,17 @@ If the template embeds the suite, that copy is used; older templates use the
 distribution's canonical suite. Both source locks must match their complete
 trees. The script copies upstream locks unchanged and never refreshes them.
 It excludes the distribution's live initiatives, products, realizations,
-decisions, development reports, `docs/` and `tests/`; it refuses templates
-that package project development documentation or development decision files.
+decisions, development reports and regression tests. The consolidated project
+baseline includes its own project-use guides and empty navigation folders;
+the loader accepts the named operational guides and rejects development
+reports, unknown development documents and decision records.
 It does not copy the reference repository's root maintenance `prompts/`.
+
+All `.template.md` files copy unchanged as record sources. They do not become
+live initiative, profile or decision records during synchronization. The
+project baseline's `template/README.md` is a nonrecursive placeholder: the
+complete outer library supplies the installed `template/` once, retaining its
+own README. Additional contents under that placeholder are rejected.
 
 Existing scaffold files such as root `README.md`, `AGENTS.md`, project prompts
 and `.githooks/pre-commit` are preserved. Missing scaffold sources are copied
@@ -88,10 +96,11 @@ An exclusive `.tadp-sync.lock` serializes sync runs and is removed only by its
 own invocation. If interruption leaves it behind, inspect it before manually
 reconciling the stale lock; the tool never removes another run's lock.
 
-Source synchronization does not establish template completeness, project
-adoption, migration, acceptance or lifecycle completion. The current suite
-contains historical links to excluded development records, and the full
-validator expects documentation not supplied by this restricted payload.
+Source synchronization does not establish project adoption, migration,
+acceptance or lifecycle completion. A new clean baseline still needs actual
+project ownership, adoption and applicable coordination records populated
+through their owning workflows; synchronization does not invent them. Earlier
+published distributions may retain missing-guide or historical-link findings.
 Report those gaps rather than importing protocol-development records to make
 validation pass. After installation, review the template completeness prompt,
 the project's recorded governing revision, required manual scaffold changes,
@@ -106,6 +115,10 @@ The full validator invokes these checks; the module has no writer or stage
 dispatcher. `TADP050` reports missing or malformed coverage, sources, sections,
 governing locators, or unsafe instance destinations. `TADP051` reports missing
 or inconsistent prompt prerequisites or the shared preparation procedure.
+`TADP052` reports a missing project-folder README, the obsolete sibling
+initiative-source owner, or contents beyond the nonrecursive placeholder.
+New-baseline link checks resolve the placeholder against the actual installed
+library; missing library targets remain errors.
 Earlier distributions without this contract retain their recorded behavior;
 installation checks do not adopt the revision for live initiatives.
 

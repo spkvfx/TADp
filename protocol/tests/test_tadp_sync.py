@@ -462,6 +462,60 @@ class CommittedDistributionTests(unittest.TestCase):
             assets = load_assets(root, revision)
             self.assertEqual(b"# Project scaffold\n", assets["README.md"].content)
 
+    def test_project_template_placeholder_does_not_overlay_installed_library(self):
+        with tempfile.TemporaryDirectory() as source_directory, tempfile.TemporaryDirectory() as target_directory:
+            source = Path(source_directory)
+            target = Path(target_directory)
+            files = self.fixture_files()
+            files["protocol/template/README.md"] = b"# Complete reusable library\n"
+            files["protocol/template/project/template/README.md"] = b"# Install the complete library here, once\n"
+            self.refresh_fixture_locks(files)
+            revision = self.commit_fixture(source, files)
+            assets = load_assets(source, revision)
+            self.assertEqual(b"# Complete reusable library\n", assets["template/README.md"].content)
+            self.assertEqual(b"# Install the complete library here, once\n",
+                             assets["template/project/template/README.md"].content)
+            plan = make_plan(target, assets, None)
+            self.assertFalse(plan["conflicts"])
+            apply_plan(target, assets, plan, source=str(source), revision=revision)
+            self.assertEqual(b"# Complete reusable library\n", (target / "template/README.md").read_bytes())
+            self.assertTrue((target / "template/project/template/README.md").is_file())
+            self.assertFalse((target / "template/template").exists())
+            self.assertEqual(["README.md"], sorted(path.name for path in (target / "template/project/template").iterdir()))
+
+    def test_project_template_rejects_recursive_or_extra_payload(self):
+        for extra in ("template/README.md", "project/README.md", "notes.md", "README.template.md"):
+            with self.subTest(extra=extra), tempfile.TemporaryDirectory() as directory:
+                source = Path(directory)
+                files = self.fixture_files()
+                files["protocol/template/project/template/README.md"] = b"# Nonrecursive placeholder\n"
+                files["protocol/template/project/template/" + extra] = b"nested or extra payload\n"
+                self.refresh_fixture_locks(files)
+                revision = self.commit_fixture(source, files)
+                with self.assertRaisesRegex(ValueError, "nonrecursive"):
+                    load_assets(source, revision)
+
+    def test_record_templates_are_copied_verbatim_without_creating_live_records(self):
+        with tempfile.TemporaryDirectory() as source_directory, tempfile.TemporaryDirectory() as target_directory:
+            source = Path(source_directory)
+            target = Path(target_directory)
+            files = self.fixture_files()
+            content = b"# {{initiative_name}} architecture\n\n{{required_evidence}}\n"
+            files["protocol/template/project/initiatives/architecture.template.md"] = content
+            files["protocol/template/project/initiatives/README.md"] = b"# Initiative baseline navigation\n"
+            self.refresh_fixture_locks(files)
+            revision = self.commit_fixture(source, files)
+            assets = load_assets(source, revision)
+            self.assertEqual("seed", assets["initiatives/architecture.template.md"].kind)
+            self.assertEqual(content, assets["initiatives/architecture.template.md"].content)
+            self.assertEqual(content, assets["template/project/initiatives/architecture.template.md"].content)
+            plan = make_plan(target, assets, None)
+            apply_plan(target, assets, plan, source=str(source), revision=revision)
+            self.assertEqual(content, (target / "initiatives/architecture.template.md").read_bytes())
+            self.assertEqual(b"# Initiative baseline navigation\n", (target / "initiatives/README.md").read_bytes())
+            self.assertFalse((target / "initiatives/architecture.md").exists())
+            self.assertFalse((target / "initiatives/v1").exists())
+
     def test_older_distribution_without_unused_optional_tools_is_accepted(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -504,6 +558,61 @@ class CommittedDistributionTests(unittest.TestCase):
                 revision = self.commit_fixture(root, files)
                 with self.assertRaisesRegex(ValueError, "development"):
                     load_assets(root, revision)
+
+    def test_new_project_baseline_copies_operational_guides_verbatim(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            files = self.fixture_files()
+            files["protocol/template/project/template/README.md"] = b"# Nonrecursive project library placeholder\n"
+            operational = (
+                "README.md", "getting-started.md", "architecture-and-authority.md",
+                "repository-layout.md", "initiative-workflow.md", "git-and-codex-requirements.md",
+                "validation-and-quality.md", "adapting-other-tools.md",
+            )
+            for name in operational:
+                files["protocol/template/project/docs/development/" + name] = ("# Project-use " + name + "\n").encode()
+            self.refresh_fixture_locks(files)
+            revision = self.commit_fixture(root, files)
+            assets = load_assets(root, revision)
+            for name in operational:
+                source = "protocol/template/project/docs/development/" + name
+                self.assertEqual(files[source], assets["docs/development/" + name].content)
+                self.assertEqual(files[source], assets["template/project/docs/development/" + name].content)
+                self.assertEqual("seed", assets["docs/development/" + name].kind)
+            self.assertFalse(any(b"EXCLUDED" in asset.content for asset in assets.values()))
+
+    def test_new_project_baseline_rejects_development_work_and_unknown_guides(self):
+        for excluded in ("documentation-review-20261113.md", "template-prerequisites-maintenance.md",
+                         "developing-tadp.md", "protocol-history.md", "other/README.md"):
+            with self.subTest(excluded=excluded), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                files = self.fixture_files()
+                files["protocol/template/project/template/README.md"] = b"# Nonrecursive placeholder\n"
+                files["protocol/template/project/docs/development/" + excluded] = b"excluded source work\n"
+                self.refresh_fixture_locks(files)
+                revision = self.commit_fixture(root, files)
+                with self.assertRaisesRegex(ValueError, "development"):
+                    load_assets(root, revision)
+
+    def test_decisions_navigation_is_copied_but_development_receipts_are_rejected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            files = self.fixture_files()
+            navigation = b"# Project decisions\n\nCreate receipts only for actual project decisions.\n"
+            files["protocol/template/project/template/README.md"] = b"# Nonrecursive placeholder\n"
+            files["protocol/template/project/decisions/README.md"] = navigation
+            self.refresh_fixture_locks(files)
+            revision = self.commit_fixture(root, files)
+            assets = load_assets(root, revision)
+            self.assertEqual(navigation, assets["decisions/README.md"].content)
+            self.assertNotIn("decisions/private-decision.md", assets)
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            files["protocol/template/project/decisions/DR-001-maintenance.md"] = b"actual development receipt\n"
+            self.refresh_fixture_locks(files)
+            revision = self.commit_fixture(root, files)
+            with self.assertRaisesRegex(ValueError, "development"):
+                load_assets(root, revision)
 
     def test_committed_symlink_is_rejected_without_creating_local_symlinks(self):
         with tempfile.TemporaryDirectory() as directory:
