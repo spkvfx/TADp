@@ -94,7 +94,7 @@ phase-specific readiness assessment read-only, using a response shape. See
 
 Open initiative effort is also work to reconcile. Completion reviews account
 for every other open initiative, preserve conflicting efforts in the
-[work-conflict register](initiatives/work-conflicts.md), and route refinements
+[work-conflict register source](template/project/initiatives/work-conflicts.template.md), and route refinements
 through their owning workflow. Closed claims require recorded authorized reopening before refinement;
 adopted realization intake delegates necessary reopening, never acceptance. See the [coherence specification](evidence/authoritative/LLM/10_Codex_Initiative_Coherence_Specification.md).
 
@@ -232,7 +232,8 @@ not synchronize or validate it.
    for that project root. Inspect and coordinate shared hooks at the Git root
    before explicit activation, using the correct project-prefixed hook path.
    Copying files never enables hooks or overwrites parent configuration.
-6. Complete `project-profile.md`, assign ownership for each source of evidence,
+6. Instantiate [the project profile source](template/project/project-profile.template.md)
+   as `project-profile.md`, assign ownership for each source of evidence,
    and create the initiative index, status record, and work-conflict register.
    Capture the pre-adoption Git commit in the coherence baseline field.
 

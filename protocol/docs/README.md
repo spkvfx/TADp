@@ -71,9 +71,6 @@ Read these documents in order when first adopting or maintaining TADp:
 
 ## Documentation maintenance
 
-The [2026-11-13 review](development/documentation-review-20261113.md) records
-coverage, evidence, checked commands and unresolved findings for this refresh.
-
 - Keep root-level orientation in `../../README.md`; put durable explanations here.
 - Link to authoritative specifications instead of copying normative text when
   the exact rule matters.
